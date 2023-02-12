@@ -15,6 +15,7 @@ from org.apache.lucene.index import FieldInfo, IndexWriter, IndexWriterConfig, I
 from org.apache.lucene.search import IndexSearcher, BoostQuery, Query
 from org.apache.lucene.search.similarities import BM25Similarity
 
+#Update path of json file accordingly
 file_path="/home/cs242/242_New/CS242-Project/posts/bestoflegaladvice.json"
 f = open(file_path,'r+')
 sample_doc = json.load(f)
