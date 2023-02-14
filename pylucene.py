@@ -65,7 +65,7 @@ def create_index(dir):
 
         #Condition to calculate the time required for processing in Lucene
         #if( count == 100 or  count == 200 or count == 300 or count == 400 or count == 500 or count == 600 or count == 700 or count == 800 or count == 900 ):
-            print("Time taken at count ", count, " is ", time.time()  - start," seconds")
+            #print("Time taken at count ", count, " is ", time.time()  - start," seconds")
    
     writer.close()
    
