@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Engine</title>
+</head>
+<body>
+    <h1>Search Engine</h1>
+    <form method="POST" action="/search">
+        <input type="text" name="query" placeholder="Enter your query here...">
+	<label for="index_type">Index Type:</label>
+                        <input type="radio" id="lucene" name="index_type" value="lucene" checked>
+                        <label for="lucene">Lucene</label>
+                        <input type="radio" id="bert" name="index_type" value="bert">
+                        <label for="bert">BERT</label><br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+
