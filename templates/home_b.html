@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
+<h1 class="text-center">Search Engine</h1>
+<form class="col-md-4 col-md-offset-4 form control form-control-lg" method="POST" action="/search">
+    <div class="form-group row justify-content-center">
+        <div class="col-auto">
+            <input type="text" name="query" class="form-control"placeholder="Enter your query here...">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <label for="index_type">Choose Index Type: </label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="lucene" name="index_type" value="lucene" checked>
+                <label class="form-check-label" for="lucene">Lucene</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="bert" name="index_type" value="bert">
+                <label class="form-check-label" for="bert">BERT</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row justify-content-center">
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary" value="search">Search</button>
+        </div>
+    </div>
+ </form>
+ {% endblock %}
