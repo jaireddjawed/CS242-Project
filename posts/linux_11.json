@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Check it out",
+        "author": "Sensitive_Age_2284",
+        "url": "https://youtu.be/36J4e_lBi7w",
+        "text": "",
+        "created_utc": 1676921485,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Using INCRON to Monitor Files",
+        "author": "SaxonyFarmer",
+        "url": "https://www.reddit.com/r/linux/comments/117h5v6/using_incron_to_monitor_files/",
+        "text": "I have recently installed INCRON to trigger a script when a file is saved in Dropbox from outside my PC.  Here are my experiences and some tips:\n\nInstallation was quick and easy.  Do a search to find specifics for installation on your distribution.  \n\nI modified a control file to permit my id and root to create tables (akin to crontab).  I added my id and 'root' to '/etc/incron.allow' using 'nano' (use your favorite editor).  \n\nI created a table to control which files and folders INCRON will monitor.  This is much like 'cron' with a command (incrontab -e) to create and modify the table.  See the online guides for specifics on changing the editor it uses and the specific format of the table and triggers.  Here's a simple example of my table to monitor a file in my preferred cloud provider, Dropbox:\n\n/&lt;my home&gt;/Dropbox/apps/WahooFitness/   IN\\_MOVED\\_TO     /&lt;my home&gt;/Scripts/FITProc1.sh\n\nThis line tells INCRON to monitor a specific folder in my Dropbox folder and when a new file is moved into it, start the script '[FITProc1.sh](https://FITProc1.sh)' (a BASH script that runs a Python program among other tasks).  \n\nTIP:  I found the info in [https://www.geeksforgeeks.org/incron-command-in-linux-with-examples/](https://www.geeksforgeeks.org/incron-command-in-linux-with-examples/)\n\nto be very helpful!!!   I found this when I could not get a simple test script to execute when something was added to the monitored folder.  I created this test script to make sure what I wanted to do would happen and this test script wasn't triggering.  I eventually setup monitoring for all events and then saw which events were being triggered when I copied a file to the folder and then when the external device (a bike computer) did the same.  When the file was moved from Dropbox to the folder on my PC via the Dropbox daemon, a expected 'write' event was not happening.  This is how I found Dropbox was moving the file so I triggered on this event (IN\\_MOVED\\_TO).\n\nTIP: INCRON would tell me my test script was being started (seen by 'sudo systemctrl status incron' and in log messages) but I wasn't seeing any expected results (a message file in '/tmp' and emails).  Research found the site I mentioned above and their experience said that INCRON was not able to write to the system-wide '/tmp'.  I changed my script and Python program to use /&lt;my home&gt;/tmp and I saw the expected results when a file was added to the folder.\n\nSo far, I am happy with the results using INCRON.  When I finish a bike ride, my bike computer uploads a file to Dropbox via the iPhone app and within a minute or so, I have the results from the Python program started in the script sent as text messages and in my email inbox.  I can also see this when I issue the 'status' command shown previously.",
+        "created_utc": 1676919258,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Haiku Package Management",
+        "author": "aarroyoc",
+        "url": "https://www.markround.com/blog/2023/02/13/haiku-package-management/",
+        "text": "",
+        "created_utc": 1676919064,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Nsxiv image viewer, how to navigate",
+        "author": "arnauldb",
+        "url": "https://www.reddit.com/r/linux/comments/117fc76/nsxiv_image_viewer_how_to_navigate/",
+        "text": "Hi,\n\n&amp;#x200B;\n\nI just installed Nsxiv image viewer [https://codeberg.org/nsxiv/nsxiv](https://codeberg.org/nsxiv/nsxiv) on my Manjaro, but how to navigate in a folder full of pictures? I am using the mouse to open a picture then I would like to be able to navigate to the next or previous image, but I can't figure out how to do that...\n\n&amp;#x200B;\n\nThank you.",
+        "created_utc": 1676915108,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it possible to install Linux on a PS4? (v10.01)",
+        "author": "SvenyBoy_YT",
+        "url": "https://www.reddit.com/r/linux/comments/117evro/is_it_possible_to_install_linux_on_a_ps4_v1001/",
+        "text": "[removed]",
+        "created_utc": 1676914215,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Nsight Graphics 2022.7 - Vulkan Video",
+        "author": "adalte",
+        "url": "/r/linux_gaming/comments/117daiz/nsight_graphics_20227_vulkan_video/",
+        "text": "",
+        "created_utc": 1676912657,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing loxilb: eBPF based load-balancer written in Go",
+        "author": "FeelingCurl1252",
+        "url": "https://www.reddit.com/r/linux/comments/1178r4y/introducing_loxilb_ebpf_based_loadbalancer/",
+        "text": "[removed]",
+        "created_utc": 1676905337,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A first look at CachyOS",
+        "author": "K93200",
+        "url": "https://youtu.be/3uITGBByyNI",
+        "text": "",
+        "created_utc": 1676904743,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 6.2 Released With Intel Arc Graphics Promoted, Open-Source NVIDIA RTX 30",
+        "author": "Realistic-Plant3957",
+        "url": "https://cdn.paulponraj.com/ib/zLH9aSAEcr",
+        "text": "",
+        "created_utc": 1676902826,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing loxilb: eBPF based load-balancer written in Go",
+        "author": "FeelingCurl1252",
+        "url": "https://www.reddit.com/r/linux/comments/1177pf5/introducing_loxilb_ebpf_based_loadbalancer/",
+        "text": "[removed]",
+        "created_utc": 1676902524,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Using fprintd with opendoas",
+        "author": "2exxgr",
+        "url": "https://www.reddit.com/r/linux/comments/1177gpo/using_fprintd_with_opendoas/",
+        "text": "[removed]",
+        "created_utc": 1676901832,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "2 questions related to flatpak",
+        "author": "Twaasar",
+        "url": "https://www.reddit.com/r/linux/comments/11776i2/2_questions_related_to_flatpak/",
+        "text": "[removed]",
+        "created_utc": 1676901111,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A Complete Guide to Linux Process Scheduling",
+        "author": "unixbhaskar",
+        "url": "https://trepo.tuni.fi/bitstream/handle/10024/96864/GRADU-1428493916.pdf",
+        "text": "",
+        "created_utc": 1676898579,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why can't i write to freshly formatted disk?",
+        "author": "gun3kter_cz",
+        "url": "https://www.reddit.com/r/linux/comments/1175ibc/why_cant_i_write_to_freshly_formatted_disk/",
+        "text": "[removed]",
+        "created_utc": 1676896351,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Where to get novadroid iso",
+        "author": "thesquishablekittens",
+        "url": "https://i.redd.it/6sed5x8wwcja1.jpg",
+        "text": "[removed]",
+        "created_utc": 1676886630,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Arch Distros",
+        "author": "XiaW411",
+        "url": "https://www.reddit.com/r/linux/comments/1172qr1/arch_distros/",
+        "text": "",
+        "created_utc": 1676886429,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it possible to install or make a (preferrably) live version of puppy Linux on android?",
+        "author": "Alexasha05",
+        "url": "https://www.reddit.com/r/linux/comments/1172anc/is_it_possible_to_install_or_make_a_preferrably/",
+        "text": "[removed]",
+        "created_utc": 1676884580,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it possible to install or (preferrably) make a live version of puppy Linux on android?",
+        "author": "Alexasha05",
+        "url": "https://www.reddit.com/r/linux/comments/117298t/is_it_possible_to_install_or_preferrably_make_a/",
+        "text": "[removed]",
+        "created_utc": 1676884427,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Few lesser known tricks, quirks and features of C",
+        "author": "unixbhaskar",
+        "url": "https://blog.joren.ga/less-known-c",
+        "text": "",
+        "created_utc": 1676880774,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing loxilb: eBPF based load-balancer written in Go",
+        "author": "FeelingCurl1252",
+        "url": "https://www.reddit.com/r/linux/comments/11709nq/introducing_loxilb_ebpf_based_loadbalancer/",
+        "text": "[removed]",
+        "created_utc": 1676876634,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Disability accessibility tools for Linux such as eyetrackers and voice commands?",
+        "author": "saydee2",
+        "url": "https://www.reddit.com/r/linux/comments/116z1r8/disability_accessibility_tools_for_linux_such_as/",
+        "text": "Hi all (I hope the email verification works this time). I've been having RSI/arm pain for years now, and doctors don't know what to do. I mostly know IT and programming, and stuff like RSI/tendonitis or invisible arm pain in general are not eligible for disability benefits in my country.\n\nI know some software exists for Linux such as Talon, but what about eyetrackers or other voice software? It seems that every product is designed for Windows such as voicecomputer or Tobii. Also gonna invest in food pedals for basic clicking + hotkey shortcuts",
+        "created_utc": 1676872205,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Disability accessibility tools for Linux such as eyetrackers and voice commands?",
+        "author": "saydee2",
+        "url": "https://www.reddit.com/r/linux/comments/116yvpf/disability_accessibility_tools_for_linux_such_as/",
+        "text": "[removed]",
+        "created_utc": 1676871589,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Southern California Linux Expo is back in Pasadena - March 9-12, 2023",
+        "author": "irabinovitch",
+        "url": "https://socallinuxexpo.org/scale/20x/",
+        "text": "",
+        "created_utc": 1676861349,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "loxilb: An eBPF based software load-balancer written in Go",
+        "author": "FeelingCurl1252",
+        "url": "https://www.reddit.com/r/linux/comments/116vn5y/loxilb_an_ebpf_based_software_loadbalancer/",
+        "text": "[removed]",
+        "created_utc": 1676860971,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Im currently using a video editor called \"Shotcut\" although I am unable to bookmark any files. When I hold crtl/alt and press/hold on a file the whole page just closes and I am back in the editor. Any idea?",
+        "author": "Low_Replacement2171",
+        "url": "https://i.redd.it/0hog4ziyfaja1.jpg",
+        "text": "",
+        "created_utc": 1676856745,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The 6.2 kernel has been released",
+        "author": "corbet",
+        "url": "https://lwn.net/Articles/923732/",
+        "text": "",
+        "created_utc": 1676849948,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "NAT between identical networks using VRF",
+        "author": "purpleidea",
+        "url": "https://blog.oddbit.com/post/2023-02-19-vrf-and-nat/",
+        "text": "",
+        "created_utc": 1676846208,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Audio Subsystem Books",
+        "author": "DrawBacksYo",
+        "url": "https://www.reddit.com/r/linux/comments/116q1kk/audio_subsystem_books/",
+        "text": "Hi all,\n\nI'm looking for books to learn more about how audio implemented on Linux. For networking, there is a book called *Understanding Linux Network Internals* and it's a great resource for deep diving into networking subsystem. Is there any book like this for audio? \n\nAre snd\\_\\* functions responsible from managing audio in kernel?",
+        "created_utc": 1676845935,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "This week in Open Source - Linux phones and pocket computers, $1.5 RISC-V board, AMD and Intel's new tools, &amp; more",
+        "author": "antsaregay",
+        "url": "https://fossweekly.beehiiv.com/p/foss-weekly-35-two-linux-phones-amd-and-intel-s-new-open-source-tools-plasma-5-27-more",
+        "text": "",
+        "created_utc": 1676843359,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What's the worst Linux distro?",
+        "author": "Ok_Physics_2932",
+        "url": "https://www.reddit.com/r/linux/comments/116orc5/whats_the_worst_linux_distro/",
+        "text": "[removed]",
+        "created_utc": 1676842783,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What's the worst Linux distro?",
+        "author": "Ok_Physics_2932",
+        "url": "https://www.reddit.com/r/linux/comments/116oq87/whats_the_worst_linux_distro/",
+        "text": "[removed]",
+        "created_utc": 1676842702,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Trying to install Linux over existing Win OS - errors",
+        "author": "netrate",
+        "url": "https://www.reddit.com/r/linux/comments/116ojnp/trying_to_install_linux_over_existing_win_os/",
+        "text": "I am new to Linux, but have installed windows before so I have some experience, although minimal.\n\nI am using RUFUS and booting from the USB.   \nFor the installation type, I choose ERASE DISK AND INSTALL UBUNTU.\n\nI am having an issue that the system is telling me that I cannot install over the existing win os.  I ignore the warning and then get another error  :\n\nFailed to create a file system\n\nThe ext4 file system creation is partition#2 of SCSI (0,0,0) (Sda) failed.\n\nCan someone direct me how to fix this?",
+        "created_utc": 1676842244,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Thunderbird can't sync Email Accounts and Calender after upgrade F36 -&gt; F37",
+        "author": "biber_la",
+        "url": "https://www.reddit.com/r/linux/comments/116nwba/thunderbird_cant_sync_email_accounts_and_calender/",
+        "text": "[removed]",
+        "created_utc": 1676840602,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Nix Support on Vanilla OS Nix Support on Vanilla OS",
+        "author": "MonsterObserver",
+        "url": "https://monster.codeberg.page/blog/2023/02/09/nix-support-on-vanilla-os",
+        "text": "",
+        "created_utc": 1676840409,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My Experience with Vanilla OS",
+        "author": "MonsterObserver",
+        "url": "https://monster.codeberg.page/blog/2023/02/01/my-experience-with-vanilla-os",
+        "text": "",
+        "created_utc": 1676840154,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "lastresort(1) – Base 256 codec with easily typed words, version 0.4.0 released",
+        "author": "Select-Struggle-9172",
+        "url": "https://github.com/ctsrc/Base256",
+        "text": "",
+        "created_utc": 1676839613,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Where to begin? Books, Software, all of it!",
+        "author": "_CC2224",
+        "url": "https://www.reddit.com/r/linux/comments/116n1ux/where_to_begin_books_software_all_of_it/",
+        "text": "Hey everyone. So recently I started watching a few YouTube videos on Linux, just trying to understand it a bit and I am hooked. But before I start deep diving and possibly reading any outdate information or watching things that may confuse me. I figured I would ask here. Now I did do a search in here to try and find some new post that may be asking the same stuff but a lot of it may be outdate. \n\nSo far I’ve watched a small series from User NetworkChuck on YouTube and it’s been helpful for the most part. I’ve been able to grasp most the information along with following along while using Hack the Box’s online simulator. That being said, I am looking for more information to get me on the right track. \n\nAre there any recommended books that people would recommend (Linux Bible, etc.)?\nAny other YouTuber’s who discuss Linux that’d you recommend?\nAre there any Linux Distributions or online simulators that would be recommended for someone new looking to practice and follow along?\n\nI’ll be honest I’m more of a hands of person, so that has me a bit worried about buying a book because tend to be a little difficult in holding my attention. But I am really wanting to commit some time into this and see if this is indeed a career path I would like to pursue. \n\n\nIf you read this all and have any advice for me, thank you for your time. I appreciate it.",
+        "created_utc": 1676838477,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I want to slip my wife the penguin.",
+        "author": "ConfusionOk4129",
+        "url": "https://www.reddit.com/r/linux/comments/116mw62/i_want_to_slip_my_wife_the_penguin/",
+        "text": "[removed]",
+        "created_utc": 1676838082,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I'm convinced",
+        "author": "Jakes2108",
+        "url": "https://www.reddit.com/r/linux/comments/116mlor/im_convinced/",
+        "text": "Linux is better. Recently, I had to turn on Windows for some reason. I did what I had to do and thought \"Hey, let's Update and Shut Down\" aaaaaaand... it updated and restarted…. fine I'll shut it down. I had to do something again and now... I had to wait for updated to finish before I even use the system, and now it shut down before it even showed me the desktop. What the f...  \n\n\nAnyway, Linux MR lol",
+        "created_utc": 1676837367,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Recover bunch of files from external hard drive with ext4 partition",
+        "author": "kerberos470",
+        "url": "https://www.reddit.com/r/linux/comments/116mc10/recover_bunch_of_files_from_external_hard_drive/",
+        "text": "[removed]",
+        "created_utc": 1676836705,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to set resolution for live USB?",
+        "author": "TheLaserGuru",
+        "url": "https://www.reddit.com/r/linux/comments/116m3a4/how_to_set_resolution_for_live_usb/",
+        "text": "I'd like to set the console resolution for my live USB key to 720P or 1080P.  Right now grub is ?720P?, then it goes to 1080P for a second, then to 4K.  Problem is I can't read the text at 4K (my capture card is junk and 4K gets down scaled to 1080P).  Ubuntu Server and Zorin Lite both do this.  I cannot read anything.  Ideally I want to modify the USB key or the image I use to make the key.",
+        "created_utc": 1676836095,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does your terminal support opening a new tab/window in the current directory.",
+        "author": "nomeata",
+        "url": "https://www.reddit.com/r/linux/comments/116loja/does_your_terminal_support_opening_a_new/",
+        "text": "In gnome-terminal, you can press Ctrl-Shift-N to open a new terminal window _in the current directory_, and I find that very convenient. There is a similar key binding for a new tab (but I don't use tabs).\n\nIs that a common functionality among terminal emulators? Which other terminal emulators have it, and under which key binding?",
+        "created_utc": 1676835074,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Browser suggestion (not Firefox or Firefox based)",
+        "author": "GuN4iK",
+        "url": "https://www.reddit.com/r/linux/comments/116lhg9/browser_suggestion_not_firefox_or_firefox_based/",
+        "text": "[removed]",
+        "created_utc": 1676834598,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 6.3 Merge Window: A Sneak Peek into the Exciting New Features Coming Your Way",
+        "author": "UbuntuPIT",
+        "url": "https://www.ubuntupit.com/linux-6-3-merge-window-a-sneak-peek-into-the-exciting-new-features-coming-your-way/",
+        "text": "",
+        "created_utc": 1676833652,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Browser suggestion(not Firefox or Firefox based)",
+        "author": "GuN4iK",
+        "url": "https://www.reddit.com/r/linux/comments/116kqir/browser_suggestionnot_firefox_or_firefox_based/",
+        "text": "[removed]",
+        "created_utc": 1676832808,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Xrdp error",
+        "author": "1328262",
+        "url": "https://i.redd.it/8rtwy86i68ja1.jpg",
+        "text": "[removed]",
+        "created_utc": 1676829330,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I created Vault-ish script using bash+zenity+cryptsetup",
+        "author": "No___No___No",
+        "url": "https://www.reddit.com/r/linux/comments/116j7wz/i_created_vaultish_script_using/",
+        "text": "I have been using Sparse files, to create block device and then use cryptsetup to encrypt it and save personal files and folder in them, Was it easy? No , not at all , those commands would eat my brain up , So i decided to solve it this weekend  \n\n\nI present you [bash\\_vault](https://github.com/teynav/bash_vault) , it cleanly mounts stuff and unmount it , when sent SIGINT or SIGTERM, I made Zenity UI friendly and verbose about what happened correct or what happened wrong, it was in this process I realized I might add features and make it more use friendly. It works like a charm for me. I spent today writing verbose Readme file for it, So if you have interest in some vault like setup , which can be scripted easily to open what you want, or just easy peasy vault which opens and ask you what you want to do, do try it out.   \n\n\nFeatures \n\n1.  Creating Vaults with Password or Keyfile\n2.  Adding Multiple Passwords or Keyfile\n3.  Deleting Multiple Passwords or Keyfile\n4.  AutoClosing all mount points on exit \n5. Toggling on and off  a AutoOpen Keyfile ( basically when keyfile is present at said location, you won't be prompted to enter password or choose keyfile , it will auto-open)  \n\n\nThanks for your interest, Script lacks comments, but i have chosen good variable names (helps me too)",
+        "created_utc": 1676829143,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Your go-to computers to run Linux ?",
+        "author": "Nocosomo",
+        "url": "https://www.reddit.com/r/linux/comments/116ixd4/your_goto_computers_to_run_linux/",
+        "text": "[removed]",
+        "created_utc": 1676828420,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I reinstalled windows on dual boot laptop with windows 10 and Ubuntu. now it gives error and goes into grub recovery mode. please tell me what to do.",
+        "author": "Digital_Demon7",
+        "url": "https://i.redd.it/tovijc5d38ja1.png",
+        "text": "",
+        "created_utc": 1676828274,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Intel Boosts Linux Kernel 6.3 with Enhanced Drivers Improvements for Meteor Lake and Granite Rapids",
+        "author": "UbuntuPIT",
+        "url": "https://www.ubuntupit.com/intel-boosts-linux-kernel-6-3-with-enhanced-drivers-improvements-for-meteor-lake-and-granite-rapids/",
+        "text": "",
+        "created_utc": 1676828103,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gnu/Linux for the modern desktop and laptop. Yay or Nay?",
+        "author": "Adventurous_Body2019",
+        "url": "https://www.reddit.com/r/linux/comments/116ic2c/gnulinux_for_the_modern_desktop_and_laptop_yay_or/",
+        "text": "Hello, Fedora user here. I have run Linux exclusively on my desktop and laptop for 3 years. However, I still on the verge of \"Is desktop Linux mature enough?\" \n\nThe good: I can legitimately do anything I want. I love that my whole Gnome DE has a color scheme which I love. I can configure my laptop to run nearly fansless with decent performance and most importantly I found the gnome workflow is miles, miles ahead of any other DEs or operating system. As a privacy junky, I choose Linux too. All in all, Linux introduced a lot of new and cool things to me, things that once I know it, I could never go back\n\nThe bad: since those corporate capitalists, Linux has some issues that bother me alot, though I have not run into serious issues like glitches, system bork. In my mind, I always has the worry of \"are all of my hardware working as intended, are the drivers all there, are they even good?\" As we all know, AMD power management still sucks (6.3 please save me!). Scaling sucks, Wayland sucks for some people. Even hardware acceleration on the browsers is not working with most distros and on chromium.....I rather die. Software has \"cope\" Linux support, like the ass Brave browser has weird UI as supposed to what it should look like when you font is larger than 9 which all distros have 11px font. Not to mention the slow, insignificant development of DE compared to the kernel. So even though, the Linux kernel part is great, it it still quite bad on the desktop. Some people say their system work perfectly, others claim you are better of with windows because there are something that will never have driver in the kernel. The fear of a great app just randomly being unmaintained and left completely too. Honestly, one can go on and on about the issues or stuffs that lack in Linux.\n\nThe take: I am just in this wierd dilemma of choosing an OS. One is spyware but it works, one is miles better at things that it is good at but ages behind most others. I mean what do I choose? live without those \"new things\" I have just discovered and or breakdown and eventually return to Windows because of the time wasted on making a simple thing works? \n\nThe other question: can I please, in my life, enjoy the life when Gnu/Linux have it all. 2050 Maybe? \n\nAnd I'm talking about relatively new hardware, like from 2019 or newer. So let settle this, Gnu/Linux on desktop and laptop. Yay or nay?",
+        "created_utc": 1676827004,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Budgie 10.7.1 Released",
+        "author": "JoshStrobl",
+        "url": "https://blog.buddiesofbudgie.org/budgie-10-7-1-released/",
+        "text": "",
+        "created_utc": 1676826776,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I've added Swing Music player screenshots to the Github repo. Check them out.",
+        "author": "cwilvx",
+        "url": "https://github.com/geoffrey45/swingmusic/tree/master/screenshots",
+        "text": "",
+        "created_utc": 1676825688,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Uninstalling Droidian from Pixel 3a",
+        "author": "CrnkFrnchmn",
+        "url": "https://www.reddit.com/r/linux/comments/116hhzg/uninstalling_droidian_from_pixel_3a/",
+        "text": "[removed]",
+        "created_utc": 1676825087,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux is not Windows",
+        "author": "teleprint-me",
+        "url": "https://www.reddit.com/r/linux/comments/116h9ga/linux_is_not_windows/",
+        "text": "# Linux is not Windows\n\nMy goal with this post is create some clarification on what Linux is and why most software that people demand doesn't run on Linux. Yes, it is rant, because I'm tired of seeing this debate continue on.\n\nLet's create some context first.\n\n## What is an Operating System (OS)?\n\nAn Operating System (OS) is a type of software that manages the hardware and software resources of a computer. It provides the basic foundation for running applications and managing computer resources, such as memory and storage. The operating system also provides the user interface, which allows users to interact with the computer. Examples of popular operating systems include Windows, Mac OS X, and Linux.\n\n## What is a Kernel?\n\nA kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system. It is responsible for managing the resources of the computer, managing hardware, managing the execution of user programs, and providing an interface for user programs to interact with the hardware. The kernel is responsible for providing basic services for all other parts of the operating system.\n\n## How does a Kernel differ from an OS?\n\nIn comparison to an operating system, the kernel is a more low-level component. While an operating system is responsible for managing the resources of the computer and providing an interface for user programs, the kernel is responsible for managing the execution of user programs and providing an interface for user programs to interact with the hardware. Additionally, the kernel is responsible for managing hardware and providing device drivers for hardware components.\n\n## What is a Linux Distribution?\n\nA Linux distribution (often abbreviated as distro) is an operating system made from a software collection that includes the Linux kernel and [1], often, other components such as the GNU tools, additional software, a package manager, and other components. It is typically distributed in the form of a Linux-based operating system, although some distributions are also available as live CDs or as certain types of pre-installed systems. Popular Linux distributions include Ubuntu, Debian, Fedora, and CentOS.\n\n## How did Windows come about and gain the majority market share?\n\nBill Gates bought QDoS from Tim Patterson for a measly fee. Gates already had a contract set up with IBM, but couldn't meet the contract deadline. Patterson was offering his OS for sale and Gates jumped on it. Patterson later sued gates for misleading him and leaving out the fact that he had a contractual obligation/deal with IBM. IBM manufactured most PCs back then and once DoS was presented to them, it was end game.",
+        "created_utc": 1676824598,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "should i switch to linux ?",
+        "author": "PixelHuh",
+        "url": "https://www.reddit.com/r/linux/comments/116h6yo/should_i_switch_to_linux/",
+        "text": "[removed]",
+        "created_utc": 1676824466,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Weird or interesting packages/programs/binaries that you have found in your distro?",
+        "author": "Asparagussian",
+        "url": "https://www.reddit.com/r/linux/comments/116h0xd/weird_or_interesting_packagesprogramsbinaries/",
+        "text": "[removed]",
+        "created_utc": 1676824115,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Debian Installer Bookworm Alpha 2 release",
+        "author": "Remote_Tap_7099",
+        "url": "https://www.reddit.com/r/debian/comments/116enrc/debian_installer_bookworm_alpha_2_release/",
+        "text": "",
+        "created_utc": 1676821918,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Debian Installer Bookworm Alpha 2 release",
+        "author": "Remote_Tap_7099",
+        "url": "https://www.reddit.com/r/linux/comments/116fgx9/debian_installer_bookworm_alpha_2_release/",
+        "text": "[removed]",
+        "created_utc": 1676821790,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Debian Installer Bookworm Alpha 2 release",
+        "author": "Remote_Tap_7099",
+        "url": "https://www.reddit.com/r/linux/comments/116f2n8/debian_installer_bookworm_alpha_2_release/",
+        "text": "[removed]",
+        "created_utc": 1676821246,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "network setup",
+        "author": "9ine2uc3",
+        "url": "https://www.reddit.com/r/linux/comments/116ezt5/network_setup/",
+        "text": "[removed]",
+        "created_utc": 1676821152,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Debian Installer Bookworm Alpha 2 release",
+        "author": "Remote_Tap_7099",
+        "url": "https://www.reddit.com/r/linux/comments/116evjy/debian_installer_bookworm_alpha_2_release/",
+        "text": "[removed]",
+        "created_utc": 1676820987,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Debian Installer Bookworm Alpha 2 release",
+        "author": "Remote_Tap_7099",
+        "url": "https://www.reddit.com/r/linux/comments/116eqhv/debian_installer_bookworm_alpha_2_release/",
+        "text": "[removed]",
+        "created_utc": 1676820785,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi everyone, do you know how to fix it?",
+        "author": "Interesting-Dare-595",
+        "url": "https://www.reddit.com/r/linux/comments/116emyw/hi_everyone_do_you_know_how_to_fix_it/",
+        "text": "[removed]",
+        "created_utc": 1676820661,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "clarification about shell command executed through netcat",
+        "author": "Mgsfan10",
+        "url": "https://www.reddit.com/r/linux/comments/116eb51/clarification_about_shell_command_executed/",
+        "text": "hi, i'm studying cybersecurity and at the moment i'm doing netcat. in the book's examples there is one that shows how to execute commands through bash. the thing that i don't understand when i do my tests in the VM, is this:\n\nwhen i send normal messages from pc A to the listener B, i see that message to the B terminal too, but when i set the listener to execute bash when a message is received, i don't see the command i send to the B terminal, but i see it (and it's result) only in the A terminal; plus, if i send a wrong bash command like \"hello\", i get the error message in the B terminal. \n\ncan someone explain to me why?",
+        "created_utc": 1676820197,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "been having stability issues with Firefox on Devuan",
+        "author": "free_help",
+        "url": "https://www.reddit.com/r/linux/comments/116e3v6/been_having_stability_issues_with_firefox_on/",
+        "text": "I use a self updating executable downloaded from Firefox's website and It has worked very well until the last update. Now it crashes all the to the where it has become unusable. Anyone else having that problem on Devuan or Debian?\n\nI'm on Devuan 4, based on Debian 11",
+        "created_utc": 1676819937,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AI and Chatbots: The Role of Linux in their Growth",
+        "author": "Unprotectedtxt",
+        "url": "https://haydenjames.io/ai-chatbots",
+        "text": "",
+        "created_utc": 1676819385,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AI and Chatbots: The Role of Linux in their Growth",
+        "author": "Unprotectedtxt",
+        "url": "https://haydenjames.io/ai-chatbots-the-role-of-linux-in-growth/",
+        "text": "",
+        "created_utc": 1676818876,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I’m a Windows Scrub, What the Best Distro for Switching to Linux for the First Time?",
+        "author": "Mysterious-Sir7641",
+        "url": "https://www.reddit.com/r/linux/comments/116d6t8/im_a_windows_scrub_what_the_best_distro_for/",
+        "text": "[removed]",
+        "created_utc": 1676818658,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help I cant boot parrot os",
+        "author": "hpa_sick",
+        "url": "https://www.reddit.com/r/linux/comments/116byiu/help_i_cant_boot_parrot_os/",
+        "text": "[removed]",
+        "created_utc": 1676816919,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help i cant boot parrot os home",
+        "author": "hpa_sick",
+        "url": "https://www.reddit.com/r/linux/comments/116bsrh/help_i_cant_boot_parrot_os_home/",
+        "text": "[removed]",
+        "created_utc": 1676816702,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to get the Arbitrum $ARB Airdrop",
+        "author": "Historical-Expert743",
+        "url": "https://www.reddit.com/r/linux/comments/116a0vf/how_to_get_the_arbitrum_arb_airdrop/",
+        "text": "[removed]",
+        "created_utc": 1676812493,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Czkawka 5.1 - Unnecessary file cleaner of unnecessary files, with sorting, faster image comparsion, thread number selection",
+        "author": "krutkrutrar",
+        "url": "https://www.reddit.com/r/linux/comments/1169jod/czkawka_51_unnecessary_file_cleaner_of/",
+        "text": "Hi,\n\nAfter months of work, Czkawka 5.1 is ready for download.\n\nChanges in this version\n\n* Added sort button\n* Allow to set number of thread used to scan\n* Faster similar images comparing with reference folders\n* Updated to clap 4\n* Used FileChooserNative instead FileChooserDialog(probably can help Flatpak version and Windows/Mac use now native file dialog)\n* Fixed invalid music tags in music files when using reference folders\n* Updated pdf dependency(a lot of less amount of broken pdf false positives)\n* Changed strange PDF error message - \"Try at\"\n* Treat extensions Mp4 and m4v as identical\n* Improved thumbnail quality\n* Runtime validation if hardlinking works, and if not, disable button with proper message\n* Applied some pedantic clippy lints on project (I found that pedantic rule [https://rust-lang.github.io/rust-clippy/master/index.html#needless\\_pass\\_by\\_value](https://rust-lang.github.io/rust-clippy/master/index.html#needless_pass_by_value) can even improve performance - not sure why this is not enabled by default)\n\nDue to a job change and focusing on other projects, work on the application has slowed down a bit but I am slowly getting back to normal mode  \n\n\nhttps://preview.redd.it/jkbp1dbx55ja1.png?width=1128&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=e4a06dafdc39a3256e68254f1bf96f8f9334baf4\n\n1.65 is minimal rust version required to build app.   \nI wanted to use latest version available on Ubuntu(1.61.0) but many of the dependencies required a newer version, so I didn't stop development of the application until Ubuntu supported a newer version of the compiler.\n\nThe requirements are identical to version 5.0:\n\n* Linux - Ubuntu 22.04+, Fedora 36+, Alpine Linux 3.16+, Debian 12+ and a lot of more\n* Windows - 7, 8.1, 10, 11\n* MacOS - 10.15+\n\nFlatpak version will be updated soon.  \nSnap is still not updated because Rust is in too old a version to build it(help needed)\n\nPrice - Gratis is a fair price(MIT)\n\nRepository - [https://github.com/qarmin/czkawka](https://github.com/qarmin/czkawka)   \nFiles to download - [https://github.com/qarmin/czkawka/releases](https://github.com/qarmin/czkawka/releases)   \nInstallation - [https://github.com/qarmin/czkawka/blob/master/instructions/Installation.md](https://github.com/qarmin/czkawka/blob/master/instructions/Installation.md)   \nInstruction - [https://github.com/qarmin/czkawka/blob/master/instructions/Instruction.md](https://github.com/qarmin/czkawka/blob/master/instructions/Instruction.md)   \nTranslation - [https://crowdin.com/project/czkawka](https://crowdin.com/project/czkawka)",
+        "created_utc": 1676811044,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Announcing the Lapdock Kit",
+        "author": "Adwaitian",
+        "url": "https://wp.puri.sm/posts/announcing-the-lapdock-kit/",
+        "text": "",
+        "created_utc": 1676810853,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "switching to linux",
+        "author": "FaZeJust1n",
+        "url": "https://www.reddit.com/r/linux/comments/1168z6g/switching_to_linux/",
+        "text": "[removed]",
+        "created_utc": 1676809078,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I run on Linux... Now what?",
+        "author": "YoGottaGetSchwifty",
+        "url": "https://www.reddit.com/r/linux/comments/1168qa6/i_run_on_linux_now_what/",
+        "text": "[removed]",
+        "created_utc": 1676808146,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Asking for your feedback for an upcoming book about NixOS",
+        "author": "DrakeRossman",
+        "url": "https://www.reddit.com/r/linux/comments/1167jxf/asking_for_your_feedback_for_an_upcoming_book/",
+        "text": "Hey Linux community!  \nI'm working on a book about NixOS and I am in extreme need for your feedback. I'm posting this here instead of the NixOS subreddit because I want to hear from outsiders. I think the NixOS community is missing the mark with stuff that's too hardcore for the average person. Think of it as an \"outside-of-nix\" survey. There's already a \"NixOS survey\" with little purpose for our case, since I would want to target people outside of NixOS - those make the majority and are the ones who would ensure the healthy growth of nix ecosystem given the opportunity to get better with nix.  \nI want to emphasize that this book is about NixOS, not just nix. There's a lot of confusion around the name \"nix\" and I believe we need to make it clear that NixOS is a complete operating system. My goal is to help people get started with NixOS without needing PhD or reading hardcore research papers. I want to show them how to build a workstation that Just Works (TM) and give them a solid foundation to grow from. It just bugs me how much the developers focus on theory. I want to showcase learning by doing, and make it relevant for everyone.  \nThe book currently finds itself in the form of numerous drafts (counting in the low hundreds), and I plan on sharing them on my blog as (not so) short tutorials. Check out the latest one here: https://drakerossman.com/blog/how-to-convert-default-nixos-to-nixos-with-flakes. Once they're refined, they'll become the chapters of the book.  \nI'm hoping to publish the book in the next 3 months, but I need your help to make it happen. Your feedback is extremely important to me and it will help me identify and cover the missing parts. I've submitted an article to track the progress of how the book's going: https://drakerossman.com/blog/practical-nixos-the-book. I've also got a newsletter on my website, so you may want to subscribe for updates.   \nMany thanks!",
+        "created_utc": 1676803480,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fstab mount options",
+        "author": "lcserny",
+        "url": "https://www.reddit.com/r/linux/comments/11671he/fstab_mount_options/",
+        "text": "Hi all, quick question here for the more knowledgeable of you guys, is there a way to mount a ntfs partition in fstab having all the files on that mount belongingbto a certain user and having certain permissiona WHILE also allowing those permissions and owner to be changes by chmod or chown?\n\nThis is what I have currently:\nUUID=323A166A3A162AFD /mnt/HDD ntfs-3g uid=leonardo,gid=leonardo,dmask=013,fmask=013,x-gvfs-show 0 0\n\nBut it wont allow me to change permissions on the fly when I want on some folders in that mount.\n\nNote that I dont want to give full read write to everyone and everything on that mount.\n\nThanks a lot.",
+        "created_utc": 1676801694,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with bigger window control buttons",
+        "author": "Ok_Antelope_1953",
+        "url": "https://www.reddit.com/r/linux/comments/1166eu4/help_with_bigger_window_control_buttons/",
+        "text": "[removed]",
+        "created_utc": 1676799370,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Vanilla OS can finish my distro hopping with these subsystems: MacOS, Fedora, Alpine, Void, Windows, Ubuntu, Arch and OpenSUSE. Also bye to these dual boots...",
+        "author": "islekcaganmert",
+        "url": "https://i.redd.it/j9hpe2pnw3ja1.png",
+        "text": "",
+        "created_utc": 1676795690,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can I boot directly into Linux mint instead of going through f12 boot menu?",
+        "author": "MUMB0_F0R_MAY0R",
+        "url": "https://www.reddit.com/r/linux/comments/1165a83/how_can_i_boot_directly_into_linux_mint_instead/",
+        "text": "",
+        "created_utc": 1676794841,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Makefile:45: go.sum Error 1, whats wrong?",
+        "author": "Eduardro7779",
+        "url": "https://i.redd.it/wk3fxui095ja1.png",
+        "text": "",
+        "created_utc": 1676793852,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "which is best fedora or ubuntu ?",
+        "author": "Olivia-Evelyn",
+        "url": "https://i.redd.it/4pbsp0j285fa1.png",
+        "text": "",
+        "created_utc": 1676793450,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "30 Days with elementary OS 7 - The Cost of Idealism",
+        "author": "Realistic-Plant3957",
+        "url": "https://paulponraj.com/30-days-with-elementary-os-7-the-cost-of-idealism/",
+        "text": "",
+        "created_utc": 1676789096,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I want to become a Linux System administrator but I'm not sure how...",
+        "author": "LiquidLar",
+        "url": "https://www.reddit.com/r/linux/comments/1163l1y/i_want_to_become_a_linux_system_administrator_but/",
+        "text": "[removed]",
+        "created_utc": 1676788265,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Mobian | Off-topic: The importance of efficient tooling (or how to use Mobian's tools to create an “almost-pure” Debian image for the VisionFive v2)",
+        "author": "Remote_Tap_7099",
+        "url": "https://blog.mobian.org/posts/2023/01/25/efficient-tooling/",
+        "text": "",
+        "created_utc": 1676788058,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just submitted my first AUR package to control monitor brightness through the terminal",
+        "author": "Devorlon",
+        "url": "https://aur.archlinux.org/packages/brightness",
+        "text": "",
+        "created_utc": 1676780617,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AR Toolkit For Linux",
+        "author": "RicardoCarlos55",
+        "url": "https://www.reddit.com/r/linux/comments/115zuds/ar_toolkit_for_linux/",
+        "text": "[removed]",
+        "created_utc": 1676775718,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lightweight Linux Distributions",
+        "author": "Stupid_Dude00112",
+        "url": "https://www.reddit.com/r/linux/comments/115yn1n/lightweight_linux_distributions/",
+        "text": "[removed]",
+        "created_utc": 1676772281,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "wallpaper selector in rofi",
+        "author": "ProfessionLower9249",
+        "url": "https://www.reddit.com/r/linux/comments/115xec7/wallpaper_selector_in_rofi/",
+        "text": "I created this script that Wonderwall a selection of funds for X11, so I decided to create an extension to make it compatible with Wayland. My problem is that I do not know how to add thumbnails to the images to make it easier to identify them\n\n\\#!/bin/bash\n\n\\# Descargar las imágenes desde Wonderwall\n\nwonderwall -d -g /home/shen/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download/\n\n\\# Obtener una lista de las imágenes descargadas\n\nimage\\_list=$(ls /home/shen/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download/ | rev | cut -d/ -f1 | rev)\n\n\\# selecionar la imagen como fondo de pantalla\n\nimage\\_path=/home/shen/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download/$(echo \"$image\\_list\" | rofi -dmenu show-icons true -theme-str '#window { width: 50%; }' -p \"Choose wallpaper:\")\n\n\\# Establecer la imagen seleccionada como fondo de pantalla utilizando swaybg\n\nswaybg -i \"$image\\_path\" -m fill",
+        "created_utc": 1676768683,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A little background that I made out of boredom.",
+        "author": "Ioquack",
+        "url": "https://i.redd.it/rj5zsfbi91ja1.png",
+        "text": "",
+        "created_utc": 1676763626,
+        "upvote_ratio": 0.5
+    },
+    {
+        "title": "HELP ABOUT PASSWORD (LOG IN/SECURITY)",
+        "author": "VTtan22",
+        "url": "https://www.reddit.com/r/linux/comments/115u05a/help_about_password_log_insecurity/",
+        "text": "[removed]",
+        "created_utc": 1676759313,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I feel like I'm living in the future (or some of you are stuck in the past)",
+        "author": "small_kimono",
+        "url": "https://www.reddit.com/r/linux/comments/115tbto/i_feel_like_im_living_in_the_future_or_some_of/",
+        "text": "I'm genuinely mystified as why people still choose ext4 and XFS, or, I suppose, any other filesystem from the 1990s, over ZFS, or even btrfs.\n\nI spent this morning with NILFS2, a lightly used log structured files system, and, while XFS and ext4 are very robust, NILFS2 features seem like magic compared to those of XFS or ext4.  \n\nThis feeling is familiar.  I've been using ZFS for years now.\n\nI just find it weird I can [view unique snapshot file versions](https://github.com/kimono-koans/httm), and restore them immediately if I want to, or [view them as a `diff`s against the live file](https://github.com/kimono-koans/httm/blob/master/scripts/bowie.bash), while others go digging through backups, or don't because that's a pain.  That others make preventative copies, and I just say \"YOLO\". Why?  Because snapshots are cheap.  Why not [take automatic, non-periodic snapshots](https://github.com/kimono-koans/httm/blob/master/scripts/ounce.bash), before you edit any file on my system?  I don't have to wait hours to calculate `rsync` deltas, I just [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html) the 4KB that changed.\n\nI can't get over this attitude of \"I don't need all that/ZFS\", combined with \"Why are backups so hard? And why do they take so long?\", \"I really could use a version of this file I had 3 days ago\", \"I'm just crossing my fingers and hoping my `tar` solution doesn't break.\"  \n\nAre you guys stuck for some reason?  Can I help?",
+        "created_utc": 1676757689,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Creating a Linux-like OS from Scratch",
+        "author": "celestial-voyager",
+        "url": "https://www.reddit.com/r/linux/comments/115t7tw/creating_a_linuxlike_os_from_scratch/",
+        "text": "[removed]",
+        "created_utc": 1676757479,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Bluetooth not working for Go app but hcitool scan works",
+        "author": "Sufficient_Tree4275",
+        "url": "https://www.reddit.com/r/linux/comments/115rt1z/bluetooth_not_working_for_go_app_but_hcitool_scan/",
+        "text": "[removed]",
+        "created_utc": 1676755024,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wifi problem on Linux",
+        "author": "DaCrab002",
+        "url": "https://www.reddit.com/r/linux/comments/115p5d8/wifi_problem_on_linux/",
+        "text": "[removed]",
+        "created_utc": 1676751366,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to configure Grub Terminal",
+        "author": "KoBruhX",
+        "url": "https://www.reddit.com/r/linux/comments/115ns92/how_to_configure_grub_terminal/",
+        "text": "[removed]",
+        "created_utc": 1676749450,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "`httm` now offers NILFS2 support",
+        "author": "small_kimono",
+        "url": "https://www.reddit.com/r/linux/comments/115ne4e/httm_now_offers_nilfs2_support/",
+        "text": "[httm](https://github.com/kimono-koans/httm/) prints the size, date and corresponding locations of available unique versions (deduplicated by modify time and size) of files residing on snapshots, and can also be used *interactively* to select, restore, and snapshot files. New in `httm` version [0.22.0](https://github.com/kimono-koans/httm/releases/tag/0.22.0):\n\nNILFS2 is a very interesting log-structured filesystem which appears to take continuous snapshots.  That is -- you can simply stop the filesystem's GC and rollback, or mount the filesystem at any transaction point.  \n\nThis feature was so interesting to me, it served as inspiration for [ounce](https://github.com/kimono-koans/httm/blob/master/scripts/ounce.bash), a wrapper script for httm which give you no mental overhead, non-periodic dynamic snapshots.\n\nBut NILFS2 also offers traditional snapshots and `httm` now offers NILFS2 support. I've had a lot of fun playing with NILFS2 and the only thing missing for me is a snapshot automounter.  OG NILFS had one (?) and NILFS2 should have one too!  \n\nPlease, please, please, get on that Linux people/NILFS2 enthusiasts!  And just re: my own sanity, please, please, please use something similar to the ZFS snapshot directory structure:\n\n```\n────────────────────────────────────────────────────────────────────────────────\nThu Feb 02 11:59:37 2023  16 bytes  \"/boot/.zfs/snapshot/snap_705fde9e_prepApt/\"\nWed Feb 08 13:33:25 2023  18 bytes  \"/boot/.zfs/snapshot/snap_e9ef4fdd_prepApt/\"\nWed Feb 08 13:35:49 2023  20 bytes  \"/boot/.zfs/snapshot/snap_b03e5b84_prepApt/\"\nWed Feb 08 13:37:38 2023  20 bytes  \"/boot/.zfs/snapshot/snap_e9b8e52e_prepApt/\"\nWed Feb 08 13:57:16 2023  16 bytes  \"/boot/.zfs/snapshot/snap_45fbf6f6_prepApt/\"\nTue Feb 14 12:47:17 2023  16 bytes  \"/boot/.zfs/snapshot/snap_d5e09e7b_prepApt/\"\nWed Feb 15 09:52:02 2023  16 bytes  \"/boot/.zfs/snapshot/snap_788f3e89_prepApt/\"\nWed Feb 15 10:19:17 2023  16 bytes  \"/boot/.zfs/snapshot/snap_a717df70_prepApt/\"\n────────────────────────────────────────────────────────────────────────────────\nWed Feb 15 10:19:17 2023  16 bytes  \"/boot\"\n────────────────────────────────────────────────────────────────────────────────\n```",
+        "created_utc": 1676748914,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is a good kernel for a simple server on a cheap old laptop?",
+        "author": "one_with_the_scum",
+        "url": "https://www.reddit.com/r/linux/comments/115mt8o/what_is_a_good_kernel_for_a_simple_server_on_a/",
+        "text": "Hello, I have an old Toshiba Laptop (4GB Ram) and plan on getting a Thinkpad T430. I want to use the Toshiba laptop as a very simple server (Arch based) for git or something, and then use the Thinkpad and my gaming computer (where I'm writing this from) for doing tasks and then commit changes to my simple home laptop server. I was wanting to know what kind of kernel is good for servers, especially for cheap low end stuff like my Toshiba laptop. I heard Hardened is pretty good with the security aspect, but I just wanted to hear other opinions for this. Any other tips for eventually setting this server up will be appreciated as well. :)",
+        "created_utc": 1676747725,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Noob question, wiped Mint, installed Kali and now stuck",
+        "author": "K4ot1K",
+        "url": "https://www.reddit.com/r/linux/comments/115mmm1/noob_question_wiped_mint_installed_kali_and_now/",
+        "text": "[removed]",
+        "created_utc": 1676747226,
+        "upvote_ratio": 1.0
+    }
+]

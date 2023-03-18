@@ -1,0 +1,794 @@
+[
+    {
+        "title": "I admit, I'm not proud of this one..",
+        "author": "Luxilia",
+        "url": "https://puu.sh/B7oiq/5c972ea672.png",
+        "text": "",
+        "created_utc": 1533210860,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Iterating over a linked list",
+        "author": "peteg_is",
+        "url": "https://www.reddit.com/r/programminghorror/comments/93y87f/iterating_over_a_linked_list/",
+        "text": "This is an old one. There's a linked list of things, with a next pointer pointing to the next thing in the list.\n\nIt looked something like this:\n\n    struct Thing\n    {\n        ... other fields of interest\n        Thing *next;\n    }\n\n    auto thing = firstThingInList;\n\n    for (int i = 0; i &lt; numberThingsInList; i++)\n    {\n        ... stack of thing processing...\n        thing-&gt;next;\n    }\n\nIt worked fine when there was just one thing in the list, but the moment you add more things, thing start to go wrong. I showed it to the author who saw nothing wrong with it.",
+        "created_utc": 1533206991,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "New, amazing way to get the first element of a list!",
+        "author": "Casiell89",
+        "url": "https://www.reddit.com/r/programminghorror/comments/93xktg/new_amazing_way_to_get_the_first_element_of_a_list/",
+        "text": "Just wanted to share with you guys this fun piece of code I found in a software I'm currently \"fixing\".\n\n    T firstListElement;\n    \n    for(int i = 0; i &lt; list.Count; i++)\n    {\n        if(i == 0)\n            firstListElement = list[i];\n    }\n\nYes, I'm not mistaken, there was no \"break\". This was in a method that was called few thousand times while the programm was running and the list was usually bigger than 500 elements.",
+        "created_utc": 1533199482,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "10 Reasons Why Programmers Are More Fun to Date",
+        "author": "umair-qureshi",
+        "url": "https://www.reddit.com/r/programminghorror/comments/93q1ed/10_reasons_why_programmers_are_more_fun_to_date/",
+        "text": "[removed]",
+        "created_utc": 1533137899,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "switch is just syntax sugar for goto anyway, right?",
+        "author": "throwAB49259BF561",
+        "url": "https://www.reddit.com/r/programminghorror/comments/93hhv3/switch_is_just_syntax_sugar_for_goto_anyway_right/",
+        "text": "[removed]",
+        "created_utc": 1533064700,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Description of production legacy code",
+        "author": "zgoldberg",
+        "url": "https://www.reddit.com/r/programminghorror/comments/93g8oq/description_of_production_legacy_code/",
+        "text": "A senior dev on my team is reviewing/learning some legacy code.  He wrote up an English description of how it works, it's all a bit of a tear-jerker, but this bit really caught my eye:\n\n&gt;Instead of just using information in the database, it seems to write PHP scripts that pull in information from the database and combine it with manual configuration to automate the creation of more PHP code. The generated PHP code is what runs the website, pulling from the database only for result information. This may be an attempt at optimization as the ids are always known in advance and the database is only queried for exact rows. It does make for a problem understanding code, as they would base the next site off of whatever came before, producing evolving versions of code all running at the same time.",
+        "created_utc": 1533056333,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's the worst fuckup you've made as a developer?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/93ed6b/whats_the_worst_fuckup_youve_made_as_a_developer/",
+        "text": "[deleted]",
+        "created_utc": 1533042836,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Well shit what do I do now?",
+        "author": "Valiox",
+        "url": "https://i.redd.it/89bem1ge22d11.png",
+        "text": "",
+        "created_utc": 1532943482,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Whatever code makes this possible must be truly horrible. Unless it’s just the font pack but even then...",
+        "author": "Endlessdex",
+        "url": "https://imgur.com/fOzwfMg",
+        "text": "",
+        "created_utc": 1532920776,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "His string literals are literally string",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/0me77ngxgxc11.jpg",
+        "text": "[deleted]",
+        "created_utc": 1532889888,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Preparing for the last rites of python",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/kcmp4c2cxuc11.jpg",
+        "text": "[deleted]",
+        "created_utc": 1532857000,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hmm...",
+        "author": "snowflakecup",
+        "url": "https://i.redd.it/x6tity9xusc11.jpg",
+        "text": "",
+        "created_utc": 1532831974,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If expression kotlin",
+        "author": "yatrashree",
+        "url": "http://www.kotlinguide.net/2018/06/kotlin-if-expression.html?m=1",
+        "text": "",
+        "created_utc": 1532754103,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Osama Nasereddin",
+        "author": "shamcenter2018",
+        "url": "https://www.facebook.com/osama.bussiness/",
+        "text": "",
+        "created_utc": 1532734002,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Y2K8 - Story (short)",
+        "author": "[deleted]",
+        "url": "https://www.computerworld.com/article/3293256/data-center/throwback-thursday-is-this-the-end-for-y2k.html",
+        "text": "[deleted]",
+        "created_utc": 1532616376,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Overheard at work: \"Check out these new databases I created guys, next steps will be to get them on the cloud and read them into my program using a ML algorithm called pandas.read_csv\"",
+        "author": "IAmOnYourSide",
+        "url": "https://i.redd.it/pwn5f4vvsac11.jpg",
+        "text": "",
+        "created_utc": 1532613409,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When I come to support an existing dev team with bad git practice",
+        "author": "krazyito65",
+        "url": "https://www.reddit.com/r/programminghorror/comments/91vwzp/when_i_come_to_support_an_existing_dev_team_with/",
+        "text": "If you don't know how a general git workflow should look, this might not make sense to you.\n\nSo lets give a little background.  I'm an environment support guy for a dev team who apparently does not have great git practices.  I'm not sure how they managed before I got there (I've been on the team for about 8 months now). \n\nNow realize, that my team of support guys (3) all started about the same time, but the dev team was kind of self sustaining for a while.  They were small, but are now growing larger with more pods to work on their stories.  I learned about their 'develop' branch as well as how their Release branches worked and that master was only what was in production. Sure basic stuff.\n\nNow, I've been somewhat cleaning up their git repository since I've gotten there, simply making small changes to the code base (mostly sql scripts) that break the automation I wrote to deploy them.  They also have a web app that they deploy.\n\nSo I only knew very basic git when I started, lets say in January. I knew how to push, pull, commit.  I knew what pull-requests were.  Over the next few months I learned how to set up a proper git workflow for my small team to work on our automation and I would manage our personal repo with our automation tools.\n\nI started liking the whole management side of it, making sure everyone followed the structure and that the code being pushed in was sync'd properly.  Then I was informed I had to merge their release branch into the master branch after our release to production.  OK sure, I can handle that. (We build our production builds off of the release branches, not master)\n\nThe first one happened in November.  I barely knew what was going on.  When I tried to do the merge, it seemed fine there were conflicts, but they seems easy to figure out what goes where.  Same thing with the 2nd one in April / May.   \n\nNow this one came up and I'm starting to see WAY more conflicts and with my new found knowledge of how git workflows work, I started seeing issues that I felt like should not have happened with a proper workflow.  \n\nI started to dig a bit deeper and as I look at the PR history I began to realize that these devs were making a branch for both the RELEASE and the DEVELOP branch..  I looked at the commits and sure enough they were making the same exact commits to the code, twice, for each branch and making a new PR for for both branches instead of for 1.\n\nNow if you have managed or been a part of large git workflow project you'll realize that this is horrible when you start merging down because literally everything they changed after the release branch was cut from the develop branch would have conflicts since the commit hashes are different (even though the delta is probably the same).\n\nNow I'm stuck trying to fix this https://i.imgur.com/ANZaIoZ.png.\n\nI'll fix it, but I'm about to rain hell and change their process.",
+        "created_utc": 1532553193,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Holy CSS Batman! Check out the number of classes.",
+        "author": "jewdai",
+        "url": "https://i.imgur.com/k4Pc8sr.png",
+        "text": "",
+        "created_utc": 1532539912,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I guess the return value is quite random. Found in production-code",
+        "author": "Mawe9999",
+        "url": "https://i.redd.it/nky5dghun3c11.jpg",
+        "text": "",
+        "created_utc": 1532527056,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Debugging over Slack",
+        "author": "jab-programming",
+        "url": "https://i.redd.it/vtkie6dcczb11.png",
+        "text": "",
+        "created_utc": 1532474883,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you leave the junior unsupervised",
+        "author": "kontrol_kl",
+        "url": "https://i.redd.it/jne6v2mhpqb11.png",
+        "text": "",
+        "created_utc": 1532370115,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "In IT Fileds",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/7hcexsdspob11.jpg",
+        "text": "[deleted]",
+        "created_utc": 1532345972,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you're trying to be a real bank but you forget to update your web server's default page",
+        "author": "gabe870",
+        "url": "https://i.redd.it/k50u31ol2eb11.png",
+        "text": "",
+        "created_utc": 1532217391,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What do you mean by new-line?",
+        "author": "[deleted]",
+        "url": "https://image.ibb.co/cCVwuJ/carbon.png",
+        "text": "[deleted]",
+        "created_utc": 1532216447,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm glad they're not using tables for their site layout, but I'm not convinced this is an improvement.",
+        "author": "TetrinityEC",
+        "url": "https://i.redd.it/w13wkfxdbcb11.png",
+        "text": "",
+        "created_utc": 1532195879,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "It's not using tables for layout, but it's not exactly an improvement.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/96l4rmpuacb11.png",
+        "text": "[deleted]",
+        "created_utc": 1532195788,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"The form validation is done, boss.\"",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/aykjawl3xbb11.png",
+        "text": "[deleted]",
+        "created_utc": 1532191111,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My friend's code",
+        "author": "OldPepper12",
+        "url": "https://i.redd.it/9x7xouxax6b11.png",
+        "text": "",
+        "created_utc": 1532130587,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is why people hate regions in C#.",
+        "author": "ElGuaco",
+        "url": "https://www.reddit.com/r/programminghorror/comments/90j6r9/this_is_why_people_hate_regions_in_c/",
+        "text": "Personally, I like them. But then today I ran across this gem.\n\n    #region Redundant Code\n\n\nA quick dive showed two private static methods where method A was called by method B but nothing called B. Unused code. \n\nJUST. DELETE. UNUSED. CODE.\n\nIt's OK, we have git if we need it back. \n\n",
+        "created_utc": 1532116409,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why bother with one SQL query when you can have 4?",
+        "author": "Return_Of_The_Fly",
+        "url": "https://www.reddit.com/r/programminghorror/comments/90gqps/why_bother_with_one_sql_query_when_you_can_have_4/",
+        "text": "Found this in production today (simplified, of course)\n\n    string qry_1 = @\"Query, that counts rows\";\n\n    int errors = Convert.ToInt32(db.sqlScalar(qry_1));\n    if (errors &gt; 0)\n    {\n        string qry_2= @\"Same query, but this time select specific fields, not just the count\";\n\n        ArrayList list = db.sqlReader(qry_2);\n        //Do some work with that list\n\n        string qry_3 = @\"Same query, this time with different fields\";\n        List&lt;List&lt;string&gt;&gt; ErrorList = db.getList(qry_3);\n\n        if (ErrorList.Count() &gt; 0)\n        {\n            //Do stuff\n            string qry_4 = \"Same query as qry_1\";\n            int returnVal = Convert.ToInt32(db.sqlScalar(qry_4).ToString());\n            if (returnVal == 0 &amp;&amp; ErrorList.Count() == 0)\n            {\n                return true;\n            }\n            else\n            {\n                return false;\n            }\n        }\n    }\n\nI really don't know what the thought process of this was, but I trimmed it down to just one query. And yes, I threw out that list of string lists, too.",
+        "created_utc": 1532099135,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Because not all strings are made equal.",
+        "author": "wyllyam1111",
+        "url": "https://i.redd.it/7a3zdy7ptza11.jpg",
+        "text": "",
+        "created_utc": 1532044613,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Last year, I attended a Raspberry Pi \"information session\" run by a CE student and two third-year CS students. This is the only picture I took. I think it speaks for itself.",
+        "author": "vlaridus",
+        "url": "https://i.redd.it/lunck6rbkya11.png",
+        "text": "",
+        "created_utc": 1532029528,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Database \"Architecture\" - humour (short)",
+        "author": "[deleted]",
+        "url": "https://www.computerworld.com/article/3290362/application-development/throwback-thursday-how-to-guarantee-business-will-grow.html",
+        "text": "[deleted]",
+        "created_utc": 1532007307,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Source Control Shingle - story (short)",
+        "author": "[deleted]",
+        "url": "https://thedailywtf.com/articles/classic-wtf-the-source-control-shingle",
+        "text": "[deleted]",
+        "created_utc": 1531834124,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[No Actual Programming]Some time ago, I tried designing a custom case for my phone. A few years later I am faced with this uncommented wall of script.",
+        "author": "virtualrandomnumber",
+        "url": "https://i.imgur.com/4KpsxIF.png",
+        "text": "",
+        "created_utc": 1531763199,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What makes a bad programmer so bad, that he's good?",
+        "author": "lazydogg9",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8z231i/what_makes_a_bad_programmer_so_bad_that_hes_good/",
+        "text": "",
+        "created_utc": 1531664979,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "...",
+        "author": "X-lem",
+        "url": "https://i.redd.it/4552e2ofqx911.jpg",
+        "text": "",
+        "created_utc": 1531604939,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is \"cursor:pointer\" effect in CSS not working",
+        "author": "smoov3",
+        "url": "https://stackoverflow.com/a/35212344",
+        "text": "",
+        "created_utc": 1531593478,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Refactoring the trainee's code",
+        "author": "Renondedju",
+        "url": "https://v.redd.it/br1mjvf71y911",
+        "text": "",
+        "created_utc": 1531587472,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Refactoring the trainee's code",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/kf716dba0y911.gif",
+        "text": "[deleted]",
+        "created_utc": 1531586865,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My bosses don't know anything about programming so I wrote this and explained the program's functionality using phrases like \"maximum overhead\", \"code base\", \"memory management\", \"Object oriented programming\" and \"primary user interface\":",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/xdmnkrjx2x911.png",
+        "text": "[deleted]",
+        "created_utc": 1531575561,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Aliens: Colonial Marines AI fixed by a single letter",
+        "author": "lempamo",
+        "url": "https://www.resetera.com/threads/aliens-colonial-marines-ai-fixed-by-a-single-letter.55247/",
+        "text": "",
+        "created_utc": 1531551500,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's the one 'Oh Snap, Rollback !!' moment that you remember ?",
+        "author": "babbarshaer",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8yk5z0/whats_the_one_oh_snap_rollback_moment_that_you/",
+        "text": "",
+        "created_utc": 1531490094,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "for (let i = 0, i &lt; array.length, i++) { i = 0 };",
+        "author": "rogriloomanero",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8yje2k/for_let_i_0_i_arraylength_i_i_0/",
+        "text": "[removed]",
+        "created_utc": 1531483493,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "You know you have been using Emacs for quite sometime when you do C-x C-s in Vim and it becomes unresponsive",
+        "author": "rvkrysh",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8yj5oo/you_know_you_have_been_using_emacs_for_quite/",
+        "text": "",
+        "created_utc": 1531481192,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Programming error causes most monsters in Old School Runescape to drop 2.147 billion gold",
+        "author": "dolphinspired",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8yf3gd/programming_error_causes_most_monsters_in_old/",
+        "text": "Here's a summary of the root cause:\n\n&gt; One of the team was implementing the code for the pickpocketing update. This involved producing stackable pouches that are treated as being coins. On death, the aim was to convert them into real coins, partly so that a PKer could get the value if applicable.\n\n&gt; When converting a stack of items into a stack of coins, it's appropriate to check that the calculation doesn't overflow the max integer limit of the game's language (2.1 billion). Unfortunately, the logic used for this calculation was incorrect, and when executed on stacks of other items (not the pouch itself) the result was to convert the stack to 2.1b coins.\n\n&gt; Regrettably, although the pouches were found to be acting correctly during testing, the flaw affecting other items was not spotted as it was not expected to have changed.\n\nYou can read the full story [here](http://services.runescape.com/m=news/old-school-runescape-status-update?oldschool=1), or the reddit/twitch reaction [here](https://www.reddit.com/r/2007scape/comments/8y8oaj/every_pk_gives_max_cash_rollback_inc/).\n\nIt's worth noting that because of the potentially far-reaching effect of dumping billions of gold into the game's economy, the team decided to roll back all players' progress to before the broken update was released, resulting in thousands of players losing about 30 minutes of progress. This is only the second time in the game's history (launched in 2001) that the team has had to roll back the entire game's state due to a bug, with the other being a [runecrafting XP typo in 2010](https://runescape.wikia.com/wiki/Update:Temporary_Server_Shutdown/Rollback).\n\nAlways run your regressions, friends!",
+        "created_utc": 1531440315,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "IT/Programming Development Megapack [75.60 GB)] PART I",
+        "author": "wizonimo",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8ydk1o/itprogramming_development_megapack_7560_gb_part_i/",
+        "text": "[removed]",
+        "created_utc": 1531428374,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "checkCurrencies(currency)",
+        "author": "Torgard",
+        "url": "https://i.imgur.com/cbwv0ff.png",
+        "text": "",
+        "created_utc": 1531392582,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Macros for incrementing and decrementing in the Marlin 3D printer firmware",
+        "author": "jrw01",
+        "url": "https://i.redd.it/w0xy2m194f911.png",
+        "text": "",
+        "created_utc": 1531358133,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this gem in a new backend I'm working with",
+        "author": "WiseCounty",
+        "url": "https://i.redd.it/vwdj83wma3911.png",
+        "text": "",
+        "created_utc": 1531214945,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The most disgusting bug I've ever come across",
+        "author": "decster584",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8xgcho/the_most_disgusting_bug_ive_ever_come_across/",
+        "text": "One day, on one of the legacy iOS apps I've inherited, nobody could log in at all. Bear in mind this is an app that hasn't been updated for nearly 4 years but this didn't coincide with any OS updates so it wasn't due to that. What was described sounded like an API problem but I humoured the backend guys and looked into it anyway.\n\nWe're getting a fucky response from the backend complaining about certificates - I try and go via Chrome to the authentication endpoint and get a basic auth message. Ok, so I can see the problem - we're not getting past basic auth. But why? On Chrome the basic auth works perfectly, so it's not server side. So I look into the code that's making the actual request:\n\n    NSMutableURLRequest * loginHTTPRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];\n    [loginHTTPRequest setValue:@\"application/json\" forHTTPHeaderField:@\"Accept\"];\n    [loginHTTPRequest addValue:[self getBasicAuthForName:userName password:password]  forHTTPHeaderField:@\"Authorization\"];\n\nWell, that seems reasonable - partially deprecated, but still functional. And we're passing the auth in, so why's it not working? Oh, hang on, what's getBasicAuthForName do?\n\n    -(NSString*)getBasicAuthForName:(NSString*)userName password:(NSString*)password{\n        // create a plaintext string in the format username:password\n        userName = @\"adminaccount\";\n        password = @\"hunter2\";\n        NSMutableString *loginString = (NSMutableString*)[@\"\" stringByAppendingFormat:@\"%@:%@\", userName, password];\n        // employ the Base64 encoding above to encode the authentication tokens\n        NSString *encodedLoginData = [Base64 encode:[loginString dataUsingEncoding:NSUTF8StringEncoding]];\n        \n        // create the contents of the header \n        return [@\"Basic \" stringByAppendingFormat:@\"%@\", encodedLoginData];\n    }\n\n\nWait, wait wait. What the fuck.\nWhat. the fuck.\n     \n    userName = @\"adminaccount\";\n    password = @\"hunter2\";\n    \nThey're fucking overriding the username and password with a hardcoded admin account. Meaning that for EVERY single request that has been made over the app has sent fucking admin login details with it. My fucking eyes. Turns out that the admin in question had left the company and his account has been deactivated, which has caused widespread blackouts. ",
+        "created_utc": 1531170996,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just spend 3 hours debugging why my custom view was not accepting click events only to find this! Thank you android 😑",
+        "author": "F_soceity",
+        "url": "https://i.redd.it/5c63hv7qxy811.png",
+        "text": "",
+        "created_utc": 1531162657,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "it \"smart\" recruiters...Java and JS is not the same!!!",
+        "author": "ksushbush",
+        "url": "https://i.redd.it/5zf5ihx9ty811.jpg",
+        "text": "",
+        "created_utc": 1531160921,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Learn Website Hacking / Penetration Testing From Scratch Course [94% Off]",
+        "author": "Giallegaince512",
+        "url": "https://twitter.com/the_deal_sniper/status/1016131417137221632?s=17",
+        "text": "",
+        "created_utc": 1531099956,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When recruiter spam became creative?",
+        "author": "ksushbush",
+        "url": "https://i.redd.it/1gz9uhyxfp811.jpg",
+        "text": "",
+        "created_utc": 1531047252,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Using a bot that tweets out, unfiltered, any input that visitors to your website might type in [x-post /r/classic4chan]",
+        "author": "rocketman0739",
+        "url": "https://i.imgur.com/DPIjUkO.jpg",
+        "text": "",
+        "created_utc": 1531027193,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with Random Binary data analysis program",
+        "author": "PacificCrestFisher",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8wrmnk/help_with_random_binary_data_analysis_program/",
+        "text": "Looking for someone who can run a program that graphs random binary data to confirm 50% probability, specifically the probability of heads after a series of tails in a row. Theorize quantum physics probability of heads is greater after a long series of tails in a row.",
+        "created_utc": 1530949997,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "using high-precision decimal expansions to infer the fractions they came from",
+        "author": "lewisje",
+        "url": "https://arstechnica.com/gaming/2018/07/steam-data-leak-reveals-precise-player-count-for-thousands-of-games/",
+        "text": "",
+        "created_utc": 1530941603,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just want to thank Google for these crucial 500 pixels of padding",
+        "author": "Athaa",
+        "url": "https://i.imgur.com/BIVK2Kq.png",
+        "text": "",
+        "created_utc": 1530927359,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just wanted to thank Google for those crucial 500px of padding",
+        "author": "[deleted]",
+        "url": "https://i.imgur.com/BIVK2Kq.png",
+        "text": "[deleted]",
+        "created_utc": 1530927129,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who would win: one codebase vs one circular dependency boi",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/lvzqw54kie811.png",
+        "text": "[deleted]",
+        "created_utc": 1530914937,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nintendo Store's way of applying product filters",
+        "author": "DropTheGauntlet",
+        "url": "https://i.redd.it/8dcjipp5be811.png",
+        "text": "",
+        "created_utc": 1530912441,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hello, [First name-rockstar-ninja]. Someday recruiters will be aware of their stupidity.",
+        "author": "ksushbush",
+        "url": "https://i.redd.it/qu4qditlnc811.jpg",
+        "text": "",
+        "created_utc": 1530892848,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you reply on irrelevant recruiters’ messages?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8wl5r0/how_do_you_reply_on_irrelevant_recruiters_messages/",
+        "text": "[deleted]",
+        "created_utc": 1530892243,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[JS] Is it an Array or is it an Object? Does it even know?",
+        "author": "Duroktar",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8wgooj/js_is_it_an_array_or_is_it_an_object_does_it_even/",
+        "text": "[Does this qualify? Based on an initialization block in the code-base I'm currently working on where an array is used as an object, either mistakenly \\(please let it be mistakenly\\) or otherwise..](https://i.redd.it/fospiczqu8811.png)",
+        "created_utc": 1530846651,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hulu has sent me a promotional email with my password instead of username in the header",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/2fwt41w0n6811.png",
+        "text": "[deleted]",
+        "created_utc": 1530819577,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sure, let's maintain twice the code!",
+        "author": "-manabreak",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8w7kdu/sure_lets_maintain_twice_the_code/",
+        "text": "There was recently a PR with code like this (simplified, but you get the idea):\n\n    List&lt;Foo&gt; filterX() {\n        List&lt;Foo&gt; newList = new ArrayList&lt;&gt;();\n        for (Foo foo : this.foos) {\n            if (foo.isGood()) newList.add(foo);\n        }\n        return newList;\n    }\n\n    List&lt;Foo&gt; filterY() {\n        List&lt;Foo&gt; newList = new ArrayList&lt;&gt;();\n        for (Foo bar : this.bars) {\n            if (bar.isGood()) newList.add(bar);\n        }\n        return newList;\n    }\n\nThey do exactly the same thing for two different fields. I suggested that you could extract the source list to a parameter and just have one method. The author commented: \"Nah, it's fine, I don't mind having the extra method.\"\n\n...sigh. At that point, I stared at the screen for for a while, let my head down and left for a prolonged coffee break, reflecting on my career choice as I chugged down my overly-bitter cup of joe. \n\nI *really* wanted to yell at them for not considering that there's other people working on the code as well, and this is more than likely to end up in a situation where the other method is changed *just a little bit* whereas they overlook the other method that should be updated as well.",
+        "created_utc": 1530763672,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "killed by a fucking text editor",
+        "author": "tommysterling",
+        "url": "https://i.redd.it/s2586vtbd1811.png",
+        "text": "",
+        "created_utc": 1530756036,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you accidentally put the comments in the name of the function",
+        "author": "bibimbaplover",
+        "url": "https://i.redd.it/5ipkyjuhc0811.png",
+        "text": "",
+        "created_utc": 1530743473,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Getting mixed content warnings because someone hard-coded \"http://\" in an image loader class.",
+        "author": "mikat7",
+        "url": "https://i.redd.it/j34v41t9cw711.png",
+        "text": "",
+        "created_utc": 1530695904,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ironic",
+        "author": "mylovelyhorse101",
+        "url": "https://imgur.com/a/HSXEUIE",
+        "text": "",
+        "created_utc": 1530694939,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Our website supplier left the whole git repo in production",
+        "author": "mikat7",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8vsngz/our_website_supplier_left_the_whole_git_repo_in/",
+        "text": "Sorry if this doesn't belong here, but I wanted to share a little surprise I found today.\n\nI was trying to do some changes to our company's website, so I downloaded the files from the FTP server where our website is hosted.\n\nTo prevent any possible mistakes, I created a repo on my local machine, so in the worst case I could revert the changes.\n\n    $ git init\n    Initialized empty Git repository in *censored*\n    $ git add .\n    warning: adding embedded git repository: *censored*\n    hint: You've added another git repository inside your current repository.\n    hint: Clones of the outer repository will not contain the contents of\n    hint: the embedded repository and will not know how to obtain it.\n    hint: If you meant to add a submodule, use:\n    hint: \n    hint:   git submodule add &lt;url&gt; *censored*\n    hint: \n    hint: If you added this path by mistake, you can remove it from the\n    hint: index with:\n    hint: \n    hint:   git rm --cached *censored*\n    hint: \n    hint: See \"git help submodule\" for more information.\n    warning: adding embedded git repository: *censored*\n\nWell that's strange I thought. So I looked into one of the subfolders and found a whole `.git` folder. It contained a rich commit history, remote branch url of their private server (only the password is missing, otherwise I could fetch/pull everything new + unlimited ssh access) and all devs' names + email addresses. Maybe I'll find more interesting stuff later when I explore more of that code base.",
+        "created_utc": 1530628303,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you are having one of those days",
+        "author": "MuDstravaga",
+        "url": "https://i.redd.it/llh2v3xv7o711.jpg",
+        "text": "",
+        "created_utc": 1530596571,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I just don't get how people hand write lexers without thoughts of violent acts",
+        "author": "ponybau5",
+        "url": "https://pastebin.com/FXeRU3z5",
+        "text": "",
+        "created_utc": 1530453121,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My first program. I wrote it before learning anything about programming.",
+        "author": "enoua5",
+        "url": "https://i.redd.it/5aue28byk2711.png",
+        "text": "",
+        "created_utc": 1530334694,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Make your code as readable as possible",
+        "author": "pepepy",
+        "url": "https://i.redd.it/r9guucfcj1711.jpg",
+        "text": "",
+        "created_utc": 1530321953,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Not that gory, but oof",
+        "author": "NoahLPearson",
+        "url": "https://i.redd.it/3nnzh7lb0z611.jpg",
+        "text": "",
+        "created_utc": 1530291357,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"And what now?\"",
+        "author": "[deleted]",
+        "url": "https://pbs.twimg.com/media/DgxdTgLX4AAGyPo.jpg",
+        "text": "[deleted]",
+        "created_utc": 1530283347,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Consistency",
+        "author": "awegge",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8utb2w/consistency/",
+        "text": "There's nothing like spending a day trying to find out what fudgery is happening inside the 8018x interrupt controller, just to find out that someone ought to have been flogged with a cat-o-nine-tails on a daily basis.\n\nEnjoy, and have a nice weekend.\n\n\n#riciop.h\n\n    #define io_imask\t0xff28\t\t/* Interrupt mask register\t*/\n    #define io_pmask\t0xff2a\t\t/* Priority mask register\t*/\n\n#knl_lock.s\n\n    io_imask\tequ\t0ff2ah\t\t; Interrupt mask\n",
+        "created_utc": 1530280532,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "xampp server || How to download install and run xampp server || xamppserver download install and run",
+        "author": "maf75000",
+        "url": "https://i.redd.it/0tcilg06gw611.png",
+        "text": "",
+        "created_utc": 1530262880,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Database management project in php mysql || DBMS project || complete dbms project in php and mysql",
+        "author": "maf75000",
+        "url": "https://i.redd.it/kneannabfw611.png",
+        "text": "",
+        "created_utc": 1530260404,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this the end of the world?",
+        "author": "Zephyron51",
+        "url": "https://i.redd.it/mtvybfllxv611.png",
+        "text": "",
+        "created_utc": 1530254111,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My Awful First Program",
+        "author": "antjciulla",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8uqw18/my_awful_first_program/",
+        "text": "I wrote this when I was a full time marketer for a home health company. I was trying to learn Python and this happened :P\n\nhttps://i.redd.it/45ijyc3cuv611.png",
+        "created_utc": 1530252909,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found the highlighted part added to a method today.",
+        "author": "milkybuet",
+        "url": "https://i.redd.it/sbk6s1yo4u611.png",
+        "text": "",
+        "created_utc": 1530232407,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Uh nothing to see here just 3 nested for loops and 4 nested if statements... the whole code base is an imperative mess...",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/9042qw77xs611.png",
+        "text": "[deleted]",
+        "created_utc": 1530217760,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Oof",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/s5zcezp93q611.jpg",
+        "text": "[deleted]",
+        "created_utc": 1530190789,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Because sometimes using Hungarian Notation isn't enough to make your cow-orkers w ant to hurt you...",
+        "author": "Targren",
+        "url": "https://i.imgur.com/6G10Nax.png",
+        "text": "",
+        "created_utc": 1530143908,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Made frogger (spanish) , its not very good lol . Im posting it on r/learnprogramming as well so that it can hopefully be of use for someone. Any questions and critisim is encoraged",
+        "author": "HolaSoyDiego1403",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8uef82/made_frogger_spanish_its_not_very_good_lol_im/",
+        "text": "1. \\#include \"stdafx.h\"\n2. \\#include &lt;iostream&gt;\n3. \\#include &lt;conio.h&gt;\n4. \\#include &lt;windows.h&gt;\n5. \\#using &lt;mscorlib.dll&gt;\n6. using namespace System;\n7. using namespace std;\n\n&amp;#8203;\n\n    int nivel = 0;\n    bool gameover = false;\n    const int width = 20;\n    const int height = 20;\n    int contador = 0;\n    int x, y, log1X, log1y, log2x, log2y, log3X, log3y, log4x, log4y;\n    int Pistax, Pistay,PistayC;\n    int *ptrhig = new int[20];\n    enum edirection { stop = 0, LEFT, RIGHT, UP, DOWN };\n    edirection dir;\n    void centro(int x, int y) {\n        COORD c = { x,y };\n        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);\n    }\n    void comienzo()\n    {\n        dir = stop;\n        gameover = false;\n        x = width / 2;\n        y = height - (height / 10);\n        log1X = rand() % width;\n        log1y = height / 4;\n        log2x = rand() % width;\n        log2y = height - (height / 5);\n        log3X = rand() % width;\n        log3y = ((rand() % 10 + 10));\n        log4x = rand() % width;\n        log4y = ((rand() % 10 + 10));\n        Pistax = 6;\n        Pistay = (2);\n        PistayC = 18;\n    }\n    int dibujo()\n    {\n        char pared = 219;\n        system(\"cls\");\n        if (nivel == 0)\n        {\n            for (int i = 0; i &lt; width + 2; i++)\n            {\n                cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n            }\n            cout &lt;&lt; endl;\n            {\n                for (int i = 0; i &lt; height; i++)\n                {\n                    for (int j = 0; j &lt;= width; j++)\n                    {\n                        if (j == 0)\n                        {\n                            cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                        }\n                        else if (i == y &amp;&amp; j == x)\n                        {\n                            cout &lt;&lt; \"o_o\";\n                        }\n                        else if (i == log1y &amp;&amp; j == log1X)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else if (i == log2y &amp;&amp; j == log2x)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else if (i == log3y &amp;&amp; j == log3X)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else if (i == log4y &amp;&amp; j == log4x)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else if ((i == Pistax) &amp;&amp; (j != Pistay) &amp;&amp; (j != PistayC))//hago los huecos en la pista para que salga\n                        {\n                            cout &lt;&lt; \"000\";\n                        }\n                        else\n                        {\n                            cout &lt;&lt; \"   \";\n                        }\n                        if (j == width)\n                            cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                    }\n                    cout &lt;&lt; \"\\n\";\n                }\n                for (int i = 0; i &lt; width + 2; i++)\n                    cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n            }\n        }\n        if (nivel == 1)\n        {\n            for (int i = 0; i &lt; width + 2; i++)\n            {\n                cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n            }\n            cout &lt;&lt; endl;\n            {\n                for (int i = 0; i &lt; height; i++)\n                {\n                    for (int j = 0; j &lt;= width; j++)\n                    {\n                        if (j == 0)\n                        {\n                            cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                        }\n                        else if (i == y &amp;&amp; j == x)\n                        {\n                            cout &lt;&lt; \"o_o\";\n                        }\n                        else if (i == log1y &amp;&amp; j == log1X)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else if (i == log2y &amp;&amp; j == log2x)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else if (i == log3y &amp;&amp; j == log3X)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else if (i == log4y &amp;&amp; j == log4x)\n                        {\n                            cout &lt;&lt; \"===\";\n                        }\n                        else\n                        {\n                            cout &lt;&lt; \"   \";\n                        }\n                        if (j == width)\n                            cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                    }\n                    cout &lt;&lt; \"\\n\";\n                }\n                for (int i = 0; i &lt; width + 2; i++)\n                    cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n            }\n        }\n        if (nivel == 2) {\n            {\n                for (int i = 0; i &lt; width + 2; i++)\n                {\n                    cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                }\n                cout &lt;&lt; endl;\n                {\n                    for (int i = 0; i &lt; height; i++)\n                    {\n                        for (int j = 0; j &lt;= width; j++)\n                        {\n                            if (j == 0)\n                            {\n                                cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                            }\n                            else if (i == y &amp;&amp; j == x)\n                            {\n                                cout &lt;&lt; \"o_o\";\n                            }\n                            else if (i == log1y &amp;&amp; j == log1X)\n                            {\n                                cout &lt;&lt; \"===\";\n                            }\n                            else if (i == log2y &amp;&amp; j == log2x)\n                            {\n                                cout &lt;&lt; \"===\";\n                            }\n                            else if (i == log3y &amp;&amp; j == log3X)\n                            {\n                                cout &lt;&lt; \"===\";\n                            }\n                            else if (i == log4y &amp;&amp; j == log4x)\n                            {\n                                cout &lt;&lt; \"===\";\n                            }\n                            else if ((i == Pistax) &amp;&amp; (j != Pistay) &amp;&amp; (j != PistayC))//hago los huecos en la pista para que salga\n                            {\n                                cout &lt;&lt; \"000\";\n                            }\n                            else\n                            {\n                                cout &lt;&lt; \"   \";\n                            }\n                            if (j == width)\n                                cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                        }\n                        cout &lt;&lt; \"\\n\";\n                    }\n                    for (int i = 0; i &lt; width + 2; i++)\n                        cout &lt;&lt; pared &lt;&lt; pared &lt;&lt; pared;\n                }\n            }\n            return 0;\n        }\n    }\n    void entrada() {\n        if (_kbhit())\n        {\n            switch (_getch())\n            {\n            case 'a':\n                dir = LEFT;\n                x--;\n                break;\n            case 'd':\n                dir = RIGHT;\n                x++;\n                break;\n            case 'w':\n                dir = UP;\n                y--;\n                break;\n            case 's':\n                dir = DOWN;\n                y++;\n                break;\n            case 'x':\n                gameover = true;\n                break;\n            }\n        }\n    }\n    void logica()\n    {\n        if (nivel == 0)//logica del nivel infinito\n        {\n            if (y == 0)\n            {\n                contador++;\n                dir = stop;\n                gameover = false;\n                x = width / 2;\n                y = height - (height / 10);\n                log1X = rand() % width;\n                log1y = ((rand() % 10 + 10));\n                log2x = rand() % width;\n                log2y = ((rand() % 10) + 10);\n                log3X = rand() % width;\n                log3y = ((rand() % 10 + 10));\n                log4x = rand() % width;\n                log4y = ((rand() % 10 + 10));\n            }\n            //logica basica de colision\n            if ((y == log1y &amp;&amp; x == log1X))\n            {\n                gameover = true;\n            }\n            if ((y == log2y &amp;&amp; x == log2x))\n                gameover = true;\n            if ((y == log3y &amp;&amp; x == log3X))\n            {\n                gameover = true;\n            }\n            if ((y == log4y &amp;&amp; x == log4x))\n                gameover = true;\n            {log1X--;\n            log3X--;\n            log2x++;\n            log4x++;\n            if (log1X == 0)\n            {\n                log1X = 20;\n            }\n            if (log2x == 20)\n            {\n                log2x = 0;\n            }\n            if (log3X == 0)\n            {\n                log3X = 20;\n            }\n            if (log4x == 20)\n            {\n                log4x = 0;\n            }\n            if (log1y &gt; 18 || log2y &gt; 18 || (log2y == log1y))\n            {\n                x = width / 2;\n                y = height - (height / 10);\n                log1X = rand() % width;\n                log1y = ((rand() % 10 + 10));\n                log2x = rand() % width;\n                log2y = ((rand() % 10) + 10);\n            }\n            }\n        }\n        if (nivel == 1)\n        {\n            if (y == 0)\n            {\n                contador++;\n                dir = stop;\n                gameover = false;\n                nivel = 2;\n            }\n            //logica basica de colision\n            if ((y == log1y &amp;&amp; x == log1X))\n            {\n                gameover = true;\n            }\n            if ((y == log2y &amp;&amp; x == log2x))\n                gameover = true;\n            if ((y == log3y &amp;&amp; x == log3X))\n            {\n                gameover = true;\n            }\n            if ((y == log4y &amp;&amp; x == log4x))\n                gameover = true;\n            {log1X--;\n            log3X--;\n            log2x++;\n            log4x++;\n            if (log1X == 0)\n            {\n                log1X = 20;\n            }\n            if (log2x == 20)\n            {\n                log2x = 0;\n            }\n            if (log3X == 0)\n            {\n                log3X = 20;\n            }\n            if (log4x == 20)\n            {\n                log4x = 0;\n            }\n            if (log1y &gt; 18 || log2y &gt; 18 || (log2y == log1y))//pa que de vueltas el tronco\n            {\n                x = width / 2;\n                y = height - (height / 10);\n                log1X = rand() % width;\n                log1y = ((rand() % 10 + 10));\n                log2x = rand() % width;\n                log2y = ((rand() % 10) + 10);\n            }\n            }\n        }\n        if (nivel == 2)//logica del nivel 2\n        {\n            if (y == 0)\n            {\n                contador++;\n                dir = stop;\n                gameover = false;\n                x = width / 2;\n                y = height - (height / 10);\n                log1X = rand() % width;\n                log1y = ((rand() % 10 + 6));\n                log2x = rand() % width;\n                log2y = ((rand() % 10) + 5);\n                log3X = rand() % width;\n                log3y = ((rand() % 10 + 4));\n                log4x = rand() % width;\n                log4y = ((rand() % 10 + 3));\n            }\n            //logica basica de colision\n            if ((y == log1y &amp;&amp; x == log1X))\n            {\n                gameover = true;\n            }\n            if ((y == log2y &amp;&amp; x == log2x))\n                gameover = true;\n            if ((y == log3y &amp;&amp; x == log3X))\n            {\n                gameover = true;\n            }\n            if ((y == log4y &amp;&amp; x == log4x))\n            {\n                gameover = true;\n            }\n            if ((y == Pistay &amp;&amp; x == Pistax))\n            {\n                gameover = true;\n            }\n            if ((y == Pistax &amp;&amp; x== PistayC))//me confudi y definí las variables al revez Diego del futuro acuerdate de arreglarlo\n            {\n                gameover = true;\n            }\n            {log1X--;\n            log3X--;\n            log2x++;\n            log4x++;\n            PistayC=PistayC-1;\n            Pistay++;\n            if (log1X == 0)\n            {\n                log1X = 20;\n            }\n            if (log2x == 20)\n            {\n                log2x = 0;\n            }\n            if (log3X == 0)\n            {\n                log3X = 20;\n            }\n            if (log4x == 20)\n            {\n                log4x = 0;\n            }\n            if (Pistay == 20)\n            {\n                Pistay = 0;\n            }\n            if (PistayC == 0)\n            {\n                PistayC = 20;\n            }\n            if (log1y &gt; 18 || log2y &gt; 18 || (log2y == log1y))\n            {\n                x = width / 2;\n                y = height - (height / 10);\n                log1X = rand() % width;\n                log1y = ((rand() % 10 + 10));\n                log2x = rand() % width;\n                log2y = ((rand() % 10) + 10);\n            }\n            }\n        }\n    }//como hago el marcador?? en la esquina de la matriz? preguntar al profe urgente\n    void displayMenu() {\n        cout &lt;&lt; \"////////////////////CREADOR: DIEGO VASQUEZ REVILLA /////////////////////////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          Bienvenido  a    Frogger  UPC  edition    ********   *****   *****\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          Empezar:(1)   *   *    **  **   **         **         **      *   *\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          Settings:(2)     **  **   **  ****   **  ****   *****   ****\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          Highscore:(3)  *     **  **   **    **   **   **    **      *  *\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          ESCAPE:(4)  *****   *   *\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"////////////////////INGRESE UN NUMERO:__________ /////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n    }\n    void settingsdisplayMenu() {\n        cout &lt;&lt; \"////////////////////CREADOR: DIEGO VASQUEZ REVILLA /////////////////////////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          Settings:    ********   *****   *****\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          color:(1)   *   *    **  **   **         **         **      *   *\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          dificultad:(2)     **  **   **  ****   **  ****   *****   ****\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"         Jugador(3)\";\n        Sleep(50);\n        cout &lt;&lt; \"          Jugar:(4)  *****   *   *\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"////////////////////INGRESE UN NUMERO:__________ /////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n    }\n    void colorsettingsdisplayMenu() {\n        cout &lt;&lt; \"////////////////////CREADOR: DIEGO VASQUEZ REVILLA /////////////////////////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          color:    ********   *****   *****\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          rojo:(1)   *   *    **  **   **         **         **      *   *\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"          verde:(2)     **  **   **  ****   **  ****   *****   ****\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"         azul(3)\";\n        Sleep(50);\n        cout &lt;&lt; \"          Jugar:(4)  *****   *   *\" &lt;&lt; \"\\n\";\n        Sleep(50);\n        cout &lt;&lt; \"////////////////////INGRESE UN NUMERO:__________ /////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n    }\n    void color() {\n        colorsettingsdisplayMenu();\n        HANDLE hConsoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);\n        switch (_getch())\n        {\n        case '1':\n            SetConsoleTextAttribute(hConsoleHandle, FOREGROUND_RED);\n            break;\n        case '2':\n            SetConsoleTextAttribute(hConsoleHandle, FOREGROUND_GREEN);\n            break;\n        case '3':\n            SetConsoleTextAttribute(hConsoleHandle, FOREGROUND_BLUE);\n            break;\n        case '4':\n            break;\n        }\n    }\n    void settings() {\n        settingsdisplayMenu();\n        switch (_getch())\n        {\n        case '1':\n            color();\n            break;\n        case '2':\n            //dificultad();\n            break;\n        case '3':\n            //personaje();\n            break;\n        case '4':\n            y++;\n            break;\n        }\n        _getch();\n    }\n    void dificultad() {\n    }\n    void menu() {\n        displayMenu();\n        switch (_getch())\n        {\n        case '1':\n            break;\n        case '2':\n            settings();\n            break;\n        case '3'://modo infinito nivel =0\n            while (gameover != true)\n            {\n                dibujo();\n                entrada();\n                logica();\n            }\n            break;\n        case '4':\n            break;\n        }\n    }\n    int main()\n    {\n        comienzo();\n        for (int z = 0; z &lt; 4; z++)\n        {\n            cout &lt;&lt; \"////////////////////////////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n            Sleep(50);\n            cout &lt;&lt; \"          IIIII    *****    ******   *******    ********   *****   *****\" &lt;&lt; \"\\n\";\n            Sleep(50);\n            cout &lt;&lt; \"          II       *   *    **  **   **         **         **      *   *\" &lt;&lt; \"\\n\";\n            Sleep(50);\n            cout &lt;&lt; \"          IIII     ****     **  **   **  ****   **  ****   *****   ****\" &lt;&lt; \"\\n\";\n            Sleep(50);\n            cout &lt;&lt; \"          IT       *  *     **  **   **    **   **   **    **      *  *\" &lt;&lt; \"\\n\";\n            Sleep(50);\n            cout &lt;&lt; \"          II       *   *    ******   ********   ********   *****   *   *\" &lt;&lt; \"\\n\";\n            Sleep(50);\n            cout &lt;&lt; \"////////////////////////////////////////////////////////////////////////\" &lt;&lt; \"\\n\";\n            Sleep(50);\n        }\n        system(\"cls\");\n            nivel = 1;\n        menu();\n        while (gameover != true)//nivel 1\n        {\n            dibujo();\n            entrada();\n            logica();\n            if (nivel == 2)\n            {\n                continue;\n            }\n        }\n        while (gameover != true)\n        {\n            dibujo();\n            entrada();\n            logica();\n            if (nivel == 3)\n            {\n                continue;\n            }\n        }while (gameover != true)\n        {\n            dibujo();\n            entrada();\n            logica();\n            if (nivel == 4)\n                continue;\n        }while (gameover != true)\n        {\n            dibujo();\n            entrada();\n            logica();\n            if (nivel == 5)\n                continue;\n        }while (gameover != true)\n        {\n            dibujo();\n            entrada();\n            logica();\n        }\n        system(\"cls\");\n        cout &lt;&lt; \"fin del juego\";\n        _getch();\n        return 0;\n    }",
+        "created_utc": 1530142074,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Check my localhost guys!",
+        "author": "RsIntek",
+        "url": "https://i.redd.it/81ep184quj611.png",
+        "text": "",
+        "created_utc": 1530107981,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When You Meet C Language Programmer Meets With Python Geek",
+        "author": "abdulsamihameed",
+        "url": "https://i.redd.it/rirawswwma611.jpg",
+        "text": "",
+        "created_utc": 1529996333,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I literally just reverse-engineered serialization",
+        "author": "crespo_modesto",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8twvi6/i_literally_just_reverseengineered_serialization/",
+        "text": "It seemed familiar... what was happening.\n\n    // a:0:{}\n    // a:1:{i:0;i:5694;} // add 5694\n    // a:2:{i:0;i:5694;i:1;i:5934;} // add 5934\n    // a:3:{i:0;i:5694;i:1;i:5934;i:2;i:5608;} // add 5608\n    // a:2:{i:0;i:5694;i:2;i:5608;} remove 5934\n    // a:3:{i:0;i:5694;i:1;i:5608;i:2;i:5934;} readd 5934\n    \n    $str = 'a:3:{i:0;i:5694;i:1;i:5934;i:2;i:5608;}';\n    $str2 = 'a:2:{i:0;i:5694;i:2;i:5608;}';\n    $post_id = 5934;\n    \n    function update_protected_posts_list($add_remove, $post_id, $cur_list) {\n        \n        $a_count = explode(':', $cur_list)[1];\n        \n        if ($a_count == 0 &amp;&amp; $add_remove == 'remove') {\n            return; // shouldn't happen\n        }\n        \n        $bracket_conts = explode('}', explode('{', $cur_list)[1])[0];\n        $count_post_pairs = explode(';', $bracket_conts);\n        $id_counter = 0;\n        $expected_count = count($count_post_pairs) - 1;\n        $pair_counter = -1;\n        $run_counter = 0;\n        $new_str = \"\";\n        \n        foreach ($count_post_pairs as $count_post_pair) {\n            $run_counter++;\n            $pair_counter++;\n            if ($pair_counter == 1) {\n                // check if remove\n                if ($add_remove == 'remove') {\n                    if (strpos($count_post_pair, (string)$post_id)) {\n                        $left_rem_str = explode('i:' . (string)$post_id . ';', $bracket_conts)[0];\n                        $left_rem_str_count = strlen($left_rem_str);\n                        $left_sub_str = \"\";\n                        for ($i = $left_rem_str_count - 1; $i &gt; 0; $i--) {\n                            if ($left_rem_str[$i] != 'i') {\n                                $left_sub_str = $left_rem_str[$i] . $left_sub_str;\n                            }\n                            else {\n                                $left_sub_str = $left_rem_str[$i] . $left_sub_str;\n                                break;\n                            }\n                        }\n                        // combine and str_replace\n                        $bracket_conts = str_replace($left_sub_str . 'i:' . (string)$post_id . ';', '', $bracket_conts);\n                        $new_str = $bracket_conts;\n                    }\n                } else {\n                    // echo $count_post_pair . \"\\r\\n\";\n                    $new_str .= $count_post_pair . ';';\n                    $id_counter++;\n                }\n                // reset\n                $pair_counter = -1;\n            } else {\n                if ($count_post_pairs &gt; $run_counter)\n                $new_str .= 'i:' . $id_counter . ';';\n            }\n        }\n        \n        if ($add_remove == 'remove') {\n            $a_count = $a_count - 1;\n            $new_str = 'a:' . $a_count . ':{' . $bracket_conts . '}';\n        }\n        else if ($add_remove == 'add') {\n            $a_count = $a_count + 1;\n            \n            $new_str = 'a:' . $a_count . ':{' . $new_str . 'i:' . (string)$post_id . ';}';\n        }\n        \n        return $new_str;\n        \n    }\n    \n    echo $str . \"\\r\\n\";\n    $removed = update_protected_posts_list(\"remove\", 5934, $str);\n    echo $removed . \"\\r\\n\";\n    $added = update_protected_posts_list(\"add\", 5934, $removed);\n    echo $added . \"\\r\\n\";\n    $removed = update_protected_posts_list(\"remove\", 5934, $added);\n    echo $removed . \"\\r\\n\";\n    $added = update_protected_posts_list(\"add\", 5934, $removed);\n    echo $added . \"\\r\\n\\r\\n\";\n    \n    // holy shit..., it's just serializing an array wow...\n    echo \"using built in serialize/unserialize\" . \"\\r\\n\";\n    echo $str . \"\\r\\n\";\n    $a_simple_array = (unserialize($str));\n    // remove\n    if ($key = strpos($str, (string)$post_id) !== false) {\n        unset($a_simple_array[$key]);\n        $a_simple_array_reorder = array_values($a_simple_array);\n    }\n    echo serialize($a_simple_array_reorder) . \"\\r\\n\";\n    // add\n    array_push($a_simple_array, $post_id);\n    echo serialize($a_simple_array);\n\n    // output comparison\n\n    a:3:{i:0;i:5694;i:1;i:5934;i:2;i:5608;}\n    a:2:{i:0;i:5694;i:2;i:5608;}\n    a:3:{i:0;i:5694;i:1;i:5608;i:2;i:5934;}\n    a:2:{i:0;i:5694;i:1;i:5608;}\n    a:3:{i:0;i:5694;i:1;i:5608;i:2;i:5934;}\n\n    // using built in serialize/unserialize\n    a:3:{i:0;i:5694;i:1;i:5934;i:2;i:5608;}\n    a:2:{i:0;i:5694;i:1;i:5608;}\n    a:3:{i:0;i:5694;i:2;i:5608;i:3;i:5934;}\n\n**TL;DR**\n\nI saw these strings in a db, saw what was happening but was not aware of serialization... I could see the pattern eg. the indices but then later after I wrote out the function that works to produce that string I came across the serialization function and unserialize to turn that string into an array that you can work with. This particular set of strings only contain/deal with integers.\n\n[sandbox](http://sandbox.onlinephpfunctions.com/code/5a00ec4ee694247adfb7068b3cefb1fc3af2c4bc)",
+        "created_utc": 1529984851,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So, when you list 'BASH spaghetti masterlord' on your resume, what exactly does that mean, and how is it relevant to this cashier position?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/lnlhi8b658611.png",
+        "text": "[deleted]",
+        "created_utc": 1529966430,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Coding is like talking to a foreigner who doesn't tolerate grammatical mistakes",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/8trbx6/coding_is_like_talking_to_a_foreigner_who_doesnt/",
+        "text": "[deleted]",
+        "created_utc": 1529939913,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I may not return, I'm going on this bug hunt",
+        "author": "teja42",
+        "url": "https://i.redd.it/40mbbmtu25611.jpg",
+        "text": "",
+        "created_utc": 1529928996,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When You Compile Your Code For The First Time After Development",
+        "author": "abdulsamihameed",
+        "url": "https://i.redd.it/ggyey5su04611.jpg",
+        "text": "",
+        "created_utc": 1529919180,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "YouTube",
+        "author": "nievesodriscoll",
+        "url": "http://youtube.com/watch?v=yQ3hnLGUtc0",
+        "text": "",
+        "created_utc": 1529896310,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My first self written program ever (in notepad)",
+        "author": "Lightfire228",
+        "url": "https://i.redd.it/fo9orald11611.png",
+        "text": "",
+        "created_utc": 1529880106,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Array(7)",
+        "author": "Ssjkr7",
+        "url": "http://recordit.co/laBMEVno3B",
+        "text": "",
+        "created_utc": 1529853629,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Filezilla under fire",
+        "author": "stable_carbocation",
+        "url": "https://forum.filezilla-project.org/viewtopic.php?t=48441",
+        "text": "",
+        "created_utc": 1529775616,
+        "upvote_ratio": ""
+    }
+]

@@ -1,0 +1,802 @@
+[
+    {
+        "title": "What does \"2-bit error\" mean?",
+        "author": "gauravgrover95",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62y89a/what_does_2bit_error_mean/",
+        "text": "[removed]",
+        "created_utc": 1491114152,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Dijkstra's Shortest Path Algorithm in Java",
+        "author": "pikapikaapikachu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62vso0/dijkstras_shortest_path_algorithm_in_java/",
+        "text": "Dijkstra's Shortest Path Algorithm in Java\n\nI really need help with this. Please please please. I feel so stupid. I have the pseudo code.\n\nImplement Dijkstra's shortest path algorithm satisfying the following assumptions and requirements:\n\n(a) The entire graph is not availabe in advance. The graph is implicity represented by the start vertex and a problem specfic \"success(v)\" function that gives for vertex v the set of \"successor\" nodes reachable by one edge from v. Some vertices represent a goal state.\n\n(b) Maintain the expanded set E and the frontier set F in a suitable data structure that allows an efficient membership test (v ∈ E? v ∈ F?). In addition, F needs to support efficient priority queue operations.\n\n(c) Edge costs may be negative, and hence a vertex in E may have to be moved to F.\n\n(d) State representation, adjacency, and edge cost calculation must be easily modifiable to handle various problems such as:\n\n\"River-crossing\" problems, such as The Missionaries and Cannibals: n missionaries and n cannibals are on one side of the river. How can they all cross the river, using a boat that can hold m people at a time, without every leaving more cannibals than missionaries on either side of the river at any time?\n\n(e) Your program must output a path from the start vertex to the first goal vertex found (possibly backwards) and its cost. It should also output relevant statistics such as the number of vertices generated and the total CPU time.\n\nTest your implementation on the following two sample problems:\n\n(a) The weighted graph:\n\nhttp://imgur.com/xRV05j2\n\nAssume BWI is the start vertex, and SFU and LAX are the goals. Your program must output a shortest cost path to SFO or LAX, whichever is closer to BWI.\n\n(b) The Missionaries and Cannibals problem for the case n = 3 and m = 2, and for the case n = 4 and me = 3. Assume all edge costs are 1.\n\n\n\nPlease create:\n\nA concise report describing the following:\n\n1.) Implementation details of the data structures and methods for E and F.\n\n2.) Details of the state and edge cost representations for the two sample problems.\n\n3.) Test results (including the actual output) and a convincing argument of the correctness of the implementation.\n\n4.) The source code\n\n\n\nPlease implement this in Java and include all source code. Including the set ups and test run outputs of the 2 sample problems defined.\n\nRepresent the graph, explored sets E and F, vertices, and edges however you wish.\n\n\n\nI have this pseudo code done but I need someone to implement it in Java for me. My instructor has looked this over and said it's correct:\n\nE ← ∅ //this is the explored set\n\nF ← {start node s} //this is the frontier set - the nodes that we have not yet generated successors of\n\ng(s) ← 0\n\nwhile F ≠ ∅ do\n\n{\n\n    u ← min g-value node in F\n\n    if u is a goal\n\n    {\n\n        output path from u to s\n\n    }\n\n    F ← F - {u}  //remove u from F (frontier set)\n\n    E ← E ∪ {u}  //add u to E (explored set)\n\n    Expand u to generate successors u1,...,uk  //this is where you call your success(v) function\n\n    for i ← 1 to k do\n\n    {\n\n        if ui ∈ E and  ui ∈ F //first time seeing this node\n\n        {\n\n            g(ui) ← g(u) + c(u, ui)     // c(x,y) computes and returns the cost from node x to node y\n\n            parent(ui) ← u\n\n            F ← F ∪ {ui}  //add ui to F\n\n        }\n\n        else if ui ∈ F  //found a better way to get to ui through u\n\n        {\n\n            if g(u) + c(u, ui) &lt; g(ui)\n\n            {\n\n                g(ui) ← g(u) + c(u, ui)\n\n                parent(ui) ← u\n\n            }\n\n        }\n\n        else if ui ∈ E  //to handle negative edge costs\n\n        {\n\n            if g(u) + c(u, ui) &lt; g(ui)\n\n            {\n\n                g(ui) ← g(u) + c(u, ui)\n\n                parent(ui) ← u\n\n                E ← E - {ui}  //remove ui from E\n\n                F ← F ∪ {ui}  //add ui to F\n\n            }\n\n        }\n\n    } // end for\n\n} // end while",
+        "created_utc": 1491083461,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Not a HW assignment] Need help with a simple algorithm - Tournament seeding.",
+        "author": "Rancorip",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62volg/not_a_hw_assignment_need_help_with_a_simple/",
+        "text": "Hi all - I have 0 experience with algorithms, but an interesting question came up in my biostatistics class about tournament seeding. I do not need to know how to code it, just how to explain how it would work!\n\nThe question is - Find a simple algorithm to determine when two seeds will meet in a SINGLE ELIMINATION TOURNAMENT\n\nHere is what we were given to work from: What is a simple algorithm to determine which round two seeds will play (assuming they win their matches before they meet)?\n\nHe stated in class that the answer is actually very simple (though it may seem complex).\n\nIn the first round of the tournament, teams are matched by seed so that the sum of their seed value = n + 1. Simply, if there are 16 teams, seed 1 will play seed 16, because 1 + 16 = 17 (n+1). Similarly, seed 14 will play seed 3, seed 12 will play seed 5 etc...\n\nHere is a hit he gave us: http://imgur.com/a/ZlAFW\n\nThe first image is a simple description of a tourn. bracket. The second image is the hint. First, he reordered the seed numbers so that seed 1 was actually seed 0. He then renumbered the rest of the seed so that the final seed was 15, and n+1 still equals 17. Then he exchanged the seed number (0, 1, 2... 15) with the binary complement. So now, seed 0 = 0000, seed 1= 0001 seed 15 = 1111. This is key, because having the final seed being 15 gives us a binary of 1111.\nI am still unsure as to how to proceed, can anyone help me. \n\nI am completely free and open to questions!\n\nThanks",
+        "created_utc": 1491082489,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Preparation for Undergrad CS Degree",
+        "author": "jjoplin27",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62t67q/preparation_for_undergrad_cs_degree/",
+        "text": "Hey, guys!\n\nI am in my gap year after high school, and am attending uni as an international student this Fall. After a lot of thought, I've decided to take CS as my major, though I still have some confusions.\n\nAnyway, there's still a few months for the classes to start, and I want to utilize this time making myself well-acquainted with the degree I am about to pursue. I've researched about the degree online, but the information is overwhelming, and I just can't seem to find a starting point.\n\nIt would really be helpful if someone assisted me on where to start, and what I should learn about so that it can get easy for me later. Also, is there anything you wish you'd done in this gap that could help with the degree?\n\nAlso, I'm not *that* good at Maths, so some advice on the Mathematical concepts used in the CS degree shall be helpful as well.\n\nI'd really love to hear your insights and advice. Cheers!",
+        "created_utc": 1491058508,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Preparation for Computer Science",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62t3wy/preparation_for_computer_science/",
+        "text": "[deleted]",
+        "created_utc": 1491057859,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hey /r/AskCompSci! Just saw the new IT trailer and made me think what would be a horror story in the IT industry?",
+        "author": "ctcy",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62skcj/hey_raskcompsci_just_saw_the_new_it_trailer_and/",
+        "text": "",
+        "created_utc": 1491051624,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "FCFS &amp; SJF Scheduling algorithms in python",
+        "author": "xchek32",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62n904/fcfs_sjf_scheduling_algorithms_in_python/",
+        "text": "[removed]",
+        "created_utc": 1490986656,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ternary Logic, Resolution",
+        "author": "atnorman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62m68k/ternary_logic_resolution/",
+        "text": "[removed]",
+        "created_utc": 1490977041,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is Mark Cuban right about his claim in this video regarding computer programmers not being in high demand in the future due to automation?",
+        "author": "seabee494",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62lmvl/is_mark_cuban_right_about_his_claim_in_this_video/",
+        "text": "https://www.youtube.com/watch?v=CxD4F3MQRDI\n\nIn this video Mark Cuban makes the claim that with the future of automation, code will write itself and most computer programmers will be made redundant. The skeptic in me finds this slightly over-exaggerating because to me personally, there are just too many moving parts when it comes to simply \"automating\" a process in business that a computer in and of itself isn't intuitive enough to figure out requirements, or know what it should do to automate something to begin with.",
+        "created_utc": 1490971937,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Could someone explain the Math/Graphics of what's happening in this gif?",
+        "author": "FatCatsAreReal",
+        "url": "https://external-iad3-1.xx.fbcdn.net/safe_image.php?url=http%3A%2F%2Fi.imgur.com%2FkIqBk46.gif%3Fnoredirect&amp;ext=gif&amp;_nc_hash=AQAHt6xyuEiLxWGC",
+        "text": "",
+        "created_utc": 1490971508,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help Me Understand Value Iteration Convergence?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/nso4peo2qpoy.png",
+        "text": "[deleted]",
+        "created_utc": 1490952642,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need help - have no clue how to answer these questions",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62jfxd/need_help_have_no_clue_how_to_answer_these/",
+        "text": "[deleted]",
+        "created_utc": 1490939039,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Informative Slide Show?",
+        "author": "JamesPond007",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62iech/informative_slide_show/",
+        "text": "I was wondering if there is a program that would allow me to create a custom slideshow to run on an extra television I have. I would like it to show things like the weather forecast, google calendar, my Nest cams(If possible) and network status. I see plenty of ones that will do just photos, or power-point slides, but I can't even find the right words to search for what I want. I have a PC, Raspberry pi or Chromecast to run it through. I don't mind geting my hands dirty if someone can point me in the correct direction, or has a better idea! Thanks!\n\nP.S. This is my first Reddit post. ",
+        "created_utc": 1490925022,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question: are there any hardware-based networking services alternative to the internet available?",
+        "author": "MonoKong",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62hhjz/question_are_there_any_hardwarebased_networking/",
+        "text": "Hi. Being aware of software like Tor, Freenet, GNUnet, among others, I was wondering if there's actual Hardware based services/clients that regular people, not only Corps., can buy and connect to. \nFor instance I imagine hardware could be requiered if your trying to access directly something like a satellite. Hope this isn't too stupid.\nThanks.",
+        "created_utc": 1490914798,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Writing a CS dissertation (Major project report). What is the difference between an abstract, introduction, and background?",
+        "author": "KipperIsMyCat",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62h7co/writing_a_cs_dissertation_major_project_report/",
+        "text": "I am about to start writing my final year dissertation for BSc Computer Science. Unlike what I thought I would have to do, it seems that CS dissertations (Or at least at my uni) are just very big reports - I like this.\n\nHowever, unlike reports I have written multiple times before this in university, this one is a bit more structured and has much more academia stuff. In particular, I am to include an abstract (something I generally only see in the few scholarly papers I have read).\n\nFor the purposes of my undergraduate dissertation report, could somebody please explain the difference between an abstract, an introduction, and a background? They all seem very similar to me.\n\n____________\n\nBecause I see it as unfair to just ask a broad question like this without even trying myself, this is what I think:\n\nAbstract - Summarise the entire 10,000-15,000 report in 1 page.\n\nIntroduction - Explain the project. Almost like I am pitching the idea.\n\nBackground - Not sure how this is different to the Introduction. Perhaps talk a few more technical details and get lower level than before?",
+        "created_utc": 1490911824,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I want to give work to a student. What should I pay?",
+        "author": "Smangler",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62h02g/i_want_to_give_work_to_a_student_what_should_i_pay/",
+        "text": "Hello r/AskComputerScience! I feel I'm a bit out of my league and I was hoping for some advice.\n\nI teach at a university in Canada, but in the Theatre department. I coordinate a course where students are required to work on multiple projects during their 4-year degree program. I've contacted our Computer Science department to see if a student would be interested in helping me design (what I believe to be) a relatively simple relational database (but I could be wrong about it's simplicity). My questions is more of what pay I should offer the student. \n\nA bit about what I'm asking them to do: Over their time here, each student needs to work on 4 different productions. It can be in any capacity: Set, Lighting, Costume, Sound, Stage or Production Management. They can also be designers (set, costume, etc.) or Crew Heads (set, costume, etc.). These tasks may all be done in a year to over 5 years. I also need to be able to fill out an evaluation rubric, that is slightly different for each task.\n\nIn the end, I need to be able to take the average of the top 4 grades to submit as the final grade. \n\n What is a reasonable offer? I put the question to the Computer Science department today and have already received over a dozed replies. They're all Master's students, so I don't want to short-change them. But I'm also paying out of pocket and I want it to be not too expensive. So what is a reasonable amount to offer these students? I appreciate your help.",
+        "created_utc": 1490909784,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Direct Mapped Cache vs N-way Set Associative Cache",
+        "author": "guorty",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62ckwf/direct_mapped_cache_vs_nway_set_associative_cache/",
+        "text": "Here's my question: If a Direct Mapped Cache has the same number of cache blocks (lines) as an N-way Set Associative Cache, wouldn't their performance be the same?\n\n&amp;nbsp;\n\nFor example, say there are 16 blocks of memory and 8 cache blocks in a direct mapped cache. This would mean that for each cache block, there will be 2 blocks of memory that can be mapped to it.\n\n&amp;nbsp;\n\nFor a 2-way set associative cache (of the same size), there would be 4 sets, each set containing 2 cache blocks. In this case, there would be 4 memory blocks mapped to each cache set.\n\n&amp;nbsp;\n\nIn such a scenario, wouldn't both cases result in 2 memory blocks being mapped to a single cache block? How are they different in this sense? (The only thing I can think of is in a 2-way set associative cache, for each set, you can fit in 2 memory blocks before cache trashing becomes possible. But in the case of a direct mapped cache, once you fill a cache block with a single memory block, cache trashing becomes possible).\n\n&amp;nbsp;\n\nHelp would be greatly appreciated. Thanks!",
+        "created_utc": 1490860095,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is the speed and data of internet service something crackable?",
+        "author": "portagul",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62ce5m/is_the_speed_and_data_of_internet_service/",
+        "text": "[removed]",
+        "created_utc": 1490856887,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Trouble running a script in python",
+        "author": "cityred",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62cbof/trouble_running_a_script_in_python/",
+        "text": "Hi everyone - I'm trying to use the coursera downloader at the link below. \n\n\nI installed python, homebrew, and pip. I can't get the python script to run though ( python www-coursera-downloader.pyc )\n\nhttps://github.com/jansenicus/www-coursera-downloader\n\nAm I supposed to just type that into terminal? Am I missing a step?",
+        "created_utc": 1490855707,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I go about generating a grammar for this?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/atccivxd0hoy.png",
+        "text": "[deleted]",
+        "created_utc": 1490847122,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I go about generating a language from this?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/n18v58iazgoy.png",
+        "text": "[deleted]",
+        "created_utc": 1490846755,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Quick question?",
+        "author": "moneylongas6mile",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62a6hy/quick_question/",
+        "text": "I have an hp pavilion g7, if I add an external ssd will that speed up my CPU, or am I all the way off on my understanding of whats happening. Also, It runs on an hhd and I'm also thinking about replacing that with an ssd if it speeds up my CPU. My goal is to improve rendering times solely. I'm usually only ever using 2.5g out of my 3.5g of ram, will up grading that help any. (I have not seen 3.5g of ram anywhere else on the internet so I don't know if Im even reading that correctly.) So, as a recap will a new ssd help with CPU or faster rendering time? Does CPU have anything to do wth render times? Will upgrading memory help any. Or will upgrading both memory and an SSD be the best option? \n\nBonus question, If i did replace my hhd with an ssd and I also had an external ssd could I raid them for better speeds or do I just not know what I'm talking about at all?\n\nOr even better could I just get multiple external ssd's, raid them together, save all my pertinent applications and files that have to do with video editing and rendering, and keep my HHD.\n\nOr does anyone have any better suggestions on how I can speed up my computer in the best way possible.",
+        "created_utc": 1490828436,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any advice for a tech scholarship interview?",
+        "author": "direndiren",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/62796t/any_advice_for_a_tech_scholarship_interview/",
+        "text": "I'm going to have a **group scholarship interview** in two weeks; but since i'm in the military currently, i'll effectively have *four* weekends to study for it. \n\nIs there any book i can load up on that would help me broaden my knowledge on CS/increase my chances of getting the scholarship?\n\nAlso, i would love any advice on the interview(s).\nDress code / things interviewers are looking for, etc.\n\nBackground - Diploma in BA, and i started coding a bit in Python a month ago, barely brushed the surface with algorithms. I also did some bug testing for Razer products two years ago.\n\nLastly, thanks! Do direct me to the right subreddit if its the wrong one.",
+        "created_utc": 1490800751,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's the best way to write a function that computes the number of combinations (nCr)?",
+        "author": "Robotigan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/6275xj/whats_the_best_way_to_write_a_function_that/",
+        "text": "[removed]",
+        "created_utc": 1490799872,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is PBKDF2 better than a single round of sha512 even if we haven't cracked sha512 yet?",
+        "author": "Lolyman13",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/626yut/why_is_pbkdf2_better_than_a_single_round_of/",
+        "text": "The title is pretty explicit...",
+        "created_utc": 1490797938,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sequential Circuits- Drawing a block diagram for an 8-bit shift register using J-K Flip-Flops",
+        "author": "NotAThrowawayOkay123",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/624ib1/sequential_circuits_drawing_a_block_diagram_for/",
+        "text": "For my computer architecture homework I'm asked to draw the block diagram for an 8-bit shift register using J-K Flip-Flops and to draw the block diagram for a 4-bit ripple counter using D Flip-Flops. The powerpoint our professor has given to us for this course explains that a ripple counter is done using J-K and that shift registers use D, the reverse of what I'm asked to do in the homework. So basically what I'm asking is is this possible or just a typo? And if it is how do I figure out how to do it?",
+        "created_utc": 1490761176,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are computer scientists just as capable of assembling and electrifying a robot as a computer engineer?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/6247tt/are_computer_scientists_just_as_capable_of/",
+        "text": "[removed]",
+        "created_utc": 1490757404,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Simple SMNTJ Assignment Question",
+        "author": "Resolius",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/623g80/simple_smntj_assignment_question/",
+        "text": "Hey, guys. Someone once told me this isn't the place for coding questions but I hadn't heard that before and this sub has always been a lot more helpful than others for me so sorry if I'm posting this in the wrong place. If you verify I shouldn't post this here, it won't happen in the future. \n\nAnyway, this is a segment of code that I'm working on where merge takes two sorted lists and merges them into a single sorted list. mergePass is supposed to take a list of a list of integers such as [[1], [3], [2], [4]] and merge the list into a list sorted pairs using merge (e.g. [[1,3], [2,4]]). Merge is functioning but mergePass is throwing an error:\n\n    Error: operator and operand don't agree [tycon mismatch]\n      operator domain: int list * int list list\n      operand:         int list * int list\n      in expression:\n        merge (hd1,hd2) :: mergePass tl\n    val it = () : unit\n\nI understand the meaning of the error but my professor and I are both having trouble with why I am receiving it. If you could look at my code and point me in a right direction, it'd be helpful! Thank you!\n\n    fun merge(nil, nil) = nil | \n\t    merge(nil, y) = y |\n\t    merge(x, nil) = x |\n\t    merge(x,y) = if hd x &gt; hd y then hd y::merge(x,tl y)\n\t\t    else hd x::merge(tl x,y);\n     \n    fun mergePass(nil) = nil |\n\t    mergePass(hd1::nil::nil) = hd1 |\n\t    mergePass(hd1::hd2::nil) = merge(hd1,hd2) |\n\t    mergePass(hd1::hd2::tl) =\n\t\t    merge(hd1,hd2)::mergePass(tl);\n\nedit: SMLNJ whoops",
+        "created_utc": 1490748274,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to create a block size for a hash function",
+        "author": "DarthMurdok",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/622tcl/how_to_create_a_block_size_for_a_hash_function/",
+        "text": "[removed]",
+        "created_utc": 1490741192,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a way to prevent my internet provider from having access to my internet history?",
+        "author": "ausbon",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/622nc3/is_there_a_way_to_prevent_my_internet_provider/",
+        "text": "[removed]",
+        "created_utc": 1490739427,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can a many to many relationship be aggregate?",
+        "author": "throwaw_ayylmao",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61zx9q/can_a_many_to_many_relationship_be_aggregate/",
+        "text": "For example a department of a company can have one to many employees and an employee may work at many departments.\n\nMost aggregate examples I have seen (e.g. car and engine as the car needs the engine but the engine can exist without the car) mention cases where the part (engine) can only be part of one whole (car). Here the employee (part) can belong to many wholes (departments) simultaneously. Would this still be considered aggregate?\n\nThis is for a class diagram.",
+        "created_utc": 1490713978,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Going to an average graduate school next to a prestigious university?",
+        "author": "philosolobster1999",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61xlir/going_to_an_average_graduate_school_next_to_a/",
+        "text": "[removed]",
+        "created_utc": 1490680160,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I need help understanding how there can be aggregation and inheritance relationships between these classes.",
+        "author": "asap_nerd",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61vugl/i_need_help_understanding_how_there_can_be/",
+        "text": "This is help for homework, Im sorry if that breaks any rules.\n\nMy homework based around modelling a school play scheduling system. Ive got mos of it, but I am having some difficulties with finding aggregation and inheritance relationships between the classes. The set up for the required classes are:\n\nPlay: Play would need to store a unique identifier, time, place, type of play (eg comedy, drama, etc.), attendees (public, students), status (auditions, rehearsal, completed, cancelled), \nProps: A list of props would need to be stored including a unique id, type of prop\nStudent group: Unique id, grade, home room number and teacher.\nTeachers’ aides: unique id, name, contact information, assistive role.\n\nIve been able to find the associations between each class (Play:Props is many:many as a prop can be used in many plays and a play can use many props, Play:Student group is Many:Many as a play can use many classes and the classes may be in many plays, and Student group:Teachers aides is Many:Many one class may have many aides and a TA may work with many classes (the TAs help with the plays).)\n\nHowever, towards the end of my homework I get a question asking for the inheritance and aggregation relationships between the classes. I understand these relationships but I can’t figure out how any of these classes inherit anything from another or are part of a larger whole.\n\nAny help would be greatly appreciated.",
+        "created_utc": 1490658157,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Digital Logic] D Flip Flop Timing Diagram",
+        "author": "abitofanassembler",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61u5ah/digital_logic_d_flip_flop_timing_diagram/",
+        "text": "Hey guys, I'm having a little trouble understanding the timing diagram of [this](http://imgur.com/a/B2X1a) D flip flop. To me it looks like Q1 and Q2 are just feeding into the clock so I figured that Q1 and Q2 would look the same as the clock. Any help understanding this would be greatly appreciated! ",
+        "created_utc": 1490640971,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The next level of abstraction",
+        "author": "thomasfarid",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61u0cr/the_next_level_of_abstraction/",
+        "text": "[removed]",
+        "created_utc": 1490639654,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What methods do you use to evaluate your work?",
+        "author": "julianfri",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61sicy/what_methods_do_you_use_to_evaluate_your_work/",
+        "text": "Edit: spoke with the student and we've pivoted the project, but still generally interested in how other assess their work.\n\nEducational researcher here with one comp. sci. student in an engineering class. We are doing a project on evaluation of economic/societal/environmental impacts of our research, and I am having a tough time relating this to the student's research (chemical modeling/DFT/Gaussian). Didn't know if there were perhaps different methods or approaches to assess these components of computing/computer design/software design...and so on. Open to all ideas!",
+        "created_utc": 1490625448,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to use word2vec to generate a similar document?",
+        "author": "ebolanurse",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61sb0q/is_it_possible_to_use_word2vec_to_generate_a/",
+        "text": "Suppose I have 10 documents and I want to create an 11th that is similar to those 10. \n\nThe way I understand word2vec is that it can't tell you exactly *why* some group of documents are similar, it will just give you a number that describes the vector of their similarity,  which doesn't translate directly.\n\nUltimately I'd like to have a list or matrix of words that describes the most salient topics/words of the first 10 documents.\n\nCan anyone point me in a direction here for achieving this goal? Am I looking for a different type of algorithm? A specific implementation of word2vec?\n\nThanks!",
+        "created_utc": 1490623330,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ModSort: Retirement",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61ql65/modsort_retirement/",
+        "text": "[removed]",
+        "created_utc": 1490596207,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone point me in the right direction to answer these questions?",
+        "author": "[deleted]",
+        "url": "http://i.imgur.com/DqIWqwP.png",
+        "text": "[deleted]",
+        "created_utc": 1490592170,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to construct an NFA and DFA from the language L?",
+        "author": "[deleted]",
+        "url": "http://i.imgur.com/44VLCG7.png",
+        "text": "[deleted]",
+        "created_utc": 1490580681,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Questions about taking Discrete and Data Structures",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61ndch/questions_about_taking_discrete_and_data/",
+        "text": "[deleted]",
+        "created_utc": 1490556096,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Explain the concept of DNS. Explain the components of an IP address with the help of an example. What is the significance of network mask? Explain with the help of an example.",
+        "author": "IAmJagvinderSingh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61l6ox/explain_the_concept_of_dns_explain_the_components/",
+        "text": "Please Guys help me to understand the terms. I understand the DNS stuff, atleast the basics, know the IPv4 component i.e., Net ID and Device ID. I am stuck with rest of the question. I just want it be as simple as possible within 200 words count.",
+        "created_utc": 1490528752,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I verify that this is a Regular Language?",
+        "author": "[deleted]",
+        "url": "http://i.imgur.com/woXgaCG.png",
+        "text": "[deleted]",
+        "created_utc": 1490514071,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Exposing GF to the World of CompSci?",
+        "author": "Cedricium",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61hyfc/exposing_gf_to_the_world_of_compsci/",
+        "text": "[removed]",
+        "created_utc": 1490477112,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What CS term would you use to describe [thing I developed (e.g. \"expression parser\", \"expression evaluator\", \"query language evaluator\", etc.)]?",
+        "author": "iwanttobeindev",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61fnna/what_cs_term_would_you_use_to_describe_thing_i/",
+        "text": "At my previous job, I helped develop a module for evaluating custom expressions defined by a client. These expressions followed a certain pattern and had various constraints. For instance, here is an example of an expression (brackets represent a value selected from a range of values in a dropdown on the UI; curly braces represent text entry by the user):\n\n**[My students] who have an [Age] [greater than] {12}**\n\nThese expressions could also have AND/OR operators attached and include parentheses to group conditions.\n\nThe work I did on the back-end read through groups of these expressions, converted them into binary expression trees, and evaluated them.\n\nSo what exactly would you call this functionality? Is it expression parsing? I have been using that term but I'm not sure if it's correct because there wasn't really a grammar involved. Could it be a domain-specific language with pre-defined inputs? Maybe it's expression evaluation or some sort of query language? I don't have a formal computer science background so any help here would be appreciated.",
+        "created_utc": 1490450644,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MIT OCW (Prof. Tom Leighton) vs Stanford Coursera (Prof. Roughgarden) for algorithms",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61fjyb/mit_ocw_prof_tom_leighton_vs_stanford_coursera/",
+        "text": "[deleted]",
+        "created_utc": 1490449107,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Internet of Things, Operating Systems VS Software Engineering",
+        "author": "MasterRedditor",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61eop6/internet_of_things_operating_systems_vs_software/",
+        "text": "As you might have guessed I am looking for some insight into my next years module choice for a CompSci degree. I have narrowed my options down to either Internet of Things (IoT) with Operating Systems or Software Engineering.\n\nI am not entirely sure what I would like to specialise in after the degree, sort of why I chose CompSci over something more specific like forensics or embedded systems.\n\n Security interests me so IoT &amp; OS seems rather logical there. Is IoT the future, will there be good chance of employ-ability there? In addition to this we have a heavy focus on AI which I would assume compliments IoT. \n\nThe project management side of software engineering has been another interest. I plan on creating small software projects with friends so among other things that ought to be useful.\n\nIt probably doesn't matter all that much in the long term but thank's for your input.",
+        "created_utc": 1490431807,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[C++] reading a graph from input and then storing into an input",
+        "author": "jpayne1224",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61d82z/c_reading_a_graph_from_input_and_then_storing/",
+        "text": " I have this code so far,    \n\n\n    struct Graph\n    {\n      int numVert;\n      int numEdge;\n      Vertex* vertices;\n  \n      Graph(int nv)\n      {\n        numVert = nv;\n        numEdge = 0;\n        vertices = new Vertex[nv + 1];\n      }\n    };\n\n    // reads from the standard input format and returns graph g.\n\n    Graph readGraph()\n    {\n      int nv, s, t;\n      double w;\n  \n      printf(\"Enter number of vertices: \\n\");\n      scanf(\"%i\\n\", &amp;nv);\n  \n      Graph g(nv);\n  \n     return g;\n    }\n\nI need to store variables s,t, and w into Graph g. s and t are vertex numbers and w is the weight between the two vertices. How can i store those 3 values into the graph as well? I appreciate the help.\n\n",
+        "created_utc": 1490407146,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I store the key hash for an AES encryption?",
+        "author": "Lolyman13",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61azjw/how_do_i_store_the_key_hash_for_an_aes_encryption/",
+        "text": "I am currently working on a password manager that uses AES encryption. The algorithm is encrypting the account list with the hash of the user's key since it is the good size of key needed for the encryption (I'm using AES265 and SHA256).\n\nI would like the user to give out the right key before trying to decrypt the account list, thus comparing the key with something stored somewhere.\n\nI wanted to know how do I store the key of the user since the hash of this key is used to do the encryption.",
+        "created_utc": 1490382916,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Coursera algorithms vs university-level",
+        "author": "jett1221",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61azcu/coursera_algorithms_vs_universitylevel/",
+        "text": "Are the Coursera Stanford and Princeton algorithm courses as rigorous as the university-level counterparts? \n\nI've never taken a Coursera course before but I'm specifically interested in these two algorithm series. After some research, it seems that Coursera courses are oftentimes watered down (Andrew Ng's ML course is a notable example). I assume this watered downess should be evaluated on a case by case basis. ",
+        "created_utc": 1490382859,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does the Java class file format change with each new version?",
+        "author": "arrenlex",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/61a3fd/why_does_the_java_class_file_format_change_with/",
+        "text": "[removed]",
+        "created_utc": 1490374399,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which compsci domains study microservices and SOA?",
+        "author": "Shortwood",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/618hdk/which_compsci_domains_study_microservices_and_soa/",
+        "text": "Generally, lot's of topics (problems and solutions) are studied in one or only a few particular domains of computer science. For example, clock synchronisation is studied in distributed systems and computer networking, among others. Under which domains are subjects like microservices, SOA, component-based architectures, and the like, studied?",
+        "created_utc": 1490356574,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Specific time complexity question",
+        "author": "Wisdoms_Son",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/6163d3/specific_time_complexity_question/",
+        "text": "[removed]",
+        "created_utc": 1490318282,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I need your help.",
+        "author": "xIceCrystal",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/614wxr/i_need_your_help/",
+        "text": "I got myself a new Headset and since then, everytime I speak with my friend via Discord, they can hear my sounds e.g. music and videos in the background. Now one could say it is because the sound is too loud and the microphone sensitivity is too low, but the sound gets transferred constantly when I mute myself at the Headset. I could use Push-To-Talk but I would like to fix it without using it. I already looked for new driver but they are all up to date and also the Stereomix option is deactivated, so I don't know where the problem is.",
+        "created_utc": 1490305717,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should I do during the day now? What goals should I pursue?",
+        "author": "Groudono",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/6141t6/what_should_i_do_during_the_day_now_what_goals/",
+        "text": "Hi, I'll explain briefly my situation: since the beginning I've wanted to study CS, but due to a bad decision at the end of high school regarding my university career, I ended up in an engineering preparatory cycle that is mostly physics. Nearly two years have passed by, but I dropped last week because I had been feeling very bad for a long time about this. I'm not interested in physics nor in chemistry, I couldn't work so hard everyday for something that I don't even want to achieve. **I'll start a CS degree in September 2017.**\n\nNow I'm searching universities for next year. I'm also learning CS with the resources listed here: https://teachyourselfcs.com/\n\nAs additional information, I'm particularly interested in **data science**, that's what I really want to be good at at the end of my studies.\n\nThank you for reading, I would appreciate if you could answer my questions:\n\n**1. What's the best activity I can do during my days now, until September, so that I don't waste my time?**\n\n* Keep learning from https://teachyourselfcs.com/?\n* Look for a job or internship?\n* other...?\n\n**2. What goal should I pursue?** I want to learn things, to progress and to make good use of my time but I don't have any specific goal.\n\nThank you very much for your help, I really appreciate it.",
+        "created_utc": 1490297426,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I have an idea for an app/software but the project seems so large and daunting, how do I plan it?",
+        "author": "helphomeuncomfort",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60y3l3/i_have_an_idea_for_an_appsoftware_but_the_project/",
+        "text": "I'm only now just finishing up my first year of a CS program at university, but I've had an idea for an app/program that I'd personally love (admittedly I have no idea if anyone else would,  but oh well). The problem is, it seems to be on such a massive scale that I have no idea how to plan it or where to start. Any help?",
+        "created_utc": 1490223377,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is learning data structures before algorithms important?",
+        "author": "jett1221",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60uq6f/is_learning_data_structures_before_algorithms/",
+        "text": "I know the very basics of data structures and algorithms but I want to self-study these subjects extensively (I don't have a CS background).\n\nI plan on following the Princeton and/or Stanford Coursera courses, but I'm wondering, is it important to learn data structures beforehand? Should I treat data structures as a separate topic? These are \"Algorithm\" courses, so I'm not sure what to expect.\n\nIt seems that the two courses are self-contained and there is no prerequisite \"data structure\" course but I believe many colleges teach data structures before algorithms.\n",
+        "created_utc": 1490190820,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it a good idea to choose a theoretical subject for your bacheor-thesis if you don't have prior experience writing such kind of papers?",
+        "author": "achNichtSoWichtig",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60tadw/is_it_a_good_idea_to_choose_a_theoretical_subject/",
+        "text": "Hey /r/AskComputerScience,\n\nI am nearly finished with my B.Sc. in (applied) CS and am currently looking for the subject of my thesis. Now I really liked graphtheory and graphalgorithms, but I was not very good at it. When I wrote to my prof, asking if she knew any good subjects, she replied she mostly has theoretical topics to offer. I am kind of intrigued because this maybe a good challenge. On the other hand, I've never done **any** theoretical paper and don't feel like I am sufficiently prepared. So I am very divided on the issue. It feels like I could be either hyped or sensible and back off.\n\nSo my question:\n\nHas anyone of you been in a similar situation? If so, what did you decide to do and how did it turn out?\n",
+        "created_utc": 1490168551,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I get better at thinking logically for programming?",
+        "author": "tylermm",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60snhx/how_do_i_get_better_at_thinking_logically_for/",
+        "text": "Hi sometimes I'm having trouble figuring out a solution to simple problems. Is there anything I can do to improve my logical thinking skills for programming?\n\nDo you think logical thinking can be trained, or is it an innate skill?",
+        "created_utc": 1490157462,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Careers in CS/Blockchain from a non-technical background?",
+        "author": "dumbsaintofthemind",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60r6kq/careers_in_csblockchain_from_a_nontechnical/",
+        "text": "Hey r/askcomputerscience! \n\nSo, I was reading about Ethereum and ended up on their LinkedIn page and saw on their employee list someone whose title was 'Resident Philosopher' and that got me thinking... \n\nI was a philosophy major in college and really loved it but had no interest in continuing into academia or going to law school. I had left school for a year, though, to co-found a startup that got seed funding and I handled all creative direction and learned a lot about marketing, PR and some UX/product development/proj management. So that landed me a job at another startup in the connected car tech space after graduating last year and do pretty much the same stuff for them, but they're established and VC backed. But I don't really want to stay in the marketing/PR realm...I really want to be in management or work for a non-profit or some foundation advising or consulting.\n\nMy question boils down to this: I'm super passionate about having conversations surrounding the ethics of tech developments and implementations, but I don't have a technical background/CS degree and I admittedly don't understand a LOT about the things I'm most interested in, like blockchain, security, programming in general... I do have startup experience, though, and maybe that could be step towards being involved with the development and direction of a blockchain startup or something. But I know I need a graduate degree, both to learn about CS but also just to get into management. I know there are Masters in Computer Science programs for non-majors, and that there are Applied Ethics programs around in philosophy departments, but I don't even know if those would be the right step either. I'd love to hear from anyone who works in tech who came from a liberal arts/phil background, to learn more in general what a career trajectory might look like, or how difficult this would be. Thanks in advance!",
+        "created_utc": 1490139328,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Converting F to C",
+        "author": "jabberwocky16",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60qhhc/converting_f_to_c/",
+        "text": "Write a c++ program that will convert the temperature 72 degrees fahrenheit to celsius and output the celsius temperature.\n\n\nMy problem is, i don't know how to include the 72, writing:\n\nint fahrenheit;\nfahrenheit = 72;\n\ndoesn't seem to work.\n\n        float celsius;\n\tfloat fahrenheit;\n\tint fahrenheit = 72; (this doesn't work either)\n\t\t\n\tcelsius = (fahrenheit - 32) * 5/9 ;\n\tcout &lt;&lt; \"Celsius = \" &lt;&lt; celsius &lt;&lt; endl;",
+        "created_utc": 1490131942,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When does maths come in to CS?",
+        "author": "NotttheNSA",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60qegb/when_does_maths_come_in_to_cs/",
+        "text": "I'm a second year CS student who currently hates it. \n\nI picked CS for two reasons, one because people told me I'd hate what I wanted to do, and two, because everything I read said CS had tonnes of maths in it.\n\nUnfortunately so far that just hasn't been my experience, I've been able to take a few isolated maths modules and I've absolutely loved them, but all of the computing stuff has been horrendous, just pages and pages of code and theory that just doesn't interest me.\n\nI'm actually really down about it, because changing course isn't an option and I'm miserable in what I'm currently doing, so I'm just wondering was what I was told a complete lie? Or does maths actually come in to things?",
+        "created_utc": 1490131120,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Shortest Path using Dijkstra's Algorithm c++",
+        "author": "jpayne1224",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60ocd6/shortest_path_using_dijkstras_algorithm_c/",
+        "text": "I am currently trying to write a program that will find the shortest path between two vertices given a graph. The graph that i have been given is as follows:\n\n5\n\n1 2 9.0\n\n1 3 12.0\n\n2 4 18.0\n\n2 3  6.0\n\n2 5 20.0\n\n3 5 15.0\n\n0\n\n1 5\n\nWhere the first like \"5\" means there are 5 vertices in the graph. Then \"1 2 9.0\" means there is an edge between vertices 1 and 2 of weight 9.0. So on and so forth. The graph is over when a 0 is read and the shortest distance is expressed on the last line \"1 to 5\". My question is that i need to create a function that will read the graph (readGraph()) and one that will write the given graph. I have the structures that are necessary to writing this program.\n\n    struct Edge\n    {\n      int u,v;\n      int weight;\n      Edge* next;\n  \n      Edge(int vert1, int vert2, int w, Edge* n)\n      {\n        u = vert1;\n        v = vert2;\n        weight = w;\n        next = n;\n      }\n    };\n\n    struct Vertex\n    {\n      int shortestDist;\n      bool signaled;\n      int prev;\n      Edge* edgesAdj;\n  \n      Vertex()\n      {\n        edgesAdj = NULL;\n        signaled = false;\n      }\n    };\n\n    struct Graph\n    {\n      int numVert;\n      int numEdge;\n      int v;\n      Vertex* vertices;\n  \n      Graph(int nv)\n      {\n        numVert = nv;\n        numEdge = 0;\n        vertices = new Vertex[v];\n    \n      }\n    };\nreadGraph() is suppose to read the graph and return it, and then writeGraph(g) writes the graph given the input from a text file. Any help would be greatly appreciated. ",
+        "created_utc": 1490111272,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any recent NYU MSCS grads or current students?",
+        "author": "meloriot",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60o6ls/any_recent_nyu_mscs_grads_or_current_students/",
+        "text": "I'm trying to make an informed choice between two CS Masters programs (NYU and UMD) and would love to hear about your experiences. Apologies if this isn't the right place to ask, I looked around and this seemed most appropriate. Anything is helpful. Ty!",
+        "created_utc": 1490109632,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Mechanical Engineer seeking advice on switching to CS, please help!!",
+        "author": "igotvoipenated",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60lfxs/mechanical_engineer_seeking_advice_on_switching/",
+        "text": "[removed]",
+        "created_utc": 1490068200,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Did anyone here drop their CS major and just go for the minor?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60ksa4/did_anyone_here_drop_their_cs_major_and_just_go/",
+        "text": "[removed]",
+        "created_utc": 1490060165,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My parents restricted porn on our home wifi, please help.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60knbk/my_parents_restricted_porn_on_our_home_wifi/",
+        "text": "[deleted]",
+        "created_utc": 1490058550,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to make a large scale storage device( 1 Gb) out of CPU cache?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60jnvu/is_it_possible_to_make_a_large_scale_storage/",
+        "text": "[deleted]",
+        "created_utc": 1490048083,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How much does cost of attendance affect choosing a higher prestige school for CS?",
+        "author": "jlo270",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60i866/how_much_does_cost_of_attendance_affect_choosing/",
+        "text": "I'm deciding between UMass Amherst vs. St.Edwards(Austin) vs. UT Dallas \n UMass would be about 28k plus travel costs, St.Eds would be about 25k but only 3 hours away from where i currently live, and UT Dallas is about 22k and 4 hours away. I live in  houston, texas so massachusetts is very far away. I know that Umass has a great CS program (top 25 i think), St.eds is basically unknown and UT dallas is in the top 50. \n\nWould it be worth it to go to UMass because the school has more prestige in CS than the other schools?",
+        "created_utc": 1490034222,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Junior year and feeling overwhelmed/worried. Failing to manage time and stay on top of assignments. Feel like I don't belong. Any ideas, advice?",
+        "author": "PoofByContradiction",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60galo/junior_year_and_feeling_overwhelmedworried/",
+        "text": "I transferred from CC to university this semester feeling really prepared. But, most days feel like everything's caught in a bottleneck. I can't seem to manage my time, or stay on top of assignments. I usually just feel disoriented and i've been messing up left and right. \n\nHoping to get it out of the way, I took an accelerated humanities class. But, it made things more difficult, as exams and assignments were like obscure trivia, requiring some hardcore studying. I fell behind in my algorithms class, read the wrong chapters, then spent hours catching up just to not make the deadline. All while neglecting other courses.\n\nCurrently, I'm spending hours on assignments, but making little progress. I fixate on whether or not I am doing what the teacher wants me to, often times I just start over. I've tried to just work through that feeling, but I get distracted a lot, or go back and change minor things that aren't broken.\n\nI've also been reluctant to ask for any help from school resources. I almost feel scared to; I've never had to ask for help, really, and I sort of don't know what to ask for help with. I find it hard to put what I am confused about into words. I do make a lot of excuses, like that 'I don't think anyone can help *me*', or I think that 'I can do it on my own', or that 'its too late to fix the past' but then continue doing the same stuff, so it's obvious I need help. I feel embarrassed, and sort of ashamed. I feel like I don't belong at times, like I got here by luck. But, I've been trying really hard, and I transferred in with a 3.8 GPA, which I worked hard for.\n\nIf anyone else has any advice, or has experienced this and knows what it is, I appreciate any advice.\nThanks in advance!",
+        "created_utc": 1490014158,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it feasible to create a computer where the system (OS+programs) is run off RAM?",
+        "author": "kevinkid135",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60f6q4/is_it_feasible_to_create_a_computer_where_the/",
+        "text": "[removed]",
+        "created_utc": 1489995090,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Box in Case Packing problem",
+        "author": "lionhart280",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60e4tj/box_in_case_packing_problem/",
+        "text": "[removed]",
+        "created_utc": 1489978362,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Mp3 streaming from a web server",
+        "author": "DelmarM",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60dnyb/mp3_streaming_from_a_web_server/",
+        "text": "[removed]",
+        "created_utc": 1489972360,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question regarding a possible hypertext formatting error appearing in search queries.",
+        "author": "metadiver",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60bz1b/question_regarding_a_possible_hypertext/",
+        "text": "I performed a Google search of \"RF\" (radio frequency), where I found this [Wikipedia article](https://en.wikipedia.org/wiki/Radio_frequency). Pretty standard article, but looking back on what I found in the Google search was quite interesting.\n\nThe part of the beginning of the article that states radio waves are between 3 KHz and 300 GHz shows up like this:\n\n[Search Result \\[1\\]](http://imgur.com/CmRuSTi)\n\nNotice this string in the search results: 7003300000000000000♤\n\nI'm wondering if maybe this has something to do with how Google handles hyperlinks (as \"3 KHz\" links to the [Wiki page] (https://en.wikipedia.org/wiki/Hertz) on Hertz). I'm not too sure. Here's the results for when I searched for just the string on Google:\n\n[Search Result \\[2\\]](http://imgur.com/4uCY4WJ)\n\nThanks to anyone who can help me figure out why this occurs!\n\nEdit: Opening my link to the RF Wikipedia article using RES returned this strange result:\n\n[Search Result \\[3\\]](http://imgur.com/2RUdzYi)",
+        "created_utc": 1489952823,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SVP enumeration algorithm",
+        "author": "Draggonair",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60b9xz/svp_enumeration_algorithm/",
+        "text": "I know you can have a lower and upper bound of the number of points in a given volume, but how can you be sure you've hit the shortest vector?\n\nThanks",
+        "created_utc": 1489945208,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Open Data Structures (in Java) Questions",
+        "author": "Superstring4you",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60apmb/open_data_structures_in_java_questions/",
+        "text": "[removed]",
+        "created_utc": 1489938986,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "which discrete math subtopics to focus on?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60alzb/which_discrete_math_subtopics_to_focus_on/",
+        "text": "[deleted]",
+        "created_utc": 1489937825,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Arrays and converting",
+        "author": "jabberwocky16",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/60ad3w/arrays_and_converting/",
+        "text": "Looking to learn computer science so i'm asking my roommate for his work assignments (free education outside of my degree) but when i ask him how to actually do it, he told me to figure it out myself. I google'd and there's just so much information that i can't grasp it without someone actually showing me how to do it since i'm a kinesthetic and a visual learner.\n\n\nWrite a c++ program that will assign your Name (First and Last), major and semester each to an array variable, then output each on a separate line.\n\n\nWrite a c++ program that will convert the temperature 72 degrees fahrenheit to celsius and output the celsius temperature.\n\n\nSo for these 2 i'm guessing you start both with #include &lt;iostream&gt;, using namespace std; etc etc. For the second question, am i using float because it has numbers? Any help is appreciated!",
+        "created_utc": 1489934772,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Blanking on exams despite endless studying",
+        "author": "throdisting",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/609lu5/blanking_on_exams_despite_endless_studying/",
+        "text": "CS undergrad here, please point me in the right direction if this isn’t the place to ask for advice. \n\nI’m having trouble with my CS exams, specifically my Data Structures and Algorithms ones, and it’s become rather frustrating lately. I put in a lot of time and effort into studying for exams, and feel confident going into the test, but for some reason everything seems to fall apart during the exam. A lot of the exam questions ask me to find the runtime of some code, or to fill in skeleton code to mutate an ADT, or to write some code that fulfills the requirements given some interface, or to traverse a tree in some way given certain conditions, etc. When I practice such problems before the exam, I usually have a notion of where to start and manage to solve the problem within a reasonable amount of time. However, on the exam, I find myself not flustered or panicking, but blanking out when I see problems that ask me to write code for things I have never done before. For example, I knew how to rotate a 2D array and flip a 2D array, but a question on the exam asked me to shift a column down by x elements, and I completely blanked. Despite being solid on concepts, I find myself not being able to “connect the dots” in time before time is up; my solution only popped up in my head as I was turning the exam in, and by this time it was too late for me to even write anything down for partial credit. \n\nSomething very similar happened last semester in my midterm exam, and I took it as bad luck. The same thing happened during the final exam last semester, and I noticed that I needed to make some changes because bad luck doesn’t cause you to realize the solution only after you turn in the exam twice in a semester. I’m a firm believer in the idea that I’m not inherently smart, and that I can improve if I put in enough work. And so for my midterm exam this semester, I made sure to practice more and put my pride aside and went to office hours to ask for help whenever I didn’t understand anything. Lo and behold, the same thing happened in this semester’s midterm exam. I admit this frustrated me a lot because I felt like no matter how much work I put in, some external force (or even myself) was holding me back from doing well on the exams. I scored well on practice exams (past exams of previous offerings of the course), but for some reason the actual test would mess me up. After some reflection, I realized that the quantity of my efforts was not proportional to my performance on the exam, and because “quality is better than quantity,” I needed to change something up for another exam coming up soon.\n\nI’m not sure if this is occurring because of my study habits, my environment/daily routine, or test conditions/nerves. I’m convinced that the test conditions/nerves are not the main issue here, but I am not ruling them out as factors. During the exam, I become so engrossed in my work that I am not perturbed by any external forces (like people coughing or a tiny desk or whatnot). As for nerves, I am not anxious coming into a test, but I do have a sense of purpose in that I know that I have two hours to do a test that I want to do well on, and I have to not waste time in those two hours. \n\nHere are my study habits:\n\nI go to every lecture and take notes the following day to recap what I learned (taking notes during lecture distracts me). I also attend every discussion and lab section, and sometimes go to the extra practice sections held on weekends. When I can’t make it to the extra sections, I do those worksheets on my own time since they are posted online along with their solutions. I do my best to attempt every problem myself without looking at the solutions, even if it takes me up to two days to figure out. At that point, I have to ask for help and go to office hours with either the professor or TAs to get a hint, and usually end up being able to solve the problem. Very rarely have I had to ask a TA for the full solution to a problem. \n\nI make it a point to start studying for an exam about 1.5-2 weeks before the test date. When I study, I go through my notes and rewatch lectures for any topics I am shaky on. If I still don’t understand a concept, I seek help from a TA for clarification at office hours. If needed, I review homeworks and projects, though they aren’t pertinent to the types of problems that will be on the exam. Conceptually, I feel like I have everything down at this point. From then on, I do all available practice worksheets on the course page (including ones from past offerings of the course), all practice problems from TA websites, and all available past exams of the course that are relevant. Same drill here; no looking at solutions until I am done, go to office hours to seek hints when I’m stuck, compare my solution to the official solution to see what I could have done better. When doing past exams, I go to the library and time myself to simulate exam conditions. My professor allows us to bring a sheet of handwritten notes to the exam, so I usually fill this sheet up with a summary of every concept with examples (in case I blank out) and all of the things that I learned from my mistakes from the practice problems/exams. If I have extra space, which I usually do, I include some of the trickier problems from past exams in hopes that something similar shows up in the exam I’m about to take.\n\nMy daily routine:\n\nI usually get ~7 hours of sleep (~2AM - 9AM), skip breakfast, go to class for 1-2 hours, go for lunch between 11AM-1PM, more class until 3PM-5PM, study until 7-8PM, get dinner, study more or go to the gym to play pickup if I have time. I try to go to the gym every day, but leading up to the exam, I only go play maybe twice a week. I don’t take naps since it messes up my sleep schedule and I usually start my work the day it’s assigned and turn it in before the deadline to avoid procrastination.\n\nLeading up to an exam I also log off all social media (only message people when needed) to prevent distractions. I don’t watch much TV either so that isn’t a problem for me. On the day of the exam, I make it a point to get 8-10 hours of sleep, though this doesn’t always happen in my favor. I try to have a lax day in that I take my time for everything, whether it’s getting to class or my morning routine or whatnot, as to not increase my stress for that day. I eat before the exam and try to get there 15 minutes early to get settled.\n\nSome things I believe may be part of my problem:\n\n- Sleep. On the weekends I feel well-rested when I get at least 10 hours of sleep. On weekdays I can typically function on ~7 hours, but sincerely wish I got more because I feel much better with at least 8 or 9 hours of sleep. I usually finish my work around midnight or 1AM, but end up staying awake trying to sleep due to noisy roommates/bright lights. This is an issue I’m working on since it may be a long-term factor in the days leading up to my exam and my ability to “connect the dots.”\n\n- Exercise. Although I try to go to the gym every day, I often don’t in the two weeks before an exam because I’m busy devoting every waking moment to practicing for the test. This may be causing me to burn out (even though I don’t really feel burned out), but I read somewhere that exercising helps with memory retention. Not entirely sure about this.\n\n- Not attempting all ideas? When attempting to solve a problem on an exam, I find myself trying to walk through an idea for an approach I have in my head. If I deem it unsafe or unreasonable, I drop the idea and move onto another approach I can think of in my head. I believe this is because my mind is more afraid of putting down an incorrect answer that goes in the completely wrong direction, as opposed to having nothing down for a solution. I might have to work on this, maybe writing down all possible approaches I can think of, then walk through each one on paper instead of in my head?\n\n- Not writing everything out. During the tests I usually draw things out in a before/after manner, like “I have linked list A like this, and I want it to look like linked list B.” Although I feel this approach is good, I might have to start breaking things down into smaller steps between A and B on paper too, instead of just having the starting and ending steps laid out.\n\n- Problem weighting. The skeleton coding questions that I keep blanking on are often the problems worth the most points on the exam, which only frustrates me even more. If I blank on such a question, I find myself going to other problems I did solve and proofreading them to make sure I can get the most points possible on them instead of spending more time staring at the page of my blank solution space. Although I usually do the exam from front to back, an article recommended looking at all the problems before starting to work on any of them just so your brain can subconsciously work on them for you. This seems like a good idea, but I’m not sure how accurate it is. Instead I end up staring at a problem for a good 15 minutes before accepting defeat and moving on. It’s only after I turn in the problem, or a few minutes after the exam that the solution hits me. A TA recommended only trying to work on a problem if I can think of a good approach within 15-30 seconds of reading the problem, but I doubt that helps me if the problems I have left are only the ones that I can’t think of an approach for.\n\nAny other ideas on what I can try to improve for the upcoming exam? Anyone experience something similar? I’m really sick of the same trend happening in every exam, but I want to make a change since I refuse to just accept this “bad luck” to continue hindering me. Any help is appreciated, thank you for reading and have a blessed day!\n\nTLDR; No matter how much I study, I seem to blank on CS exams. Looking for advice on how I can fix this problem.",
+        "created_utc": 1489922447,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Endure a CS course expecting to get no credit or...?",
+        "author": "Thelucky_One",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/6070bq/endure_a_cs_course_expecting_to_get_no_credit_or/",
+        "text": "Taking my first intro to CS course via python and not doing so hot. \nGot a 0 on an assignment that is 5% of my grade and expected to fail my midterm. Keep getting upset about the code and feel way be behind. Would only stick through this course for pride and because i'm a math major, it would look bad. However, that means devoting a lot of time and that makes me bitter. Not sure if I shouldn't attend the course at all or suck it up and push through, but realizing that cs is probably not for me...I don't have the patience and I need to move around. Yes I'm a crap math major.",
+        "created_utc": 1489878280,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are there any good literature resources for AI in gaming?",
+        "author": "gaberoll",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/6067qb/are_there_any_good_literature_resources_for_ai_in/",
+        "text": "I have been reading through *AI Game Programming Wisdom 2*, and I am looking for another resource detailing more modern techniques used in gaming AI.  Particularly dealing with path-finding and decision-making.  Does anyone know of any books like that?",
+        "created_utc": 1489868974,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Research on back off in atomic compare and swap loops?",
+        "author": "sstewartgallus",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/604sk0/research_on_back_off_in_atomic_compare_and_swap/",
+        "text": "[removed]",
+        "created_utc": 1489853101,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Books on assembly",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/602f27/books_on_assembly/",
+        "text": "[removed]",
+        "created_utc": 1489811241,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Encrypting data using XOR encryption",
+        "author": "Lolyman13",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/602al9/encrypting_data_using_xor_encryption/",
+        "text": "I am currently working on a password manager for myself and now I need to save the password data on an external file. I've read that XOR encryption is a pretty bad idea when you want to encrypt confidential data because of the key length. \n\nIt made me wondered, what if I had a key that had an infinite length. Wouldn't a XOR encryption be good if I were to pass the key through a hashing function as soon as they key have been used to encrypt a chunk of data? What if I was hashing my master key with a sha256 algorithm and when the 64 bytes has been used to encrypt the data, I now hash this hash to encrypt another 64 bytes of data?",
+        "created_utc": 1489809313,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Java jars: how to redirect (error) output to a file?",
+        "author": "gandalf-the-gray",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/601za7/java_jars_how_to_redirect_error_output_to_a_file/",
+        "text": "I'm using eclipse to export the jars. It has an option to use ANT scripts, but I have no idea what they are and don't really care to learn atm. However, if there is an easy ANT script or some other solution, I would love to hear it. THanks",
+        "created_utc": 1489804691,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "To all those with a masters degree in Computer Science...",
+        "author": "theconfidentlogician",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/601vv5/to_all_those_with_a_masters_degree_in_computer/",
+        "text": "what prompted you to get a masters? A bachelors in comp sci can already get you a well paying job, what reason did you have to aim higher?",
+        "created_utc": 1489803409,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Computer science degree",
+        "author": "jamesyaboy",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/600gm0/computer_science_degree/",
+        "text": "I want to get a master's degree in computer science then go on to a PhD. The problem is I'm bad at mental arithmetic, I have always thought I'm bad at maths but recently I have found its just mental arithmetic and I even got the highest mark in maths today. Is a master's degree and PhD for me?\n",
+        "created_utc": 1489786506,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Explain \"delete\" in C++",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zzgx6/explain_delete_in_c/",
+        "text": "[deleted]",
+        "created_utc": 1489776484,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How are Data Structures implemented in the real world?",
+        "author": "hcrisp43",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zx1i1/how_are_data_structures_implemented_in_the_real/",
+        "text": "* Going through the typical Data Structures class: \n* BST\n* Min-Max Heap\n* 3 Min-Heap\n* Priority Queue\n* Open Addressing\n* Closed Hashing (Quadratic Probing, Double Hashing)\n* Leftist Heap\n* Skew Heap\n* AVL Tree\n* Splay Tree\n* Red-Black Tree\n\nI'm fairly comfortable with each of these, I just haven't worked with any of them in a \"real world\" sense",
+        "created_utc": 1489750220,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does a database have a buffer pool?",
+        "author": "petabit",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zufsb/how_does_a_database_have_a_buffer_pool/",
+        "text": "Isn't virtual memory managed by the operating system? Since databases are user level applications, wouldn't their \"buffer pool\" be at the discretion of the OS to evict out of memory?",
+        "created_utc": 1489710184,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Searching for the 'nots' when they're there",
+        "author": "SequesterMe",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zu7cu/searching_for_the_nots_when_theyre_there/",
+        "text": "*Stupid title but I made you look.* :D\n\nI am tasked with developing a Word Cloud for our trouble ticketing system. I've been asked to identify when an activity is a failure based on the description text. So, when someone enters, \"Can't log in\". I need to differentiate that from, \"Then I did the log in\".\n\nI'm only looking for the simple ones. can't, not, won't, didn't, etc.\n\nI would so love to have someone point me at a library that would work (I'm in .NET) but I'd be happy with ideas on how to efficiently search for the concept of what I'm attempting to accomplish.",
+        "created_utc": 1489707620,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need some final year project ideas",
+        "author": "OmnivorousOctopus_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zsknf/need_some_final_year_project_ideas/",
+        "text": "I'm coming to the end of my second year at uni doing a comp sci course and am starting to think about my final year project.  I want to do something that involves some sort of physical hardware.  NFC, Bluetooth, facial recognition (cameras), ect.  \n\nOne of my modules next year is on cryptography and depending on how that goes I think it could be interesting to base my project on that. (I like maths). \n\nId rather stay away from low level comp sci theory/programming. I'm also looking for something that is 'easy' to find research on and to write about. \n\nI was thinking it is probably a good idea to come up with a project that is a culmination of technologies that are already well established.  My project being one that uses multiple different technologies in a way that hasn't been done before. I don't want to spend months researching a topic of which there is hardly any content on.\n\nI don't need a whole project plan, just some things I can think about. I obviously have a lot of time yet till my 3rd year starts.\n\n",
+        "created_utc": 1489691171,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is discrete math needed for theory of computation",
+        "author": "freezingbum",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zraw6/is_discrete_math_needed_for_theory_of_computation/",
+        "text": "I'm familiar with the very basics of discrete math. I come from a different engineering background but I've dealt with sets, proofs, functions, linear algebra, and some logic. I've never taken a discrete math class per se but I've been exposed throughout my college courses (mostly mechanics and numerical analysis). I'm really poor in proofs if that matters (I'm working on it). \n\nAnyways, does theory of computation rely heavily on discrete math? If so, which subtopics (I mean, discrete math is kind of broad)?  \n\nLearning discrete math first probably makes sense, but I never really grok math until I apply it, if that makes sense. Calculus made a lot more sense to me after I started solving physics problems.",
+        "created_utc": 1489678810,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "10 Questions for a paper I am writing",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zqlnb/10_questions_for_a_paper_i_am_writing/",
+        "text": "[removed]",
+        "created_utc": 1489671332,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How many random 1's and 0's would I have to type in a row before I've created complete nonsense for a computer reading binary?",
+        "author": "6footfrick",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zok2v/how_many_random_1s_and_0s_would_i_have_to_type_in/",
+        "text": "So, binary code has two options (1 and 0) but is used to represent every single thing possible to see/do/hear on a computer (maybe 1010 means the letter \"A\", but 11010 means \"power off\" or something, you get the point). To me, it seems like even if a toddler wrote a random string of 1's and 0's on a piece of paper, it would mean something to a computer. How long would you have to go before what you (or your toddler) wrote was binary jibberish?",
+        "created_utc": 1489638497,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Should I just give up on computer science?",
+        "author": "AztecAvocado",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zlvgl/should_i_just_give_up_on_computer_science/",
+        "text": "Title, basically. \n\nI'm coming towards the end of second year of a CS program and absolutely despise it, but I'm in Ireland, where changing course is next to impossible, with the only way to do it involving have super wealthy parents. \n\nI don't see myself ever working in the field, and with the exception of the maths modules(outside of discrete maths) I have hated pretty much every aspect of the course, including the internship I had over the summer. \n\nI guess I want to know is it possible to do other things with a CS degree outside of CS things, or should I just stop wasting my time and go into a job in a shop or something now, as opposed to spending more money in college and winding up in the same place any way. ",
+        "created_utc": 1489609069,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there an easy proof or counter example to show the converse of the pumping lemma for regular languages is not true?",
+        "author": "qwerty_danny",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zlny9/is_there_an_easy_proof_or_counter_example_to_show/",
+        "text": "",
+        "created_utc": 1489607144,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some good ways for me to prepare to take computer science in college?",
+        "author": "ImperialHog",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zlcgn/what_are_some_good_ways_for_me_to_prepare_to_take/",
+        "text": "I'm a senior in high school now and I'd like to know if there are any ways that I can get ahead and/or make the learning easier. What are the best resources to use?\n\nThanks ahead of time for replying!",
+        "created_utc": 1489604237,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where can I learn to create something similar to JSFiddle's collaboration feature?",
+        "author": "shadowoftheking14",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zhj06/where_can_i_learn_to_create_something_similar_to/",
+        "text": "I would like to be able to implement a collaboration feature such as the one in JSFiddle. Anybody know where I can learn to make such a thing? Maybe a sort of tutorial or some similar open source software?  ",
+        "created_utc": 1489555157,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "With the rise of AI, do computer engineers have a future?",
+        "author": "sam_ridhi",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zhf1g/with_the_rise_of_ai_do_computer_engineers_have_a/",
+        "text": "",
+        "created_utc": 1489553513,
+        "upvote_ratio": ""
+    }
+]

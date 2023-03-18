@@ -1,0 +1,794 @@
+[
+    {
+        "title": "My mini project",
+        "author": "naamtosunahoga1",
+        "url": "https://www.reddit.com/r/ECE/comments/970hu3/my_mini_project/",
+        "text": "Im making a noise level indicator but before I implement it, I'm trying to simulate it on a software. Here's the problem, I have no idea how do i give 'noise' to the input. I thought of using a multiple frequencies generator but there's no such thing as that. Also i couldnt find a mic in the software. Is there any solution or software for this?",
+        "created_utc": 1534182680,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to do circuit analyses on SMPS in 2.1 Speaker System.",
+        "author": "ibreakbathtubs",
+        "url": "https://www.reddit.com/r/ECE/comments/96z0i6/how_to_do_circuit_analyses_on_smps_in_21_speaker/",
+        "text": "I'm a senior EE student attempting to troubleshoot a broken [Klipsch 2.1 speaker system](https://www.amazon.com/gp/product/B000062VUO?pf_rd_p=d1f45e03-8b73-4c9a-9beb-4819111bef9a&amp;pf_rd_r=D6B8Y48KE0ZBQ9W9HKMS). I intend to locate the fault in this speaker system and repair it. If you are familiar with this model, you may already have seen [this guy's page](http://www.thompdale.com/bash_amplifier/New_2-1/New_2-1_bash_amp.htm) where he reverse engineered the entire thing to make schematics. \n\nThe system I am troubleshooting is unresponsive and I don't have details on how it operated before failure since it was given to me. \n\nSince the entire speaker seems unresponsive, I am making the assumption that the power supply circuit is the best place to start troubleshooting. \n\n\n\nI feel like as a 4th year EE student I should be able to do some kind of analysis on this circuit to calculate expected node voltages or branch currents. But to be honest I'm not sure how to account for most of the components doing either nodal or mesh. \n\n[Schematic](http://www.thompdale.com/bash_amplifier/New_2-1/2-1_power_supply_schematic-986x707.gif)\n\n* LF1 - Line Filter ?\n* BR1 - Full Rectifier - How do I tackle the DC and AC before and after BR1 ? \n* C2, C1, C4, C7 - Do I model these as open in DC or do I have to take into account their affect on the ripple from BR1? \n* Any Q* transistor. Do I model these as dependent sources? \n* Any D* diode. Do I just count it's voltage drop and keep track of the waveform? \n* U1 - Look on data sheet for pin voltages? My only guess. \n* T1:2, T1:1 - Not sure what to do with these guys. \n\nI'm sure after I can make an equation for everything from the input to T1:2, T1:1 I should be able to solve the bottom LF and HF circuits since it's just more of the same thing. \n\nI'm well aware that solving equations on the circuit schematics might not be necessary to fix the speakers. However, I think this would still be a good exercise for me since clearly I need some review. Having a physical project to work on will motivate me to stay focused on reviewing the material instead of getting distracted on something else a few days from now. \n\n\nAny help or nudges in the right direction would be greatly appreciated. \n",
+        "created_utc": 1534172496,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "LTSPICE oscilloscope, signal analyzer problem.",
+        "author": "shellshohk",
+        "url": "https://www.reddit.com/r/ECE/comments/96ya2c/ltspice_oscilloscope_signal_analyzer_problem/",
+        "text": "I want to connect the output of my circuit to the oscilloscope or the signal analyzer like in multisim but I see no such instruments in LTSPICE. The output of the hardware is actually connected to the speaker which doesn't exist in LTSPICE so the terminal wires are just hanging there so the output isn't closed, the circuit is open. How do I view the waveform on the oscilloscope and signal analyzer? The way i understand is that you touch the probe at a node but not here as there is no oscilloscope. Thanks guys.\n\nEdit: There is a mistake in the circuit pointed out by Jewnadian, fixed.\n\nUpdate: The ends are now connected to an 8 ohm resistor for completion's sake.\n\nhttps://i.redd.it/lokjsgos3vf11.png",
+        "created_utc": 1534166778,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Examples of personal sites of Electrical Engineers",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/96w0gl/examples_of_personal_sites_of_electrical_engineers/",
+        "text": "Edit: Notice how I said graduating BSEEs guys. As in recent grads. MSEEs and BSEEs in particular, though I wouldn't preclude PhDs either. If you're a 15 year Principal engineer or a senior member of technical staff who just made the next generation compound heterostructure ultra wide band gap op amp that will revolutionize RF as we know it, and was at Texas Instruments all 15 years, yeah I don't think some random portfolio site with your arduino projects will really be looked at. Come on guys, use some common sense.\n\nOriginal:\n\nThese are some personal sites for electrical engineers currently in the industry that serve as great examples for good personal portfolios for EEs. They range in design and features.\n\nThis should give graduating BSEEs some kind of an idea what they might make a personal portfolio site to be like. For context, I've had a friend who ended up working at ADI after showing an existing ADI engineer some of his IC designs on his personal website. Scored him the interview, which got him the job. We as EEs should definitely keep up with the times imo.\n\nI find it's helpful to have references to other people explicitly in your field and not something broad like over all portfolio sites or even engineering portfolio sites either.\n\nNow these four people are rather exceptional, and to those who are aspiring computer architects should give you an idea just how difficult it is to enter computer architecture these days directly. The most \"easy\" way would be to enter as VLSI verification engineer, eventually graduate to a design engineer, and hope you can somehow become a full architect after a decade, though even that is questionable imo.\n\nNow for the sites:\n\n* [http://jaewoong.org/](http://jaewoong.org/)\n* [https://zhehaomao.com/](https://zhehaomao.com/)\n* [http://www.danzhang.net/](http://www.danzhang.net/)\n\nBonus is [http://www.edgrochowski.com/software-museum/elang.html](http://www.edgrochowski.com/software-museum/elang.html) who's been a computer architect at Intel for many decades. Very cool dude, architects are really exceptional people, this being just one example.",
+        "created_utc": 1534141694,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Retrospective: One of the most detailed looks into AMD's 64bit Architecture by Hans de Vries",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.chip-architect.com/news/2003_09_21_Detailed_Architecture_of_AMDs_64bit_Core.html#3.10",
+        "text": "",
+        "created_utc": 1534140602,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Prototyping A Quadcopter: Computer Aided Design (CAD)",
+        "author": "alexdada555",
+        "url": "https://www.youtube.com/watch?v=w-8K5RNrl94",
+        "text": "",
+        "created_utc": 1534111583,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Even more cool projects sites, This time with indepth discussion into a Spartan6 BGA Dev Card and a homebrew SDR",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/96sipg/even_more_cool_projects_sites_this_time_with/",
+        "text": "[BGA Testboard](https://danstrother.com/2011/01/16/spartan-6-bga-test-board/)\n\n[http://freesrp.org/](http://freesrp.org/) for the sdr and [http://electronics.kitchen/](http://electronics.kitchen/) for the project collection",
+        "created_utc": 1534109291,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Chip Collection - Chip Art Page 1, Smithsonian Institution - Correct Link this time",
+        "author": "itstimeforanexitplan",
+        "url": "http://smithsonianchips.si.edu/chipfun/graff.htm",
+        "text": "",
+        "created_utc": 1534104046,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Agilent Back to Basics Series Presentations: Spectrum Analyzer Basics",
+        "author": "itstimeforanexitplan",
+        "url": "http://ewh.ieee.org/r5/denver/sscs/Presentations/2012_10_Agilent1.pdf",
+        "text": "",
+        "created_utc": 1534102250,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Collection of very cool chip art from the Smithsonian Chip Collection",
+        "author": "[deleted]",
+        "url": "http://smithsonianchips.si.edu/",
+        "text": "[deleted]",
+        "created_utc": 1534102161,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Designing Analog Chips by Hans Camenzind, in case you guys haven't already downloaded it yet",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.designinganalogchips.com/",
+        "text": "",
+        "created_utc": 1534101811,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Encryption with the Zynq MPSoC",
+        "author": "adamt99",
+        "url": "https://blog.hackster.io/microzed-chronicles-accelerating-security-with-the-zynq-mpsoc-ultra96-43cc999746f2",
+        "text": "",
+        "created_utc": 1534064071,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Digital Control Engineering From Fadali and Visoli",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.ece.mtu.edu/faculty/shiyan/EE4262Spring17/DigitalControlTextBook.pdf",
+        "text": "",
+        "created_utc": 1534053076,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help me start a blog, everything helps!",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/96lzft/help_me_start_a_blog_everything_helps/",
+        "text": "[deleted]",
+        "created_utc": 1534040657,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Basic Electronics On The Go - 3 - Energy Shells and Energy Bands",
+        "author": "jwlchin",
+        "url": "https://www.youtube.com/attribution_link?a=H1kRndEoLpk&amp;u=%2Fwatch%3Fv%3DV7qMJTAvUnQ%26feature%3Dshare",
+        "text": "",
+        "created_utc": 1534038876,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Naturopathy Sunshine Coast &amp;amp; Brisbane Naturopath Wellness Clinic",
+        "author": "dorellabrailfor",
+        "url": "http://www.integratedwellnessclinic.com.au",
+        "text": "",
+        "created_utc": 1534026393,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Switched Capacitor Circuits: Chapter 12 from Razavi's textbook, from Razavi himself",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.seas.ucla.edu/brweb/teaching/AIC_Ch12.pdf",
+        "text": "",
+        "created_utc": 1534025133,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does the clock rate (hertz) of a CPU convert to bits per second?",
+        "author": "misterZ3r0",
+        "url": "https://www.reddit.com/r/ECE/comments/96ioep/how_does_the_clock_rate_hertz_of_a_cpu_convert_to/",
+        "text": "Is there a universal understanding that a full cycle translates to a fixed amount of bits or does it depend on the underlying technology (instruction set)? For example, the Intel i7-7700K maximum clock rate is 4.2 GHz, how would one convert that to bits per second?\n\nI found the formula for Instructions per second: IPS = sockets x ( cores / sockets) x clock x ( Is / cycle)\n\nNot sure what Is is defined as (Instruction set?)\n\nAlso not sure how instruction per second translate to bits per second. Thank you.",
+        "created_utc": 1534011807,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question about power electronics",
+        "author": "EOFFJM",
+        "url": "https://www.reddit.com/r/ECE/comments/96hr77/question_about_power_electronics/",
+        "text": "Can someone please explain alpha (radian) is in 3 phase full wave controlled bridge rectifier?\nThanks.",
+        "created_utc": 1534004570,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kicad Resources: Learn how to layout FPGAs &amp; other high pin count devices, some of the most challenging PCB projects",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/96hmsw/kicad_resources_learn_how_to_layout_fpgas_other/",
+        "text": "[First learning about differential length tuning is a must](https://www.youtube.com/watch?v=chejn7dqpfQ&amp;t=61s)\n\n* [http://cubicboard.org/](http://cubicboard.org/)\n* [https://numato.com/blog/kicad-more-complex-boards-our-experiment-spartan6-csg225/](https://numato.com/blog/kicad-more-complex-boards-our-experiment-spartan6-csg225/)\n* [https://olimex.wordpress.com/2016/05/06/ice40hx1k-evb-open-source-hardware-fpga-board-designed-with-kicad-and-working-with-icestorm-foss-toolchain-first-prototypes-are-ready-and-run/](https://olimex.wordpress.com/2016/05/06/ice40hx1k-evb-open-source-hardware-fpga-board-designed-with-kicad-and-working-with-icestorm-foss-toolchain-first-prototypes-are-ready-and-run/)\n* [https://www.youtube.com/watch?v=4-Cpv8oi5kU&amp;t=6916s](https://www.youtube.com/watch?v=4-Cpv8oi5kU&amp;t=6916s)\n* [https://www.youtube.com/watch?v=yWJyGpkZ6k4](https://www.youtube.com/watch?v=yWJyGpkZ6k4)\n* [https://www.youtube.com/watch?v=losnDGy5J6U](https://www.youtube.com/watch?v=losnDGy5J6U)\n* [https://www.youtube.com/watch?v=DwpH7kyqkPE](https://www.youtube.com/watch?v=DwpH7kyqkPE)\n* [https://www.youtube.com/watch?v=\\_1dr5FWYDgE&amp;t=535s](https://www.youtube.com/watch?v=_1dr5FWYDgE&amp;t=535s)\n* [https://www.youtube.com/watch?v=7AFGcAyK7kE&amp;t=41s](https://www.youtube.com/watch?v=7AFGcAyK7kE&amp;t=41s)\n* [https://www.youtube.com/watch?v=4-Cpv8oi5kU&amp;t=6916s](https://www.youtube.com/watch?v=4-Cpv8oi5kU&amp;t=6916s)\n* [http://hforsten.com/improved-homemade-vna.html](http://hforsten.com/improved-homemade-vna.html)\n* [https://www.youtube.com/watch?v=chejn7dqpfQ&amp;t=61s](https://www.youtube.com/watch?v=chejn7dqpfQ&amp;t=61s)\n\nHigh pin count micros, FPGAs and DRAM make up what I consider 3 out of the 5 most challenging aspects of PCB design, the other two being switchmode power supply (and high heat devices) and distributed microwave filters.\n\nIf you can be at least competent at a novice level in all five of those domains, bingo you're a basic PCB designer. I'm not there yet, but I'm definitely getting there. Did a microstrip board and a low pin count microboard, plus a SMPS this past year, so I'm working up!\n\nEdit: Didn't include Robert F's courses such as those on DDR3 memory layout since they're very Altium or OrCad heavy and those are very well known anyways. ",
+        "created_utc": 1534003578,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Graduate Course Selection",
+        "author": "MMRTG",
+        "url": "https://www.reddit.com/r/ECE/comments/96hmm2/graduate_course_selection/",
+        "text": "I'm starting the first semester of my MSEE program in a few weeks, and I'm having trouble deciding on one more class to fill my schedule. \n\nIn addition to classes that will benefit my research, I'm looking to take a few classes aimed at finding employment in radiation effects engineering in satellites &amp; other space tech as my BS is in nuclear engineering. For this semester, I've narrowed down my choices to either Semiconductor Devices or Microwave Circuits.\n\nThanks in advance! \n\n",
+        "created_utc": 1534003537,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "UCSB ECE124D: Chip Level High Speed Signal Integrity Course",
+        "author": "itstimeforanexitplan",
+        "url": "http://bears.ece.ucsb.edu/class/ece124d/",
+        "text": "",
+        "created_utc": 1534002647,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does the SparkFun MP3 Player Shield device interact with the control device?",
+        "author": "cracklescousin1234",
+        "url": "https://www.reddit.com/r/ECE/comments/96h521/how_does_the_sparkfun_mp3_player_shield_device/",
+        "text": "Title. [Here's the device in question.](https://www.sparkfun.com/products/12660)\n\nThe IC on the Shield board streams in the MP3 file from the SD card and puts out the analog audio signal to the headphone jack, right?\n\nSo then, what does the SPI master device (Arduino uC or Arty board Microblaze or whatever else) do? Does it send instructions to the Shield for what MP3 track to play from storage?",
+        "created_utc": 1533999634,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Video from The Signal Path. A fantastic introduction to WIRELINE CIRCUITS!",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.youtube.com/watch?v=MhWyAL2hKlk",
+        "text": "",
+        "created_utc": 1533968496,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "YCircuit: my attempt at creating a tool for drawing pretty schematics",
+        "author": "sidshekar",
+        "url": "https://www.reddit.com/r/ECE/comments/96dkds/ycircuit_my_attempt_at_creating_a_tool_for/",
+        "text": "I last talked about this in [this post](https://www.reddit.com/r/ECE/comments/6oqrzs/im_working_on_a_schematic_drawing_software_that/), but essentially I've been working on a tool that can match or improve upon XCircuit, especially in terms of UI and UX. I've added several features since that last post including \n\n* The notion of \"nets\" that automatically snap to pins on symbols, merge and split (for the most part) as intended\n* Items can be assigned heights to bring some items in front of or behind other items (see 3 below)\n* Export options including exporting the currently visible region, the full schematic or just selected items\n* Copying from one window and pasting into another window\n* User-defined custom shortcuts\n* Shortcuts to quickly add frequently used symbols\n* Updating from within the program (Help -&gt; Update)\n\nPerhaps the biggest change is the availability of compiled versions of the code so you don't need to install a python environment to try out the tool! You can download the code for Windows and Linux [here](https://bitbucket.org/siddharthshekar/ycircuit/downloads/). I recommend downloading ycircuit-develop\\_&lt;platform&gt;.zip and then updating from within the software to the latest develop branch to enjoy the latest and greatest features. These are some examples of the kind of output you can expect [1](https://bytebucket.org/siddharthshekar/ycircuit/raw/f9b42bf7f88a98ff2f73fc55ad739c5c965f5ae0/Resources/Examples/Full%20adder/Full%20adder.png), [2](https://bytebucket.org/siddharthshekar/ycircuit/raw/f9b42bf7f88a98ff2f73fc55ad739c5c965f5ae0/Resources/Examples/Inverter/inverter.png), [3](https://bytebucket.org/siddharthshekar/ycircuit/raw/f9b42bf7f88a98ff2f73fc55ad739c5c965f5ae0/Resources/Examples/Stacked%20ring%20oscillators/stacked%20ring%20oscillators.png), [4](https://bytebucket.org/siddharthshekar/ycircuit/raw/f9b42bf7f88a98ff2f73fc55ad739c5c965f5ae0/Resources/Examples/TIA%20noise/tia_noise.png).\n\nIn the past, some Redditors requested a list of all the symbols that were available built-in. You can find the standard list [here](https://bitbucket.org/siddharthshekar/ycircuit/src/f9b42bf7f88a98ff2f73fc55ad739c5c965f5ae0/Resources/icons/Symbols/?at=develop). I hope you can give this a shot and would love to hear your feedback!",
+        "created_utc": 1533958218,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for some advice.",
+        "author": "BlueBullet22",
+        "url": "https://www.reddit.com/r/ECE/comments/96cfbl/looking_for_some_advice/",
+        "text": "So I was unsure what I wanted to do career wise after high school so I decided I wanted to just go to community college and get my general education. So I went most of my time there still unsure of what I wanted to do. However, I recently discovered I have an interest in electrical engineering. Now it was too late for me to apply to many schools so I am taking a semester, or maybe even a full year off to work. \nThe advice I am looking for is what I should do with this time off. Should I look for a job that could get me some experience working with electronics? Should I visit some schools and get my name out there? Maybe even take some summer classes? Any help would be fantastic! Thank you",
+        "created_utc": 1533947632,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Links to great RF courses from UCSB, UCCS and others",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/96b53d/links_to_great_rf_courses_from_ucsb_uccs_and/",
+        "text": "Edit: Wait hold up read the edit for sure. Checkout Sam Palermo's courses. This has got to be the best course I've seen just freely available material wise for ***WIRELINE Communication Circuits!***\n\nReddit's site just died with my old post that had all the nice formatting. I'm just posting raw links here as a result, my b. Too much effort to reformat it all.\n\n\\- [ECE218A](https://web.ece.ucsb.edu/Faculty/rodwell/Classes/ECE218a/ECE218a.htm)\n\n\\- [ECE145A](http://www.ece.ucsb.edu/~long/ece145a/index.htm)\n\n\\- [2013 Comm III](http://www.ece.ucsb.edu/Faculty/rodwell/Classes/ece218b/ECE218b.htm)\n\n\\- [High Speed/Mixed Signal](https://www.ece.ucsb.edu/Faculty/rodwell/Classes/mixed_signal/mixed_signal.htm)\n\n\\- [2016 Comm III](http://www.ece.ucsb.edu/Faculty/rodwell/Classes/ece218c/ECE218c.htm)\n\n\\- [Older Course on Microwave Circuit Design](http://www.ece.ucsb.edu/Faculty/rodwell/Classes/ece202a/ece202a.html)\n\n\\- [Low Noise and High Speed Design](https://www.ece.ucsb.edu/Faculty/rodwell/Classes/graduate_noise_class/ECE594I.htm#_Toc249246411)\n\n\\- [https://csserver.evansville.edu/\\~richardson/](https://csserver.evansville.edu/~richardson/)\n\n\\- [Article on Distortion, great site overall!](https://www.amplifier.cd/Tutorial/Distortion/nonlinear_distortions.htm)\n\n\\- [Dr. Wickert has fantastic classes using Python for DSP, Comm Systems and Microwave Circuits!](http://www.eas.uccs.edu/~mwickert/)\n\n\\- [Dr. Wickert also authored this great scikit](https://mwickert.github.io/scikit-dsp-comm/)\n\nAnd a bonus [numpy tutorial I've been using](https://cs231n.github.io/python-numpy-tutorial/)\n\nEdit: /u/dochoff shared this professors course list from A&amp;M: [http://www.ece.tamu.edu/\\~spalermo/teaching.html](http://www.ece.tamu.edu/~spalermo/teaching.html) they are so worth the read jfc. ",
+        "created_utc": 1533937359,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Calculator for ECE major?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/969ke6/calculator_for_ece_major/",
+        "text": "[deleted]",
+        "created_utc": 1533926048,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Power amplifier for low power long range RF transceiver (CC1125)",
+        "author": "spark_plug_11",
+        "url": "https://www.reddit.com/r/ECE/comments/968a8m/power_amplifier_for_low_power_long_range_rf/",
+        "text": "Hello, hope you are doing well... \nFor a long distance 433MHz transciever design I need a power amplifier capable of giving an output of 25-27 dBm. Could you please suggest me some good manufacturers who makes these. Or if you know of a specific component could you share the part number. A more compact front end module with both Rx and TX amplification would be best, or just tx amp and Rx bypass.\n\nThanks in advance ☮️",
+        "created_utc": 1533917419,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Acceptance Angle and Numerical Aperture (NA) (Optical Fiber Communication) [Post also Includes Complete VIDEO Lecture in HD]",
+        "author": "Lalitvas",
+        "url": "https://www.engineeringmadeeasypro.com/2018/08/Acceptance-Angle-and-Numerical-Aperture-Optical-Fiber-Communication.html",
+        "text": "",
+        "created_utc": 1533912609,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there any advantage with a more powerful PSU???",
+        "author": "Luddex_420",
+        "url": "https://www.reddit.com/r/ECE/comments/966d0a/is_there_any_advantage_with_a_more_powerful_psu/",
+        "text": "Yeah i've decided to buid myself a gaming PC, but is there any advantage in using a psu with more power than needed. The pc wont need more than 400W, then is there any meaning in getting like a 600W psu??\n\nSry if im retarded but i'm grateful for answers",
+        "created_utc": 1533902881,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What js the use of a 0 ohm resistor?",
+        "author": "ButtyMcButt",
+        "url": "https://www.reddit.com/r/ECE/comments/965y6c/what_js_the_use_of_a_0_ohm_resistor/",
+        "text": "Saw it in a PCB's part list.",
+        "created_utc": 1533898862,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help me with something please",
+        "author": "Dhuann",
+        "url": "https://www.reddit.com/r/ECE/comments/965j85/help_me_with_something_please/",
+        "text": "Firts of all excuseme i dont know were to ask this, I just want to know if this is even possible and sorry again im a little slow to understand things.\n\nI had a electronic class today but i have a lot of questions, or may i say a lot of thoughts?\n\nMy class were about flux and pressure sensors but i had questions that not got resolved. Lets say i want to send the signal of the sensor to a place far away ¿how can i do that which thing? a transmisor? what is that? and whow can i lets say modify the signal obtained at the same time? is even that possible? a classmate said that is possible to sensore and transmit at the same time but you will need another thing to modify it. Well i thing you are getting the point here my thoughs are: If i had a water tank and wanted to know the pressure and flux about it but in a far place what thing do i need to do? it will be by cable? wireless? do i need to install another things? if so which, i want to do it by wireless if is possible\n\nit will helpme a lot if anyone could take the time to say something i am just excited to learn\n\nAs you may read, english is not my first lenguage sorry again",
+        "created_utc": 1533894257,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why don't we compute the Fourier Transform using polar coordinates",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/963hg8/why_dont_we_compute_the_fourier_transform_using/",
+        "text": "[deleted]",
+        "created_utc": 1533872435,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question about this circuit",
+        "author": "eenoob89",
+        "url": "https://www.reddit.com/r/ECE/comments/9632qa/question_about_this_circuit/",
+        "text": "if enable is high here then Mp1 will be in cutoff. Is the VDS voltage across Mp1 in this case VDD? \n\nhttps://imgur.com/a/umWAQ6K\n\nIf yes then the drain of Mp1 will be zero (or low) and that turns both Mp2 and Mp3 on. Is this how this setup works?\nI was told that Mp1 is what you call a \"squelch\" device that doesn't turn on the circuit unless en signal is high.",
+        "created_utc": 1533868840,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Unhappy with engineering or just my current job?",
+        "author": "jadbaugh",
+        "url": "https://www.reddit.com/r/ECE/comments/95zny2/unhappy_with_engineering_or_just_my_current_job/",
+        "text": "I have been out of undergrad for about 3 years. I got my BSEE and went to work for a defense contractor across the country doing test engineering which was more or less tester hand was holding. Unhappy with my situation I decided that I would apply to jobs closer to family and friends. I ended up getting a job at a research lab still doing defense work for the past 2 years. I went all in got my MSECE part-time which my current employer paid for. On paper (other than my commute) my employer is great to work for. Relatively relaxed work environment for the defense industry, great pay, benefits, consistent raises, endless amounts of “cool” interesting projects and the ability to work on whatever interests me. This all sounds great but recently I’m at a lull with my current role I keep getting feelings that the “grass is greener”. Most of what I do is systems analysis and some light coding, mainly MATLAB and C/C++. I work with a lot of intelligent people who work on “sexy” buzzword topics which sound super exciting on the surface but when I think about trying to get involved I realize that I probably don’t have enough experience or deeper interest in the topics. When I think about if this is what I want to do for the rest of my life I arrive at the answer of probably not. I decided to study engineering because I was good at math, science and engineers get paid relatively well. Sometimes I think about alternative career paths which vary from sales engineering, field engineering, consulting, construction, business, manufacturing, electrician, welder, farmer, cattle rancher, patent lawyer, real estate and being self-employed doing something. Obviously those are a wide variety of career paths but I think that I have narrowed my source of contempt down to being inside at a computer all day, lack of human interaction with exciting people, lack of true passion for what I am working on, being on a faced paced dynamic exciting team, physical exertion, and feeling that I’m just a cog in a machine at times. I enjoy being outside, trying to understand a problem, and working with my hands and accomplishing something. I’m tired of making slight iterations on something only to find out that and the ICD changed and the same work needs to be done for the next go around. Maybe I actually do like engineering but I need to leave the defense industry or work for a smaller company? Is my current role causing me to questions other careers or am I truly unhappy and should look into pursuing something else?",
+        "created_utc": 1533843405,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Unhappy with engineering or just my current job?",
+        "author": "[deleted]",
+        "url": "https://old.reddit.com/r/engineering/comments/95z3k9/unhappy_with_engineering_or_just_my_current_job/",
+        "text": "[deleted]",
+        "created_utc": 1533840296,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need recommendations for books covering embedded hardware systems.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/95xi4w/need_recommendations_for_books_covering_embedded/",
+        "text": "[deleted]",
+        "created_utc": 1533829073,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with project of electromagnetism ii",
+        "author": "alphmz",
+        "url": "https://www.reddit.com/r/ECE/comments/95wqek/help_with_project_of_electromagnetism_ii/",
+        "text": "I'm coursing computer engineering and need to do a project of eletromag ii. Here, the teacher focuses in antennas, don't know in others places.\nI just started the discipline now and don't know much what i can do, but i have to present what i will do in 3 weeks. I would like some suggestion or/and guidance in some nice projects.\nI remember some of previous years: antenna for remote control car, yagi-uda antenna,\n\nSome help would be nice ",
+        "created_utc": 1533823665,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The second break down in power BJT occurs due to",
+        "author": "electronics2electric",
+        "url": "https://electronics2electrical.com/10506/the-second-break-down-power-bjt-occurs",
+        "text": "",
+        "created_utc": 1533794155,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The heat is off: UCLA engineers develop world’s most efficient semiconductor material for thermal management",
+        "author": "Chipdoc",
+        "url": "https://samueli.ucla.edu/the-heat-is-off-ucla-engineers-develop-worlds-most-efficient-semiconductor-material-for-thermal-management/",
+        "text": "",
+        "created_utc": 1533785185,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question on bootloaders, compilers and basic OS design",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/95sln2/question_on_bootloaders_compilers_and_basic_os/",
+        "text": "Hey so there's always been some questions I've had with the basic design of a processor. \n\nLet's say I had an existing processor. It included some main memory, a processor, and a bus interface and something like UART. \n\nI want to then take that processor and run an assembler on it. Like load an assembler program onto the processor to then run it via terminal.\n\nBasically I want a way to connect to my processor and run some programs on it. \n\nWhy? Say I write some RTL for a fancy function, like uhh I don't know natural log and higher precision division. I just made some huge changes to my floating point unit and I want to test them out. But instead of testing them out like most architecture students, by hand loading the values into the boot memory of the FPGA like a barbarian, I'd like to program it. \n\nSo to do this I believe I would need:\n\n- A working two pass assembler on my host machine that will cross assemble for my target architecture \n- A uart driver written in assembly\n- A bootloader\n- A text editor program\n- An assembler. Literally one written for my processor. \n- Some other shit I'm really not sure of. \n- A file system\n- Some way to run or load code in place, like after assembly, store the instructions into memory to run. Aka a linker and loader, I need parts of a tool chain. \n\nI connect through some serial terminal program. I use the terminal text editor I wrote on my processor. I save and exit. Run assembler.exe on the program. run program. have program run. \n\nI'm guessing to execute all this I would need a very basic OS with a file system and a simple kernel, a two pass cross assembler, a two pass regular assembler, linker and a loader. And some programs to dump data back through the UART link? \n\nAnyone have some project links into similar things? Like usually all this stuff delves into using GCC or some GCC-lite variant, or just focus on their on entire projects, even the design of a simple first stage bootloader. \n\nIs there some integrated project that might discuss these details without being some tome in size? \n\nI think Project Oberon is the only project I can think to that is similar to this. \n\nTowards actualizing it in hardware, say I had an FPGA. It usually has some block ram or some onboard SRAM in it, otherwise I'd have to use some EEPROM like device. Probably an SD Card. So in reality into my processor bus I'd have to attach an SD card controller using SPI. And I have to have assembled programs in the kernel for SPI handling and SD card control, if I didn't have some built in microcode OR through a dedicated FSM which sounds annoying literally built into hardware. \n\nSo my processor would need to be similar to:\n\n- Processor\n- Cache Memory and Cache Memory Controller (On or offboard SRAM)\n- External SDRAM controller acting as main memory if I wrote it or a DDRX class controller if I used a Hardmemory IP block from my FPGA vendor\n- UART Controller\n- SPI Controller\n- SD Card Controller (if not done through firmware) \n- Bus Interface\n- Interrupt Handler if not done through polling. Thankfully no DMA, phew. I know how DMA works, and use it semi regularly with uCons but I can't develop the RTL if my life depended on it, probably. \n\nThankfully using UART I don't need to worry about doing some memory mapped IO which is convenient I guess. I mean technically I do for UART, however it's not like I need to do it for a VGA controller, keyboard and mouse, which would make things a touch more complicated. \n\nHow in the name of fuck do you write an assembler? Like yeah I get it, to really test out your compiler you have to compile your compiler. What does that mean though. Yeah bootstrapping, yeah C was in B. WHAT DOES THAT MEAN THO? \n\nI'm an EE student who's taken a bajillion embedded and architecture courses, however I've only ever gone up to Data Structures and Algorithms in CS. What the fuck, how do you assemble an assembler. Never taken OS or compilers or Systems Programming or any of that fancy shit. I can use a toolchain. I've used cross compilers. But how do you make one? \n\nLike seriously I don't get it. Do I make a file storage system, store a file with my instructions which are now ascii binary representations. Then they have to fetch sequentially from the file and process each thing? What does that mean????? I know assembly instructions like load word store word or FMULV or some shit. WHAT EVEN IS THIS? Assemble an assembler. HOW? I understand reading JEDEC specs for DDR memory to implement RTL, but I have no fucking clue how this CS shit works. How do you make a toolchain? What even is any of this shit? \n\nAnd don't get me wrong, I watch a ton of vintage computing shit. I've literally watched people program shit with a teletype into basic for fun. that doesn't mean I understand it. [I WATCHED A FUCKING PUNCH CARD LOAD DATA, BUT I DON'T GET IT. WHAT EVEN IS THIS????????????????????????? Man if they made a basic interpreter in basic and loaded that in by paper tape I'd basically shit myself.](https://www.youtube.com/playlist?list=PLB3mwSROoJ4KLWM8KwK0cD1dhX35wILBj) \n\nI'm literally watching a whole channel dedicated to the altair 8800. And you'd think I'd understand this shit by now. After reading Hennessy and Patterson (and Patterson and Hennessy). After taking 3 courses in VLSI and Digital IC design. After all this time I can make a processor, even down to modern device physics and fabrication. I can choose between static logic vs domino logic. I can tell you why we use high k dielectrics or SOI technology. I can explain why we have to switch to static logic vs like NORA under the constraints of short channel effect. BUT I DON'T KNOW HOW TO PROGRAM A LINKER IN ASSEMBLY. HOW DO YOU PROGRAM AN ASSEMBLER IN ASSEMBLY? WHAT IS THIS FUCKING MAGIC??? People think Signal Integrity is black magic, man this shit is basic EM. But what the unholy fuck is this chicken and egg bullshit. I don't get bootstrapping, i really don't. ",
+        "created_utc": 1533782300,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Archive.org Link for Kraus Electromagnetics 1973 International Edition.",
+        "author": "itstimeforanexitplan",
+        "url": "https://ia800703.us.archive.org/18/items/Electromagnetics_559/KrausCarver-Electromagnetics_text.pdf",
+        "text": "",
+        "created_utc": 1533780520,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What’s All This Capacitive Loading, Stuff, Anyhow?",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.electronicdesign.com/power/what-s-all-capacitive-loading-stuff-anyhow",
+        "text": "",
+        "created_utc": 1533779092,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for friendly ECE experts to join our Discord Server for Developers, Tinkerers, and Hackers!",
+        "author": "bv9900",
+        "url": "https://www.reddit.com/r/ECE/comments/95rz9i/looking_for_friendly_ece_experts_to_join_our/",
+        "text": "The MQT Engine Discord server needs more electrical and computer engineering experts/ students on board! We're a large, friendly group of technological problem-solvers just having a good time learning, chatting about our projects, and helping each other out.\n\nCheck us out here: [https://discord.gg/2hCNqZ7](https://discord.gg/2hCNqZ7)\n\nWe're always looking for new friends, mentors, or students, and hope to see you there!",
+        "created_utc": 1533776922,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Masters in computer science vs computer engineering",
+        "author": "Feelscactus",
+        "url": "https://www.reddit.com/r/ECE/comments/95rnlb/masters_in_computer_science_vs_computer/",
+        "text": "I’m going into my final year of computer engineering and starting to think about grad school. I was wondering your guys opinion on what would best pair with my undergrad degree. I love coding ad programming but also love the aspect of building and integrating it, hence the reason I’m in ece but am wondering what would benefit me the best for carrer options. I’ve looked into both but I’m open to any input ",
+        "created_utc": 1533774296,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Recommended Reading for Avionics/Aircraft Environment Design Practices?",
+        "author": "GoForBroke07",
+        "url": "https://www.reddit.com/r/ECE/comments/95qwxu/recommended_reading_for_avionicsaircraft/",
+        "text": "Looking for suggestions on books or other materials that cover best practices for electrical engineering when designing boards and harnesses for an aircraft environment.  I used to work at a major aerospace defense contractor and they had various engineering practice manuals which were a great resource, but they were proprietary so I couldn't take them with me.\n\nSpecific topics should be: power supply design (esp with MIL-704F power), general analog, general digital, FPGA, instrumentation (precision analog and sensors), control systems, motor control, grounding, EMI, harnesses and connectors, thermal, tolerance/yield/stress analysis, design assurance processes, reliability, safety criticality (DO-254), etc.  Basically practices  that cover the whole spectrum of EE design but optimised for aircraft environments.\n\n\nThanks",
+        "created_utc": 1533768497,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Self-Documenting Hardware",
+        "author": "Susan_B_Good",
+        "url": "https://www.reddit.com/r/ECE/comments/95qk7t/selfdocumenting_hardware/",
+        "text": "The mods of /r/electronics  thought that this question might be better asked here: \n\nI've been thinking about the perennial problem of documenting hardware, to make it easier for anyone to maintain, repair or modify it in the future. You can supply the customer with the documentation - but it so often doesn't remain with it.\n\nIn the (recent) past - it wasn't unusual to at least find a paper copy of the circuit diagram \"under the lid\" - but space is limited, as products become ever smaller.\n\nWhat I was thinking of is an electrically isolated ROM on the board, with some standard interface. As much documentation, circuit diagrams, even annotated software listings, setting up and calibration instructions, parts lists - everything could be on it. Even a failsafe copy of the system ROM, in compressed form.\n\nBarring physical damage to the \"documentation\" ROM itself - it would survive almost any faults. \n\nPossibly not for consumer products, where a failed unit = another potential sale. But for low volume bespoke electronics, designed and built for a particular purpose?\n\nIt would need to be standardised, so that it could be looked for and found and the information stored accessed.  Otherwise, the documentation for accessing it would need to be stored on a ROM...\n\nAt present I put the documentation online, with a QR code on the enclosure. But websites come and go. \n\nWhat do you reckon? Would self-documenting hardware become as useful as self-documenting code?",
+        "created_utc": 1533765856,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I miss MCM and hate Newark",
+        "author": "Kingofawesome13",
+        "url": "https://www.reddit.com/r/ECE/comments/95q81d/i_miss_mcm_and_hate_newark/",
+        "text": "The website used to be so easy to use. I was on hold for customer support for half an hour today and then I was hung up on.",
+        "created_utc": 1533763455,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best place to find an internship for Summer 2019?",
+        "author": "TendererMean000",
+        "url": "https://www.reddit.com/r/ECE/comments/95pwip/best_place_to_find_an_internship_for_summer_2019/",
+        "text": "Im a rising sophomore right now looking to find an internship for 2019 in the Northeast region.",
+        "created_utc": 1533761263,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice on electronics careers",
+        "author": "caretotrythese",
+        "url": "https://www.reddit.com/r/ECE/comments/95pfdn/advice_on_electronics_careers/",
+        "text": "I found an online electronics technician certificate through the University of Houston. It does labs via simulation software. It is very cheap and would work for me with my current living situation. I do have to ask the question though, is it worth anything? Would it help me get a job or would they just laugh something like this off? They do also offer training in automation, PLC, electromechanical, and robotics.",
+        "created_utc": 1533758076,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some good alternatives to Lego Mindstorms?",
+        "author": "yalogin",
+        "url": "https://www.reddit.com/r/ECE/comments/95o1cg/what_are_some_good_alternatives_to_lego_mindstorms/",
+        "text": "I hope this isn't off topic for this sub. I am looking for Mindstorms alternatives that -- \n\n- use arduino/raspberry pi or something similar.\n\n- provide a scratch like popular language and high level languages like python.\n\n- Extensible platform so that I can keep building more complex things on the same platform.\n\n- Easy for a kid to start using.\n\nThese are all possible with the Minstorms platform but is a but expensive. So trying to see what other options are available. ",
+        "created_utc": 1533748956,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "USB Midi Host",
+        "author": "sbock",
+        "url": "https://www.reddit.com/r/ECE/comments/95maiw/usb_midi_host/",
+        "text": "Hi, i want to build a sequencer based on stm32f3 discovery. The attached image shows the basic setup. Since the discovery board offers a USB User port, i want to implement a USB-MIDI host to get input from the [Novation Launchpad Mini](https://github.com/Granjow/launchpad-mini/blob/master/doc/launchpad-programmers-reference.pdf) and then implement a sequencer, arpeggiator and maybe other midi based effects/controllers. Do you know any good materials to understand USB-Midi hosts to a point where i can understand e.g. this implementation [https://github.com/MrBlueXav/Dekrispator](https://github.com/MrBlueXav/Dekrispator)?\n\nThanks in advance :\\]\n\nhttps://i.redd.it/tdjlnf4bnve11.png",
+        "created_utc": 1533737177,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does a winch motor have 4 terminals?",
+        "author": "bbbbbenji",
+        "url": "https://www.reddit.com/r/ECE/comments/95lp7q/why_does_a_winch_motor_have_4_terminals/",
+        "text": "I am assuming one is ground, one is positive, but what are the remaining two terminals for? \n\nHere is an example wiring diagram for reference: https://i.imgur.com/1IGi5IT.jpg",
+        "created_utc": 1533732525,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where to buy RFID Proximity Module Readers?",
+        "author": "lweht",
+        "url": "https://www.reddit.com/r/ECE/comments/95ksjr/where_to_buy_rfid_proximity_module_readers/",
+        "text": "Hello fellow redditors,\n\nI would like your opinion on where I should buy 13.56 Mhz RFID RC522 Proximity Module Readers like this one:\n\n[r/https](https://www.reddit.com/r/https)://[www.ebay.com/itm/New-13-56-Mhz-RFID-RC522-Proximity-Module-Reader-IC-Karte-S50-Kit-Set-ID-Key-Tag/122609452091](http://www.ebay.com/itm/New-13-56-Mhz-RFID-RC522-Proximity-Module-Reader-IC-Karte-S50-Kit-Set-ID-Key-Tag/122609452091)\n\nI need to buy a couple hundred and I hear that lots of suppliers ship faulty devices. What are your thoughts?\n\nThanks in advance for your time",
+        "created_utc": 1533723600,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Simple circuit design to stop a pump that fills a bin until full",
+        "author": "thedreamlan6",
+        "url": "https://www.reddit.com/r/ECE/comments/95jz96/simple_circuit_design_to_stop_a_pump_that_fills_a/",
+        "text": "I am planning on having several electrical components in the design itself. I will use a concrete powder pump similar to [this one](https://www.alibaba.com/product-detail/submersible-cement-grouting-coal-mining-smoke_60482111946.html?spm=a2700.7724857.normalList.150.71d363afc6VlTq). It will have power from a truck-mounted generator. I will use a proximity switch or a bin switch like [this one](https://www.monitortech.com/product_p_prox.shtml), to sense when the bin is full of concrete powder, and turn off the pump. What kind of circuit should I recreate? I am familiar with the following circuit components: resistor, source, capacitor (used in the sensor), inductor, transformer, and that is pretty much it. Any other components you have in mind might need some explanation. Is there an example circuit diagram I could look at that would fit this description, or any suggestions/design ideas to make this circuit work correctly? \n\nThanks! (am mechanical engineer, be gentle)",
+        "created_utc": 1533713934,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "8 Bit CPU tutorial part 1",
+        "author": "Ultimategamer32",
+        "url": "https://youtu.be/we_s7bBMuHw",
+        "text": "",
+        "created_utc": 1533691287,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "8 Bit CPU tutorial part 0",
+        "author": "Ultimategamer32",
+        "url": "https://youtu.be/mioJlWWhrN4",
+        "text": "",
+        "created_utc": 1533691239,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "FPGA with C++",
+        "author": "le_chak_150",
+        "url": "https://www.reddit.com/r/ECE/comments/95hkzk/fpga_with_c/",
+        "text": "So someone I know asked me if I am familiar with C++(which I am). They asked me if I could help them with programming FPGA using C++. Can someone please point me to some good YouTube/web resources to get started.",
+        "created_utc": 1533691022,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nothing technical, just thought id crowd source for opinions. Topic: job offers",
+        "author": "njrajio",
+        "url": "https://www.reddit.com/r/ECE/comments/95h0zw/nothing_technical_just_thought_id_crowd_source/",
+        "text": "I know that selecting a place of work is based on one's own interests and the company's offerings, but I'm really curious as to what people have done in my situation: \n\nHave one year left of EE undergrad\nPlace I'm interning at gave me a full time offer starting after graduation + will allow me to intern over the school year\n\nDid you accept the offer from the same company you interned with or found another company? I've begun preparations for job hunting but I know I'd feel like a dick if I accepted a position at another place. ",
+        "created_utc": 1533686461,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If the Transverse Field Detector is different from Foveon, then why are CFAs used to improve accuracy? What are ways to improve accuracy of TFD without a CFA?",
+        "author": "cpu5555",
+        "url": "https://old.reddit.com/r/AskScienceDiscussion/comments/95f57d/if_the_transverse_field_detector_is_different/",
+        "text": "",
+        "created_utc": 1533672791,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How is Johnson-Nyquist noise damped?",
+        "author": "word_vomiter",
+        "url": "https://www.reddit.com/r/ECE/comments/95dfuu/how_is_johnsonnyquist_noise_damped/",
+        "text": "",
+        "created_utc": 1533661346,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Im trying to find a specific piece of the NEC.",
+        "author": "Tr8cy",
+        "url": "https://www.reddit.com/r/ECE/comments/95d9ka/im_trying_to_find_a_specific_piece_of_the_nec/",
+        "text": "I work for a landscaping company.  One of our guys hit a line that was buried 7 inches deep in a homeowners yard.  I thought that lines needed to be buried 18 inches deep.   Theres been three of us researching this for hours.  I called our local electrical official and he directed me to table 300.5 of the NEC, but also told me that the utility that installed the line is not required to obtain permits or comply with local or state codes.  They operate under their own rules.  I have called the Bpard of Public Utilities, and spoke to an electrical engineer, who basically doesnt know.  Where can I find the official code stating the rules?  I want to know how deep the electric company is supposed to bury this line, and if they actually are not bound by the same rules we are.  Thanks, Reddit!!",
+        "created_utc": 1533660169,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hi guys, I have a question regarding Proximity Sensors.",
+        "author": "Bazing4baby",
+        "url": "https://www.reddit.com/r/ECE/comments/95c4xb/hi_guys_i_have_a_question_regarding_proximity/",
+        "text": "I'm currently on my final year and our capstone project has to deal with navigation using proximity sensors. Does anyone have a good knowledge where to purchase good quality sensor( distance of  2cm\\~500cm ) with a decent price? We are currently consider either radar or sonar or if possible combination of both.    \n\n\nOur concern for the mean time is the cost. We probably have a very limited budget as we are still students so any input would be appreciated.",
+        "created_utc": 1533652336,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is the smart antenna technology a mature one?",
+        "author": "theiyerboi",
+        "url": "https://www.reddit.com/r/ECE/comments/95bunz/is_the_smart_antenna_technology_a_mature_one/",
+        "text": "For my bachelor's project, I wish to design a smart antenna. However, I can't get a grasp on how far ahead the technology is. Would me taking this topic up be as pointless as designing a regular patch antenna for 2.4 GHz? Is this contemporary by any means? ",
+        "created_utc": 1533650244,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tutorial: RF 433 MHz (Wireless Radio Frequency) Communication Between two PIC Microcontroller",
+        "author": "ewan_m",
+        "url": "http://www.pictutorial.net/2015/10/how-to-interface-RF-module-with-microcontroller.html",
+        "text": "",
+        "created_utc": 1533634382,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"What’s All This Rail-to-Rail Amplifier Stuff, Anyhow?\"",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.electronicdesign.com/analog/what-s-all-rail-rail-amplifier-stuff-anyhow",
+        "text": "",
+        "created_utc": 1533612058,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Electronic Design (EDN) Article on Fundamentals of Spectrum Analysis",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.electronicdesign.com/test-amp-measurement/fundamentals-spectrum-analysis",
+        "text": "",
+        "created_utc": 1533611936,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Keysight Manual on Radar Measurements",
+        "author": "itstimeforanexitplan",
+        "url": "http://literature.cdn.keysight.com/litweb/pdf/5989-7575EN.pdf",
+        "text": "",
+        "created_utc": 1533611824,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Intel Technology Journal Links",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/957rnn/intel_technology_journal_links/",
+        "text": "The ~~bumbling morons~~ geniuses who redesigned Intel's site decided to axe the easy to access Intel journal archives. Now you have to do some really interesting google keyword searches. Thankfully they're still accessible, but god knows for how long. \n\n* [2001 Vol 5, Iss 1](https://www.intel.com/content/dam/www/public/us/en/documents/research/2001-vol05-iss-1-intel-technology-journal.pdf)\n* [2008 Vol12 Iss 3](https://www.intel.com/content/dam/www/public/us/en/documents/research/2008-vol12-iss-3-intel-technology-journal.pdf)\n* [Vol 12 Iss 1](https://www.intel.com/content/dam/www/public/us/en/documents/research/2008-vol12-iss-1-intel-technology-journal.pdf)\n\nI think everyone sees a pattern in the URL. Date-vol#-iss-iss#-intel-technology-journal.pdf\n\nftp://ftp.math.utah.edu/pub/tex/bib/toc/intel-tech-j.html will let you know up to 2006 which dates go with which volume and issue. \n\nIMO after 2008, it kinda loses value for Microarchitecture students. 2008 was the last golden year for the journal imo, gave great details into the new Core-I series.\n\nInterestingly I was asking a principal engineer (10+ years experience) at an unnamed IC company why Intel would take their once functional site and decided to throw it in the dumpster. He said something about becoming \"consumer facing\". I wonder if that's a euphemism to mean let's make it as useless as possible. ",
+        "created_utc": 1533609644,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "LT Journal Archives from ADI 1991 onwards",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.analog.com/en/analog-dialogue/lt-journal.html",
+        "text": "",
+        "created_utc": 1533609004,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Intro Statistical Signal Processing Resources",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/957lwt/intro_statistical_signal_processing_resources/",
+        "text": "I'm not a signal processing person by any means but these are some things my friends have shared with me and I thought in turn I'd share with you guys for that schweet schweet karma. \n\n- [Stanford EE 278](https://web.stanford.edu/class/ee278/info.html)\n- [Stanfrod EE378A](https://web.stanford.edu/class/ee378a/info.html)\n- [Book 1 On SSP](https://cpb-us-e1.wpmucdn.com/blogs.rice.edu/dist/7/3490/files/2018/01/notes-13l1a3s.pdf)\n- [Book 2 On SSP](https://ee.stanford.edu/~gray/sp.pdf)\n- [Rice ELEC 531](http://elec531.rice.edu/)\n- [UW Wisc ECE830](http://willett.ece.wisc.edu/wp-uploads/2016/01/01-Intro.pdf)\n- [Amazon link to Kay's essential volumes on SSP](https://www.amazon.com/Fundamentals-Statistical-Signal-Processing-Estimation/dp/0133457117/ref=pd_sim_14_2?_encoding=UTF8&amp;pd_rd_i=0133457117&amp;pd_rd_r=SHD6PPSCXDJWQ1PGHA90&amp;pd_rd_w=ksb8h&amp;pd_rd_wg=r8fR0&amp;psc=1&amp;refRID=SHD6PPSCXDJWQ1PGHA90)\n\nLike DSP? Like Probability? Like Linear Algebra? I mean if you like all three you probably already know about SSP if you haven't taken the set grad courses. But in the strange case you haven't, here ya go. \n",
+        "created_utc": 1533608253,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I really need advice as a junior ASIC PD engineer",
+        "author": "sincosboy",
+        "url": "https://www.reddit.com/r/ECE/comments/954yiz/i_really_need_advice_as_a_junior_asic_pd_engineer/",
+        "text": "So...I don't know. I need help. I feel kind of lost at the moment. I guess this is a bit of a rant as well.\n\n**Background**: I'm about 2 years into a PD/PnR position doing things from synthesis to verification, I lucked my way into an internship and into full time with only a bachelors at a small recruiting company dealing with contracting and turnkey projects. I've run through about 2-3 projects at the moment, and had some slight involvement in others. Issue is, my mentor/boss that hired me has left, as well as a few others. The management that is left is rather business oriented. E.g. we were delayed essential tool licenses for two weeks, and had to steal them from another team working tape-out.\n\nLong story short: I'm not happy here. Shafted pay, poor management, no benefits, lack of mentorship, lack of job security quite honestly. I'm here out of necessity, in finance and the need for experience.\n\n**My concern right now is, where should my career be headed?**\n\nRight now, even though I'm working and learning, the actual learning seems to be crawling down to a halt. There's still a lot I'm aware I need to learn, but there's very little resources where I am to do so. I'm biding my way, but I fear that I'll build bad habits, or learn improperly, or just never develop as fast as I need to move on.\n\nFrom what I can tell, PD is a very niche line of work. Starting in the last two months, I've already applied to what hand-full I can even come close to qualifying for across the entire US, including those that require at least a masters. I haven't really received a response from anyone. I don't know if it's my resume, my lack of experience, or lack of a graduate degree, but it's really disheartening. Not to mention, it seems like PD work is being farmed out to Asia quite often, I don't see any prospects in continuing.\n\nI've also tried applying to front-end as well, I did an FPGA senior project, which is as far as my experience extends, hoping to land an entry-level ASIC/FPGA interview, but nothing back so far. It's extremely disheartening because it seems like I really need at least a masters, which is something I cannot afford to do at the moment. It just seems like my experience isn't worth anything in a transition, or maybe companies just don't want someone like that.\n\nI don't know. I'm considering maybe trying to transition to software. I don't hate PD work. I don't love it, it's something I can definitely do. I'm realizing the job is about the people. But the prospects look grim from my perspective. I don't know what to do, how to feel, really anything.\n\n\n\n",
+        "created_utc": 1533587866,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ever wonder how (and why) the first FM broadcast was made? If you have seen or read “Empire of the Air” the tragic history may not be new to you but I include the real engineering with the history. Hope you enjoy and please tell me if/how I messed it up.",
+        "author": "KathyLovesPhysics",
+        "url": "https://youtu.be/g1RiAmB1J5k",
+        "text": "",
+        "created_utc": 1533587465,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SOIL MOISTURE METER PROJECT USING PIC MICROCONTROLLER",
+        "author": "[deleted]",
+        "url": "http://www.pictutorial.net/2015/11/microcontroller-based-soil-moisture-meter.html",
+        "text": "[deleted]",
+        "created_utc": 1533580718,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Digital Current Limiting: components to making a more practical SMPS",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.microsemi.com/document-portal/doc_view/129605-sg1526-digital-current-limiting-techniques-for-switching-power-supplies",
+        "text": "",
+        "created_utc": 1533574733,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Using an all-in-one computer display in another project",
+        "author": "NorthStarZero",
+        "url": "https://www.reddit.com/r/ECE/comments/951sky/using_an_allinone_computer_display_in_another/",
+        "text": "Hey all,\n\nI has a challenge that I'm sure is someone's bread and butter, so I'm looking for some assistance:\n\nMy wife had an HP All-In-One computer with a beautiful 27\" touchscreen display. A lightning storm fried the motherboard (the usual suspects of power supply and RAM were swapped out but it wouldn't boot) so we decided it was beyond practical repair and replaced it.\n\nI was unable to bring myself to junk it though, because of that display. I has a project where it would be useful, so I kept it around.\n\nToday I disassembled the full rig, hoping that it would be as simple as an HDMI header, a USB connection for the touchscreen, and a power connector, all running to the display. No such luck. Instead, there is a broad ribbon connector running to a break out board, a tiny ribbon connector running to something I had already disassembled prior to noticing that it ran to the display, and a series of 3 tiny headers on 3 of the corners of the display that also appear to run to that break out board.\n\nThe break out board is a custom HP part with lots of custom headers on it. It has HDMI in (that ran to the motherboard), an SD card slot, the WiFi chip and antenna, etc etc.\n\nThe simple hack of trying to use the break out board as the display  controller looks way more complex and fraught with peril than it is worth.\n\nBUT...\n\nThe display itself is an LG part number. That tells me that there are LG engineering specs that describe how to connect the display. And almost certainly there is a board out there somewhere for where this display was used as a stand-alone monitor, that has the ribbon cables and the touchscreen headers on one side, and power, USB, and HDMI on the other. Odds are that the display connections are standardized, and there are dozens if not hundreds of potential controller boards out there that will work.\n\nHow would I go about tracking down one of these boards?\n\nThanks",
+        "created_utc": 1533566107,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Solid introduction into Delta Sigma ADCs",
+        "author": "itstimeforanexitplan",
+        "url": "http://www2.cscamm.umd.edu/programs/ocq05/adams/adams_ocq05.pdf",
+        "text": "",
+        "created_utc": 1533537403,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Placing impedances given in polar coordinates on a Smith Chart",
+        "author": "Dewless125",
+        "url": "https://www.reddit.com/r/ECE/comments/94x3cd/placing_impedances_given_in_polar_coordinates_on/",
+        "text": "Is there a convenient way or trick to place an impedance/conductance given in polar form on a Smith Chart without first converting it to rectangular coordinates?",
+        "created_utc": 1533519301,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Solid review of Frequency Domain techniques (55 pages over Laplace, FS and CTFT)!",
+        "author": "itstimeforanexitplan",
+        "url": "http://web.mit.edu/2.151/www/Handouts/FreqDomain.pdf",
+        "text": "",
+        "created_utc": 1533512213,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Awesome writeup on the practical/mechanics of measuring parasitics",
+        "author": "itstimeforanexitplan",
+        "url": "https://meettechniek.info/passive/parasitic.html",
+        "text": "",
+        "created_utc": 1533511521,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Full featured project list using the Open Source FPGA toolchain for ICE FPGAs!",
+        "author": "itstimeforanexitplan",
+        "url": "http://zipcpu.com/projects.html",
+        "text": "",
+        "created_utc": 1533506544,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "BGRs explained from THE Paul Brokaw",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.idt.com/document/whp/how-make-bandgap-voltage-reference-one-easy-lesson-paul-brokaw",
+        "text": "",
+        "created_utc": 1533506374,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Microwave101 article on why Zo is usually 50 ohms",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.microwaves101.com/encyclopedias/why-fifty-ohms",
+        "text": "",
+        "created_utc": 1533506310,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ADI Guidelines for High Speed ADC layout",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.analog.com/en/technical-articles/a-short-course-in-pcb-layout-for-high-speed-adcs.html",
+        "text": "",
+        "created_utc": 1533506266,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Semtech App note on RF PCB layout guidelines",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.semtech.com/uploads/documents/rf_design_guidelines_semtech.pdf",
+        "text": "",
+        "created_utc": 1533506168,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Integrated sechematic capture &amp; Spice question, from an old-timer",
+        "author": "sstunt",
+        "url": "https://www.reddit.com/r/ECE/comments/94u36p/integrated_sechematic_capture_spice_question_from/",
+        "text": "This came up in \\[another thread\\]([https://www.reddit.com/r/ECE/comments/94qwwp/which\\_circuit\\_simulation\\_software\\_is\\_this/](https://www.reddit.com/r/ECE/comments/94qwwp/which_circuit_simulation_software_is_this/)), by in a posting by \\[u/mantrap\\]([https://www.reddit.com/user/mantrap2](https://www.reddit.com/user/mantrap2)): \"\\*Be aware that SPICE is primarily analog. For digital you'd use something different but even then there is seldom \"end-to-end\" simulation possible or used. At a circuit level, you simulate a small case and extrapolate.\\*\"\n\nI've only ever used Spice to pick out a part of a circuit whose behavior I couldn't determine analytically, and simulate it every which way.  Usually this is either a switching power supply or a class D amplifier (or a switching motor drive, if your semantics can't stretch \"class D amplifier\" to encompass that).  I've always used LTSpice for that, because I believe their mantra about it being better at simulating switching circuits.\n\nI can't imagine wanting to take a schematic for a whole board and simulating it just on the grounds of simulation speed, much less accuracy.\n\nSo, if you're using KiCad or OrCad, or Protel or whatever-CAD as your front-end to Spice, \\*do\\* you try to simulate whole schematics?  Or are you just using the familiar front-end to do selected scraps of circuits, the way I do with LTSpice?",
+        "created_utc": 1533494462,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "thesis topic recommendations",
+        "author": "dandyyyyt",
+        "url": "https://www.reddit.com/r/ECE/comments/94s3zy/thesis_topic_recommendations/",
+        "text": "can someone recommend a thesis topic for a quantitative research and it's about electrical engineering course? i really ran out of ideas. thanks guys . really need some help",
+        "created_utc": 1533478235,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bypassing handshake in wireless charger",
+        "author": "SearchingForALaugh",
+        "url": "https://www.reddit.com/r/ECE/comments/94r8eu/bypassing_handshake_in_wireless_charger/",
+        "text": "I am trying to use a wireless phone charger for a project but after doing some research i found out the wireless charging protecol takes a handshake to fully function. The ICs in the PCB dont have any text on them so i cant take a look on the datasheets.. Thats where i hope you guys come in, does any of you guys know a way to bypass the handshake without needing to make a whole new circuit?\nThanks in advance!",
+        "created_utc": 1533468656,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "which circuit simulation software is this?",
+        "author": "shellshohk",
+        "url": "https://www.reddit.com/r/ECE/comments/94qwwp/which_circuit_simulation_software_is_this/",
+        "text": "It appears at the timestamp 3:56. It doesn't look like a SPICE program to me.  [https://www.youtube.com/watch?v=PKFcaXd5G8c](https://www.youtube.com/watch?v=PKFcaXd5G8c)\n\nhttps://i.redd.it/hhpwkdti29e11.png",
+        "created_utc": 1533464218,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question Help",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/94qstb/question_help/",
+        "text": "[deleted]",
+        "created_utc": 1533462556,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Efficiency challenge - circuit design",
+        "author": "glennkg",
+        "url": "https://www.reddit.com/r/ECE/comments/94pfqn/efficiency_challenge_circuit_design/",
+        "text": "I have a project that I’m looking to improve and I hope you all can help me out. The laydown is this; a battery powered device meant for long term deployment using something on the order of 70 nanowatts when idle has no good battery health monitoring. If a battery fails prematurely or is encountering unexpected draw, the software will be oblivious, continuing to derate the battery percentage based on an estimate of use/battery capacity. I’m not interested in reading voltages, I just want to know when the series voltage of the batteries falls below 7V.  \n\nTrying to find a set up where there is only power used when triggering. ",
+        "created_utc": 1533444544,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "uC programming",
+        "author": "DecentChaupaBoy",
+        "url": "https://www.reddit.com/r/ECE/comments/94p8qn/uc_programming/",
+        "text": "I am trying to get back into programming uControllers with Cpp. I want to create and develop my own libraries for my custom breakout boards and other controllers. Are there any good books containing guidelines to follow industry’s good practices. I usually go to books first, followed by internet research afterwards. \nI appreciate any contribution",
+        "created_utc": 1533442422,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does Foveon have a more severe noise problem at ISO 6400 versus comparable Bayer sensors at the time? Would the transverse field detector, which has high quantum efficiency, be better than Bayer and Foveon? What are your thoughts?",
+        "author": "cpu5555",
+        "url": "https://old.reddit.com/r/AskScienceDiscussion/comments/94ntoz/why_does_foveon_have_a_more_severe_noise_problem/",
+        "text": "",
+        "created_utc": 1533429450,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Self Studiers: Components that can make RF education a bit easier",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/94np9a/self_studiers_components_that_can_make_rf/",
+        "text": "I’m sure everyone knows of mini circuits already but also check out https://www.xmicrowave.com/ \n\nMakes prototyping Rf systems ideas easier imo. \n\nAlso if anyone wanted an RF version of the CA3086 or CD4007 BJT/FET arrays should check out https://www.intersil.com/content/dam/Intersil/documents/hfa3/hfa3046-3096-3127-3128.pdf\n\nJust like the 3086 or the 4007 make learning about basic analog or digital IC electronics easier, these should help too, just for RF!",
+        "created_utc": 1533427713,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Might be a bit outdated but here’s a Tutorial from ADI on DDS!",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.analog.com/media/en/training-seminars/tutorials/450968421DDS_Tutorial_rev12-2-99.pdf",
+        "text": "",
+        "created_utc": 1533427321,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Cool Edaplayground Alternative/Clone site!",
+        "author": "itstimeforanexitplan",
+        "url": "http://www.makerchip.com/",
+        "text": "",
+        "created_utc": 1533427077,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "EE Podcasts",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/94n3bn/ee_podcasts/",
+        "text": "What podcast's does everyone here listen to? \n\n[I know the most famous is the Amp Hour](https://www.youtube.com/user/TheAmpHour/feed)\n\nBut [I also recommend Keysight's Podcast](https://www.youtube.com/channel/UCgOIWEM5swjhBklA0vZru8w)\n\nAnd while not exactly a podcast [The What's the deal with series from Bob Pease is awesome and kinda like a podcast](https://www.youtube.com/playlist?list=PLMKxBlyAyypxuaI7pbfRkSryvTDef_Y1S)",
+        "created_utc": 1533422262,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Python for SciComp, what does everyone on ECE use in their python environments?",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/94mvwl/python_for_scicomp_what_does_everyone_on_ece_use/",
+        "text": "I guess I'll start off mine:\n\n- [Anaconda is a must](https://anaconda.org/anaconda/python)\n- [CoCoTB](https://cocotb.readthedocs.io/en/latest/index.html)\n- [SciKit RF](https://scikit-rf-web.readthedocs.io/)\n- [FEniCS](https://fenicsproject.org/)\n- [SfePy](http://sfepy.org/doc-devel/index.html)\n- [GprMax](http://www.gprmax.com/)\n- [PythonMEEP](https://www.fzu.cz/~dominecf/meep/index.html)\n- [XlWings](https://www.xlwings.org/)\n\n[Here's another great list](https://www.scipy.org/topical-software.html)\n\nWhat about everyone else?  \n\n",
+        "created_utc": 1533420475,
+        "upvote_ratio": ""
+    }
+]

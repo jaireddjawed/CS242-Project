@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Subs with the highest ratio of authors to subscribers",
+        "author": "fhoffa",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3kfpqw/subs_with_the_highest_ratio_of_authors_to/",
+        "text": "The question is which subs display a high ratio of authors to subscribers? This can be read as most subscribers being active in the sub, or as having a lot of non-subscribers participating.\n\n(on the other extreme we can find the subs that have a lot of subscribers, but not many contributors - homework for another post)\n\nResults:\n\nsub|authors|subscribers|ratio||\n:--|--:|--:|--:|:--|\n/r/millionairemakers|34836|61550|1.77||\n/r/Fireteams|20111|45092|2.24||\n/r/Windows10|20940|50017|2.39||\n/r/RoastMe|35054|88391|2.52||\n/r/pcmasterrace|122227|459202|3.76||\n/r/2007scape|10545|39676|3.76||\n/r/SquaredCircle|23904|93227|3.9||\n/r/GlobalOffensiveTrade|10944|45445|4.15||\n/r/DotA2|50927|248355|4.88||\n/r/KotakuInAction|10144|50619|4.99||\n/r/legaladvice|12130|61427|5.06||\n/r/RocketLeague|15297|78331|5.12||\n/r/metalgearsolid|10953|56734|5.18||\n/r/GlobalOffensive|53027|276367|5.21||\n/r/DestinyTheGame|35875|199711|5.57||\n/r/ffxiv|13879|82230|5.92||\n/r/Smite|10327|61562|5.96||\n/r/electronic_cigarette|18115|108298|5.98||\n/r/TrueDetective|10899|65330|5.99||\n/r/SandersForPresident|16903|101628|6.01||\n    \n    SELECT '/r/'+subreddit sub, authors, subscribers, ROUND(subscribers/authors, 2) ratio\n    FROM (\n      SELECT EXACT_COUNT_DISTINCT(author) authors, subreddit\n      FROM [fh-bigquery:reddit_comments.2015_08]\n      GROUP BY 2\n    ) a \n    JOIN EACH [fh-bigquery:reddit.subreddits_201509] b\n    ON a.subreddit=b.display_name\n    WHERE NOT subscribers IS null\n    AND NOT over18\n    AND authors&gt;10000\n    ORDER BY 4\n\n\nMade with BigQuery and the dataset that /u/Stuck_in_the_matrix uploaded with every sub stats, where I could see the number of subscribers that each has (/r/datasets/comments/3k3mr9/reddit_data_for_900000_subreddits_includes_both/).\n\n(find more queries at /r/bigquery/comments/3cej2b/17_billion_reddit_comments_loaded_on_bigquery/)",
+        "created_utc": 1441909711,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why can you no longer submit multiple replies to a comment, if you can still submit multiple comments to a post?",
+        "author": "ekolis",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3kcgd5/why_can_you_no_longer_submit_multiple_replies_to/",
+        "text": "[removed]",
+        "created_utc": 1441855951,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "20% of America is under the age of 15",
+        "author": "Positronix",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3kat1w/20_of_america_is_under_the_age_of_15/",
+        "text": "[removed]",
+        "created_utc": 1441833777,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "/r/Zombo, a case study in hands off moderation",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3k9s14/rzombo_a_case_study_in_hands_off_moderation/",
+        "text": "[removed]",
+        "created_utc": 1441820675,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Have you noticed that after a certain size, subreddit comments are full of shitposting? Do you think this can somehow be remedied?",
+        "author": "conradsymes",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3k4xf8/have_you_noticed_that_after_a_certain_size/",
+        "text": "[removed]",
+        "created_utc": 1441743095,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reddit growers and shrinkers August 2015: Which were the subreddits that got most new commenters, and lost most commenters during August?",
+        "author": "fhoffa",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3k25n7/reddit_growers_and_shrinkers_august_2015_which/",
+        "text": "With data compiled by /u/Stuck_In_the_Matrix and loaded into BigQuery by me. \n\nSee more at https://www.reddit.com/r/bigquery/comments/3k242u/reddit_comments_dataset_updated_to_august_2015/\n\n**EDIT**: A lot more queries at: /r/bigquery/comments/3cej2b/17_billion_reddit_comments_loaded_on_bigquery/\n\nGrowers:\n--\n\nauthors_201508|authors_201507|diff|multiplier|subreddit||\n--:|--:|--:|--:|:--|:--|\n35054|4214|30840|8.32|/r/RoastMe||\n7436|2301|5135|3.23|/r/blackops3||\n5346|1778|3568|3.01|/r/foshelter||\n19631|7693|11938|2.55|/r/fantasyfootball||\n16385|6439|9946|2.54|/r/rickandmorty||\n3985|1768|2217|2.25|/r/FantasyPL||\n2647|1184|1463|2.24|/r/49ers||\n10953|5032|5921|2.18|/r/metalgearsolid||\n4448|2139|2309|2.08|/r/Torontobluejays||\n3292|1785|1507|1.84|/r/Overwatch||\n2005|1099|906|1.82|/r/MaddenUltimateTeam||\n2089|1168|921|1.79|/r/suits||\n2589|1449|1140|1.79|/r/WildStar||\n7146|4011|3135|1.78|/r/MrRobot||\n2526|1459|1067|1.73|/r/DestinySherpa||\n2080|1202|878|1.73|/r/malelivingspace||\n3541|2057|1484|1.72|/r/eagles||\n1888|1097|791|1.72|/r/LivestreamFails||\n\n\n    SELECT MIN(a.authors) authors_201508, MIN(b.authors) authors_201507, \n           MIN(a.authors-b.authors) diff,\n           MIN(ROUND(a.authors/b.authors,2)) multiplier, '/r/'+a.subreddit subreddit\n    FROM (\n      SELECT EXACT_COUNT_DISTINCT(author) authors, subreddit\n      FROM [fh-bigquery:reddit_comments.2015_08] \n      GROUP BY 2\n    ) a\n    JOIN (\n      SELECT EXACT_COUNT_DISTINCT(author) authors, subreddit\n      FROM [fh-bigquery:reddit_comments.2015_07] \n      GROUP BY 2\n      HAVING authors&gt;1000\n    ) b\n    ON a.subreddit=b.subreddit\n    GROUP BY subreddit\n    ORDER BY multiplier DESC\n    LIMIT 18\n    \n\nShrinkers:\n--\n\nauthors_2021508|authors_2021507|diff|multiplier|subreddit||\n--:|--:|--:|--:|:--|:--|\n9556|36064|-26508|0.26|/r/announcements||\n26876|41929|-15053|0.64|/r/nba||\n928|14661|-13733|0.06|/r/Blackout2015||\n568977|581861|-12884|0.98|/r/AskReddit||\n162049|174534|-12485|0.93|/r/videos||\n52055|64013|-11958|0.81|/r/technology||\n7518|15945|-8427|0.47|/r/Terraria||\n12985|20955|-7970|0.62|/r/SubredditDrama||\n16304|23200|-6896|0.7|/r/heroesofthestorm||\n15705|22311|-6606|0.7|/r/space||\n12556|19084|-6528|0.66|/r/gameofthrones||\n38045|44048|-6003|0.86|/r/soccer||\n12478|18139|-5661|0.69|/r/OutOfTheLoop||\n67675|73283|-5608|0.92|/r/IAmA||\n34836|40436|-5600|0.86|/r/millionairemakers||\n9058|14583|-5525|0.62|/r/JusticePorn||\n28063|33545|-5482|0.84|/r/books||\n26277|31676|-5399|0.83|/r/creepy||\n\n    SELECT MIN(a.authors) authors_2021508, MIN(b.authors) authors_2021507, \n           MIN(a.authors-b.authors) diff,\n           MIN(ROUND(a.authors/b.authors,2)) multiplier, '/r/'+a.subreddit subreddit\n    FROM (\n      SELECT EXACT_COUNT_DISTINCT(author) authors, subreddit\n      FROM [fh-bigquery:reddit_comments.2015_08] \n      GROUP BY 2\n    ) a\n    JOIN (\n      SELECT EXACT_COUNT_DISTINCT(author) authors, subreddit\n      FROM [fh-bigquery:reddit_comments.2015_07] \n      GROUP BY 2\n      HAVING authors&gt;1000\n    ) b\n    ON a.subreddit=b.subreddit\n    GROUP BY subreddit\n    ORDER BY diff \n    LIMIT 20",
+        "created_utc": 1441690206,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "1986 Public Broadcast Interview quote - from a retired 82 year old New York professor - who said \"Majority Rule on Thinking is Always Wrong\" - with a formula to solve it",
+        "author": "Vermilion",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3k1jpb/1986_public_broadcast_interview_quote_from_a/",
+        "text": "[removed]",
+        "created_utc": 1441678106,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "1986 Quote about how Majority Rule on Thinking is always wrong, but a 82 year old retired professor",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3k1ihl/1986_quote_about_how_majority_rule_on_thinking_is/",
+        "text": "[deleted]",
+        "created_utc": 1441677420,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it correct to say reddit once supported Ron Paul and now supports Bernie Sanders?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jtl0t/is_it_correct_to_say_reddit_once_supported_ron/",
+        "text": "[deleted]",
+        "created_utc": 1441511173,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it correct to say reddit was once supported Ron Paul and now reddit supports Bernie Sanders?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jtjqt/is_it_correct_to_say_reddit_was_once_supported/",
+        "text": "[deleted]",
+        "created_utc": 1441510383,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A Burkean Metaphor for reddit. I call it, 'the reddit parlor'",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jmybd/a_burkean_metaphor_for_reddit_i_call_it_the/",
+        "text": "[removed]",
+        "created_utc": 1441384284,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a way to view all original comments (non-replies) to a post on Reddit?",
+        "author": "AP_Feeder",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jmc0v/is_there_a_way_to_view_all_original_comments/",
+        "text": "[removed]",
+        "created_utc": 1441375331,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is Shitredditsays?",
+        "author": "holdonrealitycheck",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jkih4/what_is_shitredditsays/",
+        "text": "[removed]",
+        "created_utc": 1441333857,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "finding all comments on a certain subreddit on a certain date in the past (aka 9/11, Y2k, etc)",
+        "author": "jontoler",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jjked/finding_all_comments_on_a_certain_subreddit_on_a/",
+        "text": "[removed]",
+        "created_utc": 1441318011,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What goes on behind /r/nonononoyes?",
+        "author": "_Rolfy_",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jj6ln/what_goes_on_behind_rnonononoyes/",
+        "text": "[removed]",
+        "created_utc": 1441312285,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Keyboard-Courage makes Redditors into flaming asshats, but that's not the real problem.",
+        "author": "GornoP",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jiw49/keyboardcourage_makes_redditors_into_flaming/",
+        "text": "The real problem is the anonymity of the downvotes.  \n\nIt's one thing for some troll to create an account and say a bunch of crazy, offensive, whatever stuff.  At least you can recognize there's a (semi)human being behind those efforts, horrible as they may be.\n\nBut the downvotes out of nowhere?  Downvotes with not one single person offering ANY explanation of why a comment/link is being downvoted into oblivion?\n\nAlso: It's one thing to go to /r/Ilovepie and lecture people about carbs.  \n\nBut go to /r/Ilovepie and post something like: \"My favorite is chess.  What are yours?\"  and come back to find your comment has a -1265 score with NO explanation?\n\nCan anyone explain this to me?  This is an annoyance beyond the embarrassment of vocal idiots.  ",
+        "created_utc": 1441307972,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Redditors not understanding subtle joke troll comments",
+        "author": "iEATu23",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3ji2iy/redditors_not_understanding_subtle_joke_troll/",
+        "text": "The way the response comment is upvoted, makes it look like people are laughing at the first comment because they think he's being dumb, when they're the ones with the joke going over their head. Or are people too lazy to upvote the first comment, once they understand it because of the second comment? Doesn't seem helpful for others.\n\n[example](https://np.reddit.com/r/youtubehaiku/comments/3jejr0/poetry_how_to_catch_a_mole/cup6pjc)\n\nThe way redditors use their downvotes causes well thought out jokes to be less visible, which negatively reinforces people to continue subtle humor. And people will never learn to understand them because the comment is never visible enough for others to comment and laugh. Plus, negative emotions seem more prevalent in comment responses since there isn't much to say about a joke other than upvoting it.\n\n/r/punchablefaces in its current state is another example of this, but the satire is so enormously obvious, so there are few downvotes.\n\nEDIT: similar? https://www.reddit.com/r/TheoryOfReddit/comments/3hkzzt/is_there_anything_i_can_do_to_effectively/",
+        "created_utc": 1441295852,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why are female submissions not as predominant on /r/RoastMe as they are in other appearance-oriented subreddits?",
+        "author": "enzo32ferrari",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jgly2/why_are_female_submissions_not_as_predominant_on/",
+        "text": "9 months ago, I wrote a post on hivemind upvote behavior in subreddits that focus on the appearance of the user. I hypothesized that in subreddits where the focus is the appearance of the user, female submissions will have a higher upvote frequency. This post can be found [here](https://www.reddit.com/r/TheoryOfReddit/comments/2n4z9j/subreddits_that_focus_on_the_appearance_of_the/).\n\n-\n\nWith the rise of the comedy/satire subreddit, /r/RoastMe in which users submit pictures of themselves to be subject of a \"roast\" where commenters submit clever and witty insults for comedic effect, it seems as if this subreddit's behavior of upvoting somewhat invalidates my previous post from 9 months ago.\n\n-\n\nThis past month, which saw the most growth in the subreddit's 4 month history, from [10k users to over 80k](http://redditmetrics.com/r/RoastMe), the [genders of the top posts were 10 male, 10 female, and 2 submissions which included both a male and a female.](https://www.reddit.com/r/RoastMe/top/?sort=top&amp;t=month) This stands as a stark contrast to my previous post where across 3 appearance oriented subreddits, the top posts for the month (November, 2014) were predominantly female.\n\n**Questions:**\n\n- What is the main driver of upvote behavior in /r/RoastMe? \n\nSpeculation: *On /r/RoastMe, since users are required to submit comments that are clever which require a certain amount of humor and wit, this seems to be the disconnect between /r/RoastMe and other appearance based subreddits in which users just have to give their honest opinion. It's plausible as it seems to be simpler to compliment an attractive user over the internet than to formulate an elaborate and usually negative yet comedic remark.*\n\n- Excluding picture quality, if we are to assume that upvotes are not due to user's gender or attractiveness, why are posts upvoted more than others? \n\nSpeculation: *Upvotes may be given more to posts that include some type of background to the submitter. While the generic post title is \"Roast Me\", the post titles from the All Time Top 25 posts include a certain quality of the user whether it be about their ethnicity, age, weight, insecurities, etc. However, of those All Time Top 25 posts, 6 give a generic title. These generic titles are more evident in the page 2 of the All Time posts (the Top 26-50) where nearly all of the post titles are generic.*\n\n- Is attractiveness a factor in upvoting?\n\n- Should /r/RoastMe be considered an appearance based subreddit?",
+        "created_utc": 1441264293,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does submitting a comment automatically net you one upvote even if noone upvotes and noone downvotes it?",
+        "author": "asshair",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jdf1d/does_submitting_a_comment_automatically_net_you/",
+        "text": "[removed]",
+        "created_utc": 1441209970,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "تطبيق(app) يساعك على لالتقاط أفضل الصور",
+        "author": "zziko911",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jddpl/تطبيقapp_يساعك_على_لالتقاط_أفضل_الصور/",
+        "text": "[removed]",
+        "created_utc": 1441209404,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "6 in 10 of TIL's top posts of all time have occurred this month.",
+        "author": "Sweetmilk_",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jch5p/6_in_10_of_tils_top_posts_of_all_time_have/",
+        "text": "15 of the top 20, too. \n\nhttps://www.reddit.com/r/todayilearned/top/?sort=top&amp;t=all\n\nAny theories as to why this is?",
+        "created_utc": 1441194478,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Analysis Paralysis or TMI on Reddit",
+        "author": "xamcali",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3jc5e0/analysis_paralysis_or_tmi_on_reddit/",
+        "text": "Hey guys,\n\nThis issue is likely an information age issue versus just a reddit specific one that I'd like to pontificate on. And the rabbit hole of reddit though is excessive for me at times. \n\nYou could theoretically be looking for a job and get there and be directed to subs for finding your passion, learning skills, resume building, etc. Each one of those becomes a journey in and of it self. And I understand that good engineering deals with big problems by breaking it down into smaller more manageable problems, but at what point does it paralyze the information seeker? What type of strategies do you think would be helpful in mitigation this problem?\n\nAnd in general, I'd like to hear your 2 Cents about the analysis paralysis theory and your experience with it on Reddit. \n\nThanks, \n",
+        "created_utc": 1441186705,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Collecting Survey Data from Redditors",
+        "author": "jfoote_research_bot",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3j9uai/collecting_survey_data_from_redditors/",
+        "text": "There is a lot of information about how to collect \"digital trace data\" about redditors (comments, posts, etc.), but I am wondering if there are guidelines about surveying redditors?\n\nI am hoping to survey founders of new subreddits. So far, I have simply been sending messages to these founders, but I am wondering:\n\n1. Is there anyone at reddit that needs to approve this sort of research?\n\n2. Are there additional tools for contacting redditors for research purposes?",
+        "created_utc": 1441143189,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Back when self posts gave karma, would they give you comment karma or link karma?",
+        "author": "asshair",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3j2koh/back_when_self_posts_gave_karma_would_they_give/",
+        "text": "6-year reddit user here... I just realized they don't give you comment karma. A little disappointing but I suppose I understand the reasoning. I always thought comment karma was less of an incentive to karmawhore than link karma. Does anyone remember which kind of karma self posts would have given you?",
+        "created_utc": 1441018634,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Big news subs are a battleground between hard Left and Right",
+        "author": "petrus4",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3j0ult/big_news_subs_are_a_battleground_between_hard/",
+        "text": "",
+        "created_utc": 1440982429,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "is Reddit a Entertainments sites ?",
+        "author": "janlax123",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3iymi5/is_reddit_a_entertainments_sites/",
+        "text": "",
+        "created_utc": 1440947418,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the point of subreddits like circlebroke, shitpost, magicskyfairy, etc. which are people wasting time on Reddit while complaining about Redditors wasting time on Reddit?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3ixem3/what_is_the_point_of_subreddits_like_circlebroke/",
+        "text": "[deleted]",
+        "created_utc": 1440911790,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The 50 Cent Party",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3iuabf/the_50_cent_party/",
+        "text": "[deleted]",
+        "created_utc": 1440852947,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I've often wanted to upvote only part of a reddit comment, and downvote other parts. Is this common? And if so, what are the likely consequences of being able to vote on comments sentence-by-sentence?",
+        "author": "cryptoz",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3it90i/ive_often_wanted_to_upvote_only_part_of_a_reddit/",
+        "text": "I imagine you could have a UI that slightly fades background/font color, to show which parts of the comment are well-rated and which are not. This would allow the reddit community to vote more \"accurately\", especially during complex or controversial discussions.",
+        "created_utc": 1440821700,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is up with gun related submissions on reddit?",
+        "author": "FLTA",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3it3ur/what_is_up_with_gun_related_submissions_on_reddit/",
+        "text": "Is there a subreddit/website that brigades reddit submissions related to guns? \n\nI recently posted a [submission](https://np.reddit.com/r/news/comments/3irb0z/study_confirms_that_the_us_is_no_1_in_mass/) that leans to being pro gun control on /r/news and it has about 200 votes on the submission yet is only positive by roughly 4 upvotes. Ignoring whether one is pro/anti gun control, it seems the behavior of redditors on gun control submissions such as this one often have weird voting/commenting patterns.\n\nFor my submission, how can there be so much votes for a submission that is currently only on the 7th page of a default and was never more positive than a few upvotes when it was posted? From experience, submissions where the votes are going 50/50 die quickly and stay in obscurity. Another question I have is why are submissions that lean to being pro-gun control get upvoted at all on reddit when the comments are always dominated by people who are anti-gun control? If one posts a submission that goes against the consensus of the Reddit community, the submission is just downvoted heavily with a few comments scolding the user and moving on. The weird thing about my submission is that it has been downvoted enough where the submission should be killed but people are still contributing/voting on it.\n\nThe two hypothesizes I have is that it is either a pro/anti gun control group brigading submissions or one group of users get alerts every time something is posted on reddit relating to guns. Here are some other recent gun related sumissions that are pro gun control but are dominated by anti gun control comments\n\nhttps://np.reddit.com/r/politics/comments/3ipt6w/america_doesnt_have_more_crime_than_other_rich/\n\nhttps://np.reddit.com/r/politics/comments/3inupe/more_americans_killed_by_guns_since_1968_than_in/\n\nI know this isn't the most diverse set of samples one could come up with on this issue but anyone who has a lot of experience with Reddit must notice there are some oddities associated with gun related submissions.",
+        "created_utc": 1440818732,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for examples of quintessential \"No, that's ____. You're thinking of ____\" joke reddit comment threads.",
+        "author": "lollypop2020",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3ismb4/looking_for_examples_of_quintessential_no_thats/",
+        "text": "",
+        "created_utc": 1440809217,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "In what way does the popularity of the top posts on reddit differ from the frequency of things appearing in print media?",
+        "author": "Shoeheaddotcom",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3irw6s/in_what_way_does_the_popularity_of_the_top_posts/",
+        "text": "For example, if I went /top/month on subreddits like r/gaming, r/music, or r/movies, and saw what had been spoken about that month - and bought magazines for those subjects respectively. Apart from obviously the dates of the articles/interviews, where would I see difference of the content chosen by specific content providers (obviously chosen to adhere to an audience), and the content that is crowd-sourced, but then sorted by the preferences of a similar audience? ",
+        "created_utc": 1440796612,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you think Reddit is more neoreactionary or libertarian?",
+        "author": "xavierdc",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3iqiv8/do_you_think_reddit_is_more_neoreactionary_or/",
+        "text": "Reactionary  is a person who holds political views that favor a return to the status quo ante, the previous political state of society, which possessed characteristics.  The neoreactionary's objectives included opposition to any form of egalitarianism as well as \"a return to traditional gender roles, monarchism, and typically a more libertarian-oriented economic system\". ",
+        "created_utc": 1440775666,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the approximate vote-view ratio on reddit?",
+        "author": "Pinuzzo",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3ipysl/what_is_the_approximate_voteview_ratio_on_reddit/",
+        "text": "",
+        "created_utc": 1440766462,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "On the recent change to the reddit voting algorithm and its effects on front page posts.",
+        "author": "antihexe",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3ikzcw/on_the_recent_change_to_the_reddit_voting/",
+        "text": "Allow me to preface this with a codicil saying that I don't believe this was intentional, and nor am I saying it's necessarily a bad thing. (I also realize this is skirting rule 2, but it seems relevant enough since a lot of moderators are faced with problems like this relating to new posts flooding the front page of their subreddits.)\n\nMany of you have noticed some recent changes to the front page. I'm not entirely sure if it is an overreaction to the change or not, but the front page does appear to be more -- for the lack of a word that better describes this quality -- stagnant. Posts seem to stay on the front page longer, take longer to get there, and more importantly minority subreddits are far less represented. One effect is the ability for a user to discover new subreddits via the front page (/r/all) seems to be reduced even further than it has in the past as a result of changes to the algorithm. Serendipity is less and less a quality of the front page. That quality, I think, has always been what makes reddit special. Shoutouts to /r/serendipity by the way, one of my favorite subreddits.\n\nBut that's not the effect that prompted this post. Instead, I'm curious if this change means that large scale userbase revolts like the fatpeoplehate event cannot happen to the same degree of severity. If you recall, you had posts all under an hour old rocketing up to the front page of /r/all (and even on the default front page for many.) These new changes might have, if I'm correct, chilling effects on this phenomenon. It's be curious if this was an intentional change, or merely an accidental one. Of course, this is not a black and white effect. The news yesterday about the murders of those two journalists was on the front page within an hour.\n\nAnyone have any thoughts?\n\nedit: I was informed by /u/EightRoundsRapid that [those changes were actually reverted today. Huh.](https://www.reddit.com/r/changelog/comments/3g6ghn/reddit_change_the_scores_of_extremelypopular/) Seems to indicate that reddit might share some of the concerns I do. You can read /u/Deimorz's post about [that here](https://www.reddit.com/r/bestof/comments/3ihow5/redditor_explains_why_we_all_heard_about_the_news/cuh401x?context=3).\n\n",
+        "created_utc": 1440671228,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Comment botching: editing otherwise succinctly and well expressed comments, effectively striping them of their essence.",
+        "author": "iBuyBlackTP",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3iivvb/comment_botching_editing_otherwise_succinctly_and/",
+        "text": "Preferring text posts around reddit, I enjoy three word replies that poignantly comment on some aspect of the original post. As insightful or funny as the nature of these comments are, for some reason I can not understand why, sometimes the commenter decides to edit the comment and add some further explanation, answer to a thread that should be lower, the \"obligatory\" top-rated-comment edit, and the ever present \"thanks for the gold stranger\".\n\nAm I wrong when I think this shouldn't happen and when I think these types of edits should be discouraged?",
+        "created_utc": 1440628276,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The phenomenology of Karma, or, how 'imaginary internet points' are about as useless as a hug.",
+        "author": "darthvalium",
+        "url": "https://www.reddit.com/r/TheoryOfReddit/comments/3ig28y/the_phenomenology_of_karma_or_how_imaginary/",
+        "text": "[Hubert Dreyfus](https://en.wikipedia.org/wiki/Hubert_Dreyfus) says in his book \"On the Internet (Thinking in Action)\": \"Whatever hugs do for people, I'm pretty sure telehugs won't do it\". And while one may be inclined to agree with that statement initially, I want to argue for the hypothesis that upvotes are indeed an online equivalent of a hug, and as such they are neither *imaginary* nor *useless*. I draw loosely upon the phenomenology of the *Leib* (Plessner) or “le corps sujet” as represented by authors such as Edmund Husserl, [Maurice Merleau-Ponty](https://en.wikipedia.org/wiki/Maurice_Merleau-Ponty), [Helmuth Plessner](https://en.wikipedia.org/wiki/Helmuth_Plessner), and [Hermann Schmitz](https://de.wikipedia.org/wiki/Hermann_Schmitz_%28Philosoph%29) (sorry, no English wp article available).\n\nInterestingly, Hubert Dreyfus is actually a supporter of Merleau-Ponty’s phenomenology and contributed a lot to the reception of Merleau-Ponty in the english-speaking world, but in my opinion, his account of “What Computers Can’t Do” is fundamentally flawed, because he confuses *Leib* (body-subject) and *Körper* (body-object) and he isn’t really interested in the empirical reality of online communication. He starts out with a normative assumption, which can not be changed by empirical evidence: online communication is not a real social interaction. This is, by the way, the same basic assumption, that [Sherry Turkle](https://en.wikipedia.org/wiki/Sherry_Turkle) founds her argument on in her book “Alone Together”, her elaborate critique of social media. Both Turkle and Dreyfus only consider face to face interaction as real, as opposed to “virtual interaction” (Turkle) or “telepresence” (Dreyfus), which they consider to be inferior to the “primordial real thing” (Goffman) of face to face contact.\n\nWhat exactly constitutes this inferiority remains unclear, though.  If one takes the distinction of *Leib* and *Körper* seriously, there is no reason why only face to face interactions should be considered as “real”. Instead of concentrating on where the body-objects reside in physical space, and drawing conclusions from that (like Turkle’s “alone together” claim), one has to take into account the *leibliches Spüren* (body-subjective feeling) of togetherness.\n\nI want to illustrate my point by comparing hugs and upvotes. Now, when it comes to hugs, their value to the individual can not be accurately assessed if one only analyzes its physical effects on the body-object. When two body-objects touch each other in what is commonly referred to as a hug, it is actually the body-subjective perception that constitutes the value of the interaction for the individual. This perception can not simply be expressed by the physical properties of the entities involved. “Merleau-Ponty wanted to show, in opposition to the idea that drove the tradition beginning with John Locke, that perception was not the causal product of atomic sensations. [...] According to Merleau-Ponty, perception has an active dimension, in that it is a primordial openness to the lifeworld (to the \"Lebenswelt\")” (wp). A hug can not be described by the physical events alone, but has to be considered as a conventionalized expression of affection that happens to involve bodies touching in a certain well-defined manner. One might call it an institution, in Berger and Luckmann’s sense of the word. What this means is, that in order to understand, what a person feels as a body-subject, when it is hugged, one must analyze not only the physical events but also the lifeworld of the individual experiencing the hug. Its whole experience contributes to what it feels during a hug. And this feeling may be different for different individuals because of different life experiences. In other words: in addition to the physical events a hug also has a meaning. It can mean “It’s alright”, “I like you”, “Don’t worry”, “You are not alone” and so on.\n\nThe problem with social media critics like Turkle, Dreyfus and the typical redditor who complains that people care about “fake” or “imaginary” internet points is that they fail to see, that “virtual” interaction can be no less real than a hug. Although body-objects aren’t physically close to each other and their skins aren’t touching, an upvote can still feel like an “I like you” or “You are not alone” to the body-subject. \n\nOf course this is a quick and dirty hypothesis, but in my humble opinion, it is evident, that people indeed value “imaginary internet points”. It feels good, when a comment gets upvoted a lot, when people answer positively, when they gild a comment of yours. These are signs of appreciation and affection. And if you feel appreciated because a hundred people commented “Well said” under a comment of yours, the sensation of joy you’re feeling is no less real than a hug.",
+        "created_utc": 1440580043,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Moderator Solidarity on Reddit: Predicting Participation in the Blackout of July 2015",
+        "author": "natematias",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3icvrw/moderator_solidarity_on_reddit_predicting/",
+        "text": "This summer at Microsoft Research (I'm an MIT PhD student), I’ve been [researching the work of subreddit moderators](http://socialmediacollective.org/2015/06/16/reddit-research/), studying the ways that moderators develop common interests as they face the company, as they face their subscribers, and as they relate to other moderators. \n\n&amp;nbsp;\n\nThis July, moderators of [2,278 subreddits joined a “blackout,”](http://socialmediacollective.org/2015/07/09/what-just-happened-on-reddit-understanding-the-moderator-blackout/) demanding better communication and improved moderator tools. The blackout is one moment in the wider research I’m doing, a moment where tensions and common cause rose to the surface. Blacked-out subreddits constituted 60% of the top 10 subreddits, 29% of the top 100, and 5% of the top 20,000 subreddits, representing a total of 134.8 million combined subscriptions.  \n\n&amp;nbsp;\n \n*Since data shows only one small corner of the story, I’m interviewing subreddit moderators to learn more about being a moderator and your experience of the blackout. If you are a subreddit moderator and are interested to talk, please [message me on Reddit](https://www.reddit.com/message/compose/?to=natematias) at /u/natematias.*\n\n&amp;nbsp;\n\nWhen moderators discussed the blackout with their subscribers, many debated the idea of “solidarity,” wondering if they were too small to have common cause with larger subs or if they were too small to make a difference. Others expressed strong opinions that joining the blackout meant standing with other moderators or standing for Reddit users as a whole. For some subs, the risk of getting lumped in with Reddit was exactly why they stayed out of it. [I've written more about these debates on my blog here](http://socialmediacollective.org/2015/07/09/what-just-happened-on-reddit-understanding-the-moderator-blackout/).\n\n&amp;nbsp;\n\n**H1**: *Were larger subreddits more likely to join the blackout*, maybe because their moderators were part of ModTalk, where much of the blackout was discussed, or because they felt a blackout would make a difference, or because they felt common cause with other mods of large subs?\n\n&amp;nbsp;\n\n**H2**: *Were subreddits with more moderators more likely to join the blackout*, perhaps mods in these subs would have greater solidarity with others?\n\n&amp;nbsp;\n\n**H3**: *Were Subreddits with mods who also moderate other subreddits that participated in the blackout more likely to join the blackout?*\n\n&amp;nbsp;\n\nTo illustrate the data used for my statistical tests, here are two network graphs of shared moderators between subreddits. The first graph includes the top 20,000 subreddits in terms of subscribers (as of mid-June 2015). The graph one filters only subreddits with more than 10,128 subscribers. In the network graphs, subreddits that did not black out are tinted blue, while yellow-tinted subreddits joined the blackout.\n\n&amp;nbsp;\n\nhttp://farm6.staticflickr.com/5668/20873065285_642a703327_k.jpg\n\nhttp://farm1.staticflickr.com/666/20685104588_4678886f4d_k.jpg\n\n&amp;nbsp;\n\nThe charts are laid out using the ForceAtlas2 layout on Gephi, which has separated out some of the more prominent subreddit networks, including the ImaginaryNetwork, the “SFW Porn” Network, and toward the center, the ShitRedditSays “fempire”. These networks are notable because some of them made network-wide decisions about their participation in the blackout.\n\n&amp;nbsp;\n\nUsing this dataset, I conducted a taxonomy of logistic regression models to test the above hypotheses: http://farm1.staticflickr.com/603/20881049581_52fe3155a4_b.jpg\n\n&amp;nbsp;\n\nInterpreting the results:\n\n&amp;nbsp;\n\n\nH1: **Larger subreddits were more likely to join the blackout.** This hypothesis is upheld. On average in the population of top 20k subreddits, there is a large positive relationship between the log-transformed subscriber count and a subreddit’s probability of joining the blackout, holding all else constant.\n\n&amp;nbsp;\n\nH2: **Subreddits with more moderators were slightly more likely to join the blackout.** This hypothesis is upheld, very very weakly. I wouldn’t make much of this.\n\n&amp;nbsp;\n\nH3: **Subreddits with mods who also moderate other subreddits that participated in the blackout were more likely to join the blackout.** This is upheld. On average in the top 20,000 subreddits, there is a positive relationship between the log of moderator roles in other blackout subs and a subreddit’s probability of joining the blackout, a relationship that is mediated by the overall number of moderators shared with other subs, holding all else constant.\n\n&amp;nbsp;\n\n**So, is there evidence of moderator \"solidarity\" ?** Yes, if we consider H1 to be a test of solidarity associated with similar subscriber numbers. The answer is \"maybe-ish\" if we consider H2 to be a test of solidarity related to the number of co-moderators. Since both of these factors are significant and positive, even when controlling for shared participation in other blackout subreddits (H3), I do see positive support for the \"solidarity\" hypothesis.\n\n&amp;nbsp;\n\nCAVEATS: However, my qualitative research shows that mods often didn't act by themselves. Many subreddits voted on this issue, indicating that subscribers also matter in this story. Furthermore, many mods of smaller subs also expressed solidarity, even if smaller subs as a whole were less likely to participate. So more work needs to be done. For example, I could use the recent [Reddit comment dump](https://www.reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_reddit_comment/) to develop similar networks of moderator participation in other subreddits. I could look at which moderators participate in mod-specific subs and metareddits. I could also consider subscriber participation across subreddits to try to see what role is played by subscriber activity.\n\n&amp;nbsp;\n\n\nThis is just a preliminary statistical test. I have much more work to do before publication:\n\n* I need to define better hypotheses that can answer theoretically-meaningful questions\n* I need to do much more work to confirm the validity of my data collection, data processing, and models\n* Whatever I publish needs to be peer reviewed\n\n&amp;nbsp;\n\nI also plan to spend more time with network scientists to understand the best way to set up my dataset for statistical analysis. There are many ways to project a complex network onto a single table for statistical tests, and I may need to try a different approach.\n\n&amp;nbsp;\n\n**How You Can Help**\n\n&amp;nbsp;\n\nUltimately, the clearest picture of the blackout comes from talking to people and observing the threads from that period.  I’m sharing these preliminary results because I hope they’ll attract interest from Reddit moderators, and hopefully lead me to more interviews and data while I still have time to talk to people and enrich my understanding of what happened. **If you are a subeddit moderator interested to talk, please [message me on Reddit](https://www.reddit.com/message/compose/?to=natematias)** at /u/natematias.\n\n&amp;nbsp;\n\nWhat are your thoughts, TheoryOfReddit?",
+        "created_utc": 1440523772,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is wrong with /r/Sports and how can it be fixed?",
+        "author": "lucdespo",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3i6fat/what_is_wrong_with_rsports_and_how_can_it_be_fixed/",
+        "text": "Hello /r/TheoryOfReddit,\n\n---\n\nI'm a moderator of /r/Sports, and at the suggestion of users and moderators alike, we've decided to make a post here.\n\n---\n\nA little over a year ago, /r/Sports became a default subreddit, but issues with low participation and the like were already highlighted back then ([see this old theory of Reddit post relating to the announcement](https://www.reddit.com/r/TheoryOfReddit/comments/1u2xpc/rsports_is_now_a_default_subreddit_what_are_the/))\n\nOver time, problems have gotten worse and despite efforts (albeit sometimes low-effort) by the moderators to fix them, we have no succeeded.\n\n---\n\nHowever, we're trying to make a concrete change, and need your help! [We're currently in the process of recruiting new moderators](https://www.reddit.com/r/sports/comments/3hayj6/meta_rsports_is_looking_to_add_more_people_to_its/) and plan to follow this addition of mods with changes in order to improve the subreddit.\n\nSo we want you to tear apart /r/Sports, and suggest ways for us to build it back up. By that we mean that we'd like you to highlight what you think is going wrong with /r/Sports, what do you think we should be doing to fix it etc...\n\n---\n\nWe look forward to hearing what you have to say,\n\nThe moderators of /r/Sports\n",
+        "created_utc": 1440403645,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is auto-banning users based off of activity in other subreddits ethically correct?",
+        "author": "ArabRedditor",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3i6bj5/is_autobanning_users_based_off_of_activity_in/",
+        "text": "I dont know how moderators can in good faith just autoban people from other communities they deem inappropriate?\n\nThis has been observed in /r/me_irl /r/offmychest /r/confession /r/Naturalhair and many others, whats your thoughts",
+        "created_utc": 1440400714,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is upvote/downvote too binary to float the best content to the top?",
+        "author": "LordHydrak",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3i4xq8/is_upvotedownvote_too_binary_to_float_the_best/",
+        "text": "I think so. Consider this situation:  \n/u/exampleuser1 submits a post- and it is quite quality. On a scale from one to ten, a third of users would rank it a ten, and nobody would downvote it because it is not controversial.  \nAt the same time, /u/exampleuser2 submits a post- it is not as high quality. It isn't controversial. It would get two thirds of users to rank it a 4 or so out of ten- which, for these particular redditors, is enough to warrant one upvote, because it is much better than the 1/10 or 2/10 posts surrounding it.  \nTherefore, /u/exampleuser2 gets about twice as much karma as /u/exampleuser1, even though, in the end, the front page would be more enriching for users on the whole if the high quality posts got more upvotes faster.  \n**TL;DR:** Content that appeals just enough to more people will do better than content that appeals insanely much to a smaller subset of reddit. This makes it difficult for content enjoyed by even a third of reddit to reach the front page- which means reddit sees, easily, stuff that it probably kind of likes or doesn't hate enough to downvote it, but not much content that makes it feel amazing.  \nOf course, subreddit subscriptions mitigate this effect by dividing users along the lines of whether they would enjoy the content or not- but to unravel this argument a bit, you just need to visit the controversial section of almost any subreddit. You'll see content that is getting downvoted because it has become too predictable, or caters too well to a large portion of the sub but not at all to anybody else. To solve this, you could ban this sort of content from the sub and then create a new sub specifically for this sort of content, but this might not work well due to people not wanting to bother creating a new subreddit, and having everybody choose whether they wanted to be subscribed to all the relevant subsubreddits when they subscribe to the main reddit. Also, even if this solves the problem of only slightly appealing content being viewed, it doesn't help people who haven't yet or aren't willing to fiddle with their subscriptions a lot, and it doesn't affect the content that gets to the front page.  \n**TL;DR:** extreme subreddit specialization may partially cure this problem by diverting the most attractive content to the people who find it most attractive, but it doesn't help people who aren't willing to go to a lot of bother.  \n'Solution': Make the system less binary. Let people give upto five upvotes, and upto five downvotes per post. (Or possibly fewer downvotes? Maybe this shouldn't be a sitewide thing but rather subreddit by subreddit thing? To prevent any one sub from catapulting itself to the front page by with maximum one trillion upvotes and zero downvotes per post, you'd have to make sure that the karma from each sub got changed into a different format based on the maximum upvotes and downvotes allowed per user per post on a sub before being displayed to reddit.) The downside to this solution is that massive chunk of text I put in the parentheses, the fact that it would be a change, reddit doesn't like change, that it would be too easy for the binary problem to reassert itself even in a system that allows fluid voting-simply out of the laziness of people to pull the vote slider all the way up or down (This might be partially fixed by having it be one click per vote), and that users might try to guess what the rest of reddit will think about a post, then vote more extremely to counter the perceived future downvotes, which would push everybody towards a more functionally binary voting system.   \n\n\nPersonally, what I would like to achieve with this post isn't any of the things I've mentioned above- it is simply to open the conversation for you guys.  \nAny ideas on how to replace this solution with something better, or maybe critique my premises? Thanks!",
+        "created_utc": 1440373222,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a delay on self-posts receiving comment karma or do they not receive anything?",
+        "author": "Pobeltme",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3i4cal/is_there_a_delay_on_selfposts_receiving_comment/",
+        "text": "",
+        "created_utc": 1440363547,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do link posts get karma, but text posts don't?",
+        "author": "Cinnamon16",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3i46wy/why_do_link_posts_get_karma_but_text_posts_dont/",
+        "text": "",
+        "created_utc": 1440361169,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are Reddit posters elitist?",
+        "author": "blueberry_crepe",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3i40dp/are_reddit_posters_elitist/",
+        "text": "",
+        "created_utc": 1440358176,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Super threads and vote count rule questions. Plus a bonus question on line breaks.",
+        "author": "TheEviltane",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3i13jl/super_threads_and_vote_count_rule_questions_plus/",
+        "text": "",
+        "created_utc": 1440291378,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "It looks like r/fffffuuuuuuuuuuuu is one of the few big subreddits that's actually losing subscribers. Are there any other big subreddits like this?",
+        "author": "nightfan",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hw8q1/it_looks_like_rfffffuuuuuuuuuuuu_is_one_of_the/",
+        "text": "[proof](http://redditmetrics.com/r/fffffffuuuuuuuuuuuu). A weird phenomenon, for sure.",
+        "created_utc": 1440190701,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the merit in posts being removed/blocked without alerting the poster? Wouldn't it be better to let users know why their posts aren't acceptable, so that they know better for the future and/or can correct the problem?",
+        "author": "ThePrimePatron",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hv7ax/what_is_the_merit_in_posts_being_removedblocked/",
+        "text": "To me this is akin to the government just extracting money from your bank account without you being notified, instead of issuing you a formal fine. Yes, if I'm monitoring my balance, I can notice that something is wrong, and then learn and follow-up on it. But if I don't notice, I'm not only probably unaware that something was wrong, and thus both unable to respond to the situation, and am unlikely to do anything differently in the future.\n\nA great example is something getting caught by a spam filter that is clearly not spam, but often the poster has no idea that this is the case. There's no notification, and even if you look at the post/sub, everything looks fine. The poster has to open up an incognito tab, search the sub by /new, and then notice that their post isn't showing up. If the poster doesn't notice or take the effort to do this (and thus figure out that a moderator needs to be contacted to resolve the issue), it's the sub that loses out.\n\nTo me, some very simple transparency/communication (a notification automatically be sent to your inbox that your post was blocked/removed, and ideally an explanation as to why) can help users become better users (or at the very least allow users the opportunity to get issues resolved) and thus improve the community. Is there a reason why this is not currently being done?",
+        "created_utc": 1440175047,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why the negative karma score? Trying to make sense of why and how things work.",
+        "author": "cindyrela85",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3htx0d/why_the_negative_karma_score_trying_to_make_sense/",
+        "text": "",
+        "created_utc": 1440150604,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How come the average Redditor seems to think they are a cut above the rest of civilization?",
+        "author": "spa_angled",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hrl5z/how_come_the_average_redditor_seems_to_think_they/",
+        "text": "",
+        "created_utc": 1440104052,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "News outlets as sources for facts.",
+        "author": "Shotdownace",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hpdl8/news_outlets_as_sources_for_facts/",
+        "text": "Mobile, sorry for the wall. \n\nIt's interesting how different consumer media frame statistics for their average listener. For example, a radio station that mainly older, successful people listen to \"Our generation did so well building our economy and policies our kids are having trouble out matching our success!\" \n      In contrast, multiple online news articles with a younger audience, \"Your parents generation is keeping you down you'll never be able to be as successful! They left you with bad policies and a dry economy!\"\n      News articles are used as primary sources in most subs, there's no doubting this. It seems many take the stories as fact, or close to it. I believe this has a major part in driving how the community as a whole thinks. We all have a good idea of the demographics of reddit, and people identify with others like them. We end up getting news articles as primary sources from people with the same biases as the average redditor. Realizing this, reddit is not a place to think creatively or challenge biases. At the moment reddit is a place to support currently held beliefs whether they are right or wrong. We can find news articles all day claiming absurd things as facts, and using them as proof seems dangerous for those concerned about being truly right.\n TL; DR   There's always someone to tell you you're right, pls fact check before believeing everything you read.",
+        "created_utc": 1440068124,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does Reddit constantly shift the focus from actual problems to nothing when problems arise?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hmwta/why_does_reddit_constantly_shift_the_focus_from/",
+        "text": "Key examples being the Victoria incident where legitimate problems between the mods and the admins/company were an issue and the blackout was supposed to be about this. Instead the next day it was all about Ellen Pao, the actual problems which caused the clusterfuck were forgotten about, it was just about Ellen Pao the evil overlord.\n\nSecond today smaller example,\n\nhttps://np.reddit.com/r/videos/comments/3hkw5s/this_brutally_honest_american_commercial/\n\nA morbid look into the consequences of obesity on health and lifespan. Instead of embracing the issue for what it is, Reddit has chosen to make the focus instead on overweight people who are delusional about their condition and how terrible they are. Never mind that this kind of attitude couldn't be contributing to FA groups by pushing overweight people away from society because of how terribly disgusting and horrible they are.\n\nWhy can't Reddit take a problem and come up with a real solution? Why is everything always hijacked and drowned out by people who would rather just hate someone else and blame them? Why is this website full of such narcissistic hateful people that we can't have discussion about real solutions to social or community problems?\n\nBanning /r/coontown and /r/fatpeoplehate did nothing, these people are still all over Reddit perpetuating their personal crusades and being upvoted into the thousands. Reddit has really shown there is little to nothing that can be done to get rid of shitty clubs when they're still the base population outside their little hate group.",
+        "created_utc": 1440019013,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do we have to read about major changes to reddit in the external press?",
+        "author": "klieber",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hm56r/why_do_we_have_to_read_about_major_changes_to/",
+        "text": "So, reddit got a [new CTO](http://techcrunch.com/2015/08/18/reddit-names-marty-weiner-founding-engineer-at-pinterest-its-first-cto/).  Great!  But I didn't find out about it until I saw the TechCrunch article.  This appears to be a chronic issue with reddit as well.  Ellen Pao famously talked to the press before talking to the community.  The news about the head of community resigning was first reported by the external press, etc.\n\nI honestly cannot understand why the employees of reddit appear to be so awful at communicating with the community.\n\nOr, are my expectations merely wrong and it's normal for things like a new CTO being hired to be announced to the press before being announced to the reddit community?",
+        "created_utc": 1440008401,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there anything I can do to effectively influence the post voting on my sub. (Yes, I've edited the sidebar.)",
+        "author": "flignir",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hkzzt/is_there_anything_i_can_do_to_effectively/",
+        "text": "I run /r/AmItheAsshole.  We discuss conflicts our posters have had, and decide whether the OP or the other party involved should be blamed for being the asshole.  The only way this sub will remain interesting is if there is a mix of stories, with some being blameless and some being assholes.  But, everytime I get a batch of new subscribers, I notice all the topics that turn out to be assholes are downvoted below 0.  I've posted a rule in the sidebar and a second explanation in a Sticky post telling people to UPVOTE assholes as long as their post is interesting, but the bigger the sub gets, the less people follow this rule.  \n\nAs the sub gets bigger, I'm going to need upvotes to bring interesting content to the top, and not immediately censor it for being the post of someone who's role in the story people dislike. \n\nI don't want to disable the downvote arrow because I don't want to treat people like children, and I need downvotes to help identify trolls and posts of no value, which the mods should remove.  ",
+        "created_utc": 1439991649,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why are so many subreddits these days using CSS to hide the downvote button?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hjbno/why_are_so_many_subreddits_these_days_using_css/",
+        "text": "",
+        "created_utc": 1439954237,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why are most Redditors progressive when it comes to technology and/or science but very reactionary when it comes to feminism, LGBT rights, diversity in the media, etc.?",
+        "author": "xavierdc",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hjap8/why_are_most_redditors_progressive_when_it_comes/",
+        "text": "",
+        "created_utc": 1439953763,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Features — Reddit’s best bet for growth and sustainability",
+        "author": "pauliedigi",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hgypu/features_reddits_best_bet_for_growth_and/",
+        "text": "",
+        "created_utc": 1439919025,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Subreddit Bans and User Blacklists",
+        "author": "Reddisaurusrekts",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hge08/subreddit_bans_and_user_blacklists/",
+        "text": "I've been ruminating over this topic ever since I read in an admin announcement thread by /u/spez that certain power mods and users were compiling a list of users by subreddits they participated in. I'll try to find that and edit it here if I find it.\n\nWhat really struck me at the time was the similarities between these blacklists, and the Twitter blocklists favored by members of certain ideologies, ostensibly to 'prevent harassment'. What it led to on Twitter was a swathe of users being blocked by users of said list for sometimes nothing more than following certain other Twitter users. I hopefully don't have to point out the obvious negative effects this would have on speech and discourse.\n\nI've just seen another thread in this sub of someone being banned from one subreddit automatically by a bot, due to their participation in another. It doesn't take a genius to realise that the blacklists of undesirables compiled by people can easily be leveraged to effect widespread automatic banning of users from subreddits, based on the users' participation in other subreddits.\n\nAnd I note that this is a much bigger issue than individual bans because autoban bots can effect bans on much larger scale much faster and with much *less* nuance or specificity.\n\nIssues:\n\nIf this happens, and we seem to be trending towards this, first with users being banned individually because they are 'members' of another subreddit, then automatic bans of users for participation in other subreddits, then I think it raises issues for what it would mean to Reddit, which is promoted as \"A place for discussion.\"\n\n1. Reinforcement of the echo-chamber effect. Not only would dissenters from one sub's prevailing viewpoint be banned automatically and en masse (as obviously bans would be targeted at users of ideologically opposing subs), but it would also discourage prospective dissenters from the target sub's viewpoints from engaging in meaningful discussion in that sub. Even if they *disagree*, they would risk being banned as the system equates \"participation\" with \"agreement\", where this is not necessarily true. I personally think Reddit has enough echo-chambers, and having more would lead to a dearth of meaningful cross-ideology discussion.\n\n2. Balkanisation of Reddit. Similar to but more severe than the above, considering that Reddit is fairly split between pro-SJ and anti-SJ \"groups\" or subreddits, it isn't a far stretch to imagine people being forced into participating in ONLY those subs friendly to their chosen ideology and banned from all opposing ones. This would effectively end Reddit as a place where everyone can speak to everyone else. And if a default sub decided to enact this kind of ban system... \n\n3. Further encouragement to use alts. Reddit already has a informal system of using throwaways to reveal information or to engage in debates which might be sensitive in nature. Others switch accounts regularly to prevent build up of personally identifying information (I do this, or used to). As bans and subreddit participation would be tied to specific accounts, I would not be surprised to see users start a system of keeping two or more accounts purely for purpose of engaging in certain subreddits. To date this takes some effort, but if this practise becomes more widespread, the process of keeping and maintaining separate accounts is likely to be added to a mod (RES?), and become a default practise of Redditors. I don't think this is necessarily a bad thing, but it would more Reddit closer to the fully anonymous systems in place at the various #chan sites (and the effects that would have).\n\nIn any case, what do mods/users think of this, is it a realistic possibility, and what would it mean for Reddit as a whole if we go eventually end up going down this path?\n\nEdited to add: It's currently a \"mass tagger\" list (for use with RES presumably?)\n\nhttps://np.reddit.com/r/circlebroke/comments/3es7an/mass_user_tagger_use_to_tag_reactionaries_in_res/",
+        "created_utc": 1439910785,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Using the moderation system to spam every commenter in a sub",
+        "author": "dingoperson2",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hfog7/using_the_moderation_system_to_spam_every/",
+        "text": "",
+        "created_utc": 1439898231,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Cyberbullies/trolls effect on karma on legitimate users.",
+        "author": "2c2bt",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hdxrw/cyberbulliestrolls_effect_on_karma_on_legitimate/",
+        "text": "",
+        "created_utc": 1439859489,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Reddit Workshop: Why don't redditors works together?",
+        "author": "ugots",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hb751/the_reddit_workshop_why_dont_redditors_works/",
+        "text": "Lately, I've been thinking about how content is created on this site.  The current model has everyone throwing their ideas out into the community and has it decide what stays and what goes.  Anyone who spends anytime in both a subreddit's \"new\" and \"hot\" section understands the sheer contrast between an average post and a quality post.\n\nWhy don't redditors work together to create content?  I sometimes have a shower thought that isn't quite worked out, if only I could float it out to a dedicated group, they can tweak it and improve it before it goes out to the general community.  It would be interesting to see how well a post that came out of this process would do versus one that came from an individual.\n\nDo you think creating a way for users to use this model would improve the quality of content or is there something to say about the ingenuity of an unfiltered barrage of ideas?\n",
+        "created_utc": 1439816388,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Genuinely trying to have 1 account on reddit. Why is it made so difficult?",
+        "author": "thisisgettingoldno",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3hb35t/genuinely_trying_to_have_1_account_on_reddit_why/",
+        "text": "",
+        "created_utc": 1439814145,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is reddit so political compared to other websites?",
+        "author": "LesFirewall",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h9jzw/why_is_reddit_so_political_compared_to_other/",
+        "text": "Facebook, Twitter,  and even tumblr don't have website politics to the extent reddit does. The past 3 months has shown that reddit is obsessed with what admins do. ",
+        "created_utc": 1439776488,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reddit cyberbullying causing minus karma on legitimate users.",
+        "author": "2c2bt",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h9be7/reddit_cyberbullying_causing_minus_karma_on/",
+        "text": "",
+        "created_utc": 1439771853,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My theory: in the ''SJW'-ification' of reddit, SRS lost",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h95uu/my_theory_in_the_sjwification_of_reddit_srs_lost/",
+        "text": "You see, accepting the premise that reddit has became diluted with relatively radical left social political perspective it would seem logical that SRS and subs alike would have won, however I believe this is not the case. This is simply because it feeds off that of deviant political views from the constantly changing yet established sociopolitical view norm- therefore that of which they are calling out on decreases and ultimately this means this decrease of deviant opinion means there is less to report- and therefore with their supposed goal completed there is no longer a point. My theory is that deep down they do not want the world they pine for necessarily but instead want to advocate for it- it is this that they enjoy, the infinite climb as it seemingly elevates their moral ground. How is this coped with? By constantly chasing after more radical social concepts which alienates that of the feminists even 3 yrs ago in order to keep the ability to 'police' the site. So I suppose I was wrong in saying they lost, but instead they will never win. And the more of an effect they have on reddit the further they are away from their supposed end goal, which is necessary in order to maintain the very function of the community. Meaning that it needs to keep struggling because by that it is only able to survive.\n\nThoughts? :)",
+        "created_utc": 1439769057,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is anyone confused as to the 'le' myth?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h927w/is_anyone_confused_as_to_the_le_myth/",
+        "text": "Despite non-satiric use of 'le' not really existing to any discernible degree on reddit outside of ragecomic based communities why is it that those who taunt 'circlejerkers' use such a phrase to imitate them when it is not one which is even used? Furthermore I'd like to take into account the issue of the archetypal neckbeard actually being taken seriously, as it seems though those who discuss 'circlejerkers' seem fervently convinced these people they are criticising are walking stereotypes- does anyone else feel utter surprise at the fact that people somehow take it seriously? ",
+        "created_utc": 1439767234,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are Downvotes Fuzzed too?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h86s6/are_downvotes_fuzzed_too/",
+        "text": "",
+        "created_utc": 1439752047,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do all drama subreddits become biased (anti-SJW or pro-SJW)?",
+        "author": "greenrd",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h82ui/why_do_all_drama_subreddits_become_biased_antisjw/",
+        "text": "* SRD is pro-SJW\n* SRDD is anti-SJW\n* WikiInAction is anti-SJW\n* SRS is SJW\n\nThe list goes on... why aren't there any drama subreddits that are neutral on this Great Issue Of Our Time?",
+        "created_utc": 1439750118,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just lost 2 Hours on Reddit For The First Time",
+        "author": "Qma6",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h5xp5/just_lost_2_hours_on_reddit_for_the_first_time/",
+        "text": "",
+        "created_utc": 1439694748,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reddit is not really geared towards discussions.",
+        "author": "pier4r",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h4utg/reddit_is_not_really_geared_towards_discussions/",
+        "text": "Premise: I'm talking with the casual user in mind, the user that in a week spends\nsome 2-6h on a specific social site.\n\nReddit, as far as my understanding goes, should be a place of sharing and discussion,\ninstead my experience starts suggesting that it is so but on a very\nlimited scale. That seems a pity. I will explain why below.\n\nAfter a while i realized that the tools, for the casual users, to retrieve\nold interesting submissions not yet archived are really limited, but in a /r/changemyview\nsubmission i read a nice argument that make sense and is partially supporting my point: \nthe reddit community, as well as communities of other social networks like fb or twitter, is focused\non the new discussions and not on the old ones. \n\n'Old' varies according to\nthe subreddit activity but in the big subreddits old seems to mean few days\nin the best case (always for the casual redditor, not for the one connected\n24/7 that has also pulgins, logs, etc.).\n\nSaid that, it is nevertheless difficult to have a 'deep' debate\nthat involves more than 2-3 users (in a subranch of a submission)\neven in popular submissions, the ones that appears in the 'Front' page of an user,\nfor several reasons (valid at least nowadays):\n\n* Even if the submission is popular, the sorting choices does not\ngive the same visibility to every branch of discussion\n(i mean here: the top level comments and childrens), therefore\nsome branches will have more visibility than others. Like a sort of random sorting.\n\n* If there is an objection or a point of view maybe not so well argumented,\ninstead of encouraging the discussion/rebuttal of the point, it is easier to obliterate\nit with one clic downvote, effectively cutting the amount of possible discussions in\nthe submission. The same applies to entire submissions. I wonder if someone\ntested if the same submission, submitted in different moments of the month, yield to the same result\n(more or less) in terms of visibility and participation.\n\n* Gilding is very 'undemocratic' but effective, because every time the received gold\nis praised a lot by the receiver; implying not only kindness on the side of the giver but also\na sort of authority in his choice, that amplifies the 'strenght' of the gilded post.\nAnyway at least gildding has no disadvantages like\n'group-gilddown/upvote' or no gilded downvotes.\n\nI think that reddit is still way better than twitter or facebook for public discussions,\nfor example on facebook or twitter one loses the grip on the thread quite quickly,\nbeing unable to find it, unless one uses to save a link to the discussion; still, for the reasons\nwritten above it seems that instead of encouraging discussions and sharing of point of views, in\ncrowded subreddits it seems that the system discourages debates or at most is pushing\nthe most popular/agreed point of view.\n\nOf course i cannot say that this was not the idea of the reddit designers, but it does\nnot let me think that reddit is really geared towards discussions.\n\nPS: i thank you for your time and i apologize if i was not able \nto find similar discussion already done, could you give me some hints to find them?",
+        "created_utc": 1439673021,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Poe's Law and /r/punchablefaces",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h3pqn/poes_law_and_rpunchablefaces/",
+        "text": "In the heat of the outrage at /r/punchablefaces finally becoming a funny subreddit, I decided to [post a long diatribe purporting to be against the censorship of reddit.](https://www.reddit.com/r/punchablefaces/comments/3gq89c/against_censorship/) I intended it to be so over the top and filled with ludicrous rhetorical flourishes that those reading it would recognize it as satirizing the ridiculous views of the c**nt**n and gamergate community while being plausible enough to hold their attention. It was full of subtle references and wink-wink, I know that you know this is bullshit snippets. \n\nIn it I compared /r/shitredditsays simultaneously to Stalin’s Russia and Nazi Germany and suggested that this was our generation’s fight against oppression. I compared the bravery of gamergaters to resistance fighters against Hitler. I seemed to have judged it about right as many redditors could not tell if somebody was this indignant and ignorant or if it was satire and there was much talk about Poe’s Law in the comments. (Poe’s Law states that parodies of extreme views on the internet will be indistinguishable from the real thing to many readers). On a side note, Poe’s Law applies outwith the internet as well. Comedian Al Murray satirizes the traditional xenophobia of English men with his \"pub landlord\"character. However, many miss the point that this is a satirization of beliefs, and he is not advocating them. As Stewart Lee says “\"I wouldn't want racists laughing at my jokes because that's Al Murray's audience. Missing the point and laughing through bared teeth like the dogs they are.\"\n\nUnfortunately, having visited /r/bestofoutrageculture, I realize that my attempts to seem as ridiculous as possible pale in comparison to real outbursts of nonsense from “free speech advocates.”\n\nAs it was with Al Murray, Poe’s Law was demonstrated by a lot of the private messages from genuine gamergaters who answered the call to rally around my banner of deceit.\n\nMany told me of other subreddit “safe spaces” where we could still be racist and brigade in peace. Other expressed their disgust at the way America was heading:\n\n&gt; \"Fuck these people.. I'm so pissed off right now. They banned me because I called them out. Cunts. I hate this country, this pc offended trigger culture is the death of the USA\"\n\nOne invited me to become a mod of a secret group however:\n\n&gt; \"I made this quasi-throwaway specifically to moderate a new sub, because I CAN'T FUCKING STAND THIS SJW SHIT EITHER. Am I personally invested in the exact content and nature of /r/punchablefaces itself? No. Am I personally and ideologically invested in not giving SJW fucking morons a foothold to lord their Nazi bullshit over the rest of the internet? YES. \nAs I learned on Facebook (where I run a discussion group specifically to let people discuss controversial shit without being censored, because I got sick of being banned from pages for polite but edgy conversation), apparently the usual way to do this shit is to do it my fucking self. So I'm going to make a new sub, and I need you to help me mobilize /r/punchablefaces denizens -- the real ones -- over to it, if you're down.\nYou're pretty much the only person I'd consider bringing on as a co-mod, mainly because your original rant was so articulate that I can tell you're my kind of mind anyway and that you probably have the kind of judgment I'm looking for. I can't be the only mod, I really truly would and would just let it be total unmoderated anarchy like I do on my Facebook group, but I know that that puts the sub in danger of being shut down or fucked with somehow. But I'm going back to being homeless in the woods soon, so a co-mod is needed. I suggest you make a new account for it though so that we can catch the endless flak somewhere else.\nAnyway, I would throw a little effort toward preserving a forum online for absolutely anything, no matter how repulsive it may be to me (which few things are, but that's beside the point). I can't just watch this shit happen. We're preserving a bastion of People Having Whatever Fucking Opinions About Other People They Fucking Want, god damn it.\nAre you with me?\nSome cuntface took over /r/punchablehumans after someone suggested it in the first thread, because nobody worthwhile jumped on it fast enough ... so I'm thinking something even more specific, very much making clear what the sub is about and directly violating the rules of the SJW takeover. Something like /r/iwanttopunchthisface or similar (I think that barely fits in character limits).\nWhat do you think?\"\n\n\nWell, if my little experiment achieved anything other than a bit of humor, it was that, on the internet, nobody can tell you aren’t really an outraged neckbeard spouting ridiculous racist and sexist tropes. \n",
+        "created_utc": 1439652573,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Spez on Money and Censorship",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h1sjj/spez_on_money_and_censorship/",
+        "text": "https://www.reddit.com/r/technology/comments/3gynwu/reddit_is_now_censoring_posts_and_communities_on/cu2zear?context=3",
+        "created_utc": 1439602148,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The evolution of the metasphere",
+        "author": "Harald_Hardrada",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h1fb1/the_evolution_of_the_metasphere/",
+        "text": "(For the purposes of this post, I will only include SRD/CB type subreddits in my definition of the metasphere. Circlejerk and gender wars subs are pretty distinct from the SRD type subreddits.)\n\n\nThe metasphere is an interesting beast. Beyond /r/circlejerk, it wasn't an established part of the reddit community until 3-4 years after subreddits came into existence. The metasphere has always been a very politically charged place due to the fact that it exists to analyze the behavior and opinions of groups of people. However, the overall \"charge\" of the metasphere has gone under a shift within the last few years.\n\n\nReddit has had a reputation for being a liberal echo chamber since its founding, and that reputation was some what well deserved; for example, the conspiracy theory that Bush was going to cancel the 2008 election somehow found an audience on reddit in the run up to the general election. It has become debatable as time has gone on as to whether or not that reputation is still deserved, but the reputation has stuck. The metasphere, for all of its claims of navel gazing and impartiality, largely defines itself in opposition to reddit. So initially, the metasphere defined itself in opposition to the perceived liberal biases of \"default reddit.\"\n\n\nThe opposition to \"default reddit\" mostly manifested itself in the form of complaints about low effort posts and memes from the likes of the ever so left wing /r/politics, the militant /r/atheism, and the meme friendly /r/adviceanimals. \n\n\nHowever, there was one area where many would say that the metasphere and default reddit found common ground; social justice and SRS. Default reddit has been thought of as being (lukewarm towards/opposed to) social justice and outright hostile towards SRS ever since the beginning, and the metasphere shared many of the same inclinations. /r/SRD was filled to the brim with SRS drama at one point, and the two subs were almost always at odds with each other. /r/circlebroke was never outright hostile towards SRS and social justice, but social justice issues received little attention from CB in the beginning. Within the past few years, I think everyone can agree that the paradigm has shifted. /r/circlebroke has become much more receptive towards SJ posts along with SRD, and SRS is no longer poorly received on the meta subs. The metasphere has come to define itself largely in opposition to the perceived anti SJ bias of default reddit.Why has the paradigm shifted? Here are a few theories to start the discussion, keeping in mind that the metasphere tends to define itself in opposition to what it *perceives* to be the inclinations of redditors:\n\n\n1. The metasphere's demographics have shifted left.\n2. Reddit's hostility towards social justice and identity politics has become more pronounced recently, and the metasphere has simply responded to that shift.\n3. The recent drama has amplified the social justice issue in the metasphere.\n4. Left wing posters have become more vocal. Since the metasphere is the only exposure to \"default reddit\" for many users, the metasphere's perception of default reddit has shifted due to the influx of new SJ posts.\n5. A group of mods has made a concerted effort to shift reddit to the left (SRC cabal).\n6. The 2012 Election season has come and gone, so there are less left wing/anti religion posts to complain about.\n7. The loss of default status for /r/atheism, /r/politics, and /r/adviceanimals left a void at the top of the list of metasphere topics. That void was filled with SJ posts.\n\nThis is by no means a comprehensive list, but it should get the discussion started.",
+        "created_utc": 1439595446,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What has caused the metasphere to go under such a drastic change within the past 2/3 years?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3h13yg/what_has_caused_the_metasphere_to_go_under_such_a/",
+        "text": "",
+        "created_utc": 1439590078,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How would reddit work if people weren't allowed to vote on a comment thread they took part in? No more circlejerk karma trains? Would people cease to comment so they could vote? Would quality of comments improve?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3gxdaa/how_would_reddit_work_if_people_werent_allowed_to/",
+        "text": "",
+        "created_utc": 1439518018,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fun focus on non-human faces has resulted in a massive traffic increase to /r/PunchableFaces",
+        "author": "cojoco",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3gtdip/fun_focus_on_nonhuman_faces_has_resulted_in_a/",
+        "text": "Although it was perceived as popular, I believe many people found the old style of the subreddit /r/PunchableFaces offensive and in poor taste.\n\nIn the last few days, a new mod team has given /r/PunchableFaces a new \"fun\" focus: firstly, pictures of humans may not be submitted, and, secondly, AutoModerator has been configured to remove comments containing \"SRS\" (shitredditsays) without an accompanying \"pbuf\" (\"Peace be unto the fempire\")\n\n(Full disclosure: I am one of the new mods)\n\nAlthough reddit has acquired a reputation for disliking social justice and any attempt to clamp down upon poor taste, the traffic statistics of the new subreddit belie this view.\n\nAccording to Reddit [traffic stats](http://i.imgur.com/wQPhu14.png), the new format for /r/PunchableFaces has been massively successful, with 2,000 subscriptions the day after the changes were implemented.\n\nAlthough there have been some angry people messaging the moderators, the unsolicited modmail messages we've received have been overwhelmingly positive, and a clear attempt was made to abide by the rules in the sidebar, with \"pbuf\" included in almost every message referencing SRS (pbuf).\n\nI believe there is a clear message here for moderators: if you perceive that your subreddit is in poor taste, or attracts a rough, unpleasant crowd, don't be scared of changing its focus to something more light-hearted.\n\nYou may be pleasantly surprised.\n",
+        "created_utc": 1439443142,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "In light of the recent events at /r/punchablefaces, it is obvious that if an overwhelming majority of subscribers don't want a certain mod, they should be able to kick him.",
+        "author": "Aeduh",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3gpuz7/in_light_of_the_recent_events_at_rpunchablefaces/",
+        "text": "",
+        "created_utc": 1439384567,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone notice an increase in \"troll\" comments in the past day?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3gp1bf/anyone_notice_an_increase_in_troll_comments_in/",
+        "text": "I was curious if some policy or admin action was announced, but nothing in the past week. Particular threads I noticed today were a brigade on a TIL thread about a feminist contest winner, and a large number of responses to the \"Second Aid Kit\" AskReddit.",
+        "created_utc": 1439362322,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does anyone else have a morbid curiosity to read comments that score below the point threshold?",
+        "author": "gpalyan",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3go84y/does_anyone_else_have_a_morbid_curiosity_to_read/",
+        "text": "",
+        "created_utc": 1439345449,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Some data collection that I hope will be useful. I will probably do more trials in the future, assuming that the Ethics committee gives me a green light.",
+        "author": "meep_launcher",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3glzds/some_data_collection_that_i_hope_will_be_useful_i/",
+        "text": "",
+        "created_utc": 1439311036,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Dont down vote just because you disagree\"",
+        "author": "doublejay1999",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3gihlu/dont_down_vote_just_because_you_disagree/",
+        "text": "It's a great sentiment - encouraging people to vote (i assume) on the quality on the post rather than the opinion.  Is it the case then, that we should not upvote simply because we agree ? That's surely the natural partner of such a policy - but i cant find any sub that request it.",
+        "created_utc": 1439241925,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is r/judaism breaking reddit?",
+        "author": "YeshivaguyamI",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3ghuyq/is_rjudaism_breaking_reddit/",
+        "text": "",
+        "created_utc": 1439232147,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there any solid evidence that banning hateful subreddits doesn't cause the hate to stop but instead causes it to \"leak\" into more popular subreddits (e.g., r/TIL, r/all, etc)?",
+        "author": "goshdurnit",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3ghda2/is_there_any_solid_evidence_that_banning_hateful/",
+        "text": "A [comment](https://www.reddit.com/r/reactiongifs/comments/3ge7o6/reddits_reaction_when_someone_messes_with_bernie/ctxk3pz) from u/Sojourner_Truth got me thinking about this. When Reddit bans a subreddit, what happens to the users who commonly post, comment, or vote within that subreddit? \n\nWe could observe those users' behavior subsequent to the ban (do they post or comment more frequently?). But if they just signed up for new accounts, perhaps they would go to other subreddits and \"pollute\" them w/ hateful speech (or speech designed to be at the same time hateful but also tolerated w/i the limitations imposed by admins). So, after a banning we might observe an uptick in the number of posts that are critical of, say, BlackLivesMatter in the r/TIL or r/all subreddits. If so, how big is that uptick? \n\nPerhaps by banning subreddits, Reddit admins caused a \"leakage\" of the bad behavior into other subreddits. One thing makes this implausible: they would have to craft their messages to be less hateful so as to appeal to the users of those mainstream subreddits. Perhaps the hate, such as it is, becomes a more subtle critique of blacks, women, SJW, etc. by playing to the crowd. Or maybe they just picked up their blocks and went to voat. Any evidence to support these theories?",
+        "created_utc": 1439224854,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "One picture/subject covering the front page of /r/all",
+        "author": "sarais",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3ggn6q/one_picturesubject_covering_the_front_page_of_rall/",
+        "text": "This happened with Ellen Pao and then very recently with the woman who disrupted a Bernie Sanders rally. Would this type of activity be considered a meme?",
+        "created_utc": 1439213089,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Punchable Faceoff",
+        "author": "PM_ME_YOUR_THESIS__",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3gex7j/the_punchable_faceoff/",
+        "text": "",
+        "created_utc": 1439171393,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If reddit really cares about limiting harrassment and exclusion of users, should they remove the downvote button for comments?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3gdpei/if_reddit_really_cares_about_limiting_harrassment/",
+        "text": "Some subs already do this, but overall, reddit maintains the downvote function for the whole site. Problem is, not many users follow reddit's rules on downvotes. Instead of downvoting content that doesnt add to the discussion or topic, it's used as an opinion crusher for those who disagree with the perspective of the comment poster. End result seems to be exactly what reddit claims they want to prevent with their content policy; a user feeling uncomfortable expressing themselves for fear of being downvoted for having an unpopular opinion. This happens on as petty of things as someone expressing a dislike for a certain movie or food. Not just those sharing racist or other discriminatig views.\n\nWith the eventual rollout of better moderating tools, existing reporting functions, and the upvote button, could reddit survive or even thrive more as a site for open conversation without the downvote button for comments? If reddit's rule is: Don't like a poster's opinion, don't upvote it, why give the option to downvote anymore? Upvote what you like and agree with, leave the rest alone.\n\nHow do you see the downvote button being used considering reddit's latest policy changes and promises for better moderating tools?",
+        "created_utc": 1439149537,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's causing the increase in upvotes recently?",
+        "author": "Ep1cSpray",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3g7zti/whats_causing_the_increase_in_upvotes_recently/",
+        "text": "I've seen many posts get upvoted to 6-7k+, where the highest I used to see was 4-5k. Was there an update, or are people just more willing to hand out upvotes?",
+        "created_utc": 1439017352,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who is Libertatea?",
+        "author": "eeeking",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3g6yqs/who_is_libertatea/",
+        "text": "",
+        "created_utc": 1438993903,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "redditLive? Am I the only one seeing this? Is there a discussion thread yet?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3g34hy/redditlive_am_i_the_only_one_seeing_this_is_there/",
+        "text": "",
+        "created_utc": 1438916808,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to explain that reddit is 80% male?",
+        "author": "Ser_Rodrick_Cassel",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3g2fa9/how_to_explain_that_reddit_is_80_male/",
+        "text": "",
+        "created_utc": 1438903948,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to explain that reddit is 80% male?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3g20n3/how_to_explain_that_reddit_is_80_male/",
+        "text": "",
+        "created_utc": 1438897149,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "“Death is Nothing Compared to Vindication”- or Why I’m Okay With the Coontown Purge",
+        "author": "TRVDante",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3g1x5o/death_is_nothing_compared_to_vindication_or_why/",
+        "text": "",
+        "created_utc": 1438895656,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "You can tell how Reddit's reputation has taken a hit by the AMA participants",
+        "author": "HothHanSolo",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3g03uu/you_can_tell_how_reddits_reputation_has_taken_a/",
+        "text": "It's my impression that recent controversies have made Reddit somewhat radioactive to PR professionals. If I look at [last July](https://www.google.com/calendar/embed?src=amaverify%40gmail.com), we see the following really famous people who did AMAs:\n\nMark Ruffalo\n\nTilda Swinton\n\nRoger Daltry\n\nBill Nye\n\nWeird Al\n\nZach Braff\n\nJerry Seinfeld\n\nThe Rock\n\nJeff Bridges\n\nBuzz Aldrin\n\nThose are just the really popular household names. Compare that list to the schedule for July, 2015. There's Jesse Jackson and Ian McKellen, but those are the only names that compete with the above list, I think.\n\nIt's hard to imagine that President Obama would do an AMA after the first six months of this year on Reddit. What do you think?\n\nEDIT: Formatted my list better.",
+        "created_utc": 1438868153,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Has anyone compared an old archived threads comments section to a similair posts comments section of today?",
+        "author": "Shotdownace",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3fz8d7/has_anyone_compared_an_old_archived_threads/",
+        "text": "",
+        "created_utc": 1438845815,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "20-somethings are taking over",
+        "author": "mistinguett",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3fz4v9/20somethings_are_taking_over/",
+        "text": "",
+        "created_utc": 1438843267,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it plausible for reddit admins to pick and choose what content is acceptable or 'banned/quarantined' while still claiming to be the frontpage of the internet?",
+        "author": "c74",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3fyes8/is_it_plausible_for_reddit_admins_to_pick_and/",
+        "text": "",
+        "created_utc": 1438828163,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Should disabling downvotes in a sub-reddit be allowed?",
+        "author": "uninhabited",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3fttf9/should_disabling_downvotes_in_a_subreddit_be/",
+        "text": "Just came across /r/interestingasfuck/ for the first time and it's the first sub-reddit I've seen where downvotes seem to have been disabled. Is this done in the CSS? Easy to do? Somewhat common elsewhere? Allowed? Annoying or not?",
+        "created_utc": 1438742284,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the recipe for a front page worthy post?",
+        "author": "Thesnowpoet",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3ftsqk/what_is_the_recipe_for_a_front_page_worthy_post/",
+        "text": "",
+        "created_utc": 1438741918,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "New Filter",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3fneax/new_filter/",
+        "text": "",
+        "created_utc": 1438626998,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The \"meta\" subreddits like /r/circlejerk can no longer satirize the hive-mind of Reddit effectively because now they are the hive-mind.",
+        "author": "Talconaught",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3fjtve/the_meta_subreddits_like_rcirclejerk_can_no/",
+        "text": "Given my post history, I'm not sure just how many of you will take this seriously but this is something that has been on my mind for quite a while now. I joined Reddit a few years back when /r/Atheism still dominated the front page, /u/violentacrez was being doxxed, and when Colby the dog was being sodomized. I was still in highschool at the time and growing up in a Mormon household /r/Atheism was a majority of what I would browse. Over time, however, the content would begin to make me cringe and I found what was being posted to other default subs a bit annoying and repetitive. I don't exactly remember what brought me over to /r/Circlejerk (possibly the whole Gawker, /u/violentacrez fiasco as I still remember /r/Circlejerk had \"Gawker themed\" CSS) but I immediately fell in love with the style of humor being posted there, it satirized Reddit effectively and gave me a whole new perspective on how Reddit functions. Of course this led me to find other subs like /r/Magicskyfairy, /r/Braveryjerk, and the \"shitty\" subs (/r/Shittyaskreddit /r/Shittyaskscience etc.) and they all had a common theme regarding \"fundies\" and Doritos and Ron Paul etc. It felt 'super cool' to satirize Reddit and looking back, I gained a bit of a superiority complex. I guess the problem is I'm not unique at all in any of these aspects. I don't have the numbers in front of me but it wasn't hard to see that many other Redditors were flocking to the \"meta\" subs at the same time I was. In my opinion it's what really took /r/Atheism off of the default sub list. (Maymay June was just the last straw). It's also next to impossible not to see remnants of /r/Circlejerk in other default subs, \"*tips fedora, m'lady, ayy lmao, literally Hitler, etc\". \n\nAny other thoughts? \n\nEdit: To clarify, I'm not talking about /r/circlejerk specifically, I'm talking about all of the satirical meta subs on Reddit (this is a meta sub, but it's not satirical) and how they have become the main source of humor/jokes on Reddit even though they mainly tend to mock Reddit. I'm not trying to say this is a bad thing, I am merely trying to suggest that it will grow harder to mock the mainstream community, when you are the mainstream community. ",
+        "created_utc": 1438552610,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does reddit's self-promotion content submission policy enhance the authenticity of the community?",
+        "author": "automakhan",
+        "url": "http://www.reddit.com/r/TheoryOfReddit/comments/3fj9qj/how_does_reddits_selfpromotion_content_submission/",
+        "text": "Hey reddit,\n\nI'm a long-time lurker and indie dev interested in promoting my new game. Inspired by many talented DIY redditors, I've spent hours preparing the first public press release to post to /r/gaming. I figured that it'd be valuable even if just a few people could check it out.\n\nAfter refreshing my reddit post over and over, I was bummed to find that no one was upvoting it or commenting. It wasn't until this morning when I logged out that I found my post had been removed within the first few minutes of posting. I was using a new user account, so I figured it accidentally got caught up in the spam filter and messaged the mods of /r/gaming for advice.\n\nThe reply I received mentioned that I must maintain a 10:1 ratio of non-self-promoted posts to self-promoted ones. This means that if I want to avoid paying for reddit advertising, I need to at least give the appearance of being a regular contributor to the site.\n\nTo me, this metric seems arbitrary and provides an incentive to create content that has no real value just to get around the restriction. I could just as easily ask a friend to post the link, but I'd rather promote my game honestly and legitimately.\n\nMy question to other redditors is, does this policy really add more value than it has the potential to take away? I'd appreciate your feedback to see if I'm alone in my thinking.\n\nThanks for reading.\n\np.s. This is one of my 10 posts.\n",
+        "created_utc": 1438542462,
+        "upvote_ratio": ""
+    }
+]

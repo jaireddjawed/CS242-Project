@@ -1,0 +1,794 @@
+[
+    {
+        "title": "Omnibus Test of Model Coefficients in PSPP?",
+        "author": "HairyAsparagus",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8zbtdp/omnibus_test_of_model_coefficients_in_pspp/",
+        "text": "anyone know how to put up omnibus table in PSPP?\n\nand correct me if i'm wrong, this is the test used to find if all dependent variables simultaneously affect dependent variable, right?\n\ni haven't study my statistic well and now i'm very confused on how to apply f test/likelihood ratio in my logistic regression.",
+        "created_utc": 1531754853,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tricky Maximization Problem",
+        "author": "Illeazar",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8zbpw9/tricky_maximization_problem/",
+        "text": "I've got a problem I know I could solve with a monte-carlo simulation, but I'd like to find a way to get an analytical solution so I can repeat it easily in the future if the variables change.  I haven't posted here before so let me know if I need to post this someplace else or in a different way.\n\nThere is an event that occurs regularly with a randomized outcome.  A variable labeled X starts with a constant value C.  Each time the event happens, X is increased such that ( Xinitial \\* R ) + C = Xfinal.  For the next event Xfinal from the last event becomes the new Xinitial.  R is a random multiplier that has one of three possible values, each with a fixed and known percent chance of occurring. This process is repeated for each event so that X grows larger until it reaches a maximum value of M, at which point each event will no longer increase the value of X.\n\nAt any point in the process, X can be reset to it's starting value of C.  The goal is to **pick the value of X at which to reset it to C that results in the highest average increase in X during each event**.  \n\nDue to the way X increases more per event at X gets larger, it is useful to reset X to it's initial value only when X approaches it's maximum.  Because of the random multiplier during each event, there is some chance as you approach the maximum that if the larger possible multiplier occurs, X will hit the maximum and not make full use of the multiplier.  So the ideal place to reset X is sometime when it approaches M, but it's not entirely clear how to find the exact value to use so that the average increase in X during each event is maximized.\n\nMy thought is to compare the average increase in X for any value of Xinitial to the average increase in X for all values leading up to that Xinitial.  I can easily find the average increase in X for any value of Xinitial by using the known possible values of R and their chances of occurring to find the average value of R, weighted by it's probability.  What I would like to do (without using a simulation) is to also find a way to calculate that average increase in X for all values leading up to Xinitial, weighted with their probability of occurring, but the statistics for that is beyond me.\n\nCan anyone point me to a method I can use to find that solution, or know of a better/simpler way to approach the problem?",
+        "created_utc": 1531754149,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Survey Driver Analysis",
+        "author": "the_mood_abides",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8z813o/survey_driver_analysis/",
+        "text": "Hello. I am tasked with determining the most influential questions driving the outcome on a survey. Over 1000 respondents to a 25 question survey. All 24 dependent variables are 5 scale likert. The iv is a satisfaction score from 0-10. I believe I will run a regression and order the coefficients for any significant variables. Am I thinking about this correctly?",
+        "created_utc": 1531715940,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "In a 2-tailed test of significance, what is the probability that the sample proportion is higher, not just different, than control?",
+        "author": "mamessner",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8z6xwj/in_a_2tailed_test_of_significance_what_is_the/",
+        "text": "Let's say that we run a significance test on two different proportions in an A/B test (Control vs. Variation). Let's say that, for instance, the control proportion (in our case, click rate) is .10 and the variant proportion is .12, and we've reached 95&amp;#37; significance (p=.05).\n\nAs I understand it, there is a 5&amp;#37; chance that the *difference* (not lift) is due to random noise. But what is the probability that the variant proportion* is hi*gher than control? It seems like it should almost certainly be higher, but I keep reading that in a 2-tailed test, all we can conclude is that i*t's diffe*rent.   \n\n\nAm I thinking about this correctly?",
+        "created_utc": 1531705617,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it true that modern statistics was created to prove Eugenics",
+        "author": "thunderking500",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8z5a9j/is_it_true_that_modern_statistics_was_created_to/",
+        "text": "i was told that Karl Pearson, Francis Galton, R.A Fisher were all eugenics so they created modern statistics to prove Eugenics",
+        "created_utc": 1531690868,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Variance of a survey question",
+        "author": "cuchoi",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ytw4i/variance_of_a_survey_question/",
+        "text": "I am measuring the proportion of a sample that gets all successes in 10 different questions of a survey. For example, one question is \"Do you smoke?\" and a success for me is \"No\". Another question question might be \"How old are you?\" and the success is for me is to be older than 15. I want to know what percentage of the population gets all successes in 10 different questions, and what is the margin of error of measuring that.\n\nWhen I had to calculate the variance of this proportion my first instinct was just to calculate it as p(1−p)/sample\\_size, where p is the probability of getting all successes. But then I thought that this should have more variance than answering one question that has probability p of being a success, so I coded a simulation. After coding it I found that they have the same variance (as long as the have the same overall probability), can somebody help grasping why is this?",
+        "created_utc": 1531580890,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SPSS: Coding/entering/labelling open-ended data. I could use a nudge in the right direction...",
+        "author": "petriol",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ytqma/spss_codingenteringlabelling_openended_data_i/",
+        "text": "Hey, thanks for stopping by. \n\nAs a research assistant I've been categorizing all these open-ended questions (in Excel), now it's time to prepare the dataset in SPSS. \nEach item will not only be accompanied by the coding variable but also by a score variable, e.g. like this:\n    \n        I coded these: R1, R2, R3, R4, F1, F2 or F3 \n                    \n        which are bound to this scoring system:\n            * R1, R2, R3 -&gt; 2 Points\n            * R4 -&gt; 1 Point\n            * F1, F2, F3 -&gt; 0 Points\n    \n*(The meaning of those codes varies but the structure is generally: some different but equally right answers, one \"halfway there\", some equally false answers including missings.)*   \n   \n&amp;nbsp;\n\nWhere I'm kind of struggling is the correct labelling. As I said, codes and scores are individual variables (per question). And if I understand my task and rating manual correctly, I should label the code variable like this:\n    \n    1 = \"R1\"\n    2 = \"R2\" \n     ... \n    6 = \"F2\"\n    7 = \"F3\"\n\n1. So, the codes I manually entered are merely the descriptions, and have their own numeric value underneath? On the other hand, on a older template dataset (which I can use for guidance) those code variables have \"string\" in their name and as their type. Are they not strictly non-numeric then? I don't understand what should be the label and the actual value here.\n\n2. And would I need to label the score variable too, like 2 = \"R1\", 2 = \"R2\" etc.? \n\n3. And another one: Right now, I would simply calculate the scores via formula/lookup table in Excel and paste them into SPSS. Or is it obligatory to \"recode\" them from the respective score variables?\n\nI hope I'm making sense to yo (English not first yadda yadda) and that it's just foggy to me while you can see right through it. \n\nThanks again.",
+        "created_utc": 1531579507,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the probability of getting 3 Kings in a cards game?",
+        "author": "neoCasio",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ysic9/what_is_the_probability_of_getting_3_kings_in_a/",
+        "text": "Suppose we are splitting the entire deck of cards in 3 persons. \n\n1. What is the probability of getting exactly 3 Kings to anyone?\n\n2. What is the probability of \"getting exactly 3 Kings to anyone\" 4 times in a row?\n\nThis happened with us, was just wondering how rare it is!",
+        "created_utc": 1531566014,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a way to compare logistic regression models?",
+        "author": "Chocobuny",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yrtnv/is_there_a_way_to_compare_logistic_regression/",
+        "text": "I've performed 3 logistic regressions in SPSS according to theory, and two of them are significant. I was wondering if there is any way to compare logistic regressions to see which one fits better for the data in terms of trade offs? For example, the first significant model uses 5 out of 11 predictors, while the second one uses all 11 predictors, so from the theoretical perspective this model would be good. However, the model using all 11 predictors has a slightly higher sensitivity and specificity rate, and has a better pseduo r square according to the Cox &amp; Snell R Square and Nagelkerke R Square results.    \n\nIs there a common way that people compare logistic regression models?",
+        "created_utc": 1531556301,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Possibly dumb question about comparing ults from two different studies",
+        "author": "duck-duck--grayduck",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ypfk0/possibly_dumb_question_about_comparing_ults_from/",
+        "text": "Edit:  I messed up the title, it should have been \"comparing results from two different studies\"\n\nHi!  I'm working on a study that's sort of jumping off of a previous study.  I'm in a little over my head with statistics--I'm a newb at this, I only have a bachelor's degree from a school that didn't have opportunities for research experience, and this is the first study I've ever worked on.  The person who I guess is kind of supervising me on this couldn't answer my question and recommended I consult a statistician, but I can't connect with one through my employer until Monday, and I really want to get my first draft done over the weekend.\n\nI'm comparing the results of my study with the results of [this study](https://www.liebertpub.com/doi/10.1089/jwh.2016.6044).\n\nThat study looked at speakers being introduced at grand rounds and compared the frequency with which male physicians introduced colleagues with \"Dr.\" or just a name versus female physicians, broken down by men introducing women, women introducing men, men introducing men, and women introducing women.  \n\nMy study is very similar, except I'm looking at the use of titles within dictated clinical documentation, when a doctor references another doctor, for instance because they're referring the patient to them, or stating that their patient saw that doctor in the past, that sort of thing.\n\nMy study did not find any statistically significant results, while the grand rounds study did find significant results, so the focus of my article is going to be comparing the results of the two studies and discussing what could account for the huge difference.\n\nMy sample is 744: 200 male physicians, 172 female physicians, 2 references to colleagues each, 1 to a male and 1 to a female (the groups are unequal because they're broken down further into surgeons and nonsurgeons, and there are only 72 female surgeons at the organization where I work).\n\nThe sample for the grand rounds study was 321, 106 female doctors and 215 male doctors, 46 females introducing females, 60 females introducing males, 63 males introducing females, and 152 males introducing males.  \n\nI used Fischer's Exact Test to calculate p-values for my paired comparisons (like male referencing female versus male referencing male).  Can I do the same for paired comparisons between the two studies (like males referencing females in clinical documentation versus males introducing females at grand rounds)?  Or would I need to do something else?  \n\nThanks for any help you can provide, and if I left out any important information, I'm sorry!  I'm clueless. I'll add any additional information if it's needed.\n",
+        "created_utc": 1531529804,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Unsure of Whether to Take the GRE Math Subject Test",
+        "author": "Thejurok",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ypedv/unsure_of_whether_to_take_the_gre_math_subject/",
+        "text": "I'm currently looking into statistics masters programs. One program that I think looks great is University of Washington's, however there is a problem. Their website claims applicants \"are strongly encouraged but not required to take the GRE Mathematics Subject Test\". From this, it sounds like the subject test is more or less necessary, but I'm having doubts about taking it for a few reasons:\n\n1. I'm a computer science major, with a math minor. It sounds like a lot of the test is calc and linear algebra, which I got A's in, but it's been \\~2 years since doing any calc. The test also covers certain topics I have not taken a class on (namely Diff Eq and Analysis).\n2. UW seems to be a pretty competitive program, and I feel something short of a pretty good score could actually *hurt*my chances of acceptance.\n3. It's practically the only masters program I've seen that *does* recommend the math subject test. It seems like studying for this would be a lot of work for one school, and there's always the possibility of not even getting in.\n\nI feel very confident in getting \\~90&amp;#37; percentile on the quant section of the GRE, but the subject test is something else. I'm not looking to dodge hard work, and I'm willing to put in the time for studying for this, but I'm trying to be realistic about some of the problems listed above. Any advice would be appreciated. Thanks!",
+        "created_utc": 1531529525,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Stats design for Cross-education study",
+        "author": "Fapotheosis",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yomn9/stats_design_for_crosseducation_study/",
+        "text": "I designed a study to look at the role of BDNF phenotypes in CE.  The study involves phenotyping groups n=10  (3 phenos) so  a total of 4 groups w control.  after phenotyping, the 3 groups will do 20mins aerobic exercising prior to unilateral strength training. I'm not sure what to do with the control. should they just do a pre/post strength test, or train with no aerobics involved. or just pre-post and aerobic training but no strength training.  I want to test BDNF levels at baseline/mid and post as well as bilateral strength gains.  Can someone guide me on the stats design?  Im not sure if I should do a factorial or a rMANOVA.  should i do double baseline testing and covary it?  thanks?",
+        "created_utc": 1531522714,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A mastery of master's level economics.",
+        "author": "brontego",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yoh5g/a_mastery_of_masters_level_economics/",
+        "text": "I would like recommendations on books (hopefully cheap) that if I study will give me the knowledge to get through (or at least make it easier to get through classes) a Master's degree in statistics. I have a bachelor's degree in Statistics, Mathematics, and Economics to give you an idea of the level of books I could tackle. I would like to enter a Masters (or even PhD eventually) program in statistics, but it is not feasible at the moment. I will be grateful for any suggestions.",
+        "created_utc": 1531521423,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which statistical test do I use?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ymg3m/which_statistical_test_do_i_use/",
+        "text": "[deleted]",
+        "created_utc": 1531506364,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I want to change data indicates an increase or a decrease in the DV into percentages. Does this effect the results of the analysis?",
+        "author": "zaco53",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ym5by/i_want_to_change_data_indicates_an_increase_or_a/",
+        "text": "I'm unsure of what to do in this case. I dont want to analyse data that has already been changed if it alters the results that it may produce. \n\nIs it possibly better to run the analysis on the raw data, and then transform this after analysis in percentage increase/decrease? \n\nThanks for the help!",
+        "created_utc": 1531504299,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to think about power and sample size in multilevel models",
+        "author": "Ashadyna",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ym2h5/how_to_think_about_power_and_sample_size_in/",
+        "text": "Let's say I have the following quasi-experimental observational study:\n\n1. I have a treatment that is applied at the county level.\n2. My outcome of interest is recorded at the individual level.\n3. I have 10 counties that received the treatment and 10 similar comparison counties.\n4. For each county, I randomly observe 10,000 people before the treatment and 10,000 people after the treatment.\n5. I employ a difference-in-difference technique to measure the treatment effect.\n\nI want to do a rough back-of-the-envelope power calculation, so I want to understand how big my sample is. Does it make more sense to think of my data as having 10 observations in my treatment group (i.e. 10 counties) or 100,000 observations (i.e. 10,000 individuals in each of 10 counties).\n\nMy thought is that I have 10 observations to measure my county random effect, but 10,000 observations to measure my individual random effect. So if I think the county random effect is much bigger than the individual random effect, my sample size is pretty small (i.e. 10). Conversely, if the individual random effect is far larger than the county random effect, that my sample size is pretty big (i.e. 10,000).\n\nAm I thinking about this the right way? Any quick reading that could help me?",
+        "created_utc": 1531503729,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Lottery chances",
+        "author": "linyeah",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yjmpc/lottery_chances/",
+        "text": "I'm not sure how to go about this question : \n\n\nhttps://i.imgur.com/proxum9.png\n\n\nThe numbers are a bit on the large side , so I'll try to explain my reasoning with something smaller\n\nIf instead of 53 I have 7. So there are \n\n1, 2, 3, 4, 5, 6, 7\n\nAnd instead of 6, I choose 3. \n\nSay that A has \n\na1 : 3, 5, 7\n\na2 : 3, 5, 6\n\nAnd B has \n\nb1 : 1, 2, 6\n\nb2 : 3, 5, 7\n\nThen the chance of getting all balls matching is \n\n(1/7) * (1/6) * (1/5) \n\nLooking at draw A I have \n\n(1/7) * (1/6) * (2/5) \n\nI think that because the two tickets are the same other than the last number, the odds stay the same except for the last value. I have two ways of getting the number right here. \n\n*But*, I'm assuming that the same values are ' left over '. Meaning, I'm assuming that there are the same balls drawn for each a1 and a2. Which isn't correct. \n\nThere were originally 14 (considering both ticket draws ) and 4 balls have been\nremoved (two sets of two). So rather than\n\n(1/7) * (1/6) * (2/5) \n\nI think that I would have\n\n\n(2/14) * (2/12) * (2/10) \n\nWhich is just the same.\n\nWhich is confusing to me!\n\nI don't know how to consider this problem.\n",
+        "created_utc": 1531485676,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the relationship between the arithmetic and geometric returns of a stock in discrete time?",
+        "author": "JirenTheGay",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yhvj0/what_is_the_relationship_between_the_arithmetic/",
+        "text": "If we assume stock prices are log normally distributed, then in continuous time the arithmetic mean equals the geometric mean plus half of the quadratic variance.\n\n\nHowever, if we are in discrete time does this same formula hold? Does the arithmetic period return equal the geometric period return plus half of the discrete variance?",
+        "created_utc": 1531466103,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question about ranking",
+        "author": "riddleculous",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ygu3e/question_about_ranking/",
+        "text": "Hi! I am a writer and i have a data set of around 100 journalists, each with five (5) categories such as   \n\n\\*Total Story Count\\* (total number of stories published)   \n\n\\*Top Pub Story Count\\* (total number of stories published from all top-tier publications)   \n\n\\*Total Pub Count\\* (total number of publications that publishes the author's stories)   \n\n\\*Top Pub Count\\* (total number of top-tier publications that publishes that publishes the author's stories)   \n\nand \\*Medium\\* (total number of the author's reach across three mediums: print, online, audio-visual).   \n\nI would want to rank them using those said categories but i can't figure out what kind of statistical formula/treatment to use given the data that i have. Tried to look at the percentile ranking but i don't think it's applicable. I might be wrong.  I am probably wrong. Would appreciate some help/suggestions. Thanks.",
+        "created_utc": 1531455248,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help calculating sample size in a paired test",
+        "author": "mynameisway2long",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yftwt/help_calculating_sample_size_in_a_paired_test/",
+        "text": "I am trying to calculate a sample size for a proposed study. Involves a timed walking test, result in metres, then a rehab program, then repeat timed walking test a few weeks later. We are going with alpha 0.05 power 0.8 looking to identify a difference of 10% of the mean. Typical mean value is about 300m and we aim for an improvement to about 330m post intervention. Any suggestions for how I could approach calculating the sample size? I've tried online calculators though without much success.  Also to study the result, would you be using Wilcoxon signed rank test?",
+        "created_utc": 1531446370,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Interpreting differences in coefficients",
+        "author": "marwhal-tusk",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yf6mz/interpreting_differences_in_coefficients/",
+        "text": "Say I have a significant coefficient on X in a regression. When I split X into two categories, Xa and Xb, I find that Xa has a significant coefficient and Xb has an insignificant coefficient. BUT the coefficients for Xa and Xb are not significantly different. Can any conclusions be drawn about Xa \"driving\" the results from the X regression? ",
+        "created_utc": 1531441021,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problematic Logistic Regression",
+        "author": "stupidratcreatures",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yethg/problematic_logistic_regression/",
+        "text": "Hello, I'm hoping someone will be able to help me with my question. I have a dataset with 71 records and 4 variables. Three of the four variables are independent, and one is dependent. All four variables are nominal with two levels, 0 or 1. The three independent variables, respectively, have 26, 17, and 9 \"successes\" (where the score is 1). The dependent variable has 44 \"successes\". However - the \"successes\" in the dependent variable ALWAYS overlap with one or more \"successes\" in the independent variable. A \"success\" in one independent variable means that the dependent variable was also a \"success.\"\n\nGiven the small number of responses in my sample and the 1:1 overlap between \"successes\" in the independent and dependent variables, is it possible for me to run some variation of logistic regression on these variables to detect a relationship between the dependent and independent variables? \n\nThanks in advance! ",
+        "created_utc": 1531437920,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How is BU's MA statistics program? Alternatives?",
+        "author": "statsnerd99",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ydizx/how_is_bus_ma_statistics_program_alternatives/",
+        "text": "Are there better options in New England for a masters in statistics?\n\nHere's Boston University's program. BU has an Msc but it seems less rigorous and more geared towards data science or people looking to get into things like sociology or things like that\n\nhttps://www.bu.edu/academics/grs/programs/mathematics-statistics/ma-statistics/",
+        "created_utc": 1531428176,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "logistic regression &amp; category sample size?",
+        "author": "ConwayPuder",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ydb7y/logistic_regression_category_sample_size/",
+        "text": "If you have several categories of data, and some of those categories have small samples, could your coefficient estimates be off?\n\nI work with linear regression much more frequently, and theory as well as my own results aren't as reliable with smaller samples.  Does the same kind of principle apply to non-linear regression techniques?  Or does max likelihood estimation relieve some of that concern?\n\nI don't work much with logistic regressions and I never grasped MLE well when I was in school. Trying to learn more.",
+        "created_utc": 1531426668,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question on testing normality",
+        "author": "PersephoneIsNotHome",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ybw8z/question_on_testing_normality/",
+        "text": "The question is this – I have 4 groups that I am testing and I am doing a test of normality (in data that are theoretically normal). \n \nShould I test the normality for each group separately, or on the who population of data (all 4 groups combined)",
+        "created_utc": 1531417009,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is my intuition on a Poisson process correct?",
+        "author": "hansn",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ybg35/is_my_intuition_on_a_poisson_process_correct/",
+        "text": "A Poisson process has many equivalent definitions.  As part of one of its definition the probability of simultaneous events is zero. Another definition is that the number of events in Delta t time is Poisson( lambda*Delta t).  I was trying to prove that the second definition implies the first.\n\nThat is, if the number of events in any interval Delta t is Poisson(lambda * Delta t), prove that the probability of having simultaneous events is zero.\n\nMy intuition is that if X ~ Poisson(lambda  Delta t), then P(X = 2) Delta t goes to zero as Delta t goes to 0, while P(X=1) Delta t goes to 1.  But I don't have a clear justification for that.  \n\nAny suggestions (or references where another approach proves this result)?",
+        "created_utc": 1531414058,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Calculating the overall performance percentile based on 4 grade levels",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yax3m/calculating_the_overall_performance_percentile/",
+        "text": "[deleted]",
+        "created_utc": 1531410523,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Statistics Significance Level",
+        "author": "Kate_1989_89",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yaq93/statistics_significance_level/",
+        "text": "Assume that the significance level is a=0.01. Use the given information to find the P-value and the critical value(s). \nThe test statistic of z = 1.34 is obtained when testing the claim that p&gt;0.3. \nP-value =________ (round to four decimal places as needed). ",
+        "created_utc": 1531409183,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need Advice Evaluating Bachelor Thesis",
+        "author": "ItsBahamaPapa",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8yae0k/need_advice_evaluating_bachelor_thesis/",
+        "text": "Hi guys,\n\nI'm currently evaluating data for my bachelor thesis, trying to figure out the influence of one set of predictor variables (motives, ordinal data) and one set of moderating variables (i.e. demographics, metric) on a set of criteria variables (behavior, ordinal &amp; metric).\n\nFrom my literature, I judged nonlinear canonical correlation ([OVERALS](https://www.ibm.com/support/knowledgecenter/de/SSLVMB_22.0.0/com.ibm.spss.statistics.help/spss/categories/idh_over.htm)) to be the best method of evaluation. However, I can't seem to find any literature that comprehensively explains the necessary steps to conduct the OVERALS in SPSS and *how to interpret the SPSS output* \\- at least not in a way that I could understand at my base level of statistics knowledge.\n\nCan anyone recommend literature, including the SPSS part?\n\nThanks in advance!",
+        "created_utc": 1531406773,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "GAP statistic (Cluster Analysis)",
+        "author": "Asheliiin",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y8vk4/gap_statistic_cluster_analysis/",
+        "text": "Hi guys, I’m writing a thesis about cluster analysis. The main goal of my thesis is to explain cluster analysis in such away, that any person, despite their academic background, can understand its basics and apply it. \n\nIn my thesis I’ll apply the K-means algorithm and perform marketing segmentation as an example. Until now I have understood everything pretty well, however I’ve hit a wall. I’ve spent the last week trying to understand the GAP statistic but I just can’t… More specifically, I’m having problems understanding how to obtain the null reference distribution needed to obtain the expected Wk. \n\nThe following is the reference of the article that describes this statistic: *“Tibshirani, R., Walther, G., &amp; Hastie, T. (2001). Estimating the number of clusters in a data set via the gap statistic. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 63(2), 411-423.”*\n\nI don’t have an extensive background in statistics, so math is somewhat difficult for me to understand. If someone could explain to me (like I’m five) how the null reference distribution is obtained (there are two ways of doing this), I would be forever grateful. \n\nThank you in advance (I'm truly desperate...)\n",
+        "created_utc": 1531394343,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Please help me with my course selection (University Statistics Courses)",
+        "author": "cvinter97",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y8k9e/please_help_me_with_my_course_selection/",
+        "text": "I am studying an actuarial science degree I have to choose between two modules for my final year:\n\n**Regression and Generalised Linear Models:**\n\n[http://www.lse.ac.uk/resources/calendar/courseGuides/ST/2017\\_ST300.htm](http://www.lse.ac.uk/resources/calendar/courseGuides/ST/2017_ST300.htm)\n\n and\n\n**Bayesian Inference:**\n\n[http://www.lse.ac.uk/resources/calendar/courseGuides/ST/2017\\_ST308.htm](http://www.lse.ac.uk/resources/calendar/courseGuides/ST/2017_ST308.htm)\n\nWhich one will be more useful for my future career in the statistics field?\n\nThank you!",
+        "created_utc": 1531391439,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help. Trouble understanding ICC and Bland Altman analysis",
+        "author": "FluffyTee",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y7zop/help_trouble_understanding_icc_and_bland_altman/",
+        "text": "Im not sure if this is the right place to get help. I need to do a thesis comparing 2 measuring techniques. literature research shows similar studies using ICC and bland altman analysis. Ive tried googling several sites but i just dont get it. would any1 be willing to try explain to me i simple terms what it means? thanks in advance",
+        "created_utc": 1531384876,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kaplan meier and life tables in SPSS",
+        "author": "Janebio",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y77he/kaplan_meier_and_life_tables_in_spss/",
+        "text": "Hi,\n\nI have recently (previous 6 months) began my journey throughout the world of statistics and have thankfully had many light bulb moments... until now. I am struggling to understand if Kaplan meir and life tables can be used in cases where variables don't involve mortality, drug relapse etc\n\nI am currently using data displaying the inter-birth interval in years (time from first child birth to second child birth) and wish to determine if this is influenced by the health status of the mother i.e. if the mother in a poor health state, the interval is longer. I am having trouble wrapping my head around what to put in the \"Status\" box and define the event as in SPSS. Playing around with the \"Mothers health status\", defined as 1= no illness and  2= illness, I end up plots that make no sense to me :/\n\nFor reference I have additional variables: whether a birth occurred or not, age of the mother etc. Do I need to use a binary variable for the \"Status\" box? I tried using birth vs no birth as the \"Status\" variable and mothers health state as the categorical variable but the plot did not look correct.\n\nTLDR; can a variable such as \"Mothers health status\" defined as 1= no illness and 2= illness, be used as the event  variable in a life table or kaplan meier graph?\n\nThanks for any assistance! I love this place &lt;3",
+        "created_utc": 1531375609,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Probability of talent on one block",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y5njs/probability_of_talent_on_one_block/",
+        "text": "[deleted]",
+        "created_utc": 1531360704,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I want to do *a lot* of regressions on data where I'm expecting heteroskedasticity. Is there anything I can do about that if it will be physically impossible to consider each regression on its own?",
+        "author": "willbell",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y5dei/i_want_to_do_a_lot_of_regressions_on_data_where/",
+        "text": "",
+        "created_utc": 1531358271,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to predict how a curve is likely to evolve on a time scale ?",
+        "author": "TartineAuBeurre",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y40lk/is_it_possible_to_predict_how_a_curve_is_likely/",
+        "text": "Hi guys, I'm sorry I don't even know is this is a stupid question or not.\n\nI wonder if some laws exist that could possibly predict, in regards with the past evolution of a curve \\[x: time (in years); y: specific data\\], if it's more likely to go up or to go down next. Even without elements of context.\n\n[Here is an example of the kind of curve i'm talking about.](https://i.imgur.com/1g1DwwW.png)\n\nThank you.",
+        "created_utc": 1531347343,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to predict how a curbe may evolve on a time scale ?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y3xnu/is_it_possible_to_predict_how_a_curbe_may_evolve/",
+        "text": "[deleted]",
+        "created_utc": 1531346740,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Q: How do I parse out significant metrics",
+        "author": "ValueBasedPugs",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8y1lu5/q_how_do_i_parse_out_significant_metrics/",
+        "text": "This is an odd question that's driven me up a wall. I have a metric - the readmission rate for various hospitals. The numerator for this rate is the number of readmissions. The denominator is the number of discharges. There is a goal rate as well. I am looking at this metric by hospital, meaning that some rates are based on denominators that are concerningly small (when taken at face value). An example of this with fake data may be this:\n\n||Hospital 1|Hospital 2|Hospital 3|\n:--|--:|--:|--:|\nReadmissions|1|80|5|\nDischarges|5|200|20|\nRate|20%|40%|25%|\n\nAt face value, it's obvious that I can't trust Hospital 1's rate. Hospital #2 feels a lot more realistic. Hospital #3? I really don't know how much to trust that rate, which makes me nervous.\n\nMy question is this: how do I know if there are enough discharges in the denominator to make a statistically rigorous claim that the measure is or is not meeting the goal? How do I quantify my confidence in the metric result?\n\nThank you very much for any help you can provide!",
+        "created_utc": 1531330170,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for statistics on earnings of porn, categorized and seperated between popularities (pornstars vs indie)",
+        "author": "Testnick",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xymzu/looking_for_statistics_on_earnings_of_porn/",
+        "text": "Hi.\n\nI was wondering if there are any dissertations on which porn earns what in the industry.\n\nOften I heard that pornstars leave the industry with a bad feeling, since they return to a regular dayjob which isn't easy to transfer to when you earned well.\n\nThat's why I'd like to see the differences in income for individual actors. What is considered well-selling, what is considered as low-selling.",
+        "created_utc": 1531307192,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Equivalent frequency/occurrence from two frequencies",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/usvplzm3r8911.jpg",
+        "text": "[deleted]",
+        "created_utc": 1531281142,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Equivalent of two frequency parameters",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xw8na/equivalent_of_two_frequency_parameters/",
+        "text": "[deleted]",
+        "created_utc": 1531280543,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to interpret a \"Distance to Model\" plot for observations from a principle component analysis?",
+        "author": "DrSucculentOrchid",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xvfaj/how_to_interpret_a_distance_to_model_plot_for/",
+        "text": "I am modeling some data using a PCA graph combined with Hotelling's T2. I have some samples that lie outside the 95% confidence interval. So I know those samples deviate from normality. So I ran a \"Distance to Model\" (DModX) graph to find the sample that don't fit the PCA model well. Depending on how many components I include in the DModX plot, I get different samples that are larger than the D-Crit value. How should I decide on how many components to include? Also, once I decide that, should I remove the moderate outliers detected by the DModX graph and the Hotelling's T2 plot from my data set to prevent skewing of my PCA?\n\nEdit: clarified my questions",
+        "created_utc": 1531273455,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bell Curves in Competition",
+        "author": "bayace92",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xuor9/bell_curves_in_competition/",
+        "text": "With so many ways to compete and so many individuals competing by themselves and in teams, a lot of the judgements made upon how they perform is based upon their win-loss record and their winning percentage. If a person or group wins ALL of their games, they're in the 99th percentile, and those who lose all of them are in the 1st percentile, I suppose.\n\nBut is it necessarily true that a person or group that wins exactly half of their competitions are in the fiftieth percentile? Could there be a curve that actually shifts more to the right or left based upon how many groups are actually \"average\" and \"elite\" vs how many duds there are? Or is it typical for these competing teams to lie in an even distribution?\n\nAm I even asking the right question?",
+        "created_utc": 1531267374,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Statistical test for identifying \"hills\" in matrices?",
+        "author": "onganas",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xucqf/statistical_test_for_identifying_hills_in_matrices/",
+        "text": "I'm analyzing high through proteomic data and have several thousand 5x5 matrices, where each matrix refers to a gene, and within each matrix the rows and columns refer to different biological conditions. The value in each cell represents gene expression for that pair of biological conditions.\n\nThe first column is normalized to 0, and any subsequent deviations from expression level per row are relative to the first column.\n\nI expect there to be three kinds of proteins in this dataset:\n\n1. In most cases I expect there to be no large variation, but random fluctuation between cells:\n\n         0  0 -1 -2  1\n         0  1  0 -1 -1\n         0  0  1  2  0\n         0 -2  1  3  0 \n         0  1  2  0  0\n\n2. In a few cases, some of the samples might be contaminated, and there might be some outliers, e.g. in a case where (2,2) and (4,3) are outliers:\n\n         0  0  0 -2  1\n         0 24  1 -1 -1\n         0  0  0  2  0 \n         0  1 66  3  0 \n         0 -3  2  0  0\n\n3. However, the cases that I'm interested in, are those in which protein expression changes from left to right towards a certain optimal pair of biological conditions, e.g. where proteins change expression reaching an optimal point at the (3,4) cell:\n\n         0  0  5 12  8 \n         0  5 20 36 21 \n         0 10 31 52 40\n         0 -2 17 23 30 \n         0  1 12  5  8\n\nIs there a statistical test I can use (with a p-value) to identify matrices that conform with values \"climbing up a hill towards an optimal point\", as in the above example? And is also robust to handling outliers and random fluctuation as in the first two cases?\n\nGiven the noisiness of the data and the difference in magnitude to which proteins might change expression, I feel inclined to use a rank-based approach, rather than variance with a carefully calibrated sigma cutoff to filter out outliers. But alternatively, maybe I can normalize/scale the data to adapt an ANOVA approach?\n\nAny thoughts?\n\nThanks in advance.\n\n\n*edit: Formatting",
+        "created_utc": 1531264709,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can I find the range of values a dummy treatment variable is statistically significant for a given significance level?",
+        "author": "anonymous21347",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xtbel/how_can_i_find_the_range_of_values_a_dummy/",
+        "text": "I am running a difference in difference model in Economics. I have created a dummy variable representing one when a property is within 3 miles of the stadium, and 0 otherwise.\nThe 3 miles treatment variable is somewhat arbitrary. I would like a way to find the cut off values for which the distance to stadium value is no longer statistically significant at the 5% level.",
+        "created_utc": 1531256890,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "On average, how many threshholds would I go through?",
+        "author": "Superioupie",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xs12v/on_average_how_many_threshholds_would_i_go_through/",
+        "text": "So in RuneScape bosses have a chance to drop pets. For most bosses, these drops also have a \"threshold\" where the chance of getting the pet drop increases for every X kills. X is determined by the original drop chance, and is always 1/5 the denominator of the original drop chance E.G. if the drop chance is 1/2500, then a threshold is reached every 500 kills. after 500 kills, the drop chance increases to 2/2500, after 1000 it increases to 3/2500 etc. until a max of 10 in the numerator is reached.\n\nI was wondering, on average, how many **thresholds** would be crossed before the boss pet dropping. Different pets have different drop chances, such as 1/5000 or 1/1000, but theoretically (correct me if im wrong) the number of thresholds crossed should be roughly the same as X is always 1/5 of the denominator in the original drop chance.\n\nThank you in advance, and have a nice day.",
+        "created_utc": 1531247909,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If two identical teams play football, what are the probabilities of each team winning?",
+        "author": "kubissx",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xrngk/if_two_identical_teams_play_football_what_are_the/",
+        "text": "Let two identical teams, A and B, play a game of football (in some universe where cloning is allowed). Let A = probability of team A winning; B = probability of team B winning, D = probability of a draw. What is the distribution of possible outcomes of this match? Is it...\n\n• A = B = D = 1/3\n\n• A = B = 1/2; D = 0\n\n• A = B = 0; D = 1\n\nI've asked a few people I know and everyone has a different opinion. Personally, they all seem possible.\n\nEDIT: formatting",
+        "created_utc": 1531245316,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to treat missing values of control variables?",
+        "author": "MrKimblet",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xrh5w/how_to_treat_missing_values_of_control_variables/",
+        "text": "I'm researching the effect of EEV on stock returns, while controlling for net income (unexpected earnings). \n\nSo  I have a sample of around 500 datapoints for EEV. However for some samples there are missing values for the net income. Lets assume there  are 20 missing values and these are MCAR (missing at completely random).  How can I treat these missings?  Is it  possible for SPSS to simply 'ignore' these missings or should I just  put zero in these missing values (or are these effectively the same?)?\n\nSo in the regression I will have 500 datapoints for EEV and 480 datapoints  for net income. I want to avoid deleting observations. Is this logical/possible, or is this fundamentally wrong? I know this question has been asked before, however Im seeing different responses. Hope one of you know the solution.",
+        "created_utc": 1531244173,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this usage correct for using isometric log ratio [ILR] transform with counts data (compositional)?",
+        "author": "o-rka",
+        "url": "https://stats.stackexchange.com/questions/355460/is-this-usage-correct-for-using-isometric-log-ratio-ilr-transform-with-counts",
+        "text": "",
+        "created_utc": 1531243080,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Interpreting logistic glm estimate",
+        "author": "Trek7553",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xpzqc/interpreting_logistic_glm_estimate/",
+        "text": "I am trying to interpret a simple logistic regression. The end result will have a bunch of variables, but for now I am looking at just one binary variable called \"Group Name\" with levels \"Prior\" and \"After\".\n\nI want to be able to say \"for the After group, retention rate improved by X%\" (all else being equal). Is this possible to get from a logistic regression? I converted it to an odds ratio but am still having trouble understanding the results. Here is the output from R:\n\n\t&gt; model2 &lt;- glm(Retained_Count~Group_Name\n\t+              , data=df, family=binomial())\n\t&gt; summary(model2)\n\n\tCall:\n\tglm(formula = Retained_Count ~ Group_Name, family = binomial(), \n\t\tdata = df)\n\n\tDeviance Residuals: \n\t\tMin       1Q   Median       3Q      Max  \n\t-1.6842  -1.4798   0.7447   0.7447   0.9025  \n\n\tCoefficients:\n\t\t\t\t\tEstimate Std. Error z value Pr(&gt;|z|)    \n\t(Intercept)      1.14092    0.01011  112.90   &lt;2e-16 ***\n\tGroup_NamePrior -0.45327    0.01741  -26.04   &lt;2e-16 ***\n\t---\n\tSignif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1\n\n\t(Dispersion parameter for binomial family taken to be 1)\n\n\t\tNull deviance: 88229  on 75707  degrees of freedom\n\tResidual deviance: 87562  on 75706  degrees of freedom\n\tAIC: 87566\n\n\tNumber of Fisher Scoring iterations: 4\n\n\t&gt; exp(cbind(OR = coef(model2), confint(model2)))\n\tWaiting for profiling to be done...\n\t\t\t\t\t\t   OR     2.5 %    97.5 %\n\t(Intercept)     3.1296339 3.0683596 3.1923475\n\tGroup_NamePrior 0.6355481 0.6142374 0.6576205\n\n",
+        "created_utc": 1531235162,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this Unimodal or Bimodal?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/zuqgza74z2911.png",
+        "text": "[deleted]",
+        "created_utc": 1531211074,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "DAG Definition",
+        "author": "unistata",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xmtnc/dag_definition/",
+        "text": "Hey,  \n\nI have a question about DAGs and causal paths. This paper here says the following:\n\nA‘backdoor path’ is a sequence of arrows from exposure to outcome that starts with an arrowhead towards the exposure and ends with an arrowhead **towards** the outcome. ([https://academic.oup.com/ndt/article/30/9/1418/2459917](https://academic.oup.com/ndt/article/30/9/1418/2459917)).\n\nIs this correct? Have the following example. I want to estimate the causal effect from X on Y. My DAG is defined by two paths: X--&gt;Y and X&lt;--U--&gt;C&lt;--Y. In the second path, U is a confounder and C a collider. If I do NOT control for U and DO control for C, then there is an open backdoor path from X to Y, although the arrow is not directed towards Y in the second path. What do you think?",
+        "created_utc": 1531209752,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PMF, PDF, CDF for discrete and continuous models",
+        "author": "Slip9",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8ximht/pmf_pdf_cdf_for_discrete_and_continuous_models/",
+        "text": "Can you guys help clarify when to use PDF, PMF, and CDF?I believe that PDF is for continuous, and if it's discrete it's PMF\n\nCan cdf be both discrete and continuous? can the others?\n\nAlso, if you have any basic examples of how to convert by doing a derivative or integral. Can that only happen from pdf and cdf?\n\nedit: Also are the Discrete distributions: Binomial, Poisson, hypergeometric, discrete uniform, and geometry? Whereas the Continuous distributions are: normal, uniform, and exponential?",
+        "created_utc": 1531183373,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can I gather this data randomly?",
+        "author": "NoahPM",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xgpdw/how_can_i_gather_this_data_randomly/",
+        "text": "For a stats lab I'm asked to take 8 fruits, 8 vegetables, and 8 breads from a local grocery store and run some tests, but first I have to gather the data randomly and explain my sampling method.  I'm not sure how exactly to do this.  I mean hell there's probably not much more than 8 types of bread at the supermarket, and even if there was 100, we never really learned sampling methods, just learned what they were called and what they are, not how to do them.  So a simple random sample... could I assign each item in those categories a number and get a random number generator to select 8 of them?  I read that is a method... but hell that's a lot of  fruits and vegetables to give a number too.  I can do this from an online grocery store which makes it easier.",
+        "created_utc": 1531173157,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Multiple subjects &amp; sessions: mean or not?",
+        "author": "rgr1988",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xgibc/multiple_subjects_sessions_mean_or_not/",
+        "text": "Hi all. \n\nI am trying to run a MANOVA with data from 12 subjects across 6 sessions (3 for treatment A and 3 for treatment B). Should I average the scores for each of the three sessions as one value or should I analyse them separately? If it's the latter, I'm afraid I'm a little lost on how to run the test that way.\n\nThanks for any pointers!",
+        "created_utc": 1531171974,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Statistical model notation",
+        "author": "GID3E",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xg20u/statistical_model_notation/",
+        "text": "Hi guys, I'm getting introduced to statistical models and I was curious as to what 2 dots after a variable( e.g Y..) implies or a single dot on the same with a subscript j or i. Thank you",
+        "created_utc": 1531169300,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which ANOVA should I use?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xfyuv/which_anova_should_i_use/",
+        "text": "[deleted]",
+        "created_utc": 1531168800,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with population proportion",
+        "author": "melancholicwindsor",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xf9z3/help_with_population_proportion/",
+        "text": "Can someone tell me if my answers are correct. I feel like they are, but I’m not sure?   \n\nhttp://imgur.com/mtTT8mq http://imgur.com/7k1nfjb  \n\nThank you!!",
+        "created_utc": 1531164960,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Proof of Benford's Law?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xf4rt/proof_of_benfords_law/",
+        "text": "[deleted]",
+        "created_utc": 1531164119,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Duplicates drop when more than 1 criteria (STATA database)",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xedu6/duplicates_drop_when_more_than_1_criteria_stata/",
+        "text": "[deleted]",
+        "created_utc": 1531159938,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Missing values on STATA Database",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xe3wc/missing_values_on_stata_database/",
+        "text": "[deleted]",
+        "created_utc": 1531158374,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Standardized vs unstandardized coefficients for categorical predictors",
+        "author": "Agent_KD637",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xcwoi/standardized_vs_unstandardized_coefficients_for/",
+        "text": "I'm running an OLS regression with several categorical predictors (dummy coded- 0,1) and a continuous outcome variable. If my goal is to understand the relative importance of each IV in driving the DV, should I use the standardized or unstandardized coefficients? I'm thinking the former, but would like some second opinions. Thanks!",
+        "created_utc": 1531151408,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Genstat REML help with significant factors",
+        "author": "Alora44",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xcl69/genstat_reml_help_with_significant_factors/",
+        "text": "Using genstat: We have a factor with a significant effect which we want to account for in the model. We have done an REML (linear mixed models) analysis on the data to find that the factor is significant, and then followed with REML variance components analysis to compare the factors. So we have found \"factor 1\" is significant, \"factor 2\" is significant and \"factor1 * factor2\" is significant. Is there a way to show whether the interaction \"factor1 * factor2\" is significant in its own right, or whether it's showing as significant just because the two factors are already significant alone? I really hope this is clear because I know next to nothing about stats, let me know if you need any further clarification!",
+        "created_utc": 1531149475,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Normalizing\" standard deviation",
+        "author": "ic3man211",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xc6ur/normalizing_standard_deviation/",
+        "text": "Forgive my probably easy question but I cant seem to find an easy answer.\n\nI have 3 values I want to compare 1031, 865, and 349. I only need to compare the relative sizes, the actual values don't matter so much. So a simple divide all by the biggest works for my data set. However, each value has a standard deviation. Is there a way to include this in the \"normalized\" data? Do i just divide the std devs by the same largest value as the other data points? That just seems kind of incorrect",
+        "created_utc": 1531147037,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should I use for this type of correlation?",
+        "author": "arainrider",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8xc3y2/what_should_i_use_for_this_type_of_correlation/",
+        "text": "First off all, I want to thank you for giving me your time, and an apology if this seems trivial.  \n\n\nI am a beginner when it comes to research and for my thesis I want to find the **\"Correlation Between the Use of Extra Learning Materials and Academic Performance of STEM students on their Biology, Physics, and Chemistry Subjects.\"**   \n\n\n**Extra learning materials is defined as: Any form of media that relates to any STEM subject consumed outside of the academy.**  \n\n\nSince it is a correlation what should I use? Pearson R, Spearman's rho, etc.  \nAnd how would my data look like? Would the sample be divided into those that use extra learning materials (as defined above),  and those that do not. Then compare the academic performance (their general average for the subject in this case) of the two groups.  \n\n\nAnyways, I'm not too familiar with research and I would appreciate any comments on the topic. Specifically, my main concern is that I do not know how am I going to use the data gathered. Thanks!",
+        "created_utc": 1531146519,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What Significance Test Should I use for non-parametric biological data with 1000+ values?",
+        "author": "SirSharpest",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8x9ghj/what_significance_test_should_i_use_for/",
+        "text": "Hello,\n\nForgive this possibly simple question; I'm trying to compare some biological measurements for seeds.\n\n\\- The data are not normally distributed\n\n\\- Groups vary between 100 to 3000 in size\n\nI've tried using a Welch T-test which I've read should work for this kind of data, however\n\n\\- It always reports high levels of significance p&lt;0.001, even when data clearly has high overlap\n\n\\- If I sample a smaller number e.g. 30 from each group the significance is always p&gt;0.1\n\n\\- So there seems to be an issue with using larger groups?\n\nIf anyone could provide a little help or advice, I'd greatly appreciate it!",
+        "created_utc": 1531122508,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why are p values of .05 or .10 the conventional values for testing a null hypothesis?",
+        "author": "JirenTheGay",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8x99kt/why_are_p_values_of_05_or_10_the_conventional/",
+        "text": "Wouldn't it make sense to use .5 since that means that the null hypothesis is more likely rejected than not?",
+        "created_utc": 1531120582,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where to get started in stats",
+        "author": "MEatAOLdotCOM",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8x44dy/where_to_get_started_in_stats/",
+        "text": "I've been working on a research project this summer and I came to the realization that my statistics knowledge is lacking. I want to learn more, but I have no idea where to even begin. \n\nI'm a medical student doing clinical research now, and I plan on continuing to do that post graduation so this is definitely an important skill for me to learn. I've taken a basic stats class in undergrad (Think T-tests) and know a bit of R, but other than that I have no idea what I am doing. My undergraduate degree is in Engineering so I do have a decent math background, and I am not afraid of learning difficult math.\n\nI was hoping that you could point me to some resources to help me understand things more. Ideally I would like to eventually move into informatics, but I want to learn the fundamentals first  \n",
+        "created_utc": 1531079017,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do we interpret the Chi Square Scores? Clearly not the same way as the Z score.",
+        "author": "Darth_Marrr",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8x3j07/how_do_we_interpret_the_chi_square_scores_clearly/",
+        "text": "The z score represents the magnitude and direction of the number of standard deviations away from the mean a TS is if it is Normally distributed. Likewise with any t-score, but what is the meaning for the F distribution or Chi square distribution? Are they to some sort of measurement in standard deviations?\n\nWhile we are on the subject of chi square tests: how many chi square tests are there (approximately)?",
+        "created_utc": 1531074412,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some good resources/readings for within-subjects ANCOVA?",
+        "author": "erikjj1324",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8x2t8d/what_are_some_good_resourcesreadings_for/",
+        "text": "As the title states, I'm looking for some resources on within-subjects ANCOVA: how to conduct it, interpret the effect(s) of the covariate, etc. Any recommendations? ",
+        "created_utc": 1531068913,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Have I fitted this mixed effect model correctly?",
+        "author": "ThomYorke7",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8x0paz/have_i_fitted_this_mixed_effect_model_correctly/",
+        "text": "Hello. I'm a PhD student in linguistics who's been convinced by one of my mentor to use Mixed Effect Models in my research (I've never studied stats or maths at higher level in my life). Basically, I want to observe the effect that various linguistic factors have on the number of \"likes\" obtained on Facebook posts. So firstly I used a software to annotate the posts. Then I created an Excel page, with the data organized in this way: USER POST LIKES AFFECT JUDGEMENT REPETITION GRAPHICAL and so on. For this study, I only have two users, as I am conducting the research on two politicians. Then I have their posts, the number of likes (which would be my dependent variable) and the other independent factors organised in a ratio way. In R, I see that my DV is not normally distributed, therefore I use a log function. My mixed model is organised in this way, with the user (two of them, in this case, as random effect): model &lt;- lmer(loglikes ~ affect + judgement + repetition + graphical + (1|USER), data = mydataset) The problem is that the residual plots don't seem to be random (see below), except for the distribution, so I'm violating an assumption for the model. I've read that log transformation is often useful, otherwise it means I'm dropping a significant factor in the analysis. Unfortunately the ignorance I have in this field is stopping me from understanding much of the literature out there. I hope that someone here can tell me whether I'm doing something wrong and what exactly. Thank you anyway.\n\nhttps://s33.postimg.cc/sifq3kncf/collage.png\n\nps: I posted this in self.statistics as well. I'm still not sure which of the two subreddit is the most adequate for this post.",
+        "created_utc": 1531047271,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Discriminant Analysis] Chi Square not significant, inappropriate to do discriminant analysis?",
+        "author": "Chocobuny",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wzopt/discriminant_analysis_chi_square_not_significant/",
+        "text": "Hey so I've got 11 ordinal variables on a 0-2 scale which are designed to predict group membership. I've collected data on 59 subjects, and run crosstabs in SPSS on all of them. None of the variables have come back as significant, which I interpret to mean that in my study there was no significant relationship between any of the 11 ordinal variables and group membership.  \n\nI was not expecting this result, and had planned to run a discriminant analysis. However, I was wondering if this is inappropriate to do considering the results of the crosstabs? I ran it anyway just to see what SPSS would give me, and ended up with a significant Wilks' Lambda and the classification results showed that 80% of the cases were correctly classified using the variables.     \n\nI'm just wondering if its inappropriate to report the results of the discriminant analysis based on the fact that the original crosstabs were all insignificant? Additionally, I'm wondering if there is a way to filter out some of the weaker predictors without just running the discriminant analysis many times with different combinations?\n\n\n",
+        "created_utc": 1531031297,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Interpreting multiple regression with dichotomous predictor (increasing predictor by 1 unit increases DV by 1 unit?)",
+        "author": "Silly_Sale",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wwl07/interpreting_multiple_regression_with_dichotomous/",
+        "text": "I'm sorry for this very basic question, I just can't seem to wrap my head around it!\n\nI'm doing a multiple regression with quite a few predictors and a continuous dependent variable. Two of my predictors/independent variables are dichotomous (employee/manager, democrat/republican) . \n\nI know in a normal regression, you'd say \"for every one unit increase in the predictor, the DV/outcome increases by X units\". If the predictor is dichotomous, would it be the same? Like would you say \"just imagine you can increase being a democrat by one unit. For every one unit increase in being a democrat, the outcome increases by X units\". ",
+        "created_utc": 1530999627,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Regression: controlling for metric variable?",
+        "author": "unistata",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wvzhk/regression_controlling_for_metric_variable/",
+        "text": "My question: I have a multiple regression. When I control for a, say, binary variable, we can think of that as a perfect stratification, so the effect is calculated separately for both groups (0/1) and the weighted average is reported. How does this work with a metric control variable? Here we have so many \"categories\". Think of income: imagine only one person has an income of 1158.82. So there are no other people in this \"group\" for comparison. How does this work then as a perfect stratification is impossible? Thx!",
+        "created_utc": 1530994356,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help: What Research Strategy &amp; Statistical Analysis Should I Use?",
+        "author": "pamessar",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wvaw7/help_what_research_strategy_statistical_analysis/",
+        "text": " I'm basing my research proposal/concept paper on this research by Smith (2017)  \n\n\nlink. important points highlighted: [https://www.dropbox.com/s/ky7jduiyf7qyb3n/smith2017&amp;#37;20-&amp;#37;20an&amp;#37;20international&amp;#37;20survey&amp;#37;20of&amp;#37;20the&amp;#37;20wellbeing.pdf?dl=0](https://www.dropbox.com/s/ky7jduiyf7qyb3n/smith2017%20-%20an%20international%20survey%20of%20the%20wellbeing.pdf?dl=0)  \n\n\nLong story short, the 2017 study used a survey (Smith Wellbeing Questionnaire) which had different questions showing different aspects of wellbeing. Multiple regression showed that only high control/support remained as a significant indicator of job satisfaction. Anxiety/Depression were predicted by lack of control/support and stress at work, whereas happiness reflected job satisfaction.  \n\n\nBasically, I just want to replicate this study except my sample will be exclusively selected from a certain city in the Philippines.  \n\n\nMy concerns are:   \n1. How do I go about this? What statistical tests should I use to see if the original results are significantly different from the results of the Philippine version?  \n2. I noticed that one of the survey items has an error. It is double-barreled (one item includes both control &amp; support. Would it also be okay for my research proposal to just focus on that one item and then revising it into two items (one for control, one for support) and disregard the rest of the SWELL? if so, what statistical tests would you recommend? ",
+        "created_utc": 1530988616,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Should I get involved in research during my final year? Would it be too much?",
+        "author": "atomina",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wts20/should_i_get_involved_in_research_during_my_final/",
+        "text": "I'm currently looking at applying to Statistics masters once I graduate. I'm sitting on a low first and I want to improve my chances of getting a really good programme like Oxford, UCL, or Imperial. \nI was thinking about asking some of my lecturers about opportunities to help with research during my final year. Would this be a bad move? I'm worried it will affect my grades and I could lose my first. How many hours would I have to commit to research?\n\nWhat do people think?",
+        "created_utc": 1530975914,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help in choosing the best statistical treatment",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wqfjg/help_in_choosing_the_best_statistical_treatment/",
+        "text": "[deleted]",
+        "created_utc": 1530935892,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problem at work (sample bias)",
+        "author": "statsnerd99",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wm53h/problem_at_work_sample_bias/",
+        "text": "I work at a psych hospital. I want to see how the ratio of employees to patients effects the number of negative events (such as injuries). We have some patients that are more demanding than others, and as a result choose a higher employee to patient ratio when necessary. So there is an effect that runs both ways. As is appropriate, I want to do 2 stage least squares (I believe I can find an instrument).\n\nI have data on all negative events, and the number of employees and patients on shift at the time of each.\n\nThe problem which I do not know how to resolve (or if it is possible to resolve) is that I do not have data on when incidents don't occur. (Sampling bias is the right word for this?) Does anyone know what can or cannot do?\n\nAlso, what if the number of incidents are poisson distributed?",
+        "created_utc": 1530899290,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "One-Way ANOVA follow-up help",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wleek/oneway_anova_followup_help/",
+        "text": "[deleted]",
+        "created_utc": 1530894020,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Test of statistical significance",
+        "author": "ian-john-10",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wkgl4/test_of_statistical_significance/",
+        "text": "I am doing research for muscular dystrophy, looking at the lung capacity of a patient we are working with. I was hoping to show some level of statistical significance in the results (or not). I haven't taken statistics since my freshman year of college and am at a loss on how to move forward. \n\nThese results are shown as percentages of lung capacity:\n\n1st visit - 16.7\n\n2nd visit- 9.85\n\n3rd visit- 13.2\n\nIdeally, we would like to have them staying consistent or increasing. So this may be more of a standard deviation or error in the mean question. Any type of assistance is greatly appreciated!!!",
+        "created_utc": 1530886953,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Logistic Regression: How do I select from many potential predictor variables?",
+        "author": "qonstats",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wjlko/logistic_regression_how_do_i_select_from_many/",
+        "text": "I have a binary output with a dozen potential predictors (all categorical), which are all converted into dummy variables resulting in hundreds of potential predictors yet alone interactions. My sample size is several hundred thousand.\n\nIt takes too long to screen through all of them using stepwise selection, so I need to know of a way to only include the best ones beforehand. I'm using R, and with the large sample size I can only select a dozen or two predictors that my computer can actually process.\n\nWhat steps could be completed to find the best candidates beforehand?",
+        "created_utc": 1530879440,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with choosing statistical test/writing model for longitudinal dataset",
+        "author": "temqs",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8whel1/help_with_choosing_statistical_testwriting_model/",
+        "text": "Hi reddit, I've spent the last week reading various statistical guides online to analyze some data, but I am not sure that I am getting anywhere. I do not currently have access to in person help for figuring this out, so I am hoping someone here might be able to help me out. I have taken a couple introductory statistics courses, but they were quite basic and only went as far as ANOVAs, so my statistical understanding beyond that is patchy.\n\nMy experimental design is as follows: four different treatments with three replicates per treatment, with the density of each replicate measured each week for six weeks. \n\nI simply want to know if week, treatment, or week\\*treatment have an impact on density. I believe that I cannot just do a simple density \\~ week\\*treatment model because I need to account for the fact that the density of each replicate is likely correlated with its density in the previous weeks (which a visual interpretation of my data suggests). Should I be adding in a random effect of replicate? And should this random effect be nested in treatment? Also, I have one dataset to analyze in this way which is approx. normally distributed, and a second one that has fat tails (with meaningful outliers on either end, so I don't think it is best to remove them from the analysis). \n\nI use R for my statistical analysis, so if there is a specific package that is best for running this please let me know!\n\nI appreciate the help!! I don't know where else to turn besides the internet at this point (Side question: are there statistical consulting services for graduate students online that I could pay for?). Thank you!",
+        "created_utc": 1530853743,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What does this set of graphs mean?",
+        "author": "JGoines",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8whcmz/what_does_this_set_of_graphs_mean/",
+        "text": "I ran across this with basically no explanation at https://www.motherjones.com/kevin-drum/2018/07/were-about-as-different-from-each-other-as-weve-always-been/ . It comes from an economics paper at http://www.nber.org/papers/w24771 , which is behind a paywall. It’s stated that differences in groups categorized by race, gender, etc differ in terms of time use, media, consumption, and attitudes than in the past. If the y axis is r or r^2, can you make an inference like that? It seems a stretch, but I can’t quite wrap my mind around it.\nhttps://www.motherjones.com/wp-content/uploads/2018/07/blog_cultural_distance_time.jpg",
+        "created_utc": 1530853200,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can anyone explain why null and alternative hypothesis are the way they are in this question?",
+        "author": "NoahPM",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wg1sq/can_anyone_explain_why_null_and_alternative/",
+        "text": "&gt;A statistician read that at least 77&amp;#37; of the population oppose replacing $1 bills with $1 coins. To see if this  \n&gt;  \n&gt;claim is valid, the statistician selected a sample of 80 people and found that 55 were opposed to replacing the $1  \n&gt;  \n&gt;bills. At α = 0.01, test the claim that at least 77&amp;#37; of the population are opposed to the change.\n\nMy teacher wrote that H0 is P &gt;= .77 (claim), and H1 is P &lt; .77.  I wrote it the other way around?  What makes this one of those problems where the null is the claim?  Is there some kind of rule to understand this?  I know in difference questions, where the null is = and the alternative is n.e., the null is the claim, though I don't understand this intuitively.  What is going on here, in English?",
+        "created_utc": 1530840802,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fitting a logistic regression, training data is skewed 90% positive, are all results meaningless?",
+        "author": "TheOtherCount",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wd731/fitting_a_logistic_regression_training_data_is/",
+        "text": "Hi all,\n\n\nI'm helping a friend with predicting a binary result from some continuous valued data - naturally a logistic regression came to mind. Anyway, I'm more of a mathematician (with R programming ability) so I need help with the standard statistical techniques! I'm using the \"glm\" function in R.\n\n\nI've programmed it up and realised, 90% of the training data has a positive (1 in binary) result. Therefore, any model with less than 90% accuracy is meaningless, right? However, when I look at the p values for the coefficients (Wald test), most of them are significant. So can I say that: while the predictive power is suboptimal, we can still find contributing factors to the dependent variable?\n\n\nMany thanks,\nTOC\n\n\nP.S., Are there any other techniques I should be playing around with? And how do I compare models? I've mainly been minimising AIC, and also looking for good predictions etc. Also been using Hoslem goodness of fit tests.",
+        "created_utc": 1530818009,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "how to succeed in a masters program?",
+        "author": "cab101",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wcjxi/how_to_succeed_in_a_masters_program/",
+        "text": "Hi r/askstatistics,\n\nI am a biologist (BS in biotechnology with a few years of work experience in academic research) who is starting a Biostatistics MS program in a few months. I have taken some relevant courses as an undergrad (linear algebra, calc, Intro to biostatistics, biometric computing) but still feel like I am unprepared\n\nI have two months before my MS program starts and want to brush up on anything that I can.\n\nHow did you guys transition from undergrad or another field really get yourselves to succeed in the field? Any advice?",
+        "created_utc": 1530813357,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the difference between these types or regressions?",
+        "author": "o-rka",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wcc0d/what_is_the_difference_between_these_types_or/",
+        "text": "I'm familiar with how linear models work in that there is a tuneable coefficient for each attribute and a single bias value (e.g. `y= beta_1*x_1 + beta_2*x_2 + ... + beta_m°x_m + bias`) but I don't understand the difference between this (as the implementation in `scikit-learn`) compared to a generalized linear model (those in `statsmodels` and in `R`)?  I've also seen multivariate response linear regressions which I am an unclear on how the differ from the above example.\n\n**Can somebody describe the difference between the following**:\n\n(1) Linear model regression\n\n(2) Generalized linear model regression\n\n(3) Multivariate response linear regression",
+        "created_utc": 1530811736,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MegaStats for Mac link",
+        "author": "depressinister",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8wasxw/megastats_for_mac_link/",
+        "text": "",
+        "created_utc": 1530800417,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any good schools with statistics programs worth applying to?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8waj08/any_good_schools_with_statistics_programs_worth/",
+        "text": "[deleted]",
+        "created_utc": 1530798105,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to select the outliers in Python",
+        "author": "BlackOrchid1619",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w97vi/how_to_select_the_outliers_in_python/",
+        "text": "I am working on the sales, gross margin parameters for each of the product type, city and zone (data of 3 years available).\n\nExample: I have GM and Sales value for XYZ TV, East Zone, ABC city.\n\nThere are many such entries. \n\nDuring the prediction/forecast that there were a few cities that behaved abnormally. I found out the mean and standard deviation for these cities and observed that for a few cities that behaved abnormally had a difference of around 10,000 in the standard deviation values of two subsequent years.\n\nBut this same logic (of 10,000 difference between the two subsequent years) did not work.\n\nPlease guide me how to fix this issue in python??\n\nThanks",
+        "created_utc": 1530784220,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What kind of problem is this and how do I learn how to solve it?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w8rg9/what_kind_of_problem_is_this_and_how_do_i_learn/",
+        "text": "[removed]",
+        "created_utc": 1530778081,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Two Dimensional Standard Deviation",
+        "author": "AbjectPerception",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w85sm/two_dimensional_standard_deviation/",
+        "text": " In my trial to find the dispersion in the variable cost for a production process, below table is a sample indicating the recorded different output of the process in volume of production and costs. Records Volume Cost\n\nhttps://i.redd.it/asqb3lbbl2811.png\n\nWhat is the best approach to measure the standard deviation of the variable cost given that the volume sample data isn't fixed as per the above table.",
+        "created_utc": 1530770602,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Homework Help] Is this unimodal skewed to the right?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/2qt1ym13x1811.png",
+        "text": "[deleted]",
+        "created_utc": 1530762444,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Variable separation in data analysis (not sure if correct sub)",
+        "author": "Wil_Code_For_Bitcoin",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w768f/variable_separation_in_data_analysis_not_sure_if/",
+        "text": "Hey everyone,\n\n\nI've got a weird question that I'm not sure if I'm asking in the correct sub or whether it's possible.\n\nI'm doing a study on the power output of a set of solar panels. I'm trying to determine their deviation from their theoretical power output. So panel puts out X, but should be putting out Y, but how large is this deviation. \n\nThere are three variables in my study of concern:\n\n* Degradation of the panels\n\n\n* Soiling\n\n\n* Mismatch between the panels \n\nExplanation of variables:\n \n* **Degradation of  the panels:**\nSo the longer the panels are operating outside the more they degrade due to various reasons and this degradation is not linear nor can it be described by a function, i.e. Panel degrades by 2% per day as it degrades in varying amounts.\n\n* **Soiling:** If the panels are dirty, they output less power as less irradiance can enter the cell. This causes panels that are interconnected to output different amounts of power depending on how much more soiling one panel has on it in comparison to another.\n\n* **Mismatch**: When the panels are interconnected and are producing different amounts of power. They tend to settle on a intermediate power point. The panels naturally have a mismatch percentage because of manufacturing tolerance but this percentage is further increased due to soiling and degradation which causes a further deviation of power output between the panels\n\n\nSo when doing my measurements all three of these variables will play a role in the % of deviation. Is there anyway that I could isolate each of these in the experiment as to get a value for each? I know how I'll be doing the analysis and measurements, but I'll get a percentage that is a combination of each of these variables, where ideally I'd like to isolate the mismatch percentage so that I can measure while minimizing the influence of degradation and soiling.\n\n\n\nThanks in advance for any help ! and if its not the correct sub, sorry! I assumed design of experiments might fall under this sub and my question might fall under there.\n\n",
+        "created_utc": 1530759420,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does Gauss Markov Assumptions not require errors to be Normally distributed?",
+        "author": "Darth_Marrr",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w6uta/why_does_gauss_markov_assumptions_not_require/",
+        "text": "I thought the errors for a regression model had to be Normally distributed. This doesn't seem to be the case with the Gauss Markov Assumptions. Can anyone explain this to me?",
+        "created_utc": 1530756196,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Calculating statistic directly and estimating it with bootstrap analysis produces results consistently more different than the standard error of bootstrap. Any clever techniques for resolving this?",
+        "author": "willbell",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w446n/calculating_statistic_directly_and_estimating_it/",
+        "text": "If anyone wants to see the code I'm working with, [I uploaded it to GitHub](https://github.com/TWilliamBell/SShDSSDFunctions) (offending function would most likely be bootSShD).  However that would be going above and beyond the call of duty for an ask subreddit (especially with my cumbersome newby code, if anyone would like to go through the trouble I can explain whatever you like and add more comments).\n\nBackground knowledge: one probability class, one statistics class (only learned basic methods, nothing numerical), and my lab work for a summer research project where this has been a problem.\n\nI am working in R with shape and size data, I am calculating a measure of sexual size dimorphism (EDITED: (size of larger sex - size of smaller sex)/size of smaller sex)*(-1 if male, 1 if female)), size given by centroid size for those familiar with geometric morphometrics), or if you're in R:\n\n&gt; SSDFunc &lt;- function(SizeVec, SexVec) {\n\n&gt; \\#\\# Function for calculating Sexual Size Dimorphism\n\n&gt; \\#\\# Sex vector must be given in terms of 'm' and 'f'\n\n&gt;    SexVec &lt;- as.character(SexVec)\n\n&gt;    MSize &lt;- mean(SizeVec[SexVec == 'm'])\n\n&gt;    FSize &lt;- mean(SizeVec[SexVec == 'f'])\n\n&gt;    if (FSize &gt;= MSize) {\n\n&gt;    SSD &lt;- (FSize/MSize)-1\n\n&gt;    }\n\n&gt;    else {\n\n&gt;    SSD &lt;- -((MSize/FSize)-1)\n\n&gt;    }\n\n&gt;    SSD\n\n&gt;}\n\nI am finding that I consistently end up with the sexual shape dimorphism direct estimate and the bootstrapped estimate being within the bootstrap-estimated standard error (standard deviation of the mean of repeated bootstraps) of one another.  However it seems almost always the sexual size dimorphism differs by far more than the standard error (often even having the opposite sign of the direct estimate).  When I get large data samples (&gt;300 as an upper bound) and resample many times (&gt;=10000) it seems to solve itself, but I am often dealing with much smaller samples for which I have tried doing it as many times as the sample has unique resamplings with replacement.  Is there a likely explanation (aside from maybe that my functions are wrong) for this, and is there anywhere I should start for diagnosing the problem and choosing more complex bootstrapping techniques meant to accommodate this?",
+        "created_utc": 1530731030,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Relationship between Confidence Interval and Sample",
+        "author": "jetis",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w3k1z/relationship_between_confidence_interval_and/",
+        "text": "If a sample of 60 observations has a 95% confidence  interval of 5, and 12 of the observations are outside of the interval, what does it tell us about the sample?",
+        "created_utc": 1530726512,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I calculate the odds between 2 dice rolls with different fixed bonuses? (eg: 1d10+2 vs 1d10+10)",
+        "author": "framer58",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w3cln/how_do_i_calculate_the_odds_between_2_dice_rolls/",
+        "text": "Is there a formula that I can use to calculate the odds of which will have the higher total score between 2 same dice rolls with a different bonus added to the roll?\n\nFor example the chance of the total of 1d10+2 being larger than 1d10+10 or 1d100+4 vs 1d100+90.\n\nThanks for any help!",
+        "created_utc": 1530724909,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problem during my bachelor thesis",
+        "author": "Herbstrabe",
+        "url": "https://www.reddit.com/r/AskStatistics/comments/8w2wgu/problem_during_my_bachelor_thesis/",
+        "text": "I ran into a wall while writing my bachelor thesis. I collected samples from two test areas with 20 samples on each of the two areas (fine root masses, 5 trees, 4 layers of depth).\n\nNow I am trying to prove that the arithmetic mean of those two samples is not the same. The generel idea in my field is that there should be a difference. Visualizations of my numbers show that one mass is about twice as large as the other, which is expected. But I can't prove this statistically.\n\nMy standard deviation is quite high (about 80&amp;#37; of my arithmetic mean) since there are many roots in the upper layers and very few roots in lower layers.\n\nIs the t-Test the correct way to check this?",
+        "created_utc": 1530721504,
+        "upvote_ratio": ""
+    }
+]

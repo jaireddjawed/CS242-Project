@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Anyone like source tree ?",
+        "author": "whismerhill",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5t8z31/anyone_like_source_tree/",
+        "text": "[removed]",
+        "created_utc": 1486751258,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Converting a php array to a javascript array.How hard could it be?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5sza2r/converting_a_php_array_to_a_javascript_arrayhow/",
+        "text": "[deleted]",
+        "created_utc": 1486636416,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Converting a php array to a javascript array.How hard could it be?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5sz8pu/converting_a_php_array_to_a_javascript_arrayhow/",
+        "text": "[removed]",
+        "created_utc": 1486635817,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "found in several places in a current project, i mean they're technically not in the compiled code",
+        "author": "ChippyTheSquirrel",
+        "url": "http://imgur.com/a/MHaGv",
+        "text": "",
+        "created_utc": 1486586158,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Refactoring your hopes and dreams [Part 2]",
+        "author": "p1-o2",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5st48h/refactoring_your_hopes_and_dreams_part_2/",
+        "text": "[I was recently tasked with refactoring](https://www.reddit.com/r/programminghorror/comments/5qjy15/hired_to_refactor_an_old_code_base/) a code base which defies all logic. I've decided to document the worst highlights of the process to share for your amusement.\n\nAs a little bit of background, I'm going to come up with a few pseudonyms for the people involved. The primary culprit responsible for the code, which was written around 10-15 years ago, is a fellow we'll call Jimmy. The languages of choice are Windows CLI (MS-DOS) and Anchor, which is a closed source pay-to-play language with only a couple hundred (optimistic estimate) developers in the business. Before I dive into it, let me quickly describe Anchor.\n\nThe first thing to know is that it contains a wide range of \"DoAlls\" which are essentially a class that has been compiled into executable format. You can overload a DoAll with arguments via windows CLI, and point it to a fixed-width data file. It will pipe all of that data in, make *exactly one* change, and then pipe it back out. Now I'm not saying that it's a bad language, in fact it's quite fast and powerful. The only problem is that it would require a meaningful architecture.\n\nAnchor's redeeming factor is that the code is predefined. You only have a few hundred classes to work with, and you can not write your own classes. You can write code in other languages which will dynamically generate Anchor code for you. This is ease of automation, thanks to the static language based on simple byte math. It was designed specifically for my industry.\n\nLet's all take a look at a basic Anchor script, so you have a better idea what I'm looking at. I apologize ahead of time for the length, and I've done my best to comment it as far as I understand it.\n\n**Note**: Feel free to skip the code mess.\n\n    /* This section describes the location of the file,\n\t   the fixed-width size of the data,\n\t   the size of the data which is rejected,\n\t   and the size of the final output data.\n           DAT = fixed width, RJT = rejected, RFM = reformatted.\n\t*/ \n\t;[FILE INFORMATION]\n    ;INPUT FILE=C:\\PROGRAM\\%CLIENT%\\%FILE%.DAT\n    ;INPUT RECORD SIZE=319\n    ;REJECTED FILE=C:\\PROGRAM\\%CLIENT%\\%FILE%_HEADER.RJT\n    ;REJECTED RECORD SIZE=319\n    ;SELECTED FILE=C:\\PROGRAM\\%CLIENT%\\%FILE%.RFM\n    ;SELECTED RECORD SIZE=1800\n    \n\t// Allocate 4000 bytes in memory to work with.\n    ;[CONTROLS]\n    WORKAREA 4000\n    \n\t// Copy all of the current data from byte 1-2000 into byte 2001-4000 for editing.\n    ;[DOALLS ROUTINES]\n    ;*** COPIES RECORD INFORMATION TO HOLDING AREA ***\n    MOVES\n    R 0001-2000;2001-4000\n    \n\t// Clear out the first 2000 bytes so that new data can be moved into them.\n    ;*** CLEARS STANDARD RECORD AREA ***\n    REFORMAT\n    R 0000-0000;0001-2000\n    R 2001-4000;2001-4000\n    \n\t// Move data from the last 2000 bytes into the first 2000 bytes in specific orders.\n\t// Format is R - starting bytes, ending bytes (move to) starting bytes, ending bytes.\n    ;*** BRINGS INFORMATION BACK - IN ENGAGE LAYOUT ***\n    MOVES\n    R 2001-2009;0051-0075                  Finder Number \n    R 2290-2309;0076-0100                  Keycode\n    R 2030-2049;0101-0150                  Title\n    R 2050-2069;0151-0200                  First Name\n    R 0000-0000;0201-0250                  Middle Name\n    R 2070-2099;0251-0300                  Last Name\n    \n\t// Generate the number 1 in byte 1301.\n    ;*** SET APPEAL TO 1 AS DEFAULT ***\n    GENERATE CONSTANT IN POSITION 1301 THRU 1301 1\n    \n\t// Test if the letter A exists in byte 2009, and place letter X in byte 3001 if true.\n    ;*** CREATE TABLE TO TEST FOR A LETTER IN POSITION 2009 ***\n    CHANGE ACCORDING TO TABLE1 IN POSITION 2009 THRU 2009 3001 THRU 3001\n    T1 A;X\n    \n\t// Generate a letter X in byte 3002, so that you can compare byte 3001 to it later.\n\t// Generate a null in byte 3003, so that you can compare later.\n    ;*** GENERATE A TEST VARIABLE FOR IF STATEMENT ***\n    GENERATE CONSTANT IN POSITION 3002 THRU 3002 X\n    GENERATE CONSTANT IN POSITION 3003 THRU 3003\n    \n\t// MDUS111 = IF/THEN statement. IF byte 3001 is (NE = Not Equal) to byte 3002, then GOTO tag)\n    ;*** FIRST CHECK TO SEE IF THERE WAS A LETTER IN POSITION 2009 ***\n    MDUS111 IF 3001 THRU 3001 NE 3002 THRU 3002 THENGOTO FAILED_CHECK\n    \n    // Do other stuff.\n    \n\t// Tag for a GOTO statement (MDUS111)\n    ;*** EXIT FROM THE IF STATEMENT TO RETAIN DEFAULT SETTINGS ***\n    MDUS112 FAILED_CHECK\n    \n    // Do more stuff.\n    \nSo there are hundreds of these Anchor scripts that Jimmy developed. They're managed by ~~hundreds~~ [**thousands** of Windows batch files](http://imgur.com/HWnU48y.png) mixed with strange data containers.\n\nHe invented many interesting file formats. I've made my best guess at them, and a gold star to anyone who can decipher the other names:\n\n    .ALT = ??\n    .DAT = Data?\n    .SRT = Sort?\n    .BAD = Bad?\n    .DUP = Duplicates?\n    .LYT = Layout?\n    .prj = Project?\n    .RPT = Report?\n    .CVT = Convert?\n    .TMP = Temp?\n    .DA1 = ?\n    .DA2 = ?\n    .TX1 = ?\n    .NET = ?\n    .NE1 = ?\n    .MLC = ?\n    .FIN = ?\n    .FIL = ?\n    .LST = ?\n    .CNT = ?\n\nAs you can see, Jimmy was not only a visionary in our field of programming, but truly ahead of his time. He reminds me of [Master Foo and the Programming Prodigy](http://catb.org/esr/writings/unix-koans/prodigy.html), although he never met Master Foo to learn this Koan. To date, I have found maybe a dozen comments from him, and not a shred of documentation. I often wonder what he looks like, where he is in life, and whether he thinks about the *beautiful* creation he left behind. Surely he must have known that one day I'd be picking up where he left off.\n\nFunny thing is, there are often rumors that he screwed with the code before he left. I don't believe that, as it's often better to assume foolishness over malice. The likely scenario is that nobody even knew how the software worked, and it was so deeply obfuscated that it appeared intentionally broken. After working with this code for a year now, I can say it doesn't seem malicious... but I may be a hopeless optimist.\n\nI'll continue to document these strange behaviors and scripts that I find. The horrors contained within have slowly eaten up my motivation and sanity over the past year. **The code has already been refactored** to an acceptable working state in C#/.NET with Redpoint, but I'm still going back to find all of the missing pieces as time goes on.\n\nAs a final treat, here's the script I found which restarts the primary script control script if something goes wrong. How does it work? By deleting hundreds of files... Look through at the beautiful names.\n\nDEL J:\\%JOBNUM%\\COUNT_DOUBLES.TXT\n\nDEL J:\\%JOBNUM%\\Double_Count.txt\n\nDEL J:\\%JOBNUM%\\HOUSE_DOUBLES.DAT\n\nDEL J:\\%JOBNUM%\\HOUSE_DOUBLES.DA1\n\nDEL J:\\%JOBNUM%\\DOUBLE_REJECTS.DAT\n\nEtc...\n\nFull List: http://pastebin.com/5npYx2aj\n\n\n",
+        "created_utc": 1486565903,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are you a good programmer or just a better Googler ?",
+        "author": "harshit1990",
+        "url": "https://blog.icanbeacoder.com/are-you-a-good-programmer-or-just-a-better-googler/",
+        "text": "",
+        "created_utc": 1486553544,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When your SQL execution plan is so big that it starts looking like a maze",
+        "author": "i_wonder_as_i_wander",
+        "url": "http://i.imgur.com/6M6KZQw.png",
+        "text": "",
+        "created_utc": 1486480098,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just found this gem lying around in our codebase",
+        "author": "kamranahmed_se",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5skmsc/just_found_this_gem_lying_around_in_our_codebase/",
+        "text": "    /**\n     * Parse charge\n     *\n     * @param array $array\n     */\n    private function parseCharge(array $array)\n    {\n        list(\n            $this-&gt;PAYMENT_ID, $this-&gt;REF, $this-&gt;ORDER, $this-&gt;STATUS, $this-&gt;LIB, $this-&gt;ACCEPT, $this-&gt;NCID, $this-&gt;NCSTER, $this-&gt;PAYDATE,\n            $this-&gt;CIE, $this-&gt;FACNAME1, $this-&gt;COUNTRY, $this-&gt;TOTAL, $this-&gt;CUR, $this-&gt;METHOD, $this-&gt;BRAND, $this-&gt;CARD, $this-&gt;EXPDATE,\n            $this-&gt;UID, $this-&gt;STRUCT, $this-&gt;FILEID, $this-&gt;ACTION, $this-&gt;TICKET, $this-&gt;DESC, $this-&gt;SHIP, $this-&gt;TAX, $this-&gt;USERID,\n            $this-&gt;MERCHREF, $this-&gt;REFID, $this-&gt;REFKIND, $this-&gt;ECI, $this-&gt;CCCTY, $this-&gt;IPCTY, $this-&gt;CVCCHECK, $this-&gt;AAVCHECK, $this-&gt;VC,\n            $this-&gt;BATCHREF,\n            ) = $array;\n    }",
+        "created_utc": 1486462843,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is from an engineer at Uber. More in comments.",
+        "author": "Dom_the_Wop",
+        "url": "http://imgur.com/HpA8CsA",
+        "text": "",
+        "created_utc": 1486187819,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Finally got access to the db at work... \"YYYYmmddHHMM\"",
+        "author": "Jcoenep",
+        "url": "https://i.redd.it/ek4czkiykrdy.jpg",
+        "text": "",
+        "created_utc": 1486180959,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Not the best impression when marketing is on 100% to lure customers",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/1ww31rk2ridy.png",
+        "text": "[deleted]",
+        "created_utc": 1486073991,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just pray and log away",
+        "author": "Neidmare",
+        "url": "http://i.imgur.com/sdfFbFJ.png",
+        "text": "",
+        "created_utc": 1486071741,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I know a true programmer is not afraid of GOTO but...",
+        "author": "Pazuuuzu",
+        "url": "https://i.redd.it/4xz8jw2dvgdy.png",
+        "text": "",
+        "created_utc": 1486051209,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "In Which I Encounter parseFloat(string)",
+        "author": "MEaster",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5rmle2/in_which_i_encounter_parsefloatstring/",
+        "text": "Recently I've been working on a code base in Typescript, which of course compiles to Javascript. Easy target, I know, but I've no experience with it. I knew that Javascript was... \"flexible\"... but this...\n\nWe have a form for the user to enter some data. Now, in one of the fields a pure number is not valid, and there is a client-side check for that. However, it would be perfectly valid to enter something like \"456Hello\". The way the script checks whether it's a number is to try `parseFloat(string)` on it, and see if it returns something that's a number.\n\nFor some reason, one of the entries with that kind of pattern was failing, and I couldn't figure out why. I couldn't see anything odd on the debugger, so I started looking up function documentation. And that's where I find the language specification for [parseFloat(string)](http://www.ecma-international.org/ecma-262/6.0/#sec-parsefloat-string), complete with this little note:\n\n&gt;**parseFloat** may interpret only a leading portion of string as a Number value; it ignores any code units that cannot be interpreted as part of the notation of an decimal literal, and no indication is given that any such code units were ignored.\n\nWhat.",
+        "created_utc": 1486040273,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So my immediate superior managed to make a table...",
+        "author": "qervem",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5rm1w9/so_my_immediate_superior_managed_to_make_a_table/",
+        "text": "... said table has 3 columns with the word 'number' in it.\n\nExcept they haven't followed a single naming convention. I've got a `column_number`, another one is `column_num` and a third as `column_no`.\n\nI'm rewriting his code and find out he's been putting this crap into the database\n\n",
+        "created_utc": 1486032017,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "GitLab Database Incident",
+        "author": "[deleted]",
+        "url": "https://docs.google.com/document/d/1GCK53YDcBWQveod9kfzW-VCxIABGiryG7_z_6jHdVik/pub",
+        "text": "[deleted]",
+        "created_utc": 1485957098,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My uninstaller deleted C:\\",
+        "author": "Sembiance",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5rfgth/my_uninstaller_deleted_c/",
+        "text": "[removed]",
+        "created_utc": 1485955896,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you want to submit a fix, but you get 10 pages manual",
+        "author": "eplaut_",
+        "url": "http://docs.openstack.org/infra/manual/developers.html",
+        "text": "",
+        "created_utc": 1485806267,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I present to you the very first code I wrote - some 6 months ago at my University",
+        "author": "NoBeardMarch",
+        "url": "https://i.redd.it/g054tql6cicy.jpg",
+        "text": "",
+        "created_utc": 1485633296,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Error: No errors",
+        "author": "FuKe93",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5qnakj/error_no_errors/",
+        "text": "https://imgur.com/7vUkJhR\n\nAt the time of writing, I'm experimenting a bit with some python code (I'm a Java and C# developer by day, so I'm trying to learn something new in my sparetime).\nI thought I would start out by making a little website, using Flask for the backend and Angular for the frontend.\n\nI started the project out on my desktop PC and later on, I pulled the source code on my laptop, to continue working from there while staying at my girlfriends place during the weekend.\n\nSo after I got the Flask app up and running on my laptop, I changed directory to the directory containing the Angular frontend and then ran \"npm install &amp;&amp; ng build\", which resulted in an error, with no errors (caused by 'ng build').. \n\nWTF?",
+        "created_utc": 1485605252,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hired to refactor an old code base.",
+        "author": "p1-o2",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5qjy15/hired_to_refactor_an_old_code_base/",
+        "text": "Hello everyone. I've been handed the most beautiful code that I have ever seen, tasked with refactoring it into 'objective oriented'.\n\nBelow you will find out how the previous programmer determined which ID number to use for a single \"job\". I left out about 80% of the file, so this is just a sample.\n\nThere are over 300 folders containing over 3000 batch files like this one. I'm going to start drinking.\n\n**HE IS USING THE WINDOWS FILE SYSTEM TO STORE VARIABLES ONE CHAR AT A TIME**\n\n(each physical file is a char in a variable - literally. To store the ID number 92531, he creates five blank files, each with the name of a digit. 9.txt, 2.txt, 5.txt, 3.txt, 1.txt)\n\n    SET IDNUM0=A\n    SET IDNUM1=A\n    SET IDNUM2=A\n    SET IDNUM3=A\n    SET IDNUM4=A\n    SET IDNUM5=A\n    SET IDNUM6=A\n    SET IDNUM7=A\n    SET IDNUM8=A\n    SET IDNUM9=A\n    \n    REM ***** THIS CLEARS THE ID FOLDERS FOR THE NEXT ID, MAY HAVE TO REMOVE THIS *****\n    \n    \n    DEL \"V:\\BATCH\\ID\\0\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\1\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\2\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\3\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\4\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\5\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\6\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\7\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\8\\*.DAT\"\n    DEL \"V:\\BATCH\\ID\\9\\*.DAT\"\n    \n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 243 1 \"V:\\BATCH\\ID\\0\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 244 1 \"V:\\BATCH\\ID\\1\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 245 1 \"V:\\BATCH\\ID\\2\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 246 1 \"V:\\BATCH\\ID\\3\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 247 1 \"V:\\BATCH\\ID\\4\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 248 1 \"V:\\BATCH\\ID\\5\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 249 1 \"V:\\BATCH\\ID\\6\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 250 1 \"V:\\BATCH\\ID\\7\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 251 1 \"V:\\BATCH\\ID\\8\\?.DAT\" 0\n    MIRUS609 \"V:\\BATCH\\ID\\GOODID.DAT*278\" 252 1 \"V:\\BATCH\\ID\\9\\?.DAT\" 0\n    \n    REM ***** THE FIRST NUMBER IS REPRESENTED WITH A 0 (ZERO)\n    \n    IF EXIST V:\\BATCH\\ID\\0\\1.DAT SET IDNUM0=1\n    IF EXIST V:\\BATCH\\ID\\0\\2.DAT SET IDNUM0=2\n    IF EXIST V:\\BATCH\\ID\\0\\3.DAT SET IDNUM0=3\n    IF EXIST V:\\BATCH\\ID\\0\\4.DAT SET IDNUM0=4\n    IF EXIST V:\\BATCH\\ID\\0\\5.DAT SET IDNUM0=5\n    IF EXIST V:\\BATCH\\ID\\0\\6.DAT SET IDNUM0=6\n    IF EXIST V:\\BATCH\\ID\\0\\7.DAT SET IDNUM0=7\n    IF EXIST V:\\BATCH\\ID\\0\\8.DAT SET IDNUM0=8\n    IF EXIST V:\\BATCH\\ID\\0\\9.DAT SET IDNUM0=9\n    IF EXIST V:\\BATCH\\ID\\0\\0.DAT SET IDNUM0=0\n    \n    IF %IDNUM0%==1 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\1.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==2 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\2.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==3 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\3.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==4 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\4.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==5 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\5.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==6 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\6.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==7 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\7.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==8 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\8.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==9 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\9.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM0%==0 MIRUSDU V:\\BATCH\\ID\\NEW\\1\\0.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    \n    \n    REM ***** THE SECOND NUMBER IS REPRESENTED WITH A 1\n    \n    IF EXIST V:\\BATCH\\ID\\1\\1.DAT SET IDNUM1=1\n    IF EXIST V:\\BATCH\\ID\\1\\2.DAT SET IDNUM1=2\n    IF EXIST V:\\BATCH\\ID\\1\\3.DAT SET IDNUM1=3\n    IF EXIST V:\\BATCH\\ID\\1\\4.DAT SET IDNUM1=4\n    IF EXIST V:\\BATCH\\ID\\1\\5.DAT SET IDNUM1=5\n    IF EXIST V:\\BATCH\\ID\\1\\6.DAT SET IDNUM1=6\n    IF EXIST V:\\BATCH\\ID\\1\\7.DAT SET IDNUM1=7\n    IF EXIST V:\\BATCH\\ID\\1\\8.DAT SET IDNUM1=8\n    IF EXIST V:\\BATCH\\ID\\1\\9.DAT SET IDNUM1=9\n    IF EXIST V:\\BATCH\\ID\\1\\0.DAT SET IDNUM1=0\n    \n    IF %IDNUM1%==1 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\1.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==2 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\2.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==3 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\3.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==4 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\4.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==5 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\5.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==6 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\6.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==7 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\7.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==8 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\8.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==9 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\9.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"\n    IF %IDNUM1%==0 MIRUSDU V:\\BATCH\\ID\\NEW\\2\\0.MDU \"V:\\BATCH\\ID\\NEW\\NEWID.TXT*17\" \"V:\\BATCH\\ID\\NEW\\NEWID.TX1*17\" \"NUL.DAT\" \"\"",
+        "created_utc": 1485553678,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Monolithic ASP.NET site is full of gems",
+        "author": "kaeedo",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5qg8ds/monolithic_aspnet_site_is_full_of_gems/",
+        "text": "Such as the HTML template for Razor to take care of things contains the following:\n\n    if (1 == 1)\n    {   @*  this stupid if  statement is necessary because the Razor engine hides the two open div tags in the above if else construct (so we hide the end div tag as well!). *@\n        @:&lt;/div&gt;\n    }\n\nI've never tried removing it, because I have no idea how to even get to that page. That's how much of a mess this thing is",
+        "created_utc": 1485509194,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "BP4U",
+        "author": "dursalwasser3",
+        "url": "http://betterprice4u.co.uk",
+        "text": "",
+        "created_utc": 1485481776,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reply ΘΨø to claim!",
+        "author": "[deleted]",
+        "url": "https://i.reddituploads.com/27fee82d627748ac9a6515e52d583972?fit=max&amp;h=1536&amp;w=1536&amp;s=8bb8535d2c14a0657bb519d864651345",
+        "text": "[deleted]",
+        "created_utc": 1485118937,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Google Please...",
+        "author": "alanforts",
+        "url": "https://i.gyazo.com/07812af0902a795193c80374299dc2e7.png",
+        "text": "",
+        "created_utc": 1485114033,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My manager, who self-proclaimed to be \"Master of Software Manipulation\" said this.",
+        "author": "dika46",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5pbf3s/my_manager_who_selfproclaimed_to_be_master_of/",
+        "text": "[removed]",
+        "created_utc": 1485016536,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Running out of storage space on your Mac?",
+        "author": "unrestive",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5pam0t/running_out_of_storage_space_on_your_mac/",
+        "text": "[removed]",
+        "created_utc": 1485005160,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Random Philosophical Rant about technology today",
+        "author": "omnipot",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5p4e62/random_philosophical_rant_about_technology_today/",
+        "text": "[removed]",
+        "created_utc": 1484925059,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Boss is stripping the comments from all of my code",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5ozx1g/boss_is_stripping_the_comments_from_all_of_my_code/",
+        "text": "[removed]",
+        "created_utc": 1484865233,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Programming Help/Very Litte Time/No Knowledge",
+        "author": "Taco_Spartan",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5ouf3b/programming_helpvery_litte_timeno_knowledge/",
+        "text": "[removed]",
+        "created_utc": 1484798550,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do the same work twice, in 3 lines of code",
+        "author": "Anon_ti",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5ohm4b/do_the_same_work_twice_in_3_lines_of_code/",
+        "text": "Found this self-contained beauty among some lines of our favorite developer.\n\n\n    var allUsers = OurLibrary.Models.User.All();\n    var allDistincUsers = allUsers.GroupBy(x =&gt; x.Id).Select(x =&gt; x.First()).ToList();\n    var allUserDic = allDistincUsers.Distinct().ToDictionary(x =&gt; x.Id, x =&gt; x);\n\nA couple of non-obvious points of interest\n\n* Users.All() returns a list of all users. No duplicates, ever.\n* User.Equals is based on User.Id.\n* After creating the dictionary, the remaining code would search for 3-15 users (out of 2000 and growing)\n* This is also in production, because code review isn't profitable.",
+        "created_utc": 1484653381,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sеx without relatiоn. Оnly Seх with girl",
+        "author": "Joshuacharttrif",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5o5wyd/sеx_without_relatiоn_оnly_seх_with_girl/",
+        "text": "[removed]",
+        "created_utc": 1484509556,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Jordanian government's website is horrible",
+        "author": "serg06",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5o20h1/the_jordanian_governments_website_is_horrible/",
+        "text": "https://customs.gov.jo/English/default.shtm\n\nAfter it finishes loading, there's a big ol' error right on the page exposing code and file structure. Modifying and visiting that error's URL has different errors all along the way.\n\n---\n\nIf you check their sources they're using some shitty old free code from 2002:\n\n\t/*\n\t DHTML Menu version 3.3.19\n\t Written by Andy Woolley\n\t Copyright 2002 (c) Milonic Solutions. All Rights Reserved.\n\t Plase vist http://www.milonic.co.uk/menu or e-mail menu3@milonic.com\n\t You may use this menu on your web site free of charge as long as you place prominent links to http://www.milonic.co.uk/menu and\n\t your inform us of your intentions with your URL AND ALL copyright notices remain in place in all files including your home page\n\t Comercial support contracts are available on request if you cannot comply with the above rules.\n\t This script featured on Dynamic Drive (http://www.dynamicdrive.com)\n\t */\n\nPlus they've made their own minified version \"started by ALA\" who I guess never finished it.\n\n---\n\nIf you check the page source, this is how they blacklist incomplete search terms:\n\n\tdocument.frmSiteSearch.search.value = trim(document.frmSiteSearch.search.value)\n\t\t//Check for a word to search\n\t\tvar noise = new Array(\"\\\\\",\" \",\"and\",\"or\",\"about\",\"after\",\"all\",\"also\",\"an\",\"another\",\"any\",\"are\",\"as\",\"at\",\"be\",\"because\",\"been\",\"before\",\"being\",\"between\",\"both\",\"but\",\"by\",\"came\",\"can\",\"come\",\"could\",\"did\",\"do\",\"each\",\"for\",\"from\",\"get\",\"got\",\"has\",\"had\",\"he\",\"have\",\"her\",\"here\",\"him\",\"himself\",\"his\",\"how\",\"if\",\"in\",\"into\",\"is\",\"it\",\"like\",\"make\",\"many\",\"me\",\"might\",\"more\",\"most\" \n\t\t,\"much\" , \"must\" , \"my\" , \"never\" , \"near\" , \"now\" , \"of\" , \"on\" , \"only\" , \n\t\t\"other\" , \"our\" , \"out\" , \"over\" , \"said\" , \"same\" , \"see\" , \"should\" , \"since\" \n\t\t, \"some\" , \"still\" , \"such\" , \"take\" , \"than\" , \"that\" , \"the\" , \"their\" , \n\t\t\"them\" , \"then\" , \"there\" , \"these\" , \"they\" , \"this\" , \"those\" , \"through\" , \n\t\t\"to\" , \"too\" , \"under\" , \"up\" , \"very\" , \"was\" , \"way\" , \"we\" , \"well\" , \"were\" \n\t\t, \"what\" , \"where\" , \"which\" , \"while\" , \"who\" , \"with\" , \"would\" , \"you\" , \n\t\t\"your\" , \"a\" , \"b\" , \"c\" , \"d\" , \"e\" , \"f\" , \"g\" , \"h\" , \"i\" , \"j\" , \"k\" , \"l\" , \n\t\t\"m\" , \"n\" , \"o\" , \"p\" , \"q\" , \"r\" , \"s\" , \"t\" , \"u\" , \"v\" , \"w\" , \"x\" , \"y\" , \n\t\t\"z\" , \"$\" , \"1\" , \"2\" , \"3\" , \"4\" , \"5\" , \"6\" , \"7\" , \"8\" , \"9\" , \"0\" , \"_\" , \n\t\t\"!\" , \"&amp;amp;\" , \"~\" , \"\" , \"|\" , \"?\" , \"I\" ,\"`\",\"%\",\"&lt;\",\"&gt;\",\"/\",\".\",\"*\",\"-\",\"+\",\"=\",\"@\",\"#\",\"$\",\"^\", \"(\", \")\" , \"_\" , \"&amp;\" , \",\" , \";\" , \":\" ,\"{\" , \"}\" , \"[\" ,\"]\" ,\"?\",\"\\\"\")\n\tvar str1, str2; \n\t\tfor (i=0; i&lt;noise.length; i++)\n\t\t\t{\t\t\n\t\t\tstr1 = new String(document.frmSiteSearch.search.value);\n\t\t\t\n\t       str2 = new String(noise[i]);\n\t       \n\t\t\tif (str1.toUpperCase() == str2.toUpperCase())\n\t\t\t{\n\t\t\talert(\"Please enter at least one valid keyword to search\");\n\t\t\tdocument.frmSiteSearch.search.focus();\n\t\t\treturn false;\n\t       \t}\n\t\t}\n\t\treturn true\n\t}\n\n---\n\nJust started looking, wonder what other wonders the site holds. S2g surprised they use https. ",
+        "created_utc": 1484454322,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The worst code conventions I ever seen",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5nzh2y/the_worst_code_conventions_i_ever_seen/",
+        "text": "[deleted]",
+        "created_utc": 1484424759,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "OP on Stackoverflow figures out solution 'by himself' after it's been answered 2 weeks ago.",
+        "author": "[deleted]",
+        "url": "http://imgur.com/ADZDexB",
+        "text": "[deleted]",
+        "created_utc": 1484336648,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "the J source code (x/programming)",
+        "author": "mark-henry",
+        "url": "https://github.com/jsoftware/jsource/blob/master/jsrc/v2.c",
+        "text": "",
+        "created_utc": 1484332139,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can't Fix Error in my Program",
+        "author": "wotanii",
+        "url": "https://www.daniweb.com/programming/software-development/threads/440954/can-t-fix-error-in-my-program",
+        "text": "",
+        "created_utc": 1484303642,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Genius url parsing",
+        "author": "mplis1",
+        "url": "https://i.redd.it/72ev3e25cc9y.png",
+        "text": "",
+        "created_utc": 1484252824,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "More Threads is More Better",
+        "author": "kylixz",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5nhq1e/more_threads_is_more_better/",
+        "text": "While discussing that all of us could benefit from some learning when it comes to concurrency and parallelism, one engineer made the comment that they likely would not benefit from any sort of education on the subject. When asked why, they responded that their project (a GUI application akin to Google Maps on the JVM) has over 400 threads _by design_ and as such they have a mastery of threading and performance tuning.\n\nTook a peek... code is peppered with the following:\n\n    ExecutorService eS = Executors.newSingleThreadExecutor(r -&gt; Thread tr = Executors.defaultThreadFactory().newThread(r);\n    return tr;\n    });\n\nAnd when needed to do something:\n\n    if (!(eS == null || eS.isShutdown() || eS.isTerminated()))\n        Future&lt;Optional&lt;Blob&gt;&gt; future = eS.submit(...);\n\n\nShould they be teaching us all how to effectively use all of the cores at our disposal on the JVM?",
+        "created_utc": 1484200929,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kids Party Characters Pony Petting Zoos Clown Magician",
+        "author": "andraoohollomon",
+        "url": "http://funfactoryparties.com",
+        "text": "",
+        "created_utc": 1484183765,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "At least there is error checking",
+        "author": "brwhyan",
+        "url": "http://imgur.com/a/gSNvJ",
+        "text": "",
+        "created_utc": 1484163990,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this on a take over project.",
+        "author": "iDrinkandiCodethings",
+        "url": "https://i.redd.it/nhvxsf8pr49y.png",
+        "text": "",
+        "created_utc": 1484161262,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fizzbuzz examples from popular \"coding languages\". I can't believe this place supposedly teaches people programming",
+        "author": "Kattzalos",
+        "url": "https://www.thefirehoseproject.com/definitive-guide/1",
+        "text": "",
+        "created_utc": 1484149693,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "&lt;Insert loud groan here&gt;",
+        "author": "_Lady_Deadpool_",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5ncnjf/insert_loud_groan_here/",
+        "text": "    private Point[] GetGridLocations(int count)\n        {\n            Point[] locations = new Point[9];\n            try\n            {\n                if (count &amp;gt; 0)\n                    switch (count)\n                    {\n                        case 1:\n                          myGuiElement.DoStuff() \n\n                            locations[0] = new Point() { X = 0, Y = 0 };\n\n                            break;\n                        case 2:\n\t\t\t\t\t\t\tmyGuiElement.DoStuff()\n                       \n                            locations[0] = new Point() { X = 0, Y = 1 };\n                            locations[1] = new Point() { X = 1, Y = 1 };\n\n                            break;\n                        case 3:\n                        case 4:\n\t\t\t\t\t\t\tmyGuiElement.DoStuff()\n                         \n                            locations[0] = new Point() { X = 0, Y = 0 };\n                            locations[1] = new Point() { X = 1, Y = 0 };\n                            locations[2] = new Point() { X = 0, Y = 1 };\n                            locations[3] = new Point() { X = 1, Y = 1 };\n                            break;\n                        case 5:\n                        case 6:\n\t\t\t\t\t\t\tmyGuiElement.DoStuff()\n\t\t\t\t\t\t\t\n                            locations[0] = new Point() { X = 0, Y = 0 };\n                            locations[1] = new Point() { X = 1, Y = 0 };\n                            locations[2] = new Point() { X = 2, Y = 0 };\n                            locations[3] = new Point() { X = 0, Y = 1 };\n                            locations[4] = new Point() { X = 1, Y = 1 };\n                            locations[5] = new Point() { X = 2, Y = 1 };\n                            break;\n                        case 7:\n                        case 8:\n                        case 9:\n\t\t\t\t\t\t\tmyGuiElement.DoStuff()\n                          \n                            locations[0] = new Point() { X = 0, Y = 0 };\n                            locations[1] = new Point() { X = 1, Y = 0 };\n                            locations[2] = new Point() { X = 2, Y = 0 };\n                            locations[3] = new Point() { X = 0, Y = 1 };\n                            locations[4] = new Point() { X = 1, Y = 1 };\n                            locations[5] = new Point() { X = 2, Y = 1 };\n                            locations[6] = new Point() { X = 0, Y = 2 };\n                            locations[7] = new Point() { X = 1, Y = 2 };\n                            locations[8] = new Point() { X = 2, Y = 2 };\n                            break;\n\n                    }\n            }\n            catch (Exception ex)\n            {\n              ...\n            }\n            return locations;\n        }\n\n(variable names changed)\n\nIn addition to being painfully written, this is run in the background but modifies a GUI element. This is being used to determine the locations for n amount of items within a grid. Thing is, WPF has a million different ways to do this automatically with other containers (listbox with a stackpanel or uniformgrid is one).\n\nedit: did I mention that this company now wants its devs/techs to double as sales people?\n",
+        "created_utc": 1484147354,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Awesome programming right here.",
+        "author": "ShadowFartz",
+        "url": "https://codepaste.net/5j378d",
+        "text": "",
+        "created_utc": 1484016903,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "waitFrames() • /r/softwaregore",
+        "author": "XoXFaby",
+        "url": "https://www.reddit.com/r/softwaregore/comments/5mssts/waitframes/",
+        "text": "",
+        "created_utc": 1483911905,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Microsoft SQL server has a !&gt; (\"not greater than\") operator",
+        "author": "markasoftware",
+        "url": "https://msdn.microsoft.com/en-us/library/ms184364.aspx",
+        "text": "",
+        "created_utc": 1483891428,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP, or why I drink",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5mqkcx/php_or_why_i_drink/",
+        "text": "[deleted]",
+        "created_utc": 1483877215,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Avoiding ergonomics at all costs",
+        "author": "Arandur",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5mdscr/avoiding_ergonomics_at_all_costs/",
+        "text": "Pretty minor one, but worthy, I think, of this subreddit. Sometimes I look at code that my coworkers wrote, and I have no idea what they were thinking. And then sometimes I know exactly what they were thinking, and it makes me sad.\n\nIn this case, they were thinking \"Let's use streams! Ew, Optional? Why do things have to be so difficult?!\"\n\n    private Foo getFooFromBar(Bar bar) {\n        Optional&lt;Foo&gt; foundFoo = this.foos.stream().filter(foo -&gt; foo.hasBar(bar)).findFirst();\n        return ( foundFoo.isPresent() ) ? foundFoo.get() : null;\n    }\n\nFor those who are unfamiliar with Java 8: yes, `Optional&lt;T&gt;` does have an `.orElse(T)` method that they could have used instead of the ternary operator.\n\nOr they could have just returned the `Optional&lt;Foo&gt;`, and let the caller decide.\n\nOr, since the semantics of this portion of the code expect that `getFooFromBar` should only be called with a matching `bar`, they could have used `.orElseThrow()`.\n\nReally, any of those last two would have been acceptable. But instead they decided to get away from `Optional` as quickly as they could, because I guess monads are scary.\n\n---\n\nBONUS: Elsewhere in the same class, we have this:\n\n    for (Foo foo : this.foos) {\n        if (foo.hasBar(bar)) {\n            // 100 lines of nested if statements\n        }\n    }\n\n... completely ignoring the existence of the getFooFromBar method.",
+        "created_utc": 1483712293,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Java class and object",
+        "author": "Tpravinbreddy",
+        "url": "https://m.youtube.com/watch?v=bn3zKuU6gwI",
+        "text": "",
+        "created_utc": 1483712201,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Life Lesson: Learn from others' terrible ideas",
+        "author": "Smokey_Circles",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5m553g/life_lesson_learn_from_others_terrible_ideas/",
+        "text": "Have you ever sat down and thought to yourself:\n\n&gt;You know, UTC and MySQL Timestamp are really stupid. I should come up with a new representation!\n\nYeah, me neither. Unfortunately, the same cannot be said for the previous author of the system I have adopted. Strap yourselves in, this gets super silly. \n\nNow, a date comprises of 3 main elements, right? Year, Month, Week (Year, Week, Month if you're American). So, logically then, we should have [3 Columns](http://imgur.com/a/HaSDD). Sensible.\n\nNothing crazy about that though, right? A bit silly, sure, but worse ideas are out there.\n\nAnd I agree. I even have an example:\n\n[If we have 3 rows, why don't we perform 3 operations instead of one!](http://pastebin.com/cLAUEHYR)\n\nAlright, that's stupid. At least that's the end of the ride, right?\n\nRight??\n\nNope. Did I mention this table has no indexes?\n\n(From the slow query log)\n\n    Query_time: 8.371056  Lock_time: 0.000085 Rows_sent: 0 Rows_examined: 376204\n\nSo, if you're following at home, that's 3 queries at ~8 seconds resulting in a 24 second delay.\n\nDon't do drugs and write systems, kids\n\n*EDIT: Corrected column names",
+        "created_utc": 1483602549,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "More plain text password gore",
+        "author": "matmende",
+        "url": "https://i.imgur.com/ivGQXVM.png",
+        "text": "",
+        "created_utc": 1483548155,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I heard you like functions.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/b5ycfqrs4m7y.png",
+        "text": "[deleted]",
+        "created_utc": 1483499864,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So a former employee had turned off validation...",
+        "author": "phroggyy",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5lkngn/so_a_former_employee_had_turned_off_validation/",
+        "text": "**TL;DR**  \nA guy thought it was a good idea to disable validation by overriding the framework\n\n    protected function registerValidationResolverHook()\n    {\n        // no-op\n    }\n\n---\n\nAlright, so this is not the worst code I've encountered, but it is one of the most stupid decisions I've seen made. As a note, this is a PHP project on the Laravel MVC framework. That framework has something called \"form request validation\" built-in. It essentially allows you to perform validation as a request is being injected into a controller method, before it hits any of your controller code. Now, this is super useful, it means the controller doesn't get cluttered with validation.\n\nHowever, in this particular project, several devs have been wondering why the hell validation hasn't been working, and have taken the easy way out... So last week, our code would look something like this:\n\n    public function store(CreateProductRequest $request)\n    {\n        return response()-&gt;json($this-&gt;productService-&gt;createProduct($request), 201);\n    }\n\nAnd the `ProductService`'s method would then call `$request-&gt;validate()`.\n\nThere are two issues with this code:\n\n* A service should not deal with a request, it should just deal with the data it needs, not be checking if things exist in the request... We're not writing procedural code for Christ's sake.\n* `$request-&gt;validate()`, come on now. The framework is supposed to handle it.\n\nBeing my normal optimistic self, I figured \"hey, this can't be too difficult\". So I started off in a sane way - I followed the request throughout the framework, from class to class, I found the part where DI happens to the controller method... But there was nothing about validation! After a bit more scouring, I found the `ValidationServiceProvider`. It turns out, this class, part of the framework, registers a post-injection hook, which is called by the framework after injecting the class, but before responsibility is handed over to the controller method.\n\nHowever, I couldn't figure out why the code was being called... So I created a new Laravel project, inserted a `die()` in the `ValidationServiceProvider` method. Sure enough, it got there. I was dumbstruck; how did it work in one project but not the other. That's when it occurred to me: what if we have our own service provider, one that overrides the framework's.\n\nOf course we did. Now, at the time of checking this, there were quite a few things in there, custom validation rules and such. However, doing a `git blame` and checking the commit hash, I found out the provider was originally created with one purpose: to **disable** validation. There is no *reason* it has been disabled, at all.\n\n    protected function registerValidationResolverHook()\n    {\n        // no-op\n    }\n\nThat's right. The code was overwritten to change a protected method being called, to prevent validation.\n\nNow, for two full days, I've been refactoring this project, and while some of it was refactoring a service too large, I have a total of 42 changed files, where the only changes I've made are\n\n1. Remove `$request-&gt;validate()`\n2. Remove services' dependencies on requests, and actually pass through the data they need\n\nI have more than 40 failing tests and I still have 12 requests left to go through (out of around 45).\n\nAnd now, it's time to go back and handle the rest, and then refactor the tests.",
+        "created_utc": 1483353043,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"It's just a convention\" (yes, that's the project name repeated, in camel case the second time)",
+        "author": "RedGreenBlueScreen",
+        "url": "https://i.reddituploads.com/faf997b10c2640d0bcb4d2a83f0c36bc?fit=max&amp;h=1536&amp;w=1536&amp;s=658664cbdc3e4c52fa1763b80a68cd4a",
+        "text": "",
+        "created_utc": 1483351979,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"It's just a convention... github.com/Scarsz is my domain\"",
+        "author": "[deleted]",
+        "url": "https://i.reddituploads.com/36de956e0eda4f4491c887d8944de329?fit=max&amp;h=1536&amp;w=1536&amp;s=0d96cca5317c7ee1ec72a63d7b01335c",
+        "text": "[deleted]",
+        "created_utc": 1483207268,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A recruiter sent me a clever LinkedIn message in code. So I fixed it.",
+        "author": "riebschlager",
+        "url": "https://github.com/riebschlager/linkedin-recruiter-email",
+        "text": "",
+        "created_utc": 1483129140,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is angular smoking?",
+        "author": "thisisthebass",
+        "url": "https://i.redd.it/tvc7s5w8fq6y.png",
+        "text": "",
+        "created_utc": 1483115855,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "While it does work, it just pains me to see this getting upvotes",
+        "author": "Noxime",
+        "url": "http://stackoverflow.com/a/39043788/3102022",
+        "text": "",
+        "created_utc": 1483029103,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Started at a company this week... their ERP system is full of these and try/catches used as if/else statements.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/mp65hd8snf6y.png",
+        "text": "[deleted]",
+        "created_utc": 1482985512,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Started at a company this week... their ERP system is full of these and try/catches used as if/else statements.",
+        "author": "ShadowFartz",
+        "url": "https://i.redd.it/gvtzmwy4if6y.png",
+        "text": "",
+        "created_utc": 1482983681,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Java 8 intro",
+        "author": "Tpravinbreddy",
+        "url": "https://m.youtube.com/watch?v=QRwG9X9l6xI",
+        "text": "",
+        "created_utc": 1482811446,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sure, there was a problem displaying this view. But wait, what is a view?! (confused user)",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/kh0p4ue65d5y.png",
+        "text": "[deleted]",
+        "created_utc": 1482519256,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "These must be a better way.",
+        "author": "cnewmanJax2012",
+        "url": "https://i.redd.it/ms7pd9skf85y.png",
+        "text": "",
+        "created_utc": 1482462203,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I had to refresh my C# skillz after coding exclusively Python and Java for the past 6 months. I thought this would be a fun thing to poke at throughout the day.",
+        "author": "RANDOM_TEXT_PHRASE",
+        "url": "http://pastebin.com/jRrJydRv",
+        "text": "",
+        "created_utc": 1482443829,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Someone's got the point with git",
+        "author": "AbstractOperator",
+        "url": "https://i.redd.it/pxq6e6xmpz4y.png",
+        "text": "",
+        "created_utc": 1482356619,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Gee I wonder what data type this is",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/gppvf61ony4y.png",
+        "text": "[deleted]",
+        "created_utc": 1482343837,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this in a pull request. I think we should wait a bit more.",
+        "author": "helios-argos",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5jinfb/found_this_in_a_pull_request_i_think_we_should/",
+        "text": "    $timeout(function () \n    {\n        $scope.map.center = angular.copy(venue.center);\n        \n        $timeout(function () \n        {\n            $scope.map.center = angular.copy(venue.center);\n            \n            $timeout(function () \n            {\n                $scope.map.center = angular.copy(venue.center);\n            }, 500);\n        }, 500);\n    }, 500);",
+        "created_utc": 1482305275,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "dictionary = []",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5jahl9/dictionary/",
+        "text": "[deleted]",
+        "created_utc": 1482198237,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Image posts are now allowed!",
+        "author": "rscarson",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5iy5zz/image_posts_are_now_allowed/",
+        "text": "We are getting an influx of text posts containing just a link to an image, so there is clearly a demand for it.\n\nMemes will not be tolerated though\n\nGotta draw a line somewhere",
+        "created_utc": 1482029029,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I don't think this was chosen by a fair dice roll...",
+        "author": "Nycterus",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5iwp1h/i_dont_think_this_was_chosen_by_a_fair_dice_roll/",
+        "text": "http://i.imgur.com/Ce1Pmt8.png\n\n    /**\n     * Generate random number.\n     * @param mixed $row\n     * @return integer\n     */\n    public function renderRandomNumber($row)\n    {\n        return 0;\n    }",
+        "created_utc": 1482009676,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I don't think this was chosen by a fair dice roll...",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5iwmkx/i_dont_think_this_was_chosen_by_a_fair_dice_roll/",
+        "text": "[removed]",
+        "created_utc": 1482008865,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "had to fix a flash site. without source files",
+        "author": "evestraw",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5iaewm/had_to_fix_a_flash_site_without_source_files/",
+        "text": "A link in the footer was pointing to the wrong url. so i placed an absolute positioned div over the button to capture the mouse events and trigger the link from there. \n\n",
+        "created_utc": 1481720089,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "found this neat login function in a group project",
+        "author": "shrimpz",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5i30fj/found_this_neat_login_function_in_a_group_project/",
+        "text": "http://imgur.com/a/2V9lc ",
+        "created_utc": 1481626958,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I used a special character inside of my \"secret question\" answer and now I can't recover my account",
+        "author": "iopq",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5hwta8/i_used_a_special_character_inside_of_my_secret/",
+        "text": "http://imgur.com/a/4R93D\n\nI don't know what my username or password is, but I only get this error message when I type in the CORRECT answer and only that answer\n\nNow I can't recover my password AND I can't make a new account because the system tells me it exists",
+        "created_utc": 1481552259,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Date is 'today'",
+        "author": "Juxtys",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5hwnhs/date_is_today/",
+        "text": "    $this_year = date('Y');\n    $last_quarter = DateRange::GetQuarterFromDate(date('today'));\n    $last_quarter = DateRange::GetLastQuarterRangeFromQuarter();\n\n*date('today')* in PHP is not the same as *strtotime('today')*",
+        "created_utc": 1481550151,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Shoving as much as you can into 1 line of code",
+        "author": "belungawhale",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5hp0yd/shoving_as_much_as_you_can_into_1_line_of_code/",
+        "text": "A bit of backstory, I am writing a bot to run a game of Werewolf in Python and wrote this horrible-looking but \"efficient\" piece of code as part of a command that displays statistics on the current game:\n\n    reply_msg += \"Total roles: \" + \", \".join(sorted([x + \": \" + str(roles[x][3][len(session[1].keys()) - MIN_PLAYERS]) for x in roles.keys() if roles[x][3][len(session[1].keys()) - MIN_PLAYERS] &gt; 0])).rstrip(\", \") + '\\n'\n\nBasically this line of code generates a list of roles that are in the current game based on the number of players and formats it in a comma-separated list.",
+        "created_utc": 1481441333,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Uploading any .exe into our website gives you the login info for a database holding thousands of passwords",
+        "author": "PetrsGhost",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5hi8du/uploading_any_exe_into_our_website_gives_you_the/",
+        "text": "When you upload a .exe file, the error message below appears in the web console of my Browser. I'm on linux, but I found this by uploading a copy of internet explorer from Wine while trying to figure out how our mime type detection worked. The mysql information was for an account that had full access to a database containing thousands of unsalted password hashes.\n             \n    [isOnline:protected] =&gt; security_login_isOnline Object\n    (\n    [table:protected] =&gt; online\n    [id_field:protected] =&gt; id\n    [user_id_field:protected] =&gt; ****\n    [ip_field:protected] =&gt; *****\n    [last_checked:protected] =&gt; last_checked\n    [initiated:protected] =&gt; initiated\n    [session_field:protected] =&gt; session\n    [idle_field:protected] =&gt; idle\n    [duplicate_ip:protected] =&gt; \n    [dsn:protected] =&gt; mysql://*****:*****@****\n    [max_users] =&gt; \n    )\n\nI think that this is caused by a \"security feature\" to prevent users from uploading potentially malicious files. Don't worry, this is on production too.",
+        "created_utc": 1481341311,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "value == true.ToString()",
+        "author": "zapatodefuego",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5h9h5b/value_truetostring/",
+        "text": "Found this is 10+ year old code: http://imgur.com/jHqZHw0\n\nOf course I can't find who the original author was because our source history got dumped at some point.",
+        "created_utc": 1481230573,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reinvent all the things! EVEN INVENTING!",
+        "author": "Smokey_Circles",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5h7db4/reinvent_all_the_things_even_inventing/",
+        "text": "I don't even know where to begin...\n\nI just joined my company a few months ago, and I have finally started getting dirty with the main codebase. Really stripping her down, getting in there and having my way with her, usual stuff.\n\nThis codebase is a monster of a JavaScript site. Some PHP here and there for the backend functions, but basically JavaScript.\n\nBut something always bothered me about the jslib in my IDE. Namely all the red lines. So, with some breathing room, I decide it's time to see this site in all her bare beauty.\n\nI have since seen the face of God, cried havoc and let lose the bugs of war and generally pushed our WTFs p/m through the roof.\n\n\"But why, /u/Smokey_Circles, JavaScript is a decent language and it's hard to butcher it!\"\n\nI'd agree, if it wasn't for this\n\n    #extern requirments\n    #require main.js\n\nHmm... Those aren't JS tags... Maybe something went **very** wrong in my import? They're not there in the live source code... I have a bad feeling about this.\n\nStrip these weird tags and reload the page. FUCKED. Great... \n\n3 days later, and I stumble upon the most re-invented of wheels: A C app that gets called by a php loader. This app returns a compiled JS file. Of roughly 40k lines (shit you not). \n\nThis dude **wrote his own goddamned interpreter**. \n\nNot one CSS file anywhere in this project. Everything is pretty much handled by this damned interpreter.\n\nNow, while I am impressed that he bent JS to his will, my only question is WHYYYYY. JS did not need your fancy interpreter, it's just fine. Also HAVE YOU NEVER HEARD OF THE DOM OR OF CSS!?!?!?! \n\nPlease send help. It's been 2 months and all I have managed to understand is the limit of my own sanity\n\n**EDIT: Oh yeah, did I mention it wasn't version controlled?",
+        "created_utc": 1481209492,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is what every field in the 'password' column looks like",
+        "author": "Me4502",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5gxuia/this_is_what_every_field_in_the_password_column/",
+        "text": "http://i.imgur.com/qNbWj2G.png\n\nYes, that's the password in plaintext. Surrounded by SHA().",
+        "created_utc": 1481084418,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How about a regex that matches all the leap years?",
+        "author": "RainOnYourTirade",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5gxru8/how_about_a_regex_that_matches_all_the_leap_years/",
+        "text": "`^[048]$|^(?!0)[0-9]*(([2468][048]|[13579][26])|0[48]|(\\g&lt;2&gt;|0[048]|^[48])00)$`\n\nDisclaimer: not my own, was used for a CTF a few months back",
+        "created_utc": 1481083487,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Regex to match dates",
+        "author": "Muffinizer1",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5gtilb/regex_to_match_dates/",
+        "text": "([0-9]{2}(([02468][048])|([13579][26]))-((02-((0[1-9])|([12][0-9])))|((0[469]|11)-((0[1-9])|([12][0-9])|30))|((0[13578]|1[02])-((0[1-9])|([12][0-9])|3[01]))))|([0-9]{4}-((02-((0[1-9])|(1[0-9])|(2[0-8])))|((0[469]|11)-((0[1-9])|([12][0-9])|30))|((0[13578]|1[02])-((0[1-9])|([12][0-9])|3[01]))))\n\nIt doesn't even check for the non-leap years that happen every century not divisible by 400. ",
+        "created_utc": 1481039033,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "From a seasoned developer",
+        "author": "_Lady_Deadpool_",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5gmlqv/from_a_seasoned_developer/",
+        "text": "         pane.MyProperty = (bool)(myObj.preset == -1 ? false : true);\n\n(variable names changed)\n\n*sigh*",
+        "created_utc": 1480953174,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Học lập trình, nên bắt đầu như thế nào?",
+        "author": "msita",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5gl772/học_lập_trình_nên_bắt_đầu_như_thế_nào/",
+        "text": "[removed]",
+        "created_utc": 1480932940,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Commiting is fun",
+        "author": "mcdorli",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5gkyoc/commiting_is_fun/",
+        "text": "So, I'm working with a guy on a project. He knows git, he worked with it before many times. The only problem is that he's quite impatient.\n\nLast time I saw that he made 121 commits to the project. I was away for a week, so it wasn't strange at first. Then I realized, that each commit has the name \"Upgraded networking\". Also, he commited all 121 in under an hour. In an hour... I let that sink in for a moment...\n\nI thought in myself: he either had a coding spree on the same part of the code (the networking part is just 1 class), or he recommited the same thing 50 times (somehow). No no no... I was very wrong.\n\nTo do things \"efficiently\", he commits everything he has done when he compiles the program. This isn't a big thing, it can take sometimes a long time.\n\nBut because he commits everything when the compiling runs, there are always small mistakes/errors in the code. 98 out of those 121 commits are bug fixes (he only changed maximum 1 or 2 lines, or sometimes only 1 character). There are only 3 useful commits, the other changed a few lines, but I wouldn't qualify them as useful.\n\nThis whole thing happened 3 times thus far (although in smaller scales).\n\nNow I need to scroll in the project to see actual useful commits. Great... Wish me luck.",
+        "created_utc": 1480928473,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just wrote a simple numeral system converter.",
+        "author": "Lawstorant",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5gfb8h/just_wrote_a_simple_numeral_system_converter/",
+        "text": "Here's a nice way to check input data...\nhttp://imgur.com/a/SjDMJ",
+        "created_utc": 1480856391,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "git is fucking horrible and listening to you sheeple defend it is like being the only sane person in an insane asylum",
+        "author": "sasqwatchiwan",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5g4vm3/git_is_fucking_horrible_and_listening_to_you/",
+        "text": "[removed]",
+        "created_utc": 1480703494,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I should not be proud of this",
+        "author": "rscarson",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5g3jm3/i_should_not_be_proud_of_this/",
+        "text": "I just wrote this. Shared sessions:\n\n    /*\n\t * Ok, so...\n\t * session_id is BASICALLY being used as a poll id\n\t * the session is shared across multiple users\n\t * that way anyone can vote on the poll\n\t */\n\tsession_id(1);\n\tsession_start();",
+        "created_utc": 1480689257,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this code in production",
+        "author": "Edwin1993",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5g3iy0/found_this_code_in_production/",
+        "text": "[send help](http://imgur.com/a/IguNI)",
+        "created_utc": 1480689011,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Proper documentation",
+        "author": "pingFromHeaven",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5g3c1f/proper_documentation/",
+        "text": "[removed]",
+        "created_utc": 1480686564,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Interesting attempt at obfuscation (x-post /r/iiiiiiitttttttttttt)",
+        "author": "evohans",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5fxrrj/interesting_attempt_at_obfuscation_xpost/",
+        "text": "Not sure the story behind this, but it's worth a chuckle.\n\nhttps://i.imgur.com/s2CZD3k.png",
+        "created_utc": 1480612605,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "World's most helpful URL routing.",
+        "author": "iamwithnail",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5fxloy/worlds_most_helpful_url_routing/",
+        "text": "Legacy django app that never ceases to amaze.  URL schema are meant to be helpful, right?  And definitely readable, especially in Python.  I give you, instead, a black box. Or possibly a black hole.  \n\n\n     import .views \n     urlpatterns = patterns('',\n        url(r'^$', views.main, name=\"app_main\"),\n        url(r'(.*)/(.*)/(.*)/(.*)/(.*)', views.main, name='app_main'),\n        url(r'(.*)/(.*)/(.*)/(.*)', views.main, name='app_main'),\n        url(r'(.*)/(.*)/(.*)', views.main, name='app_main'),  \n        url(r'(.*)/(.*)', views.main, name='app_main'),   \n        url(r'(.*)/', views.main, name='app_main'),\n        )\n\nI think he just did it for the pattern.",
+        "created_utc": 1480610950,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found within a PayPal IPN script",
+        "author": "RainOnYourTirade",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5fv94k/found_within_a_paypal_ipn_script/",
+        "text": "In the return of [my trusty co-developer](https://www.reddit.com/r/programminghorror/comments/3y4y0j/how_do_roman_numerals_work_i_dunno_just_use_a_lot/) we get this beautiful function. It's safe to say this is the only thing standing between user input and a raw SQL query. The ampersands are so escaped though I doubt anything will touch that database.\n\n    &lt;?php\n    function superEscape($text = \"\") {\n        return filter_var(trim(stripslashes(htmlspecialchars(mysql_real_escape_string($text)))), FILTER_SANITIZE_STRING);\n    }\n\nSure the results have `&amp;amp;lt;` in multiple places, but at least the database is secure, right? That's not `stripslashes` in there; you have to be kidding me.",
+        "created_utc": 1480575882,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Asking for help",
+        "author": "dali164",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5fhyuc/asking_for_help/",
+        "text": "[removed]",
+        "created_utc": 1480415510,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Spotted in a Project Euler solution",
+        "author": "annoyed_freelancer",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5fdwum/spotted_in_a_project_euler_solution/",
+        "text": "https://imgur.com/a/nEVQs",
+        "created_utc": 1480363869,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who needs to be a good example to students?[C++]",
+        "author": "JuliaAndFriends",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5erdsy/who_needs_to_be_a_good_example_to_studentsc/",
+        "text": "    //So This is the story of the inclusions of the header files in a first year comp sci assignment\n    //The class isn't bad, but sometimes it produces... \"questionable\" code examples, I saw a malloc once.\n    //This is in main.cpp, so, lets see how it goes.\n    //So we've got two custom headers here, all's good right?\n    #include \"state.h\"\n    #include \"output.h\"\n    //lets see whats in these headers\n\n    //state.h\n\n    #include &lt;cstdlib&gt;\n    #include &lt;iostream&gt;\n    #include &lt;vector&gt; \n\n    #include \"common.h\"\n    #include \"bot1.h\"\n    #include \"outstream.h\"\n\n    //well... that's not great, you really shouldn't be including headers in headers but... you've got header guards for that right?\n\n    //output.h\n\n    #include \"state.h\"\n\n    //Wait.....\n\n\n    //outstream.h\n    #include &lt;streambuf&gt;\n    #include &lt;iostream&gt;\n    #include &lt;vector&gt;\n    //So that's a little bit of redundant inclusion...\n\n    //bot1.h\n    #include &lt;vector&gt;\n    #include &lt;iostream&gt;\n    //Oh fuck you\n\n    //This wasn't even the worst of it, the files were a mess of   including includes in includes\n    //I was able to comment out ten lines of includes without affecting anything\n    //Who needs to be smart about includes when you have header guards?\n",
+        "created_utc": 1480042630,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "An unconventional way of defining new methods in C#",
+        "author": "TheCactusPie",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5e70l0/an_unconventional_way_of_defining_new_methods_in_c/",
+        "text": "    ItemCatList[] a = new ItemCatList[0];\n    ItemImageList[] b = new ItemImageList[0];\n    AttribStruct[] c = new AttribStruct[0];\n    PostageStruct[] d = new PostageStruct[0];\n    ItemPaymentOptions e = new ItemPaymentOptions();\n    CompanyInfoStruct f = new CompanyInfoStruct();\n    ProductStruct g = new ProductStruct();\n    ItemVariantStruct[] h = new ItemVariantStruct[0];\n\n    ItemInfoExt info = service.doShowItemInfoExt(session_id, element_id, 0, true, 0, true, 0, true, 0, true, 0, true, 0, true, out a, out b, out c, out d, out e, out f, out g, out h);\n\nYes, that's a code snippet from an actual commercial application made by a company that I used to work for (not for a long time). A method call that takes 9 lines of code and 22 arguments. The rest of the code was just as awful and unreadable, but this one's my favorite. Overall the entire application looked like it was made by someone who's just starting to learn how to code...",
+        "created_utc": 1479767292,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Input's placeholder? Naaaahhh, not enough Jquery",
+        "author": "filiphsandstrom",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5dmke2/inputs_placeholder_naaaahhh_not_enough_jquery/",
+        "text": "\t$(document).ready(function() {\n\t\tvar search_text_s = \"Skriv in en söktext\";\n\t\t$(\"#searchstring\").focus(function() {\n\t\t\tif(this.value == search_text_s){\n\t\t\t\tthis.value = \"\";\n\t\t\t}\n\t\t})\n\t});\n\nSo, my school decided to add placeholder text to a search-box; apparently they thought it didn't have enough jquery.\n",
+        "created_utc": 1479478087,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm so sorry this is so long, but the more you stare at it, the better it gets. Apparently ArrayLists are old-school",
+        "author": "jrop",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5d657p/im_so_sorry_this_is_so_long_but_the_more_you/",
+        "text": "Inherited this piece of code.  Apparently ArrayLists are old-school.  The total amount of code in this project was around 32k lines of code, and it was quite slow (O(10 hours)).  We have since ported it to NodeJS (under 2k lines of code), and it runs much quicker now (O(10 minutes)).\n\n(Note: code has been anonymized)\n\n    /********************************************************************************\n        * This function GetAllTrackedAccounts() gets all user Accounts \n        * that have the Tracking Data set to Yes.\n        ********************************************************************************/\n    public async Task&lt;Users&gt; GetAllTrackedAccounts()\n    {\n        string[] categories = { \"Category #1\", \"Category #2\", \"Category #3\", \"Category #4\", \"Category #5\", \"Category #6\", \"Category #7\", \"Category #8\", \"Category #9\" };\n        //Initiate a new service client\n        Client serviceClient = new Client();\n    \n        //Log the function call Date &amp; Time\n        using (StreamWriter Log = File.AppendText(ClientLog))\n        {\n            Log.WriteLine(\"#####################################################\");\n            Log.WriteLine(\"# Client.GetAllTrackedAccounts() Called: \" + DateTime.Now);\n            Log.WriteLine(\"# Run by:\\t\" + System.Environment.UserName);\n            Log.WriteLine(\"#####################################################\");\n        }\n        Console.WriteLine(\"#####################################################\");\n        Console.WriteLine(\"# Client.GetAllTrackedAccounts() Called: \" + DateTime.Now);\n        Console.WriteLine(\"# Run by:\\t\" + System.Environment.UserName);\n        Console.WriteLine(\"#####################################################\");\n        Users AllUsers = new Users();\n        Users c1Users = new Users();\n        Users c2Users = new Users();\n        Users c3Users = new Users();\n        Users c4Users = new Users();\n        Users c5Users = new Users();\n        Users c6Users = new Users();\n        Users c7Users = new Users();\n        Users c8Users = new Users();\n        Users c9Users = new Users();\n    \n        int trackedcount = 0;\n    \n        //Log it\n        using (StreamWriter Log = File.AppendText(ClientLog))\n        {\n            Log.WriteLine(\"* Client.GetAllTrackedAccounts: New instance of Users created\");\n        }\n        Console.WriteLine(\"* Client.GetAllTrackedAccounts: New instance of Users created\");\n        foreach (var cat in categories)\n        {\n            try\n            {\n                //Get category's tracked users\n                switch (cat)\n                {\n                    case \"Category #1\":\n                        c1Users = await serviceClient.GetTrackedCASAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c1Users.User.Count();\n                        break;\n                    case \"Category #2\":\n                        c2Users = await serviceClient.GetTrackedCHHSAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c2Users.User.Count();\n                        break;\n                    case \"Category #3\":\n                        c3Users = await serviceClient.GetTrackedCVMBSAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c3Users.User.Count();\n                        break;\n                    case \"Category #4\":\n                        c4Users = await serviceClient.GetTrackedCOBAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c4Users.User.Count();\n                        break;\n                    case \"Category #5\":\n                        c5Users = await serviceClient.GetTrackedCOEAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c5Users.User.Count();\n                        break;\n                    case \"Category #6\":\n                        c6Users = await serviceClient.GetTrackedCLAAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c6Users.User.Count();\n                        break;\n                    case \"Category #7\":\n                        c7Users = await serviceClient.GetTrackedCNSAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c7Users.User.Count();\n                        break;\n                    case \"Category #8\":\n                        c8Users = await serviceClient.GetTrackedLIBAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c8Users.User.Count();\n                        break;\n                    case \"Category #9\":\n                        c9Users = await serviceClient.GetTrackedWCNRAccounts();\n                        //Count the number of tracked users\n                        trackedcount += c9Users.User.Count();\n                        break;\n                    default:\n                        break;\n                } //END of Switch\n    \n    \n                switch (cat)\n                {\n                    case \"Category #1\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c1Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c1Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #2\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c2Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c2Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #3\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c3Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c3Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #4\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c4Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c4Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #5\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c5Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c5Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #6\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c6Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c6Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #7\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c7Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c7Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #8\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c8Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c8Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    case \"Category #9\":\n                        using (StreamWriter Log = File.AppendText(ClientLog))\n                        {\n                            Log.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c9Users.User.Count() + \" \" + cat + \" tracked users\");\n                        }\n                        Console.WriteLine(\"* Client.GetAllTrackedAccounts: Read in \" + c9Users.User.Count() + \" \" + cat + \" tracked users\");\n                        break;\n                    default:\n                        break;\n                } //END of Switch\n            } //END of try\n            catch (HttpRequestException e)\n            {\n                //Catch exception and Log it\n                Console.WriteLine(\"* Client.GetAllTrackedAccounts: Error: \" + e.ToString());\n                using (StreamWriter Log = File.AppendText(ClientLog))\n                {\n                    Log.WriteLine(\"* Client.GetAllTrackedAccounts: Error: \" + e.ToString());\n                }\n    \n            } //END of try-catch\n        } //END of foreach(var coll in categories)\n    \n        //Combine all categories Tracked Users count\n        //to initialize AllUsers\n        AllUsers.User = new User[trackedcount];\n        for (int t = 0; t &lt; trackedcount; t++)\n        {\n            AllUsers.User[t] = new User();\n        }\n    \n        for (int c = 0; c &lt; c1Users.User.Count(); c++)\n        {\n            AllUsers.User[c] = c1Users.User[c];\n        }\n    \n        for (int c = c1Users.User.Count(); c &lt; (c1Users.User.Count() + c2Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c2Users.User[c - c1Users.User.Count()];\n        }\n    \n        for (int c = (c1Users.User.Count() + c2Users.User.Count()); c &lt; (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c3Users.User[c - (c1Users.User.Count() + c2Users.User.Count())];\n        }\n    \n        for (int c = (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count()); c &lt; (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c4Users.User[c - (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count())];\n        }\n    \n        for (int c = (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count()); c &lt; (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c5Users.User[c - (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count())];\n        }\n    \n        for (int c = (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count()); c &lt; (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c6Users.User[c - (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count())];\n        }\n    \n        for (int c = (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count()); c &lt; (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count() + c7Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c7Users.User[c - (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count())];\n        }\n    \n        for (int c = (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count() + c7Users.User.Count()); c &lt; (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count() + c7Users.User.Count() + c8Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c8Users.User[c - (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count() + c7Users.User.Count())];\n        }\n    \n        for (int c = (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count() + c7Users.User.Count() + c8Users.User.Count()); c &lt; (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count() + c7Users.User.Count() + c8Users.User.Count() + c9Users.User.Count()); c++)\n        {\n            AllUsers.User[c] = c9Users.User[c - (c1Users.User.Count() + c2Users.User.Count() + c3Users.User.Count() + c4Users.User.Count() + c5Users.User.Count() + c6Users.User.Count() + c7Users.User.Count() + c8Users.User.Count())];\n        }\n    \n        //Log it\n        using (StreamWriter Log = File.AppendText(ClientLog))\n        {\n            Log.WriteLine(\"#####################################################\");\n            Log.WriteLine(\"# GetAllTrackedAccounts() Ended: \" + DateTime.Now);\n            Log.WriteLine(\"#####################################################\");\n            Log.WriteLine();\n        }\n        Console.WriteLine(\"#####################################################\");\n        Console.WriteLine(\"# GetAllTrackedAccounts() Ended: \" + DateTime.Now);\n        Console.WriteLine(\"#####################################################\");\n        Console.WriteLine();\n    \n        return AllUsers;\n    } //End of public async Task&lt;Users&gt; GetAllTrackedAccounts()",
+        "created_utc": 1479255696,
+        "upvote_ratio": ""
+    }
+]

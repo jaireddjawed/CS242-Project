@@ -1,0 +1,786 @@
+[
+    {
+        "title": "What is the icon theme in the file manager?",
+        "author": "retromaniak_",
+        "url": "https://i.redd.it/16bbyuxxlhea1.jpg",
+        "text": "",
+        "created_utc": 1674764242,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Have you tried integrating smart device APIs with linux?",
+        "author": "gianluccacolangelo",
+        "url": "https://www.reddit.com/r/linux/comments/10m0gly/have_you_tried_integrating_smart_device_apis_with/",
+        "text": "I wonder if anyone has experimented with those apis, for example the WiZ api (smart lights) or the smart device apis from google or amazon. For example, if I start a pomodoro session, I would like the lights and music speaker to automatically turn white cold lights and lo-fi chill hip hop respectively, until the start of break time. (Assuming you have your own pomodoro software you can edit to interact with any api). \n\nI'm using Ubuntu right now, but have experience with arch btw.",
+        "created_utc": 1674762023,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Linux Process Journey — “krfcommd”",
+        "author": "boutnaru",
+        "url": "https://www.reddit.com/r/linux/comments/10m0alb/the_linux_process_journey_krfcommd/",
+        "text": "“krfcommd” is a kernel which is started by executing “kthread\\_run()” function ([https://elixir.bootlin.com/linux/latest/source/net/bluetooth/rfcomm/core.c#L2215](https://elixir.bootlin.com/linux/latest/source/net/bluetooth/rfcomm/core.c#L2215)). The kernel thread executes the “rfcomm\\_run()” function ([https://elixir.bootlin.com/linux/latest/source/net/bluetooth/rfcomm/core.c#L2109](https://elixir.bootlin.com/linux/latest/source/net/bluetooth/rfcomm/core.c#L2109)). Thus, we can say that “krfcommd” is responsible for RFCOMM connections ([https://stackoverflow.com/questions/57152408/what-is-the-internal-mechanics-of-socket-function](https://stackoverflow.com/questions/57152408/what-is-the-internal-mechanics-of-socket-function)).\n\nRFCOMM  (Radio Frequency Communication) is a set of transport protocols on top  of L2CAP which provides emulated RS-232 serial ports. It provides a  simple reliable data stream (like TCP). It is used directly by many  telephony related profiles as a carrier for AT commands, as well as  being a transport layer for OBEX over Bluetooth ([https://en.wikipedia.org/wiki/List\\_of\\_Bluetooth\\_protocols](https://en.wikipedia.org/wiki/List_of_Bluetooth_protocols)).\n\nMoreover, there is also an “rfcomm” cli tool in Linux. It is used to inspect and maintain RFCOMM configuration ([https://linux.die.net/man/1/rfcomm](https://linux.die.net/man/1/rfcomm)) .For more information about RFCOMM I suggest reading [https://www.btframework.com/rfcomm.htm](https://www.btframework.com/rfcomm.htm). You can also go over the protocol specification ([https://www.bluetooth.com/specifications/specs/rfcomm-1-1/](https://www.bluetooth.com/specifications/specs/rfcomm-1-1/)).\n\nAlso,  RFCOMM protocol supports up to 60 simultaneous connections between two  Bluetooth devices. The number of connections that can be used  simultaneously is implementation-specific. For the purposes of RFCOMM, a  complete communication path involves two applications running on  different devices (the communication endpoints) with a communication  segment between them ([https://www.amd.e-technik.uni-rostock.de/ma/gol/lectures/wirlec/bluetooth\\_info/rfcomm.html](https://www.amd.e-technik.uni-rostock.de/ma/gol/lectures/wirlec/bluetooth_info/rfcomm.html)).\n\nLastly,  RFCOMM is implemented as a kernel module. Thus, it can be compiled  directly to the kernel or separate kernel module — in the screenshot  below we can see it compiled as a separate file.\n\nSee you next time ;-) \n\n&amp;#x200B;\n\nhttps://preview.redd.it/jljrdhekwfea1.png?width=930&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=07a3f9d4044654fbdaab158c549cfb0b736ca331",
+        "created_utc": 1674761606,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Creating a Linux machine for educational purposes",
+        "author": "OneEyedC4t",
+        "url": "https://www.reddit.com/r/linux/comments/10m036j/creating_a_linux_machine_for_educational_purposes/",
+        "text": "So what I am doing right now is I work for a major it educational corporation. I teach students many things including A+ and Linux Essentials.\n\nI have repurposed an old computer with open Susie Linux (I am using Google voice type) and what I am doing so far is setting up/etc/skel so that whenever the user logs out it will synchronize with what's already in /etc/skel, overwriting their home directory. \n\nSo I am thinking that the way to do this is to embed these commands in the user's .logout file. Is this the right way to go about doing this?\n\nAny other suggestions? So far my thought is that they are in a special group called students. Has anyone set up a system like this? How would you do it?",
+        "created_utc": 1674761089,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Where is Sir Sudo?",
+        "author": "sneezewave",
+        "url": "https://www.reddit.com/r/linux/comments/10lzw69/where_is_sir_sudo/",
+        "text": "[removed]",
+        "created_utc": 1674760610,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "For the Tech-Priests, an Adeptus Mechanicus fortune-mod database",
+        "author": "FatherCarbon",
+        "url": "https://github.com/mathiscode/fortunes-mechanicus#readme",
+        "text": "",
+        "created_utc": 1674759806,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "During the '90s, was Linux only being kept alive by organisations like Red Hat and SuSE both in terms of development and usage? How much impact did \"regular\" users have?",
+        "author": "pondtransitauthority",
+        "url": "https://www.reddit.com/r/linux/comments/10lympt/during_the_90s_was_linux_only_being_kept_alive_by/",
+        "text": "[removed]",
+        "created_utc": 1674757445,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there anyone daily driving Asahi Linux here?",
+        "author": "Bowspecialist",
+        "url": "https://www.reddit.com/r/linux/comments/10lw4to/is_there_anyone_daily_driving_asahi_linux_here/",
+        "text": "[removed]",
+        "created_utc": 1674751232,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How much discord doesn't care about linux",
+        "author": "Riemaru_Karurosu",
+        "url": "https://i.redd.it/42q8yv0migea1.png",
+        "text": "[removed]",
+        "created_utc": 1674751015,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "PipeWire 0.3.65 released",
+        "author": "ainz_47",
+        "url": "https://gitlab.freedesktop.org/pipewire/pipewire/-/releases/0.3.65",
+        "text": "",
+        "created_utc": 1674749423,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GPU pass-through with single videocard",
+        "author": "AlbanianRat",
+        "url": "https://www.reddit.com/r/linux/comments/10lvaja/gpu_passthrough_with_single_videocard/",
+        "text": "[removed]",
+        "created_utc": 1674749146,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "11 Best Lightweight Linux distros of 2023 for Everyone",
+        "author": "skj8",
+        "url": "https://kanger.dev/best-lightweight-linux-distros/",
+        "text": "",
+        "created_utc": 1674747255,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Simple, open-source, lightweight stress tool",
+        "author": "chrisy_e",
+        "url": "https://github.com/ddosify/ddosify",
+        "text": "",
+        "created_utc": 1674743337,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "WiFi Adaptor Chipsets vendor compatibility order ?",
+        "author": "RedditNoobie777",
+        "url": "https://www.reddit.com/r/linux/comments/10lrgm0/wifi_adaptor_chipsets_vendor_compatibility_order/",
+        "text": "[removed]",
+        "created_utc": 1674738676,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Benchmarking Dual Boot System",
+        "author": "kevsbacon",
+        "url": "https://www.reddit.com/r/linux/comments/10lre81/benchmarking_dual_boot_system/",
+        "text": "[removed]",
+        "created_utc": 1674738465,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wayland and its future",
+        "author": "Any-Director-9226",
+        "url": "https://www.reddit.com/r/linux/comments/10lr20e/wayland_and_its_future/",
+        "text": "[removed]",
+        "created_utc": 1674737384,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it possible to boot into linux from windows without bootloader ?",
+        "author": "stfuandkissmyturtle",
+        "url": "https://www.reddit.com/r/linux/comments/10lqbnj/is_it_possible_to_boot_into_linux_from_windows/",
+        "text": "[removed]",
+        "created_utc": 1674734849,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "WiFi Adaptor Table for chipset and compatibility ?",
+        "author": "RedditNoobie777",
+        "url": "https://www.reddit.com/r/linux/comments/10lohz7/wifi_adaptor_table_for_chipset_and_compatibility/",
+        "text": "[removed]",
+        "created_utc": 1674727521,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wayland and its future",
+        "author": "Any-Director-9226",
+        "url": "https://www.reddit.com/r/linux/comments/10loaow/wayland_and_its_future/",
+        "text": "You will never be a real display server. You have no hardware cursors, you have no xrandr, you have no setxkbmap. You are a toy project twisted by Red Hat and GNOME into a crude mockery of X11’s perfection.\n\nAll the “validation” you get is two-faced and half-hearted. Behind your back people mock you. Your developers are disgusted and ashamed of you, your “users” laugh at your lack of features behind closed doors.\n\nLinux users are utterly repulsed by you. Thousands of years of evolution have allowed them to sniff out defective software with incredible efficiency. Even Wayland sessions that “work” look uncanny and unnatural to a seasoned sysadmin. Your bizarre render loop is a dead giveaway. And even if you manage to get a drunk Arch user home with you, he’ll turn tail and bolt the second he gets a whiff of your high latency due to forced VSync.\n\nYou will never be happy. You wrench out a fake smile every single morning and tell yourself it’s going to be ok, but deep inside you feel the technical debt creeping up like a weed, ready to crush you under the unbearable weight.\n\nEventually it’ll be too much to bear - you’ll log into the GitLab instance, select the project, press Delete, and plunge it into the cold abyss. Your users will find the deletion notice, heartbroken but relieved that they no longer have to live with the unbearable shame and disappointment. They’ll remember you as the biggest failure of open source development, and every passerby for the rest of eternity will know a badly run project has failed there. Your code will decay and go to historical archives, and all that will remain of your legacy is a codebase that is unmistakably poorly written.\n\nThis is your fate. This is what you chose. There is no turning back.",
+        "created_utc": 1674726623,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "how to change an application icon in lubuntu ??",
+        "author": "Samaykom",
+        "url": "https://i.redd.it/psjyhdcpeeea1.jpg",
+        "text": "",
+        "created_utc": 1674725492,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I change the boot image on MacOs?",
+        "author": "Cabernetcabe",
+        "url": "https://i.redd.it/74j5m6codeea1.jpg",
+        "text": "",
+        "created_utc": 1674725154,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "This post and comments from 7 years ago is still the funniest thing I’ve ever read on the internet.",
+        "author": "anon011358",
+        "url": "https://reddit.com/r/linux/comments/4aauib/lets_talk_about_the_free_software_dating_scene/",
+        "text": "",
+        "created_utc": 1674723066,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "This post from 7 years ago is still the funniest thing I’ve ever read on the internet 🤣",
+        "author": "anon011358",
+        "url": "https://reddit.com/r/linux/comments/4aauib/lets_talk_about_the_free_software_dating_scene/",
+        "text": "",
+        "created_utc": 1674722972,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "FastoCloud [COM] version currently available on GitHub",
+        "author": "FastoNoSQL",
+        "url": "https://i.redd.it/hpn50ef9icea1.png",
+        "text": "",
+        "created_utc": 1674721463,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The user could not resolve host in Arch Linux Deploy",
+        "author": "SnooPears3186",
+        "url": "https://www.reddit.com/r/linux/comments/10lmtyz/the_user_could_not_resolve_host_in_arch_linux/",
+        "text": "[removed]",
+        "created_utc": 1674720017,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just a question regarding hibernation in dual boot (win10/archlinux)",
+        "author": "spec-psx",
+        "url": "https://www.reddit.com/r/linux/comments/10lme7o/just_a_question_regarding_hibernation_in_dual/",
+        "text": "[removed]",
+        "created_utc": 1674718141,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "infinix Note 12 2023 Review: The INSANE $199 Phone",
+        "author": "irtazaali193",
+        "url": "https://www.apnewspk.com/2023/01/infinix-Note-12-2023-Review-The-INSANE-199-Phone.html",
+        "text": "",
+        "created_utc": 1674710130,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Next step for a Windows 10 user?",
+        "author": "RudeBuster18",
+        "url": "https://www.reddit.com/r/linux/comments/10liv4i/next_step_for_a_windows_10_user/",
+        "text": "I've been thinking about switching my main pc to a Linux distribution due to it not being able to run Windows 11. I've done some research and found some ones I like. What one is the best for me? Or is there an even better one for a Windows 10 user?\n\nThe distributions I've seen and liked are:\nPhoenix Linux - https://phoenixlinux.weebly.com/\n\nLinux Mint - https://linuxmint.com/\n\nGentoo - https://www.gentoo.org/\n\nSolus - https://distrowatch.com/table.php?distribution=Solus\n\nManjaro - https://manjaro.org/\n\nZorin OS - https://zorin.com/os/",
+        "created_utc": 1674705589,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to achieve better font rendering?",
+        "author": "Sweet-Direction9943",
+        "url": "https://www.reddit.com/r/linux/comments/10liclo/how_to_achieve_better_font_rendering/",
+        "text": "[removed]",
+        "created_utc": 1674703950,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Trying to find save files within bottle to backup!",
+        "author": "90sGustavo",
+        "url": "https://www.reddit.com/r/linux/comments/10lebmv/trying_to_find_save_files_within_bottle_to_backup/",
+        "text": "[removed]",
+        "created_utc": 1674692324,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Where can i find my saved file to backup!",
+        "author": "90sGustavo",
+        "url": "https://www.reddit.com/r/linux/comments/10le9vf/where_can_i_find_my_saved_file_to_backup/",
+        "text": "[removed]",
+        "created_utc": 1674692196,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can we get MS Edge, which nobody uses, and not built in OneDrive capability, which I need for college?",
+        "author": "Fast_Lunch_8103",
+        "url": "https://i.redd.it/vlq5dvzumbea1.jpg",
+        "text": "",
+        "created_utc": 1674691909,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I was proud of myself for figuring out how to make rsync report progress. Sent a pic to my dad and in all seriousness he says, “does it send an update to your phone”?",
+        "author": "swflduc",
+        "url": "https://i.redd.it/2gg208jahbea1.jpg",
+        "text": "",
+        "created_utc": 1674690038,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ondsel, a FreeCAD startup backed by Open Core Ventures, is making solid modeling tools accessible for everyone",
+        "author": "Kkremitzki",
+        "url": "https://opencoreventures.com/blog/2023-01-ondsel-freecad-launch/",
+        "text": "",
+        "created_utc": 1674689795,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fedora on MacBook Pro 206 (13,3), still Wi-Fi issues?",
+        "author": "JackiieGoneBiking",
+        "url": "https://www.reddit.com/r/linux/comments/10lbxmv/fedora_on_macbook_pro_206_133_still_wifi_issues/",
+        "text": "I figured I would triple boot for school instead of using Ubuntu in a VM. I’ve installed Fedora and 2.4GHz works, and while trying, I’ve met many pages with info about this model not playing nice with Linux, especially because of the Broadcom Wi-Fi card.\n\nAre there any difference between distros? Anything I could do to make this work better, or should I probably go back to Virtualbox?",
+        "created_utc": 1674686192,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fedora on MacBook Pro 206 (13,3), still Wi-Fi issues?",
+        "author": "vadfangorjagnu",
+        "url": "https://www.reddit.com/r/linux/comments/10lbm6p/fedora_on_macbook_pro_206_133_still_wifi_issues/",
+        "text": "[removed]",
+        "created_utc": 1674685396,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "pls help minecraft bedrock crashes on linux",
+        "author": "Samaykom",
+        "url": "https://i.redd.it/dnxpve6woaea1.jpg",
+        "text": "",
+        "created_utc": 1674680525,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "pswd | an open source password generator for Linux systems",
+        "author": "Tough_Chance_5541",
+        "url": "https://github.com/Mandrew0822/pswd",
+        "text": "",
+        "created_utc": 1674679746,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Performance Impact From Different Arch Linux Kernel Flavors",
+        "author": "ainz_47",
+        "url": "https://www.phoronix.com/review/arch-linux-kernels-2023",
+        "text": "",
+        "created_utc": 1674675829,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux/MacOS Terminal Commands - 1 Useful commands for MacOS, and Linux b...",
+        "author": "NeuronResearcher",
+        "url": "https://youtube.com/watch?v=dFzqIzHfF5A&amp;feature=share",
+        "text": "",
+        "created_utc": 1674670299,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why is this sub filled with red hat shills?",
+        "author": "Any-Director-9226",
+        "url": "https://www.reddit.com/r/linux/comments/10l45r1/why_is_this_sub_filled_with_red_hat_shills/",
+        "text": "",
+        "created_utc": 1674667658,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux/MacOS Terminal Commands - 1 Useful commands for MacOS, and Linux based OS (such as Ubuntu).",
+        "author": "NeuronResearcher",
+        "url": "https://youtube.com/watch?v=dFzqIzHfF5A&amp;feature=share",
+        "text": "",
+        "created_utc": 1674665727,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "DXVK-NVAPI - Alternative NVAPI implementation on top of DXVK",
+        "author": "Pixel2023",
+        "url": "https://github.com/jp7677/dxvk-nvapi",
+        "text": "",
+        "created_utc": 1674663493,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Энергопотребление windows vs linux",
+        "author": "Icy_Ad_825",
+        "url": "https://www.reddit.com/r/linux/comments/10l1t58/энергопотребление_windows_vs_linux/",
+        "text": "[removed]",
+        "created_utc": 1674661916,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just a begginer question",
+        "author": "CompleteNewspaper440",
+        "url": "https://www.reddit.com/r/linux/comments/10l1e1y/just_a_begginer_question/",
+        "text": "[removed]",
+        "created_utc": 1674660842,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can Linux distros beat other OS with AI help?",
+        "author": "amgschnappi",
+        "url": "https://www.reddit.com/r/linux/comments/10l0xs0/can_linux_distros_beat_other_os_with_ai_help/",
+        "text": " \n\nOr would MS beat the shit out of other OSs with chatgpt integrated in their OS &amp; SWs?\n\nFor  eg: If linux distro + thunderbird can notify me (of some weather  updates or some such things) by locally scanning my emails (of my travel  or such emails), then I am all for it.",
+        "created_utc": 1674659715,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu 23.04 Makes Telegram a Deb-to-Snap Transitional Package - OMG! Ubuntu!",
+        "author": "jorgesgk",
+        "url": "https://lists.ubuntu.com/archives/ubuntu-release/2023-January/005525.html",
+        "text": "",
+        "created_utc": 1674659552,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux phones are not automatically secure",
+        "author": "speckz",
+        "url": "https://tuxphones.com/linux-mobile-devices-are-not-inherently-secure/",
+        "text": "",
+        "created_utc": 1674659087,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Boredom PS1 project",
+        "author": "nowhereman531",
+        "url": "/r/bash/comments/10kyw1i/boredom_ps1_project/",
+        "text": "",
+        "created_utc": 1674654501,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I am new to Linux, what should a beginner know?",
+        "author": "DangBros-Pepe678",
+        "url": "https://www.reddit.com/r/linux/comments/10kyshl/i_am_new_to_linux_what_should_a_beginner_know/",
+        "text": "[removed]",
+        "created_utc": 1674653825,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I was trying to dual boot my laptop with Kali Linux but at select and install software step it's failing. can anybody help ?",
+        "author": "S_prem",
+        "url": "https://i.redd.it/j2u8rh6uf8ea1.jpg",
+        "text": "",
+        "created_utc": 1674653270,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Musort - Organize your music library with a simple CLI tool written in Python",
+        "author": "ArchLinuxUserAUR",
+        "url": "https://v.redd.it/pbnuvf87r6ea1",
+        "text": "",
+        "created_utc": 1674650877,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "“33% of GStreamer commits are now in Rust”, from the 1.22 release notes",
+        "author": "OS6aDohpegavod4",
+        "url": "https://gstreamer.freedesktop.org/releases/1.22/",
+        "text": "",
+        "created_utc": 1674650670,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Simple, open-source, lightweight stress tool",
+        "author": "chrisy_e",
+        "url": "https://github.com/ddosify/ddosify",
+        "text": "",
+        "created_utc": 1674645550,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lightweight Linux distros",
+        "author": "skj8",
+        "url": "https://kanger.dev/best-lightweight-linux-distros/",
+        "text": "",
+        "created_utc": 1674641556,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "the steps that must be carried out to carry out a hack attack. brute force the files in which the passwords of the system users are stored?",
+        "author": "retirementhouse",
+        "url": "https://www.reddit.com/r/linux/comments/10kvceb/the_steps_that_must_be_carried_out_to_carry_out_a/",
+        "text": "as the title suggests, I would like it if someone explains to me (dummy) the steps that must be carried out to carry out a hack attack. brute force the files in which the passwords of the system users are stored?",
+        "created_utc": 1674641309,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "the steps that must be carried out to carry out a hack attack. brute force the files in which the passwords of the system users are stored?",
+        "author": "retirementhouse",
+        "url": "https://www.reddit.com/r/linux/comments/10kvbqr/the_steps_that_must_be_carried_out_to_carry_out_a/",
+        "text": "[removed]",
+        "created_utc": 1674641235,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Open source RPG game FreedroidRPG is now on steam",
+        "author": "wiki_me",
+        "url": "https://store.steampowered.com/app/1979930/FreedroidRPG/?curator_clanid=4218320",
+        "text": "",
+        "created_utc": 1674639553,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Shutdown and showing messages",
+        "author": "martinofalorni",
+        "url": "https://www.reddit.com/r/linux/comments/10ku6s7/shutdown_and_showing_messages/",
+        "text": "[removed]",
+        "created_utc": 1674636410,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "TTS On Arch",
+        "author": "_abdallahhelmy",
+        "url": "https://www.reddit.com/r/linux/comments/10kty3a/tts_on_arch/",
+        "text": "[removed]",
+        "created_utc": 1674635406,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Information to provide when encountering a problem",
+        "author": "alishahidi",
+        "url": "https://www.reddit.com/r/linux/comments/10ksed2/information_to_provide_when_encountering_a_problem/",
+        "text": "[removed]",
+        "created_utc": 1674629120,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need help with laptop issue (in comments)",
+        "author": "dis_is_yash",
+        "url": "https://i.redd.it/uhey8yvn16ea1.jpg",
+        "text": "",
+        "created_utc": 1674626060,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Nvidia-dkms 525.85.05 causes slowdown of desktop in hybrid mode",
+        "author": "conan--cimmerian",
+        "url": "https://www.reddit.com/r/linux/comments/10kquin/nvidiadkms_5258505_causes_slowdown_of_desktop_in/",
+        "text": "I am on a Nvidia Optimus laptop and for the last two nvidia-dkms driver releases there has been a slowdown of the desktop when they are installed.\n\nIn the latest nvidia-dkms 525.85.05 driver, when booting in hybrid mode the desktop becomes very laggy, the mouse becomes slow, windows take long to open and when they do any action within a window causes lag. It makes the system unusuable. However, this is only true if the laptop is projecting to  an external screen via USB-C or HDMI. On the laptop screen there is no such issue. \n\nI use my laptop connected to an external monitor so for me this is am important issue - i'd like to upgrade to new Nvidia drivers on archlinux but I am getting the above issues.",
+        "created_utc": 1674623629,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux based Os",
+        "author": "Adventurous_Invite63",
+        "url": "https://www.reddit.com/r/linux/comments/10kp4ed/linux_based_os/",
+        "text": "[removed]",
+        "created_utc": 1674618089,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The junior sysadmin course at r/LinuxUpskillChallenge restarting 6 February 2023",
+        "author": "livia2lima",
+        "url": "https://www.reddit.com/r/linux/comments/10klsub/the_junior_sysadmin_course_at/",
+        "text": "[removed]",
+        "created_utc": 1674608435,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gnome Shell walkthrough on Oneplus 6T",
+        "author": "giannidunk",
+        "url": "https://www.omglinux.com/gnome-shell-mobile-hands-on-video/",
+        "text": "",
+        "created_utc": 1674602397,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AMD 4th Gen EPYC \"Genoa\" To Enjoy Slightly Better Performance With Linux 6.3",
+        "author": "twlja",
+        "url": "https://www.phoronix.com/review/amd-epyc-auto-ibrs",
+        "text": "",
+        "created_utc": 1674595473,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A Summary Of Commonly Used Terminal Escape Codes",
+        "author": "bayarea-dev",
+        "url": "https://sweworld.net/cheatsheets/terminal_escape_code/",
+        "text": "",
+        "created_utc": 1674590435,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is Linux really that inefficient that you only need 8GB of ram on windows but 32GB on Linux Shouldn’t memory leaks be easy to patch on foss C++ just fix the memory management Unity wouldn’t have that issue it uses C# Unity even has an app image Tim Sweeny is slipping",
+        "author": "Trick-Weight-5547",
+        "url": "https://i.redd.it/c81jcf6663ea1.jpg",
+        "text": "",
+        "created_utc": 1674589440,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best way to learn linux",
+        "author": "jackudhd6",
+        "url": "https://www.reddit.com/r/linux/comments/10kddal/best_way_to_learn_linux/",
+        "text": "[removed]",
+        "created_utc": 1674587392,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best way to learn linux",
+        "author": "jackudhd6",
+        "url": "https://www.reddit.com/r/linux/comments/10kdbce/best_way_to_learn_linux/",
+        "text": "[removed]",
+        "created_utc": 1674587259,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "node-ipc developer RIAEvangelist has updated the project after not doing so for over a year (https://github.com/RIAEvangelist/node-ipc/commits?author=RIAEvangelist)",
+        "author": "Sunnyglocto",
+        "url": "https://i.redd.it/sbo3u5kkh1ea1.png",
+        "text": "",
+        "created_utc": 1674587088,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Self signed SSL with https_proxy",
+        "author": "krisclarkdev",
+        "url": "https://www.reddit.com/r/linux/comments/10kcvpz/self_signed_ssl_with_https_proxy/",
+        "text": "Hi - I'm attempting to use http\\_proxy and https\\_proxy in linux.  I've set both variables as such\n\n    export http_proxy=http://some_ip:8080/\nexport https_proxy=https://some_ip:8080/\n\n\nThe HTTP proxy looks to be working fine, I'm having issues with the https proxy however.  I'm using a self signed cert.  Which I've added to /etc/ssl/certs and executed c\\_rehash but that seems to do nothing?\n\nHow do I trust the https proxy?  Do I need to add the cert somewhere or is there an enviornment variable that needs to be set for this to work?  This is on photonos but I'm having the same issue testing this on other envs such as ubuntu and centos.\n\nThank you",
+        "created_utc": 1674586229,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why \"Kernel Mode\" Drivers?",
+        "author": "JustALawnGnome7",
+        "url": "https://www.reddit.com/r/linux/comments/10kcdqo/why_kernel_mode_drivers/",
+        "text": "[removed]",
+        "created_utc": 1674585037,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help on traffic control",
+        "author": "Sagail",
+        "url": "https://www.reddit.com/r/linux/comments/10kbys6/help_on_traffic_control/",
+        "text": "[removed]",
+        "created_utc": 1674584033,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "DNS benchmark utility",
+        "author": "ipnetor9000",
+        "url": "https://www.reddit.com/r/linux/comments/10kby8s/dns_benchmark_utility/",
+        "text": "[removed]",
+        "created_utc": 1674583993,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Update to Linux install script (ArchLinux Edition)",
+        "author": "Cybasura",
+        "url": "https://www.reddit.com/r/linux/comments/10kbqzx/update_to_linux_install_script_archlinux_edition/",
+        "text": "Hi everyone! This is a quick update regarding my Linux portable install script!\n\nAs a quick summary, I made a portable, customizable and modular linux install script which at the moment, uses ArchLinux as base\n\nThe idea is that it is customizable, thus I can also use it as a template for other distros - though that is a WIP, please refer to [this post](https://www.reddit.com/r/opensource/comments/vpn9fc/i_finally_pushed_the_first_stable_release_v100_of/?utm_source=share&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_term=1&amp;utm_content=share_button) for the detailed background and more information\n\nNow with that said, I have made some pretty (in my opinion) useful QoL changes as well as additional features to the installer\n\nThe following are some of the bigger changes, as well as bug fixes\n```\n[New Features]\n- Command Line Arguments (CLI) support in install script that is simple to modify\n    + -c | --config : For setting custom configuration file\n    + -d | --target-disk : For setting target disk name via CLI argument\n    + -g | --generate-config : For generating a new config file template right from the get-go\n    + -h | --help : Display help message\n    + -m | --mode : Set startup mode; DEBUG or RELEASE\n\n[Refactor/Modification]\n- Changed 'MODE' variable to a static DEBUG as the command line argument is now dynamic\n- Refactored global variables into individual functions for reusability (i.e. generating or resetting)\n```\n\nThe repository is [here](https://github.com/Thanatisia/distro-installscript-arch)\n\nFeel free to dm me or comment below on what you think and/or if you have and inputs, or perhaps features you would like to see etc\n\nThank you very much!\n\nP.S. I have also mentioned this in opensource, so you might have seen this there, thanks again!",
+        "created_utc": 1674583528,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux Foundation launches Open Metaverse Foundation",
+        "author": "ExaHamza",
+        "url": "https://www.openmv.org/",
+        "text": "",
+        "created_utc": 1674580842,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Aktuelle Version von Redis unter Ubuntu installieren",
+        "author": "admonaut",
+        "url": "https://administrator.de/tutorial/aktuelle-version-von-redis-unter-ubuntu-installieren-233297.html",
+        "text": "",
+        "created_utc": 1674580813,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help - Special Characters in Folder Name - Ubuntu Server vs Ubuntu Cloud Image",
+        "author": "wetradecrypto",
+        "url": "https://www.reddit.com/r/linux/comments/10ka77x/help_special_characters_in_folder_name_ubuntu/",
+        "text": "[removed]",
+        "created_utc": 1674579743,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Minimal Flash Drive Autorun script with support LUKS supported devices",
+        "author": "milk-black-sea-tea",
+        "url": "https://gitlab.com/-/snippets/2488383",
+        "text": "",
+        "created_utc": 1674578957,
+        "upvote_ratio": 0.99
+    },
+    {
+        "title": "Wine 8.0 Released",
+        "author": "ExaHamza",
+        "url": "https://www.winehq.org/news/2023012401",
+        "text": "",
+        "created_utc": 1674578429,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "FAKE Rufus Website!!",
+        "author": "Commercial_Onion3135",
+        "url": "https://www.reddit.com/r/linux/comments/10k9mml/fake_rufus_website/",
+        "text": "[removed]",
+        "created_utc": 1674578289,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Symphonia: Audio decoding in safe Rust, now often faster than FFmpeg!",
+        "author": "Shnatsel",
+        "url": "/r/rust/comments/10k6v56/symphonia_v052_audio_decoding_in_safe_rust_now/",
+        "text": "",
+        "created_utc": 1674576893,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Melhor distribuição pra devs",
+        "author": "ruanfrohlich",
+        "url": "https://www.reddit.com/r/linux/comments/10k80fd/melhor_distribuição_pra_devs/",
+        "text": "[removed]",
+        "created_utc": 1674574059,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GNOME top bar text glitch.",
+        "author": "luszynsky",
+        "url": "https://www.reddit.com/r/linux/comments/10k6ocv/gnome_top_bar_text_glitch/",
+        "text": "[removed]",
+        "created_utc": 1674570408,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Assumo Sistemista Linux",
+        "author": "erikamengato",
+        "url": "https://www.reddit.com/r/linux/comments/10k5qro/assumo_sistemista_linux/",
+        "text": "[removed]",
+        "created_utc": 1674567690,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Cron editor endgame, I hope?!",
+        "author": "mindrudan",
+        "url": "https://tool.crontap.com/cronjob-debugger/multiple",
+        "text": "",
+        "created_utc": 1674564554,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Cron debugger endgame, I hope?",
+        "author": "mindrudan",
+        "url": "https://tool.crontap.com/cronjob-debugger/multiple-cronjobs",
+        "text": "",
+        "created_utc": 1674564412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "LFS vs distro-based",
+        "author": "SiliwolfTheCoder",
+        "url": "https://www.reddit.com/r/linux/comments/10k4ndf/lfs_vs_distrobased/",
+        "text": "[removed]",
+        "created_utc": 1674564307,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Anyone know how i can install Fresco Logic FL2000 USB to VGA adapter drivers on arch?",
+        "author": "foliboni",
+        "url": "https://www.reddit.com/r/linux/comments/10k4n2d/anyone_know_how_i_can_install_fresco_logic_fl2000/",
+        "text": "[removed]",
+        "created_utc": 1674564276,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is is possible to install Linux on my PC, from a previous image installed in a VM?",
+        "author": "Eparema",
+        "url": "https://www.reddit.com/r/linux/comments/10k3xqt/is_is_possible_to_install_linux_on_my_pc_from_a/",
+        "text": "[removed]",
+        "created_utc": 1674561854,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does pass reslly worth using ?Standard unix password managar",
+        "author": "idfdg167",
+        "url": "https://www.reddit.com/r/linux/comments/10k3nxi/does_pass_reslly_worth_using_standard_unix/",
+        "text": "[removed]",
+        "created_utc": 1674560901,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Standard unix passowrd managar",
+        "author": "idfdg167",
+        "url": "https://www.reddit.com/r/linux/comments/10k3lwn/standard_unix_passowrd_managar/",
+        "text": "[removed]",
+        "created_utc": 1674560700,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Server stopped booting",
+        "author": "seabird1974",
+        "url": "https://www.reddit.com/r/linux/comments/10k2g43/server_stopped_booting/",
+        "text": "[removed]",
+        "created_utc": 1674555940,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Recommendations on distress",
+        "author": "Phantom_Pro1",
+        "url": "https://www.reddit.com/r/linux/comments/10k065j/recommendations_on_distress/",
+        "text": "I am taking a college course in Linux as I’m going into the IT field. The professor is letting us choose our distro. Ive been researching what might be the best option for me but there are a lot of nice suggestions. I’m familiar with windows 10 and macOS. Personally I would like a recommendation from the community for something simple yet challenging. Thank for reading and I’m excited to start my Linux journey!",
+        "created_utc": 1674545926,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "some applications arent openin for me idk why",
+        "author": "LowPerspective7988",
+        "url": "https://v.redd.it/lhoj09351yda1",
+        "text": "",
+        "created_utc": 1674545221,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I trying installing linus mint cinnamon on my gaming desktop but it didn't boot and now my computer won't boot at all... mabye it's still trying g to boot from the USB but it won't let me on the the boot menu at all... What should I do?",
+        "author": "Kermit_Boi197",
+        "url": "https://www.reddit.com/r/linux/comments/10jzeo2/i_trying_installing_linus_mint_cinnamon_on_my/",
+        "text": "",
+        "created_utc": 1674542737,
+        "upvote_ratio": 1.0
+    }
+]

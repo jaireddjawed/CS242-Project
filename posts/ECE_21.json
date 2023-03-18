@@ -1,0 +1,794 @@
+[
+    {
+        "title": "Is it too late for an uneducated 25 year old?",
+        "author": "theshizle",
+        "url": "https://www.reddit.com/r/ECE/comments/8hktki/is_it_too_late_for_an_uneducated_25_year_old/",
+        "text": "I've always been fascinated by electronics and electricity, but I'm going to admit I wasn't the brightest in High School because I wasted my time daydreaming and working on things unrelated to school. Failed math and science, etc. After failing senior year, I didn't go back to school making a drop out. But for a while I've been aching to educate myself with electrical engineering. This seems like a laughable impossible goal given that I didn't even graduate high school but I want to try. I want to know if there is such a thing as reliable resources for beginners. Should I pursue this or give up?\n\nEdit: Thank you all for your responses. Reading your comments has really pumped up my motivation and I'm determined to get my GED and work hard to learn about electrical engineering and get my degree. Thank you all so much!",
+        "created_utc": 1525666294,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problem communication using Pic 16f45k22 and NRF24L01",
+        "author": "octajul77",
+        "url": "https://www.reddit.com/r/ECE/comments/8hjgqu/problem_communication_using_pic_16f45k22_and/",
+        "text": "I been trying to learn how to communicate two pic18f45k22 using NRF24L01 I did some research and found a tutorial for pic18F452 so i used this to build one for pic18F45K22 but when i try it doesnt works as it should and im running out of ideas to solve it so I would really appreciate some help, here's the link for a zip of both of my codes RX and TX and the PDF tutorial with the source files. I should add thatm im using and external clock of 8MHZ, MPLAB X, XC8 V.1.45, I downloaded the peripheral libraries  for Pic18F and the connections are the following:\n\n24L01 pins (1) Vcc -&gt; +5Vdc supply \n(2) CE  -&gt; uC pin PORTC.1, configured as GPIO/input \n(3) CSN -&gt; uC pin PORTC.2, configured as GPIO/output\n (4) SCK -&gt; uC pin PORTC.3/SCK, configured as SCK(SPI)/output\n (5) MOSI -&gt; uC pin PORTC.5/SDO, configured as SDO(SPI)/output \n(6) MISO -&gt; uC pin PORTC.4/SDI, configured as SDI(SPI)/input\n (7) IRQ -&gt; uC pin PORTB.0, configured as GPIO/input\n (8) GND -&gt; common digital ground \n\nThanks in advance[Zip with all files ](https://drive.google.com/open?id=106GvzcLhOYT2PUIcrDQo7MRKcNSB0UPV)",
+        "created_utc": 1525652023,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just a CS student diving into this, I got a neat idea and wondering what's the best way to go about designing it (also might need some circuitry voodoo advice)",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8hbq3h/just_a_cs_student_diving_into_this_i_got_a_neat/",
+        "text": "[deleted]",
+        "created_utc": 1525567612,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Combination of LED and transistor in one component that contains neither? \"sporks\" of EE",
+        "author": "herkato5",
+        "url": "https://www.reddit.com/r/ECE/comments/8hbpgn/combination_of_led_and_transistor_in_one/",
+        "text": "Instead of switching LED with a transistor, would it be more efficient to have one component that is kind of both at the same time? Like spork is spoon and fork. What is cute word that combines transistor with LED?\n\nThis would be useful with free space optical communication, when LED has to switch up to 100 million times per second to transmit bits. For example, use that component in a 1000 lumen flash light in full power and when using it to communicate kilometers away in focused beam, lumens are less than half. Or a drone could use illumination lights to transmit video of the illuminated ground under it.\n\nMaybe also for nanobots and microbots, those hypothetical integrated circuits that can swim inside humans to cure diseases... They may use tiny lamps with their sensors to determine what to do.\n\nAlso, how about combination of capacitor + transistor?\n\nEDIT:\n\nIsn't flash eeprom cell, storing one bit, already a kind of hybrid of capacitor+transistor?\n\n.\n\n\nTransistor + light sensor could mean individually adjustable sensitivity for 1-bit camera pixels, which would be strange way to take pictures...\n\nEDIT:\n\nThis is vague tossing around of thoughts / ideas, not asserting of claims or opinions.\n",
+        "created_utc": 1525567409,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problem with Reverse Power Relay",
+        "author": "Canada_guy_electr",
+        "url": "https://www.reddit.com/r/ECE/comments/8hbbpz/problem_with_reverse_power_relay/",
+        "text": "I have an unusual situation that I am hoping this subreddit can provide some insight for. This is related to a reverse power relay that was part of a startup for a job. I encountered some unusual behaviour and while I was able to get the relay working I would like to confirm my suspicion and also find someone who can actually do the math. A decade or more ago I took negative/zero/positive sequence voltage coursework but honestly I am not going to be able to relearn that by Monday to the degree needed to prove everything out mathematically so here I am.\n\nSo the system I was setting up was fairly simple. It consisted of a reverse power relay that had a three phase voltage input and a single phase current input. The current was supplied by a 600:5 CT and the voltage was fed by an open delta 600:120 PT with B\\-phase grounded.\n\nTo test the reverse power relay I planned on simply swapping the CT leads and therefore cause the relay to think the power is flowing in the opposite direction. The test failed. I checked everything, all wiring was correct.\n\nThen I started looking at the reverse power relay wiring examples in the relay’s manual and they all clearly show that the phase angle between each phase should be 120 degrees as per normal ie; they come right off the bus. But in my case that PT is being used to go from 600V to 120V, probably for safety. Since this is open delta transformer is in actuality giving a 60 degree phase shift between the A and C phase \\(I can’t measure B because it is grounded\\) when measured to ground.\n\nI then realized that in the factory they probably test these only with a clockwise / ABC phase rotation \\(I confirmed this is the case\\) and the fact that this system is using a CBA rotation might throw things off with how the relay calculates power flow and direction badly enough to cause it not to function \\(I realize it is probably throwing it off under normal circumstances too\\). So thinking that is a possibility but honestly \\(sucking up my ego here\\) due to my math skills for this particular problem literally being over a decade out of practice I just figured the best way to test this theory was to flip the B and C phase input to the primary site of the PT. Lo and behold the relay now worked.\n\nI guess my question is, am I crazy? Can anyone do the math for this and show exactly why what is happening is happening? I can visualize it but that doesn’t translate to email very well. I suppose worst case I am going to have to get out my old books! Thanks in advance. Also if there are other subs this might be better for I am all ears.",
+        "created_utc": 1525563340,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Career advice for an incoming college student",
+        "author": "tdog473",
+        "url": "https://www.reddit.com/r/ECE/comments/8hb503/career_advice_for_an_incoming_college_student/",
+        "text": "Hi everyone, in the fall I'm going to UCSC and majoring in Computer Engineering and would really like some advice on what concentrations I should take, whether going beyond a BS is a good idea for me and what to do after college. [Here](https://ua.soe.ucsc.edu/sites/default/files/CE_17-18%20%281%29.pdf) is a link to the curriculum from last year. \n\nMy dream in becoming a Computer Engineer is to be a part of the advancement of computer hardware capability in our world, I'm sure there's a lot of ways of going about this, but what I have in my head is being part of R&amp;D for a company like Intel or AMD.\n\n* Is this a realistic goal for me to reach by the end of my career?\n\n* How would I go about achieving this goal?\n\n* What other ways might I contribute to the advancement of computers in my life?\n\n* Can I achieve this with a BS or is higher education pretty much mandatory?\n\n* Which of the concentrations should I go into?\n\n* Also how financially sound is this idea?\n\nOf course I haven't actually started taking classes yet and might be a miserable failure, but for the purposes of this post, let's assume I can hack it in Computer Engineering. Hopefully I didn't bombard you with way too many questions. Thanks in advance.",
+        "created_utc": 1525561443,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is embedded systems and Real time comouter control systems interrelated?",
+        "author": "LibertyState",
+        "url": "https://www.reddit.com/r/ECE/comments/8ha2me/is_embedded_systems_and_real_time_comouter/",
+        "text": "Hi,\n\nI'm in my final year EE and I have one spot for either embedded systems or real time computer control systems.\n\nThey both seem to cover scheduling, real time, etc. Exception is that only embedded systems course covers processors like ARM embedded processors, while only the real time course covers digital control system design. The remainder of the content seems to be similar. \n\nIf it helps, My interests are in my previous post in this sub. \nSo my question is which one is more valuable in the industry? Which topic is more important in the semiconductor and signal processing industry?",
+        "created_utc": 1525551138,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Online Masters in Construction Management",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8h9hla/online_masters_in_construction_management/",
+        "text": "[deleted]",
+        "created_utc": 1525545882,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm interested in working in defense, satellites, radars, missile systems, military tech, autonomous systems. What's to focus my study on?",
+        "author": "LibertyState",
+        "url": "https://www.reddit.com/r/ECE/comments/8h8nii/im_interested_in_working_in_defense_satellites/",
+        "text": "I'm almost done my EE undergrad, will have a 16 month internship experience in IC design/VLSI (in consumer electronics big semiconductor company). Although I like my job, I feel like I would be more passionate about other tech in defense and biomedical application.\n\nIe. radars, electronic warfar, weapon systems, autonomous missile systems, signal processing, satellites. The fields that really impact the world, not just consumer electronics. I would be also interested in ANALOG IC for those applications (eg. circuit design for a satellite). But the problem with this, is that usually circuits are outsourced to companies that are indirectly involved in the fields I mentioned above. Whereas i am finding that the signal processing side of things is in-home. I want to be in the center of where these applications are developed (eg. Department of Defense and not a small company that develops the circuits for the DoD).\n\nWhat I'm not interested in is RTL, Verilog, FPGA programming. I'm more into analog IC design (amplifiers, etc) and not digital (eg. logic synthesis, timing analysis). So for example, I would be interested in the analog circuitry for a satellite or radar or a weapon system, or signal processing side of things, since analog IC is outsourced.\n\nSo what is the best field to specialize in if I decide to do a Master's? Signal processing, control systems, analog IC design/VLSI, communication systems (wireless systems, eg LTE etc)?\n\nI would love to hear all your journeys. \n\nNote, I'm actually in Canada.",
+        "created_utc": 1525538242,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Master's before working, or work then get my master's later?",
+        "author": "DeadlyXyston",
+        "url": "https://www.reddit.com/r/ECE/comments/8h5w4h/masters_before_working_or_work_then_get_my/",
+        "text": "I am planning on going into integrated circuit design and was wondering if I should get my master's degree right after my bachelor's degree or should I work in industry for a few years and get my master's later.",
+        "created_utc": 1525503316,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PN Junctions: Why do minority carrier concentrations increase/decrease at the depletion region edge under forward bias/reverse bias?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8h55ff/pn_junctions_why_do_minority_carrier/",
+        "text": "[deleted]",
+        "created_utc": 1525493787,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where can I get real parameters of 3ph-transformers?",
+        "author": "Zrakk",
+        "url": "https://www.reddit.com/r/ECE/comments/8h4auz/where_can_i_get_real_parameters_of_3phtransformers/",
+        "text": "I'm working on a HVDC system simulation on PLECS and I'd like to consider real characteristics for every element I'll use, specifically a three-winding transformer (Yyd) for a 12 pulse rectifier.",
+        "created_utc": 1525484059,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Changing frequency of PWM - arduino uno",
+        "author": "jaffaKnx",
+        "url": "https://www.reddit.com/r/ECE/comments/8h3ahr/changing_frequency_of_pwm_arduino_uno/",
+        "text": "I am trying to change the frequency of the PWM signal by directly manipulating ports/pins of arduino uno. I am using pin 10, which means I'm using timer 1. The frequency on pin 10 is 490Hz. I am trying to bring it down to ~30Hz using 1024 prescaler by setting `CS12` &amp; `CS10` pins [(CS = 0x05=b'101)](https://playground.arduino.cc/Main/TimerPWMCheatsheet). When I run the code and check on the oscilloscope, all I see is a noisy signal and nothing like a square wave.\n\n\n    void setup(){\n      pinMode (10, OUTPUT);\n      TCCR1A = _BV(COM1A1) | _BV(COM1B1) | _BV(WGM11) | _BV(WGM10);\n      TCCR1B = _BV(CS12) | _BV(CS10);\n      OCR1A = 200;\n    }\n\n    void loop(){}\n\n\nAlso, just to clarify:\n\n-`COM` port is used to set whether you want an inverted/non-inverted PWM?\n\n-`WGM`: used to select the mode i.e fast PWM, phase correct (but what about just normal PWM i.e square wave with different pulse width based on the duty cycle set)?\n\n-`CS`: used to select clock prescaler/clock divider. \n\n\nTrying to get used to these terms.",
+        "created_utc": 1525474070,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Cyclone II FPGA IO bank voltage levels with LVDS.",
+        "author": "captain_wiggles_",
+        "url": "https://www.reddit.com/r/ECE/comments/8h33kt/cyclone_ii_fpga_io_bank_voltage_levels_with_lvds/",
+        "text": "I have a uni project to implement an ADC using a differential LVDS input + digital filters. This nicely sums up the project: https://pdfs.semanticscholar.org/d797/47beb2e2d9fcc299f0604f9e7562bafcf714.pdf\n\nThe uni has a couple of xlinux dev boards for use, but I've also got my own Altera DE2 dev board that I'd like to use. Unfortunately the cyclone II FPGA on the DE2 board only supports LVDS up to 2.5V and my IO bank is wired to 3.3V.\n\nI'm assuming there's something fundamental to the LVDS hardware inside the FPGA that won't work (read: explode) if I try and put a 3.3V signal into it.\n\nMy design won't synthesise because of this:\n\n    Error (169029): Pin DATA_VOLT_IN_DIFF is incompatible with I/O bank 5.  Pin uses I/O standard LVDS, which has a VCCIO requirement incompatible with that bank's VCCIO setting or its other pins that use VCCIO 3.3V.\n    \n    Info (169073): Pin DATA_VOLT_OUT in I/O bank 5 uses VCCIO 3.3V\n    Info (169073): Pin SW[1] in I/O bank 5 uses VCCIO 3.3V\n    Info (169073): Pin SW[0] in I/O bank 5 uses VCCIO 3.3V\n\nI could tell Quartus II that actually that IO bank is 2.5V and change all IO standards to be 2.5V compatible. However on the actual board VCCIO would be 3.3V.\n\nI guess I could try and replace my 3.3V rail with 2.5V, but that's liable to go badly wrong (I'm not that great at soldering and there is no 2.5V rail on the board, so it'd have to be an external supply).\n\nI'm kind of resigned to just using the UNI boards, but it's a pain in the ass that I can't test them except for when I'm in the faculty.\n\nAny suggestions?",
+        "created_utc": 1525472247,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm looking for graduation project idea about High Efficiency Video Coding",
+        "author": "madloggan",
+        "url": "https://www.reddit.com/r/ECE/comments/8h1nre/im_looking_for_graduation_project_idea_about_high/",
+        "text": "I want to do a project about hevc (High Efficiency Video Coding) but the problem I don't know which topic I can do it for the project?\n\nlike compersion between h.264 and h.265?\n\nSorry, if the topic is not specific to ECE, If someone knows subreddit for Video Coding tell me",
+        "created_utc": 1525460126,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Finance to Computer Engineering: An Admirable Pursuit or a Delusional Undertaking?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8gzvnf/finance_to_computer_engineering_an_admirable/",
+        "text": "After 4.5 years in corporate finance at a major global automaker, I decided to pursue a vastly different career... in Computer Engineering. As my undergraduate business degree lacks many pre\\-requisites in engineering, I am enrolling as a post\\-baccalaureate student to complete designated pre\\-requisite courses which are required \\(the bare minimum I am guessing\\) for consideration into M.S. in Computer Engineering in the future.\n\nThe glim reality is that I am looking at at least 9 pre\\-req courses which would put me a step closer to being able to apply for M.S. Comp Engineering program, and due to sequentiality of courses, it may take me up to 1.5 \\- 2 years to fulfill them. \n\nTo add to that, the completion of these pre\\-requisites does not guarantee graduate admission \\(duh!\\) and I will not have a Bachelors of Science degree.\n\nThe road seems kind of long and the future a bit unclear. Am I making an unreasonably difficult choice for myself even though this seems right for me?",
+        "created_utc": 1525445975,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can I help the world by using electrical engineering?",
+        "author": "my__username__",
+        "url": "https://www.reddit.com/r/ECE/comments/8gyvnm/can_i_help_the_world_by_using_electrical/",
+        "text": "I want to help people/the environment. Does electrical engineering provide me that opportunity? I only ask because so much of what is done (from what I see) is things like the next phone. Material science/physics is the cutting edge of green energy, biomedical is obviously medical tools, computer science can bring people, opportunity, and knowledge to other people... what good can electrical engineering do?",
+        "created_utc": 1525437177,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PLC Versus Microcontroller - What's In Your Plant?",
+        "author": "PLCGurusNET",
+        "url": "https://plcgurus.net/plc-versus-microcontroller/",
+        "text": "",
+        "created_utc": 1525434616,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Adhesives on SMD heatsinks?",
+        "author": "spainguy",
+        "url": "https://www.reddit.com/r/ECE/comments/8gyk9s/adhesives_on_smd_heatsinks/",
+        "text": "I'm playing around with some SO8 Pfet power switches, and going to use some Fischer [heatsinks](https://uk.rs-online.com/web/p/heatsinks/5040722/), with adhesive. How good is the glue when overheated, will the heatsink fall off? Any other alternatives, I'm planning on using thick PCB copper as well\n\nI'm just trying to think *worst case*",
+        "created_utc": 1525433854,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which areas should I study to become expert in wireless networks?",
+        "author": "lora_gateway",
+        "url": "https://www.reddit.com/r/learnprogramming/comments/8ggaz2/what_areas_should_i_study_to_become_expert_in/",
+        "text": "",
+        "created_utc": 1525430084,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should I focus on in EE?",
+        "author": "GeneralJarby",
+        "url": "https://www.reddit.com/r/ECE/comments/8gy1xr/what_should_i_focus_on_in_ee/",
+        "text": "Hello everyone, I am a sophomore electrical engineer. I'm not sure what exactly I want to do in EE but I think it's the most interesting degree path for me. Where can I find information on what the fields are like? I know about the branches, like communications, analog, power, etc but I'm looking for more detail on each of those. Thanks!",
+        "created_utc": 1525427493,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why would I need a transistor in wiring up LEDs?",
+        "author": "JoseCFM",
+        "url": "https://www.reddit.com/r/ECE/comments/8gw73n/why_would_i_need_a_transistor_in_wiring_up_leds/",
+        "text": "Same with a capacitor. Where would I use those components and what would their purpose be?",
+        "created_utc": 1525403797,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Online free course on embedded systems with a focus on hands-on experience",
+        "author": "jaffaKnx",
+        "url": "https://www.reddit.com/r/ECE/comments/8gw6ch/online_free_course_on_embedded_systems_with_a/",
+        "text": "Are there good online websites that have a project course you can enroll in for free and mainly work on decent projects in embedded systems be it ARM/AVR? Looking for a project to set out on over the summer.\n\n",
+        "created_utc": 1525403576,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ever wonder how we went from wireless telegraphy to AM radio? Well, it all had to do with a transmitter that made a “peculiar wailing sound” in 1898.",
+        "author": "KathyLovesPhysics",
+        "url": "https://youtu.be/RYHaihLhBvc",
+        "text": "",
+        "created_utc": 1525402451,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Three Phase Power Substation Protection Interview questions",
+        "author": "brecheison",
+        "url": "https://www.reddit.com/r/ECE/comments/8gvxyt/three_phase_power_substation_protection_interview/",
+        "text": "Hey I guys, I have a Technical Interview coming up next week for a position to join an engineering team that will be responsible for integrating IED's into SCADA by using PLC's, DCS, and electrical protection relays. I was given a tip by a friend, to know three phase power and protection very well because, well that was my focus in college. \n\nSo does anyone possibly have example interview questions for three phase power and protection? It can be qualitative or quantitative, I don't care. I think I might be over thinking it all, and need to just trust what I know, but still, Ive never had an interview like this and would love to maximize my chances of landing this job. \n\nOn the same note, if anyone has any PLC, DCS, or fundamental communications questions that might show up on an interview, I'd love to hear those as well.\n\nThank you in advance!",
+        "created_utc": 1525401172,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reading audio samples off a .wav file and amplifying using LM386",
+        "author": "xypherrz",
+        "url": "https://www.reddit.com/r/ECE/comments/8gv0i5/reading_audio_samples_off_a_wav_file_and/",
+        "text": "Has anyone tried sampling audio from a .wav file stored in an SD card reader, amplified it (perhaps using LM386) and play it on the speaker? [Something like this](https://www.arduino.cc/en/Tutorial/SimpleAudioPlayer) but they use arduino due, which has a built-in DAC and the library they're using is made for that I believe. I'm set out to accomplish this using arduino UNO (which doesn't have a DAC) but I have some queries. \n\n- Do I actually need a DAC circuit be it using a DAC chip or a resistor-ladder circuit to convert the audio samples into an analog, which is then amplified or it could be done without the use of DAC as well?\n\n- How do you go about encoding the audio sample bits? Is there any program that does it?\n\n- Do I really need to use an external audio library like [this one](https://github.com/arduino-libraries/Audio/blob/master/src/Audio.cpp) or I'm better off without it?\n\n\n",
+        "created_utc": 1525392128,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ECE branches(?)",
+        "author": "fluffyy98",
+        "url": "https://www.reddit.com/r/ECE/comments/8gsng1/ece_branches/",
+        "text": "I just finished my second year in Electronics and Communications engineering and I don't know what to do ahead of this. My uni requires me to do some core courses in the first two years - Signals and Systems, Circuit theory, Embedded logic, EM waves, Communication Systems, Integrated Electronics, Calculus and Differential Equations.\n5th semester on, we are expected to choose our own electives that may possibly determine our future ECE \"branch\" (not sure if that term is correct). Branches that my college offers are - Circuits and VLSI,\t      Communications Engineering, Signal and Image Processing, and\t            Controls and Embedded Systems. So far I've been most interested in Embedded Systems(FPGA, Verilog) and Integrated electronics(Transistors) courses. If anyone could walk me through where any of the branches might lead, an overview of the course content, job profiles, future scope, requirements etc. I'd really appreciate it. Thanks!",
+        "created_utc": 1525372579,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "DC stick Welder capstone",
+        "author": "papadil",
+        "url": "https://www.reddit.com/r/ECE/comments/8gqjco/dc_stick_welder_capstone/",
+        "text": "For my senior capstone project I want to design a DC stick welder with a limited short circuit output current. I need to limit the output current to around 40 Amps, can this be done using a current mode buck converter? I know peak current mode is typically used to regulate voltage but I know the output of the error amplifier feeding back the voltage can be clamped to a specified value and hence limiting the current. Is this a feasible project for a student to design and build in 3 months? Thanks",
+        "created_utc": 1525355703,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to get into Embedded systems as freshmen",
+        "author": "-shaktiman-",
+        "url": "https://www.reddit.com/r/ECE/comments/8gq25z/how_to_get_into_embedded_systems_as_freshmen/",
+        "text": "I'm a Freshman ECE student. I want to get into Embedded systems during summer break. \n\n\nWhat I know:\n* C\n* Circuit Theorems\n* Adders, Flip-Flops, Digital Logic\n\nI found a course on Edx recommended many times([Embedded Systems - Shape The World: Microcontroller Input/Output](https://www.edx.org/course/embedded-systems-shape-the-world-microcontroller-inputoutput)) is this course good?\n",
+        "created_utc": 1525351271,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "High quality youtube channels",
+        "author": "PorkBellyFutures",
+        "url": "https://www.reddit.com/r/ECE/comments/8go104/high_quality_youtube_channels/",
+        "text": "Who produces the very best content on youtube in the ECE area of interest? Whether it be technology history, design, news, what have you. \n\nI created this post because I wish to find more content like the following. \n\n[Technology Connections](https://www.youtube.com/channel/UCy0tKL1T7wFoYcxCe0xjN6Q) - Highly refined and well researched content, usually in the area of tech history.\n\n[Kreosan](https://www.youtube.com/channel/UClUZos7yKYtrmr0-azaD8pw) - Delightfully foreign fellows run afoul of every imaginable safety precaution, resourcefully building things with little supplies.\n\n[Tech Ingredients](https://www.youtube.com/user/TechIngredients) - More highly redefined and well produced content on a variety of engineering topics, with rigorous experimentation and explanation, but not a classroom lecture.\n\nHonorable mentions go to \nBigclive\nEEVblog\nElectroBOOM\n\nBut I feel that these are already well known, and not in need of promotion. \n\nSo what about the less known but great content like the first three?",
+        "created_utc": 1525325076,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Career advice for grad student.",
+        "author": "ece-engineer",
+        "url": "https://www.reddit.com/r/ECE/comments/8gnemc/career_advice_for_grad_student/",
+        "text": "Hi All,\n\nI am a graduate student in Electrical Engineering, specializing in Digital VLSI, from ASU. I am graduating next week and would like some advice regarding finding a full time job.\n\nSo far, I have completed courses such as VLSI Design, Computer Architecture, Semiconductor Memory Technologies. I have an in\\-depth understanding on combinational and sequential circuit elements and design, digital logic design, MIPS architecture, Cache replacement policies, and memory technologies such as DRAM, NAND Flash, 3D XPoint. Apart from these, I have a grasp over semiconductor device physics, analog circuits. \n\nI have interviewed so far with a couple of companies, but nothing has turned out positive. I do not have any prior internship or work experience. For what its worth, I'm an international student, currently on F1 Visa and would need H1B sponsorship down the road. \n\nI've been actively applying for jobs on company websites, career portals, networking on LinkedIn and emailing recruiters/managers, hoping to secure an interview, but of no avail. I'm looking for full time positions as a Physical Design Engineer, SoC Design Engineer, Product Engineer and any position on those lines.\n\nIs there anything I'm not doing right? Is there anything else I should be doing? Any piece of advice is much appreciated. Thanks ",
+        "created_utc": 1525318162,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PIC UART Frame Errors (X-Post PIC_Programming)",
+        "author": "MajorasMaskForever",
+        "url": "https://www.reddit.com/r/ECE/comments/8gnbfr/pic_uart_frame_errors_xpost_pic_programming/",
+        "text": "I have a PIC24FJ64GA202 that I'm attempting to receive data from a Raspberry Pi Zero over UART that for some reason always has frame errors. I'm trying for 115200 baud with 8N1 settings.\n\nI've measured the baudrates of both the PIC and RPi to be 116504 and 115384 respectively ( a 0.9% difference) and occasionally some bytes do get across but never full messages, even ones as short as 3 bytes. When I connect to the PIC via an FTDI cable it gets everything flawlessly and when I connect that same cable to the RPi I can read everything its sending perfectly. Checking the status bits of the UxSTA register it shows that there is a frame error that occurs nearly every single time. \n\nI am receiving and transmitting bytes using interrupts that fire once a single byte has come in/gone out. The interrupts are the same priority (default settings) and the UART channel BRG is set to 34. I have posted the clock configurations. \n\nPLLDIV = PLL8X\n\nSOSCSEL = OFF\n\nPLLSS = PLL_FRC\n\nPOSCMD = NONE\n\nOSCIOFCN = OFF\n\nFCKSM = CSDCMD\n\nFNOSC = FRCPLL\n\n\nI have been struggling with this for some time now and have completely ran out of ideas as to why this will not work. Any suggestions would be greatly appreciated\n\nEDIT: PIC UART config is\n\nUxMODE 0x8008 \n\nUxSTA 0x3400\n\nUxBRG 34\n\nCircuit distance is about 4 inches, oscope showed signals to look clean (No ringing, sharp edges, full 3.3V voltage coverage)",
+        "created_utc": 1525317209,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need advice for job searching",
+        "author": "GeeeThree",
+        "url": "https://www.reddit.com/r/ECE/comments/8gnao0/need_advice_for_job_searching/",
+        "text": "I recently graduated with a degree from computer engineering and I've recently started the job search.\nI've been looking for a job in my field (programming, cyber security or digital/computer forensics), but it seems like every entry level job has requirements that I don't meet. I'm not saying I don't meet any requirements, but the only experience I have is school related.\nI'm trying to stay in my area because I will be starting a master's program in Fall and will not be allowed to take any online classes.\nAny advice is appreciated, thank you",
+        "created_utc": 1525316973,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My team is looking for an entry-level embedded electrical engineer. Virginia USA",
+        "author": "Eric_the_EE",
+        "url": "https://flowserve.jobs/lynchburg-va/embedded-electrical-engineer/9ADEACC3E90D4335A8FF1F5223672E88/job/",
+        "text": "",
+        "created_utc": 1525302112,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Open delta resistive load calculations • r/ElectricalEngineering",
+        "author": "Tanky321",
+        "url": "https://www.reddit.com/r/ElectricalEngineering/comments/8ga3o8/open_delta_resistive_load_calculations/",
+        "text": "",
+        "created_utc": 1525265910,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Embedded Systems - RTOS vs Bare-Metal",
+        "author": "chtef",
+        "url": "https://www.embeddedrelated.com/thread/5762/rtos-vs-bare-metal",
+        "text": "",
+        "created_utc": 1525265706,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with learning Electronics",
+        "author": "HiSorryForOffendingU",
+        "url": "https://www.reddit.com/r/ECE/comments/8gg6rm/help_with_learning_electronics/",
+        "text": "I am a high school student, studying computer science &amp; electrical engineering, and I am totally lost. We are already learning about amplifiers and transistors but till lately I did not even know what is voltage. I have tried khan academy and the book The art of electronics, khan acedemy is really well explained but I need calculus, and the second one does not need math but I do not think it explains the absolute basics. Can you recommend me some resources I should use, or generally what I should do? Also, if I really need calculus, what are some good resources for that?\n\nThanks a lot!",
+        "created_utc": 1525254535,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Career advice, save me.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8gcm1x/career_advice_save_me/",
+        "text": "[deleted]",
+        "created_utc": 1525214670,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am currently about to finish DSF (Digital Signals and Filtering, my University's first signals class) and I feel like I haven't truly learned anything.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8gbmxp/i_am_currently_about_to_finish_dsf_digital/",
+        "text": "As the title says I am finishing up DSF and I am still not sure what anything means. I can do the math, but I don't fundamentally understand anything. Worst part (maybe to some people best) I will probably be finishing this class with an A. Anyone have any good online reading/video series about this class? Thank you in advance!",
+        "created_utc": 1525206543,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Plan for learning embedded Linux and contributing upstream?",
+        "author": "FuriousSalads",
+        "url": "https://www.reddit.com/r/ECE/comments/8g9mme/plan_for_learning_embedded_linux_and_contributing/",
+        "text": "Hi everyone! I’m a year out of college, where I studied EE. I’ve been working as a front end developer since then.\n\nI’ve been itching to get back to my roots and transition to embedded development. Embedded Linux seems like a hot topic, so I figured that would be a solid target.\n\nHow does this plan sound for transitioning to embedded Linux?\n\n1. Take Bootlin’s Embedded Linux and Kernel &amp; Driver Development training (free material!). The latter course goes through building an I2C driver\n2. Take the Eudyptula Challenge to learn the kernel contribution process\n3. Start cleaning up drivers in staging\n4. Research other areas in the kernel, hang out in mailing lists, find other projects to work on\n\nFull disclosure: I’m a complete newb to the world of Linux. Please let me know whatever I’ve got wrong! ",
+        "created_utc": 1525191049,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I started a new job 6 months ago. It's horrible. How do I quit without burning any bridges?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8g9ctf/i_started_a_new_job_6_months_ago_its_horrible_how/",
+        "text": "[deleted]",
+        "created_utc": 1525188971,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking to get into Avionic Hardware Design, where do I start?",
+        "author": "MarsUDropout",
+        "url": "https://www.reddit.com/r/ECE/comments/8g8b6t/looking_to_get_into_avionic_hardware_design_where/",
+        "text": "I do have hardware design experience but nothing is avionics. Any where I can go or any book I can read to just get me started in the right direction?",
+        "created_utc": 1525180042,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wireless charging solution for 4*18650 ?",
+        "author": "davideo71",
+        "url": "https://www.reddit.com/r/ECE/comments/8g72um/wireless_charging_solution_for_418650/",
+        "text": "Building a clumsy prototype and wondering if there is a solution out there to charge my four 18650 batteries. It would also be interesting to know how long it would take to charge and how exact the placement of the prototype on the charger would need to be.  ",
+        "created_utc": 1525165871,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "pluggable connector with screw terminals both sides?",
+        "author": "mattkenny",
+        "url": "https://www.reddit.com/r/ECE/comments/8g6g1h/pluggable_connector_with_screw_terminals_both/",
+        "text": "[removed]",
+        "created_utc": 1525156963,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[GEAR] High End Meters for Industrial Automation",
+        "author": "BinaryLinux",
+        "url": "https://www.reddit.com/r/ECE/comments/8g54kj/gear_high_end_meters_for_industrial_automation/",
+        "text": "Hey there gents and lassies,\n\nGot me that sweet, sweet overtime pay for working a few weekends, so I deserve I nice reward, right? Been window shopping for meters I can't afford... but now I can afford them!\n\nBeen eyeing up that Fluke 87V for a while now, she looks like a beaut! I was also looking at some of their process meters as well, the 4-20mA output is pretty nifty, definitely could have used that in the field. Then, I noticed Keysight makes DMM's as well, who knew? I know their scopes are great, but I have never seen a Keysight DMM in the wild. Anyone wanna toss their 2 cents into the hat? My background is Industrial Automation, typically working with 3ph/600VAC/3 digit amp feeds, Allen Bradley/Siemens PLCs and drives, all that good stuff - safety features are a must have. Let's say sky is the limit for my budget. I could always work so more weekends if I need to.",
+        "created_utc": 1525141772,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "For God's sake I cannot understand sequential logic.",
+        "author": "JoseCFM",
+        "url": "https://www.reddit.com/r/ECE/comments/8g4onj/for_gods_sake_i_cannot_understand_sequential_logic/",
+        "text": "We're learning about sequential logic circuits in our electronics class in high school and I CANNOT understand them. I know how to build the JK flip flops etc. if shown the schematic but I can't wrap my head around how they work. \n\nI was doing great before that but now my grades are dropping and I can't catch up.\n\nIs there any online resource that teaches how they work or can one of yall help me understand them? I'm planning on taking Electrical Engineering as my career but now I'm kinda losing hopes :(",
+        "created_utc": 1525137675,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Shitty Education",
+        "author": "halffail",
+        "url": "https://www.reddit.com/r/ECE/comments/8g3a6l/shitty_education/",
+        "text": "Hi,\n\nI couple of days ago I realised something that I already suspected: my education was bad. I am yet to figure how bad it was, though... I graduated from a small countryside university with a BE degree in computer engineering back in 2016. I felt that I was lagging behind in my final year and then I tried to catch up by studying by myself, but I am not sure if that helped at all. \n\nIn the beginning of 2017 I've got a job and moved to another state. At that job it was ok, because most of the work was just writing code that didn't require that much knowledge or expertise. But this changed when I moved to this new job. The product is very high\\-tech and people I work with all got their degrees from top brazilian universities. When we're having lunch together and they talk about their education I feel like I had no education at all, given the disparities in quality. \n\nDuring work I try everything to not need help, but it's almost impossible because of the nature of the product. And with that comes the feeling that people will find it out and I'll end up being kicked out.\n\nI was trying to map the areas that I am most deficient in and it will almost always be in the electrical side of the degree: electronics, analog circuits, circuit analysis and design, control, signal processing and so on. It also happens with the computing side but with less intensity. Overall, when I think of a course I took I can remember some of the main topics in it but with none or little depth. \n\nWell, this has been cause of  a lot of anxiety lately. When I think about going through all the material again it seems a very daunting endeavour and I can't stop thinking that maybe I won't understand these things ever. Part of coming here to write this post is to try think this situation better and maybe get some help from you. \n\nJust a couple of books from uni remained and they are not on the fields that I need. Maybe some of you could suggest a bibliography or something else with the core of ECE to help me out.\n\nThanks for your time",
+        "created_utc": 1525125299,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Intel 8086 assembly language good source for learning.",
+        "author": "MarIwann",
+        "url": "https://www.reddit.com/r/ECE/comments/8g2lk1/intel_8086_assembly_language_good_source_for/",
+        "text": "Hello everyone. I am finishing a course in microprocessors and am interested a bit more in learning this assembly. I am looking for a good book on the subject if anyone knows. Also can anyone tell me if  learning this is useful?",
+        "created_utc": 1525119900,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the current trend in industry for custom processors and/or hardware acceleration?",
+        "author": "bskilly",
+        "url": "https://www.reddit.com/r/ECE/comments/8g2a1c/what_is_the_current_trend_in_industry_for_custom/",
+        "text": "For the past couple weeks, the graduate course I am taking had us working with the Tensilica Xtensa configurable processor. We accelerated a convolution algorithm by implementing custom instructions that utilized concepts like SIMD and \"fusion\" (fusing multiple instructions into one). \n\nI was surprised to see just how easy it all was. For those of you who don't know how the Xtensa processor works, you start with their base processor, and their IDE allows you to define custom instructions with their proprietary HDL. When you implement your instructions, you're given a header file containing C-callable functions that you just insert into your code. \n\nI feel like they took what is usually an incredibly complicated process (designing custom chips) and simplified it greatly, so I'm curious why I haven't heard of these configurable processors up until now.  I looked at their customer profile for this processor, and it looks like a number of companies are using their IP to create custom processors to accelerate different things in enterprise products (i.e. cisco is using them in some of their routers). I really enjoyed this lab and I would love to do similar work after I graduate, but how is this kind of thing typically done in industry? \n\nIs this a big market? or is hardware acceleration mostly done by building custom chips from the ground-up through traditional means?  ",
+        "created_utc": 1525117437,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Home Chip Fabrication in 66 Steps",
+        "author": "mech_eng_lewis",
+        "url": "http://sam.zeloof.xyz/first-ic/",
+        "text": "",
+        "created_utc": 1525094956,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "First IC :) – Sam Zeloof",
+        "author": "[deleted]",
+        "url": "http://sam.zeloof.xyz/first-ic/",
+        "text": "[deleted]",
+        "created_utc": 1525094928,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this normal for an (entry level) EE job, and is it reasonable for me to be anxious?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8fvlvg/is_this_normal_for_an_entry_level_ee_job_and_is/",
+        "text": "[deleted]",
+        "created_utc": 1525048151,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any blog or article that explain how the voltage is stored and interpreted as binary, from sillicon to processors?",
+        "author": "fl3xz3r0",
+        "url": "https://www.reddit.com/r/ECE/comments/8fptwh/any_blog_or_article_that_explain_how_the_voltage/",
+        "text": "Just want to feel gaps in my knowledge",
+        "created_utc": 1524985260,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Given the state of power electronics, why couldn't I replace a SVC with a Solar Plant?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8fnyu4/given_the_state_of_power_electronics_why_couldnt/",
+        "text": "[deleted]",
+        "created_utc": 1524961908,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[HELP] Building a Piano (DAC) concept help",
+        "author": "kyookyoo22",
+        "url": "https://www.reddit.com/r/ECE/comments/8fnipn/help_building_a_piano_dac_concept_help/",
+        "text": "Hello!\n\nI just wanted some help with the concept. So I'm building a piano using DAC concept. I am fairly new to embedded systems.\n\nI'm using a Texas Instrument micro controller board TM4C123GH6PM with a breadboard. So from my understanding using a R2R configuration will change the voltages on each branch. But since I want to make a piano (just one octave) how do I code it in C to manage / change the frequencies?? \n\nC - 523 Hz\nB - 494 Hz\nBb - 466 Hz\nA - 440 Hz\nAb - 415 Hz\nG - 392 Hz\nGb - 370 Hz\nF - 349 Hz\nE - 330 Hz\nEb - 311 Hz\nD - 294 Hz\nDb - 277 Hz\nC - 262 Hz\n\nI'm referencing off Jonathan Valvano's website since he uses the same micro controller, but I do not understand how he is able to output different frequencies in his code. \n\nhttp://users.ece.utexas.edu/~valvano/Volume1/E-Book/C13_DACSound.htm\n\nHis sample code is near the bottom of that page. Any help, links, tips would be greatly appreciated!! Thank you!!",
+        "created_utc": 1524957221,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is this \"chip\" thing it was inside this clothing tag.",
+        "author": "kmeier2001",
+        "url": "https://i.redd.it/9owvj87ucqu01.jpg",
+        "text": "",
+        "created_utc": 1524956418,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Controls notes?",
+        "author": "adeep-er",
+        "url": "https://www.reddit.com/r/ECE/comments/8fl6pq/controls_notes/",
+        "text": "Hey guys, if any of you have taken a controls class and took good notes could I use them to prepare for the course? Thanks!",
+        "created_utc": 1524934958,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "3 or 4 sided capacitor, how would / does it work? Any use?",
+        "author": "herkato5",
+        "url": "https://i.redd.it/r1hdhoiq47u01.png",
+        "text": "",
+        "created_utc": 1524922399,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Proprietary baud on ucontroller uart lines",
+        "author": "SoleSoulSeoul",
+        "url": "https://www.reddit.com/r/ECE/comments/8fhomu/proprietary_baud_on_ucontroller_uart_lines/",
+        "text": "Hello /r/ECE\n\nI'm working on a project which uses a ucontroller with four 3v3 uart ports. I need to be transmitting and receiving at 750k baud (old, proprietary hardware being converted from dual-line to TTL through an FTDI chip). We're running a lightweight linux distribution called Armbian. Due to OS constraints, we cannot consistently set custom baud rates through stty commands, nor can we seem to get a C driver working to modify the ospeed and ispeed through /asm/termios.\n\nI can, however, take a POSIX accepted baud rate which is higher than our required 750k and clock it down, so to speak, right?\n\nExample, if I have 921,600 baud as an accepted baud rate which can be natively configured with our OS, but then clocked the serial clock down to a level where 921,600 is actually 750k baud, would that work?\n\nI'm using the formula (base serial clock speed/higher accepted baud setting) * (desired baud setting) to get the new, slower serial clock speed that I'll need to use.\n\nI'm sorry if my question is poorly worded, I'm pretty new to serial communications and wanted to know if this type of work around is feasible.\n\nThanks!\n",
+        "created_utc": 1524890405,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "serious code converter question!! Binary (NOT BCD) to Excess-3",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8f8hy3/serious_code_converter_question_binary_not_bcd_to/",
+        "text": "[deleted]",
+        "created_utc": 1524798205,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to deploy Laravel to Kubernetes",
+        "author": "keithmifsud",
+        "url": "https://learnk8s.io/blog/deploying-laravel-to-kubernetes",
+        "text": "",
+        "created_utc": 1524795272,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for some input on my situation.",
+        "author": "spoonwitz97",
+        "url": "https://www.reddit.com/r/ECE/comments/8f7g7w/looking_for_some_input_on_my_situation/",
+        "text": "Hey everyone, first time poster here. Been lurking for a while and I enjoy this sub. I posted this over at r/EngineeringStudents as well. \n\nSkip to the part that is bolded if you don't care about the background information and want the immediate concern of mine. \n\nAnyways, I'm currently enrolled at my local community college, just turned 21, and am graduating with an Associates in Engineering and Advanced Manufacturing, which was a two year program there, once this spring semester is over. The classes for it are almost what you'd take your first two years of a 4 year program, but there are plenty of more focused classes you have the option of taking like strength of materials, circuit theory, dynamics and statics etc.\n\nI am transferring to Wentworth Institute of Technology for the Fall 2018 semester, and working towards an electrical engineering bachelors there. I'm very excited and am really looking forward to all of it. \n\nThe classes I have taken are: \n\nSemester 1\n\n- College algebra\n- Intro to engineering\n- English comp 1\n- COL101 (I forget what it was even called to be honest)\n\nSemester 2\n\n- Precalculus\n- General Chemistry\n- Intro to Robotics\n- Human Communication\n\nSummer semester\n\n- Macroeconomics\n- Calculus 1\n\nSemester 3\n\n- Calculus 2\n- University Physics 2\n- 3D Mechanical Design and Analysis 1 (CAD stuff)\n- Statics\n\nWinter intercession\n\n- Microeconomics\n\nSemester 4 (current spring 2018 semester)\n\n- Calculus 3\n- Differential Equations\n- University Physics 2\n- 3D Mechanical Design and Analysis 2\n\nEverything looks fine and dandy I'm sure there. This current semester I have a B or better in all the classes I'm taking, with an overall GPA of 3.5. \n\n**MY CONCERN**\n\n*Disclaimer: The Physics professor at my college is very nice, he's fun to talk to and interesting. I have nothing against him other than the way he runs his class.*\n\nIt all boils down to the University Physics 1 and 2 classes I have taken/am taking. I hate saying this, but to me, the classes are both a joke and not worth the time, and money. The way the class was ran for University Physics 1 was the first two weeks we like, read these random quotes and short stories about physics, and why it's interesting, but it was all this cryptic stuff that to me, did not matter one bit to physics. I felt like I was in a Physics based English class. After that, we kind of started to do actual physics, it was very basic stuff where we had to look at a real system and analyze things that are happening in it. My major issue with this class was that our professor literally, I mean literally, never lectured a single minute. The beginning of class he basically explained the worksheet we'd do that day for 5 minutes, if that, and let us just try to do it. Everyone felt like they just got tossed into shark infested waters and we had to fend for ourselves and learn all this on our own, which was true, except the way the class was ran dropped our morals and a lot of students didn't care. I talked to others in the class and they feel the exact same way. Oh also, our only grades are a test, a final, and participation. The tests are both totally open book, open notes, open computers, open talk to ANYONE in the room. I think that's total crap. I saw multiple people copy stuff down from the internet, or others, and they get a 100 on it. I ended up with an A, and I wasn't even happy about it because I didn't earn it. I busted my ass in calc 2 and got an A- and I was very happy with that. When our professor grades the papers, I feel like he doesn't look at the work, there's no marks anywhere, even if something is wrong (I'll get to that in the next part). We just see 10/10 written on the back, and it's only a few questions we have to answer. \n\nUniversity Physics 2 is basically the exact same. We still do not go over anything in the book as a class, where a lecture should occur. So far the only difference is that we didn't read random Physics quotes in the first two weeks of the semester. We have had one test so far, and I got a 10/10 on it, cool. Except I purposely answered a question wrong so I don't get an A for both physics courses, I might sound wrong for this, but I feel like getting perfect grades for physics classes is really difficult, and I'm not the type of person to want to get a grade handed to me. I was surprised to see my professor didn't grade me incorrectly and it made me feel like he doesn't care if we know the material or not. I just feel like I'm wasting my time and money, and I feel like I was cheated out of learning physics, something I've always been passionate about throughout my life. I have no desire to go to class and attend, but I do it anyways because it's just rude to not show up. Plenty of kids skip out on a weekly basis. \n\nSoooo, as someone going for electrical engineering, who has not learned the material to the extent I should have in University physics 1 and 2, am I screwed? Should I take them at Wentworth? \n\nTLDR: I have not even come close to learning material covered in physics 1 and 2 due to the way the professor handles the classes. He doesn't lecture, and gives very little background information to us before we start our in class work. He seems to hand out A's to students (happened to me) while the students don't really know much. One more piece of information, the way grading works is this, 1 test, and a final, and participation grading. The test and final are open book, notes, computers, and even the people around you. Most people just copied each other and called it a day and got 10/10's. Am I screwed for electrical engineering, as a transfer student from a community college? I know my calculus well I feel if that matters. ",
+        "created_utc": 1524787944,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Phase in Electrically Small Receiving Loop Antennas",
+        "author": "Minifig66",
+        "url": "https://www.reddit.com/r/ECE/comments/8f7a2x/phase_in_electrically_small_receiving_loop/",
+        "text": "Hi folks,\nMy current project is a direction finding radio, and it uses an electrically small loop antenna.\n\nI want to collect phase information from the loop and from a small whip antenna, but I'm having some trouble getting my head round the relative phases.\n\nAs I understand the whip antenna gives me a voltage output that is in phase with the electric field signal. This I'm confident with.\n\nThe loop antenna however has me stumped. One book suggests that it is sensitive to the electrical field across it, and so introduces a 90 degree phase shift in the output current. Wikipedia claims that it is sensitive to the magnetic field, and implies the resulting current is in phase with the magnetic, and therefore electric fields.\n\nI'm assuming the electric and magnetic fields are in phase, as they're transmitted from a vertically polarized source.\n\nDoes anybody know what the phase of the current output actually is?\nThanks!\n\nEdit: [This is my thinking behind a 90 degree phase shift.](https://i.imgur.com/RDzcE9Y.png)",
+        "created_utc": 1524786357,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help: Need to convert 120VAC signal to 0-10VDC",
+        "author": "mdmiles19",
+        "url": "https://www.reddit.com/r/ECE/comments/8f35pp/help_need_to_convert_120vac_signal_to_010vdc/",
+        "text": "I have an antique panel that I would like to use to control lighting in my house. The issue is the panel uses phase dimming but my fixtures utilize a 0-10VDC signal for dimming. \n\nIs there a component that I can add in between the panel and the fixtures that will convert the 120VAC phase dim into a 0-10VDC signal? Or another way I can accomplish my goal.",
+        "created_utc": 1524753667,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where's a good place to study online?",
+        "author": "RiegoJere",
+        "url": "https://www.reddit.com/r/ECE/comments/8f1l2r/wheres_a_good_place_to_study_online/",
+        "text": "**What's up guys!**\n\nJust finish this semester and glad to say I'll become a 5th year next semester. I just want to know what online site \\(paid/free\\) can i learn ECE courses?. Need to study and besides my semester break is boring. ",
+        "created_utc": 1524738199,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone please explain how this was derived?",
+        "author": "timiade",
+        "url": "https://i.redd.it/gf4097ivy7u01.png",
+        "text": "",
+        "created_utc": 1524733855,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need some advice pitching an idea to a company",
+        "author": "GeeeThree",
+        "url": "https://www.reddit.com/r/ECE/comments/8f0mml/need_some_advice_pitching_an_idea_to_a_company/",
+        "text": "I'm a senior computer engineering major, graduating this semester. \nLast Friday, my team and I had to present our senior project. Everyone loved it, including the professors and judges that were there; they loved the convenience and practicality of the project.\nWe were told that we should try to market this product.\n\nMy team consists of four electrical engineering majors and one computer engineering major, all graduating this semester. Our project is very niche, and there's only one other company that does anything remotely similar to what our project does. We know what market to target, whether it's to pitch the idea to a company or to start our own company and try to sell it ourselves, but the problem is that we're all graduating this semester and have no experience in this area. We have little to no funding as of right now, but we were thinking about doing a kickstarter campaign to try and raise money.\n\nI was just wondering if anyone had any advice as to how we could pitch a project to a company, or any advice for our team during the first few steps of this process.\n\nThank you in advance\n",
+        "created_utc": 1524724902,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "AI vs Embedded Software vs Application Software",
+        "author": "philosophyMatsa",
+        "url": "https://www.reddit.com/r/ECE/comments/8ezzly/ai_vs_embedded_software_vs_application_software/",
+        "text": "Hey fellow engineering people. I'm a CpE student trying to narrow down my choices. I've found myself gravitating towards Embedded Sys and Application Software the most (the former because of a course and upcoming internship, and the latter because of my mobile development hobby). Lately, Artificial Intelligence has sparked my interest and I am considering taking a course on it next semester. I have hands on experience with Embedded and Application Software, but was wondering if there is a site that gives you a crash course on AI at all? I'm trying to weed out paths I know I won't enjoy at this point in my academic career, so any thoughts on these three topics is of great help!",
+        "created_utc": 1524716929,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Taking my first controls class, need study resources",
+        "author": "adeep-er",
+        "url": "https://www.reddit.com/r/ECE/comments/8ezj02/taking_my_first_controls_class_need_study/",
+        "text": "Computer engineer taking my first controls engineering class, any prep material you guys have to suggest? Want to prepare ahead of time ",
+        "created_utc": 1524711973,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "FE for ECE",
+        "author": "loki1-6",
+        "url": "https://www.reddit.com/r/ECE/comments/8ey4sj/fe_for_ece/",
+        "text": "Hello all,\n\nTaking the FE exam in the next few days and thought I’d ask if anyone here had any last minute advice.",
+        "created_utc": 1524698908,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Recommendations for recent graduate",
+        "author": "Rutabega_boi",
+        "url": "https://www.reddit.com/r/ECE/comments/8ey0tt/recommendations_for_recent_graduate/",
+        "text": "I just graduated from Integrated Engineering, where the program focused on systems engineering as a whole (Mechanical, Material, Electrical, Computer, etc.). My capstone this year was an IoT parking sensor, and I became very passionate about the electronics design and want to make a career out of it. What sort of recommendations would be helpful in being successful in the electronics engineering field? That could be in books, projects, or ways to better my knowledge in the area; whatever one should know going into the field. Any tips are welcome and thank you!",
+        "created_utc": 1524697921,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "help noob understand this schematics",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8ewpd6/help_noob_understand_this_schematics/",
+        "text": "[deleted]",
+        "created_utc": 1524687331,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help on adding Pspice(Student Version) symbols and library",
+        "author": "KiD_MiO",
+        "url": "https://www.reddit.com/r/ECE/comments/8ew4xx/help_on_adding_pspicestudent_version_symbols_and/",
+        "text": "Hello guys\nSo the other day we were in the lab and we were using Pspice(the student version,basically a demo) and the professor give us some varistors and thermistors model to add to spice\nI had no problem:\nOptions-&gt;Editor Configurator-&gt;added \"path\" after a \";\",with the path referring to the position of the slb library(where you have the symbols\nSo I was able to add these components with their symbols and parameter(the last ones added through a custom lib)\nBut with my laptop,same version of Pspice,i'm not able to add these libraries:no symbols appear,i've tried different locations but nothing works(i'm using the same things!)\nSince also in the lab some guys struggled to add these libraries,do you have any idea to solve the problem?",
+        "created_utc": 1524682917,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Working on an Electrical Engineer's Cookbook",
+        "author": "aurelion_brol",
+        "url": "https://www.reddit.com/r/ECE/comments/8evf0k/working_on_an_electrical_engineers_cookbook/",
+        "text": "I'm a sophomore Electrical Engineering major, and over the last few years I've been turning some of the more important things from my classes into an \"Electrical Engineer's Cookbook.\" I'm a long-time hobbyist as well so there's a bunch of other stuff in there that hasn't been formally taught to me, but I have found useful. This is meant to be a general reference book, filled with the common building blocks of electronic circuits. It's not really written like a normal textbook, the language is pretty conversational and I use a decent amount of examples/analogies/etc. I plan on including the advanced stuff I will learn in the coming years, while trying to explain everything in plain English.\n\nHere's what's in there so far/what I plan on adding in the near future, in no particular order:\n\n- eMOSFET general equations, small-signal model (not including depletion MOSFETs because they aren't used very much)\n\n- BJT general equations, h-parameter small-signal model (for some reason none of my classes have actually covered BJTs yet, so this part is a bit rough)\n\n- part color codes, E-series of preferred numbers\n\n- Laplace transforms, a big table of various RLC networks and their impedances in the s-domain and jw-domain\n\n- Miller's theorem, specifically showing its use in splitting up transistor capacitances\n\n- two-component RC/RL/LC filters, active filters of various types will come later\n\n- diodes, diode applications\n\n- Some classic transistor topologies that lie outside the realm of the basic single-transistor amplifiers (differential amplifier, current mirror, class A/B/AB/C output stages, relay driver, maybe logic gates)\n\n- op-amps, why they're awesome, why they suck on occasion\n\n- open-circuit time constant/short-circuit time constant methods\n\n- PCB design advice\n\n- an \"ingredients\" section, listing common hobbyist parts and their parameters (for example, \n\nMy goal is to expand on it throughout college, condense all of it into a nice-looking PDF and put it online when I graduate.\n\nMy question for all of you is simple: if you could include something in an Electrical Engineer's cookbook, what would you include?",
+        "created_utc": 1524677530,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Standalone power modules that harvest and convert vibrations from their surroundings into electricity could soon fuel future microsystems",
+        "author": "Chipdoc",
+        "url": "https://discovery.kaust.edu.sa/en/article/495/the-raw-power-of-human-motion",
+        "text": "",
+        "created_utc": 1524675734,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What major studies both hardware and software?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8eu6hm/what_major_studies_both_hardware_and_software/",
+        "text": "[deleted]",
+        "created_utc": 1524668198,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Msc in Embedded Systems",
+        "author": "Trakt23",
+        "url": "https://www.reddit.com/r/ECE/comments/8eti1n/msc_in_embedded_systems/",
+        "text": "I'm studying EE and am about to choose master's programme. I've been thinking about Embedded Electronics Systems Design at my university but there are some things that I'm unsure about and would appreciate if someone knowledgeable in the area could help me out.\n\nThe reason for why I'm interested in embedded systems is because I've taken courses in digital electronics, C/assembly programming, VHDL and found all of them interesting. But there are a few reasons why I'm having second thoughts:\n\n1. I talked to the head of the embedded systems programme at my university and he told me the programme focuses on hardware. While hardware is something I want to work with I'd also like programming to be something I do on a regular basis in my future. Is there any chance I won't be able to work with software if I go into embedded systems? I'm afraid of only getting to work in VHDL and never doing software things like device drivers and other low-level programming.\n\n2. Do you get to develop algorithms as an Embedded Engineer or is your job solely to design the processing unit while other engineers get to do the algorithms/software which then is implemented on the processing unit?\n\n3. How broad of an area does embedded systems cover? For some reason I only think of processors when I think of embedded systems but can you also work with things like visual displays (computer monitors, TV monitors), routers, traffic light control systems or smart household devices?\n\n4. How much use will I have of the calculus courses I've taken? I enjoyed the math courses I took as an EE and would these courses be useless in a career of embedded systems?\n\nThank you for taking the time to read my post :)",
+        "created_utc": 1524662468,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "FPGA Project Recommendations",
+        "author": "ErnieReddits",
+        "url": "https://www.reddit.com/r/ECE/comments/8eo0ep/fpga_project_recommendations/",
+        "text": "Hello Reddit!\n\nI am a recent EE graduate and would like some recommendations on projects to do on my FPGA board. I have a Cyclone V GX Starter Kit.\n\nI've redone my school projects and would be interested in knowing what final project you guys did for your Digitals class. I would also appreciate if you guys share any lab guide for cool projects you did in class.\n\nI'm looking forward to your recommendations!",
+        "created_utc": 1524604291,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Using Electrostatic Discharge (ESD) as a human sensing interface?",
+        "author": "tocksin",
+        "url": "https://www.reddit.com/r/ECE/comments/8enkcv/using_electrostatic_discharge_esd_as_a_human/",
+        "text": "Is it possible to use static shocks as a sensing device for humans?  Perhaps \"low\" voltage shocks which may not be painful.  Is it damaging to human tissue or the nerve cells?  I was thinking could we put an array of discharge cells on a glove or armband to get some tactile feedback?  Is there any existing source material I can read online?",
+        "created_utc": 1524600879,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Expectations in pay when switching jobs.",
+        "author": "Jugglezzzz",
+        "url": "https://www.reddit.com/r/ECE/comments/8emerb/expectations_in_pay_when_switching_jobs/",
+        "text": "Hey guys, I was wondering how much of a difference in pay you should expect when switching jobs. I’ve been working for my current company for approximately 1.5 years now and am starting to look into opportunities closer to my home. One company offered me a position and the raise in pay from my current position to the offer would be ~5%. There is room for negotiation, but I feel like this difference is not worth leaving my current position for. Am I being too greedy, or is this something you’d say is typical?",
+        "created_utc": 1524592245,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Please explain ground bounce in high speed communications?",
+        "author": "yusuksong",
+        "url": "https://www.reddit.com/r/ECE/comments/8ema0w/please_explain_ground_bounce_in_high_speed/",
+        "text": "Learning about factors that can affect signal integrity for my job but not quite understanding how the ground reference level \"changes\" depending on the current draw of a system. How does ground value become shifted?",
+        "created_utc": 1524591288,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some BEST books for a newbie in programming and ECE?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8ekqz6/what_are_some_best_books_for_a_newbie_in/",
+        "text": "[deleted]",
+        "created_utc": 1524579595,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Converting 84v to 42v",
+        "author": "shahar481",
+        "url": "https://www.reddit.com/r/ECE/comments/8ek3zj/converting_84v_to_42v/",
+        "text": "Not sure if this is the right place to ask this but, I built myself an electric skateboard with 2 5s batteries and I have 2 more spare to swap when I need. I thought to myself if there is a way to convert to 42v then I can have all 4 batteries on my skateboard, keep the speed and have double range. Is there an easy way to do this or is it even possible?\nThanks for answering and helping.",
+        "created_utc": 1524573990,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Communication Systems",
+        "author": "sachinssakri",
+        "url": "https://www.reddit.com/r/ECE/comments/8ejmds/communication_systems/",
+        "text": "Looking for good basics of a communication systems.\nBoth analog and digital communication system.",
+        "created_utc": 1524568635,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How much does an Electrical extracurricular matter?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8eimll/how_much_does_an_electrical_extracurricular_matter/",
+        "text": "[deleted]",
+        "created_utc": 1524554679,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Math in Computer Architecture",
+        "author": "Ciductive",
+        "url": "https://www.reddit.com/r/ECE/comments/8ehrc8/math_in_computer_architecture/",
+        "text": "I'm applying for PhD programs in computer architecture because I love the field; however, I *really* enjoy math and the lack of it in the field is putting me off.\n\nI'm looking for research areas in computer architecture that make use of advanced math.\n\nThe only time I see any math is when computer architecture is being used to solve problems in other domains. For example when making a DSP chip, you're exposed to the math in signal processing, or when making a CNN accelerator, you're exposed to the math in machine learning. Are there any fields in architecture that use math *themselves* (not just exposure to another domain)? Maybe some stochastic hardware model that uses stochastic processes for instance?",
+        "created_utc": 1524543680,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reccomended reading material for PCM design?",
+        "author": "reason78",
+        "url": "https://www.reddit.com/r/ECE/comments/8ehcmv/reccomended_reading_material_for_pcm_design/",
+        "text": "Just hopped into a new job and need to get smart on battery PCM design. Any suggestions?",
+        "created_utc": 1524539311,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This video uses primary sources to clear up the real history of Nikola Tesla from the myth.",
+        "author": "KathyLovesPhysics",
+        "url": "https://youtu.be/6331JXvOUGY",
+        "text": "",
+        "created_utc": 1524537392,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Taking a second internship at a prestigious company and delay graduation vs. graduating on time",
+        "author": "actuallydumbquestion",
+        "url": "https://www.reddit.com/r/ECE/comments/8egih2/taking_a_second_internship_at_a_prestigious/",
+        "text": "I have an internship offer (this will be my second internship) for a fairly well-known and prestigious company. This will have to be in the fall semester however, and will require me to drop that semester. It is in a industry/field that I am very interested in. \n\nHowever, after speaking with some faculty advisers on how this will affect my graduation dates etc, we found that it will delay my graduation by a year. I will end up graduating in 2020 instead of 2019. This same adviser also worked with this company before, and said that they don't really hire interns from my internship program. They only hire interns from their year-round internship program, which I'm not in. \n\nMy adviser felt that it would be in my best interest to drop the offer and focus on graduating on time. They argued that I'm essentially trading the pay/experience of actually working in the field as an actual engineer for the pay/experience of working as an intern. \n\nIn addition, I've also received a scholarship opportunity that pays just as much as the money I would make if I accepted the internship and worked that semester. However, this scholarship opportunity requires me to be a full time student, and therefore, I would not get it if I accept the internship offer.\n\nMoney-wise, either option I'll end up the same. However, I have two choices:\n\n1. Take the internship just so I could put down a really prestigious company on my resume, and delay my graduation.\n\n2. Turn down the internship and just graduate on time\n\nNormally, I think the first option would be the better one, but the scholarship + the fact that the company doesn't really hire interns from my intern program is making me lean towards the second option/choice. In addition, I do have an internship so it won't be like I'm graduating with no experience if take option 2. \n\nWhat are your thoughts on this? Would I be competitive enough with just 1 internship? Or would being able to put the second internship's prestigious company on my resume be worth delaying my graduation? ",
+        "created_utc": 1524531224,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Subject confusion",
+        "author": "darkknightking",
+        "url": "https://www.reddit.com/r/ECE/comments/8efqkw/subject_confusion/",
+        "text": "I have been accepted to MS program in electrical engineering. Earlier I had experience in instrumentation and control systems like SCADA. But neither of the schools I have been accepted to provide courses related to my work at job. Now I am confused as to what subjects should I take whether semiconductor, microwave, radio or wireless systems. Also I wanted to ask what is the scope of ECE for jobs in USA considering I am an international applicant.",
+        "created_utc": 1524524103,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone please help me with this Electrodynamics question?",
+        "author": "timiade",
+        "url": "https://i.redd.it/i3vww5hx1qt01.png",
+        "text": "",
+        "created_utc": 1524516920,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "raspberry pi camera",
+        "author": "Dakshaykumar",
+        "url": "https://www.reddit.com/r/ECE/comments/8edwo4/raspberry_pi_camera/",
+        "text": "Is there anyway through which i can see the csi2 output(datastream) of the raspberry pi camera.? ",
+        "created_utc": 1524509526,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to create the circuitry between my digital circuit and the speaker?",
+        "author": "aredhel304",
+        "url": "https://www.reddit.com/r/ECE/comments/8e96ek/how_to_create_the_circuitry_between_my_digital/",
+        "text": "So, I've designed a digital circuit that determines which sounds should be produced and I've figured out how to make a speaker. I'm not sure how to actually send the electrical frequency through the wire though. I know I'd need to produce an AC current somehow, so how do I do that if digital circuits are all 1's and 0's, while an AC current is +/-?\n\nFYI, I'm a sophomore computer engineering student, so I've taken a digital circuitry class and an analog circuit class. But keep in mind that my knowledge is limited.",
+        "created_utc": 1524461573,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Feeling overwhelmed thinking about work",
+        "author": "jtrance",
+        "url": "https://www.reddit.com/r/ECE/comments/8e8css/feeling_overwhelmed_thinking_about_work/",
+        "text": "Does anyone ever feel like they are overwhelmed by how much they have to learn and know in this field when at work? Or school?\n\nI've been spending time outside of work reviewing, reviewing, re-learning concepts, doing more work...\n\nReference:\n\nhttps://spectrum.ieee.org/at-work/tech-careers/the-deep-complexity-in-electrical-engineering",
+        "created_utc": 1524452226,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How long to stay at first job",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/8e818d/how_long_to_stay_at_first_job/",
+        "text": "[deleted]",
+        "created_utc": 1524449005,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Writing microcode instructions for an conditional jump on a 8-bit breadboard computer | Ben Eater",
+        "author": "UncleQuentin",
+        "url": "https://www.youtube.com/watch?v=Zg1NdPKoosU",
+        "text": "",
+        "created_utc": 1524440207,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MBA worth it?",
+        "author": "SoulReign",
+        "url": "https://www.reddit.com/r/ECE/comments/8e74d8/mba_worth_it/",
+        "text": "Hey guys. Im about to finish my first year of work as a FPGA engineer after finishing my masters last May. My company has a tuition reimbursement program that i was thinking about using for an MBA. I was just wondering what the benefits to the degree would be as an engineer.  If i do this it would probably be an online program or i would have to go to a state school for the MBA. Basically has anyone done this, or what exactly would be the benefits to this.",
+        "created_utc": 1524439788,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to get an internship as a freshman?",
+        "author": "mrgoldtech",
+        "url": "https://www.reddit.com/r/ECE/comments/8e6zs4/how_to_get_an_internship_as_a_freshman/",
+        "text": "Hi, I'm a high school senior who's going to be an ECE major in college next year. This might sound like a ridiculous question, but I'd to know what I can do to boost my chances of getting work experience as a freshman. I'm really passionate about securing an early internship. \n\n\nI love computer engineering and want to get some applied knowledge in the field as quickly as possible. I do have a bit of experience from stuff I've done in high school (mechanical/electrical/software) and a few impressive awards. However, I'm not sure if that'll help me in college. \n\n\nThe school I'm going to next year has a top 10 engineering program, so I know that companies recruit from there. Although they might not be interested in inexperienced people, I want to maximize my chances of getting an internship.\n\n\nThanks for reading, dudes.",
+        "created_utc": 1524438515,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Book recommendation for error-correcting codes",
+        "author": "jms_nh",
+        "url": "https://www.reddit.com/r/ECE/comments/8e6fck/book_recommendation_for_errorcorrecting_codes/",
+        "text": "I need to short up my somewhat flimsy understanding of error-correcting codes. Any good book recommendations? I am looking for something that is good at making clear the CONCEPTS; slogging through algebra and proofs is not my preference, and it isn't \"intuitively obvious\" that linear algebra in GF(256) implies that the syndrome of the BCH code (255,2,2) is ... well, you get the picture.\n\nI found (but have not read) [Blahut](https://books.google.com/books/about/Theory_and_Practice_of_Error_Control_Cod.html?id=vuVQAAAAMAAJ) used in one course -- is it any good?",
+        "created_utc": 1524433169,
+        "upvote_ratio": ""
+    }
+]

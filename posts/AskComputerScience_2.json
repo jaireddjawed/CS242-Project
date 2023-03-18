@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Simple question about scoping:",
+        "author": "-Noo-2-Reddit-",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/115150e/simple_question_about_scoping/",
+        "text": "This is my code in Ada:\n\n&gt;procedure Main is\n\n&gt;&gt;X : Integer;\n\n&gt;&gt;procedure Sub1 is\n\n&gt;&gt;&gt;procedure Sub2 is\n\n&gt;&gt;&gt;begin\n\n&gt;&gt;&gt;...\n\n&gt;&gt;&gt;end;\n\n&gt;&gt;begin\n\n&gt;&gt;...\n\n&gt;&gt;end;\n\n&gt;&gt;procedure sub3 is\n\n&gt;&gt;&gt;X : Integer\n\n&gt;&gt;begin\n\n&gt;&gt;...\n\n&gt;&gt;end;\n\n&gt;begin\n\n&gt;...\n\n&gt;end;\n\nThe calling sequence is Main, Sub1, Sub2, Sub3\n\nSince this is statically scoped: If I referenced X in Sub1, Sub2, Sub3, and Main in that order, Sub1 and Sub2 would refer to the X declared in Main, Sub3 would reference it's own X, and then Main would refer to it's own X as well?\n\nWould this change at all if it were dynamically-scoped? I don't think it would because I can't see any other reasonable possibility, but I am new to this so I would appreciate any insight I might be missing.",
+        "created_utc": 1676677182,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Downloading photos of all users in a Facebook's group?",
+        "author": "DebbyGinger",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/114rnxb/downloading_photos_of_all_users_in_a_facebooks/",
+        "text": "I am trying to get the larger version from the thumbnail of a profile picture on Facebook.  \n\nIs this still achievable?  \n\nI have found an old solution but no longer works: [https://stackoverflow.com/questions/26877568/how-to-get-larger-version-of-facebooks-thumbnail-images](https://stackoverflow.com/questions/26877568/how-to-get-larger-version-of-facebooks-thumbnail-images)  \n\nWhen I try to simply change the size in the url (like old times) I get the following: \n\n&amp;#x200B;\n\n\\`\\`\\`\n\n`URL signature mismatch`\n\n\\`\\`\\`\n\n&amp;#x200B;\n\nFor instance, this is the inner element I have inspecting the thumbnail: \n\n&amp;#x200B;\n\n\\`\\`\\`\n\n`&lt;image x=\"0\" y=\"0\" height=\"100%\" preserveAspectRatio=\"xMidYMid slice\" width=\"100%\" xlink:href=\"`[`https://scontent.fbri2-1.fna.fbcdn.net/v/t39.30808-1/311117637_10228232448266995_8684249587025903653_n.jpg?stp=cp0_dst-jpg_p60x60&amp;amp;_nc_cat=108&amp;amp;ccb=1-7&amp;amp;_nc_sid=7206a8&amp;amp;_nc_ohc=atKyZ3_RwVoAX8QrTbc&amp;amp;_nc_ht=scontent.fbri2-1.fna&amp;amp;oh=00_AfDr6aLZTybVIlYpRScHNxNi-RzWcNPmGabEnOLvT_wL8Q&amp;amp;oe=63F1CAE0`](https://scontent.fbri2-1.fna.fbcdn.net/v/t39.30808-1/311117637_10228232448266995_8684249587025903653_n.jpg?stp=cp0_dst-jpg_p60x60&amp;amp;_nc_cat=108&amp;amp;ccb=1-7&amp;amp;_nc_sid=7206a8&amp;amp;_nc_ohc=atKyZ3_RwVoAX8QrTbc&amp;amp;_nc_ht=scontent.fbri2-1.fna&amp;amp;oh=00_AfDr6aLZTybVIlYpRScHNxNi-RzWcNPmGabEnOLvT_wL8Q&amp;amp;oe=63F1CAE0)`\" style=\"height: 60px; width: 60px;\"&gt;&lt;/image&gt;`\n\n\\`\\`\\`\n\n&amp;#x200B;\n\nHowever I have no idea how to get the larger size from that link.  \n\nIf it's not possible, I guess the only way would be to programatically visit each profile and get the link of the larger profile picture. Or maybe I should try with the graph-api but considering that group has 20k members and the rate is 200 requests for 1 hour I am not sure it's even worth the shot.",
+        "created_utc": 1676652994,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does it make sense to say that all of the software on your device is just one big program?",
+        "author": "Technical-Bee-9999",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/114g3uu/does_it_make_sense_to_say_that_all_of_the/",
+        "text": "",
+        "created_utc": 1676628732,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can all types of information be stored in a binary form, or are there some exceptions?",
+        "author": "Technical-Bee-9999",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/114ea5z/can_all_types_of_information_be_stored_in_a/",
+        "text": "",
+        "created_utc": 1676621686,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to tell scrum master that user stories are bs?",
+        "author": "sebsmgzz",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/11456xa/how_to_tell_scrum_master_that_user_stories_are_bs/",
+        "text": "Hi, I wanted to share my experience and know if someone can relate or if anyone has experienced the issue on their own and how did you dealt with it?\nSo for context, I am a dev working with other 2 people (one an intern) on a not so sinole proyect with a code base form ~3 years ago. The scrum master is also the arquitect and the issue is that the tasks we get assigned along side their user stories are unclear and too general. For example one said: \"Update the module to communicate securely to the cloud using sas tokens\". And that's it, no success criteria, no further explanation, no nothing. The arquitect barely knows the technology and doesn't even know how to git clone a repo (idk why is he and architect) and he keeps pushing us to fill the user stories which afaik is his job. He even put the intern all by herself to fill those. I don't mind doing his job as long as it comes with a performance bonus. I am a not so patient person but I try my best, how can I communicate all of this to him?",
+        "created_utc": 1676591976,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I learn more about Java or get into python?",
+        "author": "edahs03",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/11439ub/should_i_learn_more_about_java_or_get_into_python/",
+        "text": "So I’m currently in college and next semester I can chose between Java I or python I. If I chose Java I I can still take the python class, but if I chose the python class it prevents me from taking Java II (since it would be in my last semester). Should I take both entry level classes or dive deeper into Java?\n\nI’m not sure what the job market is like or if one language is better than the other. Thanks for any advice!",
+        "created_utc": 1676586986,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A two-word instruction is stored in memory at address 500 and 501.The instruction is LOAD $R1, 1000. The contents of memory addresses 1000, 1100, 1200 and 1300 are 1200, 1400, 1500 and 2000 respectively. The content of indexed (base) register is 300.",
+        "author": "Ok-Purchase2274",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/113vz5i/a_twoword_instruction_is_stored_in_memory_at/",
+        "text": "Please help me i want to know how to SOLVE it not just the answer pls :(\n\n What is the value loaded into register $R1 after the execution of the instruction, if the addressing mode is Immediate? (a) 1000 (b) 1200 (c) 1400 (d) 1500 (e) 2000 \n\n What is the value loaded into register $R1 after the execution of the instruction, if the addressing mode is Direct? (a) 1000 (b) 1200 (c) 1400 (d) 1500 (e) 2000 \n\n What is the value loaded into register $R1 after the execution of the instruction, if the addressing mode is Indirect? (a)1000 (b) 1200 (c) 1400 (d) 1500 (e) 2000 \n\n What is the value loaded into register $R1 after the execution of the instruction, if the addressing mode is Indexed (Base)? (a) 1000 (b) 1200 (c) 1400 (d) 1500 (e) 2000",
+        "created_utc": 1676568433,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can any mobile device be completely reconfigured? That is, can I get rid of all the preinstalled software and install a new OS for example?",
+        "author": "Technical-Bee-9999",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/113lh6m/can_any_mobile_device_be_completely_reconfigured/",
+        "text": "Context: just received a Xiaomi device and it doesn't let me do things I want, like giving apps permission to draw over the screen. Very frustrating!",
+        "created_utc": 1676534873,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hello. I am looking for a way to improve audio quality of older videos - perhaps audio super resolution - or any other ways",
+        "author": "CeFurkan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1138zii/hello_i_am_looking_for_a_way_to_improve_audio/",
+        "text": "Hello everyone. I am a software engineering assistant professor at a private university. I have got lots of older lecture videos on my channel.\n\nI am using NVIDIA broadcast to remove noise and it works very well.\n\nHowever, I want to improve audio quality as well.\n\nAfter doing a lot of research I found that  **audio super-resolution**  is the way to go\n\nThe only github repo I have found so far not working\n\nAny help is appreciated\n\nHow can I improve speech quality?\n\nHere my example lecture video (noise removed already - reuploaded - but sound is not good)\n\nC# Programming For Beginners - Lecture 2: Coding our First Application in .NET Core Console\n\n[https://youtu.be/XLsrsCCdSnU](https://youtu.be/XLsrsCCdSnU)",
+        "created_utc": 1676496333,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Preparing for the CS GRE subject",
+        "author": "Crafty-Possibility46",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1136teh/preparing_for_the_cs_gre_subject/",
+        "text": "I am a CS grad student with no CS background. I have to take my department's qualifier next month which is based on the (discontinued) CS GRE subject test. \n\nI have 4 practice GRE tests provided by the department but don't know any of the concepts the questions are about. It seems there should be a better approach than googling each of the words I don't know, but since the test is discontinued, I am not sure where to go for preparation materials. \n\nRecommendations on materials are appreciated, and if anyone has an official GRE prep book for CS subject that they are willing to sell, please DM me.",
+        "created_utc": 1676490682,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What are some good introductory computer science textbooks?",
+        "author": "eudueueeuu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/112zkg1/what_are_some_good_introductory_computer_science/",
+        "text": "What are some good introductory computer science textbooks that give a broad overview of the field of computer science or of the field of theoretical computer science?",
+        "created_utc": 1676472120,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tokenization library of C++ style function names",
+        "author": "Tiny-Information2691",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/112vi3c/tokenization_library_of_c_style_function_names/",
+        "text": "So typically when we have a function, let's say, addOneToInt, we know we can tokenize it to four words: \"add\", \"one\", \"to\", \"int\". However, this is quite more difficult to implement than delimiters. We can also encounter cases where we want to fully capitalize a particular word because it can be important. Is there any library for C, C++, Java and Python respectively that tokenizes such function names?",
+        "created_utc": 1676459016,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can students prepare computer science assignment solutions?",
+        "author": "Imaginary_learner",
+        "url": "https://i.redd.it/a3tsnlpvdbia1.png",
+        "text": "",
+        "created_utc": 1676451149,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Things You Should Consider While Writing a Computer Science Dissertation",
+        "author": "TarunFuleraJi",
+        "url": "https://i.redd.it/xv6q9pc59bia1.png",
+        "text": "",
+        "created_utc": 1676450541,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Youtube programming videos",
+        "author": "outcaststranger",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/112pqdp/youtube_programming_videos/",
+        "text": "I have no background on anything related to computer science and programming, but it’s my major. For the first time, I am learning python. I only see my professor once a week for three hours and we have weekly exams. I want to start watching videos on my free time to help me understand the material. I know majority of CS majors watch “some Indian guy on youtube” to help them get through every semester. If that’s the case, who should I watch that would explain it thoroughly and easier? Any suggestions?",
+        "created_utc": 1676436402,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How could I optimize moire animations?",
+        "author": "probably_sarc4sm",
+        "url": "https://www.reddit.com/r/askmath/comments/111y2zc/optimizing_moire_animations/",
+        "text": "",
+        "created_utc": 1676430485,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How Much Verbal Communication Happens In A Software Developer Role?",
+        "author": "PossibleLifeguard920",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/112maa5/how_much_verbal_communication_happens_in_a/",
+        "text": "This includes all sorts of roles like full stack web developer, software engineer, game programmer, etc.\n\nHow does the majority of communication happens between your teammates? Is it verbal or is it through documentation of your code? Or is it through emails and platforms like Slack?\n\nAssume we live in a world where there's no such thing as a disability protection act or anti discrimination laws. What if someone had the inability to speak. Could they get into a software developer role or would the company be hesitant to hire them? Would it be possible for them to integrate themeselves into the workflow just like everyone else? \n\nThe reason I ask is because I have a severe stutter (so its almost as good as not being able to talk at all). I'm just wondering how I can make it into the industry with this.",
+        "created_utc": 1676425305,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why do we not install an antivirus software anymore?",
+        "author": "astronishiyo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/112icpt/why_do_we_not_install_an_antivirus_software/",
+        "text": "Back in the day it seemed that an antivirus software was a must and computer viruses appeared to be a real threat. However, not anymore. What happened?",
+        "created_utc": 1676414434,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why are the majority of modern architectures little endian?",
+        "author": "javascrocket",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/112hke8/why_are_the_majority_of_modern_architectures/",
+        "text": "Or at least, little endian or bi-endian defaulting to little. I feel like big median makes more sense. Especially considering network order is big endian, does this cause a significant impact when network transfers happen?",
+        "created_utc": 1676412390,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What are some good textbooks on automata theory and formal language theory?",
+        "author": "eudueueeuu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/112cr5m/what_are_some_good_textbooks_on_automata_theory/",
+        "text": "What are some good textbooks on automata theory and formal language theory? I would like a textbook that covers automata theory in-depth, separate from formal language theory. And I would like a textbook that covers formal language theory in-depth, separate from automata theory.",
+        "created_utc": 1676400147,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to build a calculator website with the help of chatGPT",
+        "author": "codeitzsimple",
+        "url": "https://youtu.be/-tRDAlwmEhc",
+        "text": "",
+        "created_utc": 1676393313,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help! Merge Sort Time Complexity",
+        "author": "Aron2k1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1127z88/help_merge_sort_time_complexity/",
+        "text": "So I have an algorithm and was just wondering if I was correct to say the recurrence expressing time would be: T(n) = 3T(n/4) + n . The algorithm itself takes a 5 digit array.\n\nCouldn't post the snippet image linked : [https://prnt.sc/IajARQPuXt6c](https://prnt.sc/IajARQPuXt6c)\n\nThanks in advanced any help appreciated",
+        "created_utc": 1676388188,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for an algorithm to minimise the amount of head movement on a CNC saw",
+        "author": "mattthepianoman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1123zhp/looking_for_an_algorithm_to_minimise_the_amount/",
+        "text": "I have a CNC saw, and I can give it a list of positions to make cuts and it will move the cutting head along a rail to cut at programmed locations. When cutting the same type of profile I sort the cut positions from smallest to largest, but when changing profile I give it a new list, and the first cut might be up to 6000mm from the last cut of the previous profile, so the cutting head has to move into position, which is very slow.\n\nI'm looking for an algorithm that will take a number of cut lists and order them so that the head has to move the least distance when changing profile. The order in which each profile type is cut does not matter, but all cuts to the same profile type must be done together (no splitting the lists).\n\nWhere do I begin?",
+        "created_utc": 1676376962,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Best Deals this Year!] Buy Windows 11 Pro License Key For Life Time Get Up To 80% Discount Only $31.19 [Use Promo code: (XMAS22), Delivery 100% Free",
+        "author": "DifferentTower7659",
+        "url": "https://affordablekey.site/tpt6i",
+        "text": "",
+        "created_utc": 1676367263,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Computer Skills that can be used in real life outside of work/business/R&amp;D?",
+        "author": "bruh_moment_1024",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/111aq8f/computer_skills_that_can_be_used_in_real_life/",
+        "text": "I guess this may be a dumb question. But I had the notion that most skills in the Tech industry are not applicable outside of work/business/development environment. A layperson would have no use for skills like Software Engineering, Data Science, Network Engineering or Cloud Computing in their personal life.\n\nBut there are some skills that can be of use in a person's life without having to be some sort of full blown development. Cybersecurity could provide skills to be safe on the internet. Hacking could be used for personal gain if used unethically, don't bash me for it. Being an IT technician or knowledgeable in computers in general means you could provide tech support to yourself and others. Someone like a Quantitative Trader could use their knowledge to improve their own portfolio. Things like that.",
+        "created_utc": 1676299603,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does thread usage relate to overall cpu usage?",
+        "author": "thedarklord176",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/110r7z1/how_does_thread_usage_relate_to_overall_cpu_usage/",
+        "text": "If a cpu has 6 cores/12 threads, 1 thread does not necessarily equal 1/12th of the cpu right? So what exactly is the capacity of 1 thread? I’ve seen in my own programming that if you try too put too much on one thread at once it will slow down.",
+        "created_utc": 1676238384,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Difference between flushing and spilling data?",
+        "author": "Humpbackweyl",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/110qzds/difference_between_flushing_and_spilling_data/",
+        "text": "My understanding is that we spill data when the disk is approaching a state of being full. Flushing, on the other hand, is just to clear up space on the disk. Can someone help fill in the details? Are they completely separate operations?",
+        "created_utc": 1676237767,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "HELP with pseudo code please!!",
+        "author": "iheartmyexbf",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/110pjcd/help_with_pseudo_code_please/",
+        "text": "“Write the pseudo-code for driving to the store, purchasing a frozen turkey, cooking the turkey, carving it, and serving it on the table.”\n\nI would really appreciate it, thank you!",
+        "created_utc": 1676234070,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hamming distance",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/110p562/hamming_distance/",
+        "text": "Hi, we learn about Hamming distance in our intro to CS class, and I got stuck with a question would love some help please.  \n\n\n    let t = \\floor ((d-1)/2)\n\nC is a non trivial code (n,k,d), non trivial mean that d&gt;1  \nC: {0,1}\\^k -&gt; {0,1} \\^n\n\n    prove/disprove:\nfor every z that belong to {0,1}^k\n    | B(z,t) \\intersection ImC | = 1\n\nwhere B(z,r) = { x belong to {0,1}\\^n : distance of (z , x) &lt;= r}  \n\n\n    now, I was able to prove that for every z:\n| B(z,t) \\intersection ImC | &lt; = 1\n\nbecause if there is more than one, I have reached to  contradiction  with the hamming distance definition,  \nbut Im not sure how to prove / disprove the existance of exactly 1.  \n\n\nthank you all !",
+        "created_utc": 1676233077,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": ".jpegs lose information but .mp3s don't?",
+        "author": "Nova_Persona",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/110p4iw/jpegs_lose_information_but_mp3s_dont/",
+        "text": "It's fairly well known that jpegs degrade in quality every time you so much as look at them, &amp; that this is because they are a lossy format. When I found out mp3s were also considered a lossy format &amp; looked up if mp3s degrade over time like this &amp; I found a bunch of people saying they don't? Why does one lossy format constantly lose information &amp; the other doesn't if that's what lossy is?",
+        "created_utc": 1676233035,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need practice resources! (PLEASE)",
+        "author": "Ill_Ad5826",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/110lj42/need_practice_resources_please/",
+        "text": "I know that maybe this is the wrong community to ask but I am currently taking AP CSA without ANY prior knowledge of Java or just computer science in general. I need practice materials to better help prepare for my tests but I haven’t found any online. Please let me know if there are any websites with AP CSA practice questions (specifically Unit 7 - ArrayLists). Thank you:(",
+        "created_utc": 1676223919,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Intuition behind additional time required for using data encoded using Huffman Encoding compared to using the data without any encoding",
+        "author": "V1bicycle",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1100fz8/intuition_behind_additional_time_required_for/",
+        "text": "If I had some integer values which I wanted to encode and store using Huffman encoding, I would save some space.\n\nIf the general running time for some application which uses this stored data is O(x), would using decoding to retrieve the stored data along with the general running time be O(x) + O(n), where n is the total size of the encoded data ?\n\n&amp;#x200B;\n\nI'm trying to understand the general intuition about what the time would be for using the encoded data.",
+        "created_utc": 1676156205,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "CS50",
+        "author": "_KingOrion",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1100fi1/cs50/",
+        "text": "Hello everyone,\n\nI am taking Harvard's CS50 and am really enjoying the content.  I just ended the lecture on memory.  He says when you begin poking around in memory with * and &amp; (in C) you have great power and therefore great responsibility.\n\nI'm wondering what's the advantage of being able to get and go to the address of a particular piece of memory in a practical sense?\n\nWhat can I do with this information in my every day programs?\n\nI have minor programming knowledge so understand that I can use these tools, but I suppose what I'm lacking is the practical usefulness of it, and why it's so powerful a tool.\n\nAny link or advice would be helpful.  \n\nThank you",
+        "created_utc": 1676156166,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Where do you wanna work; Google or Microsoft?",
+        "author": "pyactee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10znub4/where_do_you_wanna_work_google_or_microsoft/",
+        "text": "Google says Bard can tap into external sources and answer users’ queries. ChatGPT only offers content based on data up to a point in the past. \n\n*Source:* [https://www.thestatuscode.co/p/the-ultimate-guide-to-the-ai-war](https://www.thestatuscode.co/p/the-ultimate-guide-to-the-ai-war)",
+        "created_utc": 1676122689,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Not sure about loop invariants, am I on the right track?",
+        "author": "-Noo-2-Reddit-",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10z8ad2/not_sure_about_loop_invariants_am_i_on_the_right/",
+        "text": "For example, I'm looking at a while loop. While integer x is not equal to 1, divide x by 5. Post-condition is x = 1. Could I say the loop invariant is that x divides 5? This should be true before the loop and after each iteration, but if the loop terminates when x = 1, then it wouldn't hold \"after the loop terminates\" and a loop invariant needs to hold after the loop, right? I'm struggling to find anything else that would hold in this case. Am I going about this the right way?",
+        "created_utc": 1676077611,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I don't understand this CS challenge",
+        "author": "InflationAlarming416",
+        "url": "https://i.redd.it/a4h7xw830iha1.jpg",
+        "text": "",
+        "created_utc": 1676076543,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Struggling sophomore can't find a summer job",
+        "author": "ShamerTheGamer",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10z2mca/struggling_sophomore_cant_find_a_summer_job/",
+        "text": "How do I get an REU or internship for the summer? I'm struggling to get even an interview. I'm taking a course in data science and algorithms this semester and I'm part of the coding program in my service organization where I teach web development to adults. But I'm struggling to find jobs that require the skills I have. The jobs at linkedin demand so much that I'm not even getting considered for an interview. Now I'm looking at REUs but there are so few of them in the NSF government site there's no way I'll get in. I must be doing something wrong in the job searching process.",
+        "created_utc": 1676062086,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "VS Code vs cmd Terminal Results Different. Any possible reasons?",
+        "author": "quishei",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10yf9ad/vs_code_vs_cmd_terminal_results_different_any/",
+        "text": "Hello guys.\n\nI'm doing a simple project during this winter on my windows laptop using VS Code. However, when I tried to run the same code on my macBook in VS Code, I have this strange error. However, when I run it using the cmd terminal, I have the results that I wanted which is the same with the output on the windows VS Code.\n\nAny possible reasons why?\n\nNote that I do not use the run button on VS code but instead use the terminal on the program and type: gcc -o main main.c; ./main\n\n&amp;#x200B;\n\nCode: [github link](https://github.com/dsa-shua/NAND-FTL/blob/main/main.c)\n\n&amp;#x200B;\n\nImage results:\n\n&amp;#x200B;\n\n[Left: Mac VS Code | Right: Mac CMD Terminal](https://preview.redd.it/gr42ygj18aha1.png?width=619&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=5cd1b30e1ebbce4bc33b9785395a149ad7641ba6)\n\n[Windows VS Code](https://preview.redd.it/86kagdl18aha1.png?width=392&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=7745264e4b718616313b8ef296852ae2089df98f)",
+        "created_utc": 1676000401,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Confused as to what the time complexity of my algorithm is.",
+        "author": "rainsoundsaregood",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10y8li0/confused_as_to_what_the_time_complexity_of_my/",
+        "text": "`from pprint import pprint`\n\n`import copy`\n\n&amp;#x200B;\n\n`class Wizard:`\n\n`def __init__(self,strength):`\n\n`self.strength = strength`\n\n`def get_strength(self):`\n\n`return self.strength`\n\n\n\n`def get_contigious_wizards_strength(W):`\n\n`total_individual_strength_sum = sum([wizard.get_strength() for wizard in W])`\n\n`weakest_strength = min([wizard.get_strength() for wizard in W])`\n\n`total_contiguous_strength = weakest_strength * total_individual_strength_sum`\n\n`return total_contiguous_strength`\n\n\n\n`army = [Wizard(1),Wizard(3),Wizard(1),Wizard(2)]`\n\n&amp;#x200B;\n\n`all_contiguous_groups = []`\n\n`if len(army) &gt; 2:`\n\n`all_contiguous_groups.append(army)`\n\n`permutation_len = len(army)-1`\n\n`while permutation_len &gt; 1:`\n\n`for i in range(len(army)):`\n\n`# shoot and reload (the same)`\n\n`var1 = army.pop(0)`\n\n`army.append(var1)`\n\n`# record`\n\n`all_contiguous_groups.append(army[0:permutation_len])`\n\n`permutation_len -= 1`\n\n`elif len(army) == 2:`\n\n`all_contiguous_groups.append(army)`\n\n`else:`\n\n`print(\"not enough members in army. theres only one! since no contigous group can be made the desired sum is zero\")`\n\n`exit()`\n\n\n\n`desired_sum = sum([get_contigious_wizards_strength(W=contiguous_group) for contiguous_group in all_contiguous_groups])`\n\n&amp;#x200B;\n\n`pprint(desired_sum)`\n\n&amp;#x200B;\n\nI think the time complexity of this algo is at least n! \n\nwhich one is the most growing term?: n! + a + n!",
+        "created_utc": 1675982413,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Computer Science in person one on one tutoring, George Mason University, Northern Virginia Area",
+        "author": "Ok_Explanation50",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10y70hu/computer_science_in_person_one_on_one_tutoring/",
+        "text": "looking for in person one on one tutoring in problem solving, coding, and looking for mentor potentially",
+        "created_utc": 1675978680,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can logic be used to model information in information theory?",
+        "author": "eudueueeuu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10xv44v/can_logic_be_used_to_model_information_in/",
+        "text": "Can logic be used to model information in information theory?",
+        "created_utc": 1675950334,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which is better for modeling artificial intelligence, “default logic” or “autoepistemic logic”?",
+        "author": "eudueueeuu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10xtvd9/which_is_better_for_modeling_artificial/",
+        "text": "Which is better for modeling artificial intelligence, “default logic” or “autoepistemic logic”?",
+        "created_utc": 1675946704,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What Is Computer Programming ?",
+        "author": "TarunFuleraJi",
+        "url": "https://i.redd.it/3s6kcjn854ha1.png",
+        "text": "",
+        "created_utc": 1675927190,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Unlocked phones",
+        "author": "Ephoenix6",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10xo0cs/unlocked_phones/",
+        "text": "Is there any significance difference in mobile network signal or data bandwidth, compared to carrier phones?",
+        "created_utc": 1675925505,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi, I need some help whit my monitor.",
+        "author": "m3gaw0ened77",
+        "url": "https://v.redd.it/3e79holrc3ha1",
+        "text": "",
+        "created_utc": 1675902840,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to become a Computer Scientist?",
+        "author": "bruh_moment_1024",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10x5z68/how_to_become_a_computer_scientist/",
+        "text": "Ever since I was a kid I've been utterly fascinated with science and was dead set in wanting to become a scientist and make revolutionary discoveries. Somewhere along the line I just lost that passion due to mindless tasks and mundane life events. I am currently pursuing an undergrad for a career in tech but realized I may have the opportunity to revive my deep passion for science and exploration if I could become a computer scientist. \n\nNow I have no Idea how to go about doing this. I'm 19 years old from India in my first semester of an online bachelor's in computer applications which is more of an IT degree with not as much math. It's a 3-year degree and it's online due to a few health issues and other circumstances at the moment. From what I hear the research scene in India isn't great so I'm considering moving to the US or Canada for a Master's.\n\nDue to my current situation and location, I have no means to socialize or join any clubs. There are no colleges where I live. Everyone I knew from school have moved elsewhere, so all I have is myself and my laptop. I've been into tech since I was a kid, learnt some hacking as an edgy teenager and made a few simple games but other than that I know almost nothing about this subject. I don't know what to learn to be able to develop knowledge and do research. \n\nIs research a good path? What steps do I take and what do I learn? Are there any organizations or websites to publish research? Is it a good career? I'm not as concerned with money but what is the pay like compared to other tech careers?\n\n&amp;#x200B;\n\nSorry if this doesn't belong here. I'd appreciate any responses.",
+        "created_utc": 1675878956,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi all! I’m asking for a bit of direction for something I don’t completely have the capacity to do.",
+        "author": "MediocreBluejay6485",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10wxx7h/hi_all_im_asking_for_a_bit_of_direction_for/",
+        "text": "I am a conceptual artist and want to know if there’s any way possible that I can make a software who’s only function is to undo itself when a single act of creation is implemented. For example, if I type the word “hello” into a writing application can the word undo itself, then the functions of the program, and the programmer itself, ending with the computer being incapacitated? I understand this is a bit absurd but any general direction of how I can do this would be great :)",
+        "created_utc": 1675866098,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Trying to open pdf file",
+        "author": "Dynamometamorphe",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10wrssy/trying_to_open_pdf_file/",
+        "text": "Hey there !\n\nI hope you're doing well. I'm having a bit of trouble trying to extract a book from a PDF viewer and was wondering if anyone had any suggestions.\n\nI started by inspecting the website's source code and noticed that it was using a SCO player. I found a Chrome extension on Github that could extract the PDF, but it was only in the form of images and wasn't of the best quality.\n\nSo, I continued to inspect the site and searched for the \".pdf\" extension. I eventually came across an URL that converted the PDF into images (Ressources.../book.pdf\\_/pagenumber.png). I removed the \"\\_/pagenumber.png\" part and was able to download the book (120 MB). However, when I tried to open the PDF, it was corrupted and wouldn't open.\n\nDoes anyone know of a way to get the PDF so it's readable? I'd really appreciate any suggestions or advice you have!\n\nThanks a lot and take care!",
+        "created_utc": 1675846212,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Heaps",
+        "author": "Sen_7",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10wrcbo/heaps/",
+        "text": "Hi, would love some help understand how to approch this\nIm suppused to show if we insert into empty heap the elemnts 1,2,…99 if we get 4 trees or less/more\n\nHow do I approch? i know tree can have 2^k elements",
+        "created_utc": 1675844412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What tech is used to make software like Figma or Canva? Is it WebGL or 3JS? And what can be used to build a video editor on web.",
+        "author": "fitvibesyt",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10wp2rp/what_tech_is_used_to_make_software_like_figma_or/",
+        "text": "",
+        "created_utc": 1675836322,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Taking notes important?",
+        "author": "ashfrompokemon2",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10wo3vx/taking_notes_important/",
+        "text": "I'm a first year college student and I'm currently in my second semester. This may seem really dumb but I'm currently wondering if I should go through the effort of taking hand-written notes  for my ICS course. I see some people taking notes and other people just listening to the professor talk. What do you guys do/would do?  \n\n\nI saw a post similar to this that is a couple years old and wanted an update on opinions or peoples experience with taking notes for Computer science courses. Thanks!",
+        "created_utc": 1675833140,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is formal/mathematical logic used in information science?",
+        "author": "eudueueeuu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10whcpe/is_formalmathematical_logic_used_in_information/",
+        "text": "Is formal/mathematical logic used in information science? I’m talking about things like first-order logic and set theory.",
+        "created_utc": 1675814179,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is my solution for Unisex Bathroom Problem correct? (No starvation is a requirement)",
+        "author": "sonuahnis1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10wabsd/is_my_solution_for_unisex_bathroom_problem/",
+        "text": "Problem Statement:\n\n \n\nA bathroom is being  designed for the use of both males and females in an office but requires  the following constraints to be maintained:  \n\n* There cannot be men and women in the bathroom at the same time.\n* There should never be more than three employees in the bathroom simultaneously.\n\nNo starvation should happen.\n\n    class UnisexBathrooms{\n        mutex mtx;\n        condition_variable_any cv;\n        int male, female;\n        int male_waiting, female_waiting;\n        int next_chance; // 0: no one, 1: male, 2: female\n    \n    public:\n        UnisexBathrooms(){\n            male = female = 0;\n            male_waiting = female_waiting = 0;\n            next_chance = 0;\n        }\n    \n    private:\n        void male_enter(){\n            mtx.lock();\n    \n            male_waiting++;\n    \n            cv.wait(mtx, [this]{return female == 0 &amp;&amp; male &lt; 3 &amp;&amp; next_chance != 2;});\n            male_waiting--;\n    \n            male++;\n            mtx.unlock();\n        }\n    \n        void male_exit(){\n            mtx.lock();\n            male--;\n    \n            if (female_waiting)\n                next_chance = 2;\n            else\n                next_chance = 0;\n    \n            mtx.unlock();\n    \n            cv.notify_all();\n        }\n    \n        void female_enter(){\n            mtx.lock();\n    \n            female_waiting++;\n    \n            cv.wait(mtx, [this]{return male == 0 &amp;&amp; female &lt; 3 &amp;&amp; next_chance != 1;});\n            female_waiting--;\n    \n            female++;\n            mtx.unlock();\n        }\n    \n        void female_exit(){\n            mtx.lock();\n            female--;\n    \n            if (male_waiting)\n                next_chance = 1;\n            else\n                next_chance = 0;\n    \n            mtx.unlock();\n    \n            cv.notify_all();\n    \n        }\n    \n        auto get_tp(){\n            auto tp = chrono::system_clock::now();\n            auto tp_printable = chrono::system_clock::to_time_t(tp);\n            return ctime(&amp;tp_printable);\n        }\n    \n        void use_bathroom_now(bool is_male, int id){\n            {\n                unique_lock&lt;mutex&gt; io_lock(io_mtx);\n                cout &lt;&lt; get_tp() &lt;&lt; (is_male ? \"a male\" : \"a female\") &lt;&lt; \" with id: \" &lt;&lt; id &lt;&lt; \" has started using the bathroom\\n\\n\";\n            }\n    \n            this_thread::sleep_for(5s);\n    \n            {\n                unique_lock&lt;mutex&gt; io_lock(io_mtx);\n                cout &lt;&lt; get_tp() &lt;&lt; (is_male ? \"a male\" : \"a female\") &lt;&lt; \" with id: \" &lt;&lt; id &lt;&lt; \" has ended using the bathroom\\n\\n\";\n            }\n        }\n    \n    public:\n        void use_bathroom(bool is_male, int id){\n            if (is_male){\n                male_enter();\n                use_bathroom_now(is_male, id);\n                male_exit();\n            }\n            else{\n                female_enter();\n                use_bathroom_now(is_male, id);\n                female_exit();\n            }\n        }\n    };",
+        "created_utc": 1675797284,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Top 13 Ethical Hacking Courses on Udemy (2023)",
+        "author": "Jan_Prince",
+        "url": "https://www.pythonstacks.com/blog/post/ethical-hacking-courses-udemy//",
+        "text": "",
+        "created_utc": 1675791580,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "did i get a virus",
+        "author": "leopao13",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10w7dpo/did_i_get_a_virus/",
+        "text": "i googled reddit dad jokes and clicked on the 3rd or 4rth link and got an image of some weird anime girl with the name hentaiworld or something like that how can i check if i got a virus",
+        "created_utc": 1675790406,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Complete guide to computer vision for quality control in manufacturing",
+        "author": "Johnmack013",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10vza23/complete_guide_to_computer_vision_for_quality/",
+        "text": "Do you know manual inspections for quality control can bring more than eight hurdles in your company’s growth? \n\nWhether you want to learn how to design a computer vision system for quality control or know how to use computer vision solutions for quality control in manufacturing, your answers are just a download away from this whitepaper.\n\n**Here's a brief overview of what the guide covers:**\n\n* The difference between quality control, quality assurance and quality inspection\n* The problems with human visual inspection approaches\n* Benefits of computer vision for quality control in manufacturing\n* The features of computer vision solutions for quality control\n* How to design a computer vision system for quality control (just in six steps)?\n* Architecture diagram of image acquisition and processing (get a complete understanding of the computer vision solutions mechanics in three phases)\n* Computer vision applications in different manufacturing industries\n\nI highly recommend checking it out if you're interested in Computer vision \n\n[https://go.softwebsolutions.com/resources/guide-on-computer-vision.html](https://go.softwebsolutions.com/resources/guide-on-computer-vision.html)",
+        "created_utc": 1675768232,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why has my barely used laptop got so slow?",
+        "author": "Good_Loaf",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10vqj0w/why_has_my_barely_used_laptop_got_so_slow/",
+        "text": "I bought a HP laptop around 8 years ago for my college work. It had windows 8 which was upgraded to 10. It worked well when it was new.\n\nI used it for around a year for writing out all my college work, and since then I’ve use it maybe three or four times a year.\n\nI haven’t saved anything apart from word documents, I’ve stored maybe around 100 or so photos from my camera\n\nI’ve never used it for gaming or downloaded any software on it.\n\nI’ve never used it for looking at porn or torrenting or anything like that.\n\nYet despite the extremely frugal use of the laptop it runs as slow as shit. It takes up to an hour from power on to be practically usable.\n\nI get that the laptop is old but it has a very low amount of hours on it. All the reasons I can find say that the hard disk is clogged up, I have unnecessary software installed, and there isn’t enough ram… but as I’ve explained none of this could be the case",
+        "created_utc": 1675738576,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Anyone has seen error reports like these? What spirituality has to do with programming?",
+        "author": "aroba-",
+        "url": "https://i.redd.it/f3n6z2dauoga1.jpg",
+        "text": "",
+        "created_utc": 1675723492,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the relationship between SRAM (Static Random Access Memory) and the Stack?",
+        "author": "0x73hahd",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10vipok/what_is_the_relationship_between_sram_static/",
+        "text": "",
+        "created_utc": 1675718805,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does a processor know where instructions for a program are stored in secondary memory?",
+        "author": "pcguy27",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10vhk7n/how_does_a_processor_know_where_instructions_for/",
+        "text": "I already know that programs are loaded into RAM before they are executed. What I’m not understanding is that when I double-click an executable, what exactly happens? How does the CPU know which area of the storage device stores that program so it can load it into memory?",
+        "created_utc": 1675716134,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I asked ChatGPT to write a transformer model for language modeling from scratch using only standard Python libraries (no 3rd party, not even Numpy) and then asked it to write the code to train it using Huggingfaces Wiki dataset. Can anyone rate how well it did? I dont have the RAM to train it.",
+        "author": "Heavy-Association-57",
+        "url": "https://www.reddit.com/gallery/10vaca6",
+        "text": "",
+        "created_utc": 1675699611,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Quick question, is Critix workspace still save when used on an infected computer?",
+        "author": "Intersectionism",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10v9mcu/quick_question_is_critix_workspace_still_save/",
+        "text": "My working laptop died, have an old one but don’t know how clean it is.\n\nIs it correct that critix would be save even if a computer has a virus or don’t I understand Critix enough?\n\nThanks in advance",
+        "created_utc": 1675697900,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What does it mean when they say protobuffers are in a binary format",
+        "author": "hawk-bull",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10v41mj/what_does_it_mean_when_they_say_protobuffers_are/",
+        "text": "I've learnt that protobuffers are stored and transmitted as a binary format. But isn't everything on a computer stored and transmitted as binary digits.\n\nUpon further probing, it also said this means that it is not stored as a plain text. But once again, isn't plain text also stored in a binary format. And secondly, when they say it is stored as a binary format, are they simply saying they use a different encoding than a plain text encoding like UTF-8?",
+        "created_utc": 1675681906,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[ARCHITECTURE] Why do some programs generate more heat than others?",
+        "author": "Neuroth",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10uwva8/architecture_why_do_some_programs_generate_more/",
+        "text": "Assuming a single ALU,  If all operations are done at a uniform clock rate, why do computers heat at more intensive computations? Doesn't it make sense that more intense computations take longer to execute, and weaker computations take lesser time to execute, both at the same rate?",
+        "created_utc": 1675655613,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does a load balancer work at entry in practise?",
+        "author": "pondtransitauthority",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10uv2hn/how_does_a_load_balancer_work_at_entry_in_practise/",
+        "text": "Can an IP only use one load balancer at entry in the sense that traffic from a single IP address can only enter the load balancing system through one load balancer/server?\n\nSay I go to google.com (whatever IP that corresponds to), is there only a single entry point for everyone?\n\nI assume DNS allows for load balancing by location but how does that work within a country? \n\nDoes Google pay ISPs and DNS providers to switch around IPs every so often so that everyone doesn't access only one particular load balancer?",
+        "created_utc": 1675650339,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What are some good textbooks on the lambda calculus?",
+        "author": "eudueueeuu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10uoj87/what_are_some_good_textbooks_on_the_lambda/",
+        "text": "What are some good textbooks on the lambda calculus? Thanks.",
+        "created_utc": 1675633617,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "sql to machine code",
+        "author": "AlienGivesManBeard",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10unhkd/sql_to_machine_code/",
+        "text": "At a high level, how does a SQL query turn into machine code?\n\nFor example, suppose the database engine is written in C.  Would a SQL query be transpiled to C, then compiled to machine code in memory ?",
+        "created_utc": 1675631097,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can a proof for p vs np exist ?",
+        "author": "xsewer",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10ujmfp/how_can_a_proof_for_p_vs_np_exist/",
+        "text": "Lets imagine that algorithm 1 can solve Battleship grid A but the same algorithm cant solve an Battleship grid B since all ships are in different places so that means that answer to the p vs np problem cant be 1 constant algorithm and it cant be an nondeterministic algorithm since then it would have to take an information from the guess and cant do that because then verification wouldnt be simple and it cant be random then how the proof that p = np can even exist ?",
+        "created_utc": 1675621944,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Book with a compiler for a language and including all steps from DFA to Final Code Generation?",
+        "author": "Purple_Branch5350",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10ue785/book_with_a_compiler_for_a_language_and_including/",
+        "text": "I have classic books like the Dragon Book and Engineering a Compiler, but they only cover the theory with minimal examples. I want a book that goes through the construction of an actual compiler, including both the theory (such as the process of converting a regular expression to a NFA and then to a minimized DFA for a language) and practical aspects (like code implementation for the minimized DFA). Could anyone please suggest such a book?",
+        "created_utc": 1675608549,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Algorithms] Red-Black tree split related question, need help",
+        "author": "0-or-1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10u7l0e/algorithms_redblack_tree_split_related_question/",
+        "text": "Question: Suppose we have **K** set of keys of size ***n*** and z belongs to K,  \nLet **K1** be a tree where every element is smaller than z, and **K2** be a tree where every element is bigger than z.  \n\n\nSuppose **K** is a red-black tree where every node keeps info about its black height.  \nDescribe how to construct RB-trees representing K1 and K2 in O(Log\\^2 n) time.   \n\n\nCan anyone help solve this ?\n\nPlease don't recommend in-order traversal as it takes O(n)",
+        "created_utc": 1675585056,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would setting your password to a hashed password be the safest password?",
+        "author": "bored-computer",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10u5fp9/would_setting_your_password_to_a_hashed_password/",
+        "text": "In case of a hash dump, people will try to un-hash the passwords in the dump. I assume they try until they get something that looks like a regular password, but would setting your password to a hashed password with the right salting make your password immune to hash dumps?\n\nI just said password a lot there.",
+        "created_utc": 1675577022,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is formal/mathematical logic used in artificial intelligence research?",
+        "author": "eudueueeuu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10ttq34/is_formalmathematical_logic_used_in_artificial/",
+        "text": "Is formal/mathematical logic used in artificial intelligence research? If so, what textbooks do you recommend reading to learn more about this?",
+        "created_utc": 1675550877,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why are we training computers to solve image CAPTCHA...",
+        "author": "HiMyNameIsRod",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10tpiiy/why_are_we_training_computers_to_solve_image/",
+        "text": "This makes zero sense to me.\n\nI'm pretty sure that computer eye-id is so advanced now it's bull-ish as a bot-deterrent.\n\nI just showed the unconscious solid state entity how to identify sea otters. \n\nPretty soon the collective 'Computer' will have names for everything, like people do...separating everything into neat category trees.  I don't think that is helpful for computers or us lol but mainly I actually feel people are taken-advantage-of being farmed for this service-to-'it'.\n\nEveryone could probably sue one day for all the computer-programming work no one was paid for. \n\nJust a thought. Anyway, just like 2-factor auth being stupid in light of 16+character passwords etc I'm sure CAPTCHA images are dumb bc there are better ways like invis honeypots other stuff etc. For sure there is a better way without the self-defeating, questionably-ethical, illogical feedback loop.\n\nYeah this is ComputerScience not webdev but it's kinda an academic question to be explored better....how to maintain living activity in human being communities without these defense mechanisms which actually feed the 'beast' lol, to just play with calling computers that. And per John C. Lilly M.D. consciousness research into the 'human biocomputer' metaphor etc, machines and the internet do describe a 'solid state entity', a non-entity mass of discrete logic, unconscious, not able or adept-to recognize transmundane states-of-consciousness of a human being (the cheat codes). AI coexists with actual-I-Intelligence and thankfully we're not allowed, by metaphysics, to put 'it' first with any finality....because people totally would.\n\nThe intent makes sense, to 'defend' against unconscious influence...but if made an enemy beyond the wariness, 'it' takes over, this describing how a person works with the dynamic of their consciousness, habit, etc. If we flat-out resist our automacy and don't admit it, it wins and we can't get-with and over-top of it. That's the story of the 'devil', and 'satan' describes a more human element to 'it', to show why 'it' is not bad (computers, machines) but why it gets shitty when 'it' runs a person, or people. You didn't expect that, but that's me.\n\nTaken back to this CAPTCHA question... I know it's convenient to train 'AI' (i think ai is a huge misnomer) machine-learning-algorithms via CAPTCHA images but isn't it counterintuitive on several confounding levels? \n\nAs with most things, if they've gotten to be extremely pervasive/popular they're probably not all that good. Not an emotional thang, just my thoughts...concise and totallly on-topic lol\n\nno edit....and post to strangers!",
+        "created_utc": 1675540388,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Median of Median algorithm",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10tov39/median_of_median_algorithm/",
+        "text": "Hi,  \nso we learned about the Median of Medians algorithm to find the median of array in O(n)  \nis it possible to use the same algorithm, but instead of median to find the 1/4 order element?  \n\n\ninstead of searching for the median, and then recuresvly seraching for the new median, if I will do it on the 1/4 order item, will I find the 1/4 element in O(n) ?",
+        "created_utc": 1675538766,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Up Coming Valentine's day Offer ] Buy Microsoft Windows 11 Pro License for Only $28.79 And Get Up to 80% Off (Use Promo code: XMAS22)",
+        "author": "Hot-Abbreviations658",
+        "url": "https://affordablekey.com/product/windows-11-pro/",
+        "text": "",
+        "created_utc": 1675491976,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Today's LeetCode Challenge (Permutation in String)",
+        "author": "GeekErra",
+        "url": "https://youtu.be/-E3qip-SYnQ",
+        "text": "",
+        "created_utc": 1675485241,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "where to start learning databases and APIs?",
+        "author": "TheFishToldMeSo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10t2d37/where_to_start_learning_databases_and_apis/",
+        "text": "I got an interview about designing middle-tier API. I did not know anything, even when asked what a thread was. I want to learn more with online resources and projects so that I can confidently answer these interview questions. Where should I start?\n\nThanks!",
+        "created_utc": 1675476932,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Jobs for undergrads",
+        "author": "fduds123",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10syxet/jobs_for_undergrads/",
+        "text": "Hey guys I’m a comp sci major in my third year. I’m looking for a job somewhere in comp sci (preferably programming) that I can work at part time with a half decent amount of knowledge in programming and IT. I can’t really do an internship right now as I’m in class.",
+        "created_utc": 1675467318,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Definition of Distributed Systems",
+        "author": "jmhajek",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10smolh/definition_of_distributed_systems/",
+        "text": "So according to most definitions, one of the requirements for a system being a distributed system are components that communicate with each other using messages.\n\nFor this to be a meaningful part of a definition, there must exist (non-distributed) systems where components communicate by other means than messages.\n\nWhat are some examples of such systems and such means?",
+        "created_utc": 1675437265,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does anyone know of a program to map 18k images by color (similar to the image but with no empty spaces ) + a program to create an HD texture map to be mapped seamlessly on a 3d sphere (with the poles closer to the center like earth), to be printed on a huge behemoth beach ball in real life.",
+        "author": "Niu_Davinci",
+        "url": "https://i.redd.it/rc1kjzgaizfa1.jpg",
+        "text": "",
+        "created_utc": 1675434990,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Observer Pattern: How to?",
+        "author": "numaanjaved",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10sjt21/observer_pattern_how_to/",
+        "text": "I saw a video about observer Pattern by IHeartGameDev on YouTube and it was a great way to make clean code. \nHe made interface classes for subject and observer, and then used them to send notification from subject to observer. \nHe mentioned that there are other methods to implement observer Pattern as well, so what kind of other methods are there to do this in unity ?\n\nI am interested to learn more.",
+        "created_utc": 1675429383,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I be more passionate?",
+        "author": "Charming_Bard",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10s9zwn/should_i_be_more_passionate/",
+        "text": "For context: I am in my 5th semester (out of 8) as a CS undergraduate student and before university I had no real contact with the field. \n\nOn to my main question...should I be more passionate? \n\nMeaning...I see a lot of other students that see CS more as a hobby, don't take me wrong, I like to check up on things too from time to time and especially when a course will need it, but I am nowhere near spending the amount of time that some others do.\n\nTo add more to this, I was told I would need to, sooner than later, start my own projects, but I don't think I have the time to do so during a semester, because that time could be spent on assignments and during holidays I never actually start one.\n\nAlthough I have seen myself improve vastly since 2 years ago when I started, and I like CS, I always have in the back of my mind that I am not cut out for it, or that maybe I am just too lazy.\n\nI am nearing my final year and was looking to maybe go on to a Cyber Security masters but anyone I have discussed it with has told me \"it's too hard and will need a lot of passion to put in the hours.\". \n\nSo, should I be more passionate? Am I doing this wrong? Any advice on what I might be doing wrong?\n\nTLDR: I feel like I am not as passionate as other students about the field although I, at least believe, I like it.",
+        "created_utc": 1675395402,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How are file types stored in memory?",
+        "author": "ElectronSpectrometer",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10s2zih/how_are_file_types_stored_in_memory/",
+        "text": "Let's say I create a .pdf file and a .txt file. After I click save for both of these files, how does the computer store the information of the identity of both these files in memory? Is there some kind of code stored behind the scenes that the computer can read whenever the file is accessed and that code corresponds to a file type? \n\nI know if the file is named something.txt the computer could read the name of the file and know that it's a .txt file, but when you actually save the file, what is getting stored in memory that makes that .txt file a .txt file and not something else?",
+        "created_utc": 1675376946,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do you quickly search databases that are hundreds of millions of records?",
+        "author": "DoNotHateKILL",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10rzi43/how_do_you_quickly_search_databases_that_are/",
+        "text": "I am new here and so far I've downloaded one database of 100 million records and another database of 200 million records (the recent twitter hack). I thought that exploring these databases would be a good excuse for me to learn MySQL. So far it's been a major headache and I've spent probably at least 20 hours at it and have gotten next to nowhere. I've used ChatGPT to guide me through the process, and it has worked wonders in getting me as far as I've gotten, but I encounter error after error and have troubleshooted at least 50 different problems so far. So at the moment I'm stuck with using a large text viewer, but that will take over an hour to run a single query.\n\nIn trying to get the files to load into a MySQL table, the most common problem is with the way the databases are parsed. Whatever delimiter is used in the file always appears somewhere in the data as well. The other common problem is that these files contain weird characters that MySQL can't handle. I've even used python to try to clean the files, but that also sends me down a rabbit hole of error after error after error. \n\nSo before I put a lot more time into this, am I even headed in the right direction? I figured MySQL is a good tool to know and is meant for large databases. But is it not appropriate for databases in the hundreds of millions of records? I want to be able to search a name or e-mail and not wait more than a minute or so for the query to finish (and I know MySQL will allow me to do partitions and other time saving tricks). I don't really have an interest in using these databases in scripting. My main interest is just running simple queries on them. So are there better tools that aren't too difficult to learn or expensive to use?",
+        "created_utc": 1675368670,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ChatGPT-like product?",
+        "author": "diceyoung",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10rupoy/chatgptlike_product/",
+        "text": "[removed]",
+        "created_utc": 1675357115,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do I need to learn more about Cyber Security?",
+        "author": "No_Conversation5705",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10revgt/what_do_i_need_to_learn_more_about_cyber_security/",
+        "text": " Long Story short, was a court reporter and hands gave out. I'm a little discouraged because I'm in my 30s and am wanting to start a new chapter in my life, and I know NOTHING about computers. I'm not even sure how to work Reddit. This is my 2nd post. I'm not even sure I'm in the right spot lol...Anyway, I looked into CS50 (the first lesson) and I loved it. I've always loved math, I've always loved the detail. I don't know, I want to give it a shot. A real shot. What do I need to know to grow in knowledge and really set myself up for success here? School isn't an option anymore. I'm 60k in the hole and paying that baby off. Any Computer Science people out there? Or Cyber Security that would give an advice or two? I really need guidance,",
+        "created_utc": 1675306963,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Computer for college",
+        "author": "RohakB2004",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10rcjod/computer_for_college/",
+        "text": "Hey y’all, I’ve recently accepted admission to A&amp;M for engineering, hoping to get through ETAM and make it to comp sci, so now I’m looking for a laptop to get me through college. I’m looking to spend at most like $1,200 on a computer that’s got decent power and solid battery life. I’d prefer if I’m able to play games on it, but I mean this as in PC exclusive games that aren’t over-demanding on my system (I have an Xbox so any and all games that I can play on there, I do). Thanks in advance :)",
+        "created_utc": 1675300849,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What Is Inheritance In Object-oriented programming",
+        "author": "Darshanapci",
+        "url": "https://www.ennicode.com/inheritance-in-object-orient-programming-oop/",
+        "text": "",
+        "created_utc": 1675299108,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need help with some movie recommendations for my senior project!",
+        "author": "caca-",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10r9eyj/need_help_with_some_movie_recommendations_for_my/",
+        "text": "Hi everyone! Hope y’all’s day is going well. \n\nI am currently doing a research project on the representation of women in computer science in the media over the years. I’m looking for any movies or shows that feature a woman in a computer science job or setting. \n\nI’ve asked ChatGPT a couple times and while some are good recommendations, some are more of a stretch or just plain wrong. \n\nIf you have any favorites (or least favorites because I need those too) feel free to drop them in the comments. Please and thank you!",
+        "created_utc": 1675293124,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I choose Python or Java if I want to become highly proficient in just one?",
+        "author": "Anti-Incel",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10r4q0d/should_i_choose_python_or_java_if_i_want_to/",
+        "text": " I am in my second year of a university degree in software development, and I already have a degree in a different field. I am currently working in IT, but I've been considering focusing my professional development in one specific area.\n\nI've read numerous posts and blog articles about the benefits of being a polyglot in programming languages, but I find them unconvincing. Instead, I find the idea of being knowledgeable in several different programming languages uninspiring. I prioritize the idea of being a complete programming stack guru (language, runtime, and library ecosystem) over the prospect of high paying jobs. Also, I understand that throughout my career I will eventually be forced to use other languages, I am not thinking about how to always use a single language. I am interested in IT because of operating systems, but there are no job opportunities for operating system or programming system development in my country, only sysadmin or DevOps positions, which do not interest me. Understanding the whole stack of a given language in-depth is the closest thing I have found to understanding how an operating system works when developing software.\n\nThe properties of the language itself are not of much interest to me. I am more concerned about the kind of people and tasks I will be able to develop if I become a specialist in that language. My first choice is Python, as I am interested in machine learning and find it fascinating that it is widely used by people from different backgrounds, particularly in NLP or digital image processing. Mathematics is not my strong point, so I do not see myself conducting research in the field, but rather developing software using ML tools or assisting researchers in software development. In addition, at my college, although we have seen some languages, the most used is C, which is very useful for me to learn how CPython works. My second choice is Java. In my country, 99% of job offers for Java are for CRUD type web application development, which is not appealing to me. However, the Java stack seems more technologically advanced than Python (for example, learning about the JVM seems more complex than understanding how CPython works). This raises the doubt in my mind that devoting myself to Java might have more room for growth as a language specialist.\n\nI would appreciate your opinions on this.",
+        "created_utc": 1675282272,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "File allocation table confusion",
+        "author": "pcguy27",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10qy32d/file_allocation_table_confusion/",
+        "text": "Sorry if this is the wrong subreddit, please point me in the right direction if so.\n\nThroughout studying MBR partitioning and the FAT file systems, I’ve read everywhere that the file allocation table is stored in the first sector of the disk. However, I’ve also read everywhere that the MBR takes up the entire 512 bytes of the first sector, and the MBR only consists of three parts:\n\nBoot code (446 bytes)\n\nPartition table (64 bytes)\n\nMBR signature (2 bytes)\n\nIf all of this is true, how can the MBR share a sector with the file allocation table on a non-Advanced Format disk? Is the FAT stored on the first sector of the volume rather than the first sector of the disk? Everywhere I have read says disk, but it just isn’t adding up for me.",
+        "created_utc": 1675266880,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What theories are related to Quantum Computing?",
+        "author": "Flynwale",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10qt1xm/what_theories_are_related_to_quantum_computing/",
+        "text": "Hello all. I am a Physics major freshman, and my dream is to join the Quantum Computing research (hopefully something that integrates Quantum Computing and AI). Since the field requires both Physics and Computer Science, I decided to study Physics in university, and the theories I need of Computer Science on my own (Coursera, Youtube, books...). However I am having trouble figuring out what exactly I need to study.\n\nSo, what Computer Science theories should I focus on during these few years? A list of keywords would also be very helpful.",
+        "created_utc": 1675253757,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Want to switch into IT and designing.",
+        "author": "Final_Ad4733",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10qjz0z/want_to_switch_into_it_and_designing/",
+        "text": "Currently I work for Google Ads\n\nArea of interests: Computer Languages, designing and innovations.\n\nNeed: What, why and how can that  possibly happen to switch my career at this point into IT?",
+        "created_utc": 1675224093,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "For the CORDIC algorithm, how can I show that using the summed elementary angle increments theta_i such that tan(theta_i )=2^{-i}, we can get to any angle with arbitrary precision?",
+        "author": "CousinDerylHickson",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10qguni/for_the_cordic_algorithm_how_can_i_show_that/",
+        "text": "",
+        "created_utc": 1675215206,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "if you made a program which, upon running it, would begin deleting its own code, would it crash after the remaining code no longer functioned as it’s supposed to or would it continue to run until all code was deleted?",
+        "author": "cumassnation",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10qgcia/if_you_made_a_program_which_upon_running_it_would/",
+        "text": "",
+        "created_utc": 1675213865,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I’m sorry for such a long post and maybe little disordered, but please help me.",
+        "author": "LilBrokenKitten",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10qefdj/im_sorry_for_such_a_long_post_and_maybe_little/",
+        "text": "Everything was fine and then, out of sudden…state of total confusion, derealization, constant fear and in public and at school I felt like in a stupid reality show. What happened to me? Everything happened with one day that I slept almost 24 hours. The day before was everything normal and I was at home alone (I hope so). After that day my boyfriend came back from holidays, I felt weird but nothing serious. After that, in the evening everything happened. From minute to minute my paranoia began and also my boyfriend was acting weird, even though he told me that I’m weird and he’s acting normal. Then I remember I heard vibrations from a closet and from the pencil I was holding. I freaked out because it was just “WHAT THE FUCK!!” and I started searching “something” in entire house and I was sure that we must have some cameras and eavesdropping devices somewhere. I didn’t take anything, no weed, drugs, I don’t drink alcohol. I remember my legs started to be extremely swollen very quickly. Then I didn’t sleep at all, I was scared to death all night ready for somebody who is coming to hurt us or me, I was even scared of my boyfriend.  The next day I found out that he has a dual sim and some apps duplicated, he also have new settings on his phone, I’m not really into these things but for example sometimes when he’s googling something, the cursor and field on text is light red, sometimes it’s not. I also saw some little mark in the corner of the display, some orange ring. When I asked about that he said that he don’t know about it and when he googled it in front of me, no image was matching it which made me more frightened. But maybe I was too paranoid so I tried to let it be. I wanted to go to my family for a while after this event so I took some things and went to the city (my boyfriend came with me). I was still scared and felt horrible for no reason. I noticed some guy from our college that was going after us and I slowed down and then I started to go after him and he was almost running from me. I also noticed some other people that were weird (all had headphones) and I started to panic that something bad happened and now someone hacked my phone and is after me. I had since this accident some problems with phone, SIM, especially login to email and messages from Messenger and Instagram. After this at school, everyone was acting weird (teachers and schoolmates) everyone and everything was so fucking absurd like from some stupid reality show even though I’m the only one who don’t know that is actress. I had some final exams from physics and some teachers said that some students was climbing out of the windows and on the floor was some id student card. I was even like high and they must have noticed that something is wrong with me if not with them or if it wasn’t a stupid game or something. I also noticed that when I was missing some event (e.g. group lesson at fitness center) that the whole event will be disrupted somehow. Also at school, I saw some gyus with headphones and computer sitting near me and when I went away they came after me or just got away. Also some black cars riding slowly near me when I was staying a while in front of some building of our school. Now the people around are acting more “normal” again, I also don’t feel so high, but WHAT, I’m still terrified as fuck and I don’t really know what to do. I’m sure that something is or was wrong with my school and that my boyfriend knows something. He’s still saying that he didn’t see anything weird and I’m paranoid. Oh and also that day in the city when I planned to go to my family.. instead of it I went to the supermarket to think about everything and about what is happening and what should I do and a police officer came to me (after my boyfriend left from the store just for a while on fresh air) and asked my id card. I asked why and started searching for it. He a took my card and did I don’t even know what with it but I started to feel so uncomfortable so I went into the store (through gateway, I was in a shopping center near that supermarket ) and I called emergency (I was sure that neighbors has something to do with it as they acted weird as well and I was literally scared to death) and told them everything even address and names of course. And you know what? They told me I need to go to that address, then call them again and after that they’ll come. Also the police officer didn’t want to give me back my id and started to behave strange and rude after he found out I’m talking to emergency. I know it must seem crazy and absurd but really, thats the worse thing about this. I think someone gave me something and now it seems like stupid tv show or like my boyfriend and school want to make a crazy person from me to lock me up. I’m stuck. This is something that have never happened to me before. After New Year’s Eve, my life is crumbling because I can feel something is wrong and that things that happened around me was real, even though I was probably on something or whatever someone did to me. Do you have any ideas what is going on? What would you do in my situation?",
+        "created_utc": 1675208813,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is this a reasonable exam task for a first semester computer science class based on Python?",
+        "author": "DarkXFast",
+        "url": "https://i.redd.it/9z7nkmnidgfa1.png",
+        "text": "",
+        "created_utc": 1675203276,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I will ne going university soon to study game development over games design and have seen that there is a unit about \"maths for computing\" maths is my weakness subject and I just wanted to know exactly how hard is this to learn I plan to do it anyway but just want some insight thanks.",
+        "author": "CollegeStudent999",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10q8g5g/i_will_ne_going_university_soon_to_study_game/",
+        "text": "",
+        "created_utc": 1675194314,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Thread safe solution for the problem of finding median for a datastream",
+        "author": "sonuahnis1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10pxz5v/thread_safe_solution_for_the_problem_of_finding/",
+        "text": "For LC problem: [https://leetcode.com/problems/find-median-from-data-stream/description/](https://leetcode.com/problems/find-median-from-data-stream/description/)\n\nHow to write an efficient solution which is thread safe?\n\nI could only think of these 2 possible solutions:  \nWhile using 2 heaps (1 max heap and 1 min heap), for both the methods (add\\_num() and find\\_median())\n\n1. Use a single lock to protect both these methods\n2. In case read to write ratio is skewed, use reader-writer lock\n\nPlease suggest a better solution.",
+        "created_utc": 1675168705,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "10 Best Computer Science Projects For 2023",
+        "author": "TarunFuleraJi",
+        "url": "https://i.redd.it/zbi5zxzfecfa1.png",
+        "text": "",
+        "created_utc": 1675155599,
+        "upvote_ratio": 1.0
+    }
+]

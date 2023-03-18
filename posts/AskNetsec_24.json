@@ -1,0 +1,794 @@
+[
+    {
+        "title": "Building Vulnerable VMs",
+        "author": "got_nations",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8ob1fl/building_vulnerable_vms/",
+        "text": "Hi, I was looking into building vulnerable VMs for a CTF I was doing, and I was having trouble finding resources. From what I understand, you fully patch a system, and then work backwards from there, and it seems logical, but I wanted to also get some other insight if possible.\n\nAlso, what are some good vectors that are not commonly intuitive to make a VM harder to crack? So far I have restricting shell access, duping users into believing it is an IIS server vs Apache server, etc.\n\nI was thinking of having \"possible\" vulnerable systems, but actually applying the fix and making it look like it was vulnerable, but it actually isn't.",
+        "created_utc": 1528054518,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "DoS attack? (Something seems fishy)",
+        "author": "tunaluna94",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8oa38c/dos_attack_something_seems_fishy/",
+        "text": "Hello, recently check my log from my Nighthawk 67000v2 and am noticing a lot of DoS attack happen from a range of IP. Is this pretty common, I have a simple SOHO network set up so I don't see a reason to be targeted. Something seems fishy and it started after a firmware update on the 25th of May.\n\n185.180.14.91:80- seems to be Ubuntu Apache2\n193.70.21.66:80 - Searchhabbo? \n\nhere are some of the logs:\n\n[DoS attack: ACK Scan] from source: 137.188.82.200:443 Sunday, June 03,2018 08:59:36            \n      \n[DoS attack: ACK Scan] from source: 52.202.239.85:443 Sunday, June 03,2018 08:43:24            \n[DoS attack: ACK Scan] from source: 104.237.191.1:443 Sunday, June 03,2018 08:39:07            \n[DoS attack: ACK Scan] from source: 23.21.46.184:443 Sunday, June 03,2018 07:52:59            \n\n[DoS attack: ACK Scan] from source: 52.200.139.158:443 Sunday, June 03,2018 07:04:50            \n[DoS attack: ACK Scan] from source: 52.200.139.158:443 Sunday, June 03,2018 07:04:23            \n[DoS attack: ACK Scan] from source: 23.64.156.101:443 Sunday, June 03,2018 06:55:37            \n[DoS attack: ACK Scan] from source: 142.4.113.39:80 Sunday, June 03,2018 06:50:33            \n[DoS attack: ACK Scan] from source: 178.33.32.170:2020 Sunday, June 03,2018 06:47:57            \n[DHCP IP: (192.168.1.7)] to MAC address C8:08:E9:D5:D3:12 Sunday, June 03,2018 06:34:33            \n[DHCP IP: (192.168.1.11)] to MAC address 00:24:E4:57:0B:56 Sunday, June 03,2018 06:25:45            \n[DoS attack: ACK Scan] from source: 120.27.176.254:443 Sunday, June 03,2018 05:58:53            \n         \n[DoS attack: ACK Scan] from source: 208.66.233.14:80 Sunday, June 03,2018 03:40:13            \n[DHCP IP: (192.168.1.11)] to MAC address 00:24:E4:57:0B:56 Sunday, June 03,2018 01:17:20            \n[DoS attack: ACK Scan] from source: 86.105.196.22:5816 Saturday, June 02,2018 22:43:28          \n[DoS attack: ACK Scan] from source: 86.105.196.22:5816 Saturday, June 02,2018 22:09:46          \n[DoS attack: ACK Scan] from source: 45.126.123.44:80 Saturday, June 02,2018 21:25:22          \n[DoS attack: ACK Scan] from source: 23.64.138.47:443 Saturday, June 02,2018 20:45:14          \n[DoS attack: ACK Scan] from source: 54.239.17.86:443 Saturday, June 02,2018 20:40:37          \n[DoS attack: ACK Scan] from source: 54.239.17.86:443 Saturday, June 02,2018 20:38:42          \n[DoS attack: ACK Scan] from source: 24.60.171.37:80 Saturday, June 02,2018 20:38:22          \n[DoS attack: ACK Scan] from source: 34.195.204.213:443 Saturday, June 02,2018 20:32:55          \n[DoS attack: ACK Scan] from source: 195.154.230.31:80 Saturday, June 02,2018 20:32:01          \n\n[DoS attack: ACK Scan] from source: 63.251.240.12:443 Saturday, June 02,2018 11:33:35          \n[DoS attack: ACK Scan] from source: 34.233.74.4:443 Saturday, June 02,2018 11:21:50          \n[DHCP IP: (192.168.1.2)] to MAC address 40:4E:36:D1:F2:3C Saturday, June 02,2018 11:19:33          \n[DoS attack: ACK Scan] from source: 34.195.204.213:443 Saturday, June 02,2018 10:43:03          \n[DoS attack: ACK Scan] from source: 52.119.168.22:443 Saturday, June 02,2018 10:42:06          \n\n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:13:08            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:13:07            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:13:06            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:57            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:56            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:55            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:47            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:46            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:45            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:36            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:35            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:34            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:26            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:25            \n[WLAN access rejected: incorrect security] from MAC address 00:24:e4:57:0b:56 Friday, June 01,2018 15:12:24            \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Friday, June 01,2018 15:12:04            \n[DoS attack: ACK Scan] from source: 216.58.194.109:443 Friday, June 01,2018 12:41:16            \n[DoS attack: ACK Scan] from source: 54.209.18.151:443 Friday, June 01,2018 12:40:55            \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Friday, June 01,2018 12:30:17            \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Friday, June 01,2018 12:29:48            \n[Time synchronized with NTP server time-b.netgear.com] Friday, June 01,2018 12:22:46            \n[DoS attack: ACK Scan] from source: 118.69.82.18:11001 Friday, June 01,2018 11:32:28            \n[DHCP IP: (192.168.1.7)] to MAC address C8:08:E9:D5:D3:12 Friday, June 01,2018 11:15:21            \n[DHCP IP: (192.168.1.8)] to MAC address 1C:1B:0D:AD:A5:EB Friday, June 01,2018 11:07:55            \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Friday, June 01,2018 10:46:28            \n[DoS attack: ACK Scan] from source: 59.56.110.227:80 Friday, June 01,2018 10:23:59            \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Friday, June 01,2018 08:54:05            \n[DoS attack: ACK Scan] from source: 118.69.82.18:11001 Friday, June 01,2018 08:29:43            \n[DoS attack: ACK Scan] from source: 35.188.173.178:63394 Friday, June 01,2018 08:20:24            \n[DHCP IP: (192.168.1.6)] to MAC address 94:9F:3E:1A:57:86 Friday, June 01,2018 07:41:30            \n[DoS attack: ACK Scan] from source: 86.105.196.101:5816 Friday, June 01,2018 03:40:26            \n[DoS attack: ACK Scan] from source: 118.69.82.18:11001 Friday, June 01,2018 03:25:16            \n[DoS attack: ACK Scan] from source: 122.117.167.243:36515 Thursday, May 31,2018 22:59:44           \n[DHCP IP: (192.168.1.6)] to MAC address 94:9F:3E:1A:57:86 Thursday, May 31,2018 19:41:29           \n[DoS attack: ACK Scan] from source: 35.186.224.62:443 Thursday, May 31,2018 15:41:40           \n[DoS attack: ACK Scan] from source: 35.186.224.62:443 Thursday, May 31,2018 15:41:10           \n[DoS attack: ACK Scan] from source: 35.186.224.62:443 Thursday, May 31,2018 15:40:44           \n[DoS attack: ACK Scan] from source: 52.136.228.132:30100 Thursday, May 31,2018 14:48:40           \n[Time synchronized with NTP server time-b.netgear.com] Thursday, May 31,2018 12:22:46           \n[Internet connected] IP address: 24.27.14.187 Thursday, May 31,2018 12:22:29           \n[Internet disconnected] Thursday, May 31,2018 12:22:28           \n[DoS attack: ACK Scan] from source: 178.32.148.101:6009 Thursday, May 31,2018 10:16:47           \n[DoS attack: ACK Scan] from source: 178.32.148.101:6009 Thursday, May 31,2018 09:46:07           \n[DoS attack: ACK Scan] from source: 218.161.22.227:31976 Thursday, May 31,2018 08:43:04           \n[DoS attack: ACK Scan] from source: 49.178.39.236:80 Thursday, May 31,2018 08:00:35           \n[DoS attack: ACK Scan] from source: 178.32.148.106:6009 Thursday, May 31,2018 07:59:02           \n[DHCP IP: (192.168.1.6)] to MAC address 94:9F:3E:1A:57:86 Thursday, May 31,2018 07:41:29           \n[DHCP IP: (192.168.1.7)] to MAC address C8:08:E9:D5:D3:12 Thursday, May 31,2018 07:15:48           \n[DoS attack: ACK Scan] from source: 23.202.224.231:443 Thursday, May 31,2018 06:55:21           \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Thursday, May 31,2018 06:20:10           \n[DoS attack: ACK Scan] from source: 192.99.12.51:7000 Thursday, May 31,2018 05:34:56           \n[DoS attack: ACK Scan] from source: 63.251.240.12:443 Thursday, May 31,2018 05:19:04           \n[DoS attack: ACK Scan] from source: 63.251.240.12:443 Thursday, May 31,2018 05:18:34           \n[DoS attack: ACK Scan] from source: 63.251.240.12:443 Thursday, May 31,2018 05:18:04           \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Thursday, May 31,2018 04:04:54           \n[DoS attack: ACK Scan] from source: 17.249.60.29:443 Thursday, May 31,2018 00:49:55           \n[DoS attack: ACK Scan] from source: 17.249.60.29:443 Thursday, May 31,2018 00:49:21           \n[Time synchronized with NTP server time-b.netgear.com] Thursday, May 31,2018 00:41:34           \n[Internet connected] IP address: 24.27.14.187 Thursday, May 31,2018 00:41:15           \n[Internet disconnected] Thursday, May 31,2018 00:41:13           \n[Internet connected] IP address: 192.168.100.20 Thursday, May 31,2018 00:40:41           \n[Internet disconnected] Thursday, May 31,2018 00:40:09           \n[Internet connected] IP address: 24.27.14.187 Thursday, May 31,2018 00:39:33           \n[Internet disconnected] Thursday, May 31,2018 00:39:32           \n[Internet connected] IP address: 192.168.100.20 Thursday, May 31,2018 00:39:00           \n[Internet disconnected] Thursday, May 31,2018 00:38:08           \n[DoS attack: ACK Scan] from source: 54.39.41.224:4444 Wednesday, May 30,2018 20:40:57          \n[DHCP IP: (192.168.1.6)] to MAC address 94:9F:3E:1A:57:86 Wednesday, May 30,2018 19:41:27          \n[DoS attack: ACK Scan] from source: 54.39.41.224:4444 Wednesday, May 30,2018 19:34:32          \n[DoS attack: ACK Scan] from source: 23.237.47.140:2095 Wednesday, May 30,2018 19:03:16          \n[DHCP IP: (192.168.1.7)] to MAC address C8:08:E9:D5:D3:12 Wednesday, May 30,2018 18:09:47          \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Wednesday, May 30,2018 16:05:16          \n[DoS attack: ACK Scan] from source: 23.23.175.199:443 Wednesday, May 30,2018 15:42:18          \n[DHCP IP: (192.168.1.8)] to MAC address 1C:1B:0D:AD:A5:EB Wednesday, May 30,2018 14:54:49          \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Wednesday, May 30,2018 14:27:07          \n[DoS attack: ACK Scan] from source: 185.53.160.216:80 Wednesday, May 30,2018 14:14:30          \n[DoS attack: ACK Scan] from source: 23.237.47.140:2095 Wednesday, May 30,2018 13:52:22          \n[DoS attack: ACK Scan] from source: 54.36.24.186:9987 Wednesday, May 30,2018 13:31:14          \n[DoS attack: ACK Scan] from source: 79.137.86.233:11004 Wednesday, May 30,2018 12:26:06          \n[DoS attack: ACK Scan] from source: 79.137.86.233:11004 Wednesday, May 30,2018 12:15:13          \n[Time synchronized with NTP server time-b.netgear.com] Wednesday, May 30,2018 12:04:12          \n[DoS attack: ACK Scan] from source: 54.39.41.224:4444 Wednesday, May 30,2018 11:33:34          \n[DoS attack: ACK Scan] from source: 194.67.210.4:34431 Wednesday, May 30,2018 08:20:07          \n[DHCP IP: (192.168.1.6)] to MAC address 94:9F:3E:1A:57:86 Wednesday, May 30,2018 07:41:26          \n[DoS attack: ACK Scan] from source: 138.201.123.151:11007 Wednesday, May 30,2018 07:10:26          \n[DoS attack: ACK Scan] from source: 43.228.64.71:9589 Wednesday, May 30,2018 04:20:17          \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Wednesday, May 30,2018 03:54:08          \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Wednesday, May 30,2018 03:30:49          \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Wednesday, May 30,2018 03:28:48          \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Wednesday, May 30,2018 03:26:48          \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Wednesday, May 30,2018 03:23:39          \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Wednesday, May 30,2018 03:23:04          \n[DHCP IP: (192.168.1.4)] to MAC address 20:3C:AE:9D:72:F5 Wednesday, May 30,2018 02:38:05          \n\n[DHCP IP: (192.168.1.6)] to MAC address 94:9F:3E:1A:57:86 Saturday, May 26,2018 19:41:23           \n[DoS attack: ACK Scan] from source: 54.225.174.11:443 Saturday, May 26,2018 19:36:11           \n[DHCP IP: (192.168.1.10)] to MAC address FC:DB:B3:03:A5:9D Saturday, May 26,2018 19:35:40           \n[DHCP IP: (192.168.1.2)] to MAC address 40:4E:36:D1:F2:3C Saturday, May 26,2018 19:32:57           \n[DoS attack: ACK Scan] from source: 34.195.204.213:443 Saturday, May 26,2018 18:03:42           \n[DoS attack: ACK Scan] from source: 151.101.50.2:443 Saturday, May 26,2018 17:41:51           \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Saturday, May 26,2018 17:40:43           \n[DoS attack: ACK Scan] from source: 151.101.50.2:443 Saturday, May 26,2018 17:39:51           \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Saturday, May 26,2018 17:38:42           \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Saturday, May 26,2018 17:36:41           \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Saturday, May 26,2018 17:34:40           \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Saturday, May 26,2018 17:34:12           \n[DoS attack: ACK Scan] from source: 151.101.50.2:443 Saturday, May 26,2018 17:33:47           \n[DoS attack: ACK Scan] from source: 151.101.50.2:443 Saturday, May 26,2018 17:33:24           \n[DoS attack: ACK Scan] from source: 151.101.50.2:443 Saturday, May 26,2018 17:32:58           \n[DoS attack: ACK Scan] from source: 13.32.168.215:443 Saturday, May 26,2018 17:26:17           \n[DoS attack: ACK Scan] from source: 13.33.92.111:443 Saturday, May 26,2018 17:24:06           \n[DoS attack: ACK Scan] from source: 157.240.19.19:443 Saturday, May 26,2018 17:17:28           \n[DHCP IP: (192.168.1.3)] to MAC address DC:A9:04:91:66:06 Saturday, May 26,2018 17:01:22           \n[DoS attack: ACK Scan] from source: 63.251.240.12:443 Saturday, May 26,2018 16:43:44           \n[DoS attack: ACK Scan] from source: 63.251.240.12:443 Saturday, May 26,2018 16:43:13           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:56:32           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:51:32           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:48:19           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:47:42           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:46:32           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:42:43           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:42:19           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:41:32           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:37:47           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:36:47           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:36:32           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:35:40           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:34:55           \n[DoS attack: ACK Scan] from source: 172.226.209.165:443 Saturday, May 26,2018 15:33:12           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:31:32           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:26:32           \n[DoS attack: ACK Scan] from source: 172.226.177.169:443 Saturday, May 26,2018 15:26:15           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:23:52           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:19:50           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:18:50           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:17:50           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:16:48           \n[DoS attack: ACK Scan] from source: 151.101.48.193:443 Saturday, May 26,2018 15:16:25           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:16:04           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:14:48           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:14:03           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:12:47           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:11:44           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:11:01           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 15:10:31           \n[DoS attack: ACK Scan] from source: 172.226.177.169:443 Saturday, May 26,2018 15:03:23           \n[DoS attack: ACK Scan] from source: 34.195.204.213:443 Saturday, May 26,2018 15:02:57           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:01:35           \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 15:01:35           \n[DHCP IP: (192.168.1.5)] to MAC address 70:9E:29:EB:25:64 Saturday, May 26,2018 15:01:34           \n[DHCP IP: (192.168.1.7)] to MAC address C8:08:E9:D5:D3:12 Saturday, May 26,2018 15:01:32           \n[DoS attack: ACK Scan] from source: 157.240.19.19:443 Saturday, May 26,2018 14:55:09           \n[DHCP IP: (192.168.1.9)] to MAC address C4:B3:01:9B:03:30 Saturday, May 26,2018 14:30:49           \n[DoS attack: ACK Scan] from source: 52.20.200.135:443 Saturday, May 26,2018 14:27:08           \n[DoS attack: ACK Scan] from source: 50.16.235.124:443 Saturday, May 26,2018 14:26:03           \n[DHCP IP: (192.168.1.10)] to MAC address FC:DB:B3:03:A5:9D Saturday, May 26,2018 14:26:01           \n[DHCP IP: (192.168.1.2)] to MAC address 40:4E:36:D1:F2:3C Saturday, May 26,2018 14:23:02           \n[DoS attack: ACK Scan] from source: 149.56.112.238:61183 Saturday, May 26,2018 13:27:53           \n[DoS attack: ACK Scan] from source: 77.104.142.68:80 Saturday, May 26,2018 13:24:09           \n[DoS attack: ACK Scan] from source: 149.202.202.198:11005 Saturday, May 26,2018 13:18:02           \n[DoS attack: ACK Scan] from source: 149.202.202.198:11005 Saturday, May 26,2018 13:09:42           \n[DoS attack: ACK Scan] from source: 34.195.204.213:443 Saturday, May 26,2018 12:53:22           \n[Time synchronized with NTP server time-b.netgear.com] Saturday, May 26,2018 12:04:11           \n[Internet connected] IP address: 24.27.14.187 Saturday, May 26,2018 12:03:42           \n[Internet disconnected] Saturday, May 26,2018 12:03:41           \n[DoS attack: ACK Scan] from source: 149.202.202.198:11005 Saturday, May 26,2018 11:00:52           \n[DoS attack: ACK Scan] from source: 34.195.204.213:443 Saturday, May 26,2018 10:53:23           \n[DoS attack: ACK Scan] from source: 34.195.204.213:443 Saturday, May 26,2018 10:53:01           \n[DoS attack: ACK Scan] from source: 79.137.86.233:11004 Saturday, May 26,2018 10:22:02           \n[DoS attack: ACK Scan] from source: 54.39.41.224:4444 Saturday, May 26,2018 10:15:47           \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Saturday, May 26,2018 09:24:11           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 09:21:52           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 09:19:51           \n[DoS attack: ACK Scan] from source: 154431.101.48.116: Saturday, May 26,2018 09:18:51           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 09:17:51           \n[DoS attack: ACK Scan] from source: 151.101.48.116:443 Saturday, May 26,2018 09:16:39           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 09:16:14           \n[DoS attack: ACK Scan] from source: 151.101.49.140:443 Saturday, May 26,2018 09:15:50           \n[DoS attack: ACK Scan] from source: 52.207.6.77:443 Saturday, May 26,2018 08:58:17           \n[DHCP IP: (192.168.1.10)] to MAC address FC:DB:B3:03:A5:9D Saturday, May 26,2018 08:55:54           \n[DHCP IP: (192.168.1.2)] to MAC address 40:4E:36:D1:F2:3C Saturday, May 26,2018 08:54:17           \n[DoS attack: ACK Scan] from source: 13.32.241.44:443 Saturday, May 26,2018 08:47:59           \n[DoS attack: ACK Scan] from source: 157.240.19.26:443 Saturday, May 26,2018 08:47:34           \n[DoS attack: ACK Scan] from source: 157.240.19.26:443 Saturday, May 26,2018 08:47:10           \n[DoS attack: ACK Scan] from source: 157.240.19.20:443 Saturday, May 26,2018 08:46:40           \n[DoS attack: ACK Scan] from source: 149.202.202.198:11005 Saturday, May 26,2018 08:44:14           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:43:36           \n[DHCP IP: (192.168.1.9)] to MAC address C4:B3:01:9B:03:30 Saturday, May 26,2018 08:43:28           \n[DoS attack: ACK Scan] from source: 178.33.203.49:80 Saturday, May 26,2018 08:41:57           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:40:28           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:37:20           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:31:04           \n[DoS attack: ACK Scan] from source: 149.202.202.198:11005 Saturday, May 26,2018 08:28:21           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:27:56           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:24:48           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:21:40           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:18:32           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:15:24           \n[DoS attack: ACK Scan] from source: 13.32.168.245:443 Saturday, May 26,2018 08:13:51           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:09:08           \n[DoS attack: ACK Scan] from source: 63.251.240.12:443 Saturday, May 26,2018 08:06:23           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:06:00           \n[DoS attack: ACK Scan] from source: 193.70.21.66:80 Saturday, May 26,2018 08:05:38           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 08:02:52           \n[DoS attack: ACK Scan] from source: 54.70.179.179:443 Saturday, May 26,2018 08:01:59           \n[DoS attack: ACK Scan] from source: 54.70.179.179:443 Saturday, May 26,2018 08:01:12           \n[DoS attack: ACK Scan] from source: 54.70.179.179:443 Saturday, May 26,2018 08:00:49           \n[DoS attack: ACK Scan] from source: 157.240.19.26:443 Saturday, May 26,2018 08:00:24           \n[DoS attack: ACK Scan] from source: 145.239.137.124:1250 Saturday, May 26,2018 07:59:07           \n[DHCP IP: (192.168.1.9)] to MAC address C4:B3:01:9B:03:30 Saturday, May 26,2018 07:57:52           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:56:36           \n[DoS attack: ACK Scan] from source: 52.94.237.250:443 Saturday, May 26,2018 07:50:56           \n[DoS attack: ACK Scan] from source: 52.119.164.214:443 Saturday, May 26,2018 07:47:38           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:47:12           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:44:04           \n[DHCP IP: (192.168.1.6)] to MAC address 94:9F:3E:1A:57:86 Saturday, May 26,2018 07:41:22           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:40:56           \n[DoS attack: ACK Scan] from source: 31.13.93.19:443 Saturday, May 26,2018 07:38:30           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:37:48           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:34:40           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:31:32           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:28:24           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:22:08           \n[DoS attack: ACK Scan] from source: 104.237.191.1:443 Saturday, May 26,2018 07:18:52           \n[DoS attack: ACK Scan] from source: 104.237.191.1:443 Saturday, May 26,2018 07:18:22           \n[DoS attack: ACK Scan] from source: 104.237.191.1:443 Saturday, May 26,2018 07:17:52           \n[DoS attack: ACK Scan] from source: 185.180.14.91:80 Saturday, May 26,2018 07:15:52           \n[DHCP IP: (192.168.1.9)] to MAC address C4:B3:01:9B:03:30 Saturday, May 26,2018 07:15:38           \n[DHCP IP: (192.168.1.10)] to MAC address FC:DB:B3:03:A5:9D Saturday, May 26,2018 07:14:16           \n[DHCP IP: (192.168.1.2)] to MAC address 40:4E:36:D1:F2:3C Saturday, May 26,2018 07:13:09           \n       \n[UPnP set event:AddPortMapping] from source 192.168.1.5 Saturday, May 26,2018 05:50:21           \n16:33:01             \n[DHCP IP: (192.168.1.2)] to MAC address 40:4E:36:D1:F2:3C Friday, May 25,2018 16:32:07             \n[DHCP IP: (192.168.1.8)] to MAC address 1C:1B:0D:AD:A5:EB Friday, May 25,2018 16:30:48             \n[DHCP IP: (192.168.1.2)] to MAC address 40:4E:36:D1:F2:3C Friday, May 25,2018 16:30:06             \n[Time synchronized with NTP server time-b.netgear.com] Friday, May 25,2018 16:29:56             \n[Internet connected] IP address: 24.27.14.187 Friday, May 25,2018 16:29:31             \n[Initialized, firmware version: V1.2.0.16_1.0.1 ] Friday, May 25,2018 16:28:35             \n",
+        "created_utc": 1528046625,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "For my masters project, im doing how to secure the database in a cloud environment.",
+        "author": "Shad_Zam",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o9vkc/for_my_masters_project_im_doing_how_to_secure_the/",
+        "text": "if any of you have any good material or advice which can help me out please do so. \n\nthank you..",
+        "created_utc": 1528044896,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can I totally remove my digital footprint and erase my online presence?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o9nrf/how_can_i_totally_remove_my_digital_footprint_and/",
+        "text": "[deleted]",
+        "created_utc": 1528043083,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question while using responder while LLMNR, NBT-NS and WPAD is disabled. What should I expect?",
+        "author": "CautiousSky",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o9025/question_while_using_responder_while_llmnr_nbtns/",
+        "text": "Can responder able to Finger machines even if the LLMNR, NBT\\-NS and wpad is disabled?\n\nI'm receiving this output and been running responder for almost 4 days. I haven't get any hashes or wpad result. Does this mean they disabled LLMNR, NBT\\-NS?\n\nCommand:   Responder.py \\-I eth0 \\-wrfF\n\n**\\[\\*\\] \\[LLMNR\\]** **Poisoned answer sent to 192.168.100.2 for name Mach2**\n\n**\\[\\*\\] \\[NBT\\-NS\\] Poisoned answer sent to 192.168.100.2 for name Mach2 \\(service: Workstation/Redirector\\)**\n\n**\\[FINGER\\]** OS Version  : Windows Server 2012 R2 Standard 9600\n\n**\\[FINGER\\]** OS Version  : Windows Server 2012 R2 Standard 9600\n\n**\\[FINGER\\]** Client Version : Windows Server 2012 R2 Standard 6.3\n\n**\\[FINGER\\]** Client Version : Windows Server 2012 R2 Standard 6.3\n\nThank you!",
+        "created_utc": 1528037831,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thoughts on the word 'Cyber'",
+        "author": "abluedinosaur",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o6t2w/thoughts_on_the_word_cyber/",
+        "text": "What are your thoughts in the word cyber?\n\nI am personally not a fan and never use the word unless it's part of a proper noun. Whenever I bring this up, since I feel it's overused, others seem to feel similarly. Still, it's regularly used, but I feel like it's used more by those who don't really know the field or when talking or marketing to a general audience. \n\nI prefer the terms \"computer security\" or \"network security.\" I think \"information security\" is also fine, but a bit too corporate sounding for regular use :\\). I oftentimes actually just use the term \"security\" since the context often makes it clear what type of security I'm talking about. ",
+        "created_utc": 1528007457,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do I have enough experience to take the OSCP course/exam?",
+        "author": "Irishridire",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o2iwo/do_i_have_enough_experience_to_take_the_oscp/",
+        "text": "Hi,\n\nI'm a junior iOS Dev looking to move into security and pen testing within a year or two. What I'd really like to do is focus on mobile security, but I can't afford the SANS mobile hacking course and have been told that the OSCP is useful for getting into any security role.\n\n1) Is it true that taking the OSCP would be a smart cert to get if I want to have a career in mobile security/pen testing in the future? Or should I wait and try to save up for the SANS mobile security course one day?\n\n2) I'm a recent college graduate from a highly ranked/well known computer Science school with a CS bachelors degree. I'm very comfortable with programming in multiple languages. With security, I took my college's computer security course and an experimental pen test course they ran. The intro computer security course was almost entirely conceptual with hardly any hands on experience (syllabus is here if anyone is interested:  http://www-inst.cs.berkeley.edu/~cs161/sp18/) \n\nThe pen testing course was basically just finding bug bounties on your own, and I focused almost entirely on iOS pen testing as it's what I'm most interested in. Is my experience enough for me to be ready to take the OSCP course or do I need more security experience to avoid being overwhelmed?\n\nThank you!\n\n",
+        "created_utc": 1527963948,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good Ethical Hacking books??",
+        "author": "Amerjod",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o2icz/good_ethical_hacking_books/",
+        "text": "I was looking for some books to read to help me to become an ethical hacker, I found so many books but I got confused which one should I read. Can anyone suggest one or two books which are really good and contain reasonably new/up\\-to\\-date information?\n\nMany thanks",
+        "created_utc": 1527963819,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How is snort supposed to be used ?",
+        "author": "3AGLE_OF_SURVEILLANC",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o0crw/how_is_snort_supposed_to_be_used/",
+        "text": "So I wanted to learn more about the Snort IDS/IPS system. I have read some documentations on it , but I still can't figure out how it is used. I have the feeling that most guides skip some steps ,for example they tell you how to set it up , but not how it would perform in a real life scenario. I have snort running on a raspberry-pi with following settings: \n\n*/usr/sbin/snort -m 027 -D -d -l /var/log/snort -u snort -g snort -c /etc/snort/snort.conf -S HOME_NET=[192.168.0.0/16] -i wlan0*\n\nI tried attacking it with the nmap exploit script collection , and when I had -A set to \"console\" it gave me an output with source ip and activated rule . But with the snort daemon it did nothing. I tried the -r flag on the default log and I just got some ascii data. \nSo how it it supposed to be used. I mean the logging feature is not  there for nothing, right ? ",
+        "created_utc": 1527944079,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Zerocopter invite.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8o06m9/zerocopter_invite/",
+        "text": "[deleted]",
+        "created_utc": 1527942001,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is malware analysis moreso blue team security or forensics?",
+        "author": "slewid",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nyhid/is_malware_analysis_moreso_blue_team_security_or/",
+        "text": "I am really interested in malware analysis. Is it more of a blue team security skill, or a forensic analyst?",
+        "created_utc": 1527916906,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What’s a good entry level NetSec job?",
+        "author": "SneekeeG",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nyh00/whats_a_good_entry_level_netsec_job/",
+        "text": "I’m currently studying for the CompTIA Sec+ 501 exam and I was wondering what jobs should I search for after I get the cert. a little back ground on me. I’m currently getting my Associate in Science. No other certs current job isn’t in IT. So any ideas or recommendations. Thank you in advance ",
+        "created_utc": 1527916724,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "GSEC and Sec401 boot camp",
+        "author": "RedRocket508",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nxuo5/gsec_and_sec401_boot_camp/",
+        "text": "Has anyone self studied for GSEC and been successful? $6,000 for Sec401 boot camp is way to deep for my pockets at the moment. ",
+        "created_utc": 1527909404,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Would like some input on presentation topic for interview.",
+        "author": "gotnikes",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nxnvq/would_like_some_input_on_presentation_topic_for/",
+        "text": "So I am interviewing for a company who requires me to do a 15 minute presentation on any technical topic of my choosing. The role would be in network security (siems, firewalls, routing, ipsec, etc) My first though was to do a presentation on my OSCP experience. I would talk about the methodology used, maybe an example box. My OSCP is from 2016 so I wouldn't be sharing any hints. Do you think this is acceptable?",
+        "created_utc": 1527907400,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Securely receiving inbound return traffic from API calls",
+        "author": "netsecq8",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nwwqv/securely_receiving_inbound_return_traffic_from/",
+        "text": "Hi,\n\nI need to be able to receive responses from API's from several websites but don't want to open my server for intruders and worry I am doing that.\n\nMy scenario doesn't fit in any of the example scenario's for AWS but I am contemplating using rule inbound #140 from [aws doc](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html#VPC_Appendix_NACLs_Scenario_2). Furthermore I have ssh inbound from a dedicated ip and outbound http https to 0.0.0.0/0 do the API calls.\n\nDo I need this inbound rule and is it safe to set up like this or do I open my server for all sorts of traffic and intruders.\n\nThanks a lot.",
+        "created_utc": 1527899848,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Dealing with Burnout",
+        "author": "redduhthrowaway",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nwdq2/dealing_with_burnout/",
+        "text": "Fellow NetSec’ers, how do you guys deal with burnout? Do you even face it?\n\nI’ve been working full time in NetSec for almost 10 years. I took a brief break to work in a security heavy infrastructure position and went back to it. My background is all blue team and defense, primarily in an analyst role, but I’ve spent time in engineering and I’m currently running a program. \n\nI’m responsible top to bottom for Security, from making decisions about configurations and architecture, to deploying tools, doing IR and monitoring, so I’m in and out of all of the various aspects. \n\nMy current role is fairly new to me, but I’ve been there long enough that I’m starting to realize that maybe it wasn’t my last position I was unhappy with, but my career choice as a whole. \n\nI’m currently seriously considering halving my salary and moving over to a Networking or a Development position and essentially starting my career over. \n\nI’m finding myself just very jaded and wanting the satisfaction of “completing” or “building” something. I’m unbelievably tired of vendors promising panaceas and then trying to explain why the very expensive NGAV is just a tool, and I still need to spend time actually securing stuff, as well as the non-stop hype around the industry as a whole. \n\nDo you guys get burnt out? \n\nWhat is it that makes you burnt out?\n\nHave any of you left the field only to come back?",
+        "created_utc": 1527894938,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TLS/SSL .. DH vs RSA for key exchange and authentication?",
+        "author": "saladere",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nw0ik/tlsssl_dh_vs_rsa_for_key_exchange_and/",
+        "text": "Hello,\n\nI am having some issues understanding the TLS/SSL handshake. Namely, the key exchange and authentication process when it comes to RSA vs DH. I posted it here and not in crypto as I am not really looking for a breakdown of the mathematical formulas behind each case (but let me know if I need 'em, or if this should be moved).\n\nAccording to Wikipedia, RSA is supported for both authentication and key exchange in the TLS handshake, and DH can only be used for key exchange (https://en.wikipedia.org/wiki/Cipher_suite#Supported_algorithms).\n\nDoes that mean if we were to use RSA for key exchange AND authentication, the client would encrypt the pre-master secret with the server's RSA public certificate (server successfully decrypts the pre-master secret using the corresponding private key so it is effectively authenticated), and both parties use the RSA algorithm to generate their master secrets?\n\nIf we were to use DH key exchange with RSA for authentication, how does the client authenticate the server? In the server hello message, does the server send some DH parameters (or something else?) that is signed using the server's RSA certificate?\n\nCheers,\nS",
+        "created_utc": 1527891668,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nessus Scan Taking Days",
+        "author": "seag33k",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nt1kd/nessus_scan_taking_days/",
+        "text": "I am currently doing a credentialed scan of approximately 400 systems.  I am scanning per IP.  The scan is at about 2 days and I cannot access the web interface at this time.  This has happened before and we had to just wait for the scan to complete.  Rebooting the system \\(Windows\\) didn't stop the scan.  Has any one ran into this type of issue with Nessus? We are using the professional version.  Its using 50&amp;#37; cpu and about 20&amp;#37; memory.",
+        "created_utc": 1527868800,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Top Notch Services",
+        "author": "Jackfitzgerald13",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nsezw/top_notch_services/",
+        "text": "[removed]",
+        "created_utc": 1527864579,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it common for employers with pentesters to forbid them from doing bug bounties?",
+        "author": "nationStateHate",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nseug/is_it_common_for_employers_with_pentesters_to/",
+        "text": "Doesn't have to be pentesters specifically...blue team, purple team, red team, anyone infosec really\n\nIs it a common thing that a lot of for-profit employers will forbid employees from participating in private bug bounties, or bug bounty providers like Bugcrowd &amp; HackerOne? \n\nNo bug bounties at all on the side on your free time, like at nights? Written into your employee contract you sign or employee handbook? Do places even police this by asking say Bugcrowd or HackerOne for a list of all researchers to ensure none of their employees are doing it?",
+        "created_utc": 1527864541,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Network Security Professionals: What's your average day like?",
+        "author": "RoboGeek123",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nrn6t/network_security_professionals_whats_your_average/",
+        "text": "I'm going to be starting a 4-year Information Assurance and Cyber Defense program in the fall and I was interested in what the typical day looks like for cybersecurity professionals.\n\nObviously, this will vary from position to position but I am most interested in...\n\n* what's your job title?\n* hours?\n* Typical daily tasks?\n* Family/ work life balance?\n* What drove you to this field?\n\nI've been researching but I can't seem to find a lot of information on the typical hours in this field.  I'd love to get a sense of what it's like before I fully commit to it.  Can anyone help an aspiring professional get a feel for what to expect? \n\nAny feedback is appreciated\n\n\nThanks!",
+        "created_utc": 1527857633,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Careers advice for security graduate who doesn't want to stare at code/terminals all day.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/security/comments/8nrfqm/careers_advice_for_security_graduate_who_doesnt/",
+        "text": "[deleted]",
+        "created_utc": 1527856238,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Complete Anonymity",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nqcag/complete_anonymity/",
+        "text": "[removed]",
+        "created_utc": 1527842205,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a way to filter links who use different display text than the actual href value?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nq960/is_there_a_way_to_filter_links_who_use_different/",
+        "text": "[deleted]",
+        "created_utc": 1527840978,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I go about setting up a highly restrictive standard account for family members who are learning how to operate computers and sell online?",
+        "author": "powerofinformation",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8npud6/how_do_i_go_about_setting_up_a_highly_restrictive/",
+        "text": "I am doing a clean install on my computer and will have a dual boot system with Win 10 and Ubuntu (or other secure OS). My HDD partition will be divided into half among the two environments. \n\nNow, I am totally new to computers and I need to set up a restricted account on the Windows side. It would be used by my family for learning how to use computers and selling online on Etsy. They cannot have access to anything on the HDD except only the needed folders, software etc. They shouldn't have any access to the files on the Ubuntu partition obviously. They are seniors and can't even turn on a computer so utmost restriction is needed. Giving them a new laptop is not possible due to the high prices of computers in my country. \n\nCan someone provide an article or explain to me the steps I should take in order to set up such an account on Windows?",
+        "created_utc": 1527835614,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "setting up an incident response team",
+        "author": "s802645",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8np20n/setting_up_an_incident_response_team/",
+        "text": "am setting up an incident response team and is having dilemma of hiring professionals or just doing it in-house. things like taking memory dumps etc do we require professionals? or can we just do it using simple tools like dumpit etc ? i suppose in this case i am not worried about preservation of evidence and law enforcement purposes. but does it mean that doing it in-house would not admissible for law enforcement ?",
+        "created_utc": 1527826956,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "old indie infosec career?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nokd9/old_indie_infosec_career/",
+        "text": "[deleted]",
+        "created_utc": 1527822337,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm pretty sure that Vodafone is blocking imgur",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nnabh/im_pretty_sure_that_vodafone_is_blocking_imgur/",
+        "text": "[deleted]",
+        "created_utc": 1527810640,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thpb3 question",
+        "author": "uscuba2_2016",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nmpu6/thpb3_question/",
+        "text": "I was given a copy of the thpb3. Maybe i have forgotten but is there a reason why some  sentences have  large spaces between words? Or is it just crappie  editting?",
+        "created_utc": 1527805995,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Information Security Analyst interview, how it went, questions they asked.",
+        "author": "danny069",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nlo6o/information_security_analyst_interview_how_it/",
+        "text": "Just had an interview for a position with an undisclosed Dept of NYC.  My head hurts like I took an exam.  Wanted to post my experience so maybe it will help others.  I was interviewed by three people, I was pretty much asked a lot of technical questions from the IT Sec Director, a person that was over speaker phone, there was also the CIO which personality was laid back and cool.  Questions asked: What's the difference between false negative and false positive, what type of vpn used to remote into another site, what command is used for a routing table on an endpoint, what would make a good cyber security professional, what SIEM tools I've used, what commands used to troubleshoot network connectivity issues, what does the tcp flag mean in wireshark, even asking me version numbers of nmap and kali linux, how many levels are in syslog, etc.  It's hard to recollect and convey while on the spot and I think I stumbled on about three questions but I did my best.  I showed them printouts of my paper that was published and two pen test reports I did in my Master's program which they wanted to keep and I think they liked.  We'll see how it goes.  Tomorrow is another interview this time with the state.",
+        "created_utc": 1527797619,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Want to learn how to pentest HTML5/embedded web applications.",
+        "author": "getriggityrekd",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nl4n0/want_to_learn_how_to_pentest_html5embedded_web/",
+        "text": "Hey. I like web app pentesting and I'm okay-ish at it. I usually open up BurpSuite, map out the site, try to find exploits, etc.\n\nHowever, every once in a while, I'll run into an \"embedded\" application. By that I mean applications that you can't use \"inspect element\" on, because they use Flash or Java or HTML5 or whatever. These are mostly online games, like oldschool runescape, the .io games, online poker, etc. I'm most interested in online gambling, because vulnerabilities in those have a much higher impact.\n\nHow do I detect what technology is used in the \"embedded\" application if I can't use \"inspect element\"? Have I understood correctly that these days, most applications use HTML5? \n\nI'd like to know how these applications are pentested. I know that Java and Flash can be decompiled. Can I view the HTML5 application's code directly somehow? What about data sent over the network? Is Wireshark the best or are there other options?",
+        "created_utc": 1527793646,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Whatsapp end-to-end discussion with a friend",
+        "author": "rufysanjigen",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nk9vb/whatsapp_endtoend_discussion_with_a_friend/",
+        "text": "I just revised Diffie\\-Hellman encryption algorithm \\(for the umpteenth time in my cs course\\) for an upcoming Computer Networks exam and a note at the end of paragraph talked about ad hoc techniques to prevent MITM, like Whatsapp generated qr\\-code. I talked with a friend of mine and this is what came out, very summarized:\n\n&gt;me: What's the deal with Whatsapp e2e encryption? Why can we trust it?  \nfriend: The problem with that mainly concerns the unknown algorithm responsible for key generation. Telegram is more secure because it is open source and you can be sure they are not doing sketchy things.  \nme: Yes but, if you program your Diffie\\-Hellman client you are sure you are using the key. What guarantee do we have that whatsapp actually uses the key they used to generated the qr\\-code?  \nfriend: The guarantees are exactly the things explained in the [white\\-paper on their site](https://www.whatsapp.com/security/WhatsApp-Security-Whitepaper.pdf).  \nme: I know but how do we tell if they actually enforce the encryption and the key displayed is not just a made up story?  \nfriend: If they didn't use any encrpytion we would have noticed by now, by sniffing network traffic.  \nme: I'm not saying they are not using encryption at all. They are certainly using a secure connection client\\-server and server\\-client, but how do we know that this second layer that uses this alleged end\\-to\\-end enc. is real?  \nfriend: I guess we just have to trust them on that. They would face gigantic legal consequences if it weren't true. Maybe they submitted their code to a publicly trusted \\(yet discreet\\) committee that is supporting those claims.   \nme: So you just have to trust them or be seen as a consipracy theorist..  \nfriend: Yeah, who knows. Don't forget that, historically, Telegram never gave access to their data/keys \\(example: [April 2018 Russia Ban](http://www.wired.co.uk/article/telegram-in-russia-blocked-web-app-ban-facebook-twitter-google)\\), while Whatsapp never had a problem with governments.\n\nIt was something like that. Sorry for the tedious discussion but it represents my current train of thoughts.\n\nWhat do you think about all this? Can you expand?",
+        "created_utc": 1527787474,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to move from IT Sec to Pen Testing",
+        "author": "DiproIV",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nhikk/how_to_move_from_it_sec_to_pen_testing/",
+        "text": "I've been in IT Security in the finance sector for just over 2 years now and my role primarily involves being what I can only describe as the \"lite\" pen tester and business analyst. I manage the pen tests, assist the pen testers, perform the scoping dissection and understand attack vectors, translating the findings to the business, as well as performing light re-tests, verification, investigations, etc into findings. \n\nI'd like to make the move into actual pen testing however I'm not sure how to without any actual pen testing experience. I'm GPEN certified and working on others.\n\nThanks,\n",
+        "created_utc": 1527764713,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Cyber Security career paths/prospects",
+        "author": "hotshampoo",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8ngzhw/cyber_security_career_pathsprospects/",
+        "text": "Hello, i'm currently a sysadmin with 2 years of experience under my belt and would like to venture into the Cyber Security field. In terms of education, i have gone from Networking &gt; Cyber Security &gt; Cyber Forensics.\n\nI would like to know the possible career paths in the Security field and what a normal day in those path look like, if possible. Also, the relevant certifications that is required, i.e. CEH, CISSP etc. Was thinking of taking up the Certified Ethical Hacker (CEH), but i'm not sure if it's a wise decision.\n\nWould love to hear from u guys.",
+        "created_utc": 1527758269,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "InsightIDR Threat Hunting",
+        "author": "EthDcrMiner64",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8ngxp7/insightidr_threat_hunting/",
+        "text": "Currently work in a SOC and have a fair amount of \"downtime\". A solution used is Rapid7's InsightIDR but I'm not very familiar with it. I'm interested in learning more about the syntax used and various strings I could throw to get the data I'm after. Anyone know of a \"cheat sheet\" I could reference? Or better yet, provide some context on your own experience and search queries you use to find potential malicious activity/malware in an environment or on a host, using InsightIDR.\n\nAn example of the query I'm interested in: where(server=10.x.x.x). \n\nObviously much more is desired from the example since the results will be filled with a bunch of useless data.\n\nIf you have notes, .pdf's, URLs....anything I'll entertain \n\nI apologize in advance if I'm unclear in the description of my request.\n\n",
+        "created_utc": 1527757673,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "First security job, which one?",
+        "author": "xube1",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nfpbw/first_security_job_which_one/",
+        "text": "I have two offers for my first security job. One is penetration testing, the second is a junior position in a security operation center.\n\nIs one better then other for learning and gaining experience? ",
+        "created_utc": 1527743826,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Have you tried the work of joe. He upgrades school grade, hack cheating spouse phone and email account and erase criminal records and all sorts of hacking services . He can do any possible hacking job and he is to be trusted and strictly professional. Contact joe via joegrandzzzzz@gmail.com????",
+        "author": "Joegrandz1975",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nf3t9/have_you_tried_the_work_of_joe_he_upgrades_school/",
+        "text": "[removed]",
+        "created_utc": 1527738999,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Infosec recruiters, is the problem me or them?",
+        "author": "secranter",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8ncyvw/infosec_recruiters_is_the_problem_me_or_them/",
+        "text": "So. About 2 months ago, I turned my LinkedIn status to \"open to being contacted\" since I'm searching for a new role.  \n\nHere's the current trend I've noticed after ~120 interviews/phone screens:\n\n* Bait and switch galore. They agree to an acceptable salary, and then lower the salary before they'll agree to sell you to the client for an on-site interview. \n\n* Recruiters with absolutely zero sense of time zones. I tell the recruiter to call me at X time using a very specific time zone. Repeatedly calls 1-2 hours earlier. \n\n* Recruiters emailing *other* people with the same name as me and wondering why I'm not responding to the calendar invite. \n\n* Recruiters who miss every single appointment scheduled.\n\n* Recruiters who call before asking, frequently while I'm at work (changed numbers to avoid them)\n\n* Extremely loud background noise, such that you can't even hear or understand what the recruiter is trying to say. Essentially, they're working in an overseas call center and cold-calling people whose resumes they've farmed.\n\n* Recruiters requesting 4-5 references prior to even submitting my resume.\n\n* Recruiters who require an NDA to find out who the client is.\n\n* Job descriptions that require me to be an Appsec Engineer, SOC Analyst, DevOps architect, Reverse Engineer expert, etc. Basically 4-5 roles in one.\n\n* Companies/recruiters who very clearly have no idea what they're looking for, and are mixing and matching random buzzwords to nonsensical hilarity.\n\n* Recruiters/companies seeking senior level staff at $60k-$100/y in a high cost of living area.\n\nIt just seems like I'm wading through an absolute shitfest at this time. \n\nAnyone else have this problem? \n\nI'm going to start applying directly to interesting companies instead of letting them come to me. ",
+        "created_utc": 1527720101,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Obtaining Encryption Key",
+        "author": "CirclesWeRun4",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nbq13/obtaining_encryption_key/",
+        "text": "Hey guys, so I was helping my brother with homework and I came across something. The homework is online and apparently the application that you work on is written in javascript. Going through the code I noticed that in plain text it says \"question is : \" and then the question and then the possible choices for the answer but then after it says \"correct answer:\" and then a clearly encrypted string. Now I know the actual answer so is there a way for me to obtain the encryption key knowing the plain text value and the encrypted value? What would be the best tool to use in order to do this if it is possible?",
+        "created_utc": 1527710497,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Switching from Software Development, what would benefit me the most?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nbljy/switching_from_software_development_what_would/",
+        "text": "[deleted]",
+        "created_utc": 1527709570,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I find meaningful work ?",
+        "author": "traveller9001",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nb6cw/how_do_i_find_meaningful_work/",
+        "text": "What's the best way to get to work fultime for charitable organisations ?\n\nMany of these orgs seem either to a) not have a full-time inhouse security team, or b) have pretty stiff competition for positions (obviously, who wouldn't want to work at e.g. the EFF).  I don't care about the money; as long as they paid me enough to live I would be happy.  For me it's about using my skill to do something important rather than wasting it to help some, frankly, evil megacorp.  I don't mind donating my time to charities, but it would be nice to be fulltime.  A man's gotta eat after all!\n\nAbout me:  I am a pentester, but only have 1 year experience so far.  Plus several years prior experience in IT and worked as a sysadmin.\n\nAny advice?  Thanks!",
+        "created_utc": 1527706481,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MITM SSH Public-Key Only Authentication",
+        "author": "_-IDontReddit-_",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8nampq/mitm_ssh_publickey_only_authentication/",
+        "text": "https://www.gremwell.com/ssh-mitm-public-key-authentication\n\nThis article says that for public key authenticated SSH, transparent MITM is not possible due to the mismatching session IDs of the two connection Malloy makes. This article is 8 years old though. Is this correct and still relevent?\n\nIf I successfully copy my public key to a sever (+verify using another channel) and disable password auth, at this point is transparent MITM impossible?",
+        "created_utc": 1527702510,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Rejected by e-Qip",
+        "author": "sanoobs",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8naaaa/rejected_by_eqip/",
+        "text": "I've bummed around Thailand and Colombia for the past 6 years. I filled out the application as completely as I could, but I couldn't come up with a complete list of residence dates with addresses, or contact information for someone who knew me well when I lived there during that time. I filled it out as completely as I could the first time, clicking the boxes which indicates it is approximate. I don't think I can do it any more completely. Am I screwed? \n\nEdit: Thanks for the input. I was cleared. ",
+        "created_utc": 1527700022,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "programming lanuguage",
+        "author": "freecamel",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8na0x0/programming_lanuguage/",
+        "text": "Are many DevSecops familiar with JavaScript and comfortable writing JavaScript?",
+        "created_utc": 1527698106,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MSSP",
+        "author": "sanext15",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n6zfx/mssp/",
+        "text": "We are looking to outsource some part of Security as a managed service. MSSP. We have identified a company who will provide SIEM service and alert us if there re incidents we need to respond to, including vulnerability scanning. How would you sell the idea to management to buy into the idea? ",
+        "created_utc": 1527669732,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where do I practice the later from the Web App Hackers Handbook 2nd edition?",
+        "author": "ghostheadx9",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n5h5e/where_do_i_practice_the_later_from_the_web_app/",
+        "text": "I would like to go through the web application hackers handbook after I get some certs but how I practice the material if the labs are no longer available? Thanks.",
+        "created_utc": 1527651925,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Guide for Shodan",
+        "author": "piyushsaurabh",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n5fde/guide_for_shodan/",
+        "text": "Is there any guide available regarding the syntax of  Shodan query ? Shodan must be indexing the data in form of key-value pair. Where can I find these keys? \n\nFor eg, finding the list of all the devices with specific ports open or router running specific version of firmware. ",
+        "created_utc": 1527651443,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Suspicious Network Traffic",
+        "author": "CirclesWeRun4",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n5c7u/suspicious_network_traffic/",
+        "text": "Hey all, so I was monitoring our firewall and noticed that there are a ton of connections or attempts of connections to something called lijit. All protocol transmissions are coming from the same host machine(one of our devices) to the same destination ip(not a local machine). \n\nNow what I don’t understand is that this communication is being attempted from countless source ports. It was attempted a new source port every time and always had the same destination port, (80) \n\nI’m finding a lot of malware information related to lijit. Anyone know what might be going on? ",
+        "created_utc": 1527650555,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "infosec architect salary?",
+        "author": "gotnikes",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n5404/infosec_architect_salary/",
+        "text": "Not sure if this is against the rules, but I'm interviewing for a job soon for an infosec architect position. I currently make around 125k in the dc area. This position would be in the greater philly area. I'm not sure what to ask for in this area. Anyone here hold security positions in the philly area? What's the average there?",
+        "created_utc": 1527648440,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which translates better, CTFs to real hacking or vice versa?",
+        "author": "ghostheadx9",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n4775/which_translates_better_ctfs_to_real_hacking_or/",
+        "text": "So obviously CTFs are meant to help learn. Some people say they don’t translate well to the real world. Is the other way around equally true?\n\nIf the real world is better, are bug bounties better for beginners than CTFs?",
+        "created_utc": 1527640219,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does opera send a request to all websites on its homepage ?",
+        "author": "woahdudee2a",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n2npx/does_opera_send_a_request_to_all_websites_on_its/",
+        "text": "I have proxy configured only on firefox. I installed opera today and saw the websites I visited on firefox on the homepage. Did opera send a request to those websites ?",
+        "created_utc": 1527627560,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just got offered an entry-level netsec position with no experience. What books/certs should I read up on to learn as much as possible as quickly as possible?",
+        "author": "alphabetasfuck",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n2k0f/just_got_offered_an_entrylevel_netsec_position/",
+        "text": "I'm in my late 20s in the process of a major career switch, so my knowledge is very, VERY basic right now-which I made clear during my interview. I've recently been studying for my A+ cert to help me get a level 1 help desk position, but I think I'll refocus my sights now. I guess the organization decided that I showed a willingness and eagerness to learn and recently offered me a job; there's an unspoken agreement that I will pick this shit up quickly. Daily tasks will range from following SOPs for intrusion detection, pulling cable, Should I start studying for CCNA Security? Network+ or Security+? Something else altogether?",
+        "created_utc": 1527626807,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any experience with fwsnort ?",
+        "author": "3AGLE_OF_SURVEILLANC",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n1sev/any_experience_with_fwsnort/",
+        "text": "Has anyone tried out [fwsnort](https://github.com/mrash/fwsnort) ?\nWhat do you guys think of it ? How useful is it for a server environment ? Does it really work like an IPS on kernel level ? ",
+        "created_utc": 1527621244,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What do you guys think of this crazy Idea to store passwords!",
+        "author": "whoami4546",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n1nj8/what_do_you_guys_think_of_this_crazy_idea_to/",
+        "text": "**Current Password storage**\n\nOk, I have a basic idea how passwords are stored. Here is the way I think they are stored.\n\nPasswords are stored in a database in a hashed form. The downside is that if the database is leaked or hacked a hacker could use brute force or a rainbow table to figure out the passwords. To get around this, you can use a salt the hashes to have it more difficult to brute force the password. The salt is used with the password to form the hash.\n\nSo As I understand it the database would be set up like this.\n\nUsername(key) - Hash(password + salt) - Hash used (randomly generated)\n\nThe problem with this method it is still susceptible to offline hacking.\n\n**My Idea**\n\nWhat if we use the combination of the username and password to create the database index/key.\n\nSo the database would look like this\n\nHash (username + password, key) - Hash1 (salt + password) - hash2 (username + salt) - Salt (randomly generated) -\n\nAt a bonus you can fill the table in the database with random data. If the database is leaked the offline hacking would be virtually impossible.\n\nIf the database gets leaked it would be infeasible to figure out both the username and password. Both the username and password are used to create hashes to make sure false positives do not happen or extremely unlikely to occur.\n\nWhat do you guys think?",
+        "created_utc": 1527620229,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How applicable are things like Hack the Box and CTFs to real world penetration testing?",
+        "author": "ZamWessel_38",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n1hc4/how_applicable_are_things_like_hack_the_box_and/",
+        "text": "Id imagine itd be pretty symmetrical, but I cant really seem to understand if they are geared toward teaching others techniques or if they are geared towards professional pentesters who just want a fun challenge..",
+        "created_utc": 1527618927,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Cert recommendations for the summer",
+        "author": "Grimreq",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8n16d9/cert_recommendations_for_the_summer/",
+        "text": "I am graduating in December with a B.S. in cybersecurity, I have a full class schedule over the summer, but want to get a few certifications in the next few months. I have been an infosec intern and have some system administration/help desk experience.\n\nI know the OSCP is the answer here. I do not have time for that commitment. To reiterate, I DO NOT HAVE TIME TO COMMIT TO THE OSCP; I still have classes.\n\nI am working on some web application/cloud stuff, so I have chosen the AWS Associate Architect (cheap, applicable, working on a project that reolves around it).\n\nNetwork+/Security+ are also cheap, but I hear a lot of ups and downs.\n\nThe OSWP interests me because it appears applicable to netowrking with a penetration testing spin on it. Arguably, it's a tad outdated.\n\nThe CEH is too expensive. Period.\n\nNo one had heard of the eJPT, though it fits everything I need it to, penetration testing, hands-on, good price, etc, etc.\n\nWhat would you recommend? Is an AWS, OSWP, Sec+/eJPT not a good lineup for the summer?\n\nCheers",
+        "created_utc": 1527616702,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Foreign Govts blocking iMessage server IPs?",
+        "author": "microsuck",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mzru3/foreign_govts_blocking_imessage_server_ips/",
+        "text": "Is that a thing?  My father in law is in Peru right now, and I noticed his messages are now coming in as SMS.  He is an iMessage user normally and I know he has data.  Could they be forcing to SMS for inspection reasons?",
+        "created_utc": 1527606145,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What encryption software/type do you use and recommend (Windows and Linux OS). For file systems, login access, media, folders, files and root/admin privileges.",
+        "author": "StealthyRemington",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mx70c/what_encryption_softwaretype_do_you_use_and/",
+        "text": "Are there any that are better than others or ones that aren't \"secure\"?.",
+        "created_utc": 1527578583,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some important things that are overlooked when initially configuring networking devices (switches for example) .. which can open up problems and cause risk to your networking environment? (If it were to ever come into contact or become a victim of an attack).",
+        "author": "StealthyRemington",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mwyy9/what_are_some_important_things_that_are/",
+        "text": "Currently setting up a homelab to practice and work on some security related research projects on the configuration of networking devices and how crucial the initial process is.",
+        "created_utc": 1527575930,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Top 5 things to do when securing Windows?",
+        "author": "honcas",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mubrw/top_5_things_to_do_when_securing_windows/",
+        "text": "I’ve got a pretty good grasp on how to secure Macs and Linux, but what are your top 5 must-do tasks to secure Windows machines/servers?\n\nEdit: Thanks to everyone for the great answers (and sometimes funny ones.)",
+        "created_utc": 1527549707,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What tasks are good to automate?",
+        "author": "RudeCanadianDude",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mt6q9/what_tasks_are_good_to_automate/",
+        "text": "Hello, lately my boss has been hinting at automating a few tasks.. but he doesn't tell me what. It's along the lines of \"if you think of anything to automate, that would benefit the org, let me know.\" \n\nI'm only a student level employee so I have no god damn clue. I'd like some info on what would maybe be a good thing to do?\n\nThanks",
+        "created_utc": 1527539898,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "FBI Asking Everyone to Restart Their Routers Due To Russian Malware?",
+        "author": "DFTTTM",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8msqbq/fbi_asking_everyone_to_restart_their_routers_due/",
+        "text": "Last Friday the FBI announced they have discovered malware that has infected thousands of routers worldwide. Here’s a report on it: [FBI Asking Public To Reset Routers](https://www.google.com/amp/amp.slate.com/news-and-politics/2018/05/fbi-is-asking-everyone-to-reboot-their-routers-to-stop-russian-malware-infection.html)\n\nHow would just resetting the router do anything about malware? The only way I could see it removing it would be if upon resetting the router the firmware was updated. Thoughts?",
+        "created_utc": 1527536158,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Interview with NYS and NYC, Information Security",
+        "author": "danny069",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8ms7cm/interview_with_nys_and_nyc_information_security/",
+        "text": "AskNetSec thread is the best in my opinion you guys provide so much valuable information and I thank you. I have an interview with ny city and ny state both information security officer/analyst positions. Is there anyone that can disclose what kind of questions they were asked or how the environment is if you work with them? Thanks in advance.",
+        "created_utc": 1527531865,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Srcurity of public wifi?",
+        "author": "FallenArch3809",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mqtiv/srcurity_of_public_wifi/",
+        "text": "I made another post [here](https://www.reddit.com/r/hacking/comments/8mqp1p/interesting_network_scan_on_a_pubic_wifi_hotspot/) where I explained that I connected to a public WiFi hotspot that had thousands of clients, in a town that has a population of about half that.\n\nAre they connected to hotspots in other towns through a VPN of some kind?\n\nHow are these secure at all?  There's no authentication required. Couldn't someone MITM this with no problems?\n\nJust trying to understand this better. Thanks.",
+        "created_utc": 1527520820,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where to find any secure coding guidelines for .NET/C#?",
+        "author": "thehermitcoder",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mp9gq/where_to_find_any_secure_coding_guidelines_for/",
+        "text": "Are there any secure coding guidelines (along the lines of the CERT secure coding guidelines for C/C++/Java or the Oracle secure guidelines for Java SE) for the .NET platform, or for C#",
+        "created_utc": 1527505464,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "IP Camera connecting to random IP addresses",
+        "author": "ipcam_question",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mmqz3/ip_camera_connecting_to_random_ip_addresses/",
+        "text": "I recently bought [a cheap IP camera off of Amazon](https://www.amazon.com/TENVIS-HD-IP-Camera-Detection/dp/B071DDBT7M), and just for fun I've been monitoring its traffic through Wireshark to see what it's up to. In doing so I've noticed something odd about the way it connects to other devices. Whenever I access it through the mobile app associated with it over a separate wifi network, it appears to send data directly to the IP address associated with that network. However, when I connect to it over 4G, it transmits data out to a seemingly random IP address each time. This seems a bit questionable to me, as I can't figure out why it would need to send the data out to a random location over 4G when it can connect directly over any wifi network. Besides this, the idea of the camera feed being sent to an device other than my own is concerning in and of itself. Some other information that may be useful:\n\n* The camera supposedly transmits data through P2P somehow, and isn't set up with port forwarding or anything else as far as I'm aware\n\n* The random IP addresses seem to be focused in NA and China\n\n* The only exception to the rule of random IP addresses has been an address that belongs to Alibaba, which it has connected to more than once\n\nDoes this have something to with the way AT&amp;T's cellular network operates, or is it something related to the camera itself? If anyone can shed any light on what may be happening here I would greatly appreciate it.",
+        "created_utc": 1527474527,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Five big anonymity questions",
+        "author": "ghostheadx9",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mmone/five_big_anonymity_questions/",
+        "text": "1. How to route all traffic from Ubuntu through Tor without switching to Tails?\n\n2. Are Tor powered VPNs anonymity or privacy and do they work with Firefox using anonymity addons?\n\n3. If it’s all anonymity and I have fake accounts made on VPN+Tor+proxies, would they be safe to log into if all info on them was 100% pure fake? I use Firefox with anonymity addons and a proxy to do it. The proxy sacrifices a little anonymity right? It’s a VPN based proxy by PIA.\n\n4. Is this a good idea and can I set up the computer to always route traffic through this?\n\n5. What is the best possible option for this?\n\nThanks.\n\nBest,\n\nQMark\n\n",
+        "created_utc": 1527473837,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best block IP list sources",
+        "author": "l0rd_raiden",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mkccr/best_block_ip_list_sources/",
+        "text": "I have been collecting \"good\" sources of IP block lists to add to my firewall, I'm using pfsense with pfblockerng.\n\nThis is the list I have put together, for attacks, malware and reputation. I don't have web or email servers behind my FW so I have skipped I few well known lists.\n\n[https://docs.google.com/spreadsheets/d/e/2PACX\\-1vR8QuQcZSM\\-8N493sgW\\_JdedMQSO5Fa94K9m6KWc2jguc2lAdVXpj7uEw8ELefbKuIHP6WVyFjK\\_Kqr/pubhtml?gid=1109697854&amp;single=true](https://docs.google.com/spreadsheets/d/e/2PACX-1vR8QuQcZSM-8N493sgW_JdedMQSO5Fa94K9m6KWc2jguc2lAdVXpj7uEw8ELefbKuIHP6WVyFjK_Kqr/pubhtml?gid=1109697854&amp;single=true)\n\nWhat do you think about this list? Am I missing any important list? what else can I add?",
+        "created_utc": 1527451549,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What cert should I follow the Security+ with?",
+        "author": "-thisisnotausername-",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mk926/what_cert_should_i_follow_the_security_with/",
+        "text": "So I am taking the Security+ exam in about two weeks and was wondering what should I follow that up with. I am a junior in college right now and have my first summer cybersecurity internship. I would want to come out of college with one more cert on my resume along with the Sec+. I intend on focusing on Incident Response and saw the GCIH or I think it's called GIAC Certified Incident Handler. Is this cert good for my level right now or should look towards something else? Are there any certs that you would recommend for my level?\n\nEdit: My major is in Cybersecurity and might be getting a Computer Science minor ",
+        "created_utc": 1527450763,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need a little advice on how to prepare for a new job",
+        "author": "Imaniceguytrustme",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mhn1m/need_a_little_advice_on_how_to_prepare_for_a_new/",
+        "text": "I had previously asked about some guidance on how to start my journey in information security and got a lot of useful information. Now in 2-3 months I may get a new offer for a job to monitor web and mobile application security threats(Opportunity to learn on the job). \n\nI have started searching around for information on how to start out in this field and read a little about xss, phishing, csrf etc.. but I do not completely get an idea on how to go about this new job. I want to spend my time preparing well so that I can start gaining some experience with this new job role.\n\nI have some questions here if someone can answer them to provide some insight and useful advice for me:\n\n1.What would typically be the daily routine for such a person?\n\n2.Are there any good blogs/e-books/topics that you can provide for me to study?\n\n3.Should I learn javascript/web developement to understand potential flaws in the site?\n\n4.Any other advice that you can provide is much appreciated.\n\nI have a couple of months to prepare so all the information that you can provide would help me start out well in my new job. Thank you.",
+        "created_utc": 1527426584,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does Tenable Systems drug test?",
+        "author": "personofrandom",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mhlb8/does_tenable_systems_drug_test/",
+        "text": "Greetings ya'll. I'm a California native looking at accepting a Sales Engineer position with Tenable. I have a medical card due to old injuries and I am curious if Tenable does drug testing. Maryland has medical laws but many states and employers are not in synch with all of this. If anyone could shed some light upon this, I would appreciate it greatly.",
+        "created_utc": 1527426026,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I received this letter from “Facebook” in the mail even though I’ve never given Facebook my home address.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mh7qy/i_received_this_letter_from_facebook_in_the_mail/",
+        "text": "[deleted]",
+        "created_utc": 1527421029,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Maybe naive question, but: Do major ISPs do a good job of monitoring and fixing home routers ?",
+        "author": "billdietrich1",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mggxa/maybe_naive_question_but_do_major_isps_do_a_good/",
+        "text": "Do major ISPs such as Comcast, Vodafone, Verizon do a good job of updating the home routers they lease out, and monitoring them for problems ?\n\nFor example, suppose my home router had this latest \"VPNFilter\" malware in it.  Could the ISP detect it ?  Could/would the ISP automatically update the firmware in my router ?  Would they send email to me telling me to update it ?  It would be in their interest to wipe this stuff out of their network, right ?\n\nI can't even really tell what model my router is, it has the ISPs branding and serial number on it, not some router brand such as Linksys or whatever.  But I'm more interested in the general questions, not my specific situation.  Although I guess that leads to the next question: is there anything I could run on a client device (such as Windows 10 laptop) to tell if there is malware in my router ?\n\nThanks.",
+        "created_utc": 1527408573,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "tracing an organisation",
+        "author": "s802645",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mfz7e/tracing_an_organisation/",
+        "text": "is there a way to trace an ip address back to an organisation ? sometimes this ip address belongs to an isp but i want to find which company has subscribed to this isp. i guess this type of information is not readily available right ? thanks",
+        "created_utc": 1527400720,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hands-on, deep-dive Red Teaming Training on budget??",
+        "author": "X___III___X",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mcgo7/handson_deepdive_red_teaming_training_on_budget/",
+        "text": "Are there any affordable, intensive trainings covering end-to-end Red team project cycle, building the infra and with a lot of hands-on? The management wants guys to handle red teaming but isn't willing to spend $$$ for classes in Defcon/BH/others...\n\nEdit 1: \nI noticed the post was down-voted. *Please don't down-vote on account of how cheap you think the management is, for not willing to allocate funds for training.* They have 6+ guys that they would've to fly out to Defcon/BH/ etc, &amp; spend 5-6k usd per guy + T&amp;E. As this is a small firm, they obviously prefer a relatively inexpensive ILT, or even self-study as OSCP/OSCE.\n\nEdit 2:\nI know OSCP/OSCE are not the same as Red Team. OSCP/OSCE reference is relevant because just like Red Teaming, they are competitive, totally based on skills &amp; knowledge, valuable &amp; highly- sought-after class. AND affordable.\n\nEdit 3:\nTo conclude, I am going to suggest the following:\n\n* Consider raising the budget.!\n* Collaborate with external students / professionals to form a larger group &amp; then pool in to bring a good instructor for the training onsite.\n* Self-study SANS 564 + THB3\n* Else, consider sending 2 resources for the training &amp; they can in turn run to a KT for the rest.",
+        "created_utc": 1527363032,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ISP Proxy",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mbw1n/isp_proxy/",
+        "text": "[deleted]",
+        "created_utc": 1527357838,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Seriously, Why do you think it's costly to make nation state level malware?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mb41o/seriously_why_do_you_think_its_costly_to_make/",
+        "text": "[deleted]",
+        "created_utc": 1527350823,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need to learn about the basics of HDD and USB. Any suggestions?",
+        "author": "powerofinformation",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mb1ip/need_to_learn_about_the_basics_of_hdd_and_usb_any/",
+        "text": "I need to know the basics of a HDD, USB in order to do a clean install and then a dual boot with Ubuntu, after a suspected malware infestation. I need to know what partitions are, where the MBR/GRUB is located, the BIOS memory, where rootkits etc are located etc etc. \n\nI am totally a non-techie, so I need a simple explanation with diagrams. Can anyone provide link to such an article?",
+        "created_utc": 1527350163,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Legitimate website serving some adware webpage instead of legitimate content",
+        "author": "VagueElf",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8mas8a/legitimate_website_serving_some_adware_webpage/",
+        "text": "I was about to visit the web page http://www.t-l.ch/particuliers/contact/points-de-vente-partenaires (legit website from a local transportation company), when I got redirected to some adware website: https://i.imgur.com/yrW1KE5.png\n\nAfter a bit of poking around, here's what I noticed:\n\n- If I open the web page in another browser, it loads normally (i.e. the legit content loads)\n- If I disable the cache in my browser (via devtools), the page loads normally\n- If I go to the SSL version of the web page, it loads normally\n\nHere are the contents of the \"malicious\" web page I got redirecting me to the ad website: https://pastebin.com/yyvmLiqb\n\nBased on this, it looks like some kind of cache deception attack to me... What do you think? Has this website been compromised? Is someone MITMing between me and the website?",
+        "created_utc": 1527347717,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the best practice procedure to follow if you detect that your computer or online accounts got hacked?",
+        "author": "powerofinformation",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m9nh7/what_is_the_best_practice_procedure_to_follow_if/",
+        "text": "Suppose you detect that your computer or online accounts has been hacked by a state or non-state hacker. What is the best practice procedure that you should follow then? \n\nFor example what steps and in what order do you take them? For eg. do you first change the passwords from another computer and then backup files to an encrypted pendrive using a file scanner and then clean install windows/linux and then create a restore point and use a dvd to install antivirus? Or what? English is not my native language so if I couldn't explain it here do ask me for clarifications. ",
+        "created_utc": 1527335269,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is \"Practical Malware Analysis: A Hands-On Guide to Dissecting Malicious Software\" still the go to book for malware analysis?",
+        "author": "slewid",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m9m8s/is_practical_malware_analysis_a_handson_guide_to/",
+        "text": "I'd like to learn more about malware analysis. Is this book still a good choice?",
+        "created_utc": 1527334798,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you guys deal with all the technologies",
+        "author": "AnnualSwing",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m843b/how_do_you_guys_deal_with_all_the_technologies/",
+        "text": "As a noob and at work, im tasked to fix problem A. Problem A uses technologies X, Y, and Z. Often I have no clue what im doing so i spend time reading through google, forums, etc to see if theres a solution and I feel as if I spend too much time doing that. Is this nornal? My coworkers seem to fix everything a lot more efficiently than I can",
+        "created_utc": 1527313361,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Seeing some weird shit when I look @ netstat connections",
+        "author": "rbn_019237803",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m7i1j/seeing_some_weird_shit_when_i_look_netstat/",
+        "text": "Some of the IP's are pretty weird.  Can't really tell what is going, and if someone is using my machine.  I know that MSFT has an established connection somehow, even though I've disabled every type of intrusive privacy concern I could think of.  There are connections to QWEST when I have google fiber?  \n  \nI honestly just don't know what is going on anymore. I need to stop being a lazy bastard and teach myself all this stuff, but I really wish I didn't have to.  ",
+        "created_utc": 1527305770,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Have you tried the work of joe. He upgrades school grade, hack cheating spouse phone and email account and erase criminal records and all sorts of hacking services . He can do any possible hacking job and he is to be trusted and strictly professional. Contact joe via joegrandzzzzz@gmail.com",
+        "author": "Joegrandz1975",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m6bcu/have_you_tried_the_work_of_joe_he_upgrades_school/",
+        "text": "[removed]",
+        "created_utc": 1527293231,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are the best bug bounty programs to sign up for?",
+        "author": "ghostheadx9",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m621l/what_are_the_best_bug_bounty_programs_to_sign_up/",
+        "text": "What bug bounty programs in your opinion should I sign up for? I want to hack:\n\nSocial media\nGames\nGovernment\nEmails\n\nCould you please give me a few recommendations please? Thanks.",
+        "created_utc": 1527290640,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Have you tried the work of joe. He upgrades school grade, hack cheating spouse phone and email account and erase criminal records and all sorts of hacking services . He can do any possible hacking job and he is to be trusted and strictly professional. Contact joe via joegrandzzzzz@gmail.com????",
+        "author": "Joegrandz1975",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m5vpn/have_you_tried_the_work_of_joe_he_upgrades_school/",
+        "text": "[removed]",
+        "created_utc": 1527289062,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Should I pursueCyber Security Masters Degree?",
+        "author": "techman133",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m5phb/should_i_pursuecyber_security_masters_degree/",
+        "text": "Hello,\n\nShould I pursue a Masters in Cyber Security? \n\nI am working in the as a mid level linux engineer and currently hold a B.S in Information Technology. I have been working in IT for about 10 years now but have been in the Sys Admin realm for about 5 of them. My job mainly consists of DevOps/Automation/ Deployments and is moving more into a more senior role where I am doing more research and systems design. My interest is more on the networking and cyber security side and I am considering going back to school for a Masters in Cybersecurity. Any recommendations on schools or career paths?",
+        "created_utc": 1527287470,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to detect if a Router is compromised by Russian (or other) hackers? What tools/techniques are available for this purpose (test &amp; detect problem)?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m5m18/how_to_detect_if_a_router_is_compromised_by/",
+        "text": "[deleted]",
+        "created_utc": 1527286616,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ok, so without social engineering, here's hopefully the non-stupid solution to SWATTING",
+        "author": "ghostheadx9",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m5gpc/ok_so_without_social_engineering_heres_hopefully/",
+        "text": "Obviously, this is illegal so I'm not going to do it but I'm wondering if this would be possible to legalize and if it would work.\n\n1. don't give away your phone number to anyone. If you live in Britain and someone asks for your number say \"no\" and if they ask for your country say \"Australia\"\n2. go on an activist movement to get hacking SWATTERS legalized\n3. wait for the word \"SWAT\" to appear in a screen name and then write it down\n4. look them up on the Dark Web\n5. hack their account and find their Microsoft account \\(ok fine, MAYBE SEing would be necessary once\\)\n6. report them to law enforcement\n\nProblem solved right?",
+        "created_utc": 1527285284,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I will be traveling to one of the countries hosting a great firewall, will only be using my phone to access anything. What kind of modifications and precaution should I be taking to protect myself from both of privacy and security perspective?",
+        "author": "Million_Reddit",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m5e22/i_will_be_traveling_to_one_of_the_countries/",
+        "text": "I have somewhat of an idea. I'm not too worried about actual safety as I don't think that would be an issue. What I do think would be an issue would be two things monitoring of my traffic, and potential compromise of my devices on return.\n\nI have what I think is a pretty good plan in place to both not stand out and remain protected from any potential threats. But I'd really like to hear what you guys would do in my situation. The only thing I will give away is that I am not going to bring my personal device. I plan to bring a burner Android, what function it serves is to be decided I guess.\n\nAny input or answers or ideas you guys might have would be greatly appreciated.",
+        "created_utc": 1527284612,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Detecting origin of ephemeral processes in Linux environments",
+        "author": "_Nexor",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m3ef7/detecting_origin_of_ephemeral_processes_in_linux/",
+        "text": "I recently discovered this tool called `nethogs` and I wanted to see what processes were using bandwidth. I am prompted with the usual browser, dropbox and whatsapp applications. This is fine. But I see a lot of unnamed python processes that, when checked with `pwdx`, return `No such process`. Is there a way to indentify from what file these short-lived processes originate? In an ideal world, I'd like to be able to pinpoint each and every TCP connection's origin.\n\nHas anyone dealt with the same problem before?\n\n\nEDIT: Heh, `tmux` was running many `python` processes because I have `powerline` installed querying the weather! Silly me. But I just remembered that and if this were to be a worse scenario, I still wouldn't have a procedure to follow. ",
+        "created_utc": 1527268178,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP + www-data + SSH w/ Public Key Auth.",
+        "author": "the-alicemay",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m2kdr/php_wwwdata_ssh_w_public_key_auth/",
+        "text": "Please help me, I'm going insane. Also, I hope this is netsec enough for this subreddit.\n\nHere goes.\n\nAt work, we have client systems running on ESX VMs with their own client-site.conf file under /etc/apache2/sites-enabled. These virtual servers, each containing multiple client sites are of course located in our network's DMZ. I am in the process of developing a central management system that can manage/collect data from all of our client systems and what I am trying to do at the moment is list all of the enabled sites (essentially \"ls /etc/apache2/sites-enabled\") per virtual server. The command \"apache2ctl -S\" gives the desired output. This central system is located behind our firewall which means I need to \"ssh user@virtual-server 'apache2ctl -S'\".\n\nI have successfully allowed public key authentication from central to virtual-server and can get the desired output from the terminal. My issue is that I am trying to do all of this through php so the results can be rendered in a web page and I can't seem to get the www-data user to ssh successfully, despite www-data having ownership of the private key.\n\nMy question is this: Is there a way to allow the www-data user to do this and where are my potential security holes with this method??",
+        "created_utc": 1527261657,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Resources for Reverse Engineering Node / React / Angular Apps?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m2aql/resources_for_reverse_engineering_node_react/",
+        "text": "[deleted]",
+        "created_utc": 1527259555,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fastest way to find the network range of IP addresses for a domain",
+        "author": "digbick2222",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m2ae1/fastest_way_to_find_the_network_range_of_ip/",
+        "text": "Howdy all,\n\nJust wondering in your opinion which is the fastest way to find the network range of IP addresses for a given domain.\n\nAt the moment i am running with the following:\n\n* NSLOOKUP on the domain in question to obtain the IP address\n* Throw the IP address into [ARIN.net](https://ARIN.net) and retrieve the network block of IP's\n\nIs this a good method? Please reply with which you think is most efficient method of obtaining this.\n\nThank you, ",
+        "created_utc": 1527259472,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wifi Booster or New Router?",
+        "author": "alasammy",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m2a3e/wifi_booster_or_new_router/",
+        "text": "Please let me know if this is in the wrong sub, I'll gladly move it.\n\nI work for a small company that finds that the wireless signal doesn't quite reach/isn't strong enough on the second floor. \n\nI've found no issue on my own devices, but the tablets they are using seem to take a while to connect. The people working here think the connection was slow because it was raining 😂 so I said I'd look into it.\n\nUpon first glance, I think the issue could be resolved with an extender to boost the signal. However, I doubt that the speed would be affected much by this. Am I wrong?\n\nCurrently the router is broadcasting two separate wifi signals. One is used daily, the other (the slow/weak one) is used weekly or monthly. They need to be separate and the students can't connect to the daily use one for reasons.\n\nShould I try the booster? Should I get a separate router for the second signal? I'm not experienced aside from a degree in infosec, I have no hands on technical knowledge.\n\nIf I could get some help, I'd really appreciate it.",
+        "created_utc": 1527259408,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Shodan Scanning IP addresses",
+        "author": "digbick2222",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m29rg/shodan_scanning_ip_addresses/",
+        "text": "Howdy all,\n\nDoing a bit of digging to find IP addresses that [shodan.io](https://shodan.io) scans from, found this quite list quite helpful.\n\n[http://romcheckfail.com/blocking\\-shodan\\-keeping\\-shodan\\-io\\-in\\-the\\-dark\\-from\\-scanning/](http://romcheckfail.com/blocking-shodan-keeping-shodan-io-in-the-dark-from-scanning/)\n\nDoes anyone have any other IP addresses they have observed Shodan scanning from that are not on this below? Your input is much appreciated, thanks in advance.\n\n census1.shodan.io 198.20.69.72 \\- 198.20.69.79 US census2.shodan.io 198.20.69.96 \\- 198.20.69.103 US census3.shodan.io 198.20.70.111 \\- 198.20.70.119 US census4.shodan.io 198.20.99.128 \\- 198.20.99.135 NL census5.shodan.io 93.120.27.62 RO census6.shodan.io 66.240.236.119 US census7.shodan.io 71.6.135.131 US census8.shodan.io 66.240.192.138 US census9.shodan.io 71.6.167.142 US census10.shodan.io 82.221.105.6 IS census11.shodan.io 82.221.105.7 IS census12.shodan.io 71.6.165.200 US atlantic.census.shodan.io 188.138.9.50 DE pacific.census.shodan.io 85.25.103.50 DE rim.census.shodan.io 85.25.43.94 DE pirate.census.shodan.io 71.6.146.185 US inspire.census.shodan.io 71.6.146.186 US ninja.census.shodan.io 71.6.158.166 US border.census.shodan.io 198.20.87.96 \\- 198.20.87.103 US burger.census.shodan.io 66.240.219.146 US atlantic.dns.shodan.io 209.126.110.38 US blog.shodan.io 104.236.198.48 US **\\*** hello.data.shodan.io 104.131.0.69 US www.shodan.io 162.159.244.3**8 **US \\*\\* host private.shodan.io , ny.private.shodan.io 159.203.176.62 atlantic249.serverprofi24.com 188.138.1**.11**9 \\*\\*\\* sky.census.shodan.io 80.82.77.33 dojo.census.shodan.io 80.82.77.139 ubtuntu16146130.aspadmin.com 71.6.146.130 shodan.io 66.240.205.34 malware\\-hunter.census.shodan.io 216.117.2.180  Community submitted IP addresses:  battery.census.shodan.io 93.174.95.106 house.census.shodan.io 89.248.172.16 goldfish.census.shodan.io 185.163.109.66 battery.census.shodan.io 93.174.95.106 mason.census.shodan.io 89.248.167.131 flower.census.shodan.io 94.102.49.190 cloud.census.shodan.io 94.102.49.193 turtle.census.shodan.io 185.181.102.18   \n ",
+        "created_utc": 1527259335,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "With AskNetSec Standard, VPNfilter never happened?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m1ylg/with_asknetsec_standard_vpnfilter_never_happened/",
+        "text": "[deleted]",
+        "created_utc": 1527256801,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Legit hacker",
+        "author": "fitzroland",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8m1orb/legit_hacker/",
+        "text": "[removed]",
+        "created_utc": 1527254393,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Onetwopunch vs nmap",
+        "author": "SOC_uintheface",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/8lzt4k/onetwopunch_vs_nmap/",
+        "text": "So I’m preparing for the OSCP and I came across a thread taking about onetwopunch and how much better it is than nmap (speed of unicorn,scripting power of nmap) is onetwopunch really that much better than nmap and worth learning? Furthermore are there any downsides to it? Something nmap can do do, but onetwopunch cannot? ",
+        "created_utc": 1527231939,
+        "upvote_ratio": ""
+    }
+]

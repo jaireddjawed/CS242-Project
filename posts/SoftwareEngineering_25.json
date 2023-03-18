@@ -1,0 +1,802 @@
+[
+    {
+        "title": "From Rails to Clojure, then to Java, then back to Rails",
+        "author": "donbonifacio",
+        "url": "https://engineering-management.space/post/from-rails-to-clojure-to-java-to-rails/",
+        "text": "",
+        "created_utc": 1521632990,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "From Rails to Clojure, then to Java, then back to Rails",
+        "author": "[deleted]",
+        "url": "https://deploy-preview-25--engineering-management.netlify.com/post/from-rails-to-clojure-to-java-to-rails/",
+        "text": "[deleted]",
+        "created_utc": 1521632347,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone graduated/graduating 2017-2018 with a B.S in STEM?",
+        "author": "Thinkernet",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/85zhc4/anyone_graduatedgraduating_20172018_with_a_bs_in/",
+        "text": "If this is you and you are based in the U.S, send me a pm. ",
+        "created_utc": 1521607161,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Would anyone know how to add the Box2D physics engine to my Xcode project?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/85zagm/would_anyone_know_how_to_add_the_box2d_physics/",
+        "text": "[deleted]",
+        "created_utc": 1521605059,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Json Scenario based End-point Autonomous Testing tool(EAT) for Server",
+        "author": "jiseongKim",
+        "url": "https://github.com/nhnent/eat",
+        "text": "",
+        "created_utc": 1521590921,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Code Quality Resources?",
+        "author": "spurs126",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/85xcjl/code_quality_resources/",
+        "text": "I'm looking for recommendations to help learn about code quality - videos, webinars, tutorials, etc.  Things like clean code, unit tests, error handling, best practices for logging.  Basically - techniques that help prevent bugs from happening, or if they do happen, techniques that help find them faster.  Thanks!",
+        "created_utc": 1521587331,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Rapid Typing 5.2 Free Download Portable Full Version 2018",
+        "author": "PCKeysoft786",
+        "url": "https://www.pckeysoft.com/2018/01/19/rapid-typing-5-2-free-download-portable.html",
+        "text": "",
+        "created_utc": 1521559110,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[xpost /r/databasehelp] Redesigning Database Layer with an eye on Data Analysis",
+        "author": "wisepidgeon",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/85t1on/xpost_rdatabasehelp_redesigning_database_layer/",
+        "text": "Hi everyone.\n\nThis is a long post, so you guys are warned! :)\n\nI am in a situation at work where there is the possibility for redesigning everything.\nI want to take this opportunity in order to step up in my career, and anyway at least learn as much as I can to grow professionally.\n\nWe have sensors installed on customers' premises that count people (for instance, installed on doors in shops).\nEvery 5 minutes, these sensors send data to our server that is made like this: `(sensor_id, timestamp, count_in)`.\nFor instance, it could be `(2018-03-10T12:00:00Z, 42, 10)`, meaning that in the 5 minutes interval `2018-03-10T11:55:00Z`-`2018-03-10T12:00:00Z`, the sensor with `id=42` counted `10` people.\n\nThe goal is to collect all of this data in order to then be able to show statistics and perform analysis: the typical scenario is to show how the number of people that enters a shop changes over time.\nFor instance, we could want to see the number of people that entered a shop every day of a month, or every month of a year, for a single sensor, or for a group of sensors.\n\nTo do this we need to perform sums on the data. For instance, in a day we usually have 288 records (5 minutes intervals in 24 hours), so if we want to calculate the total number of people that entered a shop in a particular year, we would have to sum the data of `288 * 365=105120` records, and the number grows linearly with the number of sensors we want to sum together (if we want to sum the data from 4 different sensors, we need to sum `288*365*4=420480` records).\n\nOf course we are not Google, but I think we are talking about a decent amount of data to be processed.\nAt the moment, we have around `3500` sensors, which bring us to around `1000000` records produced everyday, which bring us to around `11 tps`.\nThis number should -hopefully- increase over time with more customers, or with updates to current customers (new sensors etc).\nEach 5 minutes data could be summarized into `~100 Bytes`, which, under current conditions, means `~100 MB/day`, and `~36 GByte/year`.\n\n**CURRENT SOLUTION:**\n\nThe current solution is a PostgreSQL database that models data as follows.\n*Keep in mind that the choice of modeling the db this way was not really justified with tests/benchmarks of any kind, but was left to the \"feeling\" of the previous developer.*\n\nThere is **only one** table that holds the data.\nEach row represents the data of a particular day and a particular sensor.\nEach row is identified by the couple (`date, sensor_id`), date being the day without the time.\nThe row then holds a `jsonb` column which contains all the \"minute\" data, whose keys are the datetime.\nThe row also holds an integer value which is the total sum of the counts of each detail in the jsonb.\nThis value is updated as new minute data enters the system.\nSo, for instance, there could be a row (`2018-03-10, 42`) that represents the data of the sensor with `id=42` in the day `2018-03-10`.\nThe `jsonb` column of that row cointains all the data to the minute, and their keys are `2018-03-10THH:mm:ssZ`.\n\nThis structure is useful when we want to obatin statistics with certain granularity. For instance, if I want to obtain the total count of a year for a sensor, I would have to sum only 365 record (one per day) instead of 105120 (365*288). This helps particulary if I want multiple sensors (like, total count of 4 sensors, and this happens), because that number increase linearly with the number of sensors I want.\n\nI see two problems here:\n\n1. \"scalability\": even in case of no more customers, we keep having data. \nThe db is going to grow even if we add no more customers.\nOf course we are not talking about petabytes of data, but in the long run this could be an issue.\nAnd performing grouping and sums, and averages over big amount of data seems to be a bottleneck.\n\n2. This structure needs us to compute and update the aggregated count values as data enters.\nThis puts a lot of load on the server (we need to use strong transaction isolation).\nAlso, sensors need to be assumed as unreliable, so our priority is to insert the data they send as fast as possible in order to avoid retransmissions.\n\n**SOLUTIONS I AM THINKING ABOUT**\n\n1. Replace the data table with a data table whose key is (`dateTIME, sensor_id`) instead of (`date, sensor_id`).\nSo, data would now be memorized directly per minute, without aggregation.\nThis should speed up a lot the writing, but now , when I have to perform sums I need to read more data (for 1 year on one sensor I need `288*365=105120` instead of just `365`)\n\n2. I honestly don't see why I should stay with a relational DB for this kind of data, instead of migrating to a NoSQL db.\nI would like advices on this: if you think it could be a good idea, and if so what could be a solution.\n\n\n3. If we go for the NoSQL solution, we would lose the classic aggregation function (SUM; AVG...) which are what we essentially need to perform our statistics.\nI don't exactly know how to replace them.\nI had a quick intro to spark and Scala a couple of year ago, maybe that could be a possible solution?\nFor instance, I could query the data in the NoSQL and then perform a parallel sum of some sort using spark.\nIs this a good design idea? What alternatives are there?\n\nIn general, given that this is the scenario, do you have any suggestion in mind?\n\nThank you for your patience",
+        "created_utc": 1521555495,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Benefits Of Hiring The Best ERP Consultant Services",
+        "author": "erpsolutionsoodles",
+        "url": "http://erpsolutions.oodles.io/hiring-best-erp-consultant-services/",
+        "text": "",
+        "created_utc": 1521484323,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What route should I go to figure out how to fix problems my program has on end users' machines?",
+        "author": "deftware",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/85inc4/what_route_should_i_go_to_figure_out_how_to_fix/",
+        "text": "[removed]",
+        "created_utc": 1521457625,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are good podcasts for a software engineer to learn useful things?",
+        "author": "ProfessorImprobable",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/85hszk/what_are_good_podcasts_for_a_software_engineer_to/",
+        "text": "My current favorite is [Soft Skills Engineering](https://softskills.audio/) because their discussions actually make me think about the issues in a way that interviews about libraries and tech companies haven't.",
+        "created_utc": 1521446169,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Freemake Video Converter CRack Plus Keygen [2018]",
+        "author": "Developer2018",
+        "url": "https://crackfree4u.com/freemake-video-converter-crack/",
+        "text": "",
+        "created_utc": 1521383977,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ReImage PC Repair LIcense Key Plus Crack FIle LAtest",
+        "author": "Developer008",
+        "url": "https://crackfree4u.com/reimage-pc-repair-license-key/",
+        "text": "",
+        "created_utc": 1521348032,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Graduating IE wanting to pursue Software Engineering",
+        "author": "cluesgogocluesgoclue",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/85381h/graduating_ie_wanting_to_pursue_software/",
+        "text": "It took me a while to realize it, but I want to pursue the Software Engineering field. Unfortunately I am graduating in May, and all of my internship experience has been with an industrial equipment manufacturing company (supply chain), and a company that does automated material handling projects for companies like amazon and ups. I am considering getting my Masters in Software Engineering, just so I can be a student again and learn concepts to actually apply for Software Engineering internships. Has there been any other IEs who have going down the path of Software Engineering? How did you go down this path, and what possible steps can I take to get into the field? Thank you!",
+        "created_utc": 1521286852,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need help clearing my direction to becoming a software engineer.",
+        "author": "RatPack89",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/852tt3/need_help_clearing_my_direction_to_becoming_a/",
+        "text": "So I've been learning HTML, CSS, JavaScript, and JQuery. I'm want to become a software engineer and don't really know my next steps. I've read a lot about how you should go to node.js and react, but isn't that a full stack web developer? \n\nShould I go that route or learn Java/C++ and a database language? To give you an idea I'd like to work for big companies like Google, Facebook, etc....Would appreciate the help thanks.",
+        "created_utc": 1521280503,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which degree would be more useful in the long run for someone who wants to develop complex and top quality software?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/851lpw/which_degree_would_be_more_useful_in_the_long_run/",
+        "text": "[deleted]",
+        "created_utc": 1521261922,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tic Tac Toe interview question in 1 hour???",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84zkjj/tic_tac_toe_interview_question_in_1_hour/",
+        "text": "[deleted]",
+        "created_utc": 1521240737,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Script/program that downloads mp3s/audio off YouTube links.",
+        "author": "Positivelectron0",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84z98h/scriptprogram_that_downloads_mp3saudio_off/",
+        "text": "I've got moderate coding experience in Java.  I was wondering if I'd be able to pull something like this off.\n\nWhere should I start? What are some resources I should look into?\n\nThanks in advance!",
+        "created_utc": 1521238000,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When to refactor and how thoroughly?",
+        "author": "dacracot",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84x9vs/when_to_refactor_and_how_thoroughly/",
+        "text": "[removed]",
+        "created_utc": 1521222051,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's UML and Why Do You Need It?",
+        "author": "leakka",
+        "url": "https://www.youtube.com/attribution_link?a=OKTeWqjV_I8&amp;u=%2Fwatch%3Fv%3D8CBnAmYnwk0%26feature%3Dshare",
+        "text": "",
+        "created_utc": 1521211728,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to build an online programming contest management system?",
+        "author": "CrappyFap69",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84unv8/how_to_build_an_online_programming_contest/",
+        "text": "Hello guys, I'm building a programming contest management system as part of my software engineering course project.\n\nOur team has completed the Analysis(Requirements Engineering and Software Analysis) part and doing the Design(Architecture, Database, UI, algorithm etc) part.\n\nCan you please tell me how an actual contest manament system like Hackerrank, Codeforces etc work under the hood(I mean back-end)?\n\nI researched a lot, now want to get ideas from you guys. We want to implement Hackerrank, Codeforces API, but how we implement the problems to solution to ranking system, I don't know.\n\nIf we want to implement it using our own compilers, how do we do it?\n\nThanks a lot in advance.",
+        "created_utc": 1521198950,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "5 Ways Data Analytics Is Disrupting Business Models",
+        "author": "mkkhatri1",
+        "url": "http://www.cygnet-infotech.com/blog/how-isvs-can-overcome-the-challenges-of-software-monetization",
+        "text": "",
+        "created_utc": 1521197121,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Aggregating and Extracting Product Requirements",
+        "author": "mkkhatri1",
+        "url": "http://www.cygnet-infotech.com/blog/aggregating-and-extracting-product-requirements",
+        "text": "",
+        "created_utc": 1521191146,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How An ERP System Uplifts Business Operations For Industries",
+        "author": "erpsolutionsoodles",
+        "url": "http://erpsolutions.oodles.io/erp-system-uplift-business/",
+        "text": "",
+        "created_utc": 1521177083,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is Your Company A Feature Factory Or A Lean Startup?",
+        "author": "jayme-edwards",
+        "url": "https://www.youtube.com/watch?v=gnk86UQ0j0I",
+        "text": "",
+        "created_utc": 1521159202,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is Your Company A Feature Factory Or A Lean Startup?",
+        "author": "[deleted]",
+        "url": "https://youtu.be/m9l_A9bbDFY",
+        "text": "[deleted]",
+        "created_utc": 1521155902,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Database Migration with Grails 3 – Free Webinar!",
+        "author": "bc_tech",
+        "url": "https://objectcomputing.com/resources/events/grails-database-migration-webinar/",
+        "text": "",
+        "created_utc": 1521140954,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good developer/bad developer",
+        "author": "johnwildoran",
+        "url": "https://nothingventured.rocks/good-developer-bad-developer-188f520ae1b0",
+        "text": "",
+        "created_utc": 1521139581,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tell me if I am unethical",
+        "author": "AnonLedditor",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84l403/tell_me_if_i_am_unethical/",
+        "text": "I am a software engineer of above-average skill.  I'd say I code twice to three times as fast as your average developer of my level of experience.  I'm actually good, too, so it's not a case of quantity over quality.\n\nSo let me tell you what I like to do.\n\nYour typical application usually involves a project that is checked into a repo.  However, the project that I do all my direct coding in is actually a local master decoy branch (MDB) that's not tracked by our repo.  Three times a day per eight-hour shift, a local service I wrote scans the MDB for files modified since last scan and copies the contents to decoy capture branches (DCB).  So, at the end of my day, on my local machine I will end up with three new DCBs named MyProject201704010800, MyProject201704011200, and MyProject201704011600 using \"MyProjectyyyyMMddhhmm\" as the convention.\n\nThe idea is that, over time, I build up a queue of DCBs, each of which serving as a snapshot of my progress taken every 2-3 hours since the start of the project.  At the end of my eight-hour shift, I take the next branch capture in the queue and copy its contents to the actual live branch that's tracked by the repo (I call this process \"dequeuing\").  I then check it in and log off for the day.  So my boss not only sees that I am checking in daily, but it also appears that the quantity work I am checking in is consistent with that of a developer of my skill level.  However, the reality is that what's getting checked in was actually coded days or even weeks ago.  Effing brilliant.\n\nHow does this get even better?  I am a virtual employee, so, after I complete a project, I spend the next week or so doing nothing but watching TV and playing video games here at home.  The only actual work I do during this time is make sure my capture branches are being properly dequeued.\n\nIt does get a bit tricky, though, because I have to demo my work and also provide status updates to the project manager.  So, along with my capture branches, I also store a log that serves as a sort of diary that allows me to familiarize myself with what I was working on at that time.  Otherwise, I could get into a bit of hot water if I lost track of my position along the timeline and inadvertently unveiled a feature from the future.\n\nAnother issue that took me forever to resolve was how to merge a bug fix in the current branch all the way up through the other decoy capture branches.  Since they're all local, I've had to rely on third party tools.  It's quite simple how it works:  I merge current branch into decoy #10, merge decoy #10 into #9, #9 into # 8, etc.  Surprisingly, I've never lost any code doing this.\n\nWhy I don't think I am doing anything wrong:  If I were to complete projects in real time, I'd only see a small portion of that return in my annual employee assessment (bonus, raise, etc).  In other words, my pay would never be proportionate to the quantity and quality of work I produce and the rate at which I produce it.  Consider it a virtual raise if you will.  \n\nNow I'll go ahead and say, too, that there have been times when I've lost progress and have had to work overtime to build the queue back up.  Sometimes, though, I'll just work overtime for the hell of it and build up my queue.  I look at it as an investment to aquiring additional leisure time.\n\nNow all I need to do is figure out how to automatically log in through VPN at 8am, fire up my project, and have it \"do stuff\" on its own to feign legitimate database activity.  If I can pull that off, I'll be sleep in until 10am every day.\n\nSo what's everyone's opinion on this?",
+        "created_utc": 1521105186,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ERP Automation: Why Businesses Are Dying For It",
+        "author": "erpsolutionsoodles",
+        "url": "http://erpsolutions.oodles.io/erp-automation-businesses-dying/",
+        "text": "",
+        "created_utc": 1521091533,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Estimate LOC during the requirements/design phase",
+        "author": "cuackcuack",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84j3xt/estimate_loc_during_the_requirementsdesign_phase/",
+        "text": "[removed]",
+        "created_utc": 1521080329,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thinking of creating my own online course portal.",
+        "author": "GermanyWinsWC",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84feii/thinking_of_creating_my_own_online_course_portal/",
+        "text": "I'm 24 and I work as an instructional designer at a university and I have a degree in IT.  A professor in my office mentioned to me that they would like to know if it'd be at all possible to create a site that is available to the world and will host a education course anyone can sign up and take.  Participants would be able to click through the online course work at their own pace and all content will be pre-loaded, it will not be a live course.  Where do I start looking into something like this? I've never built a website or a program but I do know a decent amount. Thanks!",
+        "created_utc": 1521049961,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I keep reading everywhere that it’s hard",
+        "author": "BoundByHeresy",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/84dij5/i_keep_reading_everywhere_that_its_hard/",
+        "text": "To find jobs as a software engineer right now. I was planning on possibly making this a career choice in going back to school. I enjoy behind behind computers with something that offers a bit of a challenge. Does anyone think this may not be the right choice? I don’t want to find myself with a degree in a few years with nothing to show for. ",
+        "created_utc": 1521035436,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Clutch recognizes Cygnet as a leading app development company",
+        "author": "mkkhatri1",
+        "url": "https://www.fair-news.de/1633690/clutch-recognizes-cygnet-as-a-leading-app-development-company",
+        "text": "",
+        "created_utc": 1521031809,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "3 Technology trends that Marketers should look for in 2018",
+        "author": "mkkhatri1",
+        "url": "https://medium.com/@hemang_rindani/3-technology-trends-that-marketers-should-look-for-in-2018-3fcb472bd8c0",
+        "text": "",
+        "created_utc": 1521030178,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Healthcare IoT for Smart Medical Revolution - IoT can solve the issues of healthcare ecosystem with smart and connected devices. Look how 3 enablers of IoT have contributed towards healthcare along with their future potential.,",
+        "author": "mkkhatri1",
+        "url": "http://www.bayerischer-wald-news.de/news/healthcare_iot_for_smart_medical_revolution-22068.html",
+        "text": "",
+        "created_utc": 1521028583,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Emerging Technologies Pave the Way to Enhance Personalized Digital Customer Experience",
+        "author": "mkkhatri1",
+        "url": "https://medium.com/@hemang_rindani/emerging-technologies-pave-the-way-to-enhance-personalized-digital-customer-experience-a712cf4b0775",
+        "text": "",
+        "created_utc": 1521026937,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Should I take the 2 year contract offer?",
+        "author": "codingbookworm",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/849gx3/should_i_take_the_2_year_contract_offer/",
+        "text": "So, I’m getting no offers besides this one. No interviews. Nothing. It is an iOS development consulting job. It requires me to move to a different state. Train there for 6-8 weeks. Then, I move to where the client I’m assigned to is located. The pay isn’t great. And they don’t cover housing or anything once I’m out of training. But, right now I have nothing going for me and have thought of just doing it: suffer the 2 years, get the experience, and leave. Any advice you guys can give me to make the best of this opportunity? Or any alternatives I can take?",
+        "created_utc": 1520990036,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Unit Tests: To mock or not to mock - that is the question.",
+        "author": "GregPresco",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/8448w2/unit_tests_to_mock_or_not_to_mock_that_is_the/",
+        "text": "I've seen some blogs, posts, tweets lately saying that mocking produces brittle, tightly-coupled-to code unit tests.\nI see the point in some of them but some of the options they suggest (such as writing an integration test instead of using a mock) are missing the advanteges of what unit tests give you.\n\nWhat do you think?",
+        "created_utc": 1520948774,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SOFTWARE COMPANIES IN GANDHINAGAR – DELIVERING OPTIMAL SOFTWARE SOLUTIONS",
+        "author": "bugfreetechno",
+        "url": "https://www.bugfreetechnologies.com/software-companies/software-companies-in-gandhinagar-delivering-optimal-software-solutions/",
+        "text": "",
+        "created_utc": 1520939229,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "5 Tips To Hire The Best ERP Consulting Services Revealed!",
+        "author": "erpsolutionsoodles",
+        "url": "http://erpsolutions.oodles.io/5-tips-hire-erp-consulting-services/",
+        "text": "",
+        "created_utc": 1520928515,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Entry to IT Live Training Day 05 Session - iTeLearn",
+        "author": "karthikkosireedi",
+        "url": "https://youtu.be/d8_UeQRqdWw",
+        "text": "",
+        "created_utc": 1520917520,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Student from Mexico looking to work in the US as a SE - Need advice",
+        "author": "-5677-",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/840kax/student_from_mexico_looking_to_work_in_the_us_as/",
+        "text": "[removed]",
+        "created_utc": 1520905680,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this a Dev or QA job?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/840a1s/is_this_a_dev_or_qa_job/",
+        "text": "[deleted]",
+        "created_utc": 1520903069,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If you have ever been involved in Distributed Software Development, then please answer these 6 multiple choice questions. Takes less than a minute! Results will be shared",
+        "author": "[deleted]",
+        "url": "https://survey.eu.qualtrics.com/jfe/form/SV_3jXRnmR2hfTw1s9",
+        "text": "[deleted]",
+        "created_utc": 1520881999,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The practical test pyramid: a very thorough introduction to the various forms of testing",
+        "author": "the-real-guanabanana",
+        "url": "https://martinfowler.com/articles/practical-test-pyramid.html",
+        "text": "",
+        "created_utc": 1520804323,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for a collaborative editing tool? Check out Tandem - Decentralized, cross-editor, collaborative editing!",
+        "author": "rageandqq",
+        "url": "http://typeintandem.com",
+        "text": "",
+        "created_utc": 1520796632,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are your opinions about daily stand-up meetings &amp; distributed development? Results will be shared",
+        "author": "[deleted]",
+        "url": "https://survey.eu.qualtrics.com/jfe/form/SV_865OmaG8pJiGvQx",
+        "text": "[deleted]",
+        "created_utc": 1520786036,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bandaid: the dropbox service proxy",
+        "author": "the-real-guanabanana",
+        "url": "https://blogs.dropbox.com/tech/2018/03/meet-bandaid-the-dropbox-service-proxy/",
+        "text": "",
+        "created_utc": 1520764442,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tandem - Decentralized collaborative coding across different text editors",
+        "author": "[deleted]",
+        "url": "http://typeintandem.com",
+        "text": "[deleted]",
+        "created_utc": 1520734186,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hoping to ask for advice as a product manager! I'm not a technical PM (Marketing background) but want to know how to work with devs better.",
+        "author": "futureshark29",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/83h2x8/hoping_to_ask_for_advice_as_a_product_manager_im/",
+        "text": "As someone who understands the basic frameworks of how development works, could someone try to explain as specifically as possible *how* back-ends work? For example, what databases does your company use (we use MongoDB for our app, prior company was Cassandra), how does customer information get stored, manipulated and used? What are some big differences between back-end systems (Mongo/Cassandra)? What are typical challenges with back-ends that cause bugs on the front-facing UI? \n\nI know this is extremely vague, but if you have any examples to share of problems you have seen, I'd love to hear them. I have tried to learn as much as I can about development, I've taken an HTML, CSS, JS and SQL courses, am very familiar working with designers in InVision and Sketch, but still don't fully understand back-end systems. Thank you!",
+        "created_utc": 1520707647,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why I Turned Down an Interview with Google",
+        "author": "[deleted]",
+        "url": "https://sjkelleyjrblog.wordpress.com/2018/03/10/why-i-turned-down-an-interview-with-google/",
+        "text": "[deleted]",
+        "created_utc": 1520699144,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice Wanted: 2 yrs experience, where to go from here?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/83fz5m/advice_wanted_2_yrs_experience_where_to_go_from/",
+        "text": "[deleted]",
+        "created_utc": 1520697699,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there any REST API service for uploading, tagging, querying, and streaming sounds?",
+        "author": "PresentMathematician",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/83exsd/is_there_any_rest_api_service_for_uploading/",
+        "text": "These would be some of the desired features:\n\n- a really simple API \n- the ability to add custom metadata to sounds, e.g. w/ JSON\n- querying via the custom metadata\n- being able to stream/download sounds\n- a framework for making custom embedded players would be cool",
+        "created_utc": 1520685721,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ecommerce Website Design Company India",
+        "author": "tebitechnology",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/83dm4h/ecommerce_website_design_company_india/",
+        "text": "Avail the complete reliable E-commerce website development package from the renowned Ecommerce Website Design Company in India known as Tebi Technologies. We design the website which supports to make sure security and scalability, low Investments and maximum return as well as the responsive storefront. \n\nhttp://tebitechnology.com/",
+        "created_utc": 1520664714,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why Do Programmers Lose Hope For Their Future? (Video)",
+        "author": "jayme-edwards",
+        "url": "https://youtu.be/NdA6aQR-s4U",
+        "text": "",
+        "created_utc": 1520648100,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How switching our automation platform to StackStorm changed our team's lives forever",
+        "author": "nmaludy",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/83c0y3/how_switching_our_automation_platform_to/",
+        "text": "Over the last few months our team has been working on transitioning our automation platform over to StackStorm. This [blog post](https://encoretechnologies.github.io/blog/2018/03/stackstorm-changed-our-lives/) details how much our lives sucked with our old platform and how much StackStorm has moved us forward in maturing our Software Engineering practice",
+        "created_utc": 1520646091,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Will I fuck my career taking this job?",
+        "author": "kobldcanyon",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/83bg0a/will_i_fuck_my_career_taking_this_job/",
+        "text": "The job title is “engineering-support-integrations-quality-control-developer”\n\nGot an offer for 70k, but the job doesn’t sound like a true “developer” position.\n\nThe reason I want this job is the fact the team is really cool and I don’t have to pay rent.\n\nI could get 85 in the city, but I love this location.... I will be able to bike and ski and do everything I love\n\nThe job isn’t pure coding, so I worry it might not help me build the skills I need if I ever have to leave",
+        "created_utc": 1520640624,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for free or low cost online software engineering course",
+        "author": "ruv",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/83bes0/looking_for_free_or_low_cost_online_software/",
+        "text": "Hey, \n\nTitle pretty much says what I am looking for.  Most that I see are directed toward CS.",
+        "created_utc": 1520640307,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Data Design : Software Engineering",
+        "author": "Free_Study9",
+        "url": "http://freestudy9.com/data-design/",
+        "text": "",
+        "created_utc": 1520592975,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "IOT SOLUTIONS – THE BACKBONE OF INTERNET",
+        "author": "bugfreetechno",
+        "url": "https://www.bugfreetechnologies.com/iot-solutions/iot-solutions-the-backbone-of-internet/",
+        "text": "",
+        "created_utc": 1520580802,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Entry to IT Live Training Day 03 Session - iTeLearn",
+        "author": "karthikkosireedi",
+        "url": "https://youtu.be/xvWHyi2Hmyc",
+        "text": "",
+        "created_utc": 1520572552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which language best suits what I am looking to accomplish?",
+        "author": "wind_man",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/832qvb/which_language_best_suits_what_i_am_looking_to/",
+        "text": "I want to create a program in which I display a matrix on a grid. The matrix will be interactive and updated in 'real-time' and will look like this: https://imgur.com/a/587O6\n\nWhole idea is to create a program that generates led patterns to be sent out to another device. Programs like this already exist, but I want to do this for learning purposes. Take a look at GLEDIATOR, a program that functions the same: https://imgur.com/a/TuFXK\n\nHere's my question: Which language would best suit what I am trying to accomplish? \n\nI've created a prototype by embedding matplotlib figures into python's tkinter libraries, but I've got a feeling I'm am going to run into performance issues down the road.\n\n",
+        "created_utc": 1520557322,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best Firm to work for in Europe ?",
+        "author": "Alpha_Predator",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/8328ct/best_firm_to_work_for_in_europe/",
+        "text": "[removed]",
+        "created_utc": 1520552849,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "College [help] ?",
+        "author": "nicksatnite",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/82xg89/college_help/",
+        "text": "My university does not carry Software Engineering as a major. What would be the closest thing to look into? Computer science or Engineering Technology? \n\nthanks ",
+        "created_utc": 1520515531,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can Blockchain revolutionize Internet of Things (IoT)",
+        "author": "mkkhatri1",
+        "url": "https://medium.com/@hemang_rindani/how-can-blockchain-revolutionize-internet-of-things-iot-e9a1ced24e06",
+        "text": "",
+        "created_utc": 1520514815,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Top mobile app development trends for 2018 – Hemang Rindani – Medium",
+        "author": "mkkhatri1",
+        "url": "https://medium.com/@hemang_rindani/top-mobile-app-development-trends-for-2018-5803c00419e4",
+        "text": "",
+        "created_utc": 1520513737,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "E-commerce ERP Integration: To Revolutionize Retail Business",
+        "author": "erpsolutionsoodles",
+        "url": "http://erpsolutions.oodles.io/e-commerce-erp-integration/",
+        "text": "",
+        "created_utc": 1520503945,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Entry to IT Live Training Day 02 Session - iTeLearn",
+        "author": "karthikkosireedi",
+        "url": "https://youtu.be/MaNSoPP1pY4",
+        "text": "",
+        "created_utc": 1520487051,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am an curriculum designer and I want to know how SEs prefer to learn. This short survey will help to find the best instructional strategies to acquire new knowledge &amp; skills for SEs. All answers will be kept confidential. Please complete by 3/16.",
+        "author": "rksimms",
+        "url": "https://fsu.qualtrics.com/jfe/form/SV_dnaYQS0VPFL7udL Link Text",
+        "text": "",
+        "created_utc": 1520465443,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is Caffeine Making You Too Stressed To Be Agile? (Video)",
+        "author": "jayme-edwards",
+        "url": "https://youtu.be/vOVXhf30OMM",
+        "text": "",
+        "created_utc": 1520430705,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "امنیت سیستم های با مقیاس فوق وسیع مبتنی بر معماری سرویس گرا",
+        "author": "taliemsite",
+        "url": "http://taliem.ir/product/%d8%a7%d9%85%d9%86%db%8c%d8%aa-%d8%b3%db%8c%d8%b3%d8%aa%d9%85-%d9%87%d8%a7%db%8c-%d8%a8%d8%a7-%d9%85%d9%82%db%8c%d8%a7%d8%b3-%d9%81%d9%88%d9%82-%d9%88%d8%b3%db%8c%d8%b9-%d9%85%d8%a8%d8%aa%d9%86%db%8c/",
+        "text": "",
+        "created_utc": 1520351264,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ERP for SMEs: Ready For The Implementation of Its Systems",
+        "author": "erpsolutionsoodles",
+        "url": "http://erpsolutions.oodles.io/erp-for-smes/",
+        "text": "",
+        "created_utc": 1520320659,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Insight/Books/Articles to help change a negative outlook on technology",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/82bvl9/insightbooksarticles_to_help_change_a_negative/",
+        "text": "[deleted]",
+        "created_utc": 1520305593,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you plan/design before coding?",
+        "author": "VillagerNumber2",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/828b75/how_do_you_plandesign_before_coding/",
+        "text": "I usually end up implementing as I design, but a previous project has led me to waste unnecessary time from starting over many times.\n\nI was looking into UML diagrams, but they seem a bit too formal. Is there a different approach out there? ",
+        "created_utc": 1520276144,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Array and Arraylist Problems",
+        "author": "wicq",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/827i3v/array_and_arraylist_problems/",
+        "text": "Hey I hope everyone is doing good, I am new at teaching JAVA and I just wanted some help in making some Array based problems in JAVA, if anyone can give me any reference link or sites where I can find ArrayBased problems that would be really helpful.",
+        "created_utc": 1520270020,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Five considerations for sports mobile app development",
+        "author": "mkkhatri1",
+        "url": "https://yourstory.com/read/08f7c17749-five-considerations-for-sports-mobile-app-development",
+        "text": "",
+        "created_utc": 1520242610,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "manage construction workers online: Outdoor Employees",
+        "author": "afrocomfort",
+        "url": "https://finclock.com/2018/03/04/manage-construction-workers-online-outdoor-employee-tracking/",
+        "text": "",
+        "created_utc": 1520206199,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to work as a software engineer at age 15?",
+        "author": "SameerAhm",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/81yiwc/how_to_work_as_a_software_engineer_at_age_15/",
+        "text": "If you think you need someone to make a program for you or an app please tell me...",
+        "created_utc": 1520179738,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The 5 Biggest Lies Of The Software Industry (Video)",
+        "author": "[deleted]",
+        "url": "https://youtu.be/ichxKWQwwkU",
+        "text": "[deleted]",
+        "created_utc": 1520095792,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should i learn as a software engineer ?",
+        "author": "JeSuisQc",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/81j1l1/what_should_i_learn_as_a_software_engineer/",
+        "text": "So i was wondering what are the knowledge every software engineer should have ? I saw at school for now C++, basic algorithms, software project development, a lot of maths (of course) and a bit of computer system logic. I learned by myself, online, the basics of JavaScript and HTML. My question is : what are the essentials subjetcs that i should learn and read about ? Thanks a lot!\n\nEdit : or what activities and projects should i don?",
+        "created_utc": 1520028982,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Contract software jobs",
+        "author": "dogscantwhistle",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/81fww5/contract_software_jobs/",
+        "text": "I’m hoping someone who’s done some contract software development can help me here...\n\nA former employer of mine wants to have me do some work on contract. It’s a short term project that will probably take a month, part time. I’ve got a full time job and I haven’t really done any contract work before. What’s the best way to set this up if I don’t plan on doing this regularly. LLC and incorporation seem like overkill. 1099 independent contractor? \n\nAlso, I need to come up with a rate. I know this depends heavily on the job and experience level of the developer, but any ballpark numbers would be helpful.",
+        "created_utc": 1520011664,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Triplebyte",
+        "author": "Save_And_Quit",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/81fnqy/triplebyte/",
+        "text": "https://triplebyte.com/ thoughts?",
+        "created_utc": 1520009680,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advanced System Protector 2018 Crack Keys Free Download",
+        "author": "saeed0834",
+        "url": "https://dadacrackes.com/advanced-system-protector-2018/",
+        "text": "",
+        "created_utc": 1520003854,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advanced SystemCare 2018 Pro License Key Free Download",
+        "author": "saeedqadir4281",
+        "url": "https://dadacrackes.com/advanced-systemcare-2018-pro/",
+        "text": "",
+        "created_utc": 1520000214,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Media player Autostudio 8.5 Crack Serial Key Free Download",
+        "author": "umarakbar9897",
+        "url": "https://dadacrackes.com/media-player-autostudio/",
+        "text": "",
+        "created_utc": 1519998407,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advanced Driver Updater 2018 Crack License Keys Free Download",
+        "author": "saeed0834",
+        "url": "https://dadacrackes.com/advanced-driver-updater-2018-crack/",
+        "text": "",
+        "created_utc": 1519997717,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Adobe Photoshop Elements 14 Crack + Serial Key Free Download",
+        "author": "saeed0834",
+        "url": "https://dadacrackes.com/adobe-photoshop-elements-14-crack/",
+        "text": "",
+        "created_utc": 1519995431,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Active Undelete 10 Pro 2018 Crack Serial keygen Free Download",
+        "author": "saeed0834",
+        "url": "https://dadacrackes.com/active-undelete-10-pro-2018-crack/",
+        "text": "",
+        "created_utc": 1519993638,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Acronis Snap Deploy 5.0 Crack Serial Key Free Download",
+        "author": "saeed0834",
+        "url": "https://dadacrackes.com/acronis-snap-deploy-5-0-crack/",
+        "text": "",
+        "created_utc": 1519991241,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Acoustica Mixcraft Pro Studio 8 Crack Activation Code Free Download",
+        "author": "saeedqadir4283",
+        "url": "https://dadacrackes.com/acoustica-mixcraft-pro-studio-8/",
+        "text": "",
+        "created_utc": 1519989910,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "DLL Files Fixer 2018 Crack Serial Keygen Full Version Free Download",
+        "author": "umarakbar9895",
+        "url": "https://dadacrackes.com/dll-files-fixer/",
+        "text": "",
+        "created_utc": 1519989074,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "EditPlus 4.6 Build 2018 Serial Key &amp; Crack Final Free Download",
+        "author": "umarakbar9895",
+        "url": "https://dadacrackes.com/editplus/",
+        "text": "",
+        "created_utc": 1519984958,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Microsoft Office Toolkit 2018 Crack Full New keys Free Download",
+        "author": "umarakbar9895",
+        "url": "https://dadacrackes.com/microsoft-office-toolkit/",
+        "text": "",
+        "created_utc": 1519980201,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ImagePrinter Pro 6.1 Crack Serial Number 2convert Free Download",
+        "author": "umarakbar9895",
+        "url": "https://dadacrackes.com/imageprinter-2convert/",
+        "text": "",
+        "created_utc": 1519974711,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TeamViewer 12 Crack 2018 Patch License Keys Free Download",
+        "author": "umarakbar9895",
+        "url": "https://dadacrackes.com/teamviewer-12-crack/",
+        "text": "",
+        "created_utc": 1519968209,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Foxit Reader 8.0.2 Crack 2018 Keygen Full Free Download",
+        "author": "umarakbar9895",
+        "url": "https://dadacrackes.com/foxit-reader/",
+        "text": "",
+        "created_utc": 1519965854,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What type of computer should I get for college?",
+        "author": "Metropolitan_Commie",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/817wpj/what_type_of_computer_should_i_get_for_college/",
+        "text": "I’m a senior in high school right now and I plan on doing a minor (I might change it to my major, I’m still figuring myself out lol) in software engineering next year in university and I was wondering if I should get a Mac or a PC. I’ve grown up with Apple and enjoy the user-friendliness of OS X but I also would like to eventually learn how to write code and develop mods for PC games. If I go with PC, should I build my own desktop or find a good laptop that I can bring with me to class?\n\nEssentially I want a versatile computer that I could do my class work on and run coding programs and still play games during my free time.\n\nWhat would your advice to me be?\n\nP.S. one game in particular that I would really like to work on is DayZ Stand-alone, which currently only runs on windows :(",
+        "created_utc": 1519932153,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Karthik\"s Technical Panel Discussion III - iTeLearn",
+        "author": "karthikkosireedi",
+        "url": "https://youtu.be/g6-gmqoriQU",
+        "text": "",
+        "created_utc": 1519898094,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How ERP Software Solutions Resolve issues in Manufacturing",
+        "author": "erpsolutionsoodles",
+        "url": "http://erpsolutions.oodles.io/erp-software-solutions-manufacturing/",
+        "text": "",
+        "created_utc": 1519891473,
+        "upvote_ratio": ""
+    }
+]

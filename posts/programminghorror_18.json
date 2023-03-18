@@ -1,0 +1,802 @@
+[
+    {
+        "title": "FML. I actually have to work with this code. a denotes an array, s denotes a string, numbers denote lengths, and it's only indented because I made it slightly more readable. JSON motherfucker, do you speak it?",
+        "author": "pat_the_brat",
+        "url": "https://i.imgur.com/Yaf5vUh.png",
+        "text": "",
+        "created_utc": 1505577446,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ajax Explained in a nice and Easy Way for all the Frustrated Programmers",
+        "author": "gauti123456",
+        "url": "https://youtu.be/ugiFpA03B6c",
+        "text": "",
+        "created_utc": 1505545700,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Worlds Best Decryption Algorithm",
+        "author": "Golden_Zealot",
+        "url": "https://www.reddit.com/r/programminghorror/comments/70f544/worlds_best_decryption_algorithm/",
+        "text": "I'm going to start by saying I wish I had a copy of this code.\n\nLast year in college, we were made to learn Perl of all things.\n\nEveryone had to submit mutually exclusive ideas for a final project to be signed off by the professor. A friend of mine decided that he wanted to write a simple script that would take a string, encrypt it with his own algorithm, and then send it via email, where it could then be copy pasted into a file which would then be parsed by the same program on the other end for decryption and output.\n\nI know this is small peas, but keep in mind this was a second semester, first year project, and this guy hadn't really programmed before.\n\nSo we have to present these projects, both code and functionality, on the last day to an auditorium filled with all the other students in the program, as well as faculty.\n\nSo my friend goes up and starts presenting. He explains the encryption algorithm works something to the effect of:\n\n&gt;String entry is looped per character\n\n&gt;Character is referenced to a hash whose mapped values are three characters long\n\n&gt;There are 3 possible 3 character values that are mapped to the original character (so 'f' could be 'abc', 'xyz', or 'jkl'), and the value is randomly selected out of the three\n\nIm not sure if thats all correct, but it was something akin to this.\n\nSo he goes through explaining this, and then...\n\nHe says \"The issue is that once I wrote it to be this way, I wasnt exactly sure how to decrypt it back...\".\n\nIMMEDIATELY, the audience collectively makes subtle, but definitely noticeable \"wat\" noises.\n\nSURELY you would think that he would just reference the hashes values, and insert the keys.\n\nNow keep in mind, this guy wrote this to work for lowercase, uppercase, numbers, punctuations, and some special characters.\n\nIn total, that meant that he had 106 characters to work with.\n\nAnd lo and behold, to the gasps and jaw drops of the entire packed auditorium, in order to decrypt, he had 1 if statement, **317 consecutive else if's**, and 1 else statement, for an error check.\n\nI have to give the guy props. He KNEW how bad it was, but he stayed professional the entire time in the face of the crowd.\n\nBut the sound of the decks upon decks of people as he was forced to scroll through this monstrosity to get to the rest of the code is something that I will never forget, nor want to face down.",
+        "created_utc": 1505538312,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this while examining a colleague's script",
+        "author": "LexMeat",
+        "url": "https://i.redd.it/kn4kkzbc01mz.png",
+        "text": "",
+        "created_utc": 1505472234,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kluna tik NVA Eating fish food!! Kluna Tik NVA Dinner #19|ASMR eating sounds no talk",
+        "author": "weliwu",
+        "url": "https://www.youtube.com/watch?v=S1kpzcnEalM",
+        "text": "",
+        "created_utc": 1505405759,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Major Equifax data breach caused by nightmarish security errors, including every employee account having their real name as the username AND password, \"admin/admin\" for admin account credentials, and plaintext passwords being shown by right clicking and selecting \"view source\"",
+        "author": "Autumn_V3",
+        "url": "https://krebsonsecurity.com/2017/09/ayuda-help-equifax-has-my-data/",
+        "text": "",
+        "created_utc": 1505364264,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A \"clever\" way to both check row count and get values in one line",
+        "author": "RainOnYourTirade",
+        "url": "https://imgur.com/a/X2RND",
+        "text": "",
+        "created_utc": 1505347294,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A clever way to both check row count and get values in one line",
+        "author": "[deleted]",
+        "url": "https://i.imgur.com/izpyKRi.jpg",
+        "text": "[deleted]",
+        "created_utc": 1505347239,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If you have provisions for shooting yourself in the foot, you probably will",
+        "author": "initialed85",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6zvj51/if_you_have_provisions_for_shooting_yourself_in/",
+        "text": "While trying to refactor a Python project for performance, I decided to change my use of collections.deque to a Queue.Queue because it has a blocking .get() method; I theorised that this would be less load on the CPU than a very short sleep in polls against the deque to see if it had anything to .pop().\n\nObviously, as a coder, I'm very lazy- so I decided to make my deque replacement \"quack like a deque\" by wrapping it in an object with the same interface as a deque (append, popleft, etc).\n\nBecause I am extremely lazy, I didn't want to rewrite my unit tests, so I also implemented some magic methods on the wrapper object to make it compare as true against a deque of equal contents- and for ease of debugging during testing, I implemented the __repr__() method so that it looked like a deque when you printed it.\n\nNow you can't access all of the Queue.Queue contents at once, so my compare and my __repr__ methods all did the same thing- completely unload the queue into a deque, completely reload everything back into the queue (and return the created deque for comparison or printing).\n\nDangerous, but I told myself it was only for unit testing purposes.\n\nMy unit tests passed and during isolated testing, performance was much better.\n\nHowever I did not consider that I was doing some debug logging of the old deque object in the wider application, so when I deployed this change, the server running the application came tumbling to the ground under 100% load across all cores. Apparently it is quite a heavy operation to completely load and unload hundreds of queues of 30 odd deep every second.\n\nOops!",
+        "created_utc": 1505318814,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "(Java) cuz",
+        "author": "SusuKacangSoya",
+        "url": "https://i.redd.it/9g66buw94ilz.png",
+        "text": "",
+        "created_utc": 1505243585,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Button array starts with 1?",
+        "author": "enigmaqsmith",
+        "url": "https://i.redd.it/1ekruzgxahlz.png",
+        "text": "",
+        "created_utc": 1505233673,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am looking for professional programmer can doing program for me about plate recognition and other details, please contact engabduljalil@gmail.com",
+        "author": "Jalilio2",
+        "url": "http://hiddensec.com",
+        "text": "",
+        "created_utc": 1505212943,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP NIGHTMARE",
+        "author": "slugibihl",
+        "url": "https://www.youtube.com/watch?v=MPXzFB4xYSM&amp;feature=youtu.be&amp;t=2m39s",
+        "text": "",
+        "created_utc": 1505168292,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I tried to learn Programming Half of my Life",
+        "author": "bumpycase",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6zgalg/i_tried_to_learn_programming_half_of_my_life/",
+        "text": "[removed]",
+        "created_utc": 1505145557,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The classic callback problem, finally resolved: get rid of indentation.",
+        "author": "KKBBang",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6zeded/the_classic_callback_problem_finally_resolved_get/",
+        "text": "    LoadModule('comiganl',      false, function() {\n    LoadModule('comiganl_fo',   false, function() {\n    LoadModule('comicps',       true,  function() {\n    LoadModule('comiaide',      true,  function() {\n    LoadModule('comifabl_lopm', false, function() {\n    LoadModule('comifabl_clie', false, function() {\n    LoadModule('comifabl_doma', false, function() {\n    LoadModule('comifabl_pers', false, function() {\n    LoadModule('comifabl_site', false, function() {\n    LoadModule('comifabl_art1', false, function() {\n    LoadModule('comifabl_art2', false, function() {\n    LoadModule('comifabl_art3', false, function() {\n    LoadModule('comifabl_ggos', false, function() {\n    LoadModule('comifabl_pneg', false, function() {\n    LoadModule('comifonc',      false, function() {\n    LoadModule('comimeti',      false, function() {\n    LoadModule('comistru',      false, function() {\n    LoadModule('cominowa_art1', false, function() {\n    LoadModule('cominowa_art2', false, function() {\n    LoadModule('cominowa_art3', false, function() {\n    LoadModule('comilopm_docu', false, function() {\n    LoadModule('comilopm_indi', false, function() {\n    LoadModule('comilopm_masq', false, function() {\n    SyncModule('comiflas', 'iFlas', true, function() {\n    SyncModule('comiscor', 'iScor', false, function() {\n    SyncModule('comibpra', 'iBpra', false, function() {\n    SyncModule('comivuip', 'ivuip', false, function() {\n    SyncModule('comivuip_bpra', 'iBpra', false, function() {\n    SyncModule('comivuip_ggos', 'iggos', false, function() {\n    SyncModule('comivuip_ggro', 'iggro', false, function() {\n    SyncModule('comivuip_renc', 'iRenc', false, function() {\n    SyncModule('cominowa', 'inowa', false, function() {\n    SyncModule('cominowa_ans1', 'iAns1', false, function() {\n    SyncModule('cominowa_ans2', 'iAns2', false, function() {\n    SyncModule('cominowa_ans3', 'iAns3', false, function() {\n    SyncModule('comilopm_inst', 'iAnst', false, function() {\n        LaunchSync(sApp);\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });\n    });",
+        "created_utc": 1505123001,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "'Nuff said...",
+        "author": "CodeMyst",
+        "url": "http://forum.brackeys.com/thread/no-overload-for-method/",
+        "text": "",
+        "created_utc": 1505029725,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a third category I had no idea about?",
+        "author": "necrophagist7",
+        "url": "http://i.imgur.com/TDLq4EY.jpg",
+        "text": "",
+        "created_utc": 1504901308,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My second experience with github",
+        "author": "ZetDudeG",
+        "url": "https://i.redd.it/q02ys9oojpkz.png",
+        "text": "",
+        "created_utc": 1504897607,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kluna tik NVA Eating ROTTEN FRUITS !! Kluna Tik NVA Dinner #16|ASMR eating sounds no talk",
+        "author": "weliwu",
+        "url": "https://www.youtube.com/watch?v=w3wDRvdjv-k",
+        "text": "",
+        "created_utc": 1504884189,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Export to \"Excel\"",
+        "author": "z500",
+        "url": "https://i.imgur.com/9TrpDuL.png",
+        "text": "",
+        "created_utc": 1504818739,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[php] Actual code found in the new project of my colleague",
+        "author": "angelmoskera",
+        "url": "https://i.imgur.com/CFK4KlM.png",
+        "text": "",
+        "created_utc": 1504814931,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Maintaining others code...",
+        "author": "_killbunny_",
+        "url": "https://imgur.com/a/HOi2b",
+        "text": "",
+        "created_utc": 1504798517,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nothing special, just using eval from an unencrypted source.",
+        "author": "AyrA_ch",
+        "url": "https://i.imgur.com/ZBIZMi3.png",
+        "text": "",
+        "created_utc": 1504772759,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Use of \"For loop\" 🔥",
+        "author": "grvpdw83",
+        "url": "https://youtu.be/wr4Ur2YM_Ow",
+        "text": "",
+        "created_utc": 1504720369,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kluna tik NVA Eating FM RADIO !! Kluna Tik NVA Dinner #15|ASMR eating sounds no talk",
+        "author": "weliwu",
+        "url": "https://www.youtube.com/watch?v=YJb7ec6Nt2Q",
+        "text": "",
+        "created_utc": 1504711978,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I learned how Windows handles the clipboard, and I wrote this fun little program using the WINAPI.",
+        "author": "kaikalii",
+        "url": "https://imgur.com/a/oG5e4",
+        "text": "",
+        "created_utc": 1504655074,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "OnMouseOver &amp; OnMouseOut 🔥",
+        "author": "grvpdw83",
+        "url": "https://youtu.be/liGVnscc81w",
+        "text": "",
+        "created_utc": 1504455640,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My first experience with GitHub",
+        "author": "ZetDudeG",
+        "url": "https://i.redd.it/nm8y1slpcnjz.png",
+        "text": "",
+        "created_utc": 1504435220,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Using User defined functions !",
+        "author": "[deleted]",
+        "url": "https://youtu.be/wr4Ur2YM_Ow",
+        "text": "[deleted]",
+        "created_utc": 1504374882,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "To the person who set up the MySQL db I just inherited...",
+        "author": "hbdgas",
+        "url": "https://i.imgflip.com/1v4qsl.jpg",
+        "text": "",
+        "created_utc": 1504287105,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "System coding 🔥",
+        "author": "grvpdw83",
+        "url": "https://youtu.be/r95I1PtGiwg",
+        "text": "",
+        "created_utc": 1504212064,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Introducing a succinct code style",
+        "author": "nansa",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6x6xnh/introducing_a_succinct_code_style/",
+        "text": "A PHP style that eats up less space, because less to read = easier to read:\n\n\tfunction get_cookies_from_jar(){\n\t\t//check for throttling errors\n\t\tif(array_key_exists(\"error\",$this-&gt;processedVars)){return;}\n\t\t//check whether all necessary parameters have been set\n\t\t$input_error = $this-&gt;QueryComponent-&gt;validate_call_parameters($_POST,array(\"jar_id\"=&gt;array(\"array\"=&gt;True,\"required\"=&gt;True,\"variable\"=&gt;False)));\n\t\tif(!is_null($input_error)){\n\t\t\t$this-&gt;set(\"http_code\",400);\n\t\t\t$this-&gt;set(\"error\",$input_error);\n\t\t\t$this-&gt;render(\"result\");\n\t\t\treturn;\n\t\t}\n\t\t//prevent SQL injection attacks\n\t\t$selected_jar\t= $this-&gt;QueryComponent-&gt;getCleanArrayParameter($_POST['jar_id']);\n\t\t//Do not check whether the provided jar id is valid. Just assume it is\t\t\n\t\t$cookies\t\t= $this-&gt;Cookies-&gt;getCookiesFromJar($selected_jar);\n\t\t//render result\n\t\t$this-&gt;set(\"result\",$cookies);\n\t\t$this-&gt;render(\"result\");\n\t\treturn;\n\t}\n\nOfcourse, to meet our quota of space usage, we have to indent randomly elsewhere:\n\n    /**\n     * The classname and database used in CakePHP's\n     * access control lists.\n     */\n    \tConfigure::write('Acl.database', 'default');\n    \tConfigure::write('Acl.classname', 'DbAcl');\n    \n    /**\n     * Uncomment this line to fix\n     * any date &amp; time related errors.\n     */\n    \t//date_default_timezone_set('UTC');\n    \n    /**\n     * Configure the cache handlers\n     */\n    $engine = 'File';\n\nThis same developer claims that JSON is more readable than YAML",
+        "created_utc": 1504186994,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to use For Loops in C#",
+        "author": "nilllzz",
+        "url": "https://www.youtube.com/watch?v=RNnA-_PNhZo",
+        "text": "",
+        "created_utc": 1504116792,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Image mapping in HTML 🔥",
+        "author": "grvpdw83",
+        "url": "https://youtu.be/HV-7JqQh5Bo",
+        "text": "",
+        "created_utc": 1504113394,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kluna Tik NVA Eating SLIME plasticizer !!! Kluna Tik NVA Dinner #12|ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=D-0taKMJi-c&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p&amp;index=14",
+        "text": "",
+        "created_utc": 1504100219,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Code Custom Windows log on 🔥",
+        "author": "[deleted]",
+        "url": "https://youtu.be/r95I1PtGiwg",
+        "text": "[deleted]",
+        "created_utc": 1504076963,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Code for Custom Windows log on that voice narrates on Startup 🔥",
+        "author": "[deleted]",
+        "url": "https://youtu.be/r95I1PtGiwg",
+        "text": "[deleted]",
+        "created_utc": 1504039177,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Inherited this Batch file script for Date-time conversion - a relic of a lost age - when Powershell does this in one line.",
+        "author": "lolklolk",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6wtikz/inherited_this_batch_file_script_for_datetime/",
+        "text": "Batch -    \n\n    set yyyy=\n    set $tok=1-3\n    for /f \"tokens=1 delims=.:/-, \" %%u in ('date /t') do set $d1=%%u\n    if \"%$d1:~0,1%\" GTR \"9\" set $tok=2-4\n    for /f \"tokens=%$tok% delims=.:/-, \" %%u in ('date /t') do (\n    for /f \"skip=1 tokens=2-4 delims=/-,().\" %%x in ('echo.^|date') do (\n    set %%x=%%u\n    set %%y=%%v\n    set %%z=%%w\n    set $d1=\n    set $tok=))\n    \n    if \"%yyyy%\"==\"\" set yyyy=%yy%\n    if /I %yyyy% LSS 100 set /A yyyy=2000 + 1%yyyy% - 100\n    \n    set CurDate=%mm%/%dd%/%yyyy%\n    set dayCnt=%1\n    \n    if \"%dayCnt%\"==\"\" set dayCnt=0\n    \n    set /A dd=1%dd% - 100 - %dayCnt%\n    set /A mm=1%mm% - 100\n    \n    :CHKDAY\n    if /I %dd% GTR 0 goto DONE\n    set /A mm=%mm% - 1\n    if /I %mm% GTR 0 goto ADJUSTDAY\n    set /A mm=12\n    set /A yyyy=%yyyy% - 1\n    \n    :ADJUSTDAY\n    if %mm%==1 goto SET31\n    if %mm%==2 goto LEAPCHK\n    if %mm%==3 goto SET31\n    if %mm%==4 goto SET30\n    if %mm%==5 goto SET31\n    if %mm%==6 goto SET30\n    if %mm%==7 goto SET31\n    if %mm%==8 goto SET31\n    if %mm%==9 goto SET30\n    if %mm%==10 goto SET31\n    if %mm%==11 goto SET30\n    \n    :SET31\n    set /A dd=31 + %dd%\n    goto CHKDAY\n    \n    :SET30\n    set /A dd=30 + %dd%\n    goto CHKDAY\n    \n    :LEAPCHK\n    set /A tt=%yyyy% %% 4\n    if not %tt%==0 goto SET28\n    set /A tt=%yyyy% %% 100\n    if not %tt%==0 goto SET29\n    set /A tt=%yyyy% %% 400\n    if %tt%==0 goto SET29\n    \n    :SET28\n    set /A dd=28 + %dd%\n    goto CHKDAY\n    \n    :SET29\n    set /A dd=29 + %dd%\n    goto CHKDAY\n    \n    :DONE\n    if /I %mm% LSS 10 set mm=0%mm%\n    if /I %dd% LSS 10 set dd=0%dd%\n    \n    set IISDT=%yyyy:~2,2%%mm%%dd%\n    set AWSDT=%yyyy%-%mm%-%dd%\n    \n    set yesterday=%mm%%dd%%yyyy%\n    set d=%date:~-4,4%%date:~-7,2%\n     \nPowershell-\n\n       Get-Date -Format MMddyyyy-HHmm",
+        "created_utc": 1504034131,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I think I love extension methods a bit *too* much... (4000 LOC extension methods class)",
+        "author": "ekolis",
+        "url": "https://i.redd.it/oj6tmd3sspiz.png",
+        "text": "",
+        "created_utc": 1504028982,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Let your Windows welcome you. Must try CODE 🔥",
+        "author": "[deleted]",
+        "url": "https://youtu.be/r95I1PtGiwg",
+        "text": "[deleted]",
+        "created_utc": 1503986391,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I have noticed that there are two options.",
+        "author": "Stuntman_Wout",
+        "url": "https://i.redd.it/omf8wt6lfjiz.png",
+        "text": "",
+        "created_utc": 1503951930,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Comprehensive information",
+        "author": "shadowax67",
+        "url": "http://prm5.blogspot.com",
+        "text": "",
+        "created_utc": 1503948798,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A code by which ur Windows will speak for you on Startup 🔥",
+        "author": "[deleted]",
+        "url": "https://youtu.be/r95I1PtGiwg",
+        "text": "[deleted]",
+        "created_utc": 1503938668,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Let your Windows welcome you. TRY THIS CODE 🔥",
+        "author": "[deleted]",
+        "url": "https://youtu.be/r95I1PtGiwg",
+        "text": "[deleted]",
+        "created_utc": 1503923559,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A sample of the wonders I find on a daily basis.",
+        "author": "Daealis",
+        "url": "https://i.redd.it/6p7o59pf7giz.png",
+        "text": "",
+        "created_utc": 1503912901,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Funny technical problem: The phone shows the charging mark before connecting with electricity",
+        "author": "MarkMax88",
+        "url": "https://youtu.be/Dv4EzNZN0ds",
+        "text": "",
+        "created_utc": 1503880050,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "*HOW* many indentations?",
+        "author": "thepotatochronicles",
+        "url": "http://imgur.com/a/DBr8p",
+        "text": "",
+        "created_utc": 1503851393,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Short HTML, JavaScript code to fetch browser details",
+        "author": "grvpdw83",
+        "url": "https://youtu.be/JuSojxJxSsI",
+        "text": "",
+        "created_utc": 1503776991,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Eating a CARB!!! Kluna Tik NVA Dinner #11|ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=pOyCYLe6Pvo&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p&amp;index=13",
+        "text": "",
+        "created_utc": 1503768589,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ok.",
+        "author": "ThePrivateGeek",
+        "url": "https://i.redd.it/x87nupzmy1iz.png",
+        "text": "",
+        "created_utc": 1503740383,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Easily Connect to the MS Access Database in Java.",
+        "author": "taranjeet23",
+        "url": "https://youtu.be/DhuafZrlWq4",
+        "text": "",
+        "created_utc": 1503680391,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Follow what's trending on your programming stack",
+        "author": "[deleted]",
+        "url": "http://stacktrender.com/?2",
+        "text": "[deleted]",
+        "created_utc": 1503661621,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How about some HTML &amp; JavaScript",
+        "author": "[deleted]",
+        "url": "https://youtu.be/liGVnscc81w",
+        "text": "[deleted]",
+        "created_utc": 1503600197,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Adding together two numbers using a for-loop in Javascript. Everyday we get further from god's light",
+        "author": "thebains",
+        "url": "https://i.redd.it/d7a8cj146qhz.png",
+        "text": "",
+        "created_utc": 1503597641,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Eating a DIRTY SHOE!!! Kluna Tik NVA Dinner #10 ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=Dk6jW4_TYJI&amp;t=84s&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p&amp;index=12",
+        "text": "",
+        "created_utc": 1503590845,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "http://blog.naver.com/hanipsaporm 2017년 8월 24일 국야 KBO 두산vs넥센, NCvsKT, 삼성vsSK 경기 분석 스포츠 분석",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6vrthk/httpblognavercomhanipsaporm_2017년_8월_24일_국야_kbo/",
+        "text": "[removed]",
+        "created_utc": 1503590537,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Adding two numbers in Javascript using a for-loop. Everyday we stray further from god.",
+        "author": "thebains",
+        "url": "https://i.redd.it/118od6046ohz.png",
+        "text": "",
+        "created_utc": 1503573419,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why Gee I would love a job ... shame I CAN'T ANSWER ANYTHING",
+        "author": "diontenna",
+        "url": "https://i.redd.it/v3v2obwodkhz.png",
+        "text": "",
+        "created_utc": 1503527585,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yes, this was being used. I guess it's sort of semantic?",
+        "author": "multicopterfred",
+        "url": "http://imgur.com/a/1MUlJ",
+        "text": "",
+        "created_utc": 1503433946,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is the proper place to promote this",
+        "author": "ChangeTheGlobe",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6vcwmh/this_is_the_proper_place_to_promote_this/",
+        "text": "[removed]",
+        "created_utc": 1503425628,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this gem at work, live production code",
+        "author": "Vinnie420",
+        "url": "https://i.redd.it/igncqh4fkbhz.jpg",
+        "text": "",
+        "created_utc": 1503420804,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kluna Eating Lego! Kluna Tik NVA Dinner #9| ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=lBc_vFxlgso&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p&amp;index=11",
+        "text": "",
+        "created_utc": 1503416348,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This password input... (x-post from /r/assholedesign)",
+        "author": "ThomasCZ",
+        "url": "https://i.redd.it/umqj8f9j67hz.png",
+        "text": "",
+        "created_utc": 1503409235,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you want to sign up for Microsoft Imagine",
+        "author": "Bruncek",
+        "url": "https://i.redd.it/t7te8bkufahz.png",
+        "text": "",
+        "created_utc": 1503407179,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Useful functions &amp; algorithms for comptetive programming",
+        "author": "space_007",
+        "url": "https://spacetechquest.com/comptetive-programming/functions-for-comptetive-programming",
+        "text": "",
+        "created_utc": 1503393685,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best glitch ever",
+        "author": "DaBeechees",
+        "url": "https://i.redd.it/9eey117tu5hz.png",
+        "text": "",
+        "created_utc": 1503351662,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Engineering intern",
+        "author": "johade777",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6v3e72/engineering_intern/",
+        "text": "Obligatory message about not sure it belongs here and sorry formatting on phone. \n\nThe summer had recently ended and with it all the interns have returned to their college life away from the real world. This is a story about our electrical engineering intern who overall was a decent intern but made one huge mistake. \n\nHis project was to create a board and develop the software to go along with it. Now I don't know much about hardware but he had plenty of help in that department. At the end of the summer his project turns out to be one of the better ones from the interns. He is told to save his semantics and code to a shared folder. He proceeds to take screen shots of all his code and upload that to the folder. 22 images in total of his python code! The best part is he is obtaining a minor in computer science!!\n\nThe worst part is his laptop is sent away where it might of already been formatted effectively losing 60% of his project for the summer. \n\nI've laughed so hard tears ran down my face. Feel bad for the guy in charge of project now. ",
+        "created_utc": 1503326939,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I know production is down, but don't you want to stop working and take a selfie?",
+        "author": "serial_crusher",
+        "url": "https://i.redd.it/xkeritwz8kgz.jpg",
+        "text": "",
+        "created_utc": 1503090136,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "GitStack overwrites PYTHONPATH and PYTHONHOME to use its own distribution of Python 2. If you set it back to the path of Python 3, it won't launch.",
+        "author": "G3Kappa",
+        "url": "http://i.imgur.com/BtbQMxf.png",
+        "text": "",
+        "created_utc": 1503055781,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Guy works for three months without version control, blames VSCode when he loses it all",
+        "author": "AlGoreBestGore",
+        "url": "http://cc.bingj.com/cache.aspx?d=1462716999241&amp;mkt=de-DE&amp;setlang=en-US&amp;w=xEsMxqoa0KJSwMsTh3p_8w2qryykfDvB",
+        "text": "",
+        "created_utc": 1503055520,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am senior programmer, don't tell me about conventions and correct naming!",
+        "author": "worldas",
+        "url": "https://i.redd.it/ijodrn2jmggz.png",
+        "text": "",
+        "created_utc": 1503046337,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "BABY SLUG for LUNCH!!! Kluna Tik NVA Dinner #7|ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=3mZHnqknW_Y&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p&amp;index=9",
+        "text": "",
+        "created_utc": 1502985226,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am sorry I had to do this. Yes, I am the author. I am sorry.",
+        "author": "DaBeechees",
+        "url": "http://imgur.com/a/aH05E",
+        "text": "",
+        "created_utc": 1502979790,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "12 year old me was such a dumbass",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6tzevp/12_year_old_me_was_such_a_dumbass/",
+        "text": "[deleted]",
+        "created_utc": 1502854066,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The scope is clear ... enough",
+        "author": "blurryroots",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6tv5s6/the_scope_is_clear_enough/",
+        "text": "[removed]",
+        "created_utc": 1502813780,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "KLUNA TIK GOT THE FLU Kluna Tik NVA Dinner #06 | ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=LX53U9hT5LE&amp;index=8&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p",
+        "text": "",
+        "created_utc": 1502812671,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found out entire project was in a public root",
+        "author": "phroggyy",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6tltme/found_out_entire_project_was_in_a_public_root/",
+        "text": "Background:\n\nThis app (well, the idea of it) was highly praised and won in a competition. A development agency in Eastern Europe (based on what little I've been able to track down) was first contracted to build the app; it's an iOS app and an API. The API is written in the PHP framework Laravel. The codebase is complete crap (md5 passwords, 1200-line classes), agency got fired, and a new one has been hired, for which I am contracting.\n\n---\n\nSo the other day, I looked at the Apache config of the production server, and found that they were using pretty much default, okay, it could be better, but not too bad I thought to myself. So the root points to `/var/www/html`. Now, that directory holds a CodeIgniter site which is the frontend (marketing) site for this iOS app.\n\nHere's where it gets bad: the API is placed in `/var/www/html/API`. For anyone not familiar with Laravel, requests are served from the project's `public` directory (so `/var/www/html/API/public` in this case). Now what happens when you have `/var/www/html` as the root, use a default Apache config, and you aren't hitting an unknown path? Well, you get the file you ask for of course.\n\nIf you can't see why this is bad, let me give you a hint: `https://www.website.com/API/.env`. That exposed the environment, including database password, username and name, and a set of AWS credentials, among other less crucial things.\n\nI spent this morning figuring out how to write the `/var/www/html/API/.htaccess` to make sure this doesn't happen. Until then, I set the permissions on the environment file to `400`, and took the entire production app down while I figured it out.\n\n**To anyone building web apps:** please don't do this. Ever.",
+        "created_utc": 1502710570,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My card was declined, why?!",
+        "author": "VonDerTann",
+        "url": "http://i.imgur.com/5sHnAXr.png",
+        "text": "",
+        "created_utc": 1502675562,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Eating CIGARETTE BUTTS!!! Kluna Tik NVA Dinner #05",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=028_haBtUxg&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p&amp;index=7",
+        "text": "",
+        "created_utc": 1502554812,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this comment in some codebase, should I laugh or cry?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/hjhgyvxer9fz.png",
+        "text": "[deleted]",
+        "created_utc": 1502527279,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Star pattern program no. 24//in c and c++ codes",
+        "author": "Shivamsharma123",
+        "url": "https://www.youtube.com/attribution_link?a=CcSxY6Lvw7I&amp;u=%2Fwatch%3Fv%3DfLpFDvn5TgY%26feature%3Dshare",
+        "text": "",
+        "created_utc": 1502476707,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Oh... Oh no...",
+        "author": "returningsam",
+        "url": "http://i.imgur.com/CRRMuKb.png",
+        "text": "",
+        "created_utc": 1502461970,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Eating OFFICE SUPPLIES!!! Kluna Tik NVA ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=XEaaLTnq0kk&amp;index=6&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p",
+        "text": "",
+        "created_utc": 1502412264,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Stupid mistake ended up costing me $200",
+        "author": "Veloxy",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6suvlo/stupid_mistake_ended_up_costing_me_200/",
+        "text": "[removed]",
+        "created_utc": 1502386217,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Real Life Horror Story: Doting Mother Rita Wolfensohn Keeps Dead Son's Remains For 8 Years",
+        "author": "[deleted]",
+        "url": "http://www.viral-pro.info/dryvh",
+        "text": "[deleted]",
+        "created_utc": 1502382432,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'll do my own templates, with hookers and blackjack (and bugs)",
+        "author": "tonnynerd",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6spnbl/ill_do_my_own_templates_with_hookers_and/",
+        "text": "Someone needed to do some template rendering to do some code generation at work (that was their first bad idea, by the way. But I digress). Did they reach to Jinja? Mako? string.Template, at least?\n\nOf course not. They implemented it by hand, using containing operations and str.replace. And when they needed to add a dict to the final output, they just concatenated it with the result of json.dumps (which doesn't output a string representation of a dict, by the way). \n\nWHY, OH, WHY are those people so freaking afraid of installing libraries? I mean, I get that one shouldn't add dependencies lightly, but for fucks sake, it's not like it's a binary extension written in brainfuck!",
+        "created_utc": 1502323824,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Personal fuck up of the day!",
+        "author": "sublimeaces",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6smdyx/personal_fuck_up_of_the_day/",
+        "text": "Didn't know where else to put this, yesterday I spent about an hour re writing a method because I thought it wasn't working properly, eventually used the debugger and put a break point in the method and it never broke.  I wondered wtf is going on.  How is this shit not working until I finally realiZed I was calling another method with a similar name with my code.  I don't think I've ever had a more derp moment then that!  ",
+        "created_utc": 1502294048,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "10 Worst Nightmare About Programming",
+        "author": "RochakGuy",
+        "url": "http://www.rochaksite.com/10-worst-nightmare-programming/",
+        "text": "",
+        "created_utc": 1502279405,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "65536 characters ought to be enough for anybody",
+        "author": "Kiss_Me_Im_A_Liberal",
+        "url": "https://pbs.twimg.com/media/DGkv3pcUwAAlL-9.jpg",
+        "text": "",
+        "created_utc": 1502275050,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sometime javascript is poetic",
+        "author": "rasof",
+        "url": "https://i.redd.it/by999hgzaoez.png",
+        "text": "",
+        "created_utc": 1502267484,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kluna Eating DIRTY COTTON SWAB Ear wipes! Kluna Tik NVA Dinner #04",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=Cg1_nmJRBEU&amp;index=5&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p",
+        "text": "",
+        "created_utc": 1502205776,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "star pattern",
+        "author": "Shivamsharma123",
+        "url": "https://www.youtube.com/edit?o=U&amp;video_id=0ifTb-bZ8W4",
+        "text": "",
+        "created_utc": 1502205019,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Imagine being informed by you hosting provider that every site on the server you rent has been hacked. By potentially only one person enabling network service on their site. Then they copy in everyone's email address!! Glad i moved.",
+        "author": "Smaskifa77",
+        "url": "https://i.redd.it/as2ehn8b9iez.png",
+        "text": "",
+        "created_utc": 1502194391,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "JavaScript Date(Date)",
+        "author": "OmegaNaughtEquals1",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6s3s5e/javascript_datedate/",
+        "text": "Now, I'm not a js dev, so maybe my ignorance runs too deep, but I can't help but think there is a better way.\n\n    var now = new Date();\n\n    $(document).ready(function() {\n        var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());\n        var yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate());\n        yesterday.setDate(yesterday.getDate() - 1);\n    /* snip */\n    }\n\n**EDIT**: I should have included a sarcasm tag. I didn't mean for this to turn into a /r/learnprogramming post, but thanks to everyone for sharing!",
+        "created_utc": 1502086621,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "EATING FIRE wtinh Michael Jackson!!! Kluna Tik NVA Dinner #3",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=GlD8eu6Jj7Q",
+        "text": "",
+        "created_utc": 1501944348,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Me trying to did some good study decks",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/ikpdxx8cpsdz.jpg",
+        "text": "[deleted]",
+        "created_utc": 1501884883,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thx for the iOS app, Supermicro, it's super convenient",
+        "author": "Y3808",
+        "url": "http://i.imgur.com/LA1vOnh.jpg",
+        "text": "",
+        "created_utc": 1501884355,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "KLUNA Eating Superworm!!! Kluna Tik NVA Dinner #2 ASMR eating sounds no talk",
+        "author": "kotexocohe",
+        "url": "https://www.youtube.com/watch?v=XQsDF-dTp9c&amp;index=1&amp;list=PL1H9udBKz7T2wmwi7VRcODp18DqD2YU_p",
+        "text": "",
+        "created_utc": 1501770823,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ubisoft have some really good error handling...",
+        "author": "SaintRebbel",
+        "url": "https://i.redd.it/347gw5052ddz.png",
+        "text": "",
+        "created_utc": 1501695497,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ster pattern 14 in c and c++ language//star pattern prgram",
+        "author": "Shivamsharma123",
+        "url": "https://www.youtube.com/attribution_link?a=C3xg8202eac&amp;u=%2Fwatch%3Fv%3D0YSKVa4ylrk%26feature%3Dshare",
+        "text": "",
+        "created_utc": 1501694777,
+        "upvote_ratio": ""
+    }
+]

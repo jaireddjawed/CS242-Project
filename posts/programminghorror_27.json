@@ -1,0 +1,802 @@
+[
+    {
+        "title": "What's the worst abuse of SQL you've ever seen?",
+        "author": "PCruinsEverything",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2wr19u/whats_the_worst_abuse_of_sql_youve_ever_seen/",
+        "text": "I'll start; This was how a great mind tackled storing arbitrary data in SQL servers.\n\nhttp://pastebin.com/6zhqSXq2",
+        "created_utc": 1424601641,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is your oldest written code that is still in use today?",
+        "author": "NyteMyre",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2wf810/what_is_your_oldest_written_code_that_is_still_in/",
+        "text": "Based on [this comment](http://www.reddit.com/r/ProgrammerHumor/comments/2we979/were_all_guilty_of_thinking_this_way/coq89oa) in /r/ProgrammerHumor ",
+        "created_utc": 1424347982,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Synchronized is just a fancy keyword right? Right??",
+        "author": "Smokey_Circles",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2w6sdf/synchronized_is_just_a_fancy_keyword_right_right/",
+        "text": "Literally just finished my 4 hour session of debugging this code.\n\nGroan.\n\nThe code is open source on github so I am not going to name and shame (I am using it in a different manner, this was just poor planning on their part)\n\nTimer task uses a synchronized method (the whole method, not the part we want to protect) to call a callback class (also synchronized) to perform a function on a list.\n\nWhich is also synchronized.\n\nAll of these are across different threads.\n\n(Lana voice) yaaay...",
+        "created_utc": 1424178017,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Seems like a reasonable default value, right?",
+        "author": "DoListening",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2w38x5/seems_like_a_reasonable_default_value_right/",
+        "text": "Today, while integrating UserVoice's simple [SSO protocol](https://developer.uservoice.com/docs/single-sign-on/single-sign-on/) into our site, I noticed all their code samples (in all languages) use \"OpenSSL for Ruby\" as the initialization vector for encryption. Seems odd, right?\n\nSo I dug a little deeper and discovered this little gem:\nhttps://github.com/ruby/ruby/blob/debedd371adb4aa6d1b540d23dbb3ff97e23730d/ext/openssl/ossl_cipher.c#L239\n\nSee also the comment a few lines above. At least it's now a thing of the past...",
+        "created_utc": 1424105134,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "More annotations bro?",
+        "author": "lazic_",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2vxg53/more_annotations_bro/",
+        "text": "Searching through Broadleaf e-commerce framework while suddenly:\nhttp://i.imgur.com/tRdx3zM.jpg",
+        "created_utc": 1423962770,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Using java, why not mangle arbitrary Object varargs into a Map?",
+        "author": "fact_hunt",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2vp7de/using_java_why_not_mangle_arbitrary_object/",
+        "text": "    public static Map hash(Object... parts) {\n        Map result = new HashMap();\n        int i = 0;\n        while (i &lt; parts.length) {\n            result.put(parts[i], parts[i + 1]);\n            i = i + 2;\n        }\n        return result;\n    }",
+        "created_utc": 1423779932,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Watching a friend with his startup",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2vj15u/watching_a_friend_with_his_startup/",
+        "text": "**Background**\n\nI look up to Frank a lot.  He's one of the best guys I know.  He had a great idea for a web app, and he and his friend put in the work to make it happen.  Now he's sold part of his company to another in need of his product and he receives part of the profit.  From that standpoint he's doing well, and I enjoy consulting with him.\nTo date, he has a few thousand people using his app.  Let's just say it's in a pretty niche market, and those who would pay to use it are willing to pay a premium so things balances out.\n\n**The App**\n\nFrank uses PHP and MySQL without a framework and without an ORM.  Interpret that with your own bias how you will.\n\nFor me, looking at his source code is terrifying.  I keep thinking about how this thing is going to grow larger and larger and one day he's going to hire a dedicated programmer and this is what they're going to have to work with.  I keep thinking in my mind how hard it would be to build it up from scratch again; every new feature he adds makes it more and more unlikely.\n\nIn hindsight, it makes sense why Frank did what he did.  Frank's friend knew PHP and MySQL, but now his friend has moved on.\n\nHere are some things that have come up:\n\n  - Poor code formatting and no comments.\n  - This lovely code snippet used to log in:\n\n        $password = $_POST[\"password\"];\n    \t$salt = sha1(md5($password));\n    \t$password = md5($salt . $password);\t    \n\n  - Poor database performance? Throw indexes at it.\n  - Very few constraints on the database. \n  - Turned off error logging because it was causing a problem.\n\nBut hey, the app works and looks nice.",
+        "created_utc": 1423656313,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So I had a small conversation with my C programming professor about a practice lab for an upcoming test.",
+        "author": "DJScootaloose",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2v8xge/so_i_had_a_small_conversation_with_my_c/",
+        "text": "So I had a lab that was a practice for an SBA (Skill-Based Assessment) in college for C programming on my second year. (This is our first time approaching C in the college program).\n\nHe wanted us to write a small \"high/low\" guessing game from a linux terminal with a bit of a spin:\n\nThe rundown of the program is that asks for a string, and the program will convert it to a sum of the integer equivalence of each char. Then you have to guess what the ASCII equivalent sum is for that string.\n-\nSince it wasn't an actual lab and wasn't being graded, I did it for practice, like suggested. It's fair enough, right? But here's the kicker: \n\n#He told us to use the gets() function\n\nSo I shared my concerns about it by e-mail:\n\n\n&gt; Hi, D[redacted]\n\n&gt; I was working on the Lab 4 practice SBA and I came across a compiler warning for the gets() function. It is a deprecated and dangerous function to use because it doesn't check for buffer overrun (Sounds like a serious exploit to me). It then suggested I use the newer function fgets(). This is just something I found out. The compiler still ran using the deprecated gets(), but using the new function will make it work in a safer way.\n&gt; \n&gt; So I read the man page for gets() and this was its BUGS section:*\n&gt; \n&gt;     $ man gets\n&gt;     [...]\n&gt;     BUGS\n&gt; \n&gt;     Never use gets(). Because it is impossible to tell without knowing the data in advance how many characters gets() will read, and because gets() will continue to store characters past the end of the buffer, it is extremely dangerous to use. It has been used to break computer security. Use fgets() instead.\n&gt; \n&gt; Just something to point out, really. I looked at the arguments for fgets() and it isn't hard to use it:\n&gt; char *fgets(char *s, int size, FILE *stream)\n&gt; *s is the string it will store the input, size is the buffer size, and *stream is the file input stream (in this case it would be stdin).\n&gt; \n&gt; It would be useful to point this out to everyone on Monday's lecture before the SBA. It will clear the heads of the people who saw the warning and didn't know what to do with it.\n&gt; Looks like this is not a good \"it's not a bug, but a feature\" case :P\n\n\nA student naturally expressing concerns, no biggie right? \n\nThis was his response:\n-\n&gt; V,\n&gt; \n&gt; As with any language more than a few years old, certain parts of the language are deprecated.  Most of HTML 1.0 is deprecated, but there are still a billion lines of old code floating around there, and no one seems too concerned.  Yes, gets() is deprecated.  But its also still lives on in a billion lines of code.  So students need to know about it.  Use fgets() if it helps you sleep at night.\n&gt; \n&gt; D\n\n\nThe amount of cringe I had and currently am having is off the charts.\nMy response to that, after I finally stopped flipping my shit all over the room:\n-\n&gt; Okay... although deprecated code exists in many languages, many programmers update and adapt to make sure the newer and more secure features are available to use on their programs. If no one cared about gets(), or things with that level of security flaws, there would be a lot of exploitable programs out there. (look at what happened to OpenSSL and its Heartbleed bug, and Shellshock bash). \n\n\nHe hasn't replied to me yet :V\n\nOh and for another interesting story. My first assignment for this course had us write some pseudocode for operating an elevator. We'll be writing the C code for it in the last assignment of the course, but the fun part is when he goes and tells me, seconds apart from this conversation, that my PDF submission was empty and that his Adobe Reader was giving him an error. I tested this on my own computer, on a friend's computer, all my PDF-compatible programs including Firefox and Chrome, and they all loaded the file without a hitch.\n\nCompetent teaching at its finest, guys.\n-",
+        "created_utc": 1423442404,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Someone made a function that executes correctly in both PHP and Javascript...I don't even know where to begin",
+        "author": "jsanc623",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2v0rne/someone_made_a_function_that_executes_correctly/",
+        "text": "From this CR@SE question:  http://codereview.stackexchange.com/questions/79804/polyglot-array-extend-function-for-javascript-and-php\n\nI don't even...\n\n    function array_extend() {\n\n        //Detects if we are running in Javascript or PHP\n        //In PHP, this will be false because PHP only parses\n        //escape sequences in double-quoted strings (except the sequence \\')\n        $javascript = '\\0' == \"\\0\";\n\n        //PHP arrays support 'key=&gt;value' pairs, JS arrays don't.\n        $result = $javascript ? new Object() : array();\n\n        $arguments = $javascript? arguments : func_get_args();\n\n        $get_keys = function($elem){\n            if('\\0' == \"\\0\")//PHP complains if I use the var $javascript\n            {\n                $object = Object;\n                return $object['keys']($elem); //PHP doesn't like the Object.keys syntax\n            }\n            else\n            {\n                return array_keys($elem);\n            }\n        };\n\n\n        for($j = 0, $length_args = $javascript? $arguments['length']: count($arguments); $j &lt; $length_args; $j++)\n        {\n            $keys = $get_keys( $arguments[$j] );\n\n            for($i = 0, $length_keys = $javascript? $keys['length']: count($keys); $i &lt; $length_keys; $i++)\n            {\n                $result[$keys[$i]] = $arguments[$j][$keys[$i]];\n            }\n        }\n\n        return $result;\n    }",
+        "created_utc": 1423254533,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "To Parse a String Date - 1. Break apart 2. Concatenate 3. Parse",
+        "author": "FailWhale42",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2v00fz/to_parse_a_string_date_1_break_apart_2/",
+        "text": "    strCLDate = args[(i + 1)];\n    if (strCLDate.Length == 10)\n    {\n        strCLDYear = strCLDate.Substring(0, 4);\n        strCLDMonth = strCLDate.Substring(5, 2);\n        strCLDDay = strCLDate.Substring(8, 2);\n    }\n    else\n    {\n        strPauseMessage = \"Improper date format.\";\n        LogToFile(strPauseMessage);\n        goto EndOfExecution;\n    }\n    try\n    {\n        CurrTime = DateTime.Parse(strCLDMonth + @\"/\" + strCLDDay + @\"/\" + strCLDYear);\n    }\n    catch (FormatException e)\n    {\n        strPauseMessage = e.Message;\n        LogToFile(e.Message);\n        goto EndOfExecution;\n    }",
+        "created_utc": 1423242024,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's wrong with a hash?",
+        "author": "idontlikethisname",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ut4ax/whats_wrong_with_a_hash/",
+        "text": "Seen while reviewing a coworker's code:\n\n    def get_path(name)\n        paths = [{name: 'x', value: 'path_x'}, {name: 'y', value: 'path_y'}, ...]\n        result = nil\n        paths.each do |path|\n            if path[:name] == name\n                result = path[:value]\n                break\n            end\n        end\n        result\n    end\n\nEdit: typo",
+        "created_utc": 1423091256,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why pass named arguments when you can pass a single string?",
+        "author": "ElGuaco",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2txjfl/why_pass_named_arguments_when_you_can_pass_a/",
+        "text": "My project is consuming an internal library written by another team. Someone recently made a breaking change to the library such that the arguments to a method in a particular class were changed from something like this:\n\n    void Foo(string firstname, string middlename, string lastname)\n    {\n          DoSomething(firstname, lastname);\n    }\n\nTo this:\n\n    void Foo(string name)\n    {\n        string firstname = name.Split('.')[0];\n        string middlename= name.Split('.')[1];\n        string lastname = name.Split('.')[2];\n\n        DoSomething(firstname, lastname);\n    }\n\nI have anonymized the argument and method names, but the result is exactly what you see here, I kid you not. \n\n",
+        "created_utc": 1422421345,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Great Small-caps Hack of 2014",
+        "author": "TheDanBob",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2twh9h/the_great_smallcaps_hack_of_2014/",
+        "text": "Decided to stop lurking to share with you guys my absolute favorite, nastiest hack I ever wrote. It's pretty involved, so please bear with me.\n\nAs part of my job, I found myself writing a content editor for one of my organization's websites. There was a very specific, rather interesting requirement for this editor: it absolutely, positively HAD to support small-caps. I'm not sure how many WYSIWYG HTML editors I tested, but it was a lot, and of course none of them support small-caps. I finally settled on the Guardian's very nice [Scribe editor](https://github.com/guardian/scribe) and resigned myself to adding support for small-caps myself.\n\nAdding a button to turn text into small-caps was easy. The hard part was the reverse: removing the small-caps formatting when you click the button a second time.\n\n**Problem #1:** the editor doesn't support adding/removing markup like\n\n    &lt;span class=\"small-caps\"&gt;&lt;/span&gt;\n, only bare tags.\n\n**Solution:** appropriate the &lt;strike&gt; tag (which I didn't have to support) and use it as a fake small-caps element within the editor (the resulting HTML gets processed later anyway).\n\n    strike {\n      text-decoration: none;\n      font-variant: small-caps;\n    }\n\n**Problem #2:** the editor refuses to remove the &lt;strike&gt; tag if the small-caps styling is being applied to it, either by inline css or a stylesheet. Sigh.\n\n**Solution:** *cleverly managed* inline css. First, watch the DOM for the appearance of wild strike tags and smite them with small-caps on sight:\n\n    new MutationSummary({\n      rootNode: $('#editor'),\n      queries: [{ element: 'strike' }],\n      callback: function() {\n          $('strike').css({ 'text-decoration': 'none', 'font-variant': 'small-caps' });\n      }\n    });\n\nThen, if the user clicks the button again to make the small-caps/strike go away, remove the css first:\n\n    $('#small-caps-button').click(function() {\n      selection = window.getSelection();\n      selectionParent = selection.anchorNode.parentNode;\n    \n      if (selectionParent.nodeName == 'STRIKE') {\n        selectionParent.removeAttribute('style');\n      }\n    });\n\n**Problem #3:** the editor *still* refuses to remove the &lt;strike&gt; unless the whole inner text is selected. COME ON.\n\n**Solution:** if the caret is sitting in a strike tag when the user hits the button, select all of its text.\n\n    $('#small-caps-button').click(function() {\n      selection = window.getSelection();\n      selectionParent = selection.anchorNode.parentNode;\n    \n      if (selectionParent.nodeName == 'STRIKE') {\n        selectionParent.removeAttribute('style');\n    \n        range = new Range\n        range.selectNodeContents(selectionParent)\n        selection.addRange(range)\n      }\n    });\n\n**Problem #4:** this code needs to run before the editor's code that removes the &lt;strike&gt; tag. No chance of tampering with the editor's event listeners.\n\n**Solution:** this all sucks already, might as well go all in. Add a *second, invisible button* on top of the editor's button to capture the click event, run my code, and trigger a click on the button beneath it:\n\n    &lt;!-- HTML -- &gt;\n    &lt;div id=\"small-caps-wrapper\"&gt;\n      &lt;button id=\"small-caps-button\"&gt;Small Caps&lt;/button&gt;\n      &lt;button id=\"small-caps-overlay\"&gt;&lt;/button&gt;\n    &lt;/div&gt;\n    \n    /* CSS */\n    #small-caps-wrapper {\n      position: relative;\n    }\n    \n    #small-caps-overlay {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      z-index: 100;\n      background: transparent;\n      border: none;\n    }\n    \n    // JS\n    $('#small-caps-overlay').click(function() {\n      selection = window.getSelection();\n      selectionParent = selection.anchorNode.parentNode;\n    \n      if (selectionParent.nodeName == 'STRIKE') {\n        selectionParent.removeAttribute('style');\n    \n        range = new Range\n        range.selectNodeContents(selectionParent)\n        selection.addRange(range)\n      }\n    \n      $('#small-caps-button').trigger('click');\n    });\n\nAnd that, my friends, is how I implemented small-caps in my content editor (in production, btw). Best. Hack. Ever.\n\n**tl;dr:** if someone asks you to implement small-caps in an HTML editor, just say no.",
+        "created_utc": 1422402919,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I became a monster!",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2tw8a8/i_became_a_monster/",
+        "text": "I...put 120 lines, the main code, the loop of program... under a single button with no comments because I was too lazy... And it's alive, IT'S ALIIIIIIVE!",
+        "created_utc": 1422399039,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Frustrating, single specific apostrophe cannot be escaped...",
+        "author": "rvncto",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2tre8m/frustrating_single_specific_apostrophe_cannot_be/",
+        "text": "Can anyone tell me what the fuck this fucking apostrophe is?\n\nIts in the product description.  the last bold header text. \nhttp://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE\n\n\"It's For Everyone In the House\"\n\nI'm trying to save the description into my DB , but for some reason of all the apostrophes in that text... that SPECIFIC apostrophe can't and wont be escaped.  it cant be string replaced its unrecognizable , but happily breaks mysql.  \n\n\nEdit:  Thanks for the suggestions.  I ended up with this...which im not proud of but it works and at this point im too afraid to change anything .\n\n    private function fuckYouApostrophe($fucked){\n        $fucked    = str_replace(chr(39),   \"\",$fucked);\n        $fucked    = str_replace(chr(145),  \"\",$fucked);\n        $fucked    = str_replace(chr(146),  \"\",$fucked);\n        $fucked    = str_replace(\"\\'\",      \"\",$fucked);\n        return $fucked;\n    }\n\nEdit 2:  Thanks fellas.  I am now using prepared statements.  Had to just bite the bullet and learn a little more about the new db apis",
+        "created_utc": 1422305481,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Uploading is like adding, and adding is + yeah?",
+        "author": "niklasni1",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2tpudy/uploading_is_like_adding_and_adding_is_yeah/",
+        "text": "S3 library for Scala:\n\nThere's a class that wraps S3 buckets. That's fine.\n\nThe class has a method that takes a File instance to upload it. Cool. That's what I wanted to do.\n\nThis method is called add which I suppose makes sense, but it's also + so you can write:\n\n    val result = bucket + file\n\nBecause uploading is adding and adding is +. Yeah.\n\nNote that result is not a new bucket object, but something wrapping the result of the underlying request to S3. Like how + as an arithmetic operator returns whether or not the operation succeeded. Right? Isn't that what happens? \n\nThe rest of the library seems fine but still... something something, can't have nice things.",
+        "created_utc": 1422278530,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "GitHub woes",
+        "author": "cl3v3rgirl",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2swvlp/github_woes/",
+        "text": "",
+        "created_utc": 1421650411,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "XSS in AVG Threat Labs",
+        "author": "webbannana",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2stt7f/xss_in_avg_threat_labs/",
+        "text": "I've just discovered an XSS flaw in AVG Threat Labs.\n\nIf you search something like \"&lt;script&gt;alert(\"xss\");&lt;/script&gt;.co\" it will run the script on the page.",
+        "created_utc": 1421586722,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Oh God... What have I created?",
+        "author": "RunasSudo",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2sl3ws/oh_god_what_have_i_created/",
+        "text": "After needing to temporarily turn all my `Frame`s into `LabelFrame`s for debugging, I decided to take advantage of the fact that Python lets you do *absolutely anything* you want to do.\n\n    # ==================== DEBUG SECTION ====================\n    DEBUG = False\n    if DEBUG:\n        Frame = LabelFrame\n\n    class Frame(Frame): #Magic.\n        def __init__(self, master=None, **options):\n            if DEBUG and \"dname\" in options:\n                options[\"text\"] = options[\"dname\"]\n            options.pop(\"dname\", None)\n            super(Frame, self).__init__(master, **options)",
+        "created_utc": 1421375139,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Guaranteed side effects",
+        "author": "110011001100",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2s1ohn/guaranteed_side_effects/",
+        "text": "Was working on some legacy code (Yay!)\n\nFound 2 awesome patterns:\n\n1) \n\n    for(int i=0;i&lt;ConfigurationManager.AppSettings.Keys.Lenght;i++)\n      list.Add(ConfigurationManager.AppSettings.Keys[i].ToString().Contains(\"DB\"))\n\nThis broke when I added a key with the name \"PerformDBCleanup\", since it is a list of databases the app connects to and does not handle invalid database names well\n\n2) All variables are pseudo global. I may be wrong in saying this is a WTF, but the program architecture is\n\n\n##Program.cs\n\n    namespace n1\n    class Program\n    {\n    \n      More than 30 private variables including dictionaries ,arrays,etc\n      \n      static void Main()\n      {\n       try\n       {\n              calls to func1,2,3 using the string return values for determing status, and they all operate on the variables declared above\n       }\n       catch(Exception e)\n       {\n              Console.WriteLine(e.ToString()); \n       }\n       }\n       string func1()\n       {\n       }\n       string func2()\n       {\n       }\n       string func3()\n       {\n       }\n}",
+        "created_utc": 1420965168,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "public static SynchronizationFlagVariable",
+        "author": "uututhrwa",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2s09fi/public_static_synchronizationflagvariable/",
+        "text": "I am here on a Saturday night to go at lengh about one of the most fucked up coding ANTI PATTERNS there ever is. I've been dealing with this all week, I feel like hitting my head against the wall right now.\n\nSO here's the gist of it, step by step\n\n1) There is some overelaborate \"architecture\" that relies on stuff being done automatically, either by callbacks, or inheritance, or say some automatic ORM thing etc. etc.\n\n2) Usually these pieces of shit become a \"callback hell\", especially if the assignment of functionality is done the \"single inheritance\" way, or by \"expecting that everything will just work\"\n\n3) At some point the convoluted bullshit of calls does something you do not want it to do\n\n4) Right now it is apparent that the architecture is wrong. You should change things while you still can.\n\n5) However \"management\" is usually people with a hard ass work ethic and shit, they are all about efficiency, they need a fast simple fix to it.\n\n6) Some jackass comes over, steps through the debugger, and just adds flags that stop the control flow whenever he sees it does something it shouldn't\n\n7) He repeats that shit until he can't see any errors. Notice that no thought went into this, it's really just the debugger doing all the work\n\n8) A few weeks later another case of the above. After a day stepping and \"patching\" with the debugger, and thankfully without any \"collisions\" with the first flag, the program seems to run again\n\n9) Two months later a third variable appears. However it is starting to collide with what the others where blocking. Right now you really have 8+ 1 day runs through the debugger to check. It's getting out of control. After a botched up 2 day job you (probably) have managed to make it work again\n\n10) Finally the fourth flag comes up. Except right now nothing works. You don't even understand wtf is going on. You forgot the whole context and all you see is magical flags that look like some genius mastermind with 190 IQ, some kind of creator deity, some personification of Reason, put all that stuff in there with grace and thoughtfulness, except it was just some idiot that was playing with the debugger and right now has no clue what the hell his shit is supposed to be doing. \n\nThings get blocked or cause random exceptions at unrelated parts of the code. A problem that was conceptually, requirements wise, and software design wise if you did things right, pretty fucking staightforawrd, has turned into something like solving a rubik cube. Any change could actually destroy another 10 parts of the program. Any change would probably be blocked by something one way or another. Any attempt to understand what the program is doing would really require a week debugging and documenting all the routes of something that is just plain wrong.\n\nThe fuck is wrong with this flying spaghheti monster code.",
+        "created_utc": 1420931288,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A classic security tale",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2rzmsh/a_classic_security_tale/",
+        "text": "I had opened an account for a tutoring site, to teach kids mathematics and programming and other useful things. But unfortunately, I was too lazy to remember my code and did the obvious thing and requested a password reset. And of course, I received an e-mail with a link to reset the password...Nope...\n\nYour password is: password123",
+        "created_utc": 1420919251,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "/r/programminghorror hits 10K subscribers",
+        "author": "TrendingBot",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2rvrrz/rprogramminghorror_hits_10k_subscribers/",
+        "text": "**/r/programminghorror metrics:**\n\nTotal Subscribers: 10,005\n \nSubreddit Rank: 2,759 \n\nSubreddit Growth &amp; Milestones: http://redditmetrics.com/r/programminghorror",
+        "created_utc": 1420828946,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found example code that should be burned and forgotten.",
+        "author": "dream_in_code",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2rvq6g/found_example_code_that_should_be_burned_and/",
+        "text": "I was searching for old code that may be insecure and I came across something in the documentation folder for Cold Fusion in a test environment.\n\n\n    &lt;CFSET Session.Email = Form.Email&gt;\n    &lt;CFSET Session.Username = Form.Username&gt;\n    &lt;CFSET Session.Password = Form.Password&gt;\n    &lt;CFSET Session.POPserver = Form.POPserver&gt;\n    &lt;CFSET Session.SMTPserver = Form.SMTPserver&gt;\n\n\n\nThis appears to have been written by someone at Macromedia possibly around the early 2000s and included in the examples. Since most people look at examples and just implement what they see there, I cringed as soon as I noticed that this example was storing the password from a form in the session variable and in plaintext. I've not looked further, but I bet they are not even using prepared statements in database queries too.",
+        "created_utc": 1420828205,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am learning python and I have created a monster",
+        "author": "pmathrock",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2rthft/i_am_learning_python_and_i_have_created_a_monster/",
+        "text": "because string are not callable\n\nEdit : https://gist.github.com/Solonarv/ce0ec005830586e51cf6 (Thanks to Solonarv)\n\n\n(how can I save myself from all the and)",
+        "created_utc": 1420773620,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is everything running so slowly... oh...",
+        "author": "peteg_is",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2rmi1x/why_is_everything_running_so_slowly_oh/",
+        "text": "I'm on an Ultrix course (aka UNIX). I'm playing around with fork(), and I fire up an application. I wait. I wait... and...\n\nIt takes longer than I think it should.\n\nI try to abort it. No response. By now, others are noticing that the system is unresponsive.\n\nEventually, the lecturer has to reboot the machine.\n\nI hang my head in shame. I work for the company offering the course and I took out the student's system.\n\nIt was something like:\n\n    for (int i = 0; i &lt; 4; i++)\n    {\n       fork();\n    }\n\nSeemed reasonable to me. Except...\n\nNow the system does have quotas, but they weren't turned on, so I basically flooded the system with forked processes all forking more processes...",
+        "created_utc": 1420635878,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Gotta love the WYSIWYG",
+        "author": "cantickle",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2r5iyt/gotta_love_the_wysiwyg/",
+        "text": "Cleaning up the HTML created by my boss and his email WYSIWYG editor. [The whole thing is like this](http://i.imgur.com/S7ezE06.png).",
+        "created_utc": 1420243878,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Prepared statements? Who even needs them!",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2qz075/prepared_statements_who_even_needs_them/",
+        "text": "I'm a student of informatics in business and also a passionate gamer. Few years ago I joined one Call of Duty 4 community because that was the game I loved to play back then. I met owner of community and few guys that were volunteers for maintenance of CoD servers, Apache server for official website of community, MySQL databases and software called B3 bot. B3 bot was a software used to ease management of player status (to register players, to ban players etc.). One day guy called Tom joined our community. He was a student of software  engineering. Tom was known as a joker in that gaming community and guy that likes to \"stick his nose\" everywhere. One day, Tom wrote to me something like this: \"Hey! I found that one of your page is vulnerable to SQL injection attacks.\" First I thought he was joking. But after I saw what he did, I realized that his claims are true. There was an SQL injection vulnerability in one of input fields for search of banned players on public ban list. I called guy known as JMD to explain me what was the issue. JMD was creator of that page. He was the guy that worked in IT industry. I repeat: He was the guy that worked in IT industry! He was considered as most competitive among volunteers. \nHe just wrote: \"I fixed it.\"\nI asked: \"How?\" \nHe replied: \"//\"\nWhich meant that he just commented malicious code. After that, I was called by other volunteer that maintained official website and he told me that they have web application hosted on their server written by JMD. Software was called QB3, written in PHP and it was used as a tool to query database used by B3 bot. I didn't know for that software. He asked me whether I could \"inspect\" QB3. I'm not that familiar with PHP since my primary programming language is Java. But I could definitely tell him if code was vulnerable on SQL injection attacks or not. He sent me only one script. I stumbled when I found seven queries vulnerable on SQL injection attacks in that single PHP script! That guy JMD was not using anything in his code to prevent SQL injection attacks. I immediately contacted him to tell him about his malicious code. \nHe told me something like this: \"I know! QB3 is not supposed to be accessed by everyone!\" \nI just \"facepalmed\" myself.\nAfter that, he removed his software from use and owner of community was actually mad at me. ",
+        "created_utc": 1420075701,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The web development stack my dad uses",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2qrosb/the_web_development_stack_my_dad_uses/",
+        "text": "He calls it the COMBAT Stack:\nC#\nOracle\nMVC\nBower\nAngularJS\nTwitter-Bootstrap",
+        "created_utc": 1419902583,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good grief, main menu code",
+        "author": "QuantumPlatypus",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2qh024/good_grief_main_menu_code/",
+        "text": "        if menu_view == \"options\" then  \n    \t\tif key == \"s\" then  \n    \t\t\tif options_menu_selected == 1 then  \n    \t\t\t\toptions_menu_selected = 2  \n    \t\t\telseif options_menu_selected == 2 then  \n    \t\t\t\toptions_menu_selected = 3  \n    \t\t\telseif options_menu_selected == 3 then  \n    \t\t\t\toptions_menu_selected = 4  \n    \t\t\tend  \n    \t\tend  \n    \t\t\n    \t\tif key == \"w\" then  \n    \t\t\tif options_menu_selected == 4 then  \n    \t\t\t\toptions_menu_selected = 3  \n    \t\t\telseif options_menu_selected == 3 then  \n    \t\t\t\toptions_menu_selected = 2  \n    \t\t\telseif options_menu_selected == 2 then  \n    \t\t\t\toptions_menu_selected = 1  \n    \t\t\tend  \n    \t\tend  \n    \tend  \n\nI wasn't very smart back as I wrote it.",
+        "created_utc": 1419625870,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Everyone likes stuff made by hand",
+        "author": "Dr_funny_guy",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2pyh2o/everyone_likes_stuff_made_by_hand/",
+        "text": "#!/usr/bin/bash\n\\# step 1\n\n\\# step 2 ...\n\n\\# ... ...\n\n\\#  It's done by hand so we can double check everything is ok. You don't know if a script will not work so don't write a script. Everyone likes stuff made by hand.\n\n",
+        "created_utc": 1419146841,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The joy of state maintenance",
+        "author": "ZorbaTHut",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2pvk1n/the_joy_of_state_maintenance/",
+        "text": "We're doing high-performance realtime 3d rendering, under a tight budget and a tight schedule. Fun times! I work well in these conditions, so it really is fun.\n\nI'm gonna call our object \"Renderable\". Renderable might have the actual model swapped out from under it. There's a function which is, basically, \"update the state of the model\", which, long ago in the program's history, was called every frame, and updated the model every frame. Nice, clean, simple, slow. As often happens in this industry, simplicity takes a back seat to performance.\n\nThe actual \"update\" process was the slow bit, but this is easy to deal with. There are really only a few relevant values on the model that get changed, so we cache the most recent values we've seen and update the model only if the new values are different. Nice, slightly less clean, simple, not fast enough.\n\nSee, even determining *which values to set* turned out to be kind of expensive as well. Polling sucks; we all know polling sucks; so instead of calling the update function every frame, we call it every time something might have changed. This is actually pretty fast, and worked fine for years, through several major releases, through a bunch of revenue, through one rendering engineer being fired and another one quitting and then me taking the reins of this whole thing.\n\nWhat you should get out of the above paragraph is that nobody left at the company understands why the old code was written the way it is. Everything I wrote up there? Pure conjecture. That's what the code looks like, that's what I'm assuming happened, could be wrong.\n\nUnfortunately . . . it's not *quite* that simple.\n\nSee, when we change models, it turns out we *also* set the cached values to several hardcoded values. Why those values? Damned if I know! And it turns out that there's a special flag such that the *first time* you call the update function on a given Renderable, regardless of which model it has, it does something totally different. Why? Damned if I know!\n\nThe bug, after literally days of poring through debug output, adding more debug output, GOTO 10, turned out to be those hardcoded values. We'd set a new model; it would hardcode values; those values would *by unfortunate coincidence* be the same values that it was expecting to set the new model to, so it would assume that, hey, the new model must already have the right values, we're good, everyone go home.\n\nBut the new model didn't have the right values, so everything broke.\n\nFix.\n\nAdded a new flag that says \"ignore the damn cached values, just update shit\". Set it on model change. I carefully nestled it next to the scary \"ignore what you're supposed to do and do something else, but only once\" flag. The new flag's going live soon; as soon as QA says it's working, the scary flag, and all references to it, are getting deleted. What was its purpose? Damned if I know! Will removing it break things? ~~Damned if I know~~ ~~Probably~~ Damned if I know! But we've got a few months until the next public release and with luck QA will find whatever I broke so I can implement it in a better way.\n\nFun times.",
+        "created_utc": 1419071418,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I just found this :(",
+        "author": "lijmer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2psgwi/i_just_found_this/",
+        "text": "found in a group project.\nI mean a 2D array could have solved it.\n\nhttps://i.imgur.com/7bELKRH.png\n\nEDIT: I just heard the guy who wrote this liked it that way.",
+        "created_utc": 1419000197,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "List&lt;object&gt;",
+        "author": "peteg_is",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ps6ok/listobject/",
+        "text": "So, I was taken off a project and temporarily assigned to help out elsewhere. When I returned, a multiple select WPF tree control regressed back to single selection. I know my code was awful - I was learning WPF - but even still.\n\nAnyway... while digging through the changes, I came across the following:\n\n    List&lt;object&gt; thing = new List&lt;object&gt;();\n    thing.Add(1);\n    thing.Add(\"whatever\");\n    thing.Add(1.0);\n    thing.Add(x);\n\nelsewhere...\n\n    int x = (int)thing[0];\n    string y = (string)thing[1];\n    double z = (double)thing[2];\n    Something a = (Something)thing[3];\n\nThe mind boggles. I asked what happened, and the answer was, \"we were in a hurry\"...\n\n**EDIT** a 'some'thing, and casts",
+        "created_utc": 1418992192,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How not to walk a linked list",
+        "author": "peteg_is",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ps0ye/how_not_to_walk_a_linked_list/",
+        "text": "Some time ago, I took over maintenance of a library that had a linked list of objects. The code had something like this:\n\n    Thing *thing = firstThing;\n\n    for(int i = 0; i &lt; numThings; i++)\n    {\n        ...\n        thing-&gt;next;\n    }\n\nNow the problem that showed up was only the first thing was working normally, but the others were not. I saw the line\n\n    thing-&gt;next;\n\nI asked the developer to explain it to me. He said, \"oh it moves to the next thing\". I shook my head, \"no it doesn't, it's a noop\". He looked confused.\n\nWhat was needed was:\n\n    thing = thing-&gt;next;\n\nOf course, now there are two more questions:\n\n* why a for loop, why not a while loop testing on null for the last object?\n* why use a linked list at all, why not a fixed array, as this was a low level library supposed to be fast? You have an initialisation phase where you allocate all the objects you need, why a linked list?\n\nThis from a guy with a degree in high performance computing.\n\n**EDIT**\n\nBefore I forget, testing on this library was done on one \"thing\". The customer was trying to use it with more than one...",
+        "created_utc": 1418986310,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "GET is all you need bro",
+        "author": "parlezmoose",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2pmzo2/get_is_all_you_need_bro/",
+        "text": "So a while back I was between jobs and I reluctantly agreed to join a small healthcare startup, working for equity (I know, I know). In the first meeting the \"Senior Dev\" (a PhD no less) gave a presentation on the rest api. This is what it looked like:\n\n\n\n    GET /api/user/:id\n\n    GET /api/user/:id/create\n\n    GET /api/user/:id/update\n \n    GET /api/user/:id/delete\n\n\n\n\nHe also didn't understand the concept of a session. The job lasted three weeks before i moved on.",
+        "created_utc": 1418866887,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Pro Tip: API Feedback",
+        "author": "Seus2k11",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2pi93u/pro_tip_api_feedback/",
+        "text": "When you expect a certain data format, if the data format you receive doesn't conform, please reject it and give a reason.\n\nI'm on a work project currently where the dev doing the backend has subsequently allowed malformed data on the backend, and stored it, only to then break the backend and severely slow down any progress I make, as I'm having to document and report all the issues and failures.\n\nSometimes the breaks have been bad, sometimes they've been downright dangerous.\n\nOh, and 0 unit tests. :) \"Let me just refactor that bit, upload it and you should be good\". Am I surprised that it doesn't ever work right?!\n\nI'm told time and again that they need my front end done to test the backend. Sounds like a Chicken and Egg kinda thing!?!",
+        "created_utc": 1418763958,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If it's a switch",
+        "author": "Qazzian",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2phuom/if_its_a_switch/",
+        "text": "Just found this in some javascript code I'm trying to fix.  \nI've not seen a switch used like this before.\n\n    // Determine if cell is prev month, current month or next month\n    switch(true)\n    {\n        // case prev month\n        case j&lt;firstDay :\n            cellDayVal = prevDays-firstDay+j+1;\n            cellMonthVal = prevMonth;\n            cellYearVal = prevYear;\n            cellCssClass = \"cal-cell-prev-month\";\n            break;\n    \n        // case next month\n        case j&gt;=firstDay+allDays :\n            cellDayVal = nextMonthDay;\n            cellMonthVal = nextMonth;\n            cellYearVal = nextYear;\n            cellCssClass = \"cal-cell-next-month\";\n            // increment next month day\n            nextMonthDay +=1;\n            break;\n    \n        // default case  - current month\n        default :\n            cellDayVal = j-firstDay+1;\n            cellMonthVal = firstMonth;\n            cellYearVal = firstYear;\n            cellCssClass = \"cal-cell-current-month\";\n    }\n",
+        "created_utc": 1418756959,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Representative Email",
+        "author": "YMK1234",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2pgzgf/representative_email/",
+        "text": "Got an email today from our backend guys in India...\n\n&gt; The country field has a maximum character length of 20 characters. This means we cannot store names longer than this. Since this is the core data table changing this will require a complete downtime across all systems.\n\nHave I said enough?\n\nPS: another favourite quote: \"we dont check that, that validation will be done in the frontend anyhow\"",
+        "created_utc": 1418741018,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What to do with typos in variable names",
+        "author": "Kiloku",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2pgw0c/what_to_do_with_typos_in_variable_names/",
+        "text": "I've just started working at a new place. As a matter of fact, the previous dev was a class-mate of mine, 4 years ago. And then, in some PHP code for a wordpress page, I find this declaration:\n\n`$page_sideabr_position = right;`\n\nside**ab**r should be side**ba**r. Well, okay, everyone makes mistakes when typing, it's quite common to switch letters around. I'm not a fan of using underlines instead of camelCase, but meh, his code, his standards. I assumed the code might be failing, since he didn't correct the variable name.\n\nBut no, the code works fine. Instead of correcting the name of the variable, he instead mistyped (on purpose, because of the first mistake?) every instance of the variable in question.\n\na few cases:  \n`if ($page_sideabr_position){`\n\n`&lt;?php echo $page_sideabr_position; ?&gt;`\n\n`$page_sideabr_position = get_post_meta(`\n\nI'm impressed. I'm unsure if it'd be more amazing that he accidentally made the mistake in every single instance of the variable name, or if he simply was so lazy that he didn't bother doing a search and replace.",
+        "created_utc": 1418738727,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Today, I inherited code containing a JavaScript file that starts like this",
+        "author": "monkeyinmysoup",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2pdg3a/today_i_inherited_code_containing_a_javascript/",
+        "text": "    // JavaScript Document\n    var markerNr = 0;\n    //circles array\n    var circles=[];\n\nThese were also the only comments in the file.",
+        "created_utc": 1418662868,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Too bad there's no library for constructing this JSON...guess we'll have to build it up by hand",
+        "author": "drderper",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2p89ep/too_bad_theres_no_library_for_constructing_this/",
+        "text": "I mean, I think this JSON thing is a lot better than XML but I wish that Javascript had a library for processing it!!!\n\n       var things = '\"things\": [';\n       var i = 0;\n       for (var uniqueName in uniqueNames) { \n\n          if (i &gt; 0) { \n              things += ',';\n          } \n          things += ' { \"uniquename\": \"' + uniqueName + '\" } ';\n          ++i;\n       } \n       things += ']';\n       var stuff = this.stuff();\n       var postData = '{ \"stuff\": \"' + stuff + '\", ' + things + ', \"blah\": \"' + blah + '\" }';\n       this.doPost(postData);\n\n\nIn this particular file there are 5000+ lines with many of these functions doing slight variations of this process\n\n\nThis is just the latest horror",
+        "created_utc": 1418526403,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "New reddit employee Ryan X. Charles: “If I had written Bitcoin, it would have been in JavaScript”",
+        "author": "LIVING_PENIS",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2p2skx/new_reddit_employee_ryan_x_charles_if_i_had/",
+        "text": "http://www.redditblog.com/2014/12/welcome-drew-ryan-mike-daniel-joe-dave.html?m=1",
+        "created_utc": 1418391524,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone correct this c program for me?",
+        "author": "qsmrf56",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2p1yza/can_someone_correct_this_c_program_for_me/",
+        "text": "void main()\n{       \n    struct date\n    {\n        int day;\n        int month;\n        int year;\n\n    };\n\n    struct details\n    {\n        char name[20];\n        int price;\n        int code;\n        int qty;\n        struct date mfg;\n    };\n\n    struct details item[50];\n    int n,i;\n    FILE *fp;\n\n    getch();\n\n\n    fprintf(stderr,\"Enter number of items:\");\n    scanf(\"%d\",&amp;n);\n    fflush(stdin);\n    fp = fopen( \"abcd.txt\", \"w+\" ); // Open file for writing\n\n    for(i=0;i&lt;n;i++)\n    {\n\n        fflush(stdin);\n        fprintf(stderr,\"Item name:\");     \n        scanf(\"%[^\\n]\",item[i].name);\n\n        fflush(stdin);\n        fprintf(stderr,\"Item code:\");\n        scanf(\"%d\",&amp;item[i].code);\n        fflush(stdin);\n\n        fprintf(stderr,\"Quantity:\");\n        scanf(\"%d\",&amp;item[i].qty);\n        fflush(stdin);\n\n        fprintf(stderr,\"price:\");\n        scanf(\"%d\",&amp;item[i].price);\n        fflush(stdin);\n\n        fprintf(stderr,\"Manufacturing date(dd-mm-yyyy):\");\n        scanf(\"%d-%d-%d\",&amp;item[i].mfg.day,&amp;item[i].mfg.month,&amp;item[i].mfg.year);\n        fclose(fp);\n    }\n    fprintf(stderr,\"             *****  INVENTORY *****\\n\");\n    fprintf(stderr,\"------------------------------------------------------------------\\n\");\n    fprintf(stderr,\"S.N.|    NAME           |   CODE   |  QUANTITY |  PRICE  |MFG.DATE\\n\");\n    fprintf(stderr,\"------------------------------------------------------------------\\n\");\n    for(i=0;i&lt;n;i++)\n        fprintf(stderr,\"%d     %-15s        %-d          %-5d     %-5d     %d/%d/%d\\n\",i+1,item[i].name,item[i].code,item[i].qty,item[i].price,\n                  item[i].mfg.day,item[i].mfg.month,item[i].mfg.year);\n    fprintf(stderr,\"------------------------------------------------------------------\\n\");\n    fclose(fp);\n    getch();\n}    \n\n\n\n\n",
+        "created_utc": 1418363555,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Had a coworker say this to me today",
+        "author": "JVillella",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2orpih/had_a_coworker_say_this_to_me_today/",
+        "text": "\"Depending on how long ago ipad_migration was rebased against development...just to make sure, I rebase it off of development and master hourly.\"",
+        "created_utc": 1418144381,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How a weird friend becomes a non-friend.",
+        "author": "Zulban",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ompi2/how_a_weird_friend_becomes_a_nonfriend/",
+        "text": "I had this friend once who admittedly was a bit weird but we infrequently played chess and talked about our careers and he seemed okay. Out of nowhere one day came a series of emails which spiralled into insanity and ended our friendship. Here's a summary of them:\n\nWF: **\"Do you know ... well ... this CSS stuff?\"** In the email WF said he was working on a portfolio website. He wants it to go BAM and needed help making only minor adjustments.\n\nMe: **\"I am busy.\"** I told him it sounded like a fun project but I have two jobs and I'm a full time student so I can't volunteer my time right now. WF's requests sounded really minor but I knew better than to get involved because projects like this tend to explode. I asked to see what he has so far.\n\nWF:  **\"I can show you in person only, cuz for one thing it's not live.\"** Cool, so he's using a noob web tool and doesn't have access to his files. \"Come on Zulban, throw me like an hour you animal!\" Now he explains how he also needs help with SEO, \"fine details stuff\", layouts, pages, content... not a small job.\n\nMe: **\"Yeah sorry I'm not going to work for you for free :/\"** I then explained that this is like asking your friend to clean your toilet because they're a janitor. I didn't make any serious estimations or talk dollar amounts because I knew he wasn't looking for that. I also suggested that he can't estimate an hour accurately because he doesn't know how to solve his problems.\n\nWhat follows was 1100 words of swearing, drama, claims of betrayal, lecturing, guilt-tripping, belittling, etc. 1100 words is twice the length of this post. Here is the gist:\n\nWF: **\"Your email fucking pissed me off.\"** Apparently I'm a soulless friend who tries to monetize everything. WF says he knows nothing about CSS but this job would take even *him* just an hour! \"Either you don't know CSS, CSS is shit, or you are an idiot.\" The work is 20 minutes tops! It would be fine if I just said I could do it later. WF thinks he has a better life outlook because he's older. Life isn't about money money money. Remember that small favour WF did for my friend? Well WF isn't saying I owe WF but...\n\nMe: **\"Holy shit man.\"** I didn't ask for money, I just said no. If you think it's so easy, please learn CSS yourself. Next time you ask a friend for a favour, treat it like a favour, and not a demand.\n\nAt this point WF somehow managed to start a debate about who said what and who meant what, quoting relentlessly, with me hardly replying. After I got a 400 word email from WF:\n\nMe: **\"I'm sorry, I'm really done with this. I did not read this email.\"**\n\nWF kept sending a few emails. At one point he brought up a girl from my past who I hardly dated. I'm still struggling to figure out how she fit into all this. Eventually he asked that we meet to have a chat face to face for \"just 15 minutes\" to smooth things out.\n\nMe: **\"Dude, I am busy. How many times do I have to repeat myself?\"** What the fuck man, I'm a full time student during mid terms with two jobs. I do not want to talk to you about drama that only exists in your mind.\n\nHaven't gotten a reply yet. I'm super happy I did not involve myself with this project from the start. Remember folks: do not do free tech work for friends and family. They may turn out to be nut cases.",
+        "created_utc": 1418027237,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "All possible casts are valid, apparently.",
+        "author": "Sheepshow",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2oea7n/all_possible_casts_are_valid_apparently/",
+        "text": "\n        template&lt;class T&gt;\n        T* queryMetaData() const\n        {\n           return (T*)(m_metaData);\n        }",
+        "created_utc": 1417811886,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The code that made grown men cry.",
+        "author": "legacymedia92",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2o6lie/the_code_that_made_grown_men_cry/",
+        "text": "I don't actually have a sample of this monstrosity, and when you read what it did you may thank me for that. \n\nOne day, a programmer where I work Loudly exclaimed \"WHAT THE FUCK?!?\" Needles to say, I was interested enough to get up and see what the commotion was about. He had been working with an online storefront we had purchased from another company, and was preparing it for in-house deployment. \n\nThe storefront was breaking when a new category was added. After poking around, he found that the page would load, then request the list of categories from the server. The server would then send the list, and the page would process it. Sounds ok right?\n\nNope. \n\nThe entire list was sent as a string. with no delimiters. Meaning it was sent: \"item1item2item3\" and the webpage handled it. with a single JavaScript regex. \n\nLet me say that again, instead of splitting the words in the string, there was a regex, dedicated to splitting over 30 categories apart. Tears were shed, and a Scottish lunch discussed (I don't know if that happened, was under 21 at the time).",
+        "created_utc": 1417635680,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this beauty on Stack Overflow",
+        "author": "P1xels",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2o6hvp/found_this_beauty_on_stack_overflow/",
+        "text": "[Link to the question](http://stackoverflow.com/questions/9055287/select-a-random-value-from-an-array/)    \nThe question asker shows some code that basically generates a 13 int long array to clubsArray, then makes each number arrayIndex + 1, and asks \"how do I take 2 random numbers from this array and store them to a variable?\"\n\nI scroll down and the first answer is sane. I decide to check the other answers like I always do, and stumble upon this beautifully and ingeniously horrible code.\n\n    int tab[]={1,2,3,4,5,6,7,8,9,10};\n    Random rand = new Random();\n    int i = tab.length;\n\n    int choice = rand.nextInt(i+1);\n\n\n    switch (choice)\n    {\n    case 0: System.out.println(\"ZERO\");break;\n    case 1: System.out.println(\"ONE\");break;\n    case 2: System.out.println(\"TOW\");break;\n    case 3: System.out.println(\"TREE\");break;\n    case 4: System.out.println(\"FOUR\");break;\n    case 5: System.out.println(\"FIVE\");break;\n    case 6: System.out.println(\"SIXE\");break;\n    case 7: System.out.println(\"SEVEN\");break;\n    case 8: System.out.println(\"EGHIT\");break;\n    case 9: System.out.println(\"NINE\");break;\n    case 10: System.out.println(\"TENE\");break;\n\n    }\n\nMy personal favorite of the code is 3 being output as TREE.",
+        "created_utc": 1417633939,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Friend tries to change from one web host to another, sends this distress picture at Sunday 11:30PM",
+        "author": "drovix",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2nxwxl/friend_tries_to_change_from_one_web_host_to/",
+        "text": "http://i.imgur.com/eUPuUOj.png\n\n\"But I just gzip'd it like I've done before.\"",
+        "created_utc": 1417444208,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "But... It's not 15!",
+        "author": "Smokey_Circles",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2nhar1/but_its_not_15/",
+        "text": "So I used to work in &lt;nameless&gt; bank and we interacted with a COBOL mainframe. A lot. Like all the time basically. We are a standalone Java App for the contact centre.\n\nI was busy with prod and pre-prod support when one of the testers comes to me to tell me that there's a function that's been broken for Donkey years and nobody has figured out why. By nobody, he means the senior developer who originally wrote the spec. 6 months ago (at the time).\n\nAfter speaking to the mainframe support guys I find out we are sending them the wrong code. Specifically they want 15 and we are sending 13. Simple enough right?\n\nWrong.\n\nHere's the culprit (some backstory, we use strings to communicate with COBOL using an XML file to define the output. Cool stuff, I do it no justice here)\n    \n    //The culprit\n    request.setHeaderCode(0015) //Field length needed 4 characters\n\nTook me a while to figure out he didn't know how Java recognises Octal. Tough spot for a Junior to find themselves in...",
+        "created_utc": 1417012571,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SVG captcha's?",
+        "author": "webbannana",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2n6cqu/svg_captchas/",
+        "text": "My posts: [NSA why...](http://www.reddit.com/r/programminghorror/comments/2kmm4m/nsa_why/) | SVG captcha's?\n\nSecond post here. My first one can be found [here.](http://www.reddit.com/r/programminghorror/comments/2kmm4m/nsa_why/) \n\n[http://svgcaptcha.com/](http://svgcaptcha.com/)\n\nIt literally just uses the &lt;text&gt; element for each character.",
+        "created_utc": 1416761158,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Has Anybody Ever Made Twitter using Visual Basic?",
+        "author": "k-p-bjarn",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2n4xga/has_anybody_ever_made_twitter_using_visual_basic/",
+        "text": "I'm currently in the middle of helping my girlfriend with a (very frustrating) computer science class, where she has to make a version of twitter using Visual Basic, with arraylists and such... oh yeah, her professor has no idea what he's doing and hasn't taught them anything, since arraylists don't exist anymore. However, she needs to get this done and I don't know nearly enough about Visual basic programming language, or visual studio 2012, to help her. If anyone has a copy of a similar project, or the same one, and would be willing to share it as a reference, I would be eternally grateful and hope that you get all the blessings that your good karma will provide in a hasty and fruitful way.\n\nTL;DR: If anyone has ever made twitter using visual basic or visual studio and wants to give it to me, that'd be really helpful.",
+        "created_utc": 1416712889,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Booleans these days",
+        "author": "fatpolak",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2n26yd/booleans_these_days/",
+        "text": "bool should_traverse_array_backwards =  ( ascending &amp;&amp; (type == LESS_THAN || type == LESS_THAN_OR_EQUAL) ) || ( !ascending &amp;&amp; (type == GREATER_THAN || type == GREATER_THAN_OR_EQUAL ) ) ? true : false\n\nThat is all.",
+        "created_utc": 1416636644,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I just resurrected I had when I was 9-10. Here's what I found.",
+        "author": "CrypticButthole",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2mu2t8/i_just_resurrected_i_had_when_i_was_910_heres/",
+        "text": "https://github.com/CrypticButthole/BatchGames",
+        "created_utc": 1416449686,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If only C had a function to copy memory from one place to another.",
+        "author": "Sheepshow",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2mogc5/if_only_c_had_a_function_to_copy_memory_from_one/",
+        "text": "This function is copy pasted in about 70 places:\n\n    void Adapter::SetDebug73Reg() //Parameter function??\n    {\n\n        unsigned int iCurrIdx;\n        unsigned char ucParamBuffer[9];//1(Id)+4(unsigned int num)+4(unsigned int value)\n\n        ucParamBuffer[0] = SetDebug73Cmd;\n        iCurrIdx = INBOUND_DATA_CMD_CONTENT_IDX;\n\n        for(unsigned int i = 1; i &lt;= sizeof(unsigned int); i++)\n        {\n            ucParamBuffer[i] =  m_ucHostBuffer[iCurrIdx++];\n        }\n        for(unsigned int i = sizeof(unsigned int)+1; i &lt;=(2 * sizeof(unsigned int)); i++)\n        {\n            ucParamBuffer[i] =  m_ucHostBuffer[iCurrIdx++];\n        }\n        m_engine-&gt;Debug(ucParamBuffer);\n\n        SendCmdAck();\n    }\n",
+        "created_utc": 1416330076,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Someone said something about corporate developers?",
+        "author": "roosyn",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2mny15/someone_said_something_about_corporate_developers/",
+        "text": "The TFS source control folder structure has deteriorated from the usual trunk/branch[/tag] structure to:\n\n    2.17.1.0 (folder)\n    2.17.1.1 (branch)\n    ...\n    &lt;source folders from the VS solution&gt;\n    Branches\n        Superhero1 (branch)\n        Superhero2 (branch)\n        FeatureBranch (actually **trunk**)\n    &lt;more feature branches&gt;\n    TRUNK (not used)\n    TRUNK-date-stamp (not used)\n    TRUNK-date-stamp (not used)\n\n\nThe Superhero branches are long-running to minimise the amount of effort needed to spin up new instances (corporate restrictions apply.)",
+        "created_utc": 1416319539,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "As a CS tutor at my university, I have to hear this phrase way more than I can tolerate...",
+        "author": "mistahspecs",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2mjp50/as_a_cs_tutor_at_my_university_i_have_to_hear/",
+        "text": "\"If loop.\"\n\n\n...*and there is no loop in sight.*",
+        "created_utc": 1416217232,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Table structure for a business listing app my employer owns",
+        "author": "whatsdbnormalization",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2mbgyq/table_structure_for_a_business_listing_app_my/",
+        "text": "I work for a company that provides a directory service for businesses in the area. The structure for the table that each business is in, can be found below.\n\nI've done my best to remove anything that could identify me. The story of how this table got this way began almost 10 years ago (5 years before I started) Originally an open source directory app, it was reverse-engineered by our CTO into something we could claim our own. (much of the original source remains)\n\nThis guy knows very little about databases and programming. The best he can do is copy other's work and change it just enough to fit his needs. (with varying levels of success) His development process can be summed up as this:\n\n* Decide a new feature is needed\n* Conclude that if it is not fully developed within a week the company could lose $32,000-$200,000\n* Spend no time planning\n* Add columns to the database to hold new data\n* Copy+paste code from other portions of the app and change variable names to match the new columns\n* Ignore other coders pleading him to not add more columns to the table\n* Dismiss advice from other coders on the proper way to arrange code/data\n* Talk down and be condescending to everyone despite not knowing entry-level PHP/HTML/CSS\n* Present his new creation to sales staff and convince them he's a savant\n\nHere's a structure dump for the table:\n\nhttp://pastebin.com/ArC89a7D\n\nAfter 5 years my nagging seems to have taken hold. We're normalizing over the weekend, so this one might just get a happy ending.",
+        "created_utc": 1415998143,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "anticlickjack failure",
+        "author": "A5cended",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2m0pia/anticlickjack_failure/",
+        "text": "Consider this, I found on a host of websites owned by William Hill (a massive multinational). It is supposed to prevent clickjacking but do these web developers understand thier craft at all or even test the implementation themselves with a clickjack software or service? likely not. \n\nOk the code snippet;\n\n&gt; &lt;style id=\"antiClickjack\"&gt;\n&gt; body {\n&gt;   display: none !important;\n? }\n&gt; &lt;/style&gt;\n&gt; &lt;script type=\"text/javascript\"&gt;\n&gt; if (self === top) {\n&gt;   var antiClickjack = document.getElementById(\"antiClickjack\");\n&gt;   antiClickjack.parentNode.removeChild(antiClickjack);\n&gt; } else {\n&gt;   top.location = self.location;\n&gt; }\n&gt; &lt;/script&gt;\n&lt;/pre&gt;\n\nSo, any programmer must know that css style wont effect my scrapping efforts if i visit websites without any browser (rendering engine) so using display:none on the body will only hide content when rendered by a browser, in which case the javascript itself can and will also be parsed and executed for at least one of the clickjack software/service runs at your site.\n\nSo dumbfounding.\n\nThey've also tried simple prevention methods that are easily busted, such as;\n* X-Frame-Options\n* frame detection and reload\n\nSome might think that non-static x,y location placements of elements across pages is the only anticlickjack method that actually works, but even good hackers bust it using simple Javascript to get the element and figure out the element x,y location to then simulate clicking.\n\nOther than human mind problem solving using CAPTCHA there is no anticlickjack method that actually works, period. So dont try, it makes you look really young, uninformed, or just stuck in the 90s.",
+        "created_utc": 1415750264,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yes/No",
+        "author": "nohimn",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2m05cz/yesno/",
+        "text": "Hello all!\n\nI am currently digging through a system that is transitioning ownership from an outside consulting firm to an internal team. Right now we're trying to extend it with new parts, and fix the old parts.\n\nWhat I found is that one of the system's many features is the ability to bind a list with a field of any arbitrary record. Each list is, itself, its own record in the database. So you could do something like a list of product types, and when you retrieve a record from the ORM layer, it would join the matching product type to the product.\n\nThis is all fine and dandy, as any ORM layer worth its guts should be able to join relating records. Another thing the system does is that when it builds the form for a record, it will present the list for the field as a drop-down. So for that product, the types you have listed in the product types list will be listed in the drop down.\n\nThis is all of dubious benefit really, but I digress.\n\nWhere things went into crazy town is when the outside consulting firm began using lists as a short-cut for creating drop downs.\n\nExample tables:\n\n- A list called 'Yes/No'. It stores the strings 'Yes' or 'No'.\n- A list called 'Integer Numbers'. It stores the numbers 1 to 50, indexed 1 to 50.\n- A list called 'Days of the week'. It stores seven values (take a guess).",
+        "created_utc": 1415740249,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "yo c problem",
+        "author": "snickerdoodlemuffin",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2luxzw/yo_c_problem/",
+        "text": "A salesperson leaves his home every Monday and returns every Friday. He travels by company car. Each day on the road, the salesperson records the amount of gasoline put in the car.\nGiven the starting odometer reading (that is, the odometer reading before he leaves on Monday) and the ending odometer reading (the odometer reading after he returns on Friday), design an algorithm to find the average kilometers per gallon.\nSample data is as follows:\n68723 71289 15.75 16.30 10.95 20.65 30.00",
+        "created_utc": 1415628559,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Dystopia: not-good bad-place",
+        "author": "roosyn",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2lkuec/dystopia_notgood_badplace/",
+        "text": "Loading: \n\n1. Page uses query-string parameter to load .ascx into a literal. Control names take the form of *Area*_*Name*.ascx. \n\n2. Control generates XML. \n\n3. XML is transformed against a stylesheet: http://i.imgur.com/y4GFYCX.png. \n\n4. Resultant HTML is plopped into another literal. \n\n\nSubmission: \n\n1. Take the form values, generate an XML document. \n\n2. Send said document via XMLHttpRequest to server. \n\n3. Manually deserialise into an object. \n\n4. Process via a \"business tier\" object with inline data access, or via WCF services. \n\n\nSending an email or fax to a person, using paramaters (sic), is done with the *constructor*, i.e.\n    \n    var instanceAssignment = new PersonCommunication(...)\n    \n\nPet peeve: Oprah-esque use of regions.\n\nEntire unit test projects with no assertions.\n\nAn .asmx with 3580 odd LOC. Sample method:\n\n\n    [WebMethod]\n    public string SystemSettingGet(SqlParameter[] sqlParams)\n    {\n        return Convert.ToString(RunProcScalar(\"SystemSettingGet\", sqlParams));\n    }\n\n",
+        "created_utc": 1415368511,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How I tricked my coworker into thinking I could read his mind. A short story about bad security.",
+        "author": "ElGuaco",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2lhsuc/how_i_tricked_my_coworker_into_thinking_i_could/",
+        "text": "In the 90's I worked as a paid intern for a smallish company. The platform was a PICK database system that used a flavor of BASIC for applications. It was a pretty strange and antiquated setup even for that era, considering the \"server\" was 486/50MHz machine with a junction box that split out to dozens of dummy terminals communicating via 9600 baud cables. Hey, it worked, and it got me some real-world experience.\n\nBut this O/S was so bad. It had issues like \"compiled\" applications could not exceed 32kb. Yes, kilobytes. I once had to split an app into two because it had overgrown this barrier and so I used some trickery to get the apps to appear to run concurrently without interrupting the workflow the users were used to.\n\nThe most egregious fault of this system was that it was terribly insecure. Usernames and passwords were limited to 8 characters and no numbers or symbols. Usernames were typically the first name of the person which led to problems when you had 5 employees with the name \"Dave\". Being one of the few in-house developers, I had access to everything except the admin account for the server. I was carefully instructed not to misuse my powers as the VP's had carelessly stored HR and payroll info on the server. As a power user, I could also do other dumb tricks like take over a user's session and type on their terminal remotely, which was good for a prank at best, and at worst it could be used to spy on people's activities while they worked.\n \nThe absolute worst thing I discovered one day while I was trolling through the file-system/database one day, I discovered a table called \"Failed Logins\". To my horror/delight, the table listed failed login attempts with the username and the password attempt in *plain text*. Now, I don't know about you, but I often typo my credentials a few times a week depending on how tired I am or if I'm in a hurry. It seemed like everyone else did the same, and I could clearly guess the real password of every user on the system within a minute of searching this table. I got a really terrible idea and made a bet with my fellow programmer that I could guess his password by reading his mind. I made a big show of standing with my back to him while he logged in then logged back out. I then logged in using his credentials which I had deduced from my earlier scan. I quickly realized I probably shouldn't go around showing off this new ability lest it get me in trouble. \n\n",
+        "created_utc": 1415296663,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yo Regex haters... :D... how do you capture text between two html tags/quotation marks/strings, but leave the determiners out of the final match, in VBScript? I need to capture \"(.+?)(\\n.*?)*\", and VBScript is missing c/c++'s Negative/Positive Lookbehind method.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2lgxjm/yo_regex_haters_d_how_do_you_capture_text_between/",
+        "text": "",
+        "created_utc": 1415279222,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just got this message today after asking for a password reset...",
+        "author": "Relayerduos",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2lec83/just_got_this_message_today_after_asking_for_a/",
+        "text": "http://imgur.com/wrocCqx",
+        "created_utc": 1415217451,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help! My husband is a programmer and Christmas is fast approaching.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ldh9f/help_my_husband_is_a_programmer_and_christmas_is/",
+        "text": "I want to surprise my husband with an awesome Christmas gift this year but am at a loss on what to get him that he'll genuinely appreciate and use.\nHe recently purchased a Dagu Hexapod kit and seems to enjoy working with it. I would like to get something to help him along with that project. \nI orignally was going to get him the Spider controller for his hexapod but I don't know how the Arduino he's using now and that controller would work together. Any help on this would be...helpful.\nAnother thought I had was a wireless handheld controller he could use his Arduino on and later to control his hexapod bot. I am totally lost here on which ones are going to work for his project.\nAny suggestions on other accessories or ANYTHING else someone into Arduino and computer programming would be over the moon to get??",
+        "created_utc": 1415201955,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Magento is exemplary ENTERPRISE-grade PHP.",
+        "author": "dgerard",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ld3f3/magento_is_exemplary_enterprisegrade_php/",
+        "text": "From enterprise-1.14.0.1.tgz:\n\n    $ grep -r chmod .|grep 777\n    ./downloader/lib/Mage/Backup/Filesystem.php:            chmod($backupsDir, 0777);\n    ./app/code/core/Mage/Compiler/Model/Process.php:            @chmod($dir, 0777);\n    ./app/code/core/Mage/Install/Model/Installer/Console.php:            @chmod('var/cache', 0777);\n    ./app/code/core/Mage/Install/Model/Installer/Console.php:            @chmod('var/session', 0777);\n    ./app/code/core/Mage/Install/Model/Installer/Config.php:        chmod($this-&gt;_localConfigFile, 0777);\n    ./app/code/core/Mage/Catalog/Model/Product/Attribute/Backend/Media.php:                $ioAdapter-&gt;chmod($this-&gt;_getConfig()-&gt;getTmpMediaPath($fileName), 0777);\n    ./app/Mage.php:                    chmod($logDir, 0777);\n    ./app/Mage.php:                    chmod($logFile, 0777);\n    ./lib/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php:            @chmod($path, '0777');\n    ./lib/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php:        @chmod($path, 0777);\n    ./lib/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php:        @chmod($path, 0777);        \n    ./lib/Zend/Cloud/StorageService/Adapter/FileSystem.php:        chmod($path, 0777);\n    ./lib/Varien/Autoload.php:            @chmod($this-&gt;_collectPath, 0777);\n    ./lib/Varien/File/Uploader.php:            chmod($destinationFile, 0777);\n    ./lib/Mage/Backup/Filesystem.php:            chmod($backupsDir, 0777);\n    ./errors/processor.php:        @chmod($this-&gt;_reportFile, 0777);\n\nI can't say what we're paying for this standard of quality, but I can say that it's [public knowledge](http://web.archive.org/web/20120215011525/http://www.magentocommerce.com/product/enterprise-pricing-contact) that Magento is *at least* $13k/yr.\n\nThe Magento world doesn't seem to consider this in any way a problem. Every guide I see blithely says to 777 stuff in your bloody *webroot*. I CANNOT EVEN.\n\nAlso, [storing money as floats is absolutely fine and defensible](https://github.com/magento/magento2/issues/555).\n\nYou know you've been working on Magento a bit long when you can hum along to bits of \"Metal Machine Music\" accurately.﻿",
+        "created_utc": 1415192892,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where the polyfill is is only part of the problem",
+        "author": "roosyn",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2lcymg/where_the_polyfill_is_is_only_part_of_the_problem/",
+        "text": "Venting.\n\nIn no particular order:\n\n* Loose value equality checks.\n* Parsing without specifying a radix.\n* Non-standardised variable casing.\n* Magic numbers: why does the loop start at two, and what is account purpose \"3\"?\n* Polyfill in the middle of a function.\n* Is it a one-time use polyfill? Is there a dependency hiding somewhere? Other declarations of Array.contains?\n* It does the check and *alert*s if a duplicate is found.\n\n...\n    \n    function CheckDuplicateAccountRef() {\n        var count = parseInt(document.getElementById(\"hidAccountCount\").value);\n        var counter = 0;\n        var ReferenceValues = new Array();\n\n        for (var i = 2; i &lt;= count; i++) {\n            if (document.getElementById(\"selABAccountPurpose\" + i).value == \"3\" &amp;&amp; document.getElementById(\"txtABAccountHolder\" + i).value != \"SPOA\") {\n                ReferenceValues[counter] = document.getElementById(\"txtABConsolidationRefNo\" + i).value;\n                counter++;\n            }\n        }\n\n        if (ReferenceValues.length &gt; 0) {\n            Array.prototype.contains = function (obj) {\n                var i = this.length;\n                while (i--) {\n                    if (this[i] === obj) {\n                        return true;\n                    }\n                }\n                return false;\n            }\n\n            var DuplicateRef = new Array();\n            for (var j = 0; j &lt;= ReferenceValues.length; j++) {\n\n                if (DuplicateRef.contains(ReferenceValues[j]) == false) {\n                    DuplicateRef[j] = ReferenceValues[j];\n                } else {\n                    alert(\"Reference number conflict.\");\n\n                    return false;\n                }\n            }\n        }\n        return true;\n\n    }",
+        "created_utc": 1415188688,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CookieViz, the official french WTF cookie visualization web-app",
+        "author": "RodolpheB",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2lcvsi/cookieviz_the_official_french_wtf_cookie/",
+        "text": "OHAI Reddit!\n\nTwo days ago, an email hit the full disclosure mailing list warning about [two huge security flaws](http://seclists.org/fulldisclosure/2014/Nov/3) in CookieViz, a software made by the [French National Commission on Informatics and Liberty](https://en.wikipedia.org/wiki/CNIL). Obviously, I had to peek at the source code. Here is some of the gems I found:\n\n* There's absolutely no problem [storing the unencrypted MySQL root password in a text file](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/soft/monitor_tshark_win.php#L106-L112). YOLO!\n* Cool, prepared statements… oh wait, it's [concatenation](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/info.php#L40).\n* Mandatory [index.php](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/index.php) filled with html only (because index.html is too explicit)\n* In the same way, [main.php](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/main.php) is filled with JavaScript. Please note it's different from [main.js](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/main.js) and [scripts/main.js](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/scripts/main.js).\n* Talking about main.js, the jQuery [.toggle()](https://api.jquery.com/toggle/) is so mainstream the developer had to [reinvent it with .click() and a global var](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/main.js#L40-L61).\n* Why using [json_encode](http://php.net/manual/en/function.json-encode.php) when you can [concatenate strings](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/json.php#L257) instead?\n* Mixing [spaghetti code](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/soft/monitor_mitmdump.php) with [randomly divided code](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/disconnect.php).\n* Obviously, why bother having a configuration file when you can [hard-code it](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/soft/monitor_mitmdump.php#L73)?\n* Because the application focuses on user privacy, the dev obviously had to [send the list of every visited website to google](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/soft/monitor_mitmdump.php#L178-L183) in order to get the favicon.\n* Fuck source control, I'm [commenting it](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/function.js#L89-L90) in the case I need it later.\n* [Indentation and consistency](https://github.com/LaboCNIL/CookieViz/blob/b467c8556e016c2ba51a53cc212eb901ea357758/cookieviz/function.js#L149-L158) are for the weak.\n* What's the difference between [mysql and mysqli](https://github.com/LaboCNIL/CookieViz/commit/489b6050f6c53fe7b24c4bed3eeb9c25543960e2)? Just kidding, both are still in use.\n\nBy the way, the developer calls himself an \"IT expert\" (actual quote from his linkedin profile) and has a master degree from a famous french ~~bullshit~~ IT school.",
+        "created_utc": 1415185754,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "from production code this morning; outsourcing horror",
+        "author": "sebwiers",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2l60qw/from_production_code_this_morning_outsourcing/",
+        "text": "The guys who did this actually handle a lot of stuff well, but (javascript) styling like this just makes my skin crawl.\n\n    for (var i = 0; i &lt; selectorData.length; i++) {\n        if (soringArr[i] === false) {\n            continue;\n        }\n         newSelectorData.push(selectorData[i]);\n    }",
+        "created_utc": 1415031303,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Oh, the regrets",
+        "author": "RoadieRich",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2l4akp/oh_the_regrets/",
+        "text": "        /// &lt;summary&gt;\n        /// returns \"correct\" pluralization of noun &lt;paramref name=\"word\"/&gt;, given &lt;paramref name=\"n\"/&gt; items\n        /// &lt;/summary&gt;\n        /// &lt;param name=\"word\"&gt;Noun to pluralize&lt;/param&gt;\n        /// &lt;param name=\"n\"&gt;Number of items&lt;/param&gt;\n        /// &lt;returns&gt;&lt;paramref name=\"word\"/&gt;, \"correctly\" pluralized&lt;/returns&gt;\n        /// &lt;remarks&gt;This is far more complex than this, but it'll do&lt;/remarks&gt;\n        public static string Pluralize([NotNull] this string word, int n)\n        {\n            if (n == 1)\n                return word;\n\n            Func&lt;string,string&gt; addS = w =&gt; w + \"s\";\n\n            Func&lt;string, Func&lt;string, string&gt;, Tuple&lt;String, Func&lt;string, string&gt;&gt;&gt; t = Tuple.Create;\n\n            var endings = new List&lt;Tuple&lt;string, Func&lt;string, string&gt;&gt;&gt;\n                          {\n                              t(\"ay\", addS),\n                              t(\"ey\", addS),\n                              t(\"iy\", addS),\n                              t(\"oy\", addS),\n                              t(\"uy\", addS),\n                              t(\"y\", w =&gt; w.Substring(0, word.Length - 1) + \"ies\"),\n                              t(\"us\", w =&gt; w.Substring(0, word.Length - 2) + \"i\"),\n                              t(\"s\", w =&gt; w + \"es\"),\n                              t(\"sheep\", w =&gt; w)\n                          };\n\n\n            return endings.Where(tup =&gt; word.EndsWith(tup.Item1))\n                          .Select(tup =&gt; tup.Item2(word))       \n                          .FirstOrDefault() ?? addS(word);\n        }\n\nWhat ever was I thinking?  (I think the \"special case\" clause didn't make it into production.  Most of the rest *did* - it was a solo project for an internship.)",
+        "created_utc": 1414979836,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Figured its time to share my experience working for a government contractor...",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2l1wgg/figured_its_time_to_share_my_experience_working/",
+        "text": "I'll refrain from giving out any information that could identify the company.\n\nI worked for this company 4 years ago. The company massive government contracts, and had the software written by interns fresh out of college without any experience. After being there a year I got promoted to Lead Developer, which was mostly a way of them pretending they cared about their employees.\n\nThe company was completely focused on demos. They would wine and dine the people making buying decisions, and then fail to fully implement most features after the contracts got signed. Much of the dev team spent their times manually updating records in the Prod database and doing hotfixes for things that were never implemented correctly.\n\nThe company has this JSP that that had hard-coded database connections and queries to load a giant table into a model. They would import it into other JSPs when they needed the model. We actually had a situation where we hit max lines for JSPs because so much importing was used. Apparently if a JSP gets too large Java will throw a \"Code too large for try-catch block\" when trying to compile it. I dunno if this was fixed in newer versions of java.\n\nEverything was built using EJBs. We had some legacy code that built entire EJBs for things like loading a list of states. We also had EJBs that were massive walls of code full of global variables. People would throw code in them when they got tired of setting up new EJBs because there was so much overhead in setting one up.\n\nThe java session was massively over-used. It's basically a global hashmap thats scoped so that each users data is separated based on a session id. Different parts of the application happened to use similar variables names, which meant that if you were logged in for too long you would get random errors due to data bleeding from different pats of the application. These errors would generally happen inside EJBs, which meant your session was invalidated. That 3000 field form you were trying to fill out? Yeah all that data was stored in your session, so your hours of work just got lost. Yes, you have to re-log in and start entering all that data again.\n\nThe CEOs called the dev team up on a Friday night and mandated that everyone worked without days off until we finished a major demo they needed. This was probably the worst possible move they could have done, as team moral plummeted as well as code quality. The more time we spent in the office the less we got done. After a month of not having days off I quit. Looking back, I wish I had known how abusive the company was. As this was my first job out of college, I thought I was making good money so I was willing to put up with way too much shit.",
+        "created_utc": 1414919138,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[ASP.NET MVC] Need to change a user's password? Better Delete and Recreate",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2l0ru4/aspnet_mvc_need_to_change_a_users_password_better/",
+        "text": "Additionally, please note the lack of Authorize tags above the controller actions.\n\n  Public Function ChangeUserPassword(UserName As String, Email As String)\n        ViewBag.UserName = UserName\n\n        ViewBag.Email = Email\n\n        Roles.GetRolesForUser()\n\n        For Each Role In Roles.GetRolesForUser(UserName)\n            ViewBag.Role = Role.ToString()\n            Roles.RemoveUserFromRole(UserName, Role)\n        Next\n\n        Membership.DeleteUser(UserName)\n\n        Return View()\n    End Function\n\n    &lt;HttpPost()&gt; _\n    Public Function ChangeUserPassword(ByVal model As RegisterModel) As ActionResult\n        If ModelState.IsValid Then\n\n            ' Attempt to register the user\n            Dim createStatus As MembershipCreateStatus\n            Membership.CreateUser(model.UserName, model.Password, model.Email, Nothing, Nothing, True, Nothing, createStatus)\n\n            Dim RoleString As String = Request.Form(\"Question1\").ToString()\n\n            Roles.AddUserToRole(model.UserName, RoleString)\n\n            Dim db As EmployeeEvaluationDBContext = New EmployeeEvaluationDBContext\n\n            'Dim x As Integer = 1999\n            ' ''to create managers\n            'For Each Manager In db.Managers\n            '    Try\n            '        Dim password As String = \"password\" &amp; x\n            '        Membership.CreateUser(Manager.UserName, password, \"test@test.com\", Nothing, Nothing, True, Nothing, createStatus)\n            '        'Roles.CreateRole(\"Manager\")\n            '        Roles.AddUserToRole(Manager.UserName, \"Manager\")\n            '    Catch ex As Exception\n\n            '    End Try\n            '    x = Math.Round(((((x + 7) * 2.5)) + 11) / 2.4)\n            'Next\n            ' ''then remove\n\n\n            If createStatus = MembershipCreateStatus.Success Then\n                FormsAuthentication.SetAuthCookie(model.UserName, False)\n                Return RedirectToAction(\"Index\", \"Home\")\n            Else\n                ModelState.AddModelError(\"\", ErrorCodeToString(createStatus))\n            End If\n        End If",
+        "created_utc": 1414886102,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Database connection string hard-coded",
+        "author": "Raysett",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2l082x/database_connection_string_hardcoded/",
+        "text": "I found this a few weeks ago at my job.  It's inside an internally grown logging library (company has been around since '97) (c#).\n\n    if (ConfigurationManager.WebConfiguration[\"ExceptionHandlerDatabase\"] != null)\n    {\n        database = ConfigurationManager.WebConfiguration[\"ExceptionHandlerDatabase\"].ToString();\n    }\n    else\n    {\n        // it looks like no connection string is provided, so let us provide one!\n        database = \"Data Connection String...\";\n    }\n\nI discovered this because one of our applications started throwing an error, something along the lines of being unable to connect to a database.  When I go to check the logs, the database this provides by default, I am unable to connect.\n\nThis database it is connecting to by default is a SQL Server 2005 on a server that is a physical machine (not virtual).  A few weeks prior it ran out of memory and we had to truncate the logs (there was no mechanism in place for deleting old logs, which ranged as far back as 1/1/2010).\n\nThat server now is no longer accessible.\n\nThis logger's source code is not stored in a single repository but has a copy of the source code as a part of several different projects, each making small edits (like having a method return an int instead of void without changing the method name).\n\nThis logger is installed into the assemblies of several servers our website sits on.\n\nThis logger is not version controlled.",
+        "created_utc": 1414874144,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this gem on StackOverflow",
+        "author": "helloinvader",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2kx7fp/found_this_gem_on_stackoverflow/",
+        "text": "I was searching for help using UDP multicast to enable a client application to discover a server on the network in VB.net (school project - had no choice).\n\nThis gem of an answer appeared in the search results on Stack Overflow:\n[UDP Local Broadcast](http://stackoverflow.com/a/16653893/1642321)\n\nI'll let you read the full post, but the basic premise of the answer was:\n\n\n&gt; How my system works...\n\n&gt; 1. The clients and servers send an email to a Gmail email address containing their IP addresses.\n\n&gt; 2. I setup a time trigger to execute some Go code script, the script then looks for any emails that have an IP address in them, if they do, then the script extracts the address and stores the addresses on a google website, ready to be downloaded.\n\n&gt; 3. The server/client then downloads the data containing the address.    \n",
+        "created_utc": 1414789331,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone else hate people like this?",
+        "author": "YMK1234",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2kwzgz/anyone_else_hate_people_like_this/",
+        "text": "You take your time to write a technical analysis of your problem with specific questions, and at least half the answerers obviously only read the header and maybe (if you are lucky) the first code sniplet and then answer with stuff you actually already mentioned in your question?\n\nExample:  \nTitle: [problem that bla can somehow solve]  \nQ: I know about bla but are there any better ways to do it?  \nA: Use bla\n\nI would be happy if the answer is \"yes, bla is the best for that\", but \"use bla\" obviously shows a lack of even having read the text.",
+        "created_utc": 1414785224,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I found this wonderful naming convention today while looking through the code for a Wordpress theme",
+        "author": "Relayerduos",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ktwzi/i_found_this_wonderful_naming_convention_today/",
+        "text": "    $to      =  $the_myemail;\n    $subject = \"New Message from \" . $the_blogname;\n    $header  = 'MIME-Version: 1.0' . \"\\r\\n\";\n    $header .= 'Content-type: text/html; charset=utf-8' . \"\\r\\n\";\n    $header .= 'From:'. $the_email  . \" \\r\\n\";\n\nIt didn't stop here, the whole file had names just like  $the_varname",
+        "created_utc": 1414710596,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Test/Production Same Difference",
+        "author": "aubtig34",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ko8jy/testproduction_same_difference/",
+        "text": "I work in warehousing and do IT type of work for our Warehouse Management System.  Everything is SQL based for the most part.  We had a guy that works for us go to a new site that had been opened for a week receiving product in the building and his job was to implement and install a electronic Bill Of Lading system.  He had tested everything in test and all was good to go so he starting rolling it into production.   He hit several snags and one that was really stumping him.  So he asked if we could just roll test into prod.  \n\nIt took me a second because I didn't understand what he was asking.  And I said, \"what?\" and he replied \"yeah, just roll test into the prod environment\".  At which point I had to explain that we were in production and couldn't do that, not after the building/site had already gone live.",
+        "created_utc": 1414589376,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "NSA why...",
+        "author": "webbannana",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2kmm4m/nsa_why/",
+        "text": "My posts: NSA why... | [SVG captcha's?](http://www.reddit.com/r/programminghorror/comments/2n6cqu/svg_captchas/)\n\nFound this on the NSA's website:\n\n    &lt;table width=\"850px\" cellpadding=\"0\" cellspacing=\"0\"&gt;\n        &lt;tbody&gt;\n            &lt;tr&gt;\n                &lt;td&gt;\n                    &lt;table align=\"right\"&gt;\n                        &lt;tbody&gt;\n                            &lt;tr&gt;\n                                &lt;td&gt;\n                                    &lt;p&gt;\n                                        &lt;a href=\"Transcript.html\"&gt;\n                                            &lt;span style=\"color:#000000;\"&gt;\n                                                Transcript\n                                           &lt;/span&gt;\n                                        &lt;/a&gt;\n                                    &lt;/p&gt;\n                                &lt;/td&gt;\n                            &lt;/tr&gt;\n                        &lt;/tbody&gt;\n                    &lt;/table&gt;\n               &lt;/td&gt;\n            &lt;/tr&gt;\n        &lt;/tbody&gt;\n    &lt;/table&gt;\n\n...need I say more?\n\n[https://www.nsa.gov/public_info/media_center/careers/video/WorkatNSATechPerspective/index.html](https://www.nsa.gov/public_info/media_center/careers/video/WorkatNSATechPerspective/index.html)\n",
+        "created_utc": 1414543295,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A /r/mildlyinfuriating post about the comment color, but the code irritated me more",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2kjuta/a_rmildlyinfuriating_post_about_the_comment_color/",
+        "text": "[Image](https://i.imgur.com/ZUeyW9E.jpg)\n\n-  no return type for `main()`\n- `n` vs `\\n`... hmm\n- iterator variable defined outside of loop\n- printing string with for loop (probably an exercise, but anyway)\n- no space before the `&lt;` in the for loop\n\nOP is VERY new to C code so, yeah.",
+        "created_utc": 1414484900,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "We're going to be the next Google.",
+        "author": "Zulban",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2kh0ze/were_going_to_be_the_next_google/",
+        "text": "Here's the third instalment about my previous employer. Also, here's [my previous post](http://www.reddit.com/r/programminghorror/comments/2k27jr/the_hitler_test/). For a little over a year I was the entire QA department at a startup that tried/is trying to make a \"semantic, socially driven, product-centric search engine with a 3d semantic database\". Their words.\n\nThis post is about the embarrassing state of the product data we had. For too long, the R&amp;D team put just one \"programmer\" in charge of the crucial task of writing a web crawler to collect this data. To her credit, she appeared to genuinely try and she cared about her work. Furthermore, the programming language chosen for her was a crippled, experimental, dead language that deserves its own post. Having said that... Before being hired she admitted to never having seriously programmed anything before. For months, her crawler code was a single giant function. Clearly, no reasonable person would have ever assigned this enormous and challenging task to her. But that was our head of R&amp;D.\n\nAfter more than a year of development these were the results: \n* We had HTML code in our product descriptions.\n\n* Product titles were sometimes tens of thousands of characters in length.\n\n* Text in general was riddled with unprintable characters and encoding errors of the most exotic variety.\n\n* English and French data were always jumbled. It is not difficult to very effectively guess English/French, by the way.\n\n* As QA I don't recall ever getting a version that compiled. All I could test was the trickle of nonsense data it sometimes produced.\n\n* After downloading a web site, if it failed to parse or just crashed, it had to re-download the web site.\n\n* At best producing fifty products a month, a human being could have outpaced it by orders of magnitude by copy and pasting data from retailer websites.\n\nAgain, that’s after a year.\n\nWe've come to a point in my story where you may have trouble believing how delusional some employees at this company were. I heard the phrase \"we're going to be the next Google\" more than once. One time I did a spot test and estimated that 70% of the data was garbage - but the web crawler was still celebrated because it produced more data than usual that month. We had \"hype\" meetings where management and the R&amp;D lead talked about how great everything is going and how we (they) are all going to be rich. Meanwhile, the product title for a hammer was:\n\n    &lt;span class=\"product-badge\"&gt;\n    &lt;img class=\"product-badge__image\"/&gt;\n    &lt;a href=\"/en/pdp/stanley-fatmax-xtreme-antivibe-hammer-20oz-0574004p.html\" class=\n\nAnd its product description was forty thousand characters of whitespace.\n\nAnyway, after I had been there nearly a year two things happened. I was given a chance to write my own web crawler! This deserves its own post. Also, they hired a new programmer to work on the existing web crawler. That poor bastard didn't stand a chance though. He didn't really have the option of saying \"holy shit, we need to start from scratch\" during his probationary period.\n\nIt took just two weeks under these new conditions for management to have \"hype\" meetings. They announced without consulting either of us that by Monday, our web crawlers could hit a dozen websites a week and generate data for hundreds of thousands of products...\n",
+        "created_utc": 1414425074,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Neckbeard.js ... so many WTFs",
+        "author": "YMK1234",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2k9xlm/neckbeardjs_so_many_wtfs/",
+        "text": "Page: http://htmlpreview.github.io/?https://raw.github.com/desirable-objects/neckbeard.js/master/website/index.html\n\nWTFs:\n\n* the name \n* the page\n* the used variable name in the example\n* the [actual repo](https://github.com/desirable-objects/neckbeard.js/)\n  * contains a full copy of express - which is not used\n  * contains a full copy of jasmine - which is not used\n  * contains node-modules (again with jasmine) - which are all not used\n  * somehow contains three testing frameworks (which I couldn't find any use for, except jasmine itself)\n* functionality\n  * stores the iteration-values globally, so you can only have one iteration at a time\n  * takes values for multi-parmeter iterations as a plain list instead of arrays/objects, so you have to be careful not to miss an argument or everything is messed up.\n  * only supports \"it\" (though they call it \"loop\")\n\nHappy end (for me): [what I made out of it for now](https://www.npmjs.org/package/jasmine-params)\n\n* better name\n* removed all the useless crap\n* better examples\n* iterators are instance-specific -&gt; can have multiple iterators at a time which is quite handy if you want to loop over the same values in multiple tests (which I have often)\n* multi-parameter iterations take arrays\n* supports it/xit/iit and describe/xdescribe/ddescribe",
+        "created_utc": 1414230844,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Deliberate set to null",
+        "author": "sanmadjack",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2k8bxn/deliberate_set_to_null/",
+        "text": "Not quite a horror, but I chuckled when I found this during a code review:\n\n    SqlCommand s = new SqlCommand(\"Update BOL_Detail set Received_Date = @null where BOLDetailID = @id\");\n    s.Parameters.Add(\"@null\", DBNull.Value);\n",
+        "created_utc": 1414183775,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "It pains me to even think about why this was nessesary",
+        "author": "lostPixels",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2k7u8w/it_pains_me_to_even_think_about_why_this_was/",
+        "text": "From a 5 year old CSS file that's supposed to style a form. \n    \n    body.my-account #email-content input[id=\"saveEmail\"] {\n        margin-top: 20px;\n    }",
+        "created_utc": 1414174375,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "They Do Say that String Mathematics Is a Dying Art",
+        "author": "peter_bolton",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2k3ngi/they_do_say_that_string_mathematics_is_a_dying_art/",
+        "text": "    private string CalculateNextLessThanOrEqualNumber(string)",
+        "created_utc": 1414077106,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Hitler test.",
+        "author": "Zulban",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2k27jr/the_hitler_test/",
+        "text": "I've got another gem about [my previous employer](http://www.reddit.com/r/programminghorror/comments/2jyqxu/we_dont_do_version_control_here/). For a little over a year I was the entire QA department at a start up that tried/is trying to make a \"semantic, socially driven, product-centric search engine with a 3d semantic database\". Their words.\n\nOne huge challenge I faced was how to objectively confront the insanity of the search results. If you searched for \"television\" and the second result was a bottle of wine, there was always a bullshit justification from the head of R&amp;D. Something like \"the system is still learning\" or \"the data is bad\" or even \"bottles of wine are on television a lot\" (their words). If you think the first two justifications sound reasonable, know that the search results were schizophrenic for over a year, long before I even started working there. The search algorithm was failing to perform even the most basic keyword searches and the justification was always that the system is too smart, or it's learning, or it's someone else's fault.\n\nWorse still, if you found a particularly egregious failure, like searching \"socks\" and the third result is \"Mein Kampf\" by Hitler, just that one search term would \"get fixed\" with the next patch. But in no time at all you'd find another sensible search term with ludicrous results. This process repeated itself dozens of times. I swear, I **swear**, the head of R&amp;D had some way to scramble the results randomly between the daily patches.\n\nHow do you measure the quality of search results? Surely only a human being can do that? Or, wouldn't I have to write my own search engine to compare to? Nope. Enter: \"the Hitler test\".\n\nFirst I searched for \"Hitler\". I collected a list of some fifty items that were blatantly Hitler themed: books he wrote or books with him on the cover. Next, I made a long list of fluffy happy search terms like \"rainbow\", \"celine dion\",  \"bicycle\", and \"children's books\". Then I wrote a tool that automatically searched for fluffy terms, and reported back to me when the results were Hitler-esque. From then on the jig was up:\n\n    Me: When I search \"elvis\", the ninth result is Mein Kampf.\n    R&amp;D team: Oh! That was the old version. We just released a better one.\n    Me (1 minute later): Hello again. When I search \"pink unicorn\", the third result is Mein Kampf.\n\nI'd like to say this helped. That after a year the CEO and CTO saw the error of their ways and put different seniors in charge. But frankly this company was so delusional that I have trouble talking about my work history there. I wouldn't believe some of my own stories had I not experienced them first hand. Anyway, I was really proud of this solution. I came up with a way to test the quality of search engine results automatically. Not bad!",
+        "created_utc": 1414032953,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "We don't do version control here.",
+        "author": "Zulban",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2jyqxu/we_dont_do_version_control_here/",
+        "text": "For a little over a year I was the entire QA department at a start up that tried/is trying to make a \"semantic, socially driven, product-centric search engine with a 3d semantic database\". Their words. My first few months I had to fight vigorously to get the team for the search engine to use any kind of version control at all. At first there was nothing - they just put files on the dev/test/production server without asking or telling anyone else in the company. No isolated test server/instance for me. No repos of any kind. Eventually they started using git, and the \"versions\" I requested were commit hashes. There were of course dozens if not hundreds of commits a day. So if I ever came to them with a list of bugs, the immediate answer without hesitation was \"that's an old version, we fixed those bugs already\" without even having a look at what I found.\n\nAfter months I still had no way to test this software in an isolated environment I controlled. There was literally zero installation documentation and it required a server. I was also a junior, so really all I could do is ask.\n\nAfter one particularly heated exchange I finally got this gem from the head of R&amp;D, the company's PhD buzzword kingpin:\n\n    Hahaha! You don't understand our system. We *can't* give you versions of our code.\n    We don't do version control here. It doesn't work like that, we just can't.\n\nPerhaps after six months of pleading then demanding I had proper versioning. I also had a huge number of other problems of course, and still no isolated test server/instance. But I had versioning...",
+        "created_utc": 1413953040,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "To the author's credit, the way we deal with formatting in our solution is a pain. But this...",
+        "author": "TaggedAsKarmaWhoring",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2jwhk1/to_the_authors_credit_the_way_we_deal_with/",
+        "text": "\tpublic class ToolsAndConst\n\t{\n\t\tprivate static string getSeparator()\n\t\t{\n\t\t\tstring s;\n\t\t\tdecimal d;\n\t\t\ttry\n\t\t\t{\n\t\t\t\td = decimal.Parse(\"1.5\");\n\t\t\t\ts = \".\";\n\t\t\t}\n\t\t\tcatch\n\t\t\t{\n\t\t\t\td = decimal.Parse(\"1,5\");\n\t\t\t\ts = \",\";\n\t\t\t}\n\t\t\treturn s;\n\t\t}\n\n\t\tpublic static double String2Double(string str)\n\t\t{\n\t\t\tdouble d;\n\t\t\ttry\n\t\t\t{\n\t\t\t\td = double.Parse(str.Replace(\".\", getSeparator()));\n\t\t\t}\n\t\t\tcatch\n\t\t\t{\n\t\t\t\td = double.Parse(str.Replace(\",\", getSeparator()));\n\t\t\t}\n\t\t\treturn d;\n\t\t}\n\t}",
+        "created_utc": 1413909758,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"How do I call an anonymous function from somewhere else?\" [Javascript]",
+        "author": "MetallicDragon",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ju4ts/how_do_i_call_an_anonymous_function_from/",
+        "text": "Co-worker asked me this today. Ex:\n\n    (function() {\n        // Stuff he wants to do again somewhere else\n    })();\n\nLiterally a few lines later I can see this:\n\n    window.fooBar = function() {\n        // Some other stuff\n    }\n\nAnd later still:\n\n    window.foo();\n    window.bar();\n    window.fooBar();\n\nI get questions of this caliber on a daily basis.",
+        "created_utc": 1413848708,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good place to make a server request",
+        "author": "BardicSneer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2jtm2f/good_place_to_make_a_server_request/",
+        "text": "I work at a company (my first full time software dev job) where we use a shitty proprietary language with its own shitty IDE. I just discovered that one of the drop down menus in the IDE (labeled \"build\") makes a server call when you open it. Every time. So if a server is down or congested then you can't build things because the goddamned menu won't open and eventually times out. This is actually a common thing throughout all of our tools. Simple GUI actions synchronously make server calls. Which could possibly be tolerable if the calls were fast, but things often takes several seconds and it eats up so much potential productivity over the day.\n\nEven worse, our entire shitty ancient architecture is built around using floating point for currency values. It would probably take years to fix it - not that such a thing would be considered given that when I ask anyone why the fuck it's like this, they just give me a blank stare.\n\nThis is just the tip of the iceberg at a company that is the largest in its industry. And it's an industry whose software you would really, really, not want to suck when it comes time for you to be at its mercy.",
+        "created_utc": 1413838844,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Blade countries select\"... I'm pretty sure that's not the ideal approach",
+        "author": "euantor",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2jt72b/blade_countries_select_im_pretty_sure_thats_not/",
+        "text": "Saw this posted in the Laravel sub: http://kodeinfo.com/post/blade-countries-select\n\nSo much for keeping logic out of the views, eh?",
+        "created_utc": 1413831547,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "We need some random angles...",
+        "author": "Zulban",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2jr8eu/we_need_some_random_angles/",
+        "text": "I went to a game jam with friends years ago. I knew zero C# at the time, and it being a hasty weekend game jam, didn't have time to look at any code from my team. After the jam the project was wacky and slow, so I started my inspection... here's one gem I found (written in pseudo code):\n\n    function GetRandomAngle()\n        int number=random.randint(1,4)\n        select case number\n            case 1:\n                return 0\n            case 2:\n                return 90\n            case 3:\n                return 180\n            case 4:\n                return 270\n        return 0",
+        "created_utc": 1413778743,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Instead of many classes you should have just 1 so you wont fumble around for which class a function is in.",
+        "author": "Dr_funny_guy",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2jofi4/instead_of_many_classes_you_should_have_just_1_so/",
+        "text": "[what's upvoted is pretty scary](http://www.reddit.com/r/androiddev/comments/2jmckr/does_anyone_feel_the_need_for_a_tools_like_class/). I hope I will never have to work with these guys. But there just so many of them.\n\nI think the industry is motivating too many people into programming. With videos like [this](https://www.youtube.com/watch?v=OWsyrnOBsJs) which make it sound that programming is easy. It's scary and making me cringe at what the future holds for the type of programmers of our future. Sure programming is great, but it's not for everyone. We should stop making it sound like it's super awesome to be a programmer.",
+        "created_utc": 1413707533,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Denied a job because my code is too complicated. What do you think?",
+        "author": "agentargoh",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2jjytq/denied_a_job_because_my_code_is_too_complicated/",
+        "text": "https://github.com/buckheroux/sales-terminal\n\nI mean I get a little over zealous with the list comprehensions. I thought that the hash_heap was an interesting way to solve the problem.",
+        "created_utc": 1413581608,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This client provides 4 layers of metadata per API resource.",
+        "author": "darthmincho",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2iwmin/this_client_provides_4_layers_of_metadata_per_api/",
+        "text": "An example assignment resource:\n\n    {\n       \"type\":\"assignment\",\n       \"id\":240,\n       \"body\":\"This is a test assignment.\",\n       \"due_date\":\"2014-10-08T22:06:25Z\",\n       \"meta\":{\n          \"key_count\":5,\n          \"keys\":[\n             \"type\",\n             \"id\",\n             \"body\",\n             \"due_date\",\n             \"meta\"\n          ],\n          \"values\":[\n             \"assignment\",\n             240,\n             \"This is a test assignment\",\n             \"2014-10-08T22:06:25Z\",\n             \"__META__\"\n          ],\n          \"value_types\":[\n             \"string\",\n             \"number\",\n             \"string\",\n             \"string\",\n             \"object\"\n          ],\n          \"meta\":{\n             \"key_count\":5,\n             \"keys\":[\n                \"key_count\",\n                \"keys\",\n                \"values\",\n                \"value_types\",\n                \"meta\"\n             ],\n             \"values\":[\n                5,\n                [\n                   \"type\",\n                   \"id\",\n                   \"body\",\n                   \"due_date\",\n                   \"meta\"\n                ],\n                [\n                   \"assignment\",\n                   240,\n                   \"This is a test assignment\",\n                   \"2014-10-08T22:06:25Z\",\n                   \"__META__\"\n                ],\n                [\n                   \"string\",\n                   \"number\",\n                   \"string\",\n                   \"string\",\n                   \"object\"\n                ],\n                \"__META__\"\n             ],\n             \"value_types\":[\n                \"number\",\n                \"array\",\n                \"array\",\n                \"array\",\n                \"object\"\n             ],\n             \"meta\":{\n                \"key_count\":5,\n                \"keys\":[\n                   \"key_count\",\n                   \"keys\",\n                   \"values\",\n                   \"value_types\",\n                   \"meta\"\n                ],\n                \"values\":[\n                   5,\n                   [\n                      \"key_count\",\n                      \"keys\",\n                      \"values\",\n                      \"value_types\",\n                      \"meta\"\n                   ],\n                   [\n                      5,\n                      [\n                         \"type\",\n                         \"id\",\n                         \"body\",\n                         \"due_date\",\n                         \"meta\"\n                      ],\n                      [\n                         \"assignment\",\n                         240,\n                         \"This is a test assignment\",\n                         \"2014-10-08T22:06:25Z\",\n                         \"__META__\"\n                      ],\n                      [\n                         \"string\",\n                         \"number\",\n                         \"string\",\n                         \"string\",\n                         \"object\"\n                      ],\n                      \"__META__\"\n                   ],\n                   [\n                      \"number\",\n                      \"array\",\n                      \"array\",\n                      \"array\",\n                      \"object\"\n                   ],\n                   \"__META__\"\n                ],\n                \"value_types\":[\n                   \"number\",\n                   \"array\",\n                   \"array\",\n                   \"object\"\n                ],\n                \"meta\":{\n                   \"key_count\":5,\n                   \"keys\":[\n                      \"key_count\",\n                      \"keys\",\n                      \"values\",\n                      \"value_types\",\n                      \"meta\"\n                   ],\n                   \"values\":[\n                      5,\n                      [\n                         \"key_count\",\n                         \"keys\",\n                         \"values\",\n                         \"value_types\",\n                         \"meta\"\n                      ],\n                      [\n                         5,\n                         [\n                            \"key_count\",\n                            \"keys\",\n                            \"values\",\n                            \"value_types\",\n                            \"meta\"\n                         ],\n                         [\n                            5,\n                            [\n                               \"type\",\n                               \"id\",\n                               \"body\",\n                               \"due_date\",\n                               \"meta\"\n                            ],\n                            [\n                               \"assignment\",\n                               240,\n                               \"This is a test assignment\",\n                               \"2014-10-08T22:06:25Z\",\n                               \"__META__\"\n                            ],\n                            [\n                               \"string\",\n                               \"number\",\n                               \"string\",\n                               \"string\",\n                               \"object\"\n                            ],\n                            \"__META__\"\n                         ],\n                         [\n                            \"number\",\n                            \"array\",\n                            \"array\",\n                            \"array\",\n                            \"object\"\n                         ],\n                         \"__META__\"\n                      ],\n                      [\n                         \"number\",\n                         \"array\",\n                         \"array\",\n                         \"object\"\n                      ]\n                   ],\n                   \"value_types\":[\n                      \"number\",\n                      \"array\",\n                      \"array\",\n                      \"array\",\n                      \"object\"\n                   ],\n                   \"__META__\"\n                }\n             }\n          }\n       }\n    }",
+        "created_utc": 1412986866,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Event logging",
+        "author": "110011001100",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2iw7l4/event_logging/",
+        "text": "Context: C# app, event handlers are synchronous\n\nGot asked to help with some perf issues\n\nThis is what each event handler looks like\n\n    ...\n    log(\"Event X starting\")\n    log(\"Event X doing something\")\n    log(\"Event X ending)\n    ...\n\nNow, even handlers such as quit, open,etc have this code. Looks ok right?\n\nUntil you go and take a peek in log()\n\nLooks like\n\n    WebClient wc = new WebCllent()\n    we.DownloadString(\"http://telementryurl/str=?\"+param)\n\nEven this would be OK under certain circumstances, except the network setup here is:\n\n    Office in India, connection proxied through Singapore\n\n    telemetryUrl hosted in US\n\n    Database which telemetryUrl writes to hosted in Singapore",
+        "created_utc": 1412977320,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's the most negatives you can fit into one programming statement?",
+        "author": "porygon21",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2iv1pc/whats_the_most_negatives_you_can_fit_into_one/",
+        "text": "Context: We have a halloween party coming up and I have a small chalkboard that I could write an ungodly quadruple negative on. Since the theme is \"Scary\" what's more scary than a huge contradicting negative negative statement? But just wanted to hear if anyone had a really good example or would like to share?",
+        "created_utc": 1412954437,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Let's protect against brute force attacks",
+        "author": "HSP95",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ilmb5/lets_protect_against_brute_force_attacks/",
+        "text": "I found this gem in some big software project I'm working on. It's heavily anonymized as I'm very loyal to the people I do contract work for, but I just needed to share the general concept of this anyway. The worst thing is that they are BIG and do work for some of the biggest companies in my country.\n\n    &lt;?php\n    if ($largeGodObject-&gt;performAuthentication($_REQUEST[\"username\"],$_REQUEST[\"password\"]))\n    {\n    \t//Redirect and other stuff\n    \tsetcookie(\"LoginFail\", 0);\n    } else {\n    \t//Show user error here\n    \tsetcookie(\"LoginFail\", $_COOKIE[\"LoginFail\"]+1, time()+3600);\n    \n    \tif ($_COOKIE[\"LoginFail\"] &gt; 2)\n    \t\tlog_security_incident(\"Bruteforce attempt user = $_REQUEST[username] and password = $_REQUEST[password]\",\"ALARM\"); \n    }",
+        "created_utc": 1412718408,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why the next iteration of Windows is named Windows 10",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2i1bzj/why_the_next_iteration_of_windows_is_named/",
+        "text": "Microsoft dev here, the internal rumours are that early testing revealed just how many third party products that had code of the form\n\n    if(version.StartsWith(\"Windows 9\"))\n    { /* 95 and 98 */\n    } else {\n\nand that this was the pragmatic solution to avoid that.\n\n[source](https://pay.reddit.com/r/technology/comments/2hwlrk/new_windows_version_will_be_called_windows_10/ckwq83x)",
+        "created_utc": 1412203428,
+        "upvote_ratio": ""
+    }
+]

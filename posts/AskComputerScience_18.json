@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Getting My Education",
+        "author": "CoachFrags",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8e7psl/getting_my_education/",
+        "text": "I'm aiming to study Computer Science at either Michigan State University or Eastern Michigan University. Very torn between the two schools and I don't know what to do.\n\nFor as long as I can remember I've always wanted to be the kid that knows how to write code and create things on the computer but could never set aside time to sit down and learn. Now that I'm off to college I aim to study Computer Science.\n\nI love video games and I'm \"that kid\" that wants to make games. Now I know that if I focus my studies on game development it might not put me where I want to be later on in life, or maybe it will... I'm just not sure. That's why i'm here.\n\nEastern Michigan University has a Major called Simulation, Animation, and Gaming where you study game development, programming, story creation and some animation/3D modeling. This sounds like an awesome course and I would really like to take it but is it right for my future.\n\nMichigan State University doesn't offer a Game Development course but they have a very reputable computer science course and this is where i'm torn.\n\nLets say I go to EMU, I major in S.A.G and I minor in Computer Science. How likely am I to actually get a solid career going with this education? Am I better off getting a real Computer Science Degree from MSU and then maybe learn game development as a hobby later in life?\n\nWhat has a more promising future?\nPlease leave all the feedback you can write!!\nThanks in advance!",
+        "created_utc": 1524445767,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "postfix calculator using a stack (dynamic array) Please Help me :-(",
+        "author": "jonahhillneedshelp",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8e6p74/postfix_calculator_using_a_stack_dynamic_array/",
+        "text": "Hey guys I desperately need help, my main function is just crazy \\- i'm a new cs student and I don't really know what I'm doing lol :\\-\\(\n\nIn main, you will perform the following steps to implement the stack based postfix calculator\n\n* Read in the string, using getline\\(cin, line\\) would be a good idea \n \n* Traverse each character from the string line one at a time, for each possible character do the following \n  \n   * –  ignore and skip to the next character if it is a whitespace \n \n   * –  push the character onto myStack if it is a digit \n \n   * –  pop two numbers off myStack and perform the operation on the two elements and push the result onto myStack \\(if you are unable to pop two elements output an error and terminate the program\\) \n \n   * –  output an error and terminate the program if the character is not a digit or an operator symbol \\+\\-\\*/ \n \n* Once you parsed the entire string, the answer will be on top of the stack, and this item must be the ONLY element on the stack, thus is there are more than one item on the stack after parsing the input string, out the error \n \n\nHere is the class and my current main function to give you an idea of what is going on!\n\n#include \\&lt;iostream\\&gt;\n\n#include \\&lt;string\\&gt;\n\nclass myStack\n\n{\n\npublic:\n\nmyStack\\(\\);\n\nmyStack\\(const myStack &amp;\\);\n\nconst myStack&amp; operator =\\(const myStack &amp;\\);\n\n\\~myStack\\(\\);\n\nvoid push\\(int\\);\n\nvoid pop\\(\\);\n\nvoid pop\\(int &amp;\\);\n\nint top\\(\\) const;\n\nbool isEmpty\\(\\) const;\n\nprivate:\n\nsize\\_t length; // variable to point to eht top of the stack\n\nint \\* stk; //pointer to the array that holds the stack elements\n\n};\n\nusing namespace std;\n\n#include \\&lt;iostream\\&gt;\n\n#include \\&lt;string\\&gt;\n\nclass myStack\n\n{\n\npublic:\n\nmyStack\\(\\);\n\nmyStack\\(const myStack &amp;\\);\n\nconst myStack&amp; operator =\\(const myStack &amp;\\);\n\n\\~myStack\\(\\);\n\nvoid push\\(int\\);\n\nvoid pop\\(\\);\n\nvoid pop\\(int &amp;\\);\n\nint top\\(\\) const;\n\nbool isEmpty\\(\\) const;\n\nprivate:\n\nsize\\_t length; // variable to point to eht top of the stack\n\nint \\* stk; //pointer to the array that holds the stack elements\n\n};\n\nusing namespace std;\n\nint main\\(\\)\n\n{\n\nstring line;\n\nchar ch;\n\nmyStack temp;\n\nint int1;\n\nint int2;\n\ncout \\&lt;\\&lt; \"Enter a postfix string: \" \\&lt;\\&lt; endl;\n\ngetline\\(cin, line\\); // read in string using getline\n\n//cout \\&lt;\\&lt; line \\&lt;\\&lt; endl; // test \\~delete later\n\n//traverse string\n\nfor\\(int i = 0; i \\&lt; line.length\\(\\); i\\+\\+\\)\n\nch = line\\[i\\];\n\nif\\(!\\(ch == ‘ '\\)\\) //if the character is not a white space\n\n{\n\nif\\(isdigit\\(ch\\)\\) // if is digit push onto stack\n\nline.push\\(ch \\- '0'\\); //????\n\n}\n\nelse \\(if\\(ch == '\\+' || ch == '\\-' || ch == '\\*' || ch == '/'\\)\n\n{\n\nif !\\(temp.isEmpty\\(\\)\\); // if stack is not empty place into integer value\n\nline.pop\\(int1\\); // if not empty pop onto stack\n\nif \\(!temp.isEmpty\\(\\)\\);\n\nline.pop\\(int2\\);\n\nswitch\\(\\)\n\ncase ‘\\+’ :\n\nline.push\\(int1 \\+ int2\\);\n\nbreak;\n\ncase ‘\\-‘ :\n\nline.push\\(int1 \\- int2\\);\n\nbreak;\n\ncase ‘\\*’ :\n\nline.push\\(int1 \\* int2\\);\n\nbreak;\n\ncase ‘/‘ :\n\nline.push\\(int1 / int2\\);\n\nbreak;\n\ndefault :\n\ncout \\&lt;\\&lt; “Invalid operator”;\n\nexit\\(1\\);\n\n}\n\ncout \\&lt;\\&lt; \"The answer is \" \\&lt;\\&lt; endl;\n\nreturn 0;\n\n}",
+        "created_utc": 1524435690,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do programs startup faster if I had them running more recently?",
+        "author": "QuirkyAsparagus",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8e6os4/why_do_programs_startup_faster_if_i_had_them/",
+        "text": "For example, I turn on my computer, and it's been on for like 10 minutes idle.   I open program X \\(IDE, web browser, whatever\\) and it takes 30 seconds to come up. I close it, wait a couple minutes, and open X again. This time it takes 15\\-20 seconds to come up.   Is the OS reusing components that weren't complete closed or something?  Is there cache or some other optimizations that are made when closing and opening a program again like this? ",
+        "created_utc": 1524435577,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problem applying Runge-Kutta 4th order to Projectile motion with air resistance",
+        "author": "o1_complexity",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8e53rw/problem_applying_rungekutta_4th_order_to/",
+        "text": "Initially, I was able to implement a Euler's method version of the air resistance problem by following the paper here: [http://nick.bonevac.people.cpcc.edu/Exps/251/Euler.pdf](http://nick.bonevac.people.cpcc.edu/Exps/251/Euler.pdf) \\[1\\]. \n\nI thought it would be easy to convert this to RK4 version. I just had to change the formula a little bit and solve for k1,k2,k3, and k4 \\(as seen here [http://mathforcollege.com/nm/mws/gen/08ode/mws\\_gen\\_ode\\_txt\\_runge4th.pdf](http://mathforcollege.com/nm/mws/gen/08ode/mws_gen_ode_txt_runge4th.pdf) \\[2\\]\\). \n\nHowever, while I was trying to code it, I hit a wall: solving for k1,k2,k3, and k4 involves changing the input variables to a function \\(i.e. k2 = f\\(xi \\+ 0.5\\*h, yi \\+ 0.5\\*k1\\*h\\)\\). This confuses me. Which function should I input \\(xi\\+0.5\\*h\\) and \\(yi\\+0.5\\*k1\\*h\\) to?\n\nSeeing the final set of formulas in reference \\[1\\], the velocity and acceleration variables aren't necessarily functions. They are just constants. Thus, calling v\\(xi\\+0.5\\*h, yi\\+0.5\\*k1\\*h\\) or something like that wouldn't make sense.\n\nWith that, my question is how should I go about implementing this?",
+        "created_utc": 1524421428,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "AI vs Embedded Systems vs Application Software",
+        "author": "philosophyMatsa",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8e42uo/ai_vs_embedded_systems_vs_application_software/",
+        "text": "Hey fellow Computer people.  I'm a student trying to  narrow down my choices.  I've found myself gravitating towards Embedded Sys and Application Software the most (the former because of a course and upcoming internship, and the latter because of my mobile development hobby).  Lately, Artificial Intelligence has sparked my interest and I am considering taking a course on it next semester.  I have hands on experience with Embedded and Application Software, but was wondering if there is a site that gives you a crash course on AI at all?  I'm trying to weed out paths I know I won't enjoy at this point in my academic career, so any thoughts on these three topics is of great help!",
+        "created_utc": 1524412354,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a site where I can download free Microsoft office apps?",
+        "author": "Ariespedicy-",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8e2qd6/is_there_a_site_where_i_can_download_free/",
+        "text": "[removed]",
+        "created_utc": 1524397141,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Checking if a regular complex polygon is contained inside of another regular complex polygon.",
+        "author": "trippylilslug",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dzq32/checking_if_a_regular_complex_polygon_is/",
+        "text": "I have to write this code in C++ in the most \"simple\" way possible. I've already written functions to find the center of a regular polygon, to check whether 2 line segments intersect, and to check whether a point is on a line segment. \n\nSince both polygons are regular and convex, I was thinking I could iterate through all the vertices of the \"inner\" polygon and check whether they are all contained inside the \"outer\" polygon, but I'm not sure how to do this.\n\nI read up on the \"Ray method\" but was wondering if there's an simpler way to implement it using the functions I've already been given, or another way altogether. Any help would be appreciated!",
+        "created_utc": 1524355802,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Learned about General Counting Methods, Generating Functions, Polya's Urn and Recurrence Relations...What is the real world application of these topics in CS?",
+        "author": "MulticulturalHound",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dz70v/learned_about_general_counting_methods_generating/",
+        "text": "I understand how Recurrences can be used to figure out the runtime of Recursion and how Combinatorics can be used to figure out efficiency of Hash Tables. I'm wondering what other applications there are in CS? I'm hoping to be able to practice these concepts in real life applications. Thanks. ",
+        "created_utc": 1524350380,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is parallel port slower than serial port",
+        "author": "mrheosuper",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dxil3/why_is_parallel_port_slower_than_serial_port/",
+        "text": "I have been wondering it for a long time,  in theory,  a host use parralel port can read 16 bit( or 32 bit)  in single clock,  meanwhile in serial port it's only 1\nI know serial is faster because they have higher clock speed,  but why they dont increase clock speed of parallel port\nThank you",
+        "created_utc": 1524334565,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do monitors have to refresh starting from the top left corner?",
+        "author": "Kargnos",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dx909/do_monitors_have_to_refresh_starting_from_the_top/",
+        "text": "I know computers' coordinate system starts in the top left, but how does that force the new frame to be drawn starting from the left? Would it be possible to make/program a monitor to start drawing  each new frame in the middle of the screen and spiral outwards? And would doing this have any impact on frame latency?",
+        "created_utc": 1524332164,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does the functional programming paradigm provide any advantages over object oriented programming?",
+        "author": "hruka",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dvkko/does_the_functional_programming_paradigm_provide/",
+        "text": "I've been encouraged to learn a functional language in addition to more popular OOP languages, but the person recommending it did not expand on the reasons.  To my understanding of the paradigms, the practical advantages would be the only reason to learn one -- functional languages aren't lower-level and wouldn't inform my work in OOP, for instance -- but OOP seems on the surface to be strictly superior.",
+        "created_utc": 1524315305,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I can't solve this extremely simple question, \"Construct a logic diagram for the Boolean expression\"",
+        "author": "Invict-",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dtkuo/i_cant_solve_this_extremely_simple_question/",
+        "text": "A little context, I am a high school student studying for IB Computer Science exams. I need to be able to create simple logic diagrams (no more than three inputs) from boolean expressions. \n\nIt's really elementary for any computer scientist but I am a novice. \n\nThe given Boolean expression is \"NOT A OR B AND C\"\n\nI don't even need to know the symbols for the logic gates. I can just use a circle.\n\nThe answer for this question is as follows. https://imgur.com/a/cat6ag3\n\nI don't understand how to interpret the boolean expression. \n\nNOT A OR B AND C.\n\nDo I have to interpret it as \n\nnot (A and B) or C\n\nNot A and (B and C)\n\nhow do I know which logic condition needs to be met first?",
+        "created_utc": 1524285024,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When working with GUIs, is it acceptable to use external plugins for class projects?",
+        "author": "YasuoMainBTW",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dt1eq/when_working_with_guis_is_it_acceptable_to_use/",
+        "text": "I find it extremely tedious to have to figure out the exact dimensions for some of my components. I resorted to using a GUI designer plugin that helps me set up my components much easier, but feel like this might be cheating the system in a way. What are your opinions on this?",
+        "created_utc": 1524278500,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can anyone help me with translating C++ to MIPS? I'm so frustrated :(. I've already written most of the code.",
+        "author": "happytabbycat",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dspj0/can_anyone_help_me_with_translating_c_to_mips_im/",
+        "text": "Please help me :(. It's about functions and stack pointers. I've watched videos about it and read up on code about it, but I'm so confused :(. Thank you.",
+        "created_utc": 1524274756,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anything better than multiple dispatch or typeclasses out there?",
+        "author": "htuhola",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8ds27w/anything_better_than_multiple_dispatch_or/",
+        "text": "Hi,\n\nI have become tired of multiple dispatch (lets not argue about whether it is multiple dispatch, because it's what it is) in Python programming language, and I'd like to replace it with something better.\n\nThe problem is that I haven't really seen anything better being made or understood them being better. I've tried to check from computer algebra systems, but they either have similar issues as there are with multiple dispatch, or they use untyped structures to store their data.\n\nAnother direction that I've checked has been the Haskell and its typeclasses. I think the `a -&gt; a -&gt; a` rule correctly describes algebraic structures, but if you wanted something like int &lt;: rational &lt;: polynomial[rational], you got to make something like:\n\n    data MyPoly = MyInt Int | MyRat Rational | MyPoly Symbol [(Degree, MyPoly)]\n\nAnd then define all the implementations for typeclasses you use. It gets tedious but as an alternative you could write lifts into locations where the arithmetic changes and botch some random function elsewhere that didn't expect you to do that kind of changes.\n\nHaskell approach also depends on inferencing facts about a value by where it is used. This is difficult to implement dynamically.\n\nI've got something thought up, but I end up stuck on reusable and generic algebraic structures. I think that Haskell's approach of making integers and rationals abstract quantities is a good approach, but we would also need abstract algebraic structures that can be used in any context. Though this presents a problem in how you should decide their ordering. Or how to decide the structure if you don't decide the ordering?\n\nIf I have a bag of values `(int, poly[rational], complex[rational])`, I know that I could solve this by selecting `poly` as outmost algebraic structure and lift other values inside it. Repeating the decision process I would eventually end up with `poly[complex[rational]]`. But I really cannot figure out where this information should come from? Also I'm not sure whether the decision is supported by the theory of abstract algebra.\n\nAnd it seems that just solving the lifting problem wouldn't be enough anyway. Some algebraic structures seem to lose properties when you stack them: If you have the `complex[a]` in Cayley-Dickson construction, then you can produce quaternions by `complex[complex[a]]`. That way you lose commutative property on multiplication and maybe some other properties plain complex numbers would have. Stack more and you lose more properties.\n\nThen there is the problem that real number division is not an operation because it's not closed. This could be helped with little use of refinement types if it matters. And eventually it also brings the question what to do if you don't want to evaluate the structure? Should the system allow you to substitute variables and roll up the whole operation tree whenever you want to do so? But what to do after that point?\n\nAnd there's still the original question, is there anything better out there?",
+        "created_utc": 1524267897,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What can i learn or practice, in my summer Vacations.",
+        "author": "XarchelausX",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dpz5z/what_can_i_learn_or_practice_in_my_summer/",
+        "text": "I am currently in First Year B.Tech, studying  Computer Science and Engineering, my vacations are from May \\- July. I have been practicing CP on codechef, Learnt \\- html, css, Js from w3schools.",
+        "created_utc": 1524249929,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best Laptop for Computer Science Undergrad",
+        "author": "Edumacated1980",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8do8kp/best_laptop_for_computer_science_undergrad/",
+        "text": "I finished my associates degree requirements last year at my local community college, and I'm all set to transfer the CSU Sacramento this Fall of 2018 to continue working toward my bachelors as a transfer student. Most of the computer science classes at my community college used Windows based machines in their labs. For most of my time at this school, for my own personal computers I've had a cheapish Windows laptop, and a high-end consumer grade Intel desktop at home, also running Windows. \n\nAs I've gotten more serious about learning programming and computer science, I've personally switched over to using Linux, which I've used almost exclusively for the past year. I've installed Ubuntu derivatives on my desktop and laptop.\n\nMy laptop is getting kind of dated, and I would like to start University with a new one. I'm leaning towards getting a Macbook Pro, because it is a mainstream OS with good support, and I can load it up with ZSH, and all of my Unix based tools that I've grown accustomed to over the past year using Linux. I've also considered buying a higher end Windows laptop, and loading it up with Ubuntu. It seems you tend to get more bang for your buck going the Windows machine route as far as specs go. \n\nI'm wondering if I would be better prepared for University with a Linux laptop or a Macbook? I've heard the the California CSU system is more Linux centric in the computer science departments compared to say my community college. I really want to try a Macbook, mostly because I've never owned one, or really so much as used one in my life. I feel like going into computer science I should have a solid understanding of all of the prominent OS's. \n\nWould I be better prepared showing up to University with a Macbook Pro, or a nice Windows laptop running Linux?",
+        "created_utc": 1524236465,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with homework",
+        "author": "RickyNixon",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dnhnc/help_with_homework/",
+        "text": "Howdy,\n\nAn internet friend of mine is a woman in (Kurdish) Iraq trying to get a degree in Computer Science, and dealing with a general lack of support including a mediocre teacher. I recommended she post to Reddit to get help from y'all, but she was having trouble posting for some reason.\n\nAnyways, here's the question she tried to post:\n\n\"I have an assignment due that I have no idea how to get around. I have zero electronics know how and the teacher provided nothing at all of use. I need to make a watch sized electronic that, upon command would send my gps location to a designated number via SMS. It can't be dependent on a nearby computer or phone. What would I need, is it possible?\"",
+        "created_utc": 1524230269,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Data Analyst/Scientist Skillset",
+        "author": "bunsNT",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dnd7e/data_analystscientist_skillset/",
+        "text": "Hey all,\n\nNot sure if this is the right post but here goes. \n\nLong story short, I've been looking for a non-temp position for the last year and a half. I have my MBA with a specialization in Supply Chain and Analytics. At university, we leaned JMP, SPSS, and Minitab. I've also taken a course in SQL and received a certificate from Google for Google Analytics. I've also taken the Desktop Qualified test for Tableau, though I did not pass. \n\nI have an interview coming up so hopefully this is a moot question but I've noticed a lot of analyst/scientist roles are requiring R or Python. \n\nOther than the SQL course I have no programming experience. How would you recommend someone getting the necessary skills for R and Python to put on a resume, preferably for the least amount of money?\n\nI can provide any additional details as needed. \n\nThank you. ",
+        "created_utc": 1524229195,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hackathon contest",
+        "author": "KostOrv",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dm67x/hackathon_contest/",
+        "text": "Hello everybody... I am about to take part to a hackathon contest at my university.. the theme is \"Data in action\"...\nThe main categories where we should focus are:\n1. Math algorithms\n2. Computing routine optimization\n3. Data management\n4. Continuous I/O stream\n5. UI Design\n6. Maps and location services\nCan you guys give some help and resources to study ?",
+        "created_utc": 1524214700,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Capture the flag help needed",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dm11e/capture_the_flag_help_needed/",
+        "text": "[deleted]",
+        "created_utc": 1524212410,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Next programming language",
+        "author": "JFar2012",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dl13e/next_programming_language/",
+        "text": "Hey everyone!\nSo basically I'm continuing my journey into learning as much as I can about programming and I really want to hone my skills in on a specific programming language for the rest of the year. I know Java (done some Android development), python, and some swift. I was thinking of looking into Kotlin, Go, or just continue with Java, python, or Android. In short, what programming language would be the most beneficial to specialize in at this day and time? Any suggestions would be awesome, thanks!",
+        "created_utc": 1524199656,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Modify PDFQuery to Analyze Credit Reports of Different Lengths?",
+        "author": "gkcity21",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8diynp/modify_pdfquery_to_analyze_credit_reports_of/",
+        "text": "Hello, I am planning on analyzing a large amount of TransUnion credit reports using PDFQuery to scrape the necessary data points off of it. Obviously, some people have more trades, accounts, etc than others so the area of the page the data might be on may differ depending on this. This causes everything on the page of the credit report to shift up/down depending on how many trades, accounts etc there are. Normally PDFQuery uses 4 coordinates to obtain the data inside the given area, but is there a way I could create variable box sizes to account for the variety of locations a given data point could be on the page depending on the number of trades/accounts etc? For example, instead of coordinates for \"Trades\", I could write something that locates \"Trades\" on the page and extends the box coordinates down until it reaches the dashed line below? (See page 4 of PDF for TransUnion report). All help is appreciated.\n\nhttps://www.transunion.com/resources/transunion/doc/compliance-and-legislative-updates/HowToReadCreditReport.pdf",
+        "created_utc": 1524178806,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Black Box Testing",
+        "author": "Prof-",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dif28/black_box_testing/",
+        "text": "I was just wondering if my understanding of black box testing is correct. Essentially if I was to be black box testing a function, I'd only know what the functions purpose was, its paramaters, and what it returned (if anything). So to black box test it I'd throw different paramaters and see if I got the expected results I wanted? For example below I have a method/function that concatinates two char arrays in C and returns the newly formed array. \n    \nchar * concat( const char * s1, const char * s2 )   \n  \nFor my black box tests I could pass either the arrays are empty,  either the arrays are pointing to NULL, both arrays have some number of combo of letters and numbers, etc and then keep track of what happened during those cases?",
+        "created_utc": 1524174123,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Oracle Java Cert: Worth the price of the test?",
+        "author": "reverendsteveii",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8di6nk/oracle_java_cert_worth_the_price_of_the_test/",
+        "text": "I'm a newly-minted graduate, associate's degree in software design and bachelor's in IT security. While I thought I was gonna be hacking for a living, and may still pursue my OffSec cert just for my own fun and education, I just got a job offer doing QA in java. Considering that a developer role was my original intended career path, and QA is a good place to start (paying back my student loans), I'm probably gonna take it, but now I'm wondering where I go from there to increase my employability in that field. I saw that Oracle offers a java certification and was wondering if anyone had any experience with that. The cost of the test is minimal, but I also saw they were charging around $2500 for the test prep, and I hesitate to commit that much more money on top of my loans coming due in June. Have any of you taken the exam? The high level summary seems like things I covered in all my CS classes, and I'd bet I can get a 65% and pass on my first go, but if I'm wrong and it requires really detailed knowledge that's more money down the toilet.\n\nI guess what I'm asking is, is the cert worth it in the first place, would a CS degree have taught me what was on the test well enough to pass, and if not does anyone know of any exam prep that has a better ROI than the prep class Oracle offers? ",
+        "created_utc": 1524172206,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Linear Algebra Book Recommendations",
+        "author": "CENGaverK",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8ddp1e/linear_algebra_book_recommendations/",
+        "text": "Hello, I am an undergraduate student. Last semester, I passed my linear algebra class but I want to be more profound in Linear Algebra. What book do you recommend for self-studying linear algebra?",
+        "created_utc": 1524134391,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the difference between a toy web server and a commercial one?",
+        "author": "Felicia_Svilling",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dda47/what_is_the_difference_between_a_toy_web_server/",
+        "text": "It is pretty easy to write a toy web server (it is just a server replying with text documents on tcp requests), but \"commercial\" web servers like Apache are huge things. What are the major things Apache provides that my toy web server don't?",
+        "created_utc": 1524128690,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "All computer science student we can study online welookups web tutorial and social network site",
+        "author": "aditya5670",
+        "url": "http://www.welookups.com",
+        "text": "",
+        "created_utc": 1524128414,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Phrasing of Major",
+        "author": "_hxdes_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dcad9/phrasing_of_major/",
+        "text": "If I majored in Cognitive Science with a Specialization in Computing, which required me to take a ton of Computer Science classes, is it okay for me to list Cognitive Science &amp; Computer Science  under education or is that technically lying? Our school tells us that computing is a synonym for computer science just a more mathy version, so I'm not sure.",
+        "created_utc": 1524114939,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can I make it so that if a user inputs incorrect information, my program will ask them again without crashing?",
+        "author": "retrocollector420",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8dbyud/how_can_i_make_it_so_that_if_a_user_inputs/",
+        "text": "If I enter a \"length\" under 6, the program infinitely prints \"Password length too short. Please try again.\"   \n\n    if (choice &lt; 5) { \n            System.out.println(\"Password Length (6 or more)\");\n            length = in.nextInt(); \n        }\n       \n        while (length &lt; 6) {\n            System.out.println(\"Password length too short. Please try again.\");\n        }",
+        "created_utc": 1524111243,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for help with a final project on a Concurrent Wait-Free Red Black Tree",
+        "author": "nopokejoke",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d9ik5/looking_for_help_with_a_final_project_on_a/",
+        "text": "My partner and I are struggling with an advanced parallel computing project, and it's almost impossible to find resources or tutors with any clue about the subject. I'd like to hire someone to guide us in our understanding of the main algorithm and two algorithms it depends on. We have the majority of our implementation written, but the remaining details are where it gets difficult.\n\nI can pay for your time, just PM me for the details and what you would ask in compensation.",
+        "created_utc": 1524088303,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Https request over tor",
+        "author": "pearisgreen",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d94b6/https_request_over_tor/",
+        "text": "Hi, i roughly got this c code to send https get requests:\n\n    \n    #include &lt;stdio.h&gt;\n    #include &lt;string.h&gt;\n    #include &lt;openssl/ssl.h&gt;\n    #include &lt;openssl/err.h&gt;\n    #include &lt;openssl/bio.h&gt;\n    \n    int main()\n    {\n        BIO *bio;\n        SSL *ssl;\n        SSL_CTX *ctx;\n    \n        SSL_library_init();\n    \n        ctx = SSL_CTX_new(SSLv23_client_method());\n    \n        if(!ctx)\n            printf(\"error with ctx\\n\");\n    \n        bio = BIO_new_ssl_connect(ctx);\n    \n        BIO_set_conn_hostname(bio, \"www.reddit.com:443\");\n    \n        if(BIO_do_connect(bio) &lt;= 0)\n            printf(\"failed to connect\\n\");\n    \n        char *request = \"GET / HTTP/1.1\\r\\nHost:     \n    www.reddit.com\\r\\n\\r\\n\";\n    \n        printf(\"request: %s\\n\", request);\n    \n        if(BIO_write(bio, request, strlen(request)) &lt;= 0)\n            printf(\"error sending request\\n\");\n    \n    \n        char buffer[1024];\n    \n        int bytes = 0;\n        do\n        {\n            bytes = 0;\n            bytes = BIO_read(bio, buffer, 1023);\n    \n            buffer[bytes] = 0;\n            printf(\"response:\\n%s\\n\", buffer);\n    \n        } while(bytes &gt; 0);\n    \n    \n        BIO_free_all(bio);\n        SSL_CTX_free(ctx);\n    \n        return 0;\n    }\n    \nHow can i send this request over the tor network? I downloaded tor and heard somewhere that u need to point traffic at localhost:9050. Im a little confused as to how i would accomplish this with my program. Where does the https port (443) go and the ip of the server im trying to reach? \nAlso i would like to know if im gonna leak some traceable information like DNS request and how i would go about fixing this.",
+        "created_utc": 1524085136,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can I make a random password generator without assigning ASCII sets to strings or arrays?",
+        "author": "retrocollector420",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d74g8/how_can_i_make_a_random_password_generator/",
+        "text": "I need to do this as part of my APCS course but everything I've seen online says assigning characters sets to strings is the best way to complete this task. I'm at a pretty basic level and the most advanced thing I've worked with is nested loops so I can't imagine the answer is too complicated, I just don't know. \n\nEDIT: This program needs to give the user options about what's included in password they will be generating so please consider that. They are: \n* lowercase letters\n* lowercase and uppercase\n* lowercase, uppercase, and numbers\n* lowercase, uppercase, numbers, and punctuation\n",
+        "created_utc": 1524070086,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I’m looking to get an upgrade on my ram any thoughts?",
+        "author": "maco_deminor",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d6hdj/im_looking_to_get_an_upgrade_on_my_ram_any/",
+        "text": "[removed]",
+        "created_utc": 1524065247,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I produce graphs with guaranteed Hamiltonian Cycles?",
+        "author": "ilovetoprogrum",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d68vl/how_do_i_produce_graphs_with_guaranteed/",
+        "text": "Hi guys. For a piece of coursework for my computational complexity class I need to be able to generate random graphs. I also need to be able to generate random graphs with guaranteed Hamiltonian cycles. That part confuses me because the next part of my coursework is to implement some algorithms to find Hamiltonian cycles. So it almost feels like a good (but sloppy and expensive) way to do it would be to generate a graph, check if it has a cycle and discard if it doesn't but I'm pretty sure that's not what he's getting at. Are there some conditions that I can enforce when generating graphs that guarantee Hamiltonian cycles? ",
+        "created_utc": 1524063467,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Could a doctor’s job be replaced by software since the job is essentially only using facts to diagnose and decide treatment ?",
+        "author": "klithood",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d332z/could_a_doctors_job_be_replaced_by_software_since/",
+        "text": "Certainly I’ll always want human touch in medicine . Nurses job is to care for patient. And doctor is to cure , which a computer could probably do as well if not better ",
+        "created_utc": 1524027146,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Question]Combinatorial optimization for abstract data.",
+        "author": "huskyShad0w",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d2q4y/questioncombinatorial_optimization_for_abstract/",
+        "text": "Hey there!\n\n\nI am currently looking for a better way of counting and storing repeated elements within a set. Currently, the only \"optimal\" way I handle data is enumerate all possible states, search a linked list to find matching states (linked list segregated using the first element of an array as an index,) and, if repeated elements in a set are found, increment the total number of times that state occurs.\n\n\n\nHere is an example: let's say we have a set S = {1, 2, 3}. We want to know how many 3-element subsets we can make using the three elements. Assume elements, when used, are not pulled from S. We know that there are 27 total states that exist:\n\n\n111\n\n112\n\n113\n\n121\n\n...\n\n331\n\n332\n\n333\n\n\n\nNow, we know that there are repeat states that occur. What we can do is: store the first state {1 1 1} in a list and later access it and compare it to the next enumerated state: {1 1 2}. Since {1 1 1} is not similar to {1 1 2}, we add {1 1 2} to the list. Now, state {1 2 1} *IS* similar to {1 1 2}. Therefore, we will *not* add {1 2 1}. Instead, we will increment the number of times {1 1 2} is possible. That means the iterations of {1 1 2} is now 2. We step through all possible 3-element states and compare them to the stored states in our list. Once that is done, we now have a list of all states; this time, we have saved some space and still posses to total number of possible states belonging to S.\n\n\n111-1\n\n112-3\n\n113-3\n\n...\n\n\n332-3\n\n333-1\n\n\nThe total number of states stored is 10 for 27 total states accounted for!\n\n\n\nNow, for such a small problem, this should be easy to implement. However; there remains issues. First, is the size of the problem. For a finite set S, the number of unique elements within a set can be represented as S = {0, 1, 2, ..., N - 1, N}. If the problem asks us to pick M elements from set S, our problem now becomes N^M. For very large N and/or M, we can see that the time and space for computing M states from N elements from S proves to be disastrous simply for the enumeration section of the program! Second, the list we store our \"solved\" states grows as we find new states. This is fine except, once again, we run into both wasted time and space. As we add another node to the list, it takes now k + 1 searches to find any possible matching states...if one exists at all! That means, for states such as 3333, we may take up to 81 tries to find a matching 3333 state. Imagine now, that we must find a 33333333333333333333, a 3^20 worst case search! You and I both know that there remains only one single iteration for that state. The program; however, does not at this point.\n\n\nWhat I am thinking is storing states as vertices of a graph. It would be like a tree, except that a node may possess more than one parent. Using the original S = {1 2 3} pick 3 (3P3) program data, we can write the graph as followed:\n\n\n\n    1--1--2--3\n         |   |    |\n         |   |    B--C--3:F\n         |   A--2:D--3:C\n         1--2:A--3:B\n    2--1--2--3\n         |   |    |\n         |   |    C--E--3:G\n         |   D--2--3:E\n         A--D--C\n     3--1--2--3\n         |   |    |\n         |   |    F--G--3\n         |   C--E--G\n         B--C--F\n\n\n\nWhere a single number represents an elements within a set, a letter represents an address of a node within the graph.\nFor readablility to better understand the graph:\n\n\n111\n\n\n112\n\n113\n\n~~121~~ 112\n\n122\n\n123\n\n~~131~~ 113\n\n~~132~~ 123\n\n133\n\n~~211~~ 112\n\n~~212~~ 122\n\n~~213~~ 123\n\n~~221~~ 122\n\n222\n\n223\n\n~~231~~ 123\n\n~~232~~ 223\n\n233\n\n~~311~~ 113\n\n~~312~~ 123\n\n~~313~~ 133\n\n~~321~~ 123\n\n~~322~~ 223\n\n~~323~~ 233\n\n~~331~~ 331\n\n~~332~~ 332\n\n333\n\n\nQuestions:\n\n\n1.) Is storing data using the graph method the most optimal method? It seems much better than the current enumeration method I was using.\n\n2.) Is there a more preferred method of enumerating all possible states and storing them? Lets say that a problem I am working on must include N = 40 elements with a theoretical upper limit of M = 20 elements. Inserting, storing, searching, and optimizing would take a long time using my method of enumeration. Would using the graph method be better?\n\n3.) Let's say we are to store all 52 unique cards in a 5-card hand state. There are 52C5 = 311875200 total possible end states that we are trying for. What would be the best approach to reducing this number for us to store and search all those possible hands?",
+        "created_utc": 1524023151,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm 24 and I graduated two years ago with a liberal arts degree. How can I start a career in computer science (without going back to school)?",
+        "author": "PORN_AND_FEELINGS",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d1zj9/im_24_and_i_graduated_two_years_ago_with_a/",
+        "text": "I won't go into too much detail as I often tend to do, but basically I was a computer geek in high school and then I mistakenly chose a liberal arts major because my first few years of college were a weird time of my life.\n\nNow I'm graduated working temp office jobs as a spreadsheet drone and I live in envy of all my friends who get to work with computers for a living.\n\nI took an introduction to computer science class (java) my last year of school and also tried learning python by myself but I'm not exactly sure where to pick up again.\n\nHow do I change my career path to computer science? I'm looking for specific languages to start off with, concepts to master, things I could do to build my resume/portfolio, etc.\n\nI know this may seem naive of me since I'm not fluent in any languages but please don't just say \"just start coding.\" I would prefer some more concrete advice.\n\nThanks in advance.\n\nEdit: I would highly prefer to not go back to school. I graduated from a well-renowned state school and I already have enough debt.",
+        "created_utc": 1524015808,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Possible Punishments for Ignoring Syllabus",
+        "author": "_hxdes_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8d0yrr/possible_punishments_for_ignoring_syllabus/",
+        "text": "I'm graduating from a high tier 4-year university in a few months and I'm currently taking a computer science course that restricts us from posting our homework solutions on Github. I want to post mine so that I can showcase some of my coding projects from school that I thought were pretty challenging, since I'm applying to various tech companies and this classwork is directly relevant.\n\nIf I go against their wishes, and post the solutions after I graduate, can I get into trouble? What is the worst that can happen?\n\nI mean the work is my own and I would have earned my degree so I don't see how they can revoke the degree. But they can argue that \"Oh, you were helping people cheat by posting your work\". This is mentioned in my syllabus but I kind of want to go against their wishes and simply post my work.\n\nWould anyone advise for or against this?",
+        "created_utc": 1524006688,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ackermann Function",
+        "author": "Subrixxx",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cy354/ackermann_function/",
+        "text": "The Ackermann Function is a class recursive example in computer science. It is a function that grows very quickly (in its value and the size of its called tree.) It is defined as folows:\n\nA(m,n) = ( n + 1 if m = 0, A(m-1,1) if m &gt; 0 and n = 0, A(m - 1, A(m,n-1)) if m &gt; 0 and n &gt; 0)\n\nComplete the following program to complete the Ackermann Function:\n\nRecursion.java:\n\nimport java.util.Scanner;\n\n\n\nclass Recursion {\n\n\n\n    public static void main(String args[]) {\n\nint num1, num2;\n\nlong result = 0;\n\nString aWord;\n\nScanner scan = new Scanner(System.in);\n\n\n\nSystem.out.print(\"Enter two integers for testing Ackermann function: \");\n\nnum1 = scan.nextInt();\n\nnum2 = scan.nextInt();\n\nresult = Ackermann (num1,num2);\n\nSystem.out.println(\"Ackermann(\" + num1+\", \" + num2 + \") = \" + result);\n\nif (result &lt; 0){\n\nSystem.out.println(\"The returning result (-999999) is undefined from the Ackermann function\");\n\nSystem.out.println(\"due to invalid inputs. The two input integers must both be positive numbers!\\n\");\n\n}\n\nSystem.out.print(\"Enter the number of people for testing handshakes function: \");\n\nnum1 = scan.nextInt();\n\nSystem.out.println(\"handshakes(\" + num1 + \") = \" + handshakes(num1));\n\n\n\n  } //method main\n\n\n\n\n\n    //Complete the following two recursive methods\n\n\n\n\n\n    public static long Ackermann( long m,  long n)\n\n    { //The compiler may keep telling you the error: \"Add return statement or Missing return statement\",\n\n      //you should add \"else return -999999;\" at the end of your nested if-then-else statement\n\n      // to cover all possible cases to make the compiler happy.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    } // method Ackermann\n\n\n\npublic static long handshakes (int n){\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n} //method handshakes\n\n\n\n}//class Recursion\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "created_utc": 1523984197,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is a logic frame and a server tick the same thing in theory?",
+        "author": "flaming_dragonn",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cwxgl/is_a_logic_frame_and_a_server_tick_the_same_thing/",
+        "text": "Curious since I got into a little debate over this subject. I was talking to someone about dota 2 and how the Shadow Fiend was able to kill the Gyrocopter before he BKB'd (and BKBs are instant and the SF ult has to be timed)  which meant he was able to time his ultimate perfectly with the servertick or was frame-perfect (from the perspective of the game server). \n\nLink to video: https://clips.twitch.tv/PoliteAltruisticEggnogCeilingCat\n\nMy questions is: Are a tick and a logic frame the same thing or similar at all? \n\nDefinition of frame: a basic structure that underlies or supports a system, concept, or text.\n\nSo a logic frame would be the logic that makes up  a basic structure that underlies or supports a system, concept, or text, so in theory, this would encompass the server-tick since it is talking about ALL of the backend processes instead of just the server updating the game-state.\n\nWhat do you think? Did I just make-up logic frame?  It makes sense to me. I feel like it's one of these things where I'm technically not wrong, but the 'proper' name would be 'server tick'. ",
+        "created_utc": 1523975291,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you become a computer scientist?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cw9er/how_do_you_become_a_computer_scientist/",
+        "text": "[deleted]",
+        "created_utc": 1523969390,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's an introductory-intermediate project idea for computer vision?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8csmfp/whats_an_introductoryintermediate_project_idea/",
+        "text": "[deleted]",
+        "created_utc": 1523926485,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Questions about deciding undergrad/grad schools for CS (international student)",
+        "author": "minjae629",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8crtpt/questions_about_deciding_undergradgrad_schools/",
+        "text": "I got into Umass Amherst(CS), SUNY Stony Brook(CS), and Purdue-West Lafayette(Cyber Security). \n*Purdue is 10k more expensive than other two schools  \n\n I am not sure which field(like cyber security, Data Science, and programming) I want to study yet but I'm quite interested in cyber security. Also, I am thinking about doing 5 year MS/BS program or skipping Masters and going to Ph.D. I was searching three school's curriculum but it looks quite similar because I don't know that deep about CS. \n\nIn addition, I am an international student(Asian) and heard it's been somewhat difficult to even in CS field to get a job only with BS or MS. Unfortunately, I will not be able to pay for Masters so I am thinking about skipping Masters and going to Ph.D. I know I am planning to further but I want to go same school for undergrad and grad.\n \n\nIn a nutshell, I want to get a job as soon as possible after I graduate school. \n\n\nThank you everyone for your help!\n\n",
+        "created_utc": 1523919259,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anybody in the computer science field who can help!",
+        "author": "xlassified",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8crn0v/anybody_in_the_computer_science_field_who_can_help/",
+        "text": "Hello! I am currently a high school student studying in Ontario, Canada and am looking for help on my computer science project. My assignment is to get in contact with someone in the computer science field and to ask the following questions:\n\n1. What does a typical day look like for you?\n2. How does your field of work impact the environment?\n3. What schooling did you complete in order to get your job? If anyone in the computer science field could answer these questions I would appreciate it. Thank you in advance.",
+        "created_utc": 1523917660,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hi r/AskComputerScience! We (University of Waterloo Researchers) need your help learning about how multidisciplinary STEM teams assess expertise.",
+        "author": "watscicomm",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cqc9z/hi_raskcomputerscience_we_university_of_waterloo/",
+        "text": "We’re looking for researchers involved in multidisciplinary Science, Technology, Engineering, and Math (STEM) collaborations to help us understand how you figure out if someone is an expert. Some examples of such teams include computer scientists working with biologists, civil engineers collaborating with health professionals in disaster preparedness, or the kind of work you’d find in NSF IGERT programs. Our research is part of a project called “Networked Expertise in Multidisciplinary STEM Collaboration,” that is being conducted by Dr. Ashley Rose Mehlenbacher at the University of Waterloo in Canada. We want to know how you identify experts outside your own area of research so we can better prepare students for working across disciplines. All that participants need to do is fill out an online survey that takes, on average, about 8 minutes (https://uwaterloo.ca1.qualtrics.com/jfe/form/SV_ehYHYHT74LebscB), and then have a brief interview with one of the members of the Networked Expertise team (which can take place via Skype/Hangouts/teleconference). This study has been reviewed and received ethics clearance through a University of Waterloo Research Ethics Committee. Please feel free to share this link with anyone you think has something important to say about assessing expertise in multidisciplinary STEM teams!",
+        "created_utc": 1523907429,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "does anyone has answer for this case study ?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cnyf1/does_anyone_has_answer_for_this_case_study/",
+        "text": "[deleted]",
+        "created_utc": 1523889309,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If two different programs do the exact same thing, do they compile to the same machine code?",
+        "author": "Baalinooo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cnw5r/if_two_different_programs_do_the_exact_same_thing/",
+        "text": "Imagine two programs --- for instance, written in C. Both do the exact same thing. However, they are different. For example, one uses `if`, `else if`, `else` statements. The other instead uses a `switch`. But beside those different choices, they do the exact same thing. Furthermore, neither program contains comments nor has superfluous code.\n\nWould those two programs compile to the same machine code? Always? Maybe? Never?\n\nThank you.",
+        "created_utc": 1523888756,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to run a program but be sure no one has seen the result?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cnsso/is_it_possible_to_run_a_program_but_be_sure_no/",
+        "text": "[deleted]",
+        "created_utc": 1523887957,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to pursue research in General Artificial Intelligence?",
+        "author": "Aayush_17",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cmadm/how_to_pursue_research_in_general_artificial/",
+        "text": "About me: High school student Going to pursue Undergrad in Canada\n\nI like coding and have created a few projects to date from self-learning. I'm interested in pursuing research in the vast field of Artificial Intelligence, but I don't know how I can pursue it. Most of the q/a on the web are learning ML/DL and then applying those concepts in a specific field for your job?\n\nWhat can I do to pursue research, mainly in General AI? I'm not an expert so please overlook any mistakes. If you need any more information, please ask.",
+        "created_utc": 1523871031,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to transfer files of my corporate laptop without it being flagged? and if so, how?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8clqr6/is_it_possible_to_transfer_files_of_my_corporate/",
+        "text": "[deleted]",
+        "created_utc": 1523862878,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does one maintain focus with programming?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8cfy0v/how_does_one_maintain_focus_with_programming/",
+        "text": "[deleted]",
+        "created_utc": 1523807123,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you think low level languages be obsolete in the future?",
+        "author": "peoplearesleeping",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8ca0sv/do_you_think_low_level_languages_be_obsolete_in/",
+        "text": "As I understand, the main advantage of using a low-level language like C is that it is 'close to machine language' and uses less memory and CPU resources. That makes sense.\n\nAs computer hardware moves forward faster and faster, will we reach a point where the benefit afforded by these languages becomes irrelevant? Say in 10 years, computers have on average 512 GB of memory, and 128 bit architectures w/ 32 core CPUs...will higher level languages take over completely? \n\nWould be nice to hear what you guys think.\n",
+        "created_utc": 1523735863,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for best practices for online privacy and security",
+        "author": "Eternitim",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c9syv/looking_for_best_practices_for_online_privacy_and/",
+        "text": "I am a bit paranoid about security threats to banking, identity, credit, and the like. I am not concerned about government eavesdropping, as my boring life would put any G-man to sleep. I've listed steps that I've taken below, but I am curious if these are effective and sufficient.\n\n- Router: purchased a Cisco router and make sure the firmware is regularly updated (my understanding is that most commercial routers sold at places like Best Buy are awful about security), and have an absurdly strong password for it\n\n- DNS resolver: I switched to Cloudflare 1.1.1.1\n\n- VPN: I found a VPN provider that I trust (referred by a guy who knows the founders and does web development for mid-sized companies).\n\n- Browser: I use MS Edge, with DuckDuckGo as my home page and default search tool. Cookies, cache, history, etc clear when I exit the browser; flash is disabled; pop-ups blocked; do not track requests enabled; open in apps disabled; do not save password fields; syncing turned off; etc.\n\n- Security software: I use Windows Defender, because my understanding is that McAfee, Norton, et al are not significantly better.\n\n- Password manager: Lastpass; never reuse a password.\n\n- Smartphone: iPhone, update apps each morning and iOS when updates are released; use passphrase and set phone to wipe data if wrong passphrase is used too many times; always use VPN; location services disabled; only list first names in my contacts (no emails, job titles, employers, etc); only use trusted apps; limit ad tracking; Siri disabled; do not use iCloud; do not sync photos or files with any cloud storage\n\n- All devices: never sync accounts between devices\n\n- Email: use separate accounts for (1) random accounts like restaurant customer loyalty programs; (2) work; (3) banking and bills; (4) close family and friends; (5) social media. Disable HTML. Use caution with clicking links.\n\n- Online shopping and bill pay: I use virtual credit cards only; if a bill cannot be paid with a virtual card (like a utility bill) then I maintain a separate bank account that I maintain a minimal amount of money in. My concern is that companies will get hacked and my bank account will be compromised.\n\n- General practices: never login to a site using OAuth and a social media account (always use email and password); logout of websites when not using them (news sites, social media, email); never post photos of my face; use a false birthday when a site doesn't have a legal need for this information; do not use face recognition or finger prints in lieu of a password; 2-factor authentication on all sites and apps; never use Cortana or Siri; not buying an Alexa; never use voice search\n\nThese are my tech-focused measures. Obviously, for non-tech measures I've put freezes on my credit records, shred mail with sensitive info (and request removal from mailing lists), etc.",
+        "created_utc": 1523733841,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best way to organize large collection of texts?",
+        "author": "Menesio",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c74lm/best_way_to_organize_large_collection_of_texts/",
+        "text": "Hi folks!\n\nYears ago I have started a journal. Back then I didn't know it would end up being so huge, so I didn't plan very well the strcucture of it. Now it is inside a huge html file with a messy structure which has grown to be really unmanageable.\nI'm looking for a way to make this mess more structured, organized and exportable.\nEvery \"entry\" is composed by: title, content (the entry itself) and some extra infos (date, notes). The journal is divided in sections.\nThe only formatting I do is italics sometimes.\n\nWhat is the best way to keep this structure in place? XML? Tex? Html itself? The problem is that I would like to be able to export this information easily into LATEX and HTML files, or pdf, or whatever; in short I'd like to have every part of this file under control, so I can manipulate it easily (so, if one day I decide to switch system, it won't be as hard as it is now).\nWhat is the best way to go?\n\nAlso, if I may ask, is there anyway I can translate this large collection of file into this new format without going crazy? The html has a little structure, even if ugly.\n\nThanks you!\n\nEDIT: various corrections",
+        "created_utc": 1523707424,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some things to do before starting college?",
+        "author": "theRomanEmpire2710",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c6m8k/what_are_some_things_to_do_before_starting_college/",
+        "text": "I am going to start college this September. What are some things to do in the current summer that'll be useful later?",
+        "created_utc": 1523699637,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Describe the partial function computed by a sample program?",
+        "author": "ALT173869",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c46qe/describe_the_partial_function_computed_by_a/",
+        "text": " I'm completely lost in the class and any help on how to get started would be great.\nhttps://imgur.com/a/De4rL",
+        "created_utc": 1523668028,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does anyone use a slow motion video player for PC that has the overlay boxes with frame counter and video time? with adjustable frame rates for playback?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c3ktv/does_anyone_use_a_slow_motion_video_player_for_pc/",
+        "text": "[deleted]",
+        "created_utc": 1523662035,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Seeking advice: best friend/lab partner can't program and relied on me too much",
+        "author": "FatherWeebles",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c2rpw/seeking_advice_best_friendlab_partner_cant/",
+        "text": "TLDR: Best friend is dependable \\(showing up for meetings\\) and enjoyable to be around but he doesn't add much value for homework/lab assignments.  How would you approach grouping up with said friend in the future?\n\nA few months ago, my best friend and I joined forces to tackle some pretty challenging, but doable, programming assignments.  At this point we were halfway through the first year.  Anyways, once we began to pair program it became pretty clear that his brain goes into meltdown mode if the assignment needs anything more complex than a for\\-loop.  If a problem stumped us, it was me who took out the pen and paper to draw things out to find logic errors.  After a week or two he slowly began backing away from the programming assignments, despite my patience and continuing to let him take the wheel.  He'd sit there watching me program, but was of no help whenever I got stumped by the code or whenever I asked for his thoughts on the wording in the assignment itself.  Eventually I was the only one working on those assignments, which made my life hella stressful.  I brought it up midway through the class and said he can't rely on me as much as he has.  He agreed and said he has issues thinking programmatically.  But things continued to worsen.  I brought it up again near the end of the class and he apologized, which saved our friendship.\n\nThe thing is, I'm noticing the same tell\\-tale signs in another class now, but this time it's more of a math\\-related course: which he should excel at since he's a former engineer.  He adds some value by making assignments look nice, but that's it mostly.  Fortunately there's a third member of the group who's pretty sharp, so there's someone who I can lean on this time if need be.\n\nLet it be known that I'm not a genius.  I'd consider myself to be about average in my cohort.  I'm friends with several other people who found stability by finding a few others who are dependable, think critically and also fun to be around.  My friend fits the first and the last.\n\nAny advice on how to approach future classes that have labs?  I'm worried about what'll happen the next time there's a hard class where I don't have anyone else to lean on. ",
+        "created_utc": 1523654822,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Statistics on Windows and Mac Store usage?",
+        "author": "pseudometapseudo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c2ns3/statistics_on_windows_and_mac_store_usage/",
+        "text": "Hi,\ndoes anyone by any chance know statistics on how often users use the Windows Store to download software in comparison to the frequency they download software directly from a website? (and the same for the Mac App Store) Essentially I'm interested in statistics concerning the usage of App Stores on desktop computers. I assume that the usage of App Stores is far lower for desktop software than smartphone software, but I could not find any numbers on that.",
+        "created_utc": 1523653871,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Mass Copying of Emails",
+        "author": "NumbersandPolitics",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c1tr4/mass_copying_of_emails/",
+        "text": "Hello,\n\nI was wondering if any of you can help me with the following task:\n-Select 4000+ emails from my inbox\n-Extract them to PDF\n-Automatically name each of them with the date at which they were received.\n\nThank you!",
+        "created_utc": 1523647211,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can blockchain be hacked?",
+        "author": "pretysmitty",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c0c15/can_blockchain_be_hacked/",
+        "text": "Disclaimer: I know nothing about comp sci\n\n\nFacebook is one among many large companies that have been the victim of hackers. It seems that if big data/large databases of private info are ever going to be a useful public tool (predicting diseases w/ health records), then cybersecurity is paramount.\n\n\nAre all computer systems fundamentally vulnerable, or are massive blockchain systems virtually impossible to hack? If so, why don’t all companies use blockchain to secure their data?",
+        "created_utc": 1523635681,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CS Major looking for side projects",
+        "author": "_Kristophus_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8c04x7/cs_major_looking_for_side_projects/",
+        "text": "Currently I'm a Compsci major that is about to finish up a data structures class, and I'm looking for ways to keep myself busy during the summer. What are some good ideas for side projects to keep my c++ Programming up to snuff? ",
+        "created_utc": 1523634179,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Please Help me answer this question",
+        "author": "soloagent98",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bxey3/please_help_me_answer_this_question/",
+        "text": "First digit determines both the sex and birth century:\n\n1 and 2 - male and female (correspondingly) born in 19th century;\n3 and 4 - male and female (correspondingly) born in 20th century;\n5 and 6 - male and female (correspondingly) born in 21st century.\nSecond and third digits are the last two digits of actual year of birth. Fourth and fifth digits determine the actual month of birth, sixth and seventh digits determine the actual day in month of birth. Eight to tenth digits is the three-digit queue number given to person. Eleventh digit is actually a checksum, which was calculated from previous ten digits using the appropriate algorithm.\n\nOur aim is to calculate the cryptographic hashes from all potential current inhabitants of Estonia. Cryptographic hashes are calculated by a certain given algorithm and a program which implements it. We tested that the calculating of one hash lasts exactly 1 millisecond. Length of each hash is 256 bits, for storing of each personal identification number itself we need additionally 11 bytes (88 bits).\n\nTasks:\n\nTry to evaluate, which disk amount we need for storing of personal identification codes with their hashes for all potential current inhabitants of Estonia. \nTry to evaluate, how much time it takes to calculate all hashes of all potential current inhabitants of Estonia.",
+        "created_utc": 1523605066,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What to look for in a CS degree?",
+        "author": "Apejann",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bxc2q/what_to_look_for_in_a_cs_degree/",
+        "text": "I have decided I'm going to be majoring in CS, and I'm currently looking at universities all over the world. However, I find myself confused as to what to look for in a CS program, what courses should be offered, what I should definitely learn, etc. I found [this](https://harbour.space/courses/computer-science?curriculum-Bachelor) and thought it was very complete, but I'm certain I must be missing something. \n\nAnyway, my question is basically the title, and if you could give your opinion on the linked program, I would be very grateful.",
+        "created_utc": 1523603963,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Computer science, Computer engineering, or Electrical engineer?",
+        "author": "cartmichael",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bvo8o/computer_science_computer_engineering_or/",
+        "text": "What degree has the better outlook in the future with good pay, safe from automation, and outsourcing?",
+        "created_utc": 1523584733,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CS or IT? Which makes more sense for me?",
+        "author": "Joeshea35",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8butgj/cs_or_it_which_makes_more_sense_for_me/",
+        "text": "I'm finishing up Calculus in the summer and want to pick one of these two options to major in. I hear from a lot of people that CS is very hard and I've done some programming in the past but its been awhile. \n\nI was thinking IT but I've heard people say that it's not as rewarding and I should focus on CS. If the programming aspect is what I like does it make more sense to Major in IT and practice programming on the side and build a portfolio? \n\nThanks!",
+        "created_utc": 1523576836,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How good is this 4 year study plan?",
+        "author": "Apejann",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8btwht/how_good_is_this_4_year_study_plan/",
+        "text": "I want to major in computer science and I'm looking at different universities and their offered courses, degrees, etc. I wanted to know how rigorous/complete/interesting/... you believe the following 4 year course sequence is (the degree is BS in CS in Real-Time Interactive Simulation):\n\n\nSemester 1\n\n* Linear Algebra and Geometry\n* Computer Environment\n* High-level Programming I: The C Programming Language\n* Composition\n* Project Introduction\n\nSemester 2\n\n* Calculus and Analytic Geometry I or Vector Calculus I\n* High-level Programming II: The C++ Programming Language\n* Game Implementation Techniques\n* Interpersonal and Work Communication\n* Project I\n\nSemester 3\n\n* Calculus and Analytic Geometry II or Vector Calculus II\n* Operating Systems I: Man-Machine Interface\n* Computer Graphics I\n* Advanced C/C++\n* Project II\n\nSemester 4\n\n* Linear Algebra\n* Motion Dynamics\n* Motion Dynamics Lab\n* Computer Graphics II\n* Data Structures\n* Project II\n\nSemester 5\n\n* Discrete Mathematics\n* Waves, Optics, and Thermodynamics\n* Computer Networks I: Interprocess Communication\n* Advanced Computer Graphics I\n* Algorithm Analysis\n* Project III\n\nSemester 6\n\n* Any MAT course numbered 200 or higher\n* Low-level Programming\n* Advanced Computer Graphics II\n* Any 200-level or higher CS course not required\n* 3D Computer Animation Production I\n* Project III\n\nSemester 7\n\n* Any MAT course numbered 200 or higher\n* Any CS course numbered 200 or higher\n* Any ENG course of three credits or more\n* Select one: ANI 125, ART 105, FLM 115, FLM 151, FLM 152, or MUS 115\n* Project III\n\nSemester 8\n\n* Any ENG course of three credits or more\n* Any CS course numbered 200 or higher\n* Any CS course numbered 200 or higher\n* One humanities &amp; social science elective from any three-credit HIS, PSY, or SOS courses\n* Career Search Preparation: Materials, Logistics, and Communication\n* Project IV\n\nMAT is for mathematics, ENG is for English and CS is for Computer Science (duh).",
+        "created_utc": 1523568989,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yet Another \"Is CS for Me?\" post",
+        "author": "thmrch",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bstt6/yet_another_is_cs_for_me_post/",
+        "text": "Hello Computer Scientists of Reddit,\n\nI am currently studying audio engineering at college, but am considering switching my major to CS.  One of the main reasons being it can be difficult to find work as an audio engineer, depending on where you are from.  I am a talented musician, and I have strong artistic skills.  I have heard CS can be rewarding in the same way creating art or music can be.  Web/app design would obviously be an example of mending artistic skills with CS skills, are there many other jobs that combine art with CS?  The highest math I got to in high school was Algebra II (I had enough credits to stop taking math after A2), but I am smart and consider myself decent at logical thinking.  Thank you for your time!",
+        "created_utc": 1523560674,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Entry(RESET_HANDLER) in linker script",
+        "author": "jollytopper",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bquuw/entryreset_handler_in_linker_script/",
+        "text": "What is happening behind the scenes? I understand that this sets the entry point of the code to the Reset_Handler, but how does it do that? How is it reflected in the final linked binary?",
+        "created_utc": 1523545575,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are the best technologies for academics? (for example: Github, Jupyter Notebook, Google Scholar, Mendeley, etc.)",
+        "author": "TheSwitchBlade",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8boohe/what_are_the_best_technologies_for_academics_for/",
+        "text": "The examples I have given are\n\n**Github**: for uploading code and making it publicly available, thereby making science reproducible \n\n**Jupyter Notebook**: for cleanly writing code that other people can easily read and step through \n\n**Google Scholar**: a paper search engine which can also serve as a public profile for one's own publications \n\n**Mendeley**: a citation manager for one's own academic library \n\nWhat else is out there that makes life easier/better and makes science overall better? ",
+        "created_utc": 1523522581,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TIL Instead of a jail sentence, a Texas man agreed to be sentenced to sleep in an outdoors doghouse for 30 consecutive nights, as a punishment for abusing his son.",
+        "author": "SneakingNinjaCat",
+        "url": "https://www.chron.com/news/bizarre/article/Vidor-man-sentenced-to-30-days-in-doghouse-2106599.php",
+        "text": "",
+        "created_utc": 1523474758,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where to learn about OS stuff",
+        "author": "peoplearesleeping",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bjsy1/where_to_learn_about_os_stuff/",
+        "text": "I am looking to learn about things like windows registry/registry keys, DLLs, different file types, things of that nature. I went and looked at Intro to Operating Systems on Udacity and it was not really what I was looking for...I want more concrete functional information rather than theory. Does anybody know of any courses/videos/ resources that could teach me things like I listed? \n\nThanks in advance.\n",
+        "created_utc": 1523474521,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Should I stick to computer science?",
+        "author": "GalacticLawnmower",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bixxn/should_i_stick_to_computer_science/",
+        "text": "I thought it might be a good idea to get a opinion from actual computer scientist rather then my gut, my gut is saying no. I just finished my first year as a computer science major, and I realized how little passion for it as a subject, my real passion is in art but there's no money in that.... Should I stick it out and keep moving or should I look else where",
+        "created_utc": 1523468100,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does programming language like swift and objective c work? And can you code without them?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bik16/how_does_programming_language_like_swift_and/",
+        "text": "[deleted]",
+        "created_utc": 1523465186,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Computer science - college",
+        "author": "KoryDave",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bfsor/computer_science_college/",
+        "text": "Hello everyone, I consider to study computer science. Would you be so kind and tell me some tips or on what should I focus? I come from the Czech republic in Europe and I am looking for the best schools where I can study it. Do you know any? Did anyone go to the TU Delft in the Netherlands? What are your opinions? I would also like to know about the employment of this field (in my point of view I wont have any trouble to find a job, but maybe I'm mistaken).\n\nThank you for your responce in advance (you can PM me if you want...I am very open to have conversation about this topic in which I am very insterested.",
+        "created_utc": 1523439512,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice: 28 years old with only a BFA, should I get an MS in comp-sci or comp-eng?",
+        "author": "jimmygray_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8behgm/advice_28_years_old_with_only_a_bfa_should_i_get/",
+        "text": "**Background**\n\nI'm a 28 (29 on 4/24) year old based in Michigan making around ~60k annually. I'm married and have 2 young children (one is about 2 years old, and one is about 4 years old). I acquired a bachelor's degree in fine art (BFA) in 2011, majoring in Illustration. I mainly got this degree since I was a heavily unmotivated student in high school and mainly just showed some aptitude for art. I was a lousy kid, too focused on being in a band, hanging out with friends, and those sorts of things.\n\nHowever, I've been working full time as a web developer for the past 5 years. While working at this current job, I sort of found a new appreciation and love for programming / coding / hardware tinkering. I've also done several programming/development and personal projects on the side while working full time. [I also had the awesome opportunity of doing an artist-in-residence program, creating art in virtual reality, with Google's Tilt Brush team in 2016.](https://www.tiltbrush.com/air/artists/jimmy-gray/)\n\nSince around early 2015, I've been pretty consumed with side projects that involved various hardware / consumer product invention ideas that I've prototyped. None have been brought to market, but I have had some press written about some of these projects (like [here](https://www.roadtovr.com/vive-tracker-used-create-pressure-sensitive-photoshop-stylus-vr/), and [here](https://uploadvr.com/homemade-knuckles-controller-open-sourced/)). I have been heavily focused on projects such as these, hoping that I could maybe kick start a successful business based on one or more of them, and as a result sort of have a shortcut path to a greater income.\n\nLately, though, I've been realizing more and more, as a father and someone with less of a technical foundation, that I think it'd be wiser to try and get a STEM-related graduate degree (specifically in computer science, software engineering, or computer engineering) so that I could have more upward mobility, and a solid foundation from a career and financial perspective. I'm concerned that my current job is a dead end and that I can only get so far with my current background and expertise. I'm concerned about my kids' futures and my ability to provide for them. My dream job is working somewhere like a Google, working on cutting edge software / computer science stuff and working on cutting edge embedded programming for new hardware products.\n\n**Now what?**\n\nSo I was thinking about going to a really good graduate school in Michigan, like University of Michigan (Ann Arbor). UofM Ann Arbor has a high rated graduate computer science program. However, the acceptance rate is very competitive.\n\nSome of the problems I see are as follows:\n\n* My cumulative GPA at this point is a 3.0, and I'm not sure about my other scores (SAT, ACT), since they were so long ago and I haven't kept these records.\n* I'd have to go part-time since my family and I rely on my income, so I'm thinking 2 courses per semester would be manageable.\n* I'd have to take basic mathematics courses to probably even qualify for the program. I plan on taking these basic/preliminary courses at a local community college this year.\n\nWith my background, too, I'm not sure how I would attempt to recover in order to get accepted, and this is why I'm seeking advice.\n\n* Is there anyway I could realistically manage to get my GPA high enough in order to stand a chance at getting accepted?\n* Should I really target a less competitive graduate school? Would a less competitive school really be worth the money and time?\n\nThe University of Michigan Dearborn campus seems way less competitive and more affordable, but doesn't rank as high from what I can tell.\n\nI recently went to a college advisor for a local college (Wayne State University) and the advisor indicated that I could do an accelerated bachelor's and master's program part-time within 4 years. So I'd be around 34 when I were to graduate probably, and that seems to me to be around as far as I'd want to push things in terms of graduating later in age.\n\nThanks so much for your time in advance!",
+        "created_utc": 1523421782,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to deobfuscate Python code?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bcdv4/how_to_deobfuscate_python_code/",
+        "text": "[deleted]",
+        "created_utc": 1523401983,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Programs using system resources when not running?",
+        "author": "nickman1997",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8bbp8i/programs_using_system_resources_when_not_running/",
+        "text": "Was recently at a computer store to have a laptop repaired. The salesman said to me during our conversation that having a large number of programs installed on the computer could slow it down, even if those programs weren't running. Is this true, or was the guy full of it? Also, if it is true, can you explain why that's the case?\n\nEdit: I forgot to mention that the guy said that it can affect performance even if it's disabled on startup.",
+        "created_utc": 1523396570,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Program that can solve an algorithm by the roads on a map, to discover the probability of a certain location?",
+        "author": "CrikeyWhataRippa",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b9bid/program_that_can_solve_an_algorithm_by_the_roads/",
+        "text": "Is there any programs out there that can solve the following type of algorithm? (Posted as gyazo image at the bottom)\n\n\nImagine a treasure hunt, there are several locations the treasure can be, the straight roads lead to the clue. By drawing a line to extend them, the lines begin to overlap, the more lines that overlap over a small area (See zone 1 on image), constitutes a value which has a higher probability percentage over an area that has less lines overlapping each other (See zone 2 on image) therefore making it more likely to be the area containing the treasure.\n\n\nMy Question is, are there any programs that can already calculate this simply by uploading an image of a map? Or how easy would it be to create something like this with no programming knowledge whatsoever?\n\n\nI am working on a project &amp; this would make things a whole lot easier.\n\n\nThe algorithm in question: https://gyazo.com/f735d8dc22b6b92f91b54f5bd9de402d (This is just a quick example to help explain exactly what I mean)\n\n\nI'm unsure if there's somewhere more suitable to post this question, any suggestions please let me know.",
+        "created_utc": 1523380120,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is writing code for GPU so low-level?",
+        "author": "BagelKing",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b8zh6/why_is_writing_code_for_gpu_so_lowlevel/",
+        "text": "I mean, with all the binding buffers to specific indices and all that. Couldn't some of the GPU's massive power be devoted to running something at least as accessible as C++? I know there are libraries and things for accessing GL and such through C++ and lots of other languages, but as far as I know, all of those libraries still require all the same legwork, just done via a language-specific API.\n\nWhy can't I just write a program in Java, or C++, or Python, or Lua, or something like that entirely on the GPU? Or can I and I have no idea?\n\n**Edit:** Thank you all for the wonderful responses. The topic is a lot clearer now. The overall impression I'm getting is that GPU's are not just large CPU's, but rather large parallel floating point number crunchers.\n\nI had avoided OpenCL in the past because I assumed it would be fairly similar to OpenGL. I watched a few tutorial videos, and while it still seems a *little* stuffy for me, I guess that's to be expected when shuffling processors.",
+        "created_utc": 1523377871,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Measuring time spent in programming",
+        "author": "shailesh27",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b5sly/measuring_time_spent_in_programming/",
+        "text": "Is there any linux app or service which can help me calculate the time I spend on an ide (intellij)? I want to measure the amount of time I actually spend on coding vs time I waste away on the browser and other applications.",
+        "created_utc": 1523344787,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do some websites separate username and password on two different forms?",
+        "author": "Skibbs01",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b4gi3/why_do_some_websites_separate_username_and/",
+        "text": "I noticed that both GMail and Amazon have this, while a lot of other websites have both inputs on the same form. What is the benefit of this?\n\nI see that if you enter a username that doesn't exist, it alerts you of this immediately before you even have a chance to enter your password. I've heard that this is a bad practice because it exposes to an attacker that they at least have half the required information correct (although I'm not sure how useful that is when someone can check by making an account with that username).\n\nDoesn't this also mean two queries to the database? Or would they get the password information when the user initially enters the username, and cache it somehow until the user enters the password?",
+        "created_utc": 1523329430,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Not sure where to go with my Computer Science degree",
+        "author": "AntipersonnelFox",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b3m8d/not_sure_where_to_go_with_my_computer_science/",
+        "text": "Hi everyone. I hope I can get a little insight to my dilemma, maybe someone out there went thru the same feelings or is going thru it. This is actually really hard and embarrassing for me to talk about but I have no idea what to do with my CS Degree I will be obtaining this May 2018. A little background, I go to a small Liberal arts college and to be honest going into this college I was not intending to major in CS. I originally was following a Pre-Med Path with a major in Psychology but after a year and thinking \"I dont want to go to Med School anymore\" I decided to go into CS because I've always liked computers and as a kid growing up I was always the tech guy in my household. If i originally wanted to follow the CS path from the beginning I would not have gone to the school I go to right now, because our CS Program is very small and the courses they offer vary from semester to semester so you can't really \"specialize\" or \"focus\" on something. But i didnt feel like going through the ordeal of transferring so i stuck through with it. I never had the opportunity to do internships ( I did apply to some, not as many as I should have, but the ones i tried to apply i didnt get in), I feel like I dont really remember much of what I was taught and I'd have to go back and really review in order to refresh my memory, I think I am terrible when I have to have a tech conversation (its just very difficult for me) and I'm probably an average programmer. I mean I did survive the major while I saw my friends drop it, so that must mean something right? I'm just lost. Any advice on what my next step could possibly be? Thank you for taking the time to read my post, I appreciate it. :) ",
+        "created_utc": 1523321749,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question on getting into Artificial Intelligence",
+        "author": "thomas_stearns",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b37rs/question_on_getting_into_artificial_intelligence/",
+        "text": "I'm a 22 year old interested in getting into machine learning and artificial intelligence on either an industry, R&amp;D department level or in academia. \n\nI'm currently enrolled in a cybersecurity boot camp and when finished will have a Security+ and most likely be placed in a company doing analysis, pentesting, or blue team. I've previously worked as a free lance web developer, but I'd gauge my proficiency at a junior dev level. \n\nThe crucial information here: I don't have a bachelor's (or any other) degree. I went to school for mathematics but didn't graduate. \n\nIf it helps, I'd like to focus on AI and machine learning from a mostly security perspective at first, e.g. hunting threats, recognizing threatening or malicious behavior on the network, and attacking networks to find vulnerabilities and even zero-days. \n\nI'm asking because every single person I've asked about getting into the subject is either in the late stages of getting an advanced degree or is in academia and research having already gotten one. \n\nIf I'm working full-time and going to school (what I'm doing now) it just seems like it would take FOREVER to do what I want to do. If it's truly the only option I would do it anyway, but I'd love to hear what you have to say, whether it's advice, anecdotes, or data that might be relevant. Thanks!",
+        "created_utc": 1523318155,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "DRM for pdf and audio files",
+        "author": "Gooch_Tickler69",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b30bm/drm_for_pdf_and_audio_files/",
+        "text": "I have a site where I allow clients to either view material online, or download it to their computer. The ability to download is a must, as some clients have limited access to internet. These files are either PDFs or mp3s. I am wondering if there is a way for me to stop them from redistributing the files (copying, sending them to other people, etc)?",
+        "created_utc": 1523316277,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need some helping finding an appropriate data structure for 3D range queries",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b1qiy/need_some_helping_finding_an_appropriate_data/",
+        "text": "[deleted]",
+        "created_utc": 1523305974,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "First Child Next Sibling Tree from prefix expression",
+        "author": "kamalov1991",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b0cmk/first_child_next_sibling_tree_from_prefix/",
+        "text": "I have this prefix expression: * + 5 3 / * 5 10 2 that results in the following tree: \n\nThe question that i cant figure out is what algorithm is used to construct this tree from that expression:\nhttps://imgur.com/a/Q61u8\n\nI know that the stack or queue can be used for it but dont know how. Please help me\n\n",
+        "created_utc": 1523295687,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "need more easiest way to program and by which program should use",
+        "author": "zahramuhaisin",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8b09a2/need_more_easiest_way_to_program_and_by_which/",
+        "text": "if user send question to technical support by email then email split the kind question for example health, technical, or finance question after that send each question to their section and wait until the section answer and send the answer to the technical support again so send the final answer to the user\n\n \n\n \n\nthis takes some time\n\n \n\nhow to make it shortly or any idea to make it fast\n\n",
+        "created_utc": 1523295014,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What languages do you hate and why?",
+        "author": "purplezigar",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8azyi4/what_languages_do_you_hate_and_why/",
+        "text": "I've had a lot of discussions with my peers about certain languages they hate (like Typescript and Python), and I was wondering what feelings a larger community has about those and other languages out there.",
+        "created_utc": 1523292788,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you stop Samsung email showing the earlier emails in a thread compressed so much that it's one word per line?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8azduo/how_do_you_stop_samsung_email_showing_the_earlier/",
+        "text": "[deleted]",
+        "created_utc": 1523288547,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can I form a strong software development team from my new requirements?",
+        "author": "CreativeJhony",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8ayp20/how_can_i_form_a_strong_software_development_team/",
+        "text": "How can I form a strong software development team from my new  recruitments.",
+        "created_utc": 1523283036,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you remember different traversal orders?",
+        "author": "Qu3stionmarx",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8ax4sk/how_do_you_remember_different_traversal_orders/",
+        "text": "I'm currently studying computer science in high school and am really struggling to remember these.",
+        "created_utc": 1523265685,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do PC games ever change the screens dimmensions to go full screen?",
+        "author": "aspiring_enthusiast",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8avwpo/do_pc_games_ever_change_the_screens_dimmensions/",
+        "text": "When I played PC games as a kid with CD ROMS, it seemed to me like the game started up in a smaller portion of the screen, and the computer would change its screen dimensions to go full screen.  Was this at all accurate?  What was going on?",
+        "created_utc": 1523249087,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "JDBC, MySQL and WAMP",
+        "author": "mahanthathreyee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8apo3e/jdbc_mysql_and_wamp/",
+        "text": "Does anyone a good tutorial or can give tutorial on how to connect MySQL from WAMP through JDBC. It would helpful if it doesn't use netbeans or eclipse ide. I have googled but haven't found anything working so far. Thanks in advance",
+        "created_utc": 1523191006,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sub-set union of binary vectors",
+        "author": "beeskness420",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8anp5f/subset_union_of_binary_vectors/",
+        "text": "So we were designing a homework assignment for a second year CS course and came up with two problems I found interesting that I wanted to share and possibly get some feedback one. (feedback in terms of solutions, and general level of difficulty)\n\nThe questions arose in the context of graphics, I will share the context as well as some of my ideas on them at the end. \n\nProblem 1 (easy):\n\nGiven v in {0,1}^n and S and subset of {0,1}^n of size k. \nDetermine if v is in S.\n\nProblems 2:\n\nGiven the same v and S. Determine if there exists a subset of S whose union is v. \n\n\nContext: \n\nThese arose from the idea of thresholding an image so each pixel is on or off, and then comparing a neighbourhood around a pixel to a set of masks. A pixel is good if it matches a mask (problem 1) or maybe if it matches the union of multiple masks (problem 2) we could also think about taking the intersection of masks. \n\nProblem 1 is obviously just set membership for binary strings. The approaches I suggested besides brute-force is to build a trie, or use a bloom filter or a cuckoo filter. Any other ideas, and do you think it's reasonable to expect second year CS students to come up with a solution to this? \n\nProblem 2 is the more interesting one. I couldn't find any literature on it online, but I also wasn't sure what to search for either. I'm not even sure if its polytime solvable. We could clearly enumerate all possible subsets and then run our solution for problem 1, but its exponential. \n\nIt has a subset sum type of feel to it which makes me think that DP should be efficient, greedy might get close, and it can probably be efficiently approximated (although I'm not sure if we would want the objective to be \"uses most filters\" or \"covers as much of v as possible\"). I don't think this would be a fair problem to drop on second years, but would like to hear people's thoughts on it regardless. \n\nCheers",
+        "created_utc": 1523161085,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Trying to Watch Some Hockey; Only Error Seems to Be Some Communication Between NBC and Facebook",
+        "author": "_infavol",
+        "url": "https://i.redd.it/pv3ulzhqqlq01.png",
+        "text": "",
+        "created_utc": 1523157299,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Almost a senior in CS. I want to be a developer. Is it okay to accept more of an IT related internship?",
+        "author": "csmblair",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8al6mv/almost_a_senior_in_cs_i_want_to_be_a_developer_is/",
+        "text": "I only started programming when I enrolled as a freshman, so I feel like I'm not a great programmer yet, but I'm always trying to get better. I didn't put all of this time and effort into this major to NOT program after school. If I were to accept an IT internship, would it be a slippery slope to never becoming a developer? Any experiences or opinions will help me. Thank you.",
+        "created_utc": 1523135938,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Splitting the cost of Grokking the System Design Interview course",
+        "author": "ButRickSaid",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8akk14/splitting_the_cost_of_grokking_the_system_design/",
+        "text": "Hopefully mods are okay with this post, apologies if otherwise.\n\nI purchased this online course for practicing system design interviews for $80 and want to cut costs. If anyone else is interested I can share all of the pages for $20. \n\n[Here's a screenshot](https://imgur.com/a/ae36r) of a side-by-side comparison of how it looks, the left side is the right side is the downloaded version. I will give you it in a compressed file that you can then unzip and open each webpage by opening the .HTML file in your browser.\n\nKeep in mind you wouldn't get updates to the lessons or new additions to the lessons because these are just downloads of the webpages (HTML + JavaScript + CSS).\n\nPlease PM me for PayPal details.",
+        "created_utc": 1523130512,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sub-quadratic algorithm for finding complete bipartite graphs?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/8ajgmj/subquadratic_algorithm_for_finding_complete/",
+        "text": "[deleted]",
+        "created_utc": 1523120949,
+        "upvote_ratio": ""
+    }
+]

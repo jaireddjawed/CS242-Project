@@ -1,0 +1,802 @@
+[
+    {
+        "title": "I made a light weight cbr/cbz manga to epub converter for kindle.",
+        "author": "stfuandkissmyturtle",
+        "url": "https://v.redd.it/k4t9oa8n9t8a1",
+        "text": "",
+        "created_utc": 1672319744,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wondering what drive caddie this is",
+        "author": "TribalScissors",
+        "url": "https://i.redd.it/ov0ajv7bnv8a1.jpg",
+        "text": "We are having a hard time deciding on what system this drive caddie is for. \n\nAnyone here in r/Linux care to have a stab at what it is? (We think Fujitsu possible, or synergy)",
+        "created_utc": 1672319123,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Year-end Sale] Buy Office 2021 Home and Business for Mac Only $100 And Get Up to 80% Off Use Promo code: (XMAS22)",
+        "author": "DifferentTower7659",
+        "url": "https://affordablekey.site/zjSyYLxt",
+        "text": "",
+        "created_utc": 1672311805,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which distributions will remain unaffected from disabling of H264/H265 codecs in Mesa?",
+        "author": "leonadav",
+        "url": "https://www.reddit.com/r/linux/comments/zy214g/which_distributions_will_remain_unaffected_from/",
+        "text": "",
+        "created_utc": 1672309299,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "We must give the Steam Deck more media attention to make Linux popular!",
+        "author": "Pepper-pencil",
+        "url": "https://www.reddit.com/r/linux/comments/zy170e/we_must_give_the_steam_deck_more_media_attention/",
+        "text": "If we give the Steam Deck more media attention, we can make Linux popular. More Steam Decks sold means more Linux users! The biggest talking points about the deck is Emudeck. The steam deck is a great emulator. Decky loader is for customizing your deck with plugins. The custom boot animations are really interesting and funny. If we make Steam Deck memes, we can make Linux popular! Who is with me! Spread the word",
+        "created_utc": 1672306251,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Found in the wild",
+        "author": "traceabledave",
+        "url": "https://i.redd.it/poklizmehu8a1.jpg",
+        "text": "On the great Northern train service UK.",
+        "created_utc": 1672305022,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Really confused",
+        "author": "JoeTheLuminary",
+        "url": "https://www.reddit.com/r/linux/comments/zxyamb/really_confused/",
+        "text": "About a month ago i put linux mint on an old(not outdated) desktop of mine that was originally running Windows 10. i went to go reuse that boot drive for an old laptop(old macbook) and when i went to go boot off the drive it went into a windows boot to install windows 10. Any idea why?\n\ntl:dr Linux boot drive turned into Windows10 boot drive on its own, why did it happen?",
+        "created_utc": 1672296025,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Linux Process Journey - “mld” (Multicast Listener Discovery)",
+        "author": "boutnaru",
+        "url": "https://www.reddit.com/r/linux/comments/zxxr8x/the_linux_process_journey_mld_multicast_listener/",
+        "text": " \"mld” is a kernel thread which was created using a workqueue ([https://elixir.bootlin.com/linux/latest/source/net/ipv6/mcast.c#L3185](https://elixir.bootlin.com/linux/latest/source/net/ipv6/mcast.c#L3185)). It is the Linux implementation for the multicast listener (MLD) protocol. This protocol is used by IPv6 based routers  in order to discover multicast listeners on the local network and identify which multicast addresses are of interest to those listeners. MLD is supported on different operating systems such as Windows ([https://learn.microsoft.com/en-us/windows/win32/winsock/igmp-and-windows-sockets](https://learn.microsoft.com/en-us/windows/win32/winsock/igmp-and-windows-sockets?redirectedfrom=MSDN)) and Linux ([https://lwn.net/Articles/29489/](https://lwn.net/Articles/29489/)).\n\nWe can think about it like IGMP ([https://www.cloudflare.com/learning/network-layer/what-is-igmp/](https://www.cloudflare.com/learning/network-layer/what-is-igmp/)) which is used on IPv4 based networks (MLDv1 is derived from IGMPv2 and MLDv2 is similar to IGMPv3). One important difference is that MLD uses ICMPv6 message types, rather than IGMP message types ([https://www.ibm.com/docs/en/zos/2.2.0?topic=protocol-multicast-listener-discovery](https://www.ibm.com/docs/en/zos/2.2.0?topic=protocol-multicast-listener-discovery)).\n\nOverall, MLD has three major message types: “Multicast Listener Query”, “Multicast Listener Report” and “Multicast Done”. For more information about them I suggest reading the following link [https://community.cisco.com/t5/networking-knowledge-base/multicast-listener-discovery-mld/ta-p/3112082](https://community.cisco.com/t5/networking-knowledge-base/multicast-listener-discovery-mld/ta-p/3112082). Also, a more detailed explanation about the different MLD operations can be found in [https://ipcisco.com/lesson/mld-operations/](https://ipcisco.com/lesson/mld-operations/). \n\nWhat “mld” does is to send MLD report messages ([https://elixir.bootlin.com/linux/latest/source/net/ipv6/mcast.c#L3185](https://elixir.bootlin.com/linux/latest/source/net/ipv6/mcast.c#L3185)) which are sent by an MLD host (see the diagram below - [https://techhub.hpe.com/eginfolib/networking/docs/switches/5130ei/5200-3944\\_ip-multi\\_cg/content/images/image33.png](https://techhub.hpe.com/eginfolib/networking/docs/switches/5130ei/5200-3944_ip-multi_cg/content/images/image33.png)) and processes messages ([https://elixir.bootlin.com/linux/latest/source/net/ipv6/mcast.c#L1359](https://elixir.bootlin.com/linux/latest/source/net/ipv6/mcast.c#L1359)). From the source code we can see that there are definitions for structs representing both MLDv1 and MLDv2 headers ([https://elixir.bootlin.com/linux/latest/source/include/net/mld.h](https://elixir.bootlin.com/linux/latest/source/include/net/mld.h)).  \n\nSee you in my next writeup ;-)\n\n&amp;#x200B;\n\nhttps://preview.redd.it/qtqod9k44s8a1.png?width=382&amp;format=png&amp;auto=webp&amp;s=3527ac28509300e55bd4a9f52ce540d0fcc2b7b0",
+        "created_utc": 1672294344,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can a user space program interact with a kernel driver?",
+        "author": "Real-Afternoon319",
+        "url": "https://www.reddit.com/r/linux/comments/zxxi8u/how_can_a_user_space_program_interact_with_a/",
+        "text": "[removed]",
+        "created_utc": 1672293592,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "switching back to windows",
+        "author": "Onemamoth",
+        "url": "https://www.reddit.com/r/linux/comments/zxx9b4/switching_back_to_windows/",
+        "text": "[removed]",
+        "created_utc": 1672292814,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "OCSP from command line",
+        "author": "enialdet",
+        "url": "https://www.reddit.com/r/linux/comments/zxwcpn/ocsp_from_command_line/",
+        "text": "[removed]",
+        "created_utc": 1672290096,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I wrote a super minimal, fast file manager in BASH v5+. Looking for testers/contributors",
+        "author": "wick3dr0se",
+        "url": "https://i.redd.it/1j51tp6tws8a1.gif",
+        "text": "",
+        "created_utc": 1672285985,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Bash script for starting multiple apps and arranging their windows on X11",
+        "author": "Deckweiss",
+        "url": "https://www.reddit.com/r/linux/comments/zxtxd3/bash_script_for_starting_multiple_apps_and/",
+        "text": "I made a simple bash script which allows you to start a set of programs and put their windows in specified arrangements. Only works on x11 for now. \n\nhttps://github.com/Deckweiss/x11-activity-session\n\nGif: https://user-images.githubusercontent.com/10449980/209897951-21c7ec9c-e784-4349-9c9a-a44634a26a6a.gif\n\nFeedback, contributions and questions are welcome.",
+        "created_utc": 1672283313,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is the Linux Filesystem Hierarchy Standard still relevant?",
+        "author": "bookooBux",
+        "url": "https://www.reddit.com/r/linux/comments/zxr8t8/is_the_linux_filesystem_hierarchy_standard_still/",
+        "text": "[removed]",
+        "created_utc": 1672276347,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Some websites only play video on Windows or Mac (due to DRM?). Is there a way to fool it to make it work on Linux?",
+        "author": "ManinaPanina",
+        "url": "https://www.reddit.com/r/linux/comments/zxp8gp/some_websites_only_play_video_on_windows_or_mac/",
+        "text": "I got word of this online festival and there are some movies I want to watch. It works on my phone, I watched the shortest on it, but you know, small screen.\n\nI want to watch the other movies on my notebook. Is there a way to fool the site and prevent it from seeing that I'm on KDE Neon using Vivaldi? Is is this still a deal breaker that have no solution on Linux?\n\nThe website in question is this one: [https://jff.jpf.go.jp/watch/independent-cinema/](https://jff.jpf.go.jp/watch/independent-cinema/)",
+        "created_utc": 1672271461,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My review of Pop!_OS",
+        "author": "Mvcvalli",
+        "url": "https://www.reddit.com/r/linux/comments/zxp4w5/my_review_of_pop_os/",
+        "text": "Hey Everyone. Hope you are doing well.\n\nI've been running Pop!_OS on a ThinkPad X220, a ThinkPad that was released by Lenovo in April 2011. In my opinion Pop!_OS is one of the best, if not the best, Ubuntu based distribution out there at the time of writing this. I only have a few complaints:\n\nCompliant 1: Absurdly long boot-time.\n\nNormally when I boot into my system the typical login screen to enter your password appears fairly quickly and I only have to wait approximately a few seconds to a minute for the login screen to appear. Given the specs of my computer I expected it to be slower but this was just absurd, I was waiting for minutes, it felt like I was using Windows again lamo. Thought GNU/Linux was supposed to run fast on old hardware?\n\nComplaint 2: Issues with Vim.\n\nFor context, I've had the same vim config for months now and it's worked perfectly fine on macOS plus various other GNU/Linux distributions running on hardware and in virtual machines. The issue I had was when I wanted to enable use of my systems clipboard with the setting:\n\nset clipboard+=unnamedplus\n\nHowever, I could not get it working. I tired reinstall xclip, reinstalling vim, etc but nothing worked. Living without it is just painful and I cannot do it forever. This might not be a Pop!_OS issue it could be an issue with the version of Vim that is running on the system but I figured it was worth mentioning.\n\nComplaint 3: Built in tiling window manger.\n\nNow I loved the built in tiling and it worked perfectly fine for me. The ONLY issue I had with it is the lack of customizability, I was hoping to be able to set custom keybindings and to just be able to tinker with it a bit.\n\nComplaint: 4: Issues with XDG.\n\nI went to edit the ~/.config/user-dirs.dirs file so that I can remove Public, Templates, and Music from my home directory. It has been awhile since I last used GNU/Linux so I pulled up a YouTube video and followed along, long story short, I could get the folders out of my home directory because the file reset itself back to it's default state. This has never happened to me before on any other GNU/Linux distro so I am assuming this is a Pop!_OS issue.\n\nTo sum up, I like GNOME interface and it is very easy to use and can be very productive if you know how to use it, the GNOME experience on Pop!_OS is far above that of other out of the box GNOME distributions. I agree that POP!_OS is a good distro for those who are switching from macOS or Windows. I cannot wait to try out System76's new desktop environment called called \"COSMIC\" and am looking forward to seeing what other cool software System76 releases.",
+        "created_utc": 1672271223,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do fellow Linux users use to backup / sync their files?",
+        "author": "riderpale",
+        "url": "https://www.reddit.com/r/linux/comments/zxp04d/what_do_fellow_linux_users_use_to_backup_sync/",
+        "text": "[removed]",
+        "created_utc": 1672270905,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Sneaky Fox indeed",
+        "author": "DamoAIT",
+        "url": "https://i.redd.it/l6jz7s8i6r8a1.png",
+        "text": "",
+        "created_utc": 1672265031,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Xmonad Arch Linux",
+        "author": "archlinuxlovers",
+        "url": "https://i.redd.it/690tbxk9lp8a1.png",
+        "text": "",
+        "created_utc": 1672263819,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Trying to run Win8.1 on Virtual box. After adding new machine and leaving everything on default I get this error message when running the machine. Any Idea what I need to do to fix it? I'm running KDE Plasma 5.26.",
+        "author": "Lucky_Soil_4824",
+        "url": "https://i.redd.it/pc0lexvh0p8a1.png",
+        "text": "",
+        "created_utc": 1672257617,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I install appimages",
+        "author": "Greedy_South_5325",
+        "url": "https://www.reddit.com/r/linux/comments/zxiilq/how_do_i_install_appimages/",
+        "text": "[removed]",
+        "created_utc": 1672255751,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help needed with linux ebook(epub , pdf) reader .",
+        "author": "Masculine444",
+        "url": "https://www.reddit.com/r/linux/comments/zxhitr/help_needed_with_linux_ebookepub_pdf_reader/",
+        "text": "[removed]",
+        "created_utc": 1672253436,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A little Christmas share.",
+        "author": "Top_Mind9514",
+        "url": "https://i.redd.it/tc0c4xon3q8a1.jpg",
+        "text": "",
+        "created_utc": 1672251971,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux Patching the proper way",
+        "author": "Leopard-Lifestyle",
+        "url": "https://www.reddit.com/r/linux/comments/zxfi6j/linux_patching_the_proper_way/",
+        "text": "Hello folks,\n\nWe are about to enter a stage in our enterprise where we might have to patch linux servers which sounds a bit scary, since most of us have not done this.  systems running different distros.  These patching include regular kernel updates, or mitigating security vulnerabilities. I had a few questions:\n\n1.  Does anyone recommend any good literature(articles, books etc..) about linux patching.  Since I know it's difficult because many people touch these systems and it's hard to know whether the system will break after you upgrade it.  and this leads to question 2\n2. Does anyone have a solid process for backing up the system, rollback the updates etc.. when things go south after a reboot, what do you do? how do you try to prevent this and how can you rollback if the system does not come up after a reboot or services don't work\n3. That leads me to question 3.  what is the best way to tell what services are running on the box.  Since many people login to these boxes and run their scripts, programs etc..  what's the best way to do a comparison of what was running and if it's still running post upgrade..\n4. I've heard the acronym RPM been thrown around a lot, can someone explain what the importance of this is when it comes to patching?",
+        "created_utc": 1672248722,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Manjaros reliability.",
+        "author": "Fractal_-",
+        "url": "https://www.reddit.com/r/linux/comments/zxeajm/manjaros_reliability/",
+        "text": "[removed]",
+        "created_utc": 1672245866,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 6.2's Call Depth Tracking Helps Recover Lost Performance On Intel Skylake CPUs",
+        "author": "twlja",
+        "url": "https://www.phoronix.com/review/skylake-retbleed-stuff",
+        "text": "",
+        "created_utc": 1672241419,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should i switch to linux?",
+        "author": "artgamer3033",
+        "url": "https://www.reddit.com/r/linux/comments/zxbf2a/should_i_switch_to_linux/",
+        "text": "Hi, \n\nI play games and mostly play roblox (dont rant on me), some sandbox games (mostly GMod, People playground and Teardown.) And seeing linux gaming getting better made me think if i should install linux on my main PC.\n\nSo, is it an good idea and what should i know? \n\nI am already familiar with linux and have used it on a old laptop (which broke, hard drive issue i think?) So i have some knowledge with it.\n\nAnything helps!\n\nArt.",
+        "created_utc": 1672238990,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I was really bored, so, have this.",
+        "author": "Herb0ww",
+        "url": "https://i.redd.it/1pjkzm3m4n8a1.png",
+        "text": "",
+        "created_utc": 1672233980,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GNOME 43.2 Officially Released - New Features, Improvements, and Bugs Fixes",
+        "author": "Realistic-Plant3957",
+        "url": "https://paulponraj.com/gnome-43-2-officially-released/",
+        "text": "",
+        "created_utc": 1672233448,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "VIM vs. EMACS",
+        "author": "tigernuts1",
+        "url": "https://www.reddit.com/r/linux/comments/zx8p17/vim_vs_emacs/",
+        "text": "[removed]",
+        "created_utc": 1672231509,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Computers for Linux Conversion?",
+        "author": "linuxtekk",
+        "url": "https://www.reddit.com/r/linux/comments/zx7yaw/best_computers_for_linux_conversion/",
+        "text": "[removed]",
+        "created_utc": 1672229177,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Laptops for Linux Conversion?",
+        "author": "linuxtekk",
+        "url": "https://www.reddit.com/r/linux/comments/zx7v61/best_laptops_for_linux_conversion/",
+        "text": "[removed]",
+        "created_utc": 1672228922,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Want to start using Linux",
+        "author": "Level-Tough8716",
+        "url": "https://www.reddit.com/r/linux/comments/zx76e8/want_to_start_using_linux/",
+        "text": "[removed]",
+        "created_utc": 1672226485,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can this scattering of functionality be considered better (or even a good idea at all)? (Evolution Groupware) Please, convince me!",
+        "author": "seehp",
+        "url": "https://i.redd.it/qm96z5obgm8a1.png",
+        "text": "",
+        "created_utc": 1672225914,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Firefox's Accessibility Performance is getting a huge boost",
+        "author": "arslanramazan",
+        "url": "https://www.jantrid.net/2022/12/22/Cache-the-World/",
+        "text": "",
+        "created_utc": 1672218780,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Let's end this discussion once and for all: Let's create a valid database of working out-of-the-box usb wifi sticks. Post your devices here (model name+REVISION+chipset via lsusb)",
+        "author": "BulkyMix6581",
+        "url": "/r/linuxmint/comments/zx2kyq/lets_end_this_discussion_once_and_for_all_lets/",
+        "text": "",
+        "created_utc": 1672210574,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu / Debian Installation to External USB Issues (Please Help!!)",
+        "author": "mjmonkey45",
+        "url": "https://www.reddit.com/r/linux/comments/zx2kcy/ubuntu_debian_installation_to_external_usb_issues/",
+        "text": "[removed]",
+        "created_utc": 1672209206,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Distribution problems",
+        "author": "adantesarcade",
+        "url": "https://www.reddit.com/r/linux/comments/zx1625/distribution_problems/",
+        "text": "[removed]",
+        "created_utc": 1672204618,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for advice on a new project...",
+        "author": "keroeslux",
+        "url": "https://www.reddit.com/r/linux/comments/zx0jzg/looking_for_advice_on_a_new_project/",
+        "text": "I've been working on open source tools for a while, and I've been thinking of trying to make my own desktop environment. I'm aware of the fundamental building blocks of a DE (WM, userland tools, etc,) but I'm looking for some recommendations for stuff to include inside the DE. I'll be writing it in a mix of C &amp; Haskell, with most of it being Haskell. Thanks!",
+        "created_utc": 1672202716,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for advice on a new project...",
+        "author": "keroeslux",
+        "url": "/r/linuxmasterrace/comments/zx0hs8/looking_for_advice_on_a_new_project/",
+        "text": "",
+        "created_utc": 1672202536,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What’s the best Linux distribution thingy for someone that knows nothing about coding",
+        "author": "Big_Obama123",
+        "url": "https://www.reddit.com/r/linux/comments/zwzlu2/whats_the_best_linux_distribution_thingy_for/",
+        "text": "So basically I want to switch to Linux on my chromebook because it supports literally nothing else and chrome os is shit, so I was wondering if there’s any Linux distribution thingy that a dumb person like me could use",
+        "created_utc": 1672199822,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "1-Wire Protocol API for C",
+        "author": "DickCamera",
+        "url": "https://www.reddit.com/r/linux/comments/zwywol/1wire_protocol_api_for_c/",
+        "text": "[removed]",
+        "created_utc": 1672197765,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Happy Birthday Linus !",
+        "author": "Likhon-BaRoy",
+        "url": "https://i.redd.it/qa6cl2dgll8a1.png",
+        "text": "",
+        "created_utc": 1672197419,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Chromecast HD Neofetch",
+        "author": "IHateWhatsAppYeet",
+        "url": "https://i.redd.it/c7y8i36ohl8a1.png",
+        "text": "",
+        "created_utc": 1672196151,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best linux distro as main OS.",
+        "author": "Street_Studio_9184",
+        "url": "https://www.reddit.com/r/linux/comments/zww1bb/best_linux_distro_as_main_os/",
+        "text": "[removed]",
+        "created_utc": 1672189667,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "r/linux",
+        "author": "Swartboek",
+        "url": "https://i.redd.it/62o7lxqmgj8a1.jpg",
+        "text": "",
+        "created_utc": 1672189631,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Accessing an encrypted disk",
+        "author": "Ath0hart",
+        "url": "https://www.reddit.com/r/linux/comments/zwvkik/accessing_an_encrypted_disk/",
+        "text": "[removed]",
+        "created_utc": 1672188412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "An update on Snaps resource usage at boot",
+        "author": "jorgesgk",
+        "url": "https://www.reddit.com/r/linux/comments/zwuxs2/an_update_on_snaps_resource_usage_at_boot/",
+        "text": "Some weeks ago, I decided, as there was no comparison on the resource usage of Snaps and Flatpaks, and given how controversial Snaps are, it was a good idea to test how a resource-constrained setup would run both technologies.\n\nThe approach I followed was simple. Given I am a bit of a hoarder, I have on my main Fedora laptop &gt; 400 flatpaks and thousands of RPMs. The idea was, then, to test how 400 flatpaks would pit against 400 snaps installed on a resource constrained computer (I used Gnome Boxes to set the Virtual Machine). The results were, obviously, that Snaps were much worse behaving, but my study received quite some criticism (valid, IMO), as my approach was to install alphabetically from A to whatever letter I needed to reach the 400 snaps (so, as there was no careful selection, I installed snaps containing daemons, servers and other always-on process that would fire up whenever I logged in). Also, some people believed 400 snaps were too much, and completely disregarded my findings (the computer seemed unable to boot anymore with that many snaps).\n\nI decided, then, to redo this study, but this time I would chose myself 100 Snaps (they ended up being 110, 109 + the Firefox one shipping in Ubuntu). The procedure of this study will be the following:\n1. A fresh install of Lubuntu 22.10 will be set in a 1GB machine with 1 Core of my Tiger Lake 11400H CPU, with the host machine CPU set to \"Balanced\" and the AC charger plugged in, running Fedora 37 completely up-to date.\n2. This fresh install of Lubuntu will feature no swap, to test the memory requirements.\n3. The Lubuntu installation will be up to date.\n4. The test will feature 110 apps with no daemons behind or any server stuff. Just plain normal GUI apps, which is what Flatpak competes in.\n5. This Lubuntu installation will be cloned twice. This way, we will have 3 instances:\n\ta. Fresh, clean Lubuntu.\n\tb. Lubuntu + [110 Snap applications](https://pastebin.com/RfAnm8Wi). Despite Wekan being there, I removed it later on and checked that the reality stayed the same, as I found out it had a MongoDB database behind it, so the effects you'll see below comes without Wekan on it, even if it says it's installed.\n\tc. Lubuntu + [110 Flatpak applications](). For those with the same apps, we will use the same. otherwise, an alternative will be used. This might not seem fair, but given these are apps without any daemons or always-on processes, they should behave similarly.\n\nWhat I will test is the following assertion: *Snaps don't hold any real disadvantage over Flatpaks in terms of usability or performance. They don't put into any significant stress the systems anymore than Flatpak does, and, as such, they are as desirable (and undesirable) as Flatpaks are. In a nutshell, they are as good of an option for desktop users*. We already know that Snaps can hold other system components, but we are talking here about desktop apps (needless to say, plain old Debs or RPMs don't have these many issues, and Podman and Docker are containing traditional packages). For this assertion to hold true, Snaps will have to fulfill 3 requisites (where to put the line is debatable):\n1. Snaps must not slow down boot time, at least not significantly.\n2. Snaps must not increase RAM consumption of the system just by having apps installed in any meaningful way (again, not by installing or running, but by just _having installed_).\n3. The installation of snaps must go smoothly even under resource-constrained conditions.\n4. Given this is just a package installer, and shouldn't be anything else, there's no reason why I should be limited to the number of apps I can install on my PC as long as I don't have them running at the same time and have enough hard disk space for them.\n\n# The base system (just Freshly installed Lubuntu, it only has the Firefox snap).\n\nThe RAM consumption when idle was of [422Mb](https://pastebin.com/8R8HtM2R). [Here you can see the snap list](https://pastebin.com/yVsvkNyB). The device started up quickly and was working smoothly all the time.\n\n# My Findings (Snaps vs. Flatpaks)\n## Snaps\n1. The Lubuntu installation was **unable** to install the 109 snaps, as it OOMd completely when the snap number 69 was installed. Before that, it had already killed the desktop itself (the background went black and the icons disappeared) during the installation, then the Openbox windows decorations disappeared (it is my suspicion that Openbox was killed completely) and, eventually, also the LXQt bottom panel. The fans were incredibly loud during the installation procedure, probably from the OOM scenario the system went to quite early in the process.\n2. The Lubuntu installation was **able quite quickly** to boot up. However, **once I logged in to my user account**, I was surprised to see my fans were blowing like crazy. The LxQt session didn't load whatsoever, and I was left with an *extremely slow* Openbox session in which right-clicking the black, empty desktop would fire up the Openbox apps menu after quite a while (at first, after a few minutes it simply didn't respond anymore). Clicking into any app was simply of no use.\n3. Raising the RAM to 2GB would led me to my Lubuntu desktop, with all the fan blowing stuff, mind you. The RAM consumption when idle was 1.52GB (see the Snap neofetch output, [you'll see the snaps installed in the list](https://pastebin.com/sh2PJXzP), bear in mind that 69 snaps turn into more due to the \"core\" snaps and other dependencies that must be installed).\n\nAt this point, I decided to proceed with the installation of the remaining snaps, to reach the total app count of 110. This time, remember, I set the RAM to 2GBs and put the 12 cores to use, instead of 1 as before:\n\n4. The desktop went out soon again and the Window decorations were killed. The bottom panel was not, to my surprise. The system entered into OOM at the snap installation number 105, but was still, very slowly, responding. It was able to finish the installation of all the snaps (very slowly after OOMing).\n5. When restarted, the system was booting quickly. The desktop was broken, set in low resolution (it seems it was unable to detect the host Window size), without any LxQt panel and a strange dark grey bar at the left occupying all the screen with no text (probably a popup that was not able to render fully). After almost 2 minutes, with 2 GBs of RAM and the full 11400H CPU to their use (taking out what the host system might be using, the system killed the desktop (black screen, no icons) but left the bottom LxQt panel. The window decorations were killed too. I was unable to open any GUI program (by this I mean, the file explorer, which is a deb). I was able to run the terminal emulator only.\n6. I tried the original conditions again. The ram consumption when idle and freshly restarted was of [1112Mb](https://pastebin.com/sM1i5cnH). Here you can see the [snap list](https://pastebin.com/KvaG8jyZ). The system was able to load the session. 1.11Gb of RAM usage Snaps have carefully crafted for us for choosing the unacceptable, crazy idea of installing _too much_ on a limited hardware where we obviously shouldn't do so.\n\n## Flatpaks\n\nNow, we will proceed to compare this to the Flatpak installation. I had to switch some of the flatpaks, but [here is the list I will use](https://pastebin.com/p0thpWs6). I purged snapd before to avoid the results being contaminated by snaps presence.\n\n1. I was able to install the full list without problems on 1GB, 1 core system. The RAM consumption was . This is the flatpak list. Never did the system OOM, the fans blow up considerably, the installation slow down in any way or any issues appear. The installation was always fast and smooth, **except** whhen installing Android Studio, which is almost 1GB, but not Xonotic or Warzone, which are 1.2Gb each. I don't know why. To be fair, for Snaps I didn't have anything this big.\n\nI had to raise the RAM to 3GB, keeping 1 core. Android Studio then installed fine. The ram consumption was of 400mb during the installation, it doesn't make any sense. It seems it must be a bug or something.\n\n2. Returning to 1GB and 1 Core. Booting up Lubuntu was a breeze. The desktop came out immediately. The system used [372Mb of RAM](https://pastebin.com/VPgYqkzr) freshly started. Everything worked and was pretty snappy. I could even open Android Studio. There were no slowdowns. This truly could someday replace traditional packages for most apps.\n\nI believe the results speak for themselves. People may or may not want to believe this, and they might want to dismiss this. It's fine, though, for me this is obvious. Snaps are more resource intensive in ways a package installer simply shouldn't be. They are a poor design of resource constrained devices and, given a sufficiently large selection of apps, they will slow down your computer considerably, with a higher ram consumption you may not notice when having only Firefox, but which you'll notice for sure when installing too many packages, and which doesn't seem to be release under OOM scenarios. Simply, for desktop GUI apps, Flatpaks seem the better choice unless you install only a few and just have resources to spare. I care about the resource usage of my computer, that's one of the reasons I chose Linux (albeit not the only one).\n\n# A personal note\n\nOn a personal note. While this is a comparison of package managers. I can't help but feel this is more than that. It is, for me, a comparison of Linux giants (Red Hat and Canonical) and, specifically, of Linux distros (Ubuntu and Fedora). I am disappointed, to be honest. I liked Ubuntu's approach much more than Fedora's. With Ubuntu, you get desktop-quality LTS releases. You could always go CentOS, sure, but they don't have as many packages as Fedora does. Ubuntu LTS releases, on the other hand, are the full desktop experience. With Ubuntu, you also get some quality of life tweaks, better driver compatibility, a more straightforward approach to ZFS and other kernel modules, IPU6 webcams compatibility, hardware certification, more customized experience with the flavors, RT kernel, RPI support (Fedora had issues with GPU acceleration in RPIs before the 4, I believe, or was it that it had issues with the 4 that were recently addressed?)... The upstream-first and open-only approach of Fedora hurts its market position IMO, but at the end of the day, the truth is Flatpak is much better for Desktop apps (and wherever else Snaps fit, traditional packages and containers are probably plain better too).\n\nAll in all, Canonical does stuff that is more aligned with the real life, but snaps are simply a really bad design, and are an integral part of the system (and, I bet, will play a bigger role). Fedora has much more solid foundations in that regard, and it saddens me that it is that way.",
+        "created_utc": 1672186745,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When I update my Nvidia driver with the driver manager after reboot it will say error: Out of memory",
+        "author": "AlchemyPepsi",
+        "url": "https://www.reddit.com/r/linux/comments/zwuq8x/when_i_update_my_nvidia_driver_with_the_driver/",
+        "text": "",
+        "created_utc": 1672186208,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "my wife (who knows nothing about computers) got me this sweater, because she thought the penguins Name was \"root\" and she's \"seen it on my computer before\" , and I like marvel comics 😂 bless her heart, should I just tell her she's right... I don't have the heart to tell her.",
+        "author": "SoNotTheHeroTypeV2",
+        "url": "https://i.redd.it/34s9k6zfkk8a1.png",
+        "text": "",
+        "created_utc": 1672184973,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What's your take on Richard Stallman's vision about software?",
+        "author": "fenugurod",
+        "url": "https://www.reddit.com/r/linux/comments/zwtzz7/whats_your_take_on_richard_stallmans_vision_about/",
+        "text": "Today you can chose to use a closed system like Windows or macOS or use a open source one like Linux. But this decision by itself is not solving all the questions regards of ownership and control of data. What about the closed source code? Firmwares? Paid services? We can extrapolate this to other levels like, what about your phone? Even using the dumbest phone in the world you can still be tracked with GSM.\n\nSo what's your take on this? Stick with truly free software and use things from the 1950s or embrace the modernity knowing that you don't have control of your data or software.",
+        "created_utc": 1672184341,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The solution to the Mesa drivers issue",
+        "author": "Indolent_Bard",
+        "url": "https://www.reddit.com/r/linux/comments/zwt8uf/the_solution_to_the_mesa_drivers_issue/",
+        "text": "[removed]",
+        "created_utc": 1672182452,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does anyone know how to achieve the pointed highlighting effect in this status bar? Mine is currently square. Thanks!",
+        "author": "Sensitive_Pomodoro",
+        "url": "https://www.reddit.com/gallery/zwrdxt",
+        "text": "",
+        "created_utc": 1672181642,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there anyway to format an sd card for Linux using windows ? Just trying to find a way to do it on windows so I don’t have to try and figure out that password",
+        "author": "Dry_Elevator4590",
+        "url": "https://www.reddit.com/r/linux/comments/zwsq47/is_there_anyway_to_format_an_sd_card_for_linux/",
+        "text": "[removed]",
+        "created_utc": 1672181247,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The junior sysadmin course at r/LinuxUpskillChallenge restarting 2 January 2023",
+        "author": "livia2lima",
+        "url": "https://www.reddit.com/r/linux/comments/zwojuw/the_junior_sysadmin_course_at/",
+        "text": "[removed]",
+        "created_utc": 1672171234,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Remove the line",
+        "author": "Ground-Delicious",
+        "url": "https://i.redd.it/yz1mfi38dj8a1.jpg",
+        "text": "[removed]",
+        "created_utc": 1672170439,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Unity 7.7 - Includes new plugin system, vertical dash, Flutter welcome app and more",
+        "author": "RudraSwat",
+        "url": "https://twitter.com/ubuntu_unity/status/1607816390823772160",
+        "text": "",
+        "created_utc": 1672169515,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Animated ASCII fireworks in your terminal for New Years Eve",
+        "author": "Lunduke",
+        "url": "https://github.com/BryanLunduke/LundukeHoliday",
+        "text": "",
+        "created_utc": 1672168818,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Animated ASCII fireworks in your Terminal for New Years",
+        "author": "Lunduke",
+        "url": "https://lunduke.substack.com/p/animated-ascii-fireworks-in-your",
+        "text": "",
+        "created_utc": 1672168474,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "blu-ray on linux",
+        "author": "Moonstone459",
+        "url": "https://www.reddit.com/r/linux/comments/zwmrf5/bluray_on_linux/",
+        "text": "[removed]",
+        "created_utc": 1672166731,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Scroll through the text on Fedora Server",
+        "author": "lableite",
+        "url": "https://www.reddit.com/r/linux/comments/zwjsm8/scroll_through_the_text_on_fedora_server/",
+        "text": "Hi everyone.\n\nI've searched the web for a solution to my problem.  \nI've run a \"dnf list installed\" on my Fedora Server and I'm trying to scroll through the output text, but nothing works. Tried Ctrl + up/down, Ctrl + page up/page down, Ctrl + home/end, Ctrl+shift+up/down, Ctrl+shift+page up/page down, Ctrl+shift+home/end, but nothing works...\n\nCould someone help me?",
+        "created_utc": 1672159176,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any cloud virtual linux machine providers with no vcpu limits?",
+        "author": "fatsug",
+        "url": "https://www.reddit.com/r/linux/comments/zwjdq1/any_cloud_virtual_linux_machine_providers_with_no/",
+        "text": "[removed]",
+        "created_utc": 1672158088,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "mdadm: cannot open /dev/sdb: No such file or directory",
+        "author": "Fox19995",
+        "url": "https://www.reddit.com/r/linux/comments/zwh05n/mdadm_cannot_open_devsdb_no_such_file_or_directory/",
+        "text": "Hello,\n\nI attempt to set up a raid system on my proxmox ubuntu nextcloud setup. To store some of my backups. To test it I connected 2 usb sticks to my server. Those shall function as a raid 1 setup. But I get an error every time I try to set them up with mdmda. \n\n  \nroot@pNextCloud2:~# df -h\nFilesystem                        Size  Used Avail Use% Mounted on\n/dev/mapper/pve-vm--104--disk--0   16G  2.6G   13G  18% /\n/dev/mapper/pve-root               94G   15G   75G  17% /mnt/ExternalStorage1\n/dev/sdb1                         110G   52K  104G   1% /mnt/test1\nnone                              492K  4.0K  488K   1% /dev\nudev                              3.8G     0  3.8G   0% /dev/tty\ntmpfs                             3.9G     0  3.9G   0% /dev/shm\ntmpfs                             781M  100K  781M   1% /run\ntmpfs                             5.0M     0  5.0M   0% /run/lock\n\nWith df -h I can see that one of the usb sticks should be at /dev/sdb1\n\nBut once I attempt to execute:\nroot@pNextCloud2:/dev# mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 missing\nmdadm: cannot open /dev/sdb1: No such file or directory\n\n\nCan someone tell me why this is happening?",
+        "created_utc": 1672151742,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Find the bottleneck:",
+        "author": "_platinvm",
+        "url": "https://i.redd.it/m64obdhonh8a1.jpg",
+        "text": "",
+        "created_utc": 1672149738,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for an online post regarding Ubuntu configuration on the XPS 13 Plus 9320 with Dell specific Ubuntu drivers.",
+        "author": "brosenz",
+        "url": "https://www.reddit.com/r/linux/comments/zwg9uf/looking_for_an_online_post_regarding_ubuntu/",
+        "text": "[removed]",
+        "created_utc": 1672149611,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I want reinstall Ubuntu on my computer, how can I keep my current settings, packages, extensions etcetera?",
+        "author": "Material-Brain-4211",
+        "url": "https://www.reddit.com/r/linux/comments/zwg26d/i_want_reinstall_ubuntu_on_my_computer_how_can_i/",
+        "text": "[removed]",
+        "created_utc": 1672148954,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Dual boot on Razer book 13",
+        "author": "Linklover101",
+        "url": "https://www.reddit.com/r/linux/comments/zwfw7q/dual_boot_on_razer_book_13/",
+        "text": "[removed]",
+        "created_utc": 1672148443,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "lf r28 released",
+        "author": "fluffysunshinerabbit",
+        "url": "https://github.com/gokcehan/lf/releases/tag/r28",
+        "text": "",
+        "created_utc": 1672148165,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which linux based OS is most popular?",
+        "author": "h234sd",
+        "url": "https://www.reddit.com/r/linux/comments/zwfsov/which_linux_based_os_is_most_popular/",
+        "text": "[removed]",
+        "created_utc": 1672148140,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How is Linux System Administration Essentials (LFS207)?",
+        "author": "FerSpFr",
+        "url": "https://www.reddit.com/r/linux/comments/zwf8gq/how_is_linux_system_administration_essentials/",
+        "text": "[removed]",
+        "created_utc": 1672146383,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Geany is awesome!",
+        "author": "gnramires",
+        "url": "https://www.reddit.com/r/linux/comments/zwekqm/geany_is_awesome/",
+        "text": "I am really a fan of simple tools in many ways. After atom IDE sunset, I've been very happy with Geany -- it's extremely light, configurable, has an integrated terminal. It has autosave functionality (and supports themes too).",
+        "created_utc": 1672144187,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Booting loopback devices with GRUB",
+        "author": "Significant-Wonder19",
+        "url": "https://www.reddit.com/r/linux/comments/zwdobj/booting_loopback_devices_with_grub/",
+        "text": "[removed]",
+        "created_utc": 1672140978,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Hurry Up Your Deals!] Buy Office 2021 Home and Business for Mac Only $100 And Get Up to 80% Off Use Promo code: (XMAS22)",
+        "author": "DifferentTower7659",
+        "url": "https://affordablekey.site/lN4JVIf3",
+        "text": "",
+        "created_utc": 1672137849,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The crime against humanity that is the modern OS desktop, and how to kill it (Mon 5 Sep 2022)",
+        "author": "NullBuddy",
+        "url": "https://www.reddit.com/r/linux/comments/zwcr4u/the_crime_against_humanity_that_is_the_modern_os/",
+        "text": "[removed]",
+        "created_utc": 1672137488,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I install a wireless adapter driver from disk?",
+        "author": "alt_curious",
+        "url": "https://www.reddit.com/r/linux/comments/zwclfu/can_i_install_a_wireless_adapter_driver_from_disk/",
+        "text": "I’ve been running Ubuntu and windows side by side for a long time and finally just bought another computer specifically for Ubuntu. I had the same 20.04 install thumb drive I created when I first started running both OS, so I used it to erase windows and install Ubuntu on the new laptop.\n\nNow I have no WiFi on the new computer, no options for it or anything indicating it’s even disabled or not working. lshw shows the network adapter is in place but no driver is listed.\n\nThere is no Ethernet port on the laptop, do I really have to wait for stores to open so I can run out and buy an adapter to hardline my internet, or is there some way I can put the driver onto a thumb drive using my original laptop and then correctly install it without any internet connection?\n\nI can’t find any tutorials for this anywhere, everything just tells me to get internet and load it from the terminal",
+        "created_utc": 1672136864,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a hotkey to display short clipboard history where your cursor is and choose what to paste?",
+        "author": "gwanli",
+        "url": "https://www.reddit.com/r/linux/comments/zwc7mw/is_there_a_hotkey_to_display_short_clipboard/",
+        "text": "I was just fumbling around some keys at my terminal when I was trying to press Ctrl+r and I swear that's what I saw: 5 items with my most recent clipboard items (I use parcellite btw). And before I knew what I was looking at, it was gone and I don't know what key combination I pressed.\n\nI also use Terminator for reference.\n\nI've googled all over the place, I see some feature requests like what I'm talking about, but I see no documentation talking about how to do this and nothing in the preferences menu.\n\nSeems useful to not need to even have to use my mouse. I want it.",
+        "created_utc": 1672135346,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "We should probably start heading towards a microkernel design ASAP...",
+        "author": "Arnoxthe1",
+        "url": "https://www.reddit.com/r/linux/comments/zwbohb/we_should_probably_start_heading_towards_a/",
+        "text": "Pretty much ever since Linux has been created, we've had proprietary drivers being mounted into the kernel. Well... I should say, Linus only accepts open source drivers into the Linux kernel, but the point is that proprietary drivers are still getting used.\n\nFor those who don't know why exactly that's a big deal, I've asked and [have been told](https://www.reddit.com/r/linux/comments/zuzc96/how_to_mitigate_damage_assuming_a_malicious/) that once a driver is loaded into the kernel, that's it. It has full limitless control over the system. It could even infect the UEFI and make infections persist across a total reformat and reinstall. \n\nBecause of all this, proprietary drivers are a MASSIVE FUCKING security hole that really does need to be closed as fast as possible. Of course, you could always run Linux with only open source drivers, but this is not always realistic. Android phones, just for starters, are loaded down with tons of proprietary drivers with no way to not use them without bricking the phone.\n\nI understand that in the past, microkernels had performance issues compared to monolithic kernels, but I've also heard that recently, as long as the microkernel is correctly designed, this is no longer an issue. So, can we start giving this endeavor priority?",
+        "created_utc": 1672133239,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with renaming a lot of directories",
+        "author": "0methe",
+        "url": "https://www.reddit.com/r/linux/comments/zwblgy/help_with_renaming_a_lot_of_directories/",
+        "text": "[removed]",
+        "created_utc": 1672132903,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "xbindkeys on lock-screen? (Debian testing / KDE/ SDDM)",
+        "author": "itouchdennis",
+        "url": "https://www.reddit.com/r/linux/comments/zwbhja/xbindkeys_on_lockscreen_debian_testing_kde_sddm/",
+        "text": "Hi there!\n\nI got a 60% keyboard and use some rebindings for some special characters. So i dont have an alt-gr key which was not that big deal using xbindkeys, so I can rebind @ or any other char to alt-strg + key.\n\nAnyway:\n\nI have some special characters at my user password, on the boot - loginscreen I already managed to load xbindkeys with config by setting the config into:\n\n/usr/share/sddm/scripts/Xsetup\n\n\"xbindkeys **-f** /home/XYZ/.xbindkeys.conf\" \n\nThis allowes me to load the config even before I logged in.\n\n&amp;#x200B;\n\nBut now when I lock my screen using strg-alt- L the config will be lost.\n\nDoes anyone have an idea how I could add the xbindkeys even on the lock screen?\n\nThx!",
+        "created_utc": 1672132471,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Haha, suck on dat windows! Finally got idle power consumption way down on my laptop | The best windows could manage was around 7 watts, Linux smashes it with 5.3w",
+        "author": "lynet_101",
+        "url": "https://i.redd.it/wfle3ldohe8a1.png",
+        "text": "",
+        "created_utc": 1672129536,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux.Chat releases @linux.social Mastodon instance",
+        "author": "nkukard",
+        "url": "https://linux.social/about",
+        "text": "",
+        "created_utc": 1672126791,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is anyone else annoyed that Firefox's extension store is an Apple-esque walled garden?",
+        "author": "TheBrokenRail-Dev",
+        "url": "https://www.reddit.com/r/linux/comments/zw8prh/is_anyone_else_annoyed_that_firefoxs_extension/",
+        "text": "If you don't know, to install an extension on Firefox [requires it to be signed by Mozilla](https://wiki.mozilla.org/Add-ons/Extension_Signing). And if your extension isn't signed, your only have four options:\n- Install it as a temporary extension which will be removed when Firefox is closed.\n- Install a Nightly (or Developer Edition, which is just a uniquely-named beta release) version of Firefox which is more likely to have bugs.\n- Install a [weird unbranded version](https://wiki.mozilla.org/Add-ons/Extension_Signing#Unbranded_Builds) of Firefox that [doesn't auto-update](https://news.ycombinator.com/item?id=20423546) and definitely won't integrate with your package manager. (Yes, an HN comment was the most recent source I could find, these builds are really poorly documented.)\n- [Remove Firefox's signature check yourself](https://gist.github.com/TheBrokenRail/c43bf0f07f4860adac2631a1bd9e4136).\n\nIn comparison, Chrome will bug you about it, but [won't stop you](https://stackoverflow.com/a/24577660/16198887) from installing extension from outside the Chrome Web Store. (And for that matter, if you're using a beta version of Firefox which allows unsigned extensions, it will also warn you about it.)\n\nI don't know about anyone else here, but one of the main reasons I use Linux is to be in control of my computer. So I find it really annoying that Mozilla has decided that they know what's best for me and won't let me install my own extensions on my own computer (like iOS) without jumping through some really annoying hoops (also like iOS).\n\n(And let's not even talk about how Mozilla locked the Android version of Firefox to an arbitrary list of 18 extensions.)\n\nI would switch to Chrome if not for the fact that Google is even worse in almost every other aspect (Manifest v3 fiasco anyone?).\n\nWhile this doesn't impact me in any practical way because all the extensions I use are on Mozilla's store, I still find it infuriating that Mozilla controls what I can and can't install on my own web browser. (Also, it'd be really nice if I could develop and install extensions for personal use rather than being stuck with userscripts.)\n\nWhat do you think?",
+        "created_utc": 1672122112,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "f3arra1n not running in Ubuntu 18.04",
+        "author": "FitDistribution1423",
+        "url": "https://www.reddit.com/r/linux/comments/zw8nn8/f3arra1n_not_running_in_ubuntu_1804/",
+        "text": "[removed]",
+        "created_utc": 1672121922,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Mauro De Maria - Piano Freestyle",
+        "author": "Just_Reach6430",
+        "url": "https://youtu.be/fHF8_5Kmd3U",
+        "text": "",
+        "created_utc": 1672120404,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The faithful",
+        "author": "BriansHeres",
+        "url": "https://i.redd.it/pvas2dw25f8a1.jpg",
+        "text": "",
+        "created_utc": 1672119268,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "RTSP basics",
+        "author": "NoDivide5112",
+        "url": "https://www.reddit.com/r/linux/comments/zw7365/rtsp_basics/",
+        "text": "[removed]",
+        "created_utc": 1672116952,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Was anyone able to get x11 working on 7900xtx with latest mesa and 6.x kernel?",
+        "author": "sdwvit",
+        "url": "https://www.reddit.com/r/linux/comments/zw6vpl/was_anyone_able_to_get_x11_working_on_7900xtx/",
+        "text": "",
+        "created_utc": 1672116298,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "wireguard setup guide",
+        "author": "KingKongBingBong1",
+        "url": "https://www.reddit.com/r/linux/comments/zw6p40/wireguard_setup_guide/",
+        "text": "While working on my debian based home server, i decided to setup a dedicated vpn server. i looked at various options and found wireguard to be the best option natively supported by the kernel. i mostly use it to access devices at my home when i am away. anyway, i made a small tutorial to configure peer nodes on wireguard and thought i would share it here as you might find it useful. heres the link. let me know what you think. the speeds of wireguard seem to be way faster than openvpn for example.",
+        "created_utc": 1672115723,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "wireguard setup guide",
+        "author": "KingKongBingBong1",
+        "url": "https://youtu.be/0x9wyN-mNOI",
+        "text": "[removed]",
+        "created_utc": 1672115501,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "You don’t need a device manager",
+        "author": "NoDivide5112",
+        "url": "https://www.reddit.com/r/linux/comments/zw6lwq/you_dont_need_a_device_manager/",
+        "text": " As an IoT enthusiast, you have used millions of device managers. They are all great at doing their job — managing your devices. However, you have also got millions of complaints — they are just too complicated to use.\n\nThis complication is actuallly reasonable. A typical IoT environment will have tons of devices, and tons of devices indicate easy-to-mess-up memories, as well as easy-to-scramble threads. That is the curse of a monolith. You had better decouple it — OK, then it makes the coding complex. So now the programmers are facing the trade-off between easy-to-code vs. easy-to-use, and of course, programmers won’t make their own life hard.\n\nBut should the users always carry the burden? Before now, the answer could be yes as there aren’t good solutions to this question; but now, the burden is fully distributed and dissolved — because of [Shifu](https://github.com/Edgenesis/shifu).\n\nOK I am writing this article just to promote Shifu, and if you have started looking at the documents I will earn my salary. However, I will go beyond a naive promotion: let’s talk about how Shifu did that.\n\n# Podding your devices\n\nYou may already get it — Shifu is using Kubernetes. K8s is a great devops tool for managing system resources and requirements across multiple pods. As we have already learned from all those large scale clouds, K8s is perfect for decoupling — with its powerful container support, every pod is now completely separated, yet still coordinated together — perfect for the management of the Internet of Things.\n\nDevice management is a combination device and management. You have devices already there, now you just need management — and K8s has devoted its entire life into management. Now you just need to tell K8s “lad you need to manage those” to let everything start running. How? Use Shifu.\n\nShifu makes K8s an IoT native platform. You just need to give Shifu what the device is, the name of protocol it is using, and the list of operations it supports; all those three types of information will be written in a simple configuration file, and then it is done — Shifu will take care of what remains: reading the configuration, building the supported drivers, generating containers, and creating pods and letting K8s know. So K8s has no idea what it is managing — they are still pods, but Shifu knows that each pod is actually a virtual device, entangled with the real device.\n\nThis out-of-box experience is what you deserve after you have suffered so many different “advanced device managers” — you should manage your devices to the level above all — Pods.\n\nWelcome to check out [Edgenesis/shifu: Open-source alternative to Google IoT. (github.com)](https://github.com/Edgenesis/shifu) and tell us what you think!",
+        "created_utc": 1672115436,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MQTT basics",
+        "author": "NoDivide5112",
+        "url": "https://www.reddit.com/r/linux/comments/zw6l80/mqtt_basics/",
+        "text": "&amp;#x200B;\n\n# Introduction\n\nMQTT stands for \"MQ Telemetry Transport\". But currently, I mean more than that.   \nThe reason behind this is that this protocol has gone beyond telemetry transport. The major focus of MQTT is now the entire IoT space. \n\n# Pub/Sub\n\nClassic Client-Server pattern requires the client and server to know each other. This is an example of a strongly coupled system. The issue that is, the server itself needs to maintain a registry of clients, making it complex, error-prone, and somehow a single point of failure. \n\nMQTT uses a Pub/Sub pattern which decouples this system. \n\nThe high-level architecture is consisting of three components: publisher - broker - subscriber. The publisher publishes messages on some topics, the subscriber subscribes to some topics, and the broker is in between - it filters the messages and ensures the subscriber-only gets the messages it wants. We also call the publisher and subscriber \"clients\" of the MQTT broker, indicating that they are both clients of the broker; therefore, in this definition, the \"server\" is the broker.  \nThe broker filters messages via topic and the tags under a topic. A topic is a \"type\" or a \"class\" that can be used to group messages, and tags are \"subtype\" or \"subclass\" of a topic. Once a publisher publishes a message under a topic and/or tags to a broker, only the subscribers subscribing to the same topic and/or tags will be able to get the message from the broker. In this case, both publisher and subscriber need to know the topics and/or tags they are handling.  \n\n\nEXAMPLE:\n\nPublisher: a thermometer in our room, publishing \"temperature\" topic with tag \"room1.\n\nSubscriber: a laptop in our room, subscribing \"temperature\" topic with tag \"room1\".\n\nBroker: running on a server in our room.Topic: \"temperature\".Tag under \"temperature\" topic: \"room1\".  \nA complete path to the temperature message is:\n\n1. The thermometer publishes the temperature message of the topic \"temperature\" and tags \"room1\" to the broker.\n2. The broker checks who is subscribing to the topic and tags and then routes the message to the laptop.\n3. The laptop gets the message.  \n\n\n# Message Queue\n\nMQTT can be considered as a message queue fully tailored for IoT messaging. Compared to traditional message queue systems in distributed systems like Kafka, MQTT is lightweight and faster in both space and time. MQTT strongly prefers memory to store messages with very low throughput and asks any implementation to support dynamically adding/removing topics, to achieve ultra-low latency and high flexibility.  \nYou can always connect MQTT with other message queues like Kafka to make use of both.  \n\n\n# Quality of Service (QoS)\n\nBy its name, QoS defines the quality of the broker's work serving the clients (publisher and subscriber). The clients need to tell the broker what the QoS level is when communicating with the broker.   \nThere are 3 QoS levels:0, or \"at most once\" - the message can be delivered or not, but there should be no duplicates:\n\n* publisher's message should be delivered to a broker one or zero times;\n* subscriber will get a message from a broker one or zero times;\n\n1, or \"at least once\" - the message has to be delivered, but can tolerate duplicates:\n\n* publisher's message should be delivered to a broker one or more times;\n* subscriber will get a message from a broker one or more times;\n\n2, or \"exactly once\" - the message has to be delivered, and must be delivered only once:\n\n* publisher's message must be delivered to a broker once;\n* subscriber must get a message from a broker once.",
+        "created_utc": 1672115384,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is a flatpak, snap, etc?",
+        "author": "waymonster",
+        "url": "https://www.reddit.com/r/linux/comments/zw4pch/what_is_a_flatpak_snap_etc/",
+        "text": "",
+        "created_utc": 1672109681,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu server loses ip address after reboot",
+        "author": "Mountain-Sale6251",
+        "url": "https://www.reddit.com/r/linux/comments/zw49b4/ubuntu_server_loses_ip_address_after_reboot/",
+        "text": "[removed]",
+        "created_utc": 1672108384,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "i wonder who's wearing the hat",
+        "author": "AaTube",
+        "url": "https://i.redd.it/ln561ikn298a1.jpg",
+        "text": "",
+        "created_utc": 1672106842,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Times when \"year of the linux desktop\" was believable",
+        "author": "Commodore256",
+        "url": "https://www.reddit.com/r/linux/comments/zw26z7/times_when_year_of_the_linux_desktop_was/",
+        "text": "I used to believe the \"year of the linux desktop\" clickbait, but that's because there were recent developments that made it believable based on the information we were given.\n\n\nLike Windows Vista being a dumpster fire as we didn't know Windows 7 was much better and in retrospect, it kinda was just Vista SP1 that was just less crazy with RAM.\n\n\nThe Windows 8 (and especially Windows RT) dumpster fire and Steam Machines made that \"year of the linux desktop\" optimism believable based on the information given to us at the time.\n\n\nIt wasn't always just a meme, there were times when it was believable.",
+        "created_utc": 1672102603,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I install wifi adapter pci-e driver (802.11 ac) in nobara (fedora) without wifi on the OS",
+        "author": "Opposite-Student-702",
+        "url": "https://www.reddit.com/r/linux/comments/zw1udl/how_do_i_install_wifi_adapter_pcie_driver_80211/",
+        "text": "[removed]",
+        "created_utc": 1672101623,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Grampa RAID",
+        "author": "Thingfish-1",
+        "url": "https://www.reddit.com/r/linux/comments/zw1d44/grampa_raid/",
+        "text": "[removed]",
+        "created_utc": 1672100328,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "now this is a linux desktop .linux distribution: manjaro",
+        "author": "Free_Device_3989",
+        "url": "https://i.redd.it/qiylocl82c8a1.jpg",
+        "text": "",
+        "created_utc": 1672100081,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Immutable desktops the future of Linux?",
+        "author": "BiteFancy9628",
+        "url": "https://www.reddit.com/r/linux/comments/zw15ov/immutable_desktops_the_future_of_linux/",
+        "text": "So I have seen a lot of buzz about immutable distros lately and have casually daily driven OpenSuse MicroOs and Fedora Silverblue for about a month each.\n\nI feel like there are some pros and cons, but to some extent, a lot of the claims of what they can do are a bit exaggerated, or can already be done in a normal distro.\n\nPros:\n\n- read-only root filesystem is more secure from ransomware or other malware\n\n- image-based means rollback for the whole os is possible, so it's hard for a bad update to break stuff\n\n- separating userland from os is not only more secure, but also can be more stable with less opportunity for user installs to break the os\n\nCons:\n\n- Reboot all the friggin time!\n\n- Now you get to maintain at least 2-3 systems with the host, flatpak, and a couple of distroboxes or toolboxes.\n\nEvery single thing you want to do is at least 3x as complicated without good docs or answers as it's all new.\n\nMeh:\n\n- Many traditional package managers already offer rollback options.\n\n- Why can't you just voluntarily do some of the things immutable forces on you with a traditional distro? Use distriboxes and flatpak. Limit ppas and main os installs.\n\n- Isn't not running everything as root as good as read-only?\n\n\nWhat do you guys think?",
+        "created_utc": 1672099803,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "coats &amp; knights solana discord game community",
+        "author": "No-Heron8650",
+        "url": "https://discord.gg/babVFVqbKB",
+        "text": "",
+        "created_utc": 1672097551,
+        "upvote_ratio": 1.0
+    }
+]

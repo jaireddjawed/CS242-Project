@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Oh you sweet little Logging class you",
+        "author": "castcatchcouch",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5d1pg5/oh_you_sweet_little_logging_class_you/",
+        "text": "Recently, I've been simplifying a Logging class used in our PHP project. So help me if I ever will know why they had to create their own logging class -- they're all long gone, and have been since before I arrived. The whole thing had 492 lines, define()d its own logging levels, and contained the oh so aptly named **public** function\n\n     function evdp( $data) {\n        $search = array( '/\\n/', '/\\/\\//');\n        error_log( preg_replace( $search, '', var_export($data, true)));\n    }\n\nwhich is of course never called outside said class.\n\nMy changes introduced a bug which only showed on prod (of course), so I reverted and took a closer look. I happened (on top of oh my god so many other things) upon this inocuously named little function, consisting of **only** 92 lines. I just HAVE to post the whole sucker, it's such a humungous thing of beauty:\n\n    private function getDbConfig() {\n        global $manual;\n\n        if( $this-&gt;haveConfig === false) {\n            $this-&gt;offline = true;  // set db offline\n\n            $dbF = new DatabaseFactory();\n            $db = $dbF-&gt;getInstance( 'logconfig', $this-&gt;config, false, false, false, true);\n            if( $db-&gt;connected() === false) {\n                if( $db-&gt;onDemandConnect() === FALSE) {\n                    $this-&gt;write( 'log db offline after ondemandconnect for config' . print_r($this-&gt;config, true), 'logging', EMERG);\n                    return;\n                }\n            }\n            # todo - more than 1 db server\n            # SELECT type, backend, server, user, pass, name, table_prefix, persistent, level, search, value~\n            #    FROM log_config WHERE active = 'y' AND offline = 'n';\n            $db-&gt;SELECT( array( 'type', 'backend', 'server', 'user', 'pass', 'name',\n                        'table_prefix', 'persistent', 'level', 'search', 'value'))\n                    -&gt;FROM( 'log_config')\n                    -&gt;WHERE( 'active', '=', 'y')\n                    -&gt;_AND( 'offline', '=', 'n')\n                    -&gt;query();\n            if( $db-&gt;hasError() === true) {\n                $this-&gt;write( 'log db offline, has error', 'logging', EMERG);\n                $this-&gt;offline = true;\n                return;\n            }\n            $log_config = $db-&gt;fetchAssoc();\n            $db-&gt;close();\n            if( $db-&gt;hasError() === true) {\n                $this-&gt;write( 'log db offline, backend fetching has error', 'logging', EMERG);\n                $this-&gt;offline = true;\n                return;\n            }\n            if( count( $log_config) == 0) {\n                $this-&gt;write( 'log db offline, there is no backend configured', 'logging', INFO);\n                $this-&gt;offline = true;\n                return;\n            }\n\n            $config = $log_config[0];\n            if( $config['persistent'] == 'y') {\n                $config['persistent'] = true;\n            } else {\n                $config['persistent'] = false;\n            }\n\n            if(( $config['search'] !== '') &amp;&amp; ( $config['value'] !== '')) {\n                switch( $config['search']) {\n                    case 'TASKID_MANUAL':\n                        $this-&gt;search = TASKID;\n                        $this-&gt;value = $config['value'];\n                        if(( $this-&gt;taskid !== NULL) &amp;&amp; ( $this-&gt;taskid == $this-&gt;value)) {\n                            $this-&gt;level = DEBUG;\n                            $manual = true;\n                        }\n                        break;\n                    case 'TASKID':\n                        $this-&gt;search = TASKID;\n                        $this-&gt;value = $config['value'];\n                        if(( $this-&gt;taskid !== NULL) &amp;&amp; ( $this-&gt;taskid == $this-&gt;value)) {\n                            $this-&gt;level = DEBUG;\n                        }\n                        break;\n                    case 'UNIQUEID_MANUAL':\n                        $this-&gt;search = UNIQUEID_MANUAL;\n                        $this-&gt;value = $config['value'];\n                        if(( $this-&gt;uniqueid !== NULL) &amp;&amp; ( $this-&gt;uniqueid == $this-&gt;value)) {\n                            $this-&gt;level = DEBUG;\n                            $manual = true;\n                        }\n                        break;\n                    case 'UNIQUEID':\n                        $this-&gt;search = UNIQUEID;\n                        $this-&gt;value = $config['value'];\n                        if(( $this-&gt;uniqueid !== NULL) &amp;&amp; ( $this-&gt;uniqueid == $this-&gt;value)) {\n                            $this-&gt;level = DEBUG;\n                        }\n                        break;\n                    default:\n                        $this-&gt;search = _NONE;\n                }\n            }\n\n            if( $this-&gt;level &lt; $config['level']) {\n                $this-&gt;level = $config['level'];\n            }\n            $this-&gt;logDbConfig = $config;\n            $this-&gt;haveConfig = true;\n            $this-&gt;offline = false;\n        }\n    }\n\n\n\nJust.... why? Oh dear lord, WHYYYYYY?",
+        "created_utc": 1479202810,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm working on some legacy code right now",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5cfgwx/im_working_on_some_legacy_code_right_now/",
+        "text": "[deleted]",
+        "created_utc": 1478883042,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Neopets stored user's passwords in plain text, got breached in May 2016: 70 million records leaked",
+        "author": "Dani-Beez",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5ca0kl/neopets_stored_users_passwords_in_plain_text_got/",
+        "text": "I tested my email address at https://haveibeenpwned.com/ and found out that I had been in a breach...of Neopets.\n\nThe message:\n\"Neopets: In May 2016, a set of breached data originating from virtual pet website \"Neopets\" was found being traded online. Allegedly hacked \"several years earlier\", the data contains sensitive personal information including birthdates, genders, and names as well as almost 27 million unique email addresses. Passwords were stored in plain text and IP addresses were also present in the breach. Compromised data: Dates of birth, email addresses, genders, geographic locations, IP addresses, names, passwords, usernames\"\n\nMotherboard article: http://motherboard.vice.com/read/neopets-hack-another-day-another-hack-tens-of-millions-of-neopets-accounts\n\nHopefully people have changed their emails or passwords since the days of Neopets.",
+        "created_utc": 1478808448,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you need to conditionally prefix a sentence-case string with “No”…",
+        "author": "wjt",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5c2syi/when_you_need_to_conditionally_prefix_a/",
+        "text": "…but realise you can do it with some clever interpolation:\n\n    uprintf(\"N%sew %s version found%c\\n\", found_new_version?\"\":\"o n\", channel[k], found_new_version?'!':'.');",
+        "created_utc": 1478716375,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who needs consistent indentation?",
+        "author": "greynoises",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5btf2t/who_needs_consistent_indentation/",
+        "text": "Found this atrocity in some old AngularJS code. The git blame reveals each line has been edited by a different developer, and nobody has fixed the terrible formatting.\n\n    &lt;div material-input model=\"hasCoupons\" type=\"radio\" class=\"inline\"\n                                                        label=\"Do you have any {{customCoupon || 'coupons or scholarship codes'}}?\"\n                    choices=\"couponChoices\"\n\n    &gt;&lt;/div&gt;",
+        "created_utc": 1478614575,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "a fancy own StringUtil class",
+        "author": "incrediblerabbit",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5btb4q/a_fancy_own_stringutil_class/",
+        "text": "so much magic happens here:\n\n    \n\npublic static String removeEmptySpaces(String actualString) {\n        return actualString.replaceAll(\" \", \"\").replaceAll(\"[\\\\s\\\\u00A0]+$\", \"\").replace(\"\\n\", \"\").replace(\"\\r\", \"\")\n                .replace(\" Peninsula\", \"Peninsula\");\n    }\n\n    public static String replaceStrings(String mainString, String toBeReplaced, String replaceWith) {\n        return mainString.replace(toBeReplaced, replaceWith);\n    }\n    ",
+        "created_utc": 1478613324,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wavefront OBJ importer with more callbacks than you ever need",
+        "author": "RainOnYourTirade",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5bjn2l/wavefront_obj_importer_with_more_callbacks_than/",
+        "text": "I needed a simple library to read .obj files, so I stumbled across what I thought would be a convenient library, `libobj`. Things were going well until I found this method:\n\n    inline void obj::obj_parser::face_callbacks(const triangular_face_geometric_vertices_callback_type&amp; triangular_face_geometric_vertices_callback, const triangular_face_geometric_vertices_texture_vertices_callback_type&amp; triangular_face_geometric_vertices_texture_vertices_callback, const triangular_face_geometric_vertices_vertex_normals_callback_type&amp; triangular_face_geometric_vertices_vertex_normals_callback, const triangular_face_geometric_vertices_texture_vertices_vertex_normals_callback_type&amp; triangular_face_geometric_vertices_texture_vertices_vertex_normals_callback, const quadrilateral_face_geometric_vertices_callback_type&amp; quadrilateral_face_geometric_vertices_callback, const quadrilateral_face_geometric_vertices_texture_vertices_callback_type&amp; quadrilateral_face_geometric_vertices_texture_vertices_callback, const quadrilateral_face_geometric_vertices_vertex_normals_callback_type&amp; quadrilateral_face_geometric_vertices_vertex_normals_callback, const quadrilateral_face_geometric_vertices_texture_vertices_vertex_normals_callback_type&amp; quadrilateral_face_geometric_vertices_texture_vertices_vertex_normals_callback, const polygonal_face_geometric_vertices_begin_callback_type&amp; polygonal_face_geometric_vertices_begin_callback, const polygonal_face_geometric_vertices_vertex_callback_type&amp; polygonal_face_geometric_vertices_vertex_callback, const polygonal_face_geometric_vertices_end_callback_type&amp; polygonal_face_geometric_vertices_end_callback, const polygonal_face_geometric_vertices_texture_vertices_begin_callback_type&amp; polygonal_face_geometric_vertices_texture_vertices_begin_callback, const polygonal_face_geometric_vertices_texture_vertices_vertex_callback_type&amp; polygonal_face_geometric_vertices_texture_vertices_vertex_callback, const polygonal_face_geometric_vertices_texture_vertices_end_callback_type&amp; polygonal_face_geometric_vertices_texture_vertices_end_callback, const polygonal_face_geometric_vertices_vertex_normals_begin_callback_type&amp; polygonal_face_geometric_vertices_vertex_normals_begin_callback, const polygonal_face_geometric_vertices_vertex_normals_vertex_callback_type&amp; polygonal_face_geometric_vertices_vertex_normals_vertex_callback, const polygonal_face_geometric_vertices_vertex_normals_end_callback_type&amp; polygonal_face_geometric_vertices_vertex_normals_end_callback, const polygonal_face_geometric_vertices_texture_vertices_vertex_normals_begin_callback_type&amp; polygonal_face_geometric_vertices_texture_vertices_vertex_normals_begin_callback, const polygonal_face_geometric_vertices_texture_vertices_vertex_normals_vertex_callback_type&amp; polygonal_face_geometric_vertices_texture_vertices_vertex_normals_vertex_callback, const polygonal_face_geometric_vertices_texture_vertices_vertex_normals_end_callback_type&amp; polygonal_face_geometric_vertices_texture_vertices_vertex_normals_end_callback)\n    {\n      triangular_face_geometric_vertices_callback_ = triangular_face_geometric_vertices_callback;\n      triangular_face_geometric_vertices_texture_vertices_callback_ = triangular_face_geometric_vertices_texture_vertices_callback;\n      triangular_face_geometric_vertices_vertex_normals_callback_ = triangular_face_geometric_vertices_vertex_normals_callback;\n      triangular_face_geometric_vertices_texture_vertices_vertex_normals_callback_ = triangular_face_geometric_vertices_texture_vertices_vertex_normals_callback;\n      quadrilateral_face_geometric_vertices_callback_ = quadrilateral_face_geometric_vertices_callback;\n      quadrilateral_face_geometric_vertices_texture_vertices_callback_ = quadrilateral_face_geometric_vertices_texture_vertices_callback;\n      quadrilateral_face_geometric_vertices_vertex_normals_callback_ = quadrilateral_face_geometric_vertices_vertex_normals_callback;\n      quadrilateral_face_geometric_vertices_texture_vertices_vertex_normals_callback_ = quadrilateral_face_geometric_vertices_texture_vertices_vertex_normals_callback;\n      polygonal_face_geometric_vertices_begin_callback_ = polygonal_face_geometric_vertices_begin_callback;\n      polygonal_face_geometric_vertices_vertex_callback_ = polygonal_face_geometric_vertices_vertex_callback;\n      polygonal_face_geometric_vertices_end_callback_ = polygonal_face_geometric_vertices_end_callback;\n      polygonal_face_geometric_vertices_texture_vertices_begin_callback_ = polygonal_face_geometric_vertices_texture_vertices_begin_callback;\n      polygonal_face_geometric_vertices_texture_vertices_vertex_callback_ = polygonal_face_geometric_vertices_texture_vertices_vertex_callback;\n      polygonal_face_geometric_vertices_texture_vertices_end_callback_ = polygonal_face_geometric_vertices_texture_vertices_end_callback;\n      polygonal_face_geometric_vertices_vertex_normals_begin_callback_ = polygonal_face_geometric_vertices_vertex_normals_begin_callback;\n      polygonal_face_geometric_vertices_vertex_normals_vertex_callback_ = polygonal_face_geometric_vertices_vertex_normals_vertex_callback;\n      polygonal_face_geometric_vertices_vertex_normals_end_callback_ = polygonal_face_geometric_vertices_vertex_normals_end_callback;\n      polygonal_face_geometric_vertices_texture_vertices_vertex_normals_begin_callback_ = polygonal_face_geometric_vertices_texture_vertices_vertex_normals_begin_callback;\n      polygonal_face_geometric_vertices_texture_vertices_vertex_normals_vertex_callback_ = polygonal_face_geometric_vertices_texture_vertices_vertex_normals_vertex_callback;\n      polygonal_face_geometric_vertices_texture_vertices_vertex_normals_end_callback_ = polygonal_face_geometric_vertices_texture_vertices_vertex_normals_end_callback;\n    }\n\nPlease take a moment and enjoy that first line. I think this is what people mean when they say \"C++ makes your code needlessly verbose\".",
+        "created_utc": 1478484577,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "StackOverflow Importer - I hope nobody *actually* uses this module...",
+        "author": "jrop",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5b6f4x/stackoverflow_importer_i_hope_nobody_actually/",
+        "text": "Project link: [StackOverflow Importer](https://github.com/drathier/stack-overflow-import)\n\nA snippet from the README:\n\nDo you ever feel like all you’re doing is copy/pasting from Stack Overflow?\n\nLet’s take it one step further.\n\n    from stackoverflow import quick_sort\n\nwill go through the search results\nof [python] quick sort looking for the largest code block that doesn’t\nsyntax error in the highest voted answer from the highest voted question\nand return it as a module. If that answer doesn’t have any valid python\ncode, it checks the next highest voted answer for code blocks.\n\n    &gt;&gt;&gt; from stackoverflow import quick_sort, split_into_chunks\n    &gt;&gt;&gt; print(quick_sort.sort([1, 3, 2, 5, 4]))\n    [1, 2, 3, 4, 5]\n    &gt;&gt;&gt; print(list(split_into_chunks.chunk(\"very good chunk func\")))\n    ['very ', 'good ', 'chunk', ' func']\n    &gt;&gt;&gt; print(\"gotta take a break\")\n    gotta take a break\n    &gt;&gt;&gt; from time import time\n    &gt;&gt;&gt; t1 = time()\n    &gt;&gt;&gt; from stackoverflow import time_delay\n    &gt;&gt;&gt; print(\"that's enough, let's continue coding\", time() - t1)\n    that's enough, let's continue coding 5.7283220291137695\n    &gt;&gt;&gt; print(\"I wonder who made split_into_chunks\", split_into_chunks.__author__)\n    I wonder who made split_into_chunks https://stackoverflow.com/a/35107113\n    &gt;&gt;&gt; print(\"but what's the license? Can I really use this?\", quick_sort.__license__)\n    but what's the license? Can I really use this? CC BY-SA 3.0\n    &gt;&gt;&gt; assert(\"nice, attribution!\")\n",
+        "created_utc": 1478295608,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fun Stackoverflow post I answered a couple of years ago",
+        "author": "fecal_brunch",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5avv62/fun_stackoverflow_post_i_answered_a_couple_of/",
+        "text": "[removed]",
+        "created_utc": 1478167040,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If this breaks, move on...",
+        "author": "iamwithnail",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5ar4q1/if_this_breaks_move_on/",
+        "text": "Working on a complete horrorshow of a system in python.  Blanket exceptions, thousand line methods, byzantine database relationships.  \n\nThis gem made me laugh, though, it's in a very commonly used method in the production system.  \n\n    try:\n        test = recordbuilder.Records.SOAPRecord\n        good = True \n    except: # oh a blanket except, that's cool. \n        good = False\n        print \" moving on\"\n    if good:\n         #rest of the method here\n    else: \n        print \"Something went wrong.\" ",
+        "created_utc": 1478106534,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Co-worker with 16 years of experience still writes code like this..",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5apqqw/coworker_with_16_years_of_experience_still_writes/",
+        "text": "[deleted]",
+        "created_utc": 1478091836,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Let's re-define some constants... with a twist!",
+        "author": "code_entity",
+        "url": "https://www.reddit.com/r/programminghorror/comments/5aithm/lets_redefine_some_constants_with_a_twist/",
+        "text": "I cleaned up the naming and style a bit and added comments. It's supposed to do the same calculation for two different years for comparison.\n\n    $years = array (2014, 2015);\n    for ($i = 0; $i &lt; 2; $i++) {\n\n        // Define calculation constants for that year\n        $query = mysql_query(\"SELECT * FROM $table WHERE year = '\".$years[$i].\"'\");\n        while ($row = mysql_fetch_assoc($query)) {\n\n            // The funny part!\n            unset ($row['name']);\n            define ($row['name'], $row['value']);\n\n        }\n\n        // Make calculations for that year using the constants\n\n    }\n\nI like how you can see the flawed thinking of \"*unset* deletes constants with that name\". What actually happens: He deletes the variable before using it to define a constant.",
+        "created_utc": 1478004076,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this gem recently",
+        "author": "JasTWot",
+        "url": "https://www.reddit.com/r/programminghorror/comments/59qw5g/found_this_gem_recently/",
+        "text": "I'm a junior dev at a startup. There are no code reviews. Arrived to find code base was undocumented and large parts untested. \n\nWhile reading the source I found this:\n\n    def is_valid(self):\n        return True",
+        "created_utc": 1477606515,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "New intern trying to get into testing",
+        "author": "Albeneth",
+        "url": "https://www.reddit.com/r/programminghorror/comments/59hj9b/new_intern_trying_to_get_into_testing/",
+        "text": "    $user = factory(User::class)-&gt;create();\n    $cart = factory(Cart::class)-&gt;create(['user_id' =&gt; $user-&gt;id]);\n    if($user-&gt;id == $cart-&gt;user_id) {\n        $this-&gt;assertTrue(true);\n    } else {\n        $this-&gt;assertTrue(false);\n    }",
+        "created_utc": 1477488892,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I hate maven(warning: as much a rant as self-admonishment)",
+        "author": "darthfodder",
+        "url": "https://www.reddit.com/r/programminghorror/comments/58x4vi/i_hate_mavenwarning_as_much_a_rant_as/",
+        "text": "[removed]",
+        "created_utc": 1477198498,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If you compile glibc with -ggdb3, it will build, but segfault when you link to it. This is apparently a known wontfix.",
+        "author": "mikemol",
+        "url": "https://www.reddit.com/r/programminghorror/comments/58cd47/if_you_compile_glibc_with_ggdb3_it_will_build_but/",
+        "text": "It took me [two months](https://archives.gentoo.org/gentoo-user/message/9bdd5ab4a3844c6ee4ec1029402025b7) to figure out. Opened a [bug report](https://bugs.gentoo.org/show_bug.cgi?id=423149) eventually, which /u/flameeyes recognized as an issue [he'd encountered](https://blog.flameeyes.eu/2008/01/im-not-an-happy-maintainer-working-with-cmake/). I swear he gave me a reference to a glibc mailing list thread where it was discussed, but I can't find any reference of it now.\n\nAt least I was motivated to write a Gentoo [install script](https://github.com/mikemol/gentoo-install) from the whole ordeal.\n\n*(I [mentioned](https://www.reddit.com/r/ProgrammerHumor/comments/5855bx/triggered/d8z5car?context=3) this in /r/programmerhumor, and someone pointed me this way...)*",
+        "created_utc": 1476906473,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "your password is stored in a hashed (strong encryption) format",
+        "author": "110011001100",
+        "url": "https://www.reddit.com/r/programminghorror/comments/58bl9e/your_password_is_stored_in_a_hashed_strong/",
+        "text": "A startup in India got hacked, possible database exposure\n\nFound this interesting snippet in their notification mail\n\n&gt; Please note that your password is stored in a hashed (strong encryption) format, securely behind firewalls. You can also rest assured that XXX does not store any payment related information on its systems.\n\nI'm wondering if\n\n* They believe hashed == strong encryption\n\nOr\n\n* They associated the 2 just cause the public wouldnt know what hashed means\n\nOr\n\n* They encrypt their hashes\n\nOr \n\n* They hash passwords after encryption\n\n\nFor context, entire mail text pasted below this line\n\n-----------------------------\n\nDear Customer,\n\nWe suspect that there may have been an unauthorized access to one of the Xxx databases that contained some of our customers' email ids. We are checking this and at this time, we have not discovered any loss of password information.\n\nPlease note that your password is stored in a hashed (strong encryption) format, securely behind firewalls. You can also rest assured that XXX does not store any payment related information on its systems.\n\nPurely, as a precautionary measure and general good practice, we request you to change the password for your XXXaccount. You can do this by visiting the \"My Profile\" section on the XXX website or mobile website. We apologize for this inconvenience.\n\nIf we find any other significant information related to this incident, we would keep you informed of the same.\nFrom,\n",
+        "created_utc": 1476898510,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Microsoft MVP wrote this code in C#",
+        "author": "cooldownseven",
+        "url": "https://www.reddit.com/r/programminghorror/comments/57xsm4/microsoft_mvp_wrote_this_code_in_c/",
+        "text": "    string ddApproved = ((JValue)result[\"DdApproved\"]).ToString();\n    if (ddApproved.Contains(\"True\"))\n\nThe developer did not try to convert the object from \"result\" to whatever it actually is. DdApproved is a bool field",
+        "created_utc": 1476716814,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there any justification for all these whitespaces?",
+        "author": "fuck_reddit_policy",
+        "url": "https://www.reddit.com/r/programminghorror/comments/57xeva/is_there_any_justification_for_all_these/",
+        "text": "check source at https://www.tim.it/\n\npastebin here: http://pastebin.com/0KsLQa9X\n\nbiggest italian ISP btw\n\nabout 7k lines... using an online HTML formatter it goes down to ~2k (not minified!)\n\n",
+        "created_utc": 1476712300,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Free Memes",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/57jrl8/free_memes/",
+        "text": "[deleted]",
+        "created_utc": 1476492938,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why query when you can loop?",
+        "author": "Sarke1",
+        "url": "https://www.reddit.com/r/programminghorror/comments/57f6o4/why_query_when_you_can_loop/",
+        "text": "an into this piece of code from one of our previous junior devs.  I guess he wasn't comfortable with queries.\n\n\tpublic function getLocationNews()\n\t{\n\t\t$articleLimit = 8;\n\t\t\n\t\t$allNews = Announcement::model()-&gt;entries;\n\t\t\n\t\t$filteredNews = array();\n\t\t\n\t\tforeach ( $allNews as $m )\n\t\t{\n\t\t\t// Location is an array, and have have multiple values.\n\t\t\t// It (the Announcement model) may have no location at all.\n\t\t\tif ( isset ( $m-&gt;location ) )\n\t\t\t{\n\t\t\t\tforeach( $m-&gt;location as $value )\n\t\t\t\t{\n\t\t\t\t\tif ( $value == $this-&gt;location_id )\n\t\t\t\t\t{\n\t\t\t\t\t\t$filteredNews[] = $m;\n\t\t\t\t\t}\n\t\t\t\t}\t\t\t\n\t\t\t}\n\t\t\t\n\t\t\tif ( count( $filteredNews ) == $articleLimit )\n\t\t\t{\n\t\t\t\t//dump($filteredNews);\n\t\t\t\t\n\t\t\t\treturn $filteredNews;\n\t\t\t}\n\t\t}\n\t\t\n\t\treturn $filteredNews;\n\t}\n\nIt was failing when location was not an array but also not null (returned as empty string).\n\nI rewrote it as this\n\n\tpublic function getLocationNews()\n\t{\n\t\t$criteria = new CDbCriteria;\n\t\t$criteria-&gt;compare('t.location', \"::{$this-&gt;location_id}::\", true);\n\t\t$criteria-&gt;limit = 8;\n\t\treturn Announcement::model()-&gt;entries($criteria);\n\t}",
+        "created_utc": 1476429454,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"When you have a thousand line function you are going to need a few gotos\"",
+        "author": "NochaQueese",
+        "url": "https://www.reddit.com/r/programminghorror/comments/57a4gs/when_you_have_a_thousand_line_function_you_are/",
+        "text": "And apparently \"comments are kinda pointless really. They code they refer to can change.\"\n\nWhy do I still work here?",
+        "created_utc": 1476363722,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The static analyser told my team mate that he should avoid magic numbers...",
+        "author": "Tijdreiziger",
+        "url": "https://www.reddit.com/r/programminghorror/comments/56x5ri/the_static_analyser_told_my_team_mate_that_he/",
+        "text": "...so he solved it by moving the number to a field:\n\n    private static final int EIGHT = 8;",
+        "created_utc": 1476176852,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Program code started using machines to kill people as early as in 1985.",
+        "author": "Resistor510",
+        "url": "https://www.reddit.com/r/programminghorror/comments/56tjfs/program_code_started_using_machines_to_kill/",
+        "text": "A standard one-time therapeutic dose of radiation is up to 200 rads.\n\n1000 rads is a lethal dose, and the revolted machine was burning the defenseless humans with 20 000 rads.\n\nLet's look into the case of a system error - the worst software bug in history - that occurred as a result of incremental yet uncoordinated software improvements.\n\nHardware locks were removed in the Therac-25, and the safety-maintaining functions were passed to the software instead.\n\nIn [this article](http://www.viva64.com/en/b/0438/), we will talk about how the investigation went and what lessons IT engineers, programmers, and testers should learn from this story not to let something like that happen again.",
+        "created_utc": 1476124522,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Linux news: the Penguin is kidnapped!",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/56s87f/linux_news_the_penguin_is_kidnapped/",
+        "text": "[removed]",
+        "created_utc": 1476109887,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "You can handle an exception as part of a normal code path",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/56bu92/you_can_handle_an_exception_as_part_of_a_normal/",
+        "text": "[deleted]",
+        "created_utc": 1475853174,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A surprisingly honest sales site",
+        "author": "VTCAKAVSMoACE",
+        "url": "https://www.reddit.com/r/programminghorror/comments/55nqsb/a_surprisingly_honest_sales_site/",
+        "text": "Image: http://i.stack.imgur.com/6U4dP.png\n\nSource: https://www.dealman.co.nz/collections/the-legendary-collection/products/urban-knight-jacket\n\nRelevant code:\n\n    Hurry! Only &lt;span id=\"fakenumber\"&gt;1&lt;/span&gt; left in stock.\n\nFound this little beauty while perusing a facebook-linked advertisement. I had thought that the number in stock was going down oddly quickly, considering that I had just opened up the page.\n\nIt was at this moment that I decided to take a peek into the source code to see how they were tracking this, and, lo and behold!, it was not a real number. In fact, the span it was contained in was actually id'd as \"fakenumber\".\n\n*facepalm*\n\nEDIT:\n\nAs discussed in a comment below, I found the relevant code for this span being updated. It's not very clever and appears to _not be even unique to this site_, as it comes through a third party ([source code](https://hurrifyme.com/shopify/app/counter/counter_app.js?shop=deal-man.myshopify.com)):\n\n    if (product_set_fake_number) {\n        if (product_set_fake_time) {\n            decrease_after = product_set_fake_time; //in sec\n        }\n        var cookie_fake_remaining_items = getCookie(\"cookie_fake_remaining_items\");\n        if (fake_enable_cookies == '1' &amp;&amp; cookie_fake_remaining_items &gt;= min_fake_number_drop_to) {\n            console.log('cookies enable');\n            fake_remaining_items = cookie_fake_remaining_items;\n        } else {\n            console.log('cookies not enable');\n            fake_remaining_items = product_set_fake_number; //define in getProductCounter.php\n        }\n        $('#fakenumber').html(fake_remaining_items);\n        //setTimeout(fake_progress_back, 1000 * decrease_after_first_item);\n        progress_bar_percent = fake_remaining_items * 2;\n        setTimeout(progress_back, 300);\n        setInterval(fake_progress_back, 1000 * decrease_after);\n    }\n\n",
+        "created_utc": 1475502885,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I think we have a winner for worst SSL certificate",
+        "author": "legocry",
+        "url": "https://www.reddit.com/r/programminghorror/comments/55d8tg/i_think_we_have_a_winner_for_worst_ssl_certificate/",
+        "text": "Some websites seem to be so poorly done, that it had to be on purpose.\nLook at this 'interesting' ssl labs result:\nhttps://www.ssllabs.com/ssltest/analyze.html?d=toverland.nl&amp;ignoreMismatch=on&amp;latest#whyNotTrusted\n\nNot only is it unsafe, it 's also only for localhost, and valid until 1904!",
+        "created_utc": 1475329387,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Return the first three characters of a String N times.\"",
+        "author": "starm4nn",
+        "url": "https://www.reddit.com/r/programminghorror/comments/55b6j7/return_the_first_three_characters_of_a_string_n/",
+        "text": "`return new String(new char[n]).replace(\"\\0\", str.substring(0, ((3&gt;=str.length())?str.length():3)));`\n\nExplanation:\n\nConstruct a string from an array of n chars. Replace Null characters in string with a substring from 0 to 3 or the length of the string if the length is less than or equal to three.\n\nFurther Explanation:\n\nIn Java, the new keyword declares an object of a specified type. new String declares a new string. The new char[n] declares a char array with a length of n. Apparently you can give a String a char array as parameter. Replace replaces a String with another. \"\\0\" is the code for the null char which each element of an array was initialized with. Substring returns a specified part of a string based on the int input. 3&gt;=str.length returns a bool based on whether or not the length of a the string is less than or equal to 3. ?str.length():3 converts the bool to an int. If the length of the String str is less than three, the number becomes the length. Otherwise it becomes 3.",
+        "created_utc": 1475285525,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yea, it's probably time to go to bed",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/559kws/yea_its_probably_time_to_go_to_bed/",
+        "text": "[deleted]",
+        "created_utc": 1475263327,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Decided to read some of my old code today...",
+        "author": "dbj1303",
+        "url": "https://www.reddit.com/r/programminghorror/comments/554zki/decided_to_read_some_of_my_old_code_today/",
+        "text": "Good day everyone!\n\nI am here to tell you about a project that I started on once, but has since abandoned. Its name is *Unicorn OS*. An OS, written entirely in assembly. When I started this hobby back in 2010 I had never coded anything useful before. May have made the occasional decision of *finally learn how to program*, googled some tutorials, print some strings and then lose interest. I would mostly lose interest because I would never learn how computers *really* work, when just printing silly strings in C#. Thus I googled away and discovered how a processor works, and quickly stumbled upon the glorious language: **assembly**.\n\nOne thing led to another, and soon I would be designing a 16-bit OS. But I had made two major mistakes:\n\n* Learning assembly as my first language.\n* Writing an Operating System as my first project.\n\nThis would of course prove a challenge to my skills as a programmer. Designing and writing an OS is a HUGE task, and one should at least know how to comment code before starting out on such journey. Whatever. I was young and dumb, I guess.\n\nI hope the following tour of my personal horror-inducing offspring is somewhat understandable, since assembly-programmers are a rare thing these days.\n\n---\n---\n\nThe first thing I read through is the start of my kernel. The kernel is basically a large library of functions that can do stuff for whatever program is requesting it. It can get a string from the keyboard, or read files from the disk. The kernel has hundreds of functions, and each function has a unique identifying value. So at the start of the kernel, the code is looked up in a table to decide which address the system call resides, *right*? Wrong. This is how genius me decided to handle that task:\n\n    ;callcode trapline\n    mov ax, [bp+0x04];arg0\n    \n    cmp ax, 0x0000\n    je call0000\n    cmp ax, 0x0001\n    je call0001\n    cmp ax, 0x0002\n    je call0002\n    cmp ax, 0x0003\n    je call0003\n    cmp ax, 0x0004\n    je call0004\n\nThis goes on for hundreds and hundreds of lines.\nIn C, this would be the equivalent on the stupidity scale:\n\n    int kernel(int callcode) {\n      //callcode trapline\n      if (callcode == 0) {\n        goto cc0;\n      }\n      if (callcode == 1)\n        goto cc1;\n      }\n      if (callcode == 2) {\n      goto cc2;\n      }\n\nAnd so on. Ugh.\n\n(Before you slaughter me: *goto*'s are common in assembly.)\n\n---\n---\n\nLet's move on to something a bit more... horrible, shall we? Take a good look at this system call subroutine (btw, this is what we jump to if callcode == 0x0407...):\n    \n    call0407:;constrdec(cc, str), ax=num\n      xor dx, dx\n      mov bx, [bp+0x06];arg1\n      push bx\n      push 0x0405\n      call 0x1000\n      dec bx\n      cmp ax, 0x0005\n      jae .s5\n      cmp ax, 0x0004\n      je .s4\n      cmp ax, 0x0003\n      je .s3\n      cmp ax, 0x0002\n      je .s2\n      cmp ax, 0x0001\n      je .s1\n      cmp ax, 0x0000\n      je .ret\n      cmp ax, 0x0000\n      je .ret\n      .s5:\n      inc bx\n      mov al, [bx]\n      sub al, 0x30\n      jz .s4\n      .ls5:\n      add dx, 0x2710\n      dec al\n      jnz .ls5\n      .s4:\n      inc bx\n      mov al, [bx]\n      sub al, 0x30\n      jz .s3\n      .ls4:\n      add dx, 0x03e8\n      dec al\n      jnz .ls4\n      .s3:\n      inc bx\n      mov al, [bx]\n      sub al, 0x30\n      jz .s2\n      .ls3:\n      add dx, 0x0064\n      dec al\n      jnz .ls3\t\n      .s2:\n      inc bx\n      mov al, [bx]\n      sub al, 0x30\n      jz .s1\n      .ls2:\n      add dx, 0x000a\n      dec al\n      jnz .ls2\t\t\n      .s1:\n      inc bx\n      mov al, [bx]\n      sub al, 0x30\n      jz .ret\n      .ls1:\n      add dx, 0x0001\n      dec al\n      jnz .ls1\n      .ret:\n      mov [bp-0x02], dx;axret\n      jmp ret2\n\nThis has a total of **three comments** (btw: in assembly comments are done with the use of a semicolon). One comment naming the function for future reference, and another stating which argument we are accessing on the stack. The last comment is simply describing that we are returning some value from the function. Not at all useful, if one were to look at this code in the future.\n\nThere is a loop or two in there somewhere. But I would never have guessed at first, because almost the entire kernel is written with minimal use of the *tab*-button. Or space-bar. Sometimes a mix of both though. Moving on.\n\n\n\n---\n---\n\nMy last code example ended in one big mystery:\n\n    jmp ret2\n\nA jump to some magic happy-land that must return from the kernel. I have read other kernel functions as well, and they all end with a jump to some label of that naming convention: ret#.\n\nFor some reason I decided that the kernel is responsible for removing the arguments from the stack upon return. To do this in assembly you can issue a return instruction, followed by the number of bytes to pop off the stack. But let's see where the label *ret2* leads us:\n\n    ret2:\n    pop dx\n    pop cx\n    pop bx\n    pop ax\n    pop bp\n    ret 0x04\n\nSo, popping previous register states, and returns while removing four bytes off the stack, eh? This is, as in the first example, one of many. There is one system call that requires you to remove 17 arguments from the stack, and all flavors in between is in there too. This should seriously have been a macro...\n\nNote the *0x04*. I think I might have read some *tips to become a better programmer*, and come across some tip stating: *consistency is key!*\n\nFor me that meant writing ALL numbers in hexadecimal. Not only does it look cool, but it ensures maximum confusion when nice round numbers become a mess in hex. But yeah. Consistency. Right...\n\n---\n---\n\nI will end my guided tour by showing you some of my proudest work in this coding catastrophe: The printable banner of Unicorn OS. About the eye-catcher to the left in the banner: It was meant to look like the horn of a Unicorn. Some say it looks like a poo. Some say it looks like a fancy dildo. Some say it looks like a combination of both.\n\nI want to congratulate you, if you managed to read this without throwing up a little in your mouth. Thank you for the read.\n\n         /\\ *    _    _  ______  ______  ______  ______  _____   ______    _  _   \n     *  (\\_)    | |  | ||  __  \\(_    _)/  ____)/  __  \\|  __ \\ |  __  \\  | ||_   \n        (\\_) *  | |  | || |  | |  |  |  | |     | |  | || |__) )| |  | |  |_| _|  \n        (\\_)    | |__| || |  | | _|  |_ | |____ | |__| || ___ ( | |  | |  ======  \n       (\\___)   \\______/|_|  |_|(______)\\______)\\______/|_|  \\_\\|_|  |_|          \n      /      \\                                                                    ",
+        "created_utc": 1475190116,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SOAP more like Shitty Object Access Protocol",
+        "author": "HippieHanson",
+        "url": "https://www.reddit.com/r/programminghorror/comments/55342t/soap_more_like_shitty_object_access_protocol/",
+        "text": "I recently had the joy to work with a great SOAP based API that requires you to send requests in the following format.\n\n    &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;\n    &lt;soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\"&gt;\n        &lt;soap12:Body&gt;\n            &lt;xxxxxxxxxxx xmlns=\"http://xxxxxxxxxxx.xxx/\"&gt;\n                &lt;xml&gt;\n                &lt;/xml&gt;\n            &lt;/xxxxxxxxxxx&gt;\n        &lt;/soap12:Body&gt;\n    &lt;/soap12:Envelope&gt;\n\nAnd their WSDL only exposes this call, which takes a XML document as a parameter, so they expect you to read their 200 page manual that was last updated in 2008 to find out how to use this gigantic heap of shit.\n\n                        &lt;request&gt;\n                            &lt;data&gt;\n                                &lt;string value=\"username\"&gt;&lt;/string&gt;\n                            &lt;/data&gt;\n                        &lt;/request&gt;        \n\n^^^someone ^^^kill ^^^me.",
+        "created_utc": 1475167637,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When exactly do I DoSomething?",
+        "author": "syockey",
+        "url": "https://www.reddit.com/r/programminghorror/comments/54t08b/when_exactly_do_i_dosomething/",
+        "text": "Found this gem in some code I'm supporting:\n    \n    void foo(bool bNew, int nQty)\n    {\n        bool bDoSomething = !(bNew == (nQty&gt;0));\n        :\n        :\n    }\n\nMade my brain hurt for a bit, but I think it is an XOR of some sorts.",
+        "created_utc": 1475012466,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I present to you, the ternary switch",
+        "author": "doctorhow95",
+        "url": "https://www.reddit.com/r/programminghorror/comments/54lwvl/i_present_to_you_the_ternary_switch/",
+        "text": "So I was looking through this code, that was generated by a tool (I'll let you decide if that means machine or man).  The longer you look at it the more problems you see.\n\n    final public int solve() throws BinaryExpressionSolverException {\n      int e; \t\n      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {\n        case ID:\n        case NOT:\n        case 18: \t\n         e = sum(); \t\n         jj_consume_token(0); \t\n                            {if (true) return e;}\n          break;\n        case EOL: \t\n         jj_consume_token(EOL); \t\n         break;\n        default: \t\n         jj_la1[0] = jj_gen; \t\n         jj_consume_token(-1); \t\n         throw new BinaryExpressionSolverException();\n        } \t\n      throw new Error(\"Missing return statement in function\");\n    }",
+        "created_utc": 1474912561,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Too many cooks... (php)",
+        "author": "hsxp",
+        "url": "https://www.reddit.com/r/programminghorror/comments/54kykh/too_many_cooks_php/",
+        "text": "I was browsing through the codebase to find a problem's source when I stumbled upon this lovely ordeal (anonymized):\n\n    if(isset($thing)) { do stuff }\n    else if($thing2 != null) { do stuff }\n    else if(empty($thing3) == false) { do stuff }\n\nWhy on Earth do we have three different ways of checking if something is null within a few lines of each other? I thought maybe they're different data types with different weirdnesses, but nope. They're all strings. I checked the commit log and six people have been in this file in the last two weeks.",
+        "created_utc": 1474901638,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I didn't know what % was..",
+        "author": "RuteNL",
+        "url": "https://www.reddit.com/r/programminghorror/comments/54htlz/i_didnt_know_what_was/",
+        "text": "When I just started programming I didn't know what modulo was, so I made this masterpiece:\n\n\t\t\twhile(k&lt;1){\n\t\t\t\tif(curpic&lt;0){\n\t\t\t\t\tcurpic+=maxpic;\n\t\t\t\t}else{\n\t\t\t\t\tk=12;\n\t\t\t\t}\n\t\t\t\tif(curpic&gt;maxpic){\n\t\t\t\t\tcurpic-=maxpic;\n\t\t\t\t}else{\n\t\t\t\t\tk=12;\n\t\t\t\t}\n\t\t\t}",
+        "created_utc": 1474846872,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Capcom packages terribly-insecure driver with latest Street Fighter update",
+        "author": "Diasparo",
+        "url": "https://www.reddit.com/r/programminghorror/comments/54b750/capcom_packages_terriblyinsecure_driver_with/",
+        "text": "[From The Register](http://www.theregister.co.uk/2016/09/23/capcom_street_fighter_v/?mt=1474735573375)\n\n[Capcom's response/backpeddle](https://twitter.com/StreetFighter/status/779415147873914880)",
+        "created_utc": 1474739428,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Generating random IDs",
+        "author": "hyperbole_only",
+        "url": "https://www.reddit.com/r/programminghorror/comments/52u18l/generating_random_ids/",
+        "text": "I'm working with a new dev on a contract job. One of the client's requests is to avoid sequential order numbers, since that could leak private information...\n\n    for i in range(0,1000):\n        if i == 999:\n            return HttpResponseRedirect('/order_error')\n        _candidate_id = random_string(6)\n        try:\n            _order = Order.objects.get(pk=_candidate_id)\n        except Order.DoesNotExist:\n            break\n\n    sys.stdout.flush()\n    order.pk = _candidate_id.lower()\n    order.save()\n\nEDIT: Thanks everyone for the helpful suggestions -- before posting, I updated our model to automatically generate a unique UUID when a new record is created. :)",
+        "created_utc": 1473905026,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "REST is just a fad",
+        "author": "CheekyDotes",
+        "url": "https://www.reddit.com/r/programminghorror/comments/52t564/rest_is_just_a_fad/",
+        "text": "Was discussing my next integration projects with my boss today. One is to push equipment purchase orders our clients to a supplier.\n\nThis supplier is going to pay us a few grand for integrating, which is nice, but they way they expect us to do it scares me.\n\nNot a REST web service like the others, instead they have opened up direct SQL access to their master database via static IP. I can only assume this means no SSL too.\n\nI thought this kind of scenario is just a joke we tell our selves. Guess not.",
+        "created_utc": 1473892335,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thread.Sleep(tSleepTime)",
+        "author": "JohnStabler",
+        "url": "https://www.reddit.com/r/programminghorror/comments/52kuso/threadsleeptsleeptime/",
+        "text": "Came across this masterpiece recently:\n\n    //Pauses for 30 milliseconds before retrying connection\n    int tSleepTime = 30;\n    Stopwatch stopwatch = Stopwatch.StartNew();\n    while (true)\n    {\n        if (stopwatch.ElapsedMilliseconds &gt;= tSleepTime)\n        {\n            break;\n        }\n        Thread.Sleep(1);\n    }",
+        "created_utc": 1473778246,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Apache Commons Math EigenDecomposition horror",
+        "author": "vlees",
+        "url": "https://www.reddit.com/r/programminghorror/comments/52kjml/apache_commons_math_eigendecomposition_horror/",
+        "text": "For some matrix manipulation I need to calculate the eigenvectors of some large symmetric matrix.\n\nI came across the Apache Commons Math library that has a useful class called `EigenDecomposition`.\n\nSo I try to use it, and pretty soon it crashes with a `MaxCountExceededException`. So I look in the code, and sure enough, there's a counter of how many iterations the class needed so far and hardlimits itself:\n\n    if (its == maxIter) {\n      throw new MaxCountExceededException(LocalizedFormats.CONVERGENCE_FAILED, maxIter);\n    }\n\n`maxIters` is declared as a `private byte maxIters = 30;` without a setter...\n\nCopying over all classes would be a very dirty hack (as I need more apache commons math functions and most classes required for the EigenDecomposition weren't public either; so only copying this single class wouldn't suffice).\n\nSo, I looked what the `EigenDecomposition(matrix)` constructor would do:\n\nCheck if the matrix is symmetric, then do:\n\n    transformToTridiagonal(matrix);\n    findEigenVectors(transformer.getQ().getData());\n\n\n(otherwise transform the matrix to Schur form and do some magic)\n\nMy filthy hack to prevent all this copying of classes nonsense and rip the iterations check out:\n\n    val maxIterField = EigenDecomposition::class.java.getDeclaredField(\"maxIter\")\n    maxIterField.isAccessible = true\n    val eigen = EigenDecomposition(BlockRealMatrix(1, 1))\n    maxIterField.setByte(eigen, -1)\n\n    val transformToTridiagonalMethod = EigenDecomposition::class.java.getDeclaredMethod(\"transformToTridiagonal\", RealMatrix::class.java)\n    transformToTridiagonalMethod.isAccessible = true\n    transformToTridiagonalMethod.invoke(eigen, similarity)\n\n    val transformerField = EigenDecomposition::class.java.getDeclaredField(\"transformer\")\n    transformerField.isAccessible = true\n    val transformer = transformerField.get(eigen)\n\n    val getQMethod = transformer.javaClass.getDeclaredMethod(\"getQ\")\n    getQMethod.isAccessible = true\n    val q = getQMethod.invoke(transformer)\n\n    val getDataMethod = q.javaClass.getDeclaredMethod(\"getData\")\n    getDataMethod.isAccessible = true\n    val data = getDataMethod.invoke(q)\n\n    val findEigenVectorsMethod = EigenDecomposition::class.java.getDeclaredMethod(\"findEigenVectors\", Array&lt;DoubleArray&gt;::class.java)\n    findEigenVectorsMethod.isAccessible = true\n    findEigenVectorsMethod.invoke(eigen, data)\n\nEverytime I scroll by this part in my code, I die a little inside :'(",
+        "created_utc": 1473774610,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thank you very much ...",
+        "author": "DwardFardbark",
+        "url": "https://www.reddit.com/r/programminghorror/comments/52ho1z/thank_you_very_much/",
+        "text": "I worked at an east coast shop that had several hundred programmers who maintained a huge application system.  \n\nInstead of parts the application system being assigned to and owned by specific groups.  Everyone worked on all programs (as needed).  To make things even more interesting, the application system had a core program that all other programs interacted with.  This means there could be seven (or more) different folks making changes to this program at any given time.  \n\nWe used source management software to check-in and merge programs ..but most folks sucked at using it .. and it was confusing to use it ... so would folks would quite often wipe out changes checked in by other folks.  Caused huge amount of rework and time.\n\nAfter, yet again, having a rather large and lengthy change suddenly disappear .. I called the Chinese visa worker to chew on him .. explained he was last one checking in and my change was there in the prior version and could he undo his aggravating mistake pronto .. thought he'd be contrite or defensive/angry or anything like that.  After a short pause he said `thank you very much for allowing me to have this most interesting conversation`.\n\nSigh ... I just gave up and re-added the missing change myself.",
+        "created_utc": 1473726425,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Free Android Phone = Debugging horror",
+        "author": "DarkMatter007",
+        "url": "https://www.reddit.com/r/programminghorror/comments/51ej6j/free_android_phone_debugging_horror/",
+        "text": "I come from an iOS background. I wanted to do some cross-development and thought let me give Xamarin a try. After many ups/downs (like the kettle horror). I had to do the final tests on a real device.\n\nFirst problem: I dont have an Android.\n\nMy girlfriend has one and sometimes I used it to test some stuff on it but as you know nowadays everyone is an addict, you cant take the phone for 5 minutes and they need to read/post something on FB/Insta/Snapchat. \n(not good for debugging)\n\nIn the weekend a friend told me he has an Android he doesnt use. \nSo I asked if I could lend it to do my final tests...(super happy didnt have to buy an android)\n\nAll my tests were successful (yeey expect release in a day or two) except for Push Notifications...\nWhen the App is running it works but when you kill it, it didnt work anymore.(not receiving push) On iOS this is impossible push works or it doesnt work. So I thought there was something wrong with the code.\n\n**That was 9 days ago.**\n\nThe app took me 14 days to create. (till the date when I got my friends phone to do last tests)\n\n_Yes I have spend 9 days debugging the push notifications._\n\n**Cancel Android App**\n\nI made a tough decision to release the app without Android version (kind of weird because this is why I started using Xamarin in the first place) but it was impossible to release the Android version because the notifications were crucial. \n\nI just went on whatsapp and send my friend a message that I would bring his phone tonight I was done with it. \nThis is what he said exactly: \n\n**_\"you can keep it, I dont know why but I cant get any messages when the phone restarts or the app is killed, thats why I dont use it anymore.\"_**\n\nI didnt even respond, i took my laptop, drove to my girlfriends work. DEMANDED her phone. Put the cable in. Build the application to her phone. Test the notifications...it works like a charm.\n\nI screamed, I dont know if it was a scream of joy or anger.\n\n\n**Lesson learned with this app:**\n\n1) Throw away my wifi kettle\n\n2) Never accept free phones from your friend (or anyone else).\n",
+        "created_utc": 1473157147,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "As long as it works, right?",
+        "author": "issak42",
+        "url": "https://www.reddit.com/r/programminghorror/comments/51dzav/as_long_as_it_works_right/",
+        "text": "So I was quite new in bash and I was writing a discovery script for Zabbix, basically parsing some output from Asterisk console to json... manually...\n\n    #!/bin/bash\n    # Zabbix discovery script for Asterisk users\n     \n    A=$(sudo /usr/sbin/asterisk -rx 'sip show users' | awk '{ split($1,a); num=a[1]/1; if (num == a[1]) print(\"{\\\"{#USER}\\\":\"\"\\\"\"a[1]\"\\\" },\")}' | sed ':a;N;$!ba;s/\\n//g')\n     \n    # A%? removes the last character (which is an extra unwanted comma)\n    # sed above removes newlines\n    # awk formats text into JSON\n    # echo prints extra json stuff before and after awk\n     \n    echo -e \"{\\\"data\\\":[${A%?}]}\"\n\nI have no idea how it works now :D But it works and it's being used in production since I wrote it without failing... ",
+        "created_utc": 1473144997,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Damn error codes",
+        "author": "_Lady_Deadpool_",
+        "url": "https://www.reddit.com/r/programminghorror/comments/51axft/damn_error_codes/",
+        "text": "It took me a good week or 2 to dig through enough tests/data to extract this. I still have a headache.\n\n---\n\nSo at work part of our software uses a video recording library similar to VLC. The library has an exe, you pass it a string of arguments and it does its thing. \n\nNow, if I'm recording a stream and the stream falls over we can pick it back up again and record to a new file. At the end if there's multiple files we just merge them together. \n\nOkay, so the fun part \n\nWe were having an issue with our software where long recordings would exit with an error code 4. The error message was somewhere along the lines of \"too many fragments\". \n\nSome research later, what happens is that if the stream falls over and picks up again, then falls over &amp;lt;5s after that it counts as a fault. After 100 faults the recording gives up. Okay, so now I know *what* is happening, just have to figure out *why*. Time to dig deeper. \n\nI suspect that the code is being thrown during the finalization so I test that manually. The program exits with an \"invalid operation error\". Okay...? \n\nI try running the finalization steps manually and uncover that the real error is \"illegal or corrupt data at input\". Weird. \n\nSo I dig deeper and try running tests manually. By this point I'm so deep into our software that we're fully past the c#/.net levels and I'm at the marshaled cpp libraries. \n\nI eventually uncover that the source of the error is \"unsafe file paths\". The file paths we were using contained spaces but were inside double quotes. Apparently that wasn't enough for the library and it just refused to do anything and failed. I told it that unsafe file paths are ok and the 2 week problem goes away. \n\n---\n\nTldr-\n\nUser sees \"error code 4, too many fragments\" \n\nThis really means \"stream is too fragmented\" rather than having anything to do with video fragments \n\n... Which is being thrown upon receiving an \"illegal operation error\" \n\n... That is being caused by \"illegal or corrupt data at input\" \n\n..... Caused by a string with escaped white space \n\n---\n\nTltldrdr-\n\n&lt;--------- source of the error \n\nError messages ----------&amp;gt;",
+        "created_utc": 1473101747,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I found this line in our report generator",
+        "author": "annoyed_freelancer",
+        "url": "https://www.reddit.com/r/programminghorror/comments/50dar3/i_found_this_line_in_our_report_generator/",
+        "text": "I'm pretty sure it opens a portal to Narnia. \n\n    csv &lt;&lt; [u[1], u[2], status(u[4], u[5]), u[6], u[7], u[8], u[3], c].concat(output_tags(tags, u[0].to_i)).concat(output_groups(groups, u[0])).concat(output_ratings(rats_notes_data, u[0].to_i, viewers))",
+        "created_utc": 1472589505,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I found this line in our report generator",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/50d8gk/i_found_this_line_in_our_report_generator/",
+        "text": "[removed]",
+        "created_utc": 1472588760,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Never trust that you know the alphabet",
+        "author": "RainOnYourTirade",
+        "url": "https://www.reddit.com/r/programminghorror/comments/50d08x/never_trust_that_you_know_the_alphabet/",
+        "text": "We have a dev on our project who is known to be bad at spelling. Most of the time he/we can work around this and the code works, but occasionally his spelling is so bad that he can't even type the alphabet correctly. That's when this code came along, see if you can find why none of our `$Game::` variables worked:\n\n    // [dev]: set the value of a global variable, so that\n    // it can be scheduled\n    function setVariable(%var, %val)\n    {\n       // [dev]: make sure that we don't have any wierd symbols before setting\n       // the variable.\n       %var = stripChars(%var, \"qwrtyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890_:[]\");\n       eval(\"$\" @ %var SPC \"=\" SPC %val @ \";\");\n    }\n\nThis took longer than I'd like to admit to debug, and we're never going to let him live this one down.",
+        "created_utc": 1472586055,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Distribution fun with Imagick dependancy",
+        "author": "Sarke1",
+        "url": "https://www.reddit.com/r/programminghorror/comments/509x98/distribution_fun_with_imagick_dependancy/",
+        "text": "&gt; **Caution**\n\n&gt; Prior to ImageMagick 6.5.7-8 (1623), $x was positive when shifting to the left and negative when shifting to the right, and $y was positive when shifting an image up and negative when shifting an image down. Somewhere betwen ImageMagick 6.3.7 (1591) and ImageMagick 6.5.7-8 (1623), the axes of $x and $y were flipped, so that $x was negative when shifting to the left and positive when shifting to the right, and $y was negative when shifting an image up and positive when shifting an image down. Somewhere between ImageMagick 6.5.7-8 (1623) and ImageMagick 6.6.9-7 (1641), the axes of $x and $y were flipped back to pre-ImageMagick 6.5.7-8 (1623) functionality.",
+        "created_utc": 1472542145,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Debugging + Water Kettle = Coding horror",
+        "author": "DarkMatter007",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4zo1da/debugging_water_kettle_coding_horror/",
+        "text": "So today I wasted 3 hours debugging.\n**Please respond in each post Point and Laugh at me with memes**\n\nMy app is almost ready for distrubution just changed some small stuff. Went out for lunch and came back. Nothing was working anymore.\n\nLogging in..,registering.. nothing works! just hangs and does nothing. Nothing in catch blocks.(that catches all errors) Tried everything went back each step. Checked frameworks. Wifi is enabled. \n\nAfter 3 hours and you-know-the-WTFISTHIS moment that you are ready to format your laptop you even checked if your breathing or some chair you moved in the house is causing the issue in the first place (because its nothing in the coding).\n\nI went on Whatsapp to ask some guy for help...\n\nhmm whatsapp was not working...hmm but I am connected to Wifi. \n\n\nFor some strange reason my router was not working and everything just connected to the next thing with wifi: **my fucking water kettle. (I got this Ikettle 2.0 as a gift)**\n\n**I WAS CONNECTED TO A KETTLE**",
+        "created_utc": 1472209533,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Point and Laugh at me please (100% funny - Kettle)",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4zo0b6/point_and_laugh_at_me_please_100_funny_kettle/",
+        "text": "[deleted]",
+        "created_utc": 1472208934,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "More lines of code = more money. A story of 10,000 lines of code.",
+        "author": "tamrix",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4zbxkx/more_lines_of_code_more_money_a_story_of_10000/",
+        "text": "So a client of mine wanted to associate businesses with a sales rep.  I've never encountered this project before but it's an easy task. So why not help them out?\n\nI fired up the solution, it's a simple web forms project laid out in a typical three tier fashion. I added a simple migration for a new table and a FK on the joining table. No problem, now for the form. \n\nFirst I noticed the code layout was all a bit weird. No problem here, style isn't everything. Then I spotted a few little gems that peaked my interest. \n\n    bool shouldResetControl = false;\n        if (shouldResetControl) { }; \n\nYeah hmm. That seems quite redundant. \n\n    if (val == null || val.IsNull) {\n        return false;\n    }\n    return true;\n\nSo does this. These problems occurred far too frequently to be a mistake but I shuddered it off as a novice mistake and moved on. \n\n    /// &lt;summary&gt;\n    /// This is a convenience property that provides direct access to the table's columns object.\n    /// &lt;/summary\n\nYeah okay, it's not _that convenient_ but I get it. These were in singleton classes with static methods returning the same value as the instance properties. \n\n    #region \"Shared helper methods\"\n    ...\n\nThese methods aren't helpful at all! This isn't adding up. For every table column there exists 6-8 overloaded methods. I just chalked it up as someone not knowing generics.\n\nThen I stumbled upon this gem, behold:\n\n\tpublic static string GetXMLString()\n\t{\n\t\tif(_DefinitionString == \"\")\n\t\t{\n\t\t\tSystem.Text.StringBuilder tbf = new System.Text.StringBuilder();\n\t\t\ttbf.Append(@\"&lt;XMLDefinition Generator=\"\"Iron Speed Designer\"\" Version=\"\"8.0\"\" Type=\"\"GENERIC\"\"&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n \t\t\ttbf.Append(  @\"&lt;ColumnDefinition&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(    @\"&lt;Column InternalName=\"\"0\"\" Priority=\"\"1\"\" ColumnNum=\"\"0\"\"&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnName&gt;StateId&lt;/columnName&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnUIName&gt;State&lt;/columnUIName&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n \t\t\ttbf.Append(      @\"&lt;columnType&gt;Number&lt;/columnType&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnDBType&gt;int&lt;/columnDBType&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnLengthSet&gt;10.0&lt;/columnLengthSet&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnDefault&gt;&lt;/columnDefault&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnDBDefault&gt;&lt;/columnDBDefault&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnIndex&gt;Y&lt;/columnIndex&gt;\");\n\t\t\t_DefinitionString = tbf.ToString();\n\t\t\ttbf.Append(      @\"&lt;columnUnique&gt;Y&lt;/columnUnique&gt;\");\n\t\t\t...\n\t\t\t...\n\nAnd that's when it hit me,   `\"\"Iron Speed Designer\"\"` \n\nIt's Generated! Great. That explains half of it. But why is this generated code so appalling?\n\nWhat would possibly convince someone to create a StringBuilder to append a single line of XML then ToString that _after each line_?! If it's generated XML why not just save it as an XML file? Let's Google these guys and find out.\n\nUpon typing it into my browser I noticed that \"crack\" pop up on the Google autosuggestions list. Sounds promising. I opened up the page and what's on the top left but this:\n\n&gt; Write 10,000 Lines of Code in 10 Minutes!\n\nRight... So now since we've got your target market locked in why not check out what people have to say.\n\n&gt; Technical support for Iron Speed Designer was discontinued on December 31, 2015 as part of our company ceasing operations.\n\nNow I've got nothing against auto generating CRUD tools, I use them, but I'm going to have a guess what happened here. \n\nOne day some developers set out and made a cool little CRUD creating app to help out development. To make it flash you could skin it. It worked out well but they wanted to capitalize. Marketing came along and sold everyone that this tool will write your business apps for you! A bunch of cheapskates bought the idea (or were so cheap they pirated it) and when it didn't do everything, they complained, \"it only generated 5000 Lines! I want my 10,000!\". \n\nThe developers set out to generate as many lines of code that still seemed reasonable as they could. Developers using the product realised this crummy mess and moved onto better tools meanwhile the cheapskates continued to pirate or complain. More lines of code = more money. This cycle went on for years. Developers continued to write worse and worse code struggling for a way out, a scapegoat, a way to savage whatever little reputation they had left. Until finally, it hit. \n\n[Business closed](http://www.theregister.co.uk/2015/09/07/sunk_by_patent_troll_iron_speed_stops_ops/) \n\nIt could happen to any of us. \n",
+        "created_utc": 1472035222,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "But Why?",
+        "author": "davityle",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4z38da/but_why/",
+        "text": "Just came across this beauty while trying to find a bug...\n\n    /**\n     * Returns a version of the value ready to be stored\n     */\n    getStoreableValue(val:T, oldVal:T):T {\n        return val;\n    }\n\nEDIT: some usages\n\n        this.value = this.getStoreableValue(initialValue, null);\n        this._externalValue = this.getStoreableValue(initialValue, null);\n        this.initialValue = this.getStoreableValue(initialValue, null);",
+        "created_utc": 1471905552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Strange conversation with foreign coder",
+        "author": "uglycoderguy",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4yxmru/strange_conversation_with_foreign_coder/",
+        "text": "Can't tell how much a language barrier played into this one:\n\n    Me: You ever fix code where this thing x was supposed to pass as that thing y?\n    Him: Can you show me the code?\n    Me: No, I was asking if you've ever edited code to change x to y.\n    Him: I need to see the code to remember if I edit it or not!\n\n---&gt; The point: ***Well if I had the code, I wouldn't be asking*** &lt;--- need to spell it out, you're welcome",
+        "created_utc": 1471820492,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tabs and Spaces",
+        "author": "RainOnYourTirade",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4yvq8p/tabs_and_spaces/",
+        "text": "One project I've been working on has gone through many different programmers, each with their own idea of how indenting is going to work. It eventually ended up with me and one other guy to try and sort it all out. Let me break down the cornucopia of different indent styles that are used on this codebase:\n\n- 3 spaces for all the original code\n- 2 spaces by one of the past programmers\n- Tabs, by me when attempting to clean it up\n- 3 spaces again, by the other current programmer\n\nOver all, the indenting in some places has become a disaster. I've tried to convert everything I touch into tabs, but my partner's IDE is aggressively set on 3 spaces and he's not motivated enough to change that. No code formatting tools will work on this either, because it's not a well-known language.\n\nSo here's what the indenting looks like in some places:\n\n    --&gt; Denotes a tab\n    .   Denotes a space\n\n     function getGemAtPosition(%position, %datablock, %grp) {\n    ...%set = findObjectsAtPosition(%position, %grp);\n    --&gt;%set.schedule(0, \"delete\"); //Memory mgmt\n    \n    --&gt;//We might have more than one gem\n    ..&gt;for (%i = 0; %i &lt; %set.getSize(); %i ++) {\n    ..&gt;--&gt;%obj = %set.getEntry(%i);\n    ..&gt;--&gt;//If it's correct\n    ......if (%obj.getClassName() $= \"Item\" &amp;&amp; %obj.getDataBlock().className $= \"Gem\" &amp;&amp; %obj.position $= %position &amp;&amp; %obj.getDataBlock().getName() $= %datablock)\n    --&gt;......return %obj;\n    ...}\n    ...return -1;\n    }\n\nOr my other favorite section:\n\n    .-&gt;--&gt;..&gt;--&gt;--&gt;// It's not a space, prepend the HEX value with a %\n    .-&gt;--&gt;..&gt;--&gt;--&gt;%chrTemp = \"%\" @ %chrTemp;\n\nAs you can see, I've given up on some files at this point.\n\n**Edit: After reading all of your nice replies I decided to format the code correctly. Digging through my script history I found** `astyle --indent=tab --style=attach --indent-cases --pad-header --unpad-paren --lineend=linux`. **Apart from a few cases where I had to fix it manually, everything is pretty much clean now.**",
+        "created_utc": 1471797677,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My coworkers dont understand why I'm laughing alone while reviewing the latest commit from India",
+        "author": "Herowyn",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4y8ke3/my_coworkers_dont_understand_why_im_laughing/",
+        "text": "We asked them to display a message box when exceptions occur in our application.\n\n    private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)\n    {\n        if (MessageBox.Show(e.ExceptionObject.ToString(), \"Info\", MessageBoxButton.OK, MessageBoxImage.Error) == MessageboxButton.OK)\n        {\n            return;\n        }\n    }",
+        "created_utc": 1471472465,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Trying to understand a multi step form that's been neglected for years and found this while I was digging around.",
+        "author": "webdevatwork",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4y7bfe/trying_to_understand_a_multi_step_form_thats_been/",
+        "text": "    &lt;script&gt;\n      $(document).ready(function() {\n    \n      });\n\n      $('#submit').on('click', function() {\n        $('#send_email').val('true');\n        $('#submitted').click();\n        $('#save').click();\n      });\n    &lt;/script&gt;",
+        "created_utc": 1471459076,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP HelloWorld example from my Software Engineering course...",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4y4ham/php_helloworld_example_from_my_software/",
+        "text": "[deleted]",
+        "created_utc": 1471422233,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is my favorite bug I've ever encountered. See if you can guess the problem!",
+        "author": "hsxp",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4xx7cj/this_is_my_favorite_bug_ive_ever_encountered_see/",
+        "text": "Back when I was new to programming, I took it upon myself to make a bot that played Hangman. Everything was going smoothly; it loaded a dictionary file into a trie and picked the most common child letter at each node, and if it determined the word wasn't there it guessed statistically. \n\nBut, there were some words it was just incapable of solving:\n\nT O O T H worked fine\n\nT O _ G _ E \"tongue\" didn't work\n\n_ O O S E \"noose\" didn't work\n\n_ M B R E _ _ A \"umbrella\"\n\nA P R O _ \"apron\"\n\nG O R I _ _ A \"gorilla\"\n\n_ O V E \"love\"\n\nMost words worked fine, but occasionally it would be unable to finish. The bug, when I discovered it, made me facepalm hard.\n\nHint: I was using Java. Whenever the bot guessed a letter, it added it to a string so it would know not to guess it again.\n\nI'll update this post later to give you some time!\n\nUpdate: Most of you were right! I forgot to initialize the string of guesses, so \"null\" was prepended to the guess list, preventing it from guessing N, U, or L. :)",
+        "created_utc": 1471313729,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Inherited a Web Forms app",
+        "author": "jdphenix",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4xmde6/inherited_a_web_forms_app/",
+        "text": "One thing this app does is use a session variable to store the current logged in username, and performs all authorization using this variable. \n\nIn Badapp.master... \n\n    Session[\"User\"] = Request[\"LOGON_USER\"]\n\nOh, my brain... my brain... ",
+        "created_utc": 1471143292,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Otherwise the database would be lonely",
+        "author": "PiaFraus",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4xldr1/otherwise_the_database_would_be_lonely/",
+        "text": "Found this beauty yesterday:\n\n    first_item_from_db = None\n    if len(get_list_of_records_from_db()) &gt; 0:\n        first_item_from_db = get_list_of_records_from_db()[0]",
+        "created_utc": 1471127673,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Another Lovely One-Liner",
+        "author": "22minnis22",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4xgek8/another_lovely_oneliner/",
+        "text": "A CodingBat problem:\n\n\nGiven a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o' and include the second only if it is 'z', so \"ozymandias\" yields \"oz\".\n\n\n\nMy Solution:\n\n\n    public String startOz(String str) {\n        return str.length() &gt;1 ? str.substring(0,1).equals(\"o\") ? str.substring(1,2).equals(\"z\") ? \"oz\":\n        \"o\":str.substring(1,2).equals(\"z\") ? \"z\":\"\": str.length() &gt;= 1 ? str.substring(0,1).equals(\"o\") ? \n        \"o\":\"\":\"\";\n    }\n\n",
+        "created_utc": 1471043291,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the stupidest bug you wrote or encountered?",
+        "author": "programmer888",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4xaxah/what_is_the_stupidest_bug_you_wrote_or_encountered/",
+        "text": "[removed]",
+        "created_utc": 1470962925,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Async recursion on the web",
+        "author": "alkali_feldspar",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4x8iqu/async_recursion_on_the_web/",
+        "text": "    public KeyboardShow(): void {\n      var self = this;\n      Observable.fromEvent(window, \"native.keyboardshow\").first().subscribe($event =&gt;{\n        //do some stuff\n        self.KeyboardShow();\n      })\n    }",
+        "created_utc": 1470928877,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TRIGGERED",
+        "author": "scrape_ur_face",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4x3ew2/triggered/",
+        "text": "I took a computer foundations class in college twice because it was extremely difficult. The topics consisted of DFAs/NFAs, PDAs, and the dreaded Pumping Lemma. I truly hated this class because it was all concepts and hardly involved actual programming. Just having to take this class twice makes me to never want to read about those topics.\n\nI was posting a comment in r/pokemongo when I was pointing out a problem by saying, \"See my dilema?\" when I realized that I was spelling the word incorrectly. When I went to right-click on the misspelled word, I only saw \"diLEMMA\". SOMEONE HELP\n\nIf I was alive and ever part of the MKUltra experiments, I'm positive that my trigger word would be LEMMA\n\n*Slowly crawling into fetal position\"\n",
+        "created_utc": 1470851552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Having \"fun\" with PHP",
+        "author": "mikat7",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4vyzac/having_fun_with_php/",
+        "text": "Just spent some time finding a bug in my code because of this:\n\n    php &gt; print(1 == 'a'); // False, as expected\n    php &gt; print(0 == 'a'); // True\n    php &gt; if ('a') print('yes'); // Print yes\n    php &gt; if (0) print('yes'); // Prints nothing\n\nI knew that PHP juggled with types, but why did it even make *int* 0 out of *string* 0, while every other value in the array was a string, that's a mystery to me.",
+        "created_utc": 1470237173,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Pointers are hard!",
+        "author": "awegge",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4vlt87/pointers_are_hard/",
+        "text": "Back from vacation, I got instant tics over my old [nemesis](https://www.reddit.com/r/programminghorror/comments/4st8oh/when_in_doubt_about_utc_time_and_local_time/). This started as a relative simple task of getting the system to report the correct timestamps during DST, but getting to the bottom of it seem to have an exponential growth. While this code isn't terribly wrong (but neither terribly smart), it's representative for the overall quality of the code. \n\n    char* gen_report_fname(char *buf, char* hostfilename,\n                       const char *path, const char *prefix)\n    {\n        struct tm *tp,tm;\n        tp = localtime(&amp;data.start_time);\n        memcpy(&amp;tm,tp,sizeof(struct tm));\n    \n        sprintf(hostfilename,\"%s%04d%02d%02d.txt\",\n                prefix,tm.tm_year+1900,tm.tm_mon+1,tm.tm_mday);\n        sprintf(buf,\"%s/%s\", path, hostfilename);\n        return(buf);\n    }\n",
+        "created_utc": 1470046976,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A website for sharing horrible code.",
+        "author": "jwlewisiii",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4va8s4/a_website_for_sharing_horrible_code/",
+        "text": "[removed]",
+        "created_utc": 1469846979,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Let's all stop and appreciate the beautiful works of art that local government brings us.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4u4rln/lets_all_stop_and_appreciate_the_beautiful_works/",
+        "text": "[deleted]",
+        "created_utc": 1469218732,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When in doubt about utc time and local time...",
+        "author": "awegge",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4st8oh/when_in_doubt_about_utc_time_and_local_time/",
+        "text": "...roll your own:\n\n    #define SECS_TO_DMIN(x) ((word)(x % (60L*60L*24L) / 60L))\n\nLater on, pretend that this is in fact localtime, and make sure that DST is handled, by subtracting this:\n\n    summertime= -3600L * tmp-&gt;tm_isdst ; \n\nYes, I mean subtracting a negative value. And this is just the start of the horror. When I gueass the reasoning behind the code to get \"this time, next day\" being radically different from \"this time yesterday, today\", there might be a followup.\n",
+        "created_utc": 1468502815,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fixing some UI issues on and old iOS project",
+        "author": "tagyro",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4sp986/fixing_some_ui_issues_on_and_old_ios_project/",
+        "text": "I got this project because I really needed the money (not even that much); I knew it would be a PITA but, hey, I need the money.\nThe console spews out km's and km's of text so I want to comment out the NSLog's ...then I find stuff like this:  \n\n    \t\tif (! [self.imageCacheFiles hasImageFileForKey:key]) {\n\t\t\tMyImageCacheFileStatus saveStatus = [self.imageCacheFiles addImageForKey:key with:loadedImage];\n\t\t\t// NSLog( @\"*** TourOp-Logo saved to cache with result = %d\", saveStatus );\n\t\t\tif (saveStatus == 0)\n\t\t\t\tNSLog( @\"***   key = %@, fn = %@\", key, [self.imageCacheFiles filenameForImageWithKey:key] );\n\t\t} else {\n\t\t\t// NSLog( @\"*** TourOp-Logo not to save! key = %@\", key );\n\t\t}\n\nI needed to update the UI for \"new\" devices (iPhone 6/6Plus) and I find stuff like this:\n\n\t\t#define kAdViewAdTIPhonePortraitFrame\t\t\t\t\t\tCGRectMake(  20.0f, 155.0f, 281.0f, 157.0f )\n\t\t#define kAdViewAdTIPhoneLandscapeFrame\t\t\t\t\t\tCGRectMake( 165.0f,  65.0f, 300.0f, 125.0f )\n\t\t#define kAdViewAdTIPhone5PortraitFrame\t\t\t\t\t\tCGRectMake(  20.0f, 155.0f, 281.0f, 245.0f )\n\t\t#define kAdViewAdTIPhone5LandscapeFrame\t\t\t\t\t\tCGRectMake( 165.0f,  65.0f, 388.0f, 125.0f )\n\t\t#define kAdViewAdTIPadPortraitFrame\t\t\t\t\t\t\tCGRectMake(  48.0f, 300.0f, 332.0f, 243.0f )\n\t\t#define kAdViewAdTIPadLandscapeFrame\t\t\t\t\t\tCGRectMake( 728.0f, 130.0f, 260.0f, 220.0f )\n\n\t\t#define kAdViewAdWIPhonePortraitFrame\t\t\t\t\t\tCGRectMake(  20.0f,  95.0f, 281.0f,  54.0f )\n\t\t#define kAdViewAdWIPhoneLandscapeFrame\t\t\t\t\t\tCGRectMake(  15.0f,  65.0f, 142.0f, 125.0f )\n\t\t#define kAdViewAdWIPhone5PortraitFrame\t\t\t\t\t\tCGRectMake(  20.0f,  95.0f, 281.0f,  54.0f )\n\t\t#define kAdViewAdWIPhone5LandscapeFrame\t\t\t\t\t\tCGRectMake(  15.0f,  65.0f, 142.0f, 125.0f )\n\t\t#define kAdViewAdWIPadPortraitFrame\t\t\t\t\t\t\tCGRectMake( 394.0f, 300.0f, 332.0f, 243.0f )\n\t\t#define kAdViewAdWIPadLandscapeFrame\t\t\t\t\t\tCGRectMake( 728.0f, 359.0f, 260.0f, 261.0f )\n\n\t\t#define kAdViewTopIPhonePortraitFrame\t\t\t\t\t\tCGRectMake(  20.0f,  56.0f, 281.0f,  35.0f )\n\t\t#define kAdViewTopIPhoneLandscapeFrame\t\t\t\t\t\tCGRectMake( 165.0f,  20.0f, 300.0f,  35.0f )\n\t\t#define kAdViewTopIPhone5PortraitFrame\t\t\t\t\t\tCGRectMake(  20.0f,  56.0f, 281.0f,  35.0f )\n\t\t#define kAdViewTopIPhone5LandscapeFrame\t\t\t\t\t\tCGRectMake( 165.0f,  20.0f, 388.0f,  35.0f )\n\t\t#define kAdViewTopIPadPortraitFrame\t\t\t\t\t\t\tCGRectMake(  48.0f, 135.0f, 678.0f, 144.0f )\n\t\t#define kAdViewTopIPadLandscapeFrame\t\t\t\t\t\tCGRectMake(  36.0f, 130.0f, 678.0f, 220.0f )\n\n\nThis will be fun ...\n\nAddendum: \nJust found this nice view controller class that has over 7000 LOC; the network layer, UI, models, notifications etc all in one huge class (the header is `only` 500 LOC)\n",
+        "created_utc": 1468441214,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "vba macro for Excel... Are those even allowed around here?",
+        "author": "DarfWork",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4sgbh7/vba_macro_for_excel_are_those_even_allowed_around/",
+        "text": "I'm doing some vba for an Excel document and hating everything about it. But it's only for a few weeks, so it not too bad.\nStill, when I see something like this in a sub routine I really wish I could just throw my desk and the laptop I work with throw the windows. I'm at the 9th floor, it could be interesting. \n\ndecal here is the number of columns from the first one. I need to add a column in between. Easy enough to fix when you know the problem, but damned it why would you hide something like this in a subroutine? I'm not even complaining about decal being hard number cause clearly the guy who wrote this have little clue...\n\n    'to adapt size to content's type\n    Select Case decal\n    Case 3\n    largeur = 100\n    Case 4\n    largeur = 250\n    Case 6\n    largeur = 300\n    Case 20\n    largeur = 350\n    Case 15\n    largeur = 50\n    Case 16\n    largeur = 100\n    Case 17\n    largeur = 50\n    Case 18\n    largeur = 100\n    End Select\n\nOn other news, vba tools for debugging are shit. ",
+        "created_utc": 1468319208,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "It's called exception for a reason",
+        "author": "cornpie2",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4rqpwm/its_called_exception_for_a_reason/",
+        "text": "So, \n\nBeen working in my first programming job since April.\nThe application was started back in about 2000, and it's age is starting to show; I have a lot of horror stories I could write down.\n\nThis is one of my favorite one, because it illustrate the level of apathy the team have for this application.\n\nWhenever we would navigate in the app, the debugger log would register a bunch of exceptions, which were apparently managed.\n\nI inquired about this quite early when I started, was told not to bother as nobody was able to pinpoint the cause and anyway it worked, so whatever.\n\nDuring some post-release downtime I had, decided to investigate. Took me about 10 minutes to find the cause:\n\n    Try\n        BlnVisible = CType(subMenu.Attributes(\"Visible\").InnerText, Boolean)\n\n    Catch ex As Exception\n        BlnVisible = True\n\n    End Try\n\n\nThis try catch was called for each sub menu of the navigation. subMenu is built from XML.\nWent to the xml file to find that out of the 50+ entries for sub menus, only 1 of them actually had the visible attribute. So whenever we would navigate, it would check for an attribute that wasn't there for 48 different sub menus. \n\nAfter some additional investigating, it appeared that the bool wasn't even needed anymore.\n\nThe application is filled with this kind of stuff and more. It's like at some point, the devs started to just add anything to make it work whenever they had to without concerns as for the direction of the application. ",
+        "created_utc": 1467923092,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Warnings in C++",
+        "author": "zerj",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4rp1ps/warnings_in_c/",
+        "text": "So I like to keep my code warning free.  The issue for me is usually I'm stuck with incorporating libraries that I didn't write.   I've been seeing this warning for a couple weeks coming out of an industry standard library:\n\n.../sys_datatypes/sc_lv_base.h: In member function ‘sc_dt::sc_logic_value_t sc_dt::sc_lv_base::get_bit(int) const’:\n.../sysc/datatypes/bit/sc_lv_base.h:310: warning: suggest parentheses around arithmetic in operand of ‘|’\n\nSo finally got around to looking at the line in question:\n\n    return sc_logic_value_t( \n        m_data[wi] &gt;&gt; bi &amp; SC_DIGIT_ONE | m_ctrl[wi] &gt;&gt; bi &lt;&lt; 1 &amp; SC_DIGIT_TWO );\n\nJust because you memorized the order of operations doesn't mean you should test it.  \n\nI think the above line is the same as this assuming the two macros aren't themselves computed terms:\n\n    return sc_logic_value_t( \n        (((m_data[wi] &gt;&gt; bi) &amp; SC_DIGIT_ONE) | ((m_ctrl[wi] &gt;&gt; bi) &lt;&lt; 1)) &amp; SC_DIGIT_TWO  );",
+        "created_utc": 1467904228,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Trouble on the horizon",
+        "author": "roosyn",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4r8lb1/trouble_on_the_horizon/",
+        "text": "Question today from a developer on a separate team: \"how do I write to a text file from multiple threads safely?\"\n\nPushed for \"why\", it turns out that the ASP.NET Web Forms application's current logging framework, ELMAH, is too old and should be replaced.\n\nThis wouldn't be too bad if this wasn't a bank's personal loans application vetting and disbursement system.\n\nA few more \"wha'\":\n\n* Writing an in-house logging framework.\n* Exception logging consists of logging the exception's message, without the state or stack, e.g. IExceptionLogger.Log(ex.Message)\n* The test manager claims databases can't be source controlled. The databases were actually source controlled two years ago. The team changed shortly after, and the source controlled DB's were apparently forgotten. The team is now in the process of re-source controlling it.\n* The CI and deployment pipeline is disregarded. I believe the current record for a broken build is 40 odd days.\n* The latest production release resulted in 400+ issues to be logged, mostly related to in-progress workflows not being migrated correctly.\n* \"It worked in QA\"\n* Perhaps most telling: of the four in-house developers, three have resigned.\n* What appears to be little governance or oversight for the offshore development team.\n* A 5000 odd line XSLT that drives the vast majority of the back office site, i.e. have ASP.NET generate XML and render via XSLT.",
+        "created_utc": 1467657579,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is one of the most infuriating parts of inheriting code",
+        "author": "coastercrazy10",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4qy7lf/this_is_one_of_the_most_infuriating_parts_of/",
+        "text": "http://imgur.com/B1SBWPd\n\nSorry for the image, but the best way to capture the horror is to preserve the spacing. This is what happens when you use a JavaScript formatter in an older JS framework, and apparently the author of this code did not see this as bad enough to warrant turning it off. The entire codebase is littered with this sort of thing, and what almost amazes me more is the lack of a Java formatter, which is always more successful than a JS formatter. This guy was a piece of work.\n\nThe framework being used here is called dojo - its been on its way out for years, but that's another infuriating part of inheriting code lol\n\nEdit: to everyone suggesting I use a formatter - this is the result of a JS formatter. Writing Dojo is essentially writing a big complex JS object and at a certain point of complexity you can't define simple rules, and all formatters I have tried just give up and do something like this. I have had minor success but the majority of the time I just have to manually reformat most things. Thank you for the suggestion but unfortunately I've yet to find an automated way of making this significantly better :/",
+        "created_utc": 1467481610,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[RANT] Git Sucks!",
+        "author": "DaPragmaticProgramer",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4qsywz/rant_git_sucks/",
+        "text": "There, I said it.\n\nNow that I succeeded in irritating most people, let me explain:\nGit is an error prone overkill for most small and medium sized projects.\n\nRemember, Git was created to handle Linux development; most projects have a single relationship with the remote server.\nSo, first, it’s an overkill to use, like shooting pigeons with a Cruise missile.\n\nSecond, because of its power, it’s extremely complex and makes it really easy to shoot yourself in the foot.\n\nMost version control systems need a page or two to explain the basic commands. The Pro Git book is 550+ pages long.\n\nSo why, you, as a developer would use Git? What happen to \"the best tool for the job\"? What happened to KISS (not the rock band)?\n\nIs it because you want to look cool? Or you think your project is going to be as large one day as the Linux kernel? Or your company is forcing you to?\n\nI apologize for my first post being a rant, but recently I was forced to use Git in a new repository and it has been nothing but pain, for almost every simple step my old trusty GitHub GUI started throwing errors.\n\nLooking online, it’s like a rash – it’s not only me getting into issues. So the problem is deeper, I believe with the model itself.\nWe need a simpler CVS; any suggestions?\n",
+        "created_utc": 1467394535,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is how you compare dates in PHP",
+        "author": "colonwqbang",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4qiewn/this_is_how_you_compare_dates_in_php/",
+        "text": "Today I had the pleasure of debuggning some PHP code. This programmer had found a very safe and efficient way to compare two dates in only 13 lines of code.\n\n        /* Date reformatting */\n        $datearray = explode(\"-\",$date);\n        $day = $datearray[2];\n        $month = $datearray[1];\n        $year = $datearray[0];\n        if(strlen($day) &lt; 2){\n            $day = \"0\" . $day;\n        }\n        if(strlen($month) &lt; 2){\n            $month = \"0\" . $month;\n        }\n        $date = $year.$month.$day;\n        $date2 = $year . \"-\" . $month . \"-\" . $day;\n\n        if($loaninfo['nextpaydate'] &lt; $date2) {\n            $loaninfo['is_late'] = 1;\n            $database-&gt;updateLoanField($loanid, 'is_late', 1);\n            error_log(\"Loan $loanid has been flagged as late.\");\n        }\n",
+        "created_utc": 1467240226,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A historical tidbit.",
+        "author": "sharfpang",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4q3gfz/a_historical_tidbit/",
+        "text": "A bad design decision, a misfeature, that chases every one of us to this day. (well, maybe with exception of these few lucky SQL-only SOBs.)\n\nWhy, in most programming languages (IIRC, 14 out of 15 top popular ones), bit arithmetics has lower priority than comparisons?\n\nYou do stuff like\n\n     if( (x &amp; MASK) == MASK )    // all bits of mask are set, rest unimportant\n\nor:\n\n     if( (x ^ x_prev) == MARKER )   // the MARKER bit changed.\n\nBut if you follow the rule of thumb, \"arithmetics above logic\", and don't put the braces, you'll have:\n\n     if( x &amp; MASK == MASK )  // true when x is odd; MASK is always equal MASK.\n\n&amp;, |, ^ have lower precedence than ==, !=, &lt;, &gt;, &lt;=, &gt;=.\n\nWhy?\n\nThe answer is the early design decision in C, to remain compatible with predecessor, B. In B there were no boolean operators, &amp;&amp;, ||, etc. Neither did early C have them. Later on, they replaced the original solution, but the precedence remains with us to this day.\n\nWell, how did it work in the past? The operators were context dependent.\n\n     int a = 1;\n     int b = 2;\n     int c = a &amp; b;\n     if(a &amp; b) ... // true, both are considered logical true.\n     if(c) ... // false. The &amp; performed outside of if() context bitwise, not boolean.\n\nAnd so, you must remember, arithmetic before logic, EXCEPT for bitwise operations. Still, all these decades later.",
+        "created_utc": 1467035935,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What does a Java textbook have to say about indentation?",
+        "author": "atimholt",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4pw5co/what_does_a_java_textbook_have_to_say_about/",
+        "text": "I’m finally finishing up my A.A. in computer science. I’ll be done at the end of the summer. It’s been a long time since some of my classes, so some have changed names at the community college I’m attending. As such, I’m having to re-take a basic level Java class. I’m okay with it, I need a Java syntax refresher, since I’ve been focusing on other languages like C++ and Python.\n\nFor kicks, I thought I’d look in the appendix of the textbook, under “Java Language Coding Guidelines.” It had this to say:\n\n&gt; In these guidelines, several constructs are plainly outlawed.… If you already have programming experience,… you may be initially uncomfortable at giving up some fond habits. However, it is a sign of professionalism to set aside personal preferences in minor matters and to compromise for the benefit of your group.\n\nAnd the first bullet point:\n\n&gt; * Tabs are set every three spaces.",
+        "created_utc": 1466914943,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Very tired, reading some code...",
+        "author": "codecow911",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4pe1vx/very_tired_reading_some_code/",
+        "text": "I added the `// crash` and `// stuff (no crash though)`:\n\n    void f(const MyType** myTypeEntity) {\n        // crash\n        *myTypeEntity = g();\n\n        // \"b/c double pointers hurt my brain\"\n        const MyType * tempMyTypeEntity = *myTypeEntity;\n\n        // stuff (no crash though)\n    }",
+        "created_utc": 1466642948,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just add a new class. \"Which one...?\"",
+        "author": "savorxit",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4p5709/just_add_a_new_class_which_one/",
+        "text": "[removed]",
+        "created_utc": 1466523273,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So Rust is my hammer of the day. I think I just tried to use it on a screw.",
+        "author": "garagedragon",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4p232i/so_rust_is_my_hammer_of_the_day_i_think_i_just/",
+        "text": "So this is in some sense \"the right way to do it\" because of how the API works, but I thought you'd appreciate it anyway, since after I finished writing it, I had to sit back and think to myself, \"What the hell did I just do?\"\n\nThe following code operates on a structure called a `SudokoState`, which has a single member called `board`, a fixed-sized array of 81 `Option&lt;u8&gt;`, i.e. nullable 8-bit unsigned ints. \n\nI wanted a method to write all these ints to the console, in order, with delimeters around the ends. This is pretty easy in every sane language out there, Rust included, and so I wound up with...\n\n    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {\n        let prelude = write!(f, \"Sudoku {{\");\n        self.board.iter().fold(prelude, |p, &amp;item| p.and_then(|_| {\n            let v = match item {\n                Some(x) =&gt; x.to_string(),\n                None    =&gt; String::from(\"_\")\n            };\n            write!(f, \"{0}, \", v)\n        })).and_then(|_| write!(f, \"}}\"))\n    }\n\n(Monads: not even once.)",
+        "created_utc": 1466471756,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's the most convoluted way to print a list of ints in Rust?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4p202c/whats_the_most_convoluted_way_to_print_a_list_of/",
+        "text": "[deleted]",
+        "created_utc": 1466470525,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Apparently, my coworker doesn't believe in for loops or whitespace.",
+        "author": "BooBailey808",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4opcuv/apparently_my_coworker_doesnt_believe_in_for/",
+        "text": "    targets=[makeTarget({\"index\":0,\"title\":\"Target 1\"}),\n    makeTarget({\"index\":1,\"title\":\"Target 2\"}),\n    makeTarget({\"index\":2,\"title\":\"Target 3\"}),\n    makeTarget({\"index\":3,\"title\":\"Target 4\"}),\n    makeTarget({\"index\":4,\"title\":\"Target 5\"}),\n    makeTarget({\"index\":5,\"title\":\"Target 6\"})];",
+        "created_utc": 1466270121,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My coworker REALLY likes ternary operators.",
+        "author": "mjmayor",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4ogzvc/my_coworker_really_likes_ternary_operators/",
+        "text": "I found about a dozen instances like this in a single file. All written by the same (senior) engineer.\n\n    return foo == bar ? true : false;    ",
+        "created_utc": 1466129114,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A Matlab Monstrosity",
+        "author": "thexylophone",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4ofv1q/a_matlab_monstrosity/",
+        "text": "https://www.mathworks.com/matlabcentral/fileexchange/28622-accurate-eye-center-location/content/eyepoint.m\n\nI was trying to implement an algorithm for circle detection from a paper when I found this code. It is truly a horror to behold. As if Matlab wasn't bad enough, it is almost a single mass of code with a handful of line breaks. The indentation is a mess. Variable names are terrible (G8). And there's at least one bug (\"Mag_D_vector=sqrt(D_vector(:,:,1).^2 + D_vector(:,:,1).^2);\"). \n\nAlso, the author named a loop counter after themself (\"for gagan=1:1:2\", the code was submitted by GAGAN).",
+        "created_utc": 1466113534,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Date Logic is hard",
+        "author": "s10laidout",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4ofce9/date_logic_is_hard/",
+        "text": "Found this in an older Purge SP\n\n    SELECT  @StartDate = CONVERT(CHAR(2), DATEPART(MM, GETDATE())) \n        + '/'+ CONVERT(CHAR(2), DATEPART(DD, GETDATE())) + '/' +\n        RIGHT(CONVERT(CHAR(4), DATEPART(yy, GETDATE())), 2)\n",
+        "created_utc": 1466107405,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Conditionals — Close Enough",
+        "author": "blondepianist",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4ody97/conditionals_close_enough/",
+        "text": "Inherited an iOS project from a dev who hadn't quite got the hang of writing expressions. Found this attempt to execute phone-only code copy/pasted to several locations:\n\n    if(![UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)\n    {\n        [redacted stuff here]\n    }\n\nOf course, there's a compiler warning (with auto-fix), and the code will *never* execute. Testing is for suckers.\n\n",
+        "created_utc": 1466091601,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Editing environment != production design",
+        "author": "freeforming",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4odwxg/editing_environment_production_design/",
+        "text": "I just ducked in to an access form to update someone else's coding mistake from 5 years ago, removed an exit sub and replaced it with an end if to make a button work and saved and closed.\n\nTen minutes later holy hell erupts as managers are getting a blank access shell that won't let them do anything instead of the form the know and love.\n\nI'm running up and down the stairs manically trying to work out why its working on my system and the other dev's and not anyone else's. Two hours of desk checking later (of course this is happening on the on open action and everything locks straight away like its gone in to the form so I can't step through it) it finally clicks. The only difference between our boxes is that I'm running a dual monitor setup.\n\nI run back down, move the access interface to my primary monitor, save and buzz ones of the managers. They open it and it runs perfectly.\n\nGood lord whoever thought that a system should base the location of a form based on where the system has been placed on the screen should be shot.",
+        "created_utc": 1466091153,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "For those times when a string is not empty enough",
+        "author": "smbkr",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4ocwkj/for_those_times_when_a_string_is_not_empty_enough/",
+        "text": "    if($images[$i]['title'] == ''){\n        $images[$i]['title'] = '';\n    }",
+        "created_utc": 1466077570,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A Simple Game Of TicTacToe Made With Javascript",
+        "author": "mynameis6wordslong",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4oad56/a_simple_game_of_tictactoe_made_with_javascript/",
+        "text": "Came across this horror from one of my classmates:\n\n    &lt;html&gt;\n    &lt;head&gt; \n        &lt;title&gt;Tic Tac Toe AI &lt;/title&gt;\n            \n        &lt;meta charset=\"UTF-8\"&gt;\n        &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n            \n        &lt;script type=\"text/javascript\" src=\"javascript/scripts.js\"&gt;&lt;/script&gt;\n        &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\"&gt;\n    &lt;/head&gt;\n        \n    &lt;body&gt;\n        &lt;h1&gt; Play Tic Tac Toe With Computer. Good luck!&lt;/h1&gt;\n            \n        &lt;div&gt;\n            &lt;!--9 buttons for inputs --&gt;\n            &lt;form NAME=\"tic\" method=\"post\"&gt;                     \n                &lt;input TYPE=\"button\" NAME=\"sqr1\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr1.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr1.value = ' X '; sqr1T = 1; turn = 1; vari(); check();} else if(document.tic.sqr1.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr1.value = ' X '; sqr1T = 1; turn = 0; vari(); } else if(document.tic.sqr1.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr1.value = ' 0 '; sqr1T = 1; turn = 1; vari(); } drawCheck();\"&gt;\n                &lt;input TYPE=\"button\" NAME=\"sqr2\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr2.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr2.value = ' X '; sqr2T = 1; turn = 1; vari(); check();} else if(document.tic.sqr2.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr2.value = ' X '; sqr2T = 1; turn = 0; vari(); } else if(document.tic.sqr2.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr2.value = ' O '; sqr2T = 1; turn = 1; vari(); } drawCheck();\"&gt;\n                &lt;input TYPE=\"button\" NAME=\"sqr3\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr3.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr3.value = ' X '; sqr3T = 1; turn = 1; vari(); check();} else if(document.tic.sqr3.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr3.value = ' X '; sqr3T = 1; turn = 0; vari(); } else if(document.tic.sqr3.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr3.value = ' O '; sqr3T = 1; turn = 1; vari(); } drawCheck();\"&gt; &lt;br&gt;            \n                &lt;input TYPE=\"button\" NAME=\"sqr4\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr4.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr4.value = ' X '; sqr4T = 1; turn = 1; vari(); check();} else if(document.tic.sqr4.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr4.value = ' X '; sqr4T = 1; turn = 0; vari(); } else if(document.tic.sqr4.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr4.value = ' O '; sqr4T = 1; turn = 1; vari(); } drawCheck();\"&gt;\n                &lt;input TYPE=\"button\" NAME=\"sqr5\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr5.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr5.value = ' X '; sqr5T = 1; turn = 1; vari(); check();} else if(document.tic.sqr5.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr5.value = ' X '; sqr5T = 1; turn = 0; vari(); } else if(document.tic.sqr5.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr5.value = ' O '; sqr5T = 1; turn = 1; vari(); } drawCheck();\"&gt;\n                &lt;input TYPE=\"button\" NAME=\"sqr6\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr6.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr6.value = ' X '; sqr6T = 1; turn = 1; vari(); check();} else if(document.tic.sqr6.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr6.value = ' X '; sqr6T = 1; turn = 0; vari(); } else if(document.tic.sqr6.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr6.value = ' O '; sqr6T = 1; turn = 1; vari(); } drawCheck();\"&gt; &lt;br&gt;\n                &lt;input TYPE=\"button\" NAME=\"sqr7\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr7.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 1; vari(); check();} else if(document.tic.sqr7.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 0; vari(); } else if(document.tic.sqr7.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr7.value = ' O '; sqr7T = 1; turn = 1; vari(); } drawCheck();\"&gt;\n                &lt;input TYPE=\"button\" NAME=\"sqr8\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr8.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 1; vari(); check();} else if(document.tic.sqr8.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 0; vari(); } else if(document.tic.sqr8.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr8.value = ' O '; sqr8T = 1; turn = 1; vari(); } drawCheck();\"&gt;\n                &lt;input TYPE=\"button\" NAME=\"sqr9\" class=\"boxes\" value=\"     \" onClick=\"if(document.tic.sqr9.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 1) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 1; vari(); check();} else if(document.tic.sqr9.value === '     ' &amp;&amp; turn === 1 &amp;&amp; mode === 2) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 0; vari(); } else if(document.tic.sqr9.value === '     ' &amp;&amp; turn === 0 &amp;&amp; mode === 2) {document.tic.sqr9.value = ' O '; sqr9T = 1; turn = 1; vari(); } drawCheck();\"&gt; &lt;br&gt;          \n            &lt;/form&gt;\n        &lt;/div&gt;\n        &lt;br&gt; \n        &lt;div&gt;\n            &lt;input type=\"button\" value=\"Refresh\" onClick=\"reset()\"&gt;  \n        &lt;/div&gt;\n        &lt;br&gt; \n        &lt;div&gt; &lt;input type=\"button\" value= \"HELP\" class=\"help\" onClick= \"help()\"&gt; &lt;/div&gt; \n\n    &lt;/body&gt;  \n    &lt;/html&gt;\n\nSpent the next hour or so explaining things like obtrusiveness javascript, etc...\n\nscript.js wasn't any better:\n\nhttp://pastie.org/10879358",
+        "created_utc": 1466033318,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why not just give up",
+        "author": "brbomglolwtfbbq",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4o3ptt/why_not_just_give_up/",
+        "text": "    private function __shit($_file, $_line, $_problem = \"Unknown\")\n    {\n        if (!$this-&gt;__shit_hole_active) return false;\n        $fp = fopen($this-&gt;__shit_happened, \"a+\");\n        if (!fp) return false;\n        fseek($fp, 0);\n        fputs($fp, date(\"H:i:\") . \":\" . sprintf(\"%02.3f\", microtime(true)) . \"\\t{$_file}::\" . sprintf(\"%05d\", $_line) . \"\\t\" . str_replace(\"\\n\", \"\\\\n\", $_problem) . \"\\n\");\n        fclose($fp);\n    }\n\nI found this function within a 60,000 line PHP class.",
+        "created_utc": 1465938682,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Comparing the absolute value of four pointers to zero",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4nyhjl/comparing_the_absolute_value_of_four_pointers_to/",
+        "text": "[deleted]",
+        "created_utc": 1465860397,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "It's a stored procedure, so it's better",
+        "author": "emby5",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4nxwps/its_a_stored_procedure_so_its_better/",
+        "text": "This simple stored procedure may look benign:\n\n    select DATEPART(year,convert(datetime,EXP_CLOSE_DT))  -  BIRTH_YR FROM\n    ASample where SampleID = @SampleID\n\nExcept:\n\n* Nothing is verifying that it's a date\n\n* BIRTH_YR is declared as a string\n\n* It is only called in C# code, even though the record in question is already in memory\n\n* It is called one record at a time during a batch process\n\n\n\n\n",
+        "created_utc": 1465852827,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "encapsulation horror",
+        "author": "kd7tck",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4npjz8/encapsulation_horror/",
+        "text": "A piece of code I wrote ages ago. I was going through some of my old code from my school years and found this real work of genius. I vaguely remember coding this one late night at around 5am while on ambien.\n\nYou know how people sometimes ask if they should do something just because they can. Then those same people do it in the most asinine way possible. Well here you go.\n\n\n    //-----Generate Self Extracting patch installer-----&gt;\n    if(generatePatch &amp;&amp; numDiffs &gt; 0){//-b flag\n        //construct base source files\n        system(\"mkdir /tmp/builder\");\n        system(\"echo '#include &lt;stdio.h&gt;' &gt; /tmp/builder/headers.c\");\n        system(\"echo '#include &lt;stdlib.h&gt;' &gt;&gt; /tmp/builder/headers.c\");\n        system(\"echo \\\" \\\" &gt;&gt; /tmp/builder/headers.c\");//space\n\n        system(\"echo \\\" \\\" &gt; /tmp/builder/decompile.c\");//space\n        system(\"echo 'int main(){' &gt;&gt; /tmp/builder/decompile.c\");\n        system(\"echo 'FILE *fp = fopen(\\\"TMP.tar.gz\\\",\\\"wb\\\");' &gt;&gt; /tmp/builder/decompile.c\");\n        system(\"echo 'fwrite(xxx, sizeof(xxx[0]), sizeof xxx/sizeof(xxx[0]), fp);' &gt;&gt; /tmp/builder/decompile.c\");\n        system(\"echo 'fclose(fp);' &gt;&gt; /tmp/builder/decompile.c\");\n\n        //do any additional installation work here--&gt;\n        system(\"ST=\\\\\\\"\\necho \\\"system(${ST}&gt; .install.py${ST});//create installer script\\\" &gt;&gt; /tmp/builder/decompile.c\");//create script file\n            //write python install script here--&gt;\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'from Tkinter import * ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'from tkFileDialog import askdirectory ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'import os ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'def askd(): ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '    dir1 = askdirectory() ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '    if dir1: ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '        print ${STT}Directory ${STT} + dir1 + ${STT} Will Be Patched.${STT}' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '        os.system(${STT}tar -zxf ./TMP.tar.gz -C .${STT}) ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '        os.system(${STT}mv -f .gamepatch.diff* ${STT} + dir1) ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '        os.system(${STT}rm ./TMP.tar.gz${STT}) ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '        os.system(${STT}cd dir1\\\\\\\\\\\\\\ngamepatch -p 10000${STT}) ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");//patch system to latest patch\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '        quit() ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");//exit tkinter\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '        exit() ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");//exit python\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'top = Frame() ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'top.pack() ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'Label(top, text=${STT}${STT}${STT}This patch is only designed for a specific game. ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'Do Not Use If Unsure What Game This Is For! ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo '${STT}${STT}${STT}).pack(side=TOP) ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'widget = Button(top, text=${STT}Choose Game Directory To Patch${STT}, command=askd) ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'widget.pack(side=BOTTOM) ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            system(\"STT=\\\\\\\\\\\\\\\"\\nST=\\\\\\\"\\necho \\\"system(${ST}echo 'top.mainloop() ' &gt;&gt; .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");\n            //----------------------------------&gt;\n        system(\"ST=\\\\\\\"\\necho \\\"system(${ST}gnome-terminal -e 'python ./.install.py'${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");//run script file\n        system(\"ST=\\\\\\\"\\necho \\\"system(${ST}rm .install.py${ST});\\\" &gt;&gt; /tmp/builder/decompile.c\");//remove script file\n        //------------------------------------------&gt;\n\n        system(\"echo 'return 0;}' &gt;&gt; /tmp/builder/decompile.c\");\n\n\n        //build and merge source files\n        system(\"tar -zcf /tmp/builder/TMP.tar.gz .gamepatch.diff*\");\n        system(\"cat /tmp/builder/TMP.tar.gz | ( echo \\\"unsigned char xxx[] = {\\\"; xxd -i; echo \\\"};\\\" ) &gt; /tmp/builder/output_file.c\");\n        system(\"cat /tmp/builder/headers.c /tmp/builder/output_file.c /tmp/builder/decompile.c &gt; /tmp/builder/builder.c\");\n        \n\n        //compile source file\n        if(path==NULL){\n            system(\"gcc /tmp/builder/builder.c -o ./patcher\");\n        }\n        else{\n            sprintf(buffer, \"%s%s\",\"gcc /tmp/builder/builder.c -o \",path);\n            system(buffer);\n        }\n        printf(\"\\n--&gt;Patch Installer Has Been Generated\\n\");\n    }\n    //--------------------------------------------------&gt;",
+        "created_utc": 1465722440,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Saw this in our codebase today",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4nij3o/saw_this_in_our_codebase_today/",
+        "text": "[deleted]",
+        "created_utc": 1465593785,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Keep all your literals in one place!",
+        "author": "abstract_ideal",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4nbf8r/keep_all_your_literals_in_one_place/",
+        "text": "The previous author of a test case I was assigned to review had this glorious idea.\n\n    public static class Literals {\n        public final static String Hello = \"Hello\";\n        public final static int one = 1:\n        ... Continue this madness for every goddamn literal in the test case\n    }\n\n    System.out.println(Literals.KillMe);",
+        "created_utc": 1465487500,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "At least, we show we can use \"switch\"",
+        "author": "whenrow",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4naqfm/at_least_we_show_we_can_use_switch/",
+        "text": "        final int index = (Integer)super.getMap().get(\"indexGroup\");\n        switch (index) {\n            case 1:\n                return \"04\";\n            case 2:\n                return \"01\";\n            case 3:\n                return \"02\";\n            case 4:\n                return \"05\";\n            case 5:\n                return \"03\";",
+        "created_utc": 1465478108,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thorough exception handling",
+        "author": "HaMMeReD",
+        "url": "https://www.reddit.com/r/programminghorror/comments/4n95a1/thorough_exception_handling/",
+        "text": "Saw this code once in a portfolio.\n\n    boolean isVisible() {\n        try {\n            return true;\n        } catch (Throwable t) { \n            /* Do Nothing */ \n        } finally { return true; }\n    }\n\nEdit: The icing was that EVERY function followed this paradigm, 100s of them. Most unable to even throw an exception.",
+        "created_utc": 1465445281,
+        "upvote_ratio": ""
+    }
+]

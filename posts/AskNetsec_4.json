@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Properly configuring CloudFlare",
+        "author": "GivingUp_RS",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/104krgg/properly_configuring_cloudflare/",
+        "text": "Please forgive me as I’m new to working with VPS hosts.\n\nI’m running CentOS 7.9 with WHM/cPanel. I’m trying to configure authenticated origin pulls with CloudFlare, and force all requests to go through CloudFlares network with .htaccess “Require ip xxx.xxx.xxx/20”. I generated an origin server SSL certificate on CloudFlare and installed it on WHM and cPanel (not sure if I was supposed to only install it on just WHM, or just cPanel, or both). I downloaded the CloudFlare specific CA (authenticated_origin_pull_ca.pem) and put it in /etc/cloudflare/authenticated_origin_pull_ca.pem. In WHM I added the following to Server Configuration &gt; Apache Configuration &gt; Include Editor &gt; Pre Main Include (Global)\n\nSSLVerifyClient require\nSSLVerifyDepth 1\nSSLCACertificateFile /etc/cloudflare/authenticated_origin_pull_ca.pem\n\nAfter restarting Apache, I get 502 Bad Gateway. I tried adding the “Require zip XXX.XXX.XXX.XXX” rules to .htaccess and uploaded that to public_html on the cPanel FTP.\n\nIn CloudFlare I have SSL/TLS encryption mode set to “Full”, and Authenticated Origin Pulls enabled.\n\nAny ideas on what I’m messing up here?any help is greatly appreciated",
+        "created_utc": 1672979552,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Noob question: Re: Amazon lockers that use your phone’s Bluetooth to open. Is there any chance that connecting to the locker’s Bluetooth could allow perm malware or spyware on my phone after Bluetooth is disabled in a blue bugging attack? Using iPhone 16.1.1",
+        "author": "woniwonu",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/104hhzw/noob_question_re_amazon_lockers_that_use_your/",
+        "text": "I don’t know if this type of post is allowed here. If it’s not, I apologize and can you please direct me to the right subreddit?\n\nI picked up an an Amazon package from one of their lockers that uses your phone’s Bluetooth to open the locker. You have to allow a Bluetooth connection within iPhone Amazon app permissions, then turn Bluetooth on your phone and connect to the Amazon locker. Then you press a button on the app and it opens up the locker. After the locker is open, I immediately turn off Bluetooth permission and Bluetooth connection.  \n\nIs there any chance that connecting to thr locker’s Bluetooth could put perm malware or spyware or back door on my iPhone running iOS 16.1.1 in a blue bugging attack either from an outside actor and/or the Amazon locker itself? \n\nEven if a bluebugging attack occurred, where would the back door be located on the phone and would it be sandboxed from reaching other apps? \n\nThanks",
+        "created_utc": 1672970471,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Share your Incident Response stories with me",
+        "author": "CyberStagist",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/104eosg/share_your_incident_response_stories_with_me/",
+        "text": "Hi AskNetSec, \n\nI would love to hear from members of this community about times they've been in serious and moderate incidents where services have been hacked, or services have failed. What happened, how you felt at the time, were you the hero? what did you learn? Did you get an rush of energy? \n\nI'm not looking for your day to day descriptions of what you do - just stories of real incident - I'd just like to read some stories in this area!",
+        "created_utc": 1672963261,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "One of my servers seems to be trying to connect via RDP to an unknown server.",
+        "author": "HDPaladin",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/10483ew/one_of_my_servers_seems_to_be_trying_to_connect/",
+        "text": "I have a server lets call it 10.1.1.1 that has flagged alerts on my Untangle firewall for trying to create RDP sessions to several other servers I don't recognize on the internet.\n\nThe alert reads as Session TCP 10.1.1.1:53 -&gt; 74.125.138.100:3389.\n\nI'm confused why the server is trying to connect outbound on an RDP port over a DNS port.  In the alert it says it tried to connect 116 times.\n\nUntangles support pages indicates it could be a brute force attempt, however the connection is going from inside to out so it's clearly not an attempt on my own system as far as I can tell.\n\nAny help you can give me is appreciated as I'm new to System Administration for a small company.\n\nI'll be glad to answer any specific questions I can about the situation if you have any",
+        "created_utc": 1672947877,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Changing from Opportunistic TLS to Forced TLS",
+        "author": "Javathemut",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/1045llk/changing_from_opportunistic_tls_to_forced_tls/",
+        "text": "Has anyone implemented Forced TLS for all email rather than Opportunist TLS? I'm exploring this option and was wondering how it went for others.",
+        "created_utc": 1672941958,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would adding a DNS “A” record to CloudFlare hide my IP from Shodan?",
+        "author": "GivingUp_RS",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/1041a5p/would_adding_a_dns_a_record_to_cloudflare_hide_my/",
+        "text": "I have a VPS running WHM/cPanel. The domain attached to cPanel utilizes CloudFlare to conceal the server IP. On CloudFlare I have an “A” DNS record for the domain pointing to the VPS IP. Through a normal DNS, or Nameserver lookup - the VPS IP is just comes up as CloudFlare IP addresses. If I use Shodan, it reveals the WHM host name (server1.exampledomain.com) which displays the raw VPS IP. Would creating an “A” DNS record for “server1” on CloudFlare hide the actual server IP from Shodan and other host name resolving tools?\n\nI’ve added the “A” DNS record to CloudFlare for server1.exampledomain.com, but I don’t think Shodan has updated yet. So I’m not sure if it actually worked",
+        "created_utc": 1672931467,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "would this job listing at a multibillion dollar crypto company make you raise your eyebrows and wonder if the company posting it was recently hacked?",
+        "author": "thenextsymbol",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/103sz1w/would_this_job_listing_at_a_multibillion_dollar/",
+        "text": "Digital Currency Group (DCG), the most important and at one time one of the most valuable companies in the American cryptocurrency economy (and maybe the entire world's crypto economy), [has been in a world of shit lately because of the collapse of Genesis Trading and Genesis Capital](https://cryptadamus.substack.com/i/89744331/ω-the-war-of-the-whales-bro-will-set-upon-bro), one of the 3 jewels in its corporate crown (and also one of the only subsidiaries that actually made money - the others are Coinbase and Grayscale / GBTC) what with owing at last count somewhere between $2 to 4.5 *billion* to various parties including $900 million owed to retail users of Gemini, the Winklevoss's twins startup that it was refusing to pay. [Here's the job posting](https://www.linkedin.com/feed/update/urn:li:activity:6970407696424394752/). Also worth knowing that 69 people work at grayscale and roughly 100 at parent company DCG.\n\n\\---------\n\nHere's why that job posting is one that at least raised my eyebrows because you *might* (not super high confidence, just so we're clear) post such a job listing after a major security breach:\n\n**\"actively searching\"** usually means one of these things:\n\n1. a contract or board member required it (ok)\n2. someone just turned in their resignation (prolly ok depends on the reason for the resignation)\n3. someone had to be fired (not ideal)\n4. you never had anyone in the role before and now you really need them ASAP (bad)\n\n**\"link designs to outcomes/operational effect\"** is concerning because\n\n1. suggests there was some kind of previous design but it did not result in the desired outcome\n\n**\"cloud security standards\"** is ominous because for any company formed in the last 10 years:\n\n1. company data is *all* in the cloud including keys¹ and so on. with the right SSH/AWS credentials attackers have literally everything.\n2. a startup finding out it did too little too late as far as designing (and enforcing) a set of security protocols for employees is an extremely common, x10 for rapidly growing startups run by rich and overconfident 25 year old men. i can almost basically guarantee you that the \"security protocol\" started out as security keys¹ in a shared google doc.\n3. a lot of startups that get hacked are companies run by 5 people that make shit like dog toys. DCG would be literally the most targeted company in the world.\n4. almost all catastrophic breaches of companies formed in the last \\~8 years are cloud data breaches and so are most catastrophic breaches of companies formed more than 8 years ago\n\n**\"technical risk assessment\"** is ominous because\n\n1. suggests you may have misassessed some risks in the past\n\n**\"4 months ago\"** is concerning because:\n\n1. the LastPass breach happened in August 2022 (AKA a little *before* 4 months ago)\n2. The Apple security breach - the major one that meant that all iPhones and Macs on the planet could be easily compromised via a 0 click attack - was announced in late August. Odds that DCG bros weren't using iPhones? you tell me. And again, DCG would be among the most targeted institutions in the world. [even i got hacked at that time](https://cryptadamus.substack.com/p/the-crypto-bros-hack-back) and i was only talking about crypto on the internet for like a month at that point. point being: if they had time for me they definitely had time for every single employee at DCG/Grayscale/etc, all of whom happily identify themselves on LinkedIn.\n\n**the stuff that's not there** is ominous because:\n\n1. Grayscale is a financial company managing a publicly traded instrument (GBTC). While I'm not familiar with the specifics of running an ETF there are usually absolutely scads of regulations about compliance that come with handling money²and usually a whole lot more that come with being a publicly traded stock. these regulatory requirements are usually attached to certain laws, e.g. Sarbanes-Oxley or Dodd-Frank or whatever. if they were hiring for *that* kind of security they would say so. but they're not -CISSP is a legit certification but not for that kind of thing.\n\ni would also call **generally concerning** stuff like:\n\n1. a multi billion dollar company where the best engineers will be drawn from the pool of people willing to risk the reputational damage of working in crypto\n2. most of the employees will not even be engineers, they will be finance bros. probably finance bros that got fired for or never hired at places like JPMorgan Chase or Bank of America. let's just say that getting them to consistently follow security protocols is gonna be a challenge.\n3. most of those employees who are not engineers will be making contact with digital assets.\n\nCurious if this crowd agrees.\n\n    𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀 𝛀\n\n¹ the \"not your keys not your coins\" kind of keys\n\n² rules about storing credit cards are for instance one thing i'm vaguely familiar. the regulations are basically so rugged that no one stores credit cards, they hire special companies that store their hard drives in like atomic bomb shelters with 7 kinds of enormous locks to store their customers' credit cards for them. obviously DCG is not processing payments but the point is that government requirements can be kind of extreme.",
+        "created_utc": 1672904191,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can you become a pen tester if you’re autistic?",
+        "author": "AlternativeNo5023",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/103gu8r/can_you_become_a_pen_tester_if_youre_autistic/",
+        "text": "Hi. I’m autistic and have ADHD, and I would like to know if I can become a pen tester. I struggle with making phone calls, socializing, being alone, organization and planning. What can I do to overcome these hurdles? And can I be successful as a pen tester if I overcome the hurdles?",
+        "created_utc": 1672870510,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Do you use any cloud security posture solutions?",
+        "author": "internetquestions21",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/103a793/do_you_use_any_cloud_security_posture_solutions/",
+        "text": "Have AWS and Azure which will be expanding soon, trying to get a handle on AWS at the moment to make sure instances stay patched, CrowdStrike installed, no misconfigurations like open SSH to the world. Would be nice to find something to help with this, any suggestions?",
+        "created_utc": 1672855220,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which Masters? Georgia Tech vs SANS vs Utica",
+        "author": "LaughingManDotEXE",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/1037qgy/which_masters_georgia_tech_vs_sans_vs_utica/",
+        "text": "Cross-posted from r/Cybersecurity as I know this subreddit is more question oriented. \n\nI've shortlisted 3 different Master's to pursue. I'd like to hear opinions on these programs from anyone who has previously attended, professors/instructors, and anyone else who has done their own research on pursuing a masters themselves. \n\n\nOnline MS in Cybersecurity at Georgia Tech Policy Track.  \nPros: 10k, 2 years, high ranking university, eligible for scholarship for Service(SFS), fully funded by my work, eligible for most grants and scholarships.  \nCons: not an NSA Center of Academic Excellence(CAE) program (a different degree is), Policy Track is not technical, but the technical track requires extremely good programming skills. \n\n\nSANS Institute MS in Cyber Security Engineering.   \nPros: World renowned security training, I already have 3 certifications to transfer in bringing cost to ~35k, is a NSA CAE in Cyber Defense, and can do non-interest payment plans.  \nCons: not eligible for federal grants and scholarships, work would only fund about 15k\n\n\nUtica University MS in Cybersecurity.  \nPros: eligible for SFS, eligible for most federal grants and scholarships , ranked top 15 for Cybersecurity programs, classes are technical without requiring much programming skills up front, can do non-interest payment plans.  \nCons: 28k, work would only cover about $10k\n\n\nMy Background and goals:\n6 year experienced defensive cyber security professional. BS in Info Systems. Navy Veteran. Multiple certs. I'm seeking to make myself more competitive for a Direct Commission into the Army National Guard as a 17A (Cyber Officer). Secondary benefit is to open higher paying opportunities in my civilian career. Third is I want to eventually give back to communities in need by providing extremely low cost security services to individuals, small businesses, and local government and have the credentials to help add weight to the business. \n\nI'll post a follow up post and pin it how I came to these 3 universities.",
+        "created_utc": 1672849480,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "EDGECAST...Is it safe?",
+        "author": "Playful-Net9746",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/103034n/edgecastis_it_safe/",
+        "text": "I am sure a lot of you have seen connections from your comp to this IP range [72.21.80.0/3](https://72.21.80.0/3)\n\nchecking virus total seems to tell me its coming from microsoft. but there are a lot of conflicting opinions on wether or not this is malicious.\n\nbased on the analysis the only security vendor that flags it as malicious is comodo Valkyrie verdic yet everything else checks out it. it says its a domain from edgecast and is a secure server encrypted with SHA256.\n\nis this server being abused in any way cause I have seen a handful of people complain about it yet I cant make the call yet. should I block this IP?",
+        "created_utc": 1672827659,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Burner to Home Wi-Fi",
+        "author": "VizVincent",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/102zvzd/burner_to_home_wifi/",
+        "text": "Would connecting a burner laptop or phone to your personal home Wi-Fi while under VPN and Tails compromise the burner?",
+        "created_utc": 1672827010,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fidelis Network feasible for ICS environments?",
+        "author": "Goforhistory",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/102yxax/fidelis_network_feasible_for_ics_environments/",
+        "text": "Hi r/asknetsec,\n\nI am looking for experiences and professional insights on the usefulness of Fidelis Network in ICS environments.\n\nI already used the search function and just found this: https://www.reddit.com/r/AskNetsec/comments/3de2uw/fidelis\n\nThe information that's publicly available on their website is as usual superficial marketing mumbo jumbo. However, I got the impression from it, that Fidelis Network is mostly targeted for use in enterprise and cloud environments.\n\nAny experiences or suggestions?",
+        "created_utc": 1672823566,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can you do PCI compliant 2FA for workstations that are in scope?",
+        "author": "apache99",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/102yhkw/how_can_you_do_pci_compliant_2fa_for_workstations/",
+        "text": "How can one do 2FA for workstations that are in scope (both Windows and Mac) to be PCI compliant?\n\nSo basically to require both a password upon startup plus a second factor of authentication to be able to login.\n\nI looked at a Yubikey as a solution, but it doesn't seem to be PCI compliant, the PIN is only alphanumeric.\n\n&amp;#x200B;\n\nCurious how other people do this?",
+        "created_utc": 1672821912,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Noob post. Unable to login to router.",
+        "author": "Ok_Resist6893",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/102nxgd/noob_post_unable_to_login_to_router/",
+        "text": "Trying to login to my router to change settings and view recent history and also to confirm if my vpn is working as intended.  When I search for my IP in the search bar using  [**http://xxx.xx.x.x**](http://xxx.xx.x.x) the search fails and tells me that my internet is blocked.  This is obviously not the case because I can make other searches.  \n\nIts a standard century link router.",
+        "created_utc": 1672790431,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why do ransomware hackers ask for payment in Bitcoin vs an anonymous currency like Monero?",
+        "author": "JamieOvechkin",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/102kdxc/why_do_ransomware_hackers_ask_for_payment_in/",
+        "text": "ransomware typically encrypts a target's files and demands payment in Bitcoin in order to decrypt them.\n\nBitcoin however is very traceable, in that the transaction history is public on the blockchain and shows exactly which addresses are receiving which amounts, and also  which was sold to be converted to cash or a stable coin.\n\nWhy dont Hackers instead use a cryptocurrency who's purpose is specifically to obscure who is sending what amount to who, so as to  preserve privacy and avoid being caught by the authorities?\n\nWhy stick to the proven traceable currency instead?",
+        "created_utc": 1672782160,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "problem with nexpose console",
+        "author": "metal_carter",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/102ixoo/problem_with_nexpose_console/",
+        "text": "hi guys, i'm trying to use nexpose but i have a problem that i can't solve .... i give to the terminal \" systemctl start nexposeconsole\" and\n\nthrough the link , I access the console , which tells me to wait for the loading ... but the loading does not even start and shortly after my pc is no longer even listening on port 3780 and the browser rightly tells me \"Unable to connect\" ........\n\nI state that the other times I used nexpose it worked without problems .... can you help me please?",
+        "created_utc": 1672778840,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Performing a phishing campaign.",
+        "author": "tryingtoworkatm",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/102bnc9/performing_a_phishing_campaign/",
+        "text": "Hello,\n\nIts my first time I'll need to perform phishing. And I'm asking for any resources, books or methodologies on how to conduct that kind of test. I've watched [Graham Helton](https://www.youtube.com/@GrahamHelton)'s guide, which was very informative and provided me an idea about the process and the tools like gophish and evilginx2. I'll do the OSINT and research all the employees, this won't be the hard part, but the thing I'm not aware is the part with the DNS and the Mail Server. The guy uses Mailgun to send emails what are your thoughts about that? \n\nThe other part I can't understand is that in every tutorial or article I see, the testers purchase a domain which is similar to the victims domain, but my company won't do it. Is there any possible way to just reuse an existing domain and somehow manipulate it to look like theirs or what are my options?\n\nThanks!",
+        "created_utc": 1672761567,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Saving Master password on Google Drive",
+        "author": "SmoothStatistician8",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101sofj/saving_master_password_on_google_drive/",
+        "text": "I use a password manager and just wondering if it is ok to save my master password on Google drive! If not, what is the best way to securely store it?",
+        "created_utc": 1672705448,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Am I crazy to leave my cushy job to work in a SOC?",
+        "author": "Ihopetheresenoughroo",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101qwih/am_i_crazy_to_leave_my_cushy_job_to_work_in_a_soc/",
+        "text": "Hi everyone! Thanks so much for your help in advance. I've been working as a Risk and Compliance Security Analyst for 3 years after college, and I'm dreading it. I feel really guilty because it's comfortable and cushy, but I don't feel like it fits my personality. I'm not really learning anything, and I hate having to persuade people into following best practices. \n\nLately I've been thinking of switching to working in a SOC since I really want to work a 3x12 schedule where I work 3 days a week in 12 hour shifts. I also really like the idea of monitoring for issues, responding to alerts, and creating tickets etc. I know people say it's mundane, but it sounds kind of satisfying to find an issue and resolve it or escalate it to the right person. I don't like having to focus on the big picture/strategy behind my work which is what I do now. I work best when I'm assigned tasks that I can consistently execute to completion. It feels more fulfilling and organized.\n\nMy only concerns are that I've seen SOC Analyst salaries and they seem much lower than my current salary. I've also heard that working in a SOC is a dead end. Is it a bad idea to switch from my field? What are your thoughts? Thanks!",
+        "created_utc": 1672701093,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "State of the Subreddit #5",
+        "author": "-Vampires-",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101pq8x/state_of_the_subreddit_5/",
+        "text": "Hello everyone and happy New Year! \n\nIt's been a few months since the last one of these, but the sub has been running well so we've seen no need for a new one till now. \n\n&amp;#x200B;\n\n**Banner**\n\nWe are in an active search for a new subreddit banner; if you'd like to submit one, please feel free to comment your submission.\n\nGuidelines for the banner are as follows:\n\n[https://mods.reddithelp.com/hc/en-us/articles/360010112892-Banner](https://mods.reddithelp.com/hc/en-us/articles/360010112892-Banner)\n\n* Small banners: 1920×128 pixels, aspect ratio of 15:1\n* Medium banners: 1920×256 pixels, aspect ratio of 7.5:1\n* Large banners: 1920×384 pixels, aspect ratio of 5:1\n\n&amp;#x200B;\n\n**Discord**\n\n We have been considering a community discord for a while now where members can help one another with active career questions, support, and much more. It's been decided to leave the creation of it up to what you all think. Please vote; the poll will be up for 7 days.  \n\nHave a wonderful New year!\n\n\\- r/AskNetsec Mod Team. \n\n \n\n&amp;#x200B;\n\n&amp;#x200B;\n\n[View Poll](https://www.reddit.com/poll/101pq8x)",
+        "created_utc": 1672698300,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "OOB Blind SQLi Payload - From Oracle to PostgreSQL",
+        "author": "SquareInstruction100",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101mxwi/oob_blind_sqli_payload_from_oracle_to_postgresql/",
+        "text": "[removed]",
+        "created_utc": 1672691812,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What file is this that ends in 0x0b? What format can this be?",
+        "author": "SanityRepresentative",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101jswc/what_file_is_this_that_ends_in_0x0b_what_format/",
+        "text": "&gt;  $ file test.txt.dec\n\n&gt; test.txt.dec: ASCII text, with no line terminators\n\n&gt; \n\n&gt; hexdump -C test.txt.dec\n\n&gt; 00000000  72 3e 5e 46 6c 24 3f 7e  52 26 7c 6a 3e 34 0b     |r&gt;^Fl$?~R&amp;|j&gt;4.|\n\n&gt; 0000000f",
+        "created_utc": 1672684354,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Are iOs notes \"protected\" by fingerprint safe ?",
+        "author": "hthouzard",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101eunz/are_ios_notes_protected_by_fingerprint_safe/",
+        "text": "Hello,\n\nIn iOs, I can \"protect\" my notes with a password and with faceId or my fingerprint, but is it really safe?",
+        "created_utc": 1672672202,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A desperate cry for MacOS X forensic tools",
+        "author": "arkenoi",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101e7rn/a_desperate_cry_for_macos_x_forensic_tools/",
+        "text": "Seriously, what's wrong with it? If you look for toolsets, everything is pretty straightforward on Windows, slightly less on Linux, but there is plenty of information and MacOS X.. seems to be.. cursed?  \n\n\nEverything starts with the acquisition phase. It must be simple, right? You need three images: a byte-accurate disk dump, decrypted disk dump suitable for analysis detachable from the T2 chip, and a memory dump. NO.   \n\n\nEvery tool out there is either 10 years old and does not work on modern MacOS, or is designed for LEAs and other entities who have forensic investigations as a core business or at least someone's day job. With a corresponding price tag attached.   \n\n\nEvery article out there is either hopelessly outdated or incomplete, or it is SEO-facelifted copywrited 10 years old content, or suggests silly things like using rsync for forensic imaging.  \n\n\nIf you look into Volatility framework manual, it explicitly says:  \n\"Volatility does not provide the ability to acquire memory. We recommend using Mac Memory Reader from ATC-NY, Mac Memoryze, or OSXPmem for this purpose. Remember to check the list of supported OS versions for each tool before using them.\"  \n\n\nGuess what? **None** of these tools work today. Not a single one.  \n\n\nIt does not get any better on the next stages. Say, all information on hunting sleeping Cobalt Strike beacons is heavily Windows-centric.",
+        "created_utc": 1672670562,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Password managers for enterprise",
+        "author": "PapiPoseidon",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101d3ar/password_managers_for_enterprise/",
+        "text": "I've recently been tasked with finding new password management solutions for our company after the last security breach. Personally, I use Bitwarden and have had a good experience with it. The question now is whether we should go with the Bitwarden cloud service or host our own Bitwarden instance in Azure.\n\nAs a company of around 100 employees, security is a top priority for us. Both options have their benefits, but I wanted to get some opinions from others who may have more experience with these types of decisions. One potential advantage of self-hosting is that we have the ability to monitor and set up alarms for detection, which could be beneficial for security purposes.\n\nWhat are your thoughts on the Bitwarden cloud vs self-hosted options? Are there any other password management solutions that you would recommend for a company of our size?",
+        "created_utc": 1672667506,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Using anonaddy, simple login or similar services with own domain",
+        "author": "cake52",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/101bwf8/using_anonaddy_simple_login_or_similar_services/",
+        "text": "What to think about using your own domain through anonaddy or similar services? I use this as catchall with service@domain.com for various accounts (shops etc)\n\nFor me the pro is the administration. I can easily deactivate aliases if I want. \n\nThe biggest downside is that it creates an additional middle man on the way to my email provider. Do you think this is a big security issue?",
+        "created_utc": 1672663904,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Phishing email from knowbe4",
+        "author": "hannibal_the_general",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/10187s2/phishing_email_from_knowbe4/",
+        "text": "Happy New Year!!\n\nSo i am a security analyst and i was going through our reported phishing emails and i see that knowbe4 is using one of our legitimate emails to send phishing ([humanresources@company.com](mailto:humanresources@company.com)). In my opinion this defies the purpose of phishing unless the domain can be spoofed, which is another topic altogether. Am i correct about this?",
+        "created_utc": 1672650738,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does ChatGPT work?",
+        "author": "Calm_Scene",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/1015mws/how_does_chatgpt_work/",
+        "text": " The release of ChatGPT, an AIGC model, has caused a stir in the tech industry and has become one of the most exciting developments of 2022. This breakthrough reaffirms our belief in the potential of AI to revolutionize a variety of industries, including security.\n\nHow does ChatGPT work? This blog summarized relevant AIGC technology and showed how it has progressed over the years.\n\n[How does ChatGPT work? Tracing the evolution of AIGC.](https://www.dtonomy.com/how-does-chatgpt-work/)",
+        "created_utc": 1672641426,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Crowdstrike Falcon",
+        "author": "te91fadf24f78c08c081",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/1013skt/crowdstrike_falcon/",
+        "text": "So I just noticed that my school offers Crowdstrike Falcon to students for free. Is it worth downloading? Currently I just use Windows Defender, plus an occasional MalwareBytes scan.",
+        "created_utc": 1672635462,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If I don't encrypt my Gmail I'm dumb?",
+        "author": "MrNoodlesLearns",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/100tjd5/if_i_dont_encrypt_my_gmail_im_dumb/",
+        "text": "I was watching a CompTIA course and the instructor was speaking about the differents certifications and how it can improve our daily emails. Also, he said we can encrypt our regular email from Yahoo or Gmail. \n\nWhat benefits I can have encrypting my gmail account? It would only more privacy for my box or something else?\n\nWhat setup do you recommend me to install on my gmail?",
+        "created_utc": 1672607411,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I accidently opened the Zip file that came with Wiley's malware Cookbook on my unprepared pc. what do I do now?",
+        "author": "throway129393747473",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/100rl03/i_accidently_opened_the_zip_file_that_came_with/",
+        "text": "[removed]",
+        "created_utc": 1672602358,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what's the average salary for network security Engineer with 2 years of experience in your country?",
+        "author": "AdDifficult1588",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zzswce/whats_the_average_salary_for_network_security/",
+        "text": "what's the average salary for network security Engineer with 2 years of experience in your country?",
+        "created_utc": 1672489060,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When do we stop reporting on CSRF issues?",
+        "author": "disclosure5",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zzn17o/when_do_we_stop_reporting_on_csrf_issues/",
+        "text": "I've noticed for a while that PoC's for CSRF vulnerabilities, due to browsers implementing SameSite cookies by default, are more and more infeasible. I've been a strong defender of the \"not everyone has a modern browser\" but we're moving to a point where older browsers already aren't working (ie, 'fetch' and 'const').\n\nWhat's your take on when we cross this off as a threat?",
+        "created_utc": 1672466488,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do you retrieve (decrypt) a payload from a LoRa Chirpstack downlink frame at an edge device?",
+        "author": "vwibrasivat",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zzl2iu/how_do_you_retrieve_decrypt_a_payload_from_a_lora/",
+        "text": "What is an efficient recipe for extracting a payload from a downlink frame at an edge device?\n\nBelow are three contiguous frames generated by Chirpstack that have arrived at my edge device. Spaces have been added for visual effect. Note that the sizes are correct among them in terms of bytes. This will involve some AES decryption with a final XOR. Only parts of these frames are encrypted. But how would I perform the XOR on a variable-length payload?\n\n     (1) 600b0b0b 009f c825 03000100700330ffff01050868e28c  01187f7ffa ad1af8\n\n     (2) 600b0b0b 008f c925 03000100700330ffff01050868e28c  01ad9eb655 316b42 052d7e\n\n     (3) 600b0b0b 008f ca25 03000100700330ffff01050868e28c  d5248606\n\n\n`600b0b0b` is my device address with a network derived code inserted in the first byte. `c825,c925,ca25` are the frame counters incrementing on each frame (little endian). Note , again, those bytes are not encrypted.\n\n(1) contains the payload `FADE93`\n\n(2) contains the payload `FADE93FADE93`\n\n(3) contains an empty payload.\n\nSo how do I get them out of the frames?",
+        "created_utc": 1672460094,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Secure medium for data transfer in and out of air-gapped systems",
+        "author": "chaplin2",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zzfnst/secure_medium_for_data_transfer_in_and_out_of/",
+        "text": "I am separating my communication and encryption system for fun! \n\nThe encryption/decryption system will not be connected to network. I am looking for a medium to transfer data in and out of the air gapped system securely. The medium can be set to read only, or has minimal firmware that is signed by a trusted party with verifiable signature. This way, it’s harder to infect USB with malware that propagates. The medium should support say 1TB.\n\nWhat’s the best product for this purpose?\n\nModern SSDs/HDDs come with complex proprietary firmware software and controllers. \n\nI am not looking for fancy one-way diodes or similar.",
+        "created_utc": 1672444780,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Custom Detection For Ducklogs Malware",
+        "author": "Guitarware",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zzfdna/custom_detection_for_ducklogs_malware/",
+        "text": "I’m trying to build a Defender custom detection query with KQL. I’ve written a query based on hashes and file names but we know that these can easily change. I wanted to build the detection based on behavior instead of hashes and filenames. One aspect of behavior is that the Ducklogs malware “uses the steganography technique to hide malicious content in the compressed bitmap image.” I figured basing the detection on a bitmap image being decompressed would be a good place to start but there may be better/more reliable aspects of the malwares behavior to build the detection on. So I have two questions:\n\n1. Does anyone know what service/process Windows would use for decompressing a bitmap image?\n\n2. (Since I’m new to cyber) How would I find this information in future? I tried to using procmon while decompressing my own bitmap image but nothing yet. Thank you.",
+        "created_utc": 1672444042,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Time for a change?",
+        "author": "ImaDapperDanManGD",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zz9s2d/time_for_a_change/",
+        "text": "[removed]",
+        "created_utc": 1672430082,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to get a handle on AWS security, multiple accounts, don't know AWS well",
+        "author": "junkaccount1999",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zz9h1y/how_to_get_a_handle_on_aws_security_multiple/",
+        "text": "I have been doing IT for like 20 years, currently in an information security role. I am comfortable with on-premise stuff, some Azure but AWS feels so foreign and complicated. I feel like this is an area I need to get better at to secure out environment but not really sure where to start. I don't want to go watch random YouTube videos I feel like I need some starting point and track to follow?",
+        "created_utc": 1672429326,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do you use for developer secure coding training?",
+        "author": "junkaccount1999",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zz8wo4/what_do_you_use_for_developer_secure_coding/",
+        "text": "Most of them have a MSDN, not sure if there is anything free that is good in there. We have KnowBe4 but it isn't great beyond security awareness training. Spoke with Veracode as an option but do you have any recommendations?",
+        "created_utc": 1672427967,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to prepare for the Crest CPSA?",
+        "author": "Josephzhang",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zz21im/how_to_prepare_for_the_crest_cpsa/",
+        "text": "Hello everyone, \n\nI intend to take the Crest CPSA soon but don't know how to prepare because there isn't much information available online. I bought O'Reilly's Network Security Assessment book; should I study and check off the topics on the syllabus?\n\nThank you, \n\nJoseph",
+        "created_utc": 1672411005,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can someone please help me with this task?",
+        "author": "Odd_Concentrate_4055",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zz1jp7/can_someone_please_help_me_with_this_task/",
+        "text": "The aforementioned server platforms support a variety of operating systems, from Windows to Linux, due to their structure. \n\nIt is necessary to integrate numerous software programs from various sites into the system.\n\nCustomers are increasingly requesting a modern user experience, such as the usage of portable devices that resemble rugged smartphones or a fully integrated single-sign-on GUI interface for accessing, configuring, and connecting all devices in an IP network.\n\nInfrastructur: Switches, trusted filter, media gateway, cybersecurity threat protection, phones, \n\nApplications: message, anti-malware, vulnerablity scanner and backup and restore\n\n&amp;#x200B;\n\nWhich potential challenges to the integrity of the system could arise from that scenario, and how would you counter them?\n\nThen, suggest actions that could be made to raise the system's security level against the gravest threats.",
+        "created_utc": 1672409673,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Staying at an Airbnb and I captured them hacking into my systems and cloning my google account onto their devices",
+        "author": "Imaginary_Ferret_354",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zz12kw/staying_at_an_airbnb_and_i_captured_them_hacking/",
+        "text": "[removed]",
+        "created_utc": 1672408393,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Chatgpt for vulnerability discovery",
+        "author": "Calm_Scene",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zyto5h/chatgpt_for_vulnerability_discovery/",
+        "text": "Chatgpt can actually detect vulnerabilities in the code if you give him a piece of text.  \n\nDo you think it can possibly replace SAST tools as you can use chatgpt or its APIs to find vulnerabilities while the developer team is working on code?",
+        "created_utc": 1672383153,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Heya guys! Got a lappy for Xmas. I'm getting into pen testing, went with ParrotOS instead of Kali. Any tips or suggestions, software, etc I should know?",
+        "author": "I_Collect_Viruses",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zyk86t/heya_guys_got_a_lappy_for_xmas_im_getting_into/",
+        "text": "Specs: \n\n* **OS:** Parrot OS 5.1 \\[Security\\]\n* **CPU:** Intel i5-8365U @ 4.100MHz\n* **RAM:** 16GB DDR3 @ 3200MHz\n* **Storage:** 1TB WD Blue NVMe M.2 SSD\n\nI'm not a complete linux noob, I'm a mix between entry level and somewhat adept I'd say but leaning towards the beginner side a little. I have a NAS I set up with OpenMediaVault which is dependent upon terminal so I can get around one most times. It's running a MiniDLNA server hosting all my movies, got OS's backed up on it, etc.\n\n&amp;#x200B;\n\nWent with ParrotOS Sec over Kali \\[Blackarch is far too intimidating for me, as is Arch in general.\\] due to this laptop also sorta serving as a secondary mobile daily driver. I have a somewhat beastly Windows gaming rig as my main D.D. This machine is primarily for pen testing and network engineering \\[Learning those to be exact\\] so any tips, resources, scripts, programs you guys know of please recommend! Starting points would be very nice. I've already toyed around with hacking WiFi networks  \\[ethically of course.\\] with Airgeddon. Thanks in advance!\n\n&amp;#x200B;\n\nAlso to add: This is my first real time using Linux desktop environments in this capacity, most previously was VM stuff. So any tips there is welcomed as well. I came from of course, long experience with Windows.",
+        "created_utc": 1672356809,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What are some fun cyber security coding projects?",
+        "author": "herbertisthefuture",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zye4no/what_are_some_fun_cyber_security_coding_projects/",
+        "text": "What are some fun cyber security coding projects?",
+        "created_utc": 1672342457,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Macbook pro 14",
+        "author": "Confident_Nebula_560",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zydl9j/macbook_pro_14/",
+        "text": "want to break into pen testing and HTB, are there any good solid alternatives to Parallels that are free?",
+        "created_utc": 1672341231,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would anyone mind reviewing my resume and letting me know your thoughts? Cause I may start looking for new opportunity next year. (Application Penetration Tester)",
+        "author": "No-job-no-money",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zybuh0/would_anyone_mind_reviewing_my_resume_and_letting/",
+        "text": "https://imgur.com/a/LDmHbMQ",
+        "created_utc": 1672337128,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any GRC platforms for SOC 2, NIST, CCPA, etc actually good?",
+        "author": "junkaccount1999",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zyb2xz/any_grc_platforms_for_soc_2_nist_ccpa_etc/",
+        "text": "Trying to find one that works well, have looked at a number of them like OneTrust, LogicGate, StandardFusion, Vanta, etc. All leave something to be desired, wanted to see what others are using to help with SOC audits and GRC internally.",
+        "created_utc": 1672335286,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would anyone mind reviewing my resume and letting me know your thoughts? Cause I may start looking for new opportunity next year. (Application Penetration Tester)",
+        "author": "No-job-no-money",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zyautn/would_anyone_mind_reviewing_my_resume_and_letting/",
+        "text": "\nhttps://imgur.com/a/LDmHbMQ",
+        "created_utc": 1672334735,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Assembly beginner",
+        "author": "g-simon",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zy66qq/assembly_beginner/",
+        "text": "Hi, I am interested in RE, and I am following a very interesting course on TCM academy ([https://academy.tcm-sec.com/p/practical-malware-analysis-triage](https://academy.tcm-sec.com/p/practical-malware-analysis-triage))\n\nBy the way, I think I'd need more consistent knowledge about how assembly works, how to use a debugger (eg. x32dbg) and so on. Anyone can recommend a good starting point? thank you very much!",
+        "created_utc": 1672322682,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wanting to learn advice",
+        "author": "Normal-Question-1994",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zy56dd/wanting_to_learn_advice/",
+        "text": "Hi guys I have an old windows 10 pc and I would basically like to learn how to do things on it as a hobby. I’d like to learn how to like reinstall it, install new operating systems like Linux or whatever that are secure on it, I don’t really know actually but basically just learn how to do different things on it just for funsies and as a hobby. Right now I basically just use it to stream jazz music or sounds of nature in the background for my room lol. \n\n1. What can I do with this to learn fun computer things like learning how to wipe and reboot windows 10 and installing Linux what other operating systems are there? What should I do with it? Like I want to train myself to be like an IT person almost, I’d be excited to learn. **Asknetsec is there a way that I could learn to like plug in an android and learn how to see if there is malware or viruses on it and do like cybersecurity analysis? Or would that be too advanced?\n\n2. What resources do I have to learn these things? Right now I’m planning on just using YouTube Reddit and google. \n\nIf you don’t know but know of resources I should check out I’d appreciate that as well. Thanks!",
+        "created_utc": 1672319786,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Diamond Model activity thread analysis",
+        "author": "Leosoda",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zy418l/diamond_model_activity_thread_analysis/",
+        "text": "Hello,\n\nI'm working on a presentation about the Solarwinds incident. I want to analyze the threat actor through the diamond model (DM). I've researched the DM and understand the basics i.e. the four edges, its meta-features and the possibility to synthesize (introducing LKC as the phase) with other CTI models. Basically, I want to create an activity thread for the different \"incidents\" (Sunspot, Sunburst, Teardrop &amp; Raindrop). But when I start looking into how to do this, I don't feel as if I'm understanding it.\n\nHere is an example picture of an activity thread: [https://i0.wp.com/www.activeresponse.org/wp-content/uploads/2016/08/DiamondModelActivityThreads.jpg?fit=550%2C404&amp;ssl=1](https://i0.wp.com/www.activeresponse.org/wp-content/uploads/2016/08/DiamondModelActivityThreads.jpg?fit=550%2C404&amp;ssl=1)   \n\n\nWhat I don't understand about the activity thread is:\n\n* Does the arrow edge placement on each diamond mean something? Or is it simply to show the lateral movement between different incidents and understand the flow of the attack? \n* When and why should I introduce multiple diamond shapes into one cell of the activity thread?\n* Why are some diamonds and arrows dotted?",
+        "created_utc": 1672316198,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Are refurbished routers safe?",
+        "author": "Edward_Fingerhands",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zxou9m/are_refurbished_routers_safe/",
+        "text": "I bought a router on Amazon,  and i didnt realize it was used/refurbished until it arrived in a random cardboard box, rather than official packaging. Is it possible for the router to be compromised in some way,  and if so, are there any tools to scan for this?",
+        "created_utc": 1672270514,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Product Security Engineer Career Path",
+        "author": "thekoolhatkar",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zxkplf/product_security_engineer_career_path/",
+        "text": "Hey folks, I have been working as a Product Security Engineer at a big tech company for about 2 years now and have learned the ropes of the job. I was wondering what is the progression for a product security engineer in terms of long term. Right now, all it feels like now is to keep up-to-date with latest things happening in security and doing the same thing every release of the product like code reviews, threat modeling, some dev work if needed, etc.\n\nIs AppSec or offensive security a good next step? Thinking of pursuing a certification like OSCP to better my chances of going in that direction.\n\nThoughts?",
+        "created_utc": 1672260930,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would anyone mind reviewing my resume and letting me know your thoughts? Cause I may start looking for new opportunity next year.",
+        "author": "No-job-no-money",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zxhzy5/would_anyone_mind_reviewing_my_resume_and_letting/",
+        "text": " [https://imgur.com/a/LDmHbMQ](https://imgur.com/a/LDmHbMQ)",
+        "created_utc": 1672254548,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Graduate Certificate or MS Degree?",
+        "author": "snokerpoker",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zx1yjz/graduate_certificate_or_ms_degree/",
+        "text": "I’ve been thinking a lot about getting a Master’s in Cybersecurity but the cost is making me hesitant. \n\nI don’t really need it but always had it as a goal. I got my BS from WGU and am going back and forth on the following- \n\nGetting a Graduate Certificate from a well known university or get a full MS degree from WGU or a smaller state university. \n\nCurious if anyone has a graduate cert and how it went vs. getting a full degree. I know it’s much cheaper and you only take about 4 courses total.",
+        "created_utc": 1672207198,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to enable https on metasploitable websites",
+        "author": "Popular_Macaron_9434",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zwzdwt/how_to_enable_https_on_metasploitable_websites/",
+        "text": "does anyone know how to enable https on the metasploitable2 machine which opens port 443",
+        "created_utc": 1672199151,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I be setting up 2FA for any program I use? Or only super important stuff?",
+        "author": "ShallowBox",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zwsyqf/should_i_be_setting_up_2fa_for_any_program_i_use/",
+        "text": "Hey all! \n\nI’ve known about 2FA, but I thought I’ve heard someone say it’s not safe? And some people don’t recommend it - But from most things online people say you might aswell set it up. \n\nWhat’s your thoughts? \n\nI mainly have games / programs that suggest it being set up. \n\nStream &amp; Epic and some other game programs. \n\nThanks!",
+        "created_utc": 1672181814,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can you scan single-page web apps? Burp isn't built for it, so are there any other tools that would work?",
+        "author": "Let_us_Hope",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zwqmmb/how_can_you_scan_singlepage_web_apps_burp_isnt/",
+        "text": "Typically, I'll use Burp Suite to scan and test web apps, however a client is utilizing a single-page architecture and Burp just doesn't handle it very well. \n\nIs there a tool that can scan and provide testing capabilities for single-page web apps?\n\nThanks and any insight is greatly appreciated!!!",
+        "created_utc": 1672176213,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Backing up iCloud recovery key on Google Drive",
+        "author": "DogsBucolic",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zwomz7/backing_up_icloud_recovery_key_on_google_drive/",
+        "text": "I recently turned on the Advanced Data Protection for iCloud, which means that if I lose my recovery key, all of my data is lost.\n\nIn addition to a physical print-out, I have also uploaded an encrypted pdf of the recovery key to Google Drive. Is this a bad idea for some reason? Am I missing a possible security vulnerability?",
+        "created_utc": 1672171457,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why does Google not enable signing in to your account via scanning qr code or code sent to your email on the phone? Like Steam, OneDrive or Discord do.",
+        "author": "dan1991Ro",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zwf2k8/why_does_google_not_enable_signing_in_to_your/",
+        "text": "And any session that is only logged via qr code/email code to not be able to see the backup codes or change the passwords, see google passwords in the manager, or log out superior sessions(that that do have the password inputed or an extra 2fa layer) etc.",
+        "created_utc": 1672145870,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do you conduct client vetting for pentesting?",
+        "author": "Waddup_yall",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zwc1dz/how_do_you_conduct_client_vetting_for_pentesting/",
+        "text": "When taking on new clients what vetting process do you go through to protect yourself as a tester?",
+        "created_utc": 1672134680,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Amazing! Information Security Blog",
+        "author": "Popular_Macaron_9434",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zw4wtd/amazing_information_security_blog/",
+        "text": " Today I saw an amazing sample post for a blog and it was awesome it shares a lot of information about information security. it also have an practical which informs the purpose of that blog.Its coming soon for all i'll inform everyone when it comes because knowledge grows by sharing !\n\nthanks to the community\n\nLINK TO BLOG: [https://arkcybersecurity.wordpress.com](https://arkcybersecurity.wordpress.com/)",
+        "created_utc": 1672110288,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "iPhone weird stuff question",
+        "author": "Normal-Question-1994",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvxu5j/iphone_weird_stuff_question/",
+        "text": "Hey guys, I just noticed something on my phone and realized that weird things have happened on this iPhone in the past few weeks I just haven’t thought of it all until now.\n\n1. A photo that I had since long ago deleted came back up on my photostat library.\n2. There was a red dot on the upper right hand corner of my phone app and that means that the microphone is on\n3. There was a safari browser open on my list of open things with past websites that I had saved even though I had deleted the safari browser weeks ago\n\nAre these just normal things or am I being hacked? Lol thank you!",
+        "created_utc": 1672091186,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I was a moron and plugged in a personal external drive into a work laptop. I realized and disconnected. Will they still be able to see file contents?",
+        "author": "7939599262515843",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvxdp7/i_was_a_moron_and_plugged_in_a_personal_external/",
+        "text": "So I did the above and browsed through File Explorer for less than a minute before disconnecting. This was offsite on personal wifi with a work PC.\n\nApart from the system log of an external device being hooked up, file names, and the thumbnail  cache, is there any way my employer can still see the drive contents (pictures) now that it’s disconnected?",
+        "created_utc": 1672090009,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Password Manager?",
+        "author": "Parceble",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvwbrd/best_password_manager/",
+        "text": "Hello all!\n\nI realize this question has been asked a thousand times but I feel I have a good reason for asking again. I currently use LastPass and due to the most recent breach I'm not happy with the way they handled it so I'm looking at switching.\n\nFrom what I've seen both 1Password and Bitwarden are top of the list. I went to check out 1Password however and on the iOS app store it has pretty bad reviews and appears the app as been updated to \"1Password 8\". Thus, this leads me to why I'm asking this question. I haven't seen this question addressed since the LastPass breach nor anything on 1Password since the app has been \"rebuilt\".\n\nSo, what are your thoughts and opinions? And I realize any password manager can be breached. It's simply the way they handled it that I'm not impressed with.\n\nThank you!",
+        "created_utc": 1672087238,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking to get a desktop PC, cheaper to build a PC and what sort of things to look out for price and spec wise?",
+        "author": "pasm1z",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvuflp/looking_to_get_a_desktop_pc_cheaper_to_build_a_pc/",
+        "text": "Hi\n\nI am looking to buy a solid gaming PC for around £1000.\n\nMy idea is so that I can do some programming, some gaming and also just day-to-day web browsing\n\nI managed to compile some parts for my new build here: [https://uk.pcpartpicker.com/list/TvfCnt](https://uk.pcpartpicker.com/list/TvfCnt)\n\nNot sure if they are any good and whether they can be improved\n\nThanks",
+        "created_utc": 1672082158,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Working in a private cloud MSP. Is it worth it experience wise?",
+        "author": "Appropriate_Mind2866",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvsb67/working_in_a_private_cloud_msp_is_it_worth_it/",
+        "text": "I received an offer for a network support position ( network administrator )  in a managed  private cloud service provider  ( VMWare, Azure as vendor ). Currently working at a TAC for a known network vendor supporting their firewall.\n\nI'm worried that this role being mostly support ( few change requests, policies, VPN tunnels, VLANs etc. ) could be less benefiting from a career perspective than a more generic network engineer role in an enterprise enviorement ( as it would include maintenance, support, planning , deployment etc.\n\n1. Please share your opinion in the above worries.\n2. Can you switch into an enterprise role easily after a support role from an MSP?\n3. How do companies offering contract role view MSP experience?\n\nThey highlighted that the role is challenging at least 20 times during two interviews and that after 6-12 months project work ( FW deployments, migratons etc. ) can be requested as well.\n\nTech stack:\n- Firewalls: Fortinet, Clavister\n- Cisco ASR Routers\n- Switches: Arista, Cumulus\n- VMWare NSX\n-  NO Automation, NO SD-WAN \n\nTickets are highly variated, examples but not limited to:\n- Change requests\n- L2/L3 redundancy\n - IPSec, SSL VPN, interconnects \n- Generic R/S TS",
+        "created_utc": 1672076546,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I use a mobile hotspot while using a VPN on my laptop? Or is that less secure than using my broadband connection?",
+        "author": "notarobot3675",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvr8my/can_i_use_a_mobile_hotspot_while_using_a_vpn_on/",
+        "text": "I am currently using my mobile (iphone) as a hotspot for my laptop, as my regular broadband connection is extremely slow. I enable a VPN (mullvad) on my laptop, but not my mobile. \n\nIs this safe? Do I still have a good amount of privacy? Should I enable VPN on my phone instead/alongside my desktop? Is using my regular broadband the more secure option?",
+        "created_utc": 1672073590,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Unknown open port on my Router",
+        "author": "s1m0ndup3",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvq9pa/unknown_open_port_on_my_router/",
+        "text": " \n\nHey guys, i just found at that the following port is open on my public ip:\n\n37968/tcp open upnp MiniUPnP 1.8 (Linux 4.9.59; UPnP 1.1)\n\nThe Port is only open on my router, not on my PC.\n\nI found this by port scanning my public IP with nmap. Sadly I cant track the traffic going through this ports, since my router doesnt track traffic and I dont exactly know how to port mirror everything to my PC right know.. I also dont know if thats necassary.\n\nIn the meanwhile I blocked it on my router and its closed, everything seems to be still working...\n\nI also found this on my automatic network service information site from my router:\n\n\"miniupnpd TCP 55002 miniupnpd\"\n\nSo maybe it is just fine and standard? My Router Version is: Telekom Speedport Smart 4\n\nI tried to google it, but iam not sure if this is something that defaultly integreted into home routers? I defently dont know anything about it. Any information would help me ALOT.",
+        "created_utc": 1672070845,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "SOAR Engineer Technical Interview",
+        "author": "Pretend_Beautiful768",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvpr96/soar_engineer_technical_interview/",
+        "text": "Hi everyone, I have a \"technical interview\" coming up for a position as a SOAR (Security Orchestration Automation &amp; Response) Engineer and unfortunately the company has given me no information on what tools or topics it could cover.\n\nI was wondering if any SOAR Engineers might have some guidance on what I could be doing to best prepare myself? I've got just over a year of experience working at a SOC Analyst and have done some detection content work. Both my current company and the one I am interviewing for use Splunk.\n\nIt seems like since SOAR is a relatively new and niche area that information about technical interviews other companies have done is hard to find. If anyone has an experience they could share it would mean the world to me.\n\nI shifted to cyber through a conversion msc in the UK after many years doing unskilled work so if anyone has any questions about making that transition feel free to ask away. Happy to help. I'll post what the interview was like once it's done if anyone is interested. Thanks!",
+        "created_utc": 1672069392,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best practices for password security",
+        "author": "matavelhos",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvoqfx/best_practices_for_password_security/",
+        "text": "In recent weeks I'm trying to understand the best practices to secure my password information among others things.\n\nSo, I would like to have opinions about what are you using, how you backup information, and how you grant that for some reason you forget some master password you still have a way to recover access to your accounts.\n\nFor example:\n\nUsing a pro bitwarden account in their servers can lead to a problem like lastpass. But if you self host the server, you can have a breach in your network.\n\nUsing 2FA app such as google, microsoft, authy or even a yubico key. \n\nUsing a email adress only to use as recover on this systems?!\n\nWhat are the best options to have a secure system, with backups and recover options?  \n\n\nThanks for your help!",
+        "created_utc": 1672066408,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Working for Cloud MSP opinions.",
+        "author": "VisualContribution64",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zvlq3u/working_for_cloud_msp_opinions/",
+        "text": "[removed]",
+        "created_utc": 1672055881,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "iPhone vs Pixel security?",
+        "author": "chaplin2",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zv5ykx/iphone_vs_pixel_security/",
+        "text": "Which one is more secure? iPhone has been hacked by Pegasus repeatedly. It would be easier for a closed source operating systems to implement backdoors.\n\nAny idea?",
+        "created_utc": 1672000180,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "is fallout 76 acting maliciously?",
+        "author": "pLeThOrAx",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zv4dai/is_fallout_76_acting_maliciously/",
+        "text": "Recently received an account ban after playing the game for only a few hours. I have memory profiling software on my machine, along with other tools. Did not use them in conjunction with fallout/to analyze/modify any aspects. \n\nMy concern is that fallout 76, possibly with a supervisor of sorts, is reading beyond the scope of its allocated memory or performing other operations to analyze and scope my system. \n\nIs anyone familiar with this? How might they have this information?\n\nHope this is the correct forum. Thanks!",
+        "created_utc": 1671995364,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Do you tell people if you’re a pen tester irl?",
+        "author": "Waddup_yall",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zuddeg/do_you_tell_people_if_youre_a_pen_tester_irl/",
+        "text": "I’m at the stage where I don’t know if mentioning it will make people worried due to the skill set. Layer 8 misunderstandings",
+        "created_utc": 1671899835,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why is this Yara rules regular expression not matching when looking at PE Header?",
+        "author": "KING_WINSOME",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztw3y6/why_is_this_yara_rules_regular_expression_not/",
+        "text": "Hello,\n\nI'm wondering if someone more familiar with Yara than I am can tell me why my regex is not working in this rule. I have verified that the field in the particular file does contain characters that this would normally match. I have tested the regex to just match on file content and it works. I do not receive any errors, it just doesn't match have tried multiple versions of yara 4.2 and later.\n\n&amp;#x200B;\n\nimport \"pe\"\n\nrule suspicious\\_origin\\_and\\_unsigned\n\n{\n\ncondition:\n\npe.version\\_info\\[\"OriginalFilename\"\\] matches /\\\\p{Cyrillic}/\n\n}",
+        "created_utc": 1671838895,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is a backdoor a simpler explanation for an apparent zero-click attack on high-profile targets (Pegasus)?",
+        "author": "vinamrsachdeva",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztst1n/is_a_backdoor_a_simpler_explanation_for_an/",
+        "text": "**Clarification.** By backdoor I mean, for example, the  OS developer deliberately leaving vulnerabilities, sharing them with a  front organization (NSO Group) which could then develop the spyware (Pegasus) based on them and offer it to intelligence agencies of  friendly governments.\n\n**Questions.**\n\n1. Would this process be easier than just executing a zero-lick attack?\n2. This might work for Apple with iOS but I don’t know how difficult  would it be for Google to introduce vulnerabilities and let it go  unnoticed for a lot of time in Android which is open source. Does the  incident of polkit privilege escalation vulnerability being unnoticed  for 12 years show that it could also be possible to do with Android?\n\n**Motivation.** (This is unrelated to this sub but I'm  just adding this so that people could understand why I'm asking this.)  First, revelations of PRISM showed that both intelligence agencies and  all the major OS developers for smartphones would be willing to  collaborate on such a program. Second, this strategy would make it safer  for both since it would limit the number of insiders who are aware of  this and also offer them plausible deniability in case the front is  caught. They could have multiple fronts working at the same time which  can undergo closure/prosecution and be replaced as and when they are caught.",
+        "created_utc": 1671830036,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Get a free $750 CashApp Card! New Cash App Hack Method! Only 72 left",
+        "author": "olwswandie_3668",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zto0dr/get_a_free_750_cashapp_card_new_cash_app_hack/",
+        "text": "[removed]",
+        "created_utc": 1671817588,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Get a free $750 CashApp Card! New Cash App Hack Method! Only 72 left",
+        "author": "AdamPope11_8958",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztns49/get_a_free_750_cashapp_card_new_cash_app_hack/",
+        "text": "[removed]",
+        "created_utc": 1671817309,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Get a free $750 CashApp Card! New Cash App Hack Method! Only 72 left",
+        "author": "PeterPa70195662_5300",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztnklf/get_a_free_750_cashapp_card_new_cash_app_hack/",
+        "text": "https://imgur.com/TZo37YJ",
+        "created_utc": 1671817075,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ferrari's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "benmlmorgan_9782",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztn7jm/ferraris_new_nft_collection_is_live_800_nfts_for/",
+        "text": "https://imgur.com/SpjjUhg",
+        "created_utc": 1671816381,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "Egg04976398_3719",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztmuu9/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "[removed]",
+        "created_utc": 1671815795,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Balenciaga's new NFT collection is Live! 2022 NFTs for the first 2022 people!",
+        "author": "brandon968111_9336",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztlzz2/balenciagas_new_nft_collection_is_live_2022_nfts/",
+        "text": "[removed]",
+        "created_utc": 1671813859,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to select a MDR/MSSP partner (evaluation criteria)?",
+        "author": "gerhardmpl",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztlvjt/how_to_select_a_mdrmssp_partner_evaluation/",
+        "text": "Hi guys, we are planning to further improve our IT security by integrating an XDR/MDR solution into our infrastructure (10 global locations, 1800 endpoints, 40 physical hosts, 600 virtual server).\nOur IT team needs to focus on adding value to the business (mid-sized tooling manufacturer in Europe), so we are looking for a MDR/MSSP partner with a good reputation to take over this role.\n\nCan anyone share online resources, white papers, or personal experiences on criteria for evaluating and comparing MDR/MSSP service offerings?",
+        "created_utc": 1671813646,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "bondizzle024_7432",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztlqyx/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "[removed]",
+        "created_utc": 1671813428,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Porsche's new NFT collection is Live! 1000 NFTs for the first 1000 people!",
+        "author": "adelinsely_8635",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztlczg/porsches_new_nft_collection_is_live_1000_nfts_for/",
+        "text": "https://imgur.com/fGwlgSe",
+        "created_utc": 1671812752,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Porsche's new NFT collection is Live! 1000 NFTs for the first 1000 people!",
+        "author": "TxAndrei_1583",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztl4c4/porsches_new_nft_collection_is_live_1000_nfts_for/",
+        "text": "https://imgur.com/fGwlgSe",
+        "created_utc": 1671812344,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Balenciaga's new NFT collection is Live! 2022 NFTs for the first 2022 people!",
+        "author": "JoelFays13_3874",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztksdd/balenciagas_new_nft_collection_is_live_2022_nfts/",
+        "text": "[removed]",
+        "created_utc": 1671811805,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ferrari's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "iclip_be_26",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztkkj8/ferraris_new_nft_collection_is_live_800_nfts_for/",
+        "text": "[removed]",
+        "created_utc": 1671811450,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ferrari's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "CryptSweetDolls_4543",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztk7on/ferraris_new_nft_collection_is_live_800_nfts_for/",
+        "text": "[removed]",
+        "created_utc": 1671810931,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "wellwisher2me_9868",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztjmqb/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "https://imgur.com/ZmMU72c",
+        "created_utc": 1671809726,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "oiconion99_888",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztjcf0/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "https://imgur.com/ZmMU72c",
+        "created_utc": 1671809270,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "PaulTroonTech_9961",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztiyya/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "https://imgur.com/ZmMU72c",
+        "created_utc": 1671808643,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "MrBean42027413_9979",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztipbh/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "[removed]",
+        "created_utc": 1671808243,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "SandileKhuzwa17_5687",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/ztiegm/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "https://imgur.com/ZmMU72c",
+        "created_utc": 1671807758,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "Ekremqu1cK_4735",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zti58h/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "[removed]",
+        "created_utc": 1671807431,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "matani_teodoro_6043",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zthzhs/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "[removed]",
+        "created_utc": 1671807215,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Rolls Royce's new NFT collection is Live! 800 NFTs for the first 800 people!",
+        "author": "DanukasLions_5070",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/zthr7x/rolls_royces_new_nft_collection_is_live_800_nfts/",
+        "text": "https://imgur.com/ZmMU72c",
+        "created_utc": 1671806914,
+        "upvote_ratio": 1.0
+    }
+]

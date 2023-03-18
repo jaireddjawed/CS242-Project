@@ -1,0 +1,802 @@
+[
+    {
+        "title": "PCBA component form factor selection",
+        "author": "LifesGambit",
+        "url": "https://www.reddit.com/r/ECE/comments/82u2xc/pcba_component_form_factor_selection/",
+        "text": "Hello Engineers and Techs of Reddit,\n\nI am currently selecting hardware form factors for all PCB components.  There are:\n\n* 7 resistors (6@ 1/8 W ; 1 @ 1W),\n* 8 capacitors,\n* 4 LEDs (SMD),\n* 1 FET (1W),\n* 1 Op Amp,\n* 1-2 Voltage Regulator, and\n* 3 connector headers (male pin side).\n\nI'm wondering what form factor I should get for manufacturability.  There is no high speed switching (max ~40kHz from Op Amp).\n\nWhat is the most manufacturing friendly and cost effective form factor for components?  Not accounting for power ratings.\n\nWhat is a SMD worker/machines ideal size of component?  Has the least rework, failed solder joints, etc.\n\nRegards,\n\nLifesGambit ",
+        "created_utc": 1520476028,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "IC designers whats you work/life like?",
+        "author": "BSRosales",
+        "url": "https://www.reddit.com/r/ECE/comments/82sr81/ic_designers_whats_you_worklife_like/",
+        "text": "Hey guys,\nJust curious on what IC designers daily/weekly work is like. Really want get into IC design!!\nThx again. ",
+        "created_utc": 1520463876,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "System Verilog : is it possible in hardware to declare a variable of different types based on a select? (xpost /r/FPGA)",
+        "author": "someonesaymoney",
+        "url": "https://www.reddit.com/r/ECE/comments/82s56f/system_verilog_is_it_possible_in_hardware_to/",
+        "text": "Say I have currently defined:\n\n    typedef enum logic [3:0] (\n       XX = 4'h0,\n       A1 = 4'h1,\n       A2 = 4'h2,\n       A3 = 4'h3,\n       B1 = 4'h4,\n       B2 = 4'h5,\n       B3 = 4'h6\n    } type_t\n\n    // declare an 8 bit array where each index is of type_t\n    type_t   [7:0] current_type;\n\nNow for other reasons, I want to split this up like below:\n\n    typedef enum logic [3:0] (\n       XX = 4'h0,\n       A1 = 4'h1,\n       A2 = 4'h2,\n       A3 = 4'h3\n    } A_type_t\n    \n    typedef enum logic [3:0] (\n       XX = 4'h0,\n       B1 = 4'h1,\n       B2 = 4'h2,\n       B3 = 4'h3\n    } B_type_t\n    \n    // based on a select, declare current_type based on A or B_type_t\n    if (A_select)\n       A_type_t    [7:0] current_type\n    else\n       B_type_t    [7:0] current_type\n\nSo I want to split up the enumerated type definitions into two different types, and assign a single variable to one of those types dynamically based on a select.  I'm not sure how I can do this for real synthesizable hardware.\n\nSystem Verilog \"union\" constructs are out of the question as my VCS version does not support this.\n\nEDIT: Never mind.  I was able to solve my problem another way.",
+        "created_utc": 1520459213,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My Artificially Intelligent Digital Assistant is controlling home automation &lt;3",
+        "author": "IOT_GUY",
+        "url": "https://youtu.be/G69lZ-ZmRXI",
+        "text": "",
+        "created_utc": 1520455607,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Charge cycle count? Percentage or capacity?",
+        "author": "reddit_user33",
+        "url": "https://www.reddit.com/r/ECE/comments/82qdpy/charge_cycle_count_percentage_or_capacity/",
+        "text": "Hi,\n\nWhen counting the number of charge cycles what is used, the percentage of the battery or the mWh capacity?\n\nSay i have a battery with a capacity of 10,000 mWh. \n\n\nWhen it's brand new, a 0% to 100% charge is equal to a capacity of 10,000 mWh.\n\nWhen the battery is 2 years old, the battery might be down to a 50% capacity. So a 0% to 100% charge is now equal to a capacity of 5,000 mWh. \n\nSo, with this is mind what would one charge cycle be counted as? the reported 0% to 100% or the capacity?\n\nI've built a device that plugs in to a product to read it's battery charging log and report how far through the battery's lifespan it is. It gives me both the percentage and charge and the capacity charged. I just now need to figure out which set of values to calculate a charge cycle with.",
+        "created_utc": 1520446320,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Skills for working in the medical industry?",
+        "author": "z0idberggg",
+        "url": "https://www.reddit.com/r/ECE/comments/82mkfi/skills_for_working_in_the_medical_industry/",
+        "text": "Hi all!\n\nI am two years out of college and looking to switch industries. Right now I work in defense/aerospace and am interesting in switching over to the medical / medical device industry. I focused on Embedded Systems during my master's degree and currently work on front end measurement circuit hardware. \n\nWhat skills would you recommend an ECE professional have in order to work in the medical industry in a design role? Any advice on how to market myself for switching into this new industry?",
+        "created_utc": 1520408474,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Interfacing of modules with Cortex M4 - HELP!",
+        "author": "dooogle",
+        "url": "https://www.reddit.com/r/ECE/comments/82jk8s/interfacing_of_modules_with_cortex_m4_help/",
+        "text": "I would be starting my research with a prof over the summer that mainly involves the interfacing of cortex M4 with different modules including bluetooth, GSM, and IMU. I did something similar in Arduino a couple of years ago and I really don't have an experience in Cortex M4. \n\nIt would be great if anyone who has worked on the similar platform could provide some useful resources about the interfacing of such modules with the board. Clearly,  Cortex m4 doesn't have a lot of resources online as Arduino. \n\nEDIT: It's probably going to be in C, and I have a basic understanding of C fundamentals so language shouldn't be an issue.",
+        "created_utc": 1520377932,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to get into microcontroller/FPGA/microcontroller-and-FPGA hobby projects?",
+        "author": "cracklescousin1234",
+        "url": "https://www.reddit.com/r/ECE/comments/82iq28/how_to_get_into/",
+        "text": "So, I have a good amount of experience in embedded systems and HDL from coursework and projects and internships and the like. But my current job doesn't have me doing a whole lot of that kind of thing. I'm in the mood to practice these skills to keep them sharp, and I'm interested in learning about options for developing microcontroller and FPGA applications on my own time.\n\nWith that established, what sort of boards should I look into purchasing? I guess I'd like to get one of those boards that comes with both a microcontroller and an FPGA, but I'm not sure how those would end up working. Can the two devices be programmed independently, or would it be the case that, for example, the microcontroller can't be reprogrammed and can only be used to configure the FPGA or something? I'm a little embarrassed to admit that, while I'm decent at embedded design, and *very* good at HDL, I'm not all that experienced at using both together.\n\nAlso, I have no idea what sort of project ideas to try out. I'm not interested in simplistic stuff like LED patterns or gathering data from a sensor. I want to do something badass. I've written a simulation model for a computer processor in a class once, and I'm wondering if I can do something like that and implement it in the FPGA, and then develop a simplistic OS. Can I find FPGA boards with chunky quantities of RAM and external storage?\n\nI don't know. What kind of applications would I be capable of developing using a home user's kit?",
+        "created_utc": 1520371511,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice on MCU programming",
+        "author": "lkzshg",
+        "url": "https://www.reddit.com/r/ECE/comments/82ioxn/advice_on_mcu_programming/",
+        "text": "Hi! \n\nI'm a EE student from Argentina and want to get deeper knowledge into microcontoller programming. Of course I started using Arduino a couple years ago and made some projects on it, but eventually i found it to be... \"too easy\"? Don't get me wrong, I'm definitely no expert, I just feel that the whole arduino environment isn't going to be that helpful if i ever get into embedded systems or firmware development.  \n\nSo i thought of getting another MCU to dive deep into it and i found the Nordic Semiconductor's NRF51822, which even has Bluetooth Low Energy (I love low energy battery powered stuff, my end-goal project would be to build some sort of smartwatch). I got the development kit which also includes a Segger J-link OB which may become helpful to know about the J-link tools. Also it has nice documentation and community. Seemed perfect.\n\nHere's the thing, this is overwhelming me! I mean yes, i can flash the examples and they work fine but getting something new on my own? Everytime i try to figure how stuff works, new stuff appears. Like an endless Matryoshka. Am i supposed to get how everything works? Im still struggling on eclipse integration with the toolchain and makefiles. I went the armgcc way instead of Keil since im familiar with gcc and want to get better at linux too. \n\nDo you guys have any advice? Should i keep tinkering or maybe get a book? Do you recommend any? \n\nPD: I have basic C understanding from my \"Algorithms &amp; Programming 1\" class, so the C part isn't that problematic but i have no assembly knowledge yet (I guess debugging tools aren't gonna be helpful). ",
+        "created_utc": 1520371277,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question about ADC process gain",
+        "author": "dspquestion",
+        "url": "https://www.reddit.com/r/ECE/comments/82hwqn/question_about_adc_process_gain/",
+        "text": "Hi all,\n\nI have a question about quantization noise in an ADC, and more specifically about something we call the \"process gain\". Please correct me if I'm wrong somewhere, but I will write it down as I understand it.\n\nWhen we make the assumption that quantization noise is uniformly distributed between -LSB/2 and +LSB/2, we can calculate its RMS and arrive at a value:\n\n**RMSnoise = q/sqrt(12)** where q = 1 LSB amplitude.\n\nThe RMS value of a full scale sine wave w.r.t. q is then:\n\n**RMSsine = (q*2^(N))/(2*sqrt(2))** with N nr of bits.\n\nExpressing the SNR, RMSsine/RMSnoise, in dB gives us the well known formula:\n\n**SNR = 6dB*N + 1.76** This is something I understand where it comes from.\n\nWhen taking an FFT of your signal though, and trying to model your quantization noise w.r.t. the signal you're measuring, you want to look at the noise level in 1 FFT bin. In many cases quantization noise can be regarded as white noise, and so you can simply divide the power of your quantization noise (which we already have computed) by M/2 because the noise will be spread over half the amount of FFTbins. (M = #of bins)\n\nNow, what I don't understand is the following. The formula is:\n\nSNR = 6dB N + 1.76 + **10log10(M/2)**.\n\nWhy is the bold part, called the process gain, using 10*log instead of 20*log in its dB calculation? We have been talking about RMS voltages during this whole calculation and not about power. Why are we suddenly using 10*log like in power calculation?\n\nThanks in advance,\n\nP.S. I followed [this link](http://www.analog.com/media/en/training-seminars/tutorials/MT-001.pdf)  in my reasoning and used the same names.",
+        "created_utc": 1520365238,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A basic overview of Android layouts: What are they and when to use them.",
+        "author": "sandcrain",
+        "url": "https://medium.com/engineering-empower/empowering-your-android-layouts-1b84db754b04",
+        "text": "",
+        "created_utc": 1520361792,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good projects to work on during the Summer",
+        "author": "person4466",
+        "url": "https://www.reddit.com/r/ECE/comments/82gu1h/good_projects_to_work_on_during_the_summer/",
+        "text": "Hello, I am a current Sophomore and I was not able to get any internships for the summer (got interviews and even to a second round, but nothing came about of it :( ). I have a couple of friends who were able to get internships, so I want to stay competitive and build up my resume. If it helps I am part of the IEEE robotics team for my school and I'm also part of the programming team.",
+        "created_utc": 1520357399,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is www.electronics-chips.com a legitimate distributor",
+        "author": "P__A",
+        "url": "https://www.reddit.com/r/ECE/comments/82dw06/is_wwwelectronicschipscom_a_legitimate_distributor/",
+        "text": "I am looking for a [specific optocoupler](http://www.electronics-chips.com/c/part/toshiba-semiconductor-and-storage/TLP2770%28D4%2CE) and www.electronics-chips.com seem to be the only distributor to actually stock them. In the past I've only ever really used the standard mouser/farnell/digikey/etc. distributors. These guys seem to be based out of Hong Kong. Has anyone had any experience with them? ",
+        "created_utc": 1520329593,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Resume critique for second job out of college (applying to embedded/firmware positions)",
+        "author": "reru2477",
+        "url": "https://i.redd.it/ms5872ev63k01.png",
+        "text": "",
+        "created_utc": 1520317530,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Communication Systems",
+        "author": "sachinssakri",
+        "url": "https://www.reddit.com/r/ECE/comments/82ctgk/communication_systems/",
+        "text": "I need Communication Systems 5th edition. Simon Haykin and Moher by John Willey. \nPlease I really need it. Any pdf any books??",
+        "created_utc": 1520315612,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Second Year Electrical Arduino Project",
+        "author": "InternationalCrazy",
+        "url": "https://www.reddit.com/r/ECE/comments/82c7lu/second_year_electrical_arduino_project/",
+        "text": "Hey guys, so my group was tasked with focusing on a certain problem that we may choose to provide a solution to. So what we're limited to is one arduino uno and we need at least 2 sensors and 2 actuators in our idea. Any sort of ideas would be greatly appreciated!",
+        "created_utc": 1520308942,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am a Devops Engineer, of course I'm crazy!",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/829a23/i_am_a_devops_engineer_of_course_im_crazy/",
+        "text": "[removed]",
+        "created_utc": 1520283442,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a place online to find maintenance manuals for equipment?",
+        "author": "cradleinflames",
+        "url": "https://www.reddit.com/r/ECE/comments/829a0o/is_there_a_place_online_to_find_maintenance/",
+        "text": "I currently have an Agilent E3631 triple power supply that has a bad 6V channel (floats upwards to 6V, the +/- 25V channels seem to work fine).  \n\n\nDoes anyone know the best place to find a maintenance manual or something to that effect?  I actually have a few meters and PSU's at home that need maintenance as well so I'm hoping to find a reliable source for older lab equipment (not sure if there's an online archive somewhere).  \n\n\nI found one a long time ago that required you to pass an EE test (in Russian, no less . . . ) in order to get access to it.  Passed it but can't find the link anymore.  Figures . . .\n\n\nAnyway, if anyone has any suggestions, let me know.  Thanks!",
+        "created_utc": 1520283434,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Web developer. Can side projects get you into embedded?",
+        "author": "ece_tux",
+        "url": "https://www.reddit.com/r/ECE/comments/827oi7/web_developer_can_side_projects_get_you_into/",
+        "text": "Hi y’all! I’ve been in web dev for 3 years now doing mostly backend development (first job out of college. Did a BS in CS). I started playing with an Arduino a little while ago, and it got me hooked!\n\nSince then I’ve been playing with an RTOS, and am looking to experiment with Linux device drivers. Another goal down the road is open source stuff (drivers, kernel development maybe?)\n\n... which brings me to the big question... can I get a job in embedded software/firmware with just side project experience? ",
+        "created_utc": 1520271475,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Soil Moisture Meter Using PIC Microcontroller [Project]",
+        "author": "[deleted]",
+        "url": "http://www.pictutorial.net/2015/11/microcontroller-based-soil-moisture-meter.html",
+        "text": "[deleted]",
+        "created_utc": 1520265413,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reading and Understanding Device Datasheets",
+        "author": "TheGooseFliesAtNight",
+        "url": "https://www.reddit.com/r/ECE/comments/825wg4/reading_and_understanding_device_datasheets/",
+        "text": "Hi all,\n\nI'm looking for some advice on how to read and understand device datasheets. \n\nI'm finding reading datasheets very monotonous (Does anybody enjoy reading them?), and struggle to understand what they are trying to explain.\n\nDoes anybody have any advice on how to actually improve on this skill? It's obviously a crucial skill for all ECE professionals.\n\nThanks.",
+        "created_utc": 1520256384,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "LTSPICE - ID vs VDS characteristic of MOSFET - Voltage from Drain to Source?",
+        "author": "WUTDO11231235",
+        "url": "https://www.reddit.com/r/ECE/comments/8200sl/ltspice_id_vs_vds_characteristic_of_mosfet/",
+        "text": "I am trying to analyze the ID vs VDS characteristic of a MOSFET, but I can't get the correct output for some reason.  [Here is what I have to do](https://i.imgur.com/zE1RXJQ.png) and this is what the[ ID vs Vds](https://i.imgur.com/uusJUWE.png) plot should look like.\n\nSince VS is just 0 I am trying to plot ID (current through RD) and VD the node under the resistor.  [Here is the circuit I drew and the result I get for ID vs VDS.](https://i.imgur.com/6tDHduT.png) Where am I going wrong here?\n\n\nEdit**\n\nI do have a .dc Vdd 0 5 .001 sweep for V1, but it got cut off in the pic",
+        "created_utc": 1520192901,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "LTSPICE - MOSFET - Threshold Voltage(Vt) as a Function of Source Body Voltage(Vsb) &amp; Vd vs Vgs of a MOSFET?",
+        "author": "WUTDO11231235",
+        "url": "https://www.reddit.com/r/ECE/comments/81z5h3/ltspice_mosfet_threshold_voltagevt_as_a_function/",
+        "text": "I am working on a LTSPICE lab and the [instructions](https://imgur.com/VftJA5i) (part 7) tell me to analyze the Threshold voltage as a function of Vsb(source body voltage) but I am not sure how to get that information.  The hint in part 7 doesn't really help because I don't know where or what markers it is talking about.  Is there a way to plot the threshold voltage so i can do Vt vs Vsb?  \n\n[Here is the circuit I drew in LTSPICE\n](https://imgur.com/UR3gXNZ)\n\n\nAnd for the Vd vs Vgs question, I don't really see what that graph tells me..  Here is a [picture of the plot](https://imgur.com/0u3l4TK.png).",
+        "created_utc": 1520185379,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "LT SPICE - MOSFET IV Characteristic Problem - Can't plot Id vs Vgs",
+        "author": "WUTDO11231235",
+        "url": "https://www.reddit.com/r/ECE/comments/81y2j0/lt_spice_mosfet_iv_characteristic_problem_cant/",
+        "text": "I am trying to plot Id vs Vgs for  [this circuit](https://imgur.com/0Vm795g).  I followed [these instructions](https://imgur.com/VftJA5i) exactly, but they don't mention how to plot Vgs on the x-axis, so I tried doing Vg - Vsb which seems like it should work, but it does not give the correct result.  The graph I am supposed to get should look [like this](https://imgur.com/eh8FnWK).  I know Id is just the current through Rd, but it looks like I might be doing something wrong when tryig to plot Vgs.  How do I plot Vgs correctly?  Also, how would I plot Vds correctly? ",
+        "created_utc": 1520175164,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Please help fix this simple SIMULINK system",
+        "author": "AnasAtef",
+        "url": "https://www.reddit.com/r/ECE/comments/81xv8k/please_help_fix_this_simple_simulink_system/",
+        "text": "it is a small 1 user Code Division Multiple Access(CDMA) experiment. The problem with it is that the Bit Error rate (BER)[top value in the display block) remains close to 0.5 regardless of changes to the SNR of the channel.\n\nI tried changing many things but to no avail and have still to find out what is the problem exactly, please help if possible or refer to subreddit that can help.\n\nHere is the SIMULINK MODEL https://www.mathworks.com/matlabcentral/fileexchange/66312-code-division-multiplexing-access-cdma--experiment-please-help ",
+        "created_utc": 1520172793,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "RAM module with access controls, compatible with existing computers by using a modified OS kernel?",
+        "author": "herkato5",
+        "url": "https://www.reddit.com/r/ECE/comments/81wcbz/ram_module_with_access_controls_compatible_with/",
+        "text": "\nWould it be useful to have one RAM module, of 2 or 4 ram modules in a computer, with a tiny sub-computer to handle read and write access to different processes and parts of kernel, on top of what happens already ( or is supposed to happen )?\n\nPart of ram space would act little bit like a file server. Control would happen by operating system Kernel writing to special \"locations\". Possibly have some non-volatile memory for storing settings. Physical switch for special configuration mode for altering settings.",
+        "created_utc": 1520148525,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "USB OTG CDC_Receive_HS Question",
+        "author": "shmaugust",
+        "url": "https://www.reddit.com/r/stm32f4/comments/81uk7g/usb_otg_cdc_receive_hs_question/",
+        "text": "",
+        "created_utc": 1520127312,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are there 2nd shift EE jobs? What about flex hour jobs?",
+        "author": "WisconsinBadger414",
+        "url": "https://www.reddit.com/r/ECE/comments/81igwn/are_there_2nd_shift_ee_jobs_what_about_flex_hour/",
+        "text": "Directed at all the EEs who also spend their days surfing/skiing/etc— would love to figure out how to do this in the future",
+        "created_utc": 1520025998,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MOSFET for Electrostatic Detection",
+        "author": "curteze",
+        "url": "https://www.reddit.com/r/ECE/comments/81fm0t/mosfet_for_electrostatic_detection/",
+        "text": "Ive put together a circuit using a MOSFET N &amp; P type, to detect the presence of negative and positive charges. I have LED's that show the intensity of the charge. I need a way to quantify this. Ive thought of measuring the voltage across the LED's. Any other ideas?",
+        "created_utc": 1520009319,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Microchip Technology to acquire Microsemi",
+        "author": "dynerthebard",
+        "url": "http://www.zdnet.com/article/microchip-technology-to-acquire-microsemi/",
+        "text": "",
+        "created_utc": 1520005798,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do circuits work the same in space? Would an iphone work the same in space (aside from the signals of course?",
+        "author": "WisconsinBadger414",
+        "url": "https://www.reddit.com/r/ECE/comments/81cg4n/do_circuits_work_the_same_in_space_would_an/",
+        "text": "I don't mean inside the spaceship, I mean out.",
+        "created_utc": 1519973761,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "my first home automation project...",
+        "author": "rupak3219",
+        "url": "https://youtu.be/R2VBJ9y-pVY",
+        "text": "",
+        "created_utc": 1519969238,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What parts would you buy to create an EE home lab for development?",
+        "author": "cradleinflames",
+        "url": "https://www.reddit.com/r/ECE/comments/81bn1l/what_parts_would_you_buy_to_create_an_ee_home_lab/",
+        "text": "Hello everyone,\n\nNever used Reddit before but just saw it actually looks like it might be a good resource for EE advice so I thought I'd pop in here and bounce this off of all of you!\n\nI'm getting ready to buy a bunch of parts for a home lab for prototypes/sidework/tinkering, etc and was trying to put a list together of things I would need and thought I would ask this community if they had any suggestions.  Below is a quick list of what I was considering:\n\nEquipment:\n\nPSUs\n\nMeters\n\nUSB Oscilloscope\n\n\nPassive Components:\n\nResistor Kits (looking at 96 value 1% resistor kits by Yageo for the different ranges.  Only gives me 5 of each but it does give me all the values.  Open to other suggestions if other people have them)\n\nCapacitor Kits (haven't looked too far into this but I'm not sure if I need any big kits.  Mainly just some standard value tantalums and ceramic cap kits?)\n\nDiode kits/Zener kits (if those exist as well.  Might just pick a handful of them)\n\nTransistors (open to suggestions here. Not looking to do a bunch of solid state circuitry, I'll likely just use them for switching circuits with microcontrollers)\n\nFETs (IRFD9120, IRFD120's, unless someone else has better suggestions)\n\nLEDs (for diagnostics/funsies)\n\nTrimpots\n\n\nIC's (this is where I could really use the advice):\n\nDC/DC converters\n\nVariable supply ICs (ie LP2951)\n\nVarious MUXes (SPDT, 4:1, 8:1, etc)\n\n555 Timers\n\nVarious op amps (I'll probably handpick these)\n\nDigital chips (AND/OR, etc)\n\nInstrumentation Amps (probably handpick these as well)\n\n\nI'm likely not going to to order any microcontrollers as I have a ton of development kits with various companies.  \n\nNot sure if I should order any transceivers at this point.  Considering buying some headers and housings for easy cable applications.  \n\nOverall, that's all I have off the top of the head.  If you have any additional suggestions, things I might have missed, things you would add to your personal lab equipment, let me know.  \n\nThanks a lot, everyone!",
+        "created_utc": 1519963983,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How likely is it that some dust accumulating on exposed boards would cause issues for it?",
+        "author": "Crackorjackzors",
+        "url": "https://www.reddit.com/r/ECE/comments/818c3m/how_likely_is_it_that_some_dust_accumulating_on/",
+        "text": "",
+        "created_utc": 1519935363,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Capacitor identification help!",
+        "author": "TheDankGuy",
+        "url": "https://www.reddit.com/r/ECE/comments/817qb1/capacitor_identification_help/",
+        "text": "Hey y'all. Noob in the capacitor game here, broke off a capacitor off my motherboard like a dummy have no idea what to buy to try and fix it.\nI have soldering experience and have proper tools and equipment via my computer science department so don't worry about that stuff. \nhttps://imgur.com/gallery/IcIjr\n\nThanks for your help!\n\nEdit: The motherboard is a Asus z170-a.",
+        "created_utc": 1519930802,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Raspberry PI compute module in 2018",
+        "author": "TrexTexMex",
+        "url": "https://www.reddit.com/r/ECE/comments/814l81/raspberry_pi_compute_module_in_2018/",
+        "text": "Hi! \n\nI'm designing a prototype project, in which I would like to use a compute module. I wonder if the compute module has a future, or is it just a expensive piece of hardware which will not be continued? I just want to implement a processor kapable of running Linux, to a control system which i'm currently developing. The reason why I chose the raspberry compute to start with, is to learn PCB design of high speed digital communication. But after reading many review of people who say that it is to expensive, and it is the most expensive of all raspberries I started to doubt my decisions . Is it idiotic to implement a compute module to a product in 2018? Should I just buy a raspberry pi 3 and build a breakout board for it? This project is my bachelor thesis, and I know as a fact that I dont have the time to develop on something else then the raspberry.\n\nIt's worth to mention that I want to learn the basics of how to make my own Linux based systems, and maybe one day start using a TI Sitara processor. ",
+        "created_utc": 1519903569,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anybody good at verilog coding?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/812pkv/anybody_good_at_verilog_coding/",
+        "text": "[deleted]",
+        "created_utc": 1519879521,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Python vs Matlab for EE?",
+        "author": "Capitolism",
+        "url": "https://www.reddit.com/r/ECE/comments/8107d5/python_vs_matlab_for_ee/",
+        "text": "US 1st year EE Student here\n\nQuestion to those with experience outside of academia. Would you say that experience in Matlab and its toolboxes or Python using [Anaconda](https://www.anaconda.com/what-is-anaconda/) (A data-science based package library) is more useful wherever you work? I understand that Matlab is kinda pricey and that not everyone uses it because of that, but at the same time, things like Solidworks and other programs are even more expensive, so depending on the company Matlab can cost pennies in a project's budget. Python is just a general programming language so it has uses outside of the scientific realm, but also has to rely on community created packages which depending on your stance, may be a good or a bad thing.\n\nI've already taken the bog standard engineering Matlab classes at my college and thought it was okay at best and I have some previous experience in Python from a high school programming course and some personal scripts I've written, but nothing high level enough to compare to Matlab's use. I also figured that yeah I probably should just get proficient at both of them, and I expect to anyways, but I'd still like to devote more time into one of the two to get better at it.",
+        "created_utc": 1519856522,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Voltage range of motor L298 H-bridge can be used with?",
+        "author": "xypherrz",
+        "url": "https://www.reddit.com/r/ECE/comments/80zkkg/voltage_range_of_motor_l298_hbridge_can_be_used/",
+        "text": "Can L298 motor driver module can be used to run motors that are rated at 3V? According to [this link (third line)](https://tronixlabs.com.au/news/tutorial-l298n-dual-motor-controller-module-2a-and-arduino), one cannot drive less than 5V motors but in the [datasheet (on page 3)](https://www.sparkfun.com/datasheets/Robotics/L298_H_Bridge.pdf), it is stated that the minimum high voltage is 2.5V. Can anyone confirm?",
+        "created_utc": 1519851735,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Capacitor With Only a Current Source (No Resistors)",
+        "author": "1017_7101",
+        "url": "https://www.reddit.com/r/ECE/comments/80yegt/capacitor_with_only_a_current_source_no_resistors/",
+        "text": "I have a problem with a current source connected to a capacitor with a graph of the current given over time. How would I go about finding the energy in the capacitor at certain times?\n\nI've searched everywhere for info first order circuits and every single one uses resistors in the circuit and equations. Could someone point me in the right direction on this?",
+        "created_utc": 1519843141,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help needed for sensitivity function analysis.",
+        "author": "Nesotenso",
+        "url": "https://www.reddit.com/r/ECE/comments/80y1b7/help_needed_for_sensitivity_function_analysis/",
+        "text": "Hey, \n\nI was listening to a talk where the speaker was talking about the concept of sensitivity functions ( seen in control systems) used to determine how variations in parameters can affect the overall transfer function in integrated circuits.  The first two slides explain the definition and concept. \n\nI was hoping some here with a circuit design or control systems background could explain how they derived the expression for the sensitivity function for the example where they try to boost an amplifiers gain using negative resistance. \n\nHow do they get the sensitivity of Ave wrt to x be - x/(1-x) ?\nThe speaker mentioned there are tables which show that functions of the nature 1/(1-x) reduce to -x/(1-x). \n\nCan someone point me in the right direction? \n\n\nhttps://imgur.com/a/mjOhG",
+        "created_utc": 1519840616,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "555 TOUCH SWITCH",
+        "author": "anoop_mm",
+        "url": "https://m.youtube.com/watch?v=s3H4PTt6wOQ",
+        "text": "",
+        "created_utc": 1519835630,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "STM32(WT)F? student looking for some help",
+        "author": "Benjo_",
+        "url": "https://www.reddit.com/r/ECE/comments/80x4dw/stm32wtf_student_looking_for_some_help/",
+        "text": "Hey, I'm a CE student and I wanna try working with an MCU that's not an Arduino. I've heard that the STM32 is a great board to start with, but there are a lot of versions of the chip it seems and I'm not sure what the difference between F0-F4 are and which ones would be good for me to learn on. Can someone point me in the right direction? ",
+        "created_utc": 1519833902,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Control radio devices via iPhone",
+        "author": "sedys37",
+        "url": "https://www.reddit.com/r/ECE/comments/80wk4z/control_radio_devices_via_iphone/",
+        "text": "Briefly: I have some gadgets in my room which work with radio frequencies such as an automated velux window in the roof and my light switches are powered by a remote control too. \nThere's a way I can control these kind of devices with my smartphone?\n",
+        "created_utc": 1519829322,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Computer Engineering at UCI",
+        "author": "Minerclawz",
+        "url": "https://www.reddit.com/r/ECE/comments/80vca4/computer_engineering_at_uci/",
+        "text": "does anyone know how the program is at UCI? If not, could someone evaluate at the curriculum for me? BTW are enough classes offered for me to land a software engineering job?\n\nSchedule: https://imgur.com/a/FGKnG\n\nThank you, coming from a clueless high school senior student haha \n\n",
+        "created_utc": 1519817465,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Confusion about voltage",
+        "author": "RussellBogard",
+        "url": "https://www.reddit.com/r/ECE/comments/80uopj/confusion_about_voltage/",
+        "text": "So, I have been studying circuits, and I seem to be a bit confused about voltage.\n\nMy teacher described it as a water pump pushing water through a system of pipes where pipes of smaller cross-sectional areas represent resistors. So, if I am analyzing a circuit and using Ohm's Law, I would ask myself \"how much of a push would move this much water across a pipe with this diameter?\" So, I understand this analogy.\n\nHowever, voltage is also described as the \"difference in potential energy per unit charge between two points\" or \"the work done by a unit charge.\" This is where I get a bit confused. I thought that in physics, work was defined as energy transfer and force applied across a distance (W = Fd). So, is the term \"work\" being used in the same context here? If so, is it the same formula, and why is distance involved? I thought that at the same node, voltage is the same, so if we have a longer wire, that should not change the voltage across it, so where does distance come into play? \n\nFurthermore, how would I go about thinking about the voltage drop across a resistor? Would I ask something along the lines of \"there is x amount of potential energy per unit charge at this point, and the charges hit the atoms of the resistor and give off some of their potential energy as other forms of energy in the resistor (heat), thus causing the lower potential energy per unit charge at the other end of the resistor (voltage drop)\"? Is my thinking of how the charges do \"work\" on the resistor correct, or am I analyzing it incorrectly? If it is correct, why is saying that a voltage difference pushes current across a resistor the same as saying that the charges transfer some of their energy to the resistor's atoms when one is trying to understand why there is a voltage DIFFERENCE between the two terminals of the resistor?\n\nLastly, which way of thinking about voltage should I use? Should I use the \"voltage = pressure pushing current\" analogy or \"voltage is how much work the charges can do on the circuit\" way of thinking?",
+        "created_utc": 1519809030,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Master's for ASIC Design job",
+        "author": "OddAssumption",
+        "url": "https://www.reddit.com/r/ECE/comments/80tlv1/masters_for_asic_design_job/",
+        "text": "If I want to be an ASIC Design engineer, is it worth to pursue master's for it? Or bachelor's degree is good enough?",
+        "created_utc": 1519795998,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the difference between adding two time signals and convoluting signals?",
+        "author": "word_vomiter",
+        "url": "https://www.reddit.com/r/ECE/comments/80pxa2/what_is_the_difference_between_adding_two_time/",
+        "text": "",
+        "created_utc": 1519764268,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any experience with PSG Chips?",
+        "author": "Herbibro",
+        "url": "https://www.reddit.com/r/ECE/comments/80pgqf/any_experience_with_psg_chips/",
+        "text": "I'm taking an embedded systems course at the moment and a few months from now we've got a rather open-ended project due. Our general idea was to use the microcontroller/board we're working with(ATxmega256A3BU) to interface with an oldschool sound generator chip to make some form of synthesizer or MIDI player. \n\nI spent a bit of time looking into documentation for the TI SN76489, and I kind of have an idea for where I would begin to mess around with an IC like this, but I thought I'd ask this subreddit to see if anyone has any advice they could give based on past experience with a similar project. I'm definitely not helpless as far as direction goes, but perhaps my choice of PSG is not ideal, or there's some pitfall(no pun intended) that i'm overlooking.",
+        "created_utc": 1519760970,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bad senior design project?",
+        "author": "jc2700",
+        "url": "https://www.reddit.com/r/ECE/comments/80p6i0/bad_senior_design_project/",
+        "text": "Has anyone's senior design project been really bad? Almost embarrassing to present? How did this play out for you? \n\nMy university schedules a day for all engineering seniors to demonstrate their senior design project. We stand around in an auditorium for a couple of hours as we demonstrate our project to people stopping by. We're two months away and I fear that my project is going to be terrible. Anyone care to share their experience with their senior design project? Or bad projects from others in their class?",
+        "created_utc": 1519758940,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do some diagrams often have polarized capacitors that are connected in reverse?",
+        "author": "happylittlemexican",
+        "url": "https://www.reddit.com/r/ECE/comments/80nxfr/why_do_some_diagrams_often_have_polarized/",
+        "text": "Hey all,\n\nBasic question for you all today. \n\nDiagram in question: https://www.build-electronic-circuits.com/blinking-led-circuit/  EDIT: Specifically, the \"Blinking 2 LEDs with Transistors\" diagram. \n\nSo this isn't just limited to that diagram- I've noticed that in a *lot* of circuit diagrams I find, there are circuits which require the capacitor to work regardless of the way its connected. In the case of the circuit above, the whole point is for the \"negative\" side of the capacitors to become positive and activate the transistors. Is it just a mistake in these diagrams? I've noticed similar things in some Forrest Mims books, which is why I ask instead of automatically assuming it's a mistake. \n\nEDIT 2:\nThank you all so much for your answers! \n\nSo. To summarize what I've learned and ask a few more questions (will post in OP as well) :\n\n1. The capacitor is never actually connected backwards, because (in the case of C1) the right plate is always at a lower potential than the left, regardless of the direction the current is flowing at the time.\n\n2. If I'm understanding correctly, the right plate of C1 will get briefly pulled to a negative potential when the left plate gets pulled to almost-ground by Q1 activating (maintaining the potential difference between them).\n\n3. At this point, C1 begins to charge/discharge (its plates begin to equalize in voltage, but I could see either word being used). For a BRIEF second, the left plate remains at ground while the right plate hits 0.6V (at this point the capacitor really is connected in reverse, but its for an extremely brief period of time)...at which point, of course Q2 activates and the whole cycle repeats.\n\nAnything I'm still misunderstanding? Thanks so much! (/u/ribond86 , /u/dmc_2930 , and /u/psycoee , you guys get a special shoutout). ",
+        "created_utc": 1519750210,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "8x8x8 LED CUBE",
+        "author": "anoop_mm",
+        "url": "https://youtu.be/pxLvk3Zn8jo",
+        "text": "",
+        "created_utc": 1519733137,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Copper pour underneath an antenna - allowed?",
+        "author": "3FiTA",
+        "url": "https://www.reddit.com/r/ECE/comments/80jxaq/copper_pour_underneath_an_antenna_allowed/",
+        "text": "Title really says it all. I'm mounting an microcontroller breakout board, with a copper trace antenna on it, onto a custom PCB. I read earlier that I shouldn't have a ground plane right underneath the antenna on the MCU module. Is this true? To clarify, the copper pour and the antenna trace are on entirely separate boards, one board is just mounted on the other. If so, why, and does anyone know how I can remove a rectangular section of a copper fill in KiCad?",
+        "created_utc": 1519709001,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Verilog A/AMS Simulation Options",
+        "author": "itstimeforanexitplan",
+        "url": "https://www.reddit.com/r/ECE/comments/80jkpg/verilog_aams_simulation_options/",
+        "text": "I thought I'd list out the free methods that I know of and maybe others can add in. \n\nFor Verilog-A only you can go the ADMS route on NGSpice. But it's fairly limited iirc just hicum, standard mos and bjt models\n\nCPPSim/VppSim are similar in concept but to clarify they do not compile Verilog-AMS\n\nhttps://www.dolphin-integration.com/ is the only company I know through their SMASH software that gives Verilog AMS support. Student edition that is. \n\nOtherwise you'll have to bite the bullet and learn SystemC-AMS. \n\nLordy I tell ya what I'm A) shit at C++ B) even more shit at SystemC C) By far the shittiest in TLM. So I can't even imagine the learning curve that will take for me to learn AMS. I literally do not have the time to sit and relearn OOP and C++ syntax and then properly learn SystemC again, it's incredibly annoying and time consuming to boot. So that's not an option for me. \n\nIf you guys have C++ experience, I'd say using System C both for UVM, TLM and AMS gives you a pretty huge leg up for both modeling work and competition resume wise. Don't get too hung up on the Verilog/SystemVerilog gravy train, and don't just have Chisel Experience just yet, maybe when RISCV becomes defacto or something but till then keep the Scala priority lower imo. The EDA world still very much lives and dies by the Accellera standards, so for those applying for jobs, definitely gain these skills. ",
+        "created_utc": 1519705352,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help buy an appropriate DC motor",
+        "author": "dooogle",
+        "url": "https://www.reddit.com/r/ECE/comments/80il7k/help_buy_an_appropriate_dc_motor/",
+        "text": "I am buying a DC motor to run the wheels of an RC car but not sure which one would be sufficient. Motors are rated at different voltages and current i.e 6V, 12V. Can anyone guide me on it? Does more voltage rating correspond to more torque or speed?",
+        "created_utc": 1519696240,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can I DIY this E-ink display module (ES133UT2) into a monitor via USB/HDMI? If so, how?",
+        "author": "Aeonitis",
+        "url": "https://shopkits.eink.com/product/13-3%CB%9D-epaper-display-es133ut2/",
+        "text": "",
+        "created_utc": 1519684051,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problem Understanding A-Matrix Network",
+        "author": "ma33x",
+        "url": "https://www.reddit.com/r/ECE/comments/80dnsg/problem_understanding_amatrix_network/",
+        "text": "Hi There,\n\nI'm currently working on an optimization Problem where I'm trying to mimic a certain A-Matrix behavior with a network. I can't get my head around the problem of transforming a parallel structure to an A-Matrix when not dealing with lumped elements. \n\nhttps://imgur.com/a/mBBjv\n\nThis is a screencap of my problem. A-Matrix of the matching network is known. How do I calculate the overall A-Matrix with the Microstripline in parallel?\n\n",
+        "created_utc": 1519657756,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice on development for BGM11x BLE SoC's?",
+        "author": "sudodog",
+        "url": "https://www.reddit.com/r/ECE/comments/8087t2/advice_on_development_for_bgm11x_ble_socs/",
+        "text": "I've inherited another other developer's (partially-working) design at work, and it uses SiLabs' Blue Gecko BGM113/BGM111 BLE module/SoC. I've worked with many ARM MCUs before, but have never dealt with these Blue Gecko modules before. I've spent the past week attempting to familiarize myself with the whole Blue Gecko ecosystem and the dev. board I purchased for these modules, and it suffices to say that there's very little documentation explaining how to develop for even the simplest of applications using these modules. They seem like very capable devices, but the whole ecosystem is extremely poorly documented.\n\nSiLabs' toolchain includes a few example projects for their various BLE demo applications, but none for showing how the use the actual peripherals on the MCU (GPIO, I2C, timers, etc.). The design I was provided with is essentially a slightly edited version of SiLabs' BLE thermometer examples code (only using a different sensor over the same I2C bus), so there isn't much useful code to work from with the existing design.\n\nI was wondering if anyone has past experiences using these SiLabs MCUs/SoCs such as the Blue Gecko, and if you could offer any guidance on the process for programming these modules, or share any tips on best practices when developing for these targets.",
+        "created_utc": 1519599306,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone familiar with BGM11x BLE SoC's?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/80859x/anyone_familiar_with_bgm11x_ble_socs/",
+        "text": "[deleted]",
+        "created_utc": 1519598707,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "STM32 UART",
+        "author": "CircuitBeast",
+        "url": "https://www.reddit.com/r/ECE/comments/802uqj/stm32_uart/",
+        "text": "I’d like to write firmware for an STM32 board I have. I will use a mini usb connected to an FT232 to communicate with the UART pins of the micro. \nWhat stack/programs do I need to write firmware/testing C code for the micro?",
+        "created_utc": 1519540658,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Altium 1:1 toner transfer help",
+        "author": "_justEE",
+        "url": "https://www.reddit.com/r/ECE/comments/801vir/altium_11_toner_transfer_help/",
+        "text": "**Solved**\n\nso what I ended up doing was actually making an output job, and heres the kicker. hit save, don't just do a preview. do the save and the exported PDF is 1:1. this works. and is sufficient. \n\n\n\nHello!\nI have a board 3\" x 4\" that needs to printed 1:1 so I can do a toner transfer. My normal processes of just creating a gerber file and using print preview to put the artwork in the center of the page won't work for this (as its a work around, not the best solution). but anyway every time I try to do an output job I get this as the output like\n[this] (https://drive.google.com/file/d/1nhUy76PuaNhmCfNSixjeie-xuHt9-fTX/view?usp=sharing)\n\nand all my changes to page set up and page orientation don't fix the split of my board. \n\nI've tried some gerber viewers but they too have a weird split in the board. it should fit on 8.5x11 inches no problem but for whatever reason there is something I am missing.\n\nthanks in advance.",
+        "created_utc": 1519528995,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is a reasonable salary for Entry Level Firmware Engineer?",
+        "author": "FernGari77",
+        "url": "https://www.reddit.com/r/ECE/comments/801bir/what_is_a_reasonable_salary_for_entry_level/",
+        "text": "A company just sent me a job offer and i was wondering what a reasonable salary for entry level firmware engineer. I see the average salary for entry level is somewhere like 80,000 - 90,000 but that seems a little high from the kind of offers I have seen from other friends from college. Any information would be extremely helpful. Thanks you all!!\n\nEdit: Wow guys thanks for all the responses really appreciate it!",
+        "created_utc": 1519523288,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does Mason get any credit for \"inventing\" signal flow graphs, when they are basically block diagrams but with curved lines?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/7zzacn/how_does_mason_get_any_credit_for_inventing/",
+        "text": "[removed]",
+        "created_utc": 1519504168,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Right Time for Looking for Internships",
+        "author": "DataAI",
+        "url": "https://www.reddit.com/r/ECE/comments/7zz4d4/right_time_for_looking_for_internships/",
+        "text": "I'm a newly transfer to a University as Junior but a Sophomore in credit hours for my major, Computer Engineering. I don't have any experience in my field besides taking classes Programming 1(Java), Physics 2, Discrete Math, Stats for Engineers, and Differential Equations. My programming ability is below average and I try to code on my free time to get better, in this case that would be C++. \n\nI also looked online for what skills are needed for the field of CS and EE majors but I seem to be lacking. I'm struggling to figure out what skills are needed for any of the internships that available and what route should I take for my major. I hope to work in a semiconductor company(I like the idea of amps) one day but I just want to get into the workforce as quickly as I can at the this rate and I would not mind software internships.\n\nMy questions is, when is a good time to look for an internship? Also, what are some universal skills I should work on? \n\nThank you so much for your time.",
+        "created_utc": 1519502690,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Whats inside of Analog and Digital Ammeters and Voltmeters?",
+        "author": "gonomon",
+        "url": "https://www.reddit.com/r/ECE/comments/7zybrh/whats_inside_of_analog_and_digital_ammeters_and/",
+        "text": "So basically i am curious about how these devices work. First of all i want to see how analog voltmeters and ammeters work, and secondly i want to see how people use this information to make ammeters and voltmeters with digital components. If you have any circuit diagrams for inside of these devices i would be really happy if you can share them with me.",
+        "created_utc": 1519495803,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Whats Inside of Digital And Analog Ammeters And Voltmeters",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/7zy5ka/whats_inside_of_digital_and_analog_ammeters_and/",
+        "text": "[deleted]",
+        "created_utc": 1519494357,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Electronically modulated highspeed shutters with &gt;80% transmittance possible, but need some help for building one",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/7zxtk6/electronically_modulated_highspeed_shutters_with/",
+        "text": "No idea why this concept hasn't been implemented in any product yet, but it appears there is a better (light efficient) alternative to LCD shutters or LCD displays although I am personally more interested with the former.\nThe alternative is PDLC which is already used in smart windows and smart glasses to scatter and block visibility of something.\nAdvantage over LCD is there are no polarizers needed so 50% and up light loss is not really an issue. The light goes through two ITO PET coated plastic films with a very thin PDLC (polymer-dispersed liquid crystal) and UV glue layer between them so light loss is only due to thin ITO layer and the plastics themselves.\nDownside with current smart mirrors is you need around 60V AC to run and the on/off state switching speed is relatively slow (60ms)\n\nThis paper ( https://www.researchgate.net/publication/3254347_Reduction_of_the_switching_time_of_polymer-dispersed_liquid_crystal_using_field_oriented_addressing )\ndiscusses a method of speeding up the switch speed up to 2.56ms which is enough to, say, use this material as alternative to 3d shutter glasses, any optical systems where 80% light transmittance is acceptable an a non-mechanical solution would be helpful or a color-sequential (ie. DLP) display.\n\nI've found a company which supplies this chemical mixture together with the glue for a resonable price of 400USD for 100g. 100g might not seem much but we are talking about nm thicknesses.\n\nI'm a little stuck with the above paper though. As I understand the ITO electrode structure on one of the ITO PETs should be something like this:\nhttps://i.imgur.com/L5izf43.png\n\nAccording to the paper:\n&gt;The ITO electrode is connected to the ground while\nsquare waves are applied to both finger electrodes. When the\nsquare waves have the same phase the electric field across the\nPDLC is vertical. When the square waves have a phase shift\nof 180\nthe electric field is horizontal. \n\n\nI'm a little confused why that arrangment will cause the electric field orientation change. Does anyone understand that part? Or maybe my diagram is an inaccurate inderstanding of their \"finger electrode\" idea?\n\nThe chemicals should arrive in 10 days but I'd like to understand what is actually going to be happening in my eperimental setup when I do get to the experimenting phase.\nWill share my results. Already have an inexpensive method of etching an ITO PET like that with off-the-shelf tools and HCl.",
+        "created_utc": 1519491489,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reassigned from embedded software to support/maintenance. Can I stay a year and get back to embedded software?",
+        "author": "FlappablePen",
+        "url": "https://www.reddit.com/r/ECE/comments/7zxk99/reassigned_from_embedded_software_to/",
+        "text": "I’ve been working as a NASA contractor for 3 months now. I was initially assigned to work on development for an up and coming project, but was reassigned to supporting and testing a project that is entering the end of its lifetime.\n\nI do enjoy the testing side of embedded and writing support tools (data visualization, etc.), and would like to stay at least a year. Would it be difficult to transition back to embedded software after this? In my spare time, I’m planning on doing embedded side projects.\n\n(Paranoid that I’ll get pigeonholed into a support role :^[ )\n\nEdit: for context, this is my second job after college. I stayed half a year at my old job writing desktop software ",
+        "created_utc": 1519489186,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "New method for waking up devices",
+        "author": "Chipdoc",
+        "url": "https://news.stanford.edu/2018/02/12/new-method-waking-devices/",
+        "text": "",
+        "created_utc": 1519485135,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Stuck in support/maintenance software - how do I transition to embedded?",
+        "author": "FlappablePen",
+        "url": "https://www.reddit.com/r/ECE/comments/7zwxql/stuck_in_supportmaintenance_software_how_do_i/",
+        "text": "I’ve been a software engineer as a NASA contractor for a few months, but haven’t been able to do any embedded work. I took the job initially assigned to a project in its development phase, but was reassigned at the last minute to a project now in its maintenance/close-out phase. \n\nAs a result, most of my job involves writing support tools for things like inventory management, data visualization, but no low level programming.\n\nWhat should I do to start getting involved with more embedded development? I’d prefer staying with the company, but would also be open to looking elsewhere. One of my biggest fears is being pigeonholed into a support role, and not being able to find a job in embedded.",
+        "created_utc": 1519483032,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Resources for Learning Schematic Design and Formatting",
+        "author": "SaysSimmon",
+        "url": "https://www.reddit.com/r/ECE/comments/7zpgik/resources_for_learning_schematic_design_and/",
+        "text": "I'm currently in second year electrical. I've been looking up some schematics online for some hobby projects, but I don't know how to read many of them. For example, some schematics have 3 independent circuits on the page not connected to each other, but they are supposed to work together. Where can I learn formatting and how to read these types of schematics?",
+        "created_utc": 1519404674,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Signals and systems 😶",
+        "author": "sachinssakri",
+        "url": "https://www.reddit.com/r/ECE/comments/7zo436/signals_and_systems/",
+        "text": "I need help understanding concepts in signals and Systems  anyone can give good resources??",
+        "created_utc": 1519393424,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "EL Wire Inverter",
+        "author": "ImmoralPriusDriver",
+        "url": "https://www.reddit.com/r/ECE/comments/7znwqd/el_wire_inverter/",
+        "text": "How do battery operated inverters work with EL wire? I've seen some technical specifications that suggest that EL wire runs at 100VAC yet they are powered with 2 AA batteries for a total of around 3V DC.",
+        "created_utc": 1519391421,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ohm's Law Electrical Engineering",
+        "author": "worldwin001",
+        "url": "https://i.redd.it/t462g2i9ayh01.jpg",
+        "text": "",
+        "created_utc": 1519386383,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ohm's Law Electrical Engineering",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/b6nuxphm9yh01.jpg",
+        "text": "[deleted]",
+        "created_utc": 1519386194,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Button to Android phone at ~30m range",
+        "author": "thelollies",
+        "url": "https://www.reddit.com/r/ECE/comments/7zmvfu/button_to_android_phone_at_30m_range/",
+        "text": "I'm looking for a way to send a physical button press to my Android phone reliably at around 30m, however if I could make that work reliably for 50m I would be very happy.\n\nThe intention is to afterwards program the button press signal to start/stop video so I am flexible on the input format (Bluetooth, a receiver which passes an audio signal to the phone that I can listen for, etc).\n\nI've looked for Bluetooth buttons but I can't find anything that will work reliably at that range (must be battery powered).\n\nMy use case is that I want to film myself with my phone when I am training (in a sport called highlining) where I am bouncing high in the air on a piece of webbing and my phone is sitting next to one of the anchors about 30m away. There are only small moments in perhaps a 1 hour session of highlining that I want to record so I'd rather not leave my phone recording.\n\nI'm struggling to find anything to send a button press signal at this distance (cheaper the better). I'm a software engineer and have friends who can help me out if the best solution involves arduinos etc.",
+        "created_utc": 1519378238,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How big of a battery would be needed to run DC motors for a decent amount of time?",
+        "author": "xypherrz",
+        "url": "https://www.reddit.com/r/ECE/comments/7zl857/how_big_of_a_battery_would_be_needed_to_run_dc/",
+        "text": "I have something [similar](https://imgur.com/a/h4kYr) and I believe they are rated at about 6V.",
+        "created_utc": 1519358563,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can you switch from semiconductor field (chip design) to power (utility companies) if you've only taken like 2 courses in university?",
+        "author": "LibertyState",
+        "url": "https://www.reddit.com/r/ECE/comments/7zkvl2/can_you_switch_from_semiconductor_field_chip/",
+        "text": "I'm doing my Electrical engineering undergrad, and I had a year long internship in semiconductors, so most likely my first job after graduation will be in semiconductors. However I'm just wondering, will it be possible to get a power job in the future with semiconductor experience? Will you have to start at a Junior position in power even if you're a senior in semiconductor field? I will at most have taken 1 energy/power course by then. \nWhat about switching from semiconductor to business intelligence? (Aka business analyst, application analyst, etc)? \nJust want to make sure I'm not stuck in the semiconductor field forever. What can I do to keep my options open in the long term?",
+        "created_utc": 1519355171,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Typical Wait Times to Hear from Hiring Applications",
+        "author": "KirbyAteVash",
+        "url": "https://www.reddit.com/r/ECE/comments/7zifkm/typical_wait_times_to_hear_from_hiring/",
+        "text": "Preface: I tried searching for this in the subreddit but couldn't find anything, so hopefully I dont ruffle too many feathers if I searched the wrong words.\n\nHi /r/ECE, I'm a recent ECE grad (BSEE'15 MSEE'16) currently in a non technical role, and looking to go back to engineering. I've applied to a bunch of places/roles, and was curious about what the typical wait time is to hear back. I've checked my status online and its the typical 'pending review' or 'application received.'\n\nI currently hate my job and am trying to switch jobs asap. If I could get any insight, I'd greatly appreciate it!\n\nThanks /r/ECE",
+        "created_utc": 1519334229,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "UPDATE: Almost built a guitar amp!",
+        "author": "joindougshaw",
+        "url": "https://www.reddit.com/r/ECE/comments/7zicoz/update_almost_built_a_guitar_amp/",
+        "text": "After letting my amp build marinate a while, I decided to get back to work on it. I made definite progress and got some good tips from everybody on [my previous post.](https://www.reddit.com/r/ECE/comments/6m31dt/almost_built_a_guitar_amp_just_cant_figure_out/)\n\nI ended up adding a ground connection between my two power supplies on the DC side of the circuit. That allowed me to get some actual sound through the amp instead of the max volume buzz I was getting.\n\nNow that I'm actually getting some guitar sound through, I think I'm hearing line frequency hum, it's loud enough that it wouldn't make for a very good guitar amp if I left it as it.\n\nCurrently, I have a floating ground. I think, normally, the ground connection coming from the AC outlet is tied to the chassis of the amp, which I plan to connect once it's mounted up. **Would connecting the AC outlet ground to the chassis *and* the rest of the circuit (DC side) help resolve the line hum?** Or would it end up doing something unwanted to the circuit?\n\n\nan idea of the path: AC outlet -&gt; transformer -&gt; (2) DC power supplies -&gt; tremolo and amp circuit -&gt; speaker",
+        "created_utc": 1519333619,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Implementing notch filter in C from transferfunktion.",
+        "author": "EngIntern",
+        "url": "https://www.reddit.com/r/ECE/comments/7zhvlk/implementing_notch_filter_in_c_from/",
+        "text": "####Hi.\n\n-----\n\nI am trying to implement a IIR notch filter from a transferfunktion i have calculated. I want it to run on my Arduino, so in the C coding language.\n\nI have defined the denumerator into the variable A,B and C, where:\n\n**a2 = 1** , **a1=1.7** (Z^-1) , **a0=0.8** (Z^-2)\n\nThe numerator is defined into the variable:\n\n**b2=0.9** , **b1=1.82** (z^-1) , **b0=0.95** (z^-2)\n\nMy **sampling frequency** (fs) is set to **60 kHz**.\n\nThe **center frequency** (f0) is set to **23.25 kHz**.\n\n**BW** is set to **2 kHz**.\n\nI have found [this](http://www.iowahills.com/A4IIRBilinearTransform.html)(iowahills.com) page where they explain some of it, but it isn't enough for me to really know how I implement it onto my Arduino.\n\nCan someone here help me with this?\n\n-----\n\n####Thank you",
+        "created_utc": 1519329932,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any good General EE books with lots of questions and worked solutions?",
+        "author": "Pooois",
+        "url": "https://www.reddit.com/r/ECE/comments/7zhu8p/any_good_general_ee_books_with_lots_of_questions/",
+        "text": "As an ECE graduate I'm trying to improve my general theory as it keeps letting me down in interviews. I'm going through the ART of Electronics at the moment to brush up on major concepts. However I'd like another resource with a lot of questions and worked solutions for me to practice. ",
+        "created_utc": 1519329655,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm writing a tiny CDL netlist manually, but I get the issue of having no ports when viewed in StarVisionpro. Can you help debug the syntax?",
+        "author": "LibertyState",
+        "url": "https://www.reddit.com/r/ECE/comments/7zh1us/im_writing_a_tiny_cdl_netlist_manually_but_i_get/",
+        "text": "Hi,\n\nThis test CDL. I want to have the topcell with ports gateTop,sourceTop,drainTop,bulkTop, all connected to gate,source,drain,bulk in transistor1, which are connected to gate2,source2,drain2,bulk2 in trans2. However, when i view this in starvision tool using OPTION1 instationation of the transistor1, I will see the topcell top1 have the ports connected to nets of the same name, but not connected to anything else, just floating. When I use OPTION2  instantiation, ports are connected to transistor1 pins normally. Why is that (why is OPTION1 wrong?)?\n\nThanks\n\n    .subckt transistor1 gate source drain bulk\n\n    Xutrans2 gate source drain bulk trans2\n\n    .ends transistor1\n\n    .subckt trans2 gate2 source2 drain2 bulk2\n\n    .ends trans2\n\n    .subckt top1 gateTop sourceTop drainTop bulkTop\n    *OPTION1: Xutransistor1Inst transistor1 $PINS gate=gateTop source=sourceTop drain=drainTop bulk=bulkTop\n    *OPTION2: Xutransistor1Inst gateTop sourceTop drainTop bulkTop transistor1\n    .ends",
+        "created_utc": 1519323761,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TIL: \"Schoopage\" in film capacitors: The projecting end electrodes are covered with a liquefied contact metal such as (tin, zinc or aluminum)... This metallizing process is named schoopage after Swiss engineer Max Schoop.",
+        "author": "jms_nh",
+        "url": "https://en.wikipedia.org/wiki/Film_capacitor#Example_manufacturing_process",
+        "text": "",
+        "created_utc": 1519321928,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Online Electrical CAD resources",
+        "author": "snakesdontcry",
+        "url": "https://www.reddit.com/r/ECE/comments/7zgrx6/online_electrical_cad_resources/",
+        "text": "I have a final year project and need to do some schematic drawings to prep for a group member to use and port over to a pcb design. Does anyone know of or has used an online CAD program for schematic drawings? My school has a license for Altium but it's reading week so anything I could use from home would be better. Thanks!",
+        "created_utc": 1519321744,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Emerging markets",
+        "author": "twintowersrubble",
+        "url": "https://www.reddit.com/r/ECE/comments/7zgkiz/emerging_markets/",
+        "text": "What are some markets that are currently emerging in the world and are labeled as the future? Which markets would be wise to get into after graduating with a computer engineering or computer science degree?",
+        "created_utc": 1519320182,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone explain the workings of this amplifier?",
+        "author": "3FiTA",
+        "url": "https://imgur.com/a/oYcap",
+        "text": "",
+        "created_utc": 1519309360,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What would you tell your middle-school self?",
+        "author": "catswithbags",
+        "url": "https://www.reddit.com/r/ECE/comments/7zewsh/what_would_you_tell_your_middleschool_self/",
+        "text": "Hi all,\n\nI have the opportunity to talk with a group of 6-8th graders about engineering in a week or two, and I'm struggling with determining what to focus on. So, I figured why not ask the internet!\n\nTherefore, I ask all y'all ECE folks... what would you tell a bunch of 6th to 8th graders about the great world of enginerding?",
+        "created_utc": 1519306540,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm making a brushless gimbal controller. This video shows closed loop position control with a single motor.",
+        "author": "doublecloverleaf",
+        "url": "https://youtu.be/7BuXiotFYDI",
+        "text": "",
+        "created_utc": 1519305205,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this summary of OFDMA correct?",
+        "author": "filterthedreck",
+        "url": "https://www.reddit.com/r/ECE/comments/7zdx9e/is_this_summary_of_ofdma_correct/",
+        "text": "I've been watching vids, reading and reading quora and stackoverflow posts to try to understand it.\n\nI was wondering if my understanding of it so far was correct or not.\n\nSo: by lining the time slots up in a particular way (66.7 us duration) with the regular, harmonic separation of the subcarriers used we get a situation where all the time divided slots (of the Resource Element) at a given subcarrier frequency end up holding waveforms (time domain) that are always orthogonal to each other, and all the Resource Elements at a given time spread out along all the subcarriers within that band, also always contain orthogonal time domain waveforms. To smooth the transitions across the time divided slots cyclic prefix waveforms are used to prevent Inter-Symbol Interference caused by having a discontinuous envelope in the time domain...",
+        "created_utc": 1519294765,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Arc Flash Hazard Analysis",
+        "author": "vbelakshmanababu",
+        "url": "http://www.arcflashconsultants.in/arcflashstudy.html",
+        "text": "",
+        "created_utc": 1519277484,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Arc Flash Consultants | Arc Flash Analysis | Arc Flash Study",
+        "author": "vbelakshmanababu",
+        "url": "http://www.arcflashconsultants.in/",
+        "text": "",
+        "created_utc": 1519276328,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Harmonic Analysis Services | Power System Harmonic Analysis | Harmonic Analysis in Power System",
+        "author": "vbelakshmanababu",
+        "url": "http://www.vbengg.com/harmonic-analysis-india.html",
+        "text": "",
+        "created_utc": 1519275312,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Checking round 2 of our PCB",
+        "author": "SL-Gremory-",
+        "url": "https://www.reddit.com/r/ECE/comments/7zc8nk/checking_round_2_of_our_pcb/",
+        "text": "Hi all, I posted our schematic and layout for the PCB my team is designing [a while back](https://www.reddit.com/r/ECE/comments/7wz73q/trying_to_connect_to_stm32f303re_chip/), and we've since rectified a bunch of errors that the community pointed out (thanks a TON!) and would like to get one final round of feedback before we send it off for production in two days (assuming no/negligible errors).  \n  \n[Here is a link](https://imgur.com/a/qdoAf) to the new schematic and layout images.  \n  \nWe'd really appreciate this last check before we send this off, and thank you again everybody for all of the help on the previous thread, and this one as well.  \n  \nPS - I apologize about the images being split in the new version screenshots, had to take them on a laptop this time instead of a larger, higher resolution screen. Please excuse me on that!",
+        "created_utc": 1519274786,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Arc Flash Analysis in India | Arc Flash Studies in India",
+        "author": "vbelakshmanababu",
+        "url": "http://www.vbengg.com/arc-flash-analysis-india.html",
+        "text": "",
+        "created_utc": 1519274456,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice on Internship Offers",
+        "author": "Grognak16",
+        "url": "https://www.reddit.com/r/ECE/comments/7z88ha/advice_on_internship_offers/",
+        "text": "Looking for advice on internships for this summer for a junior EE.\n\nI have narrowed my offers down to two. One from a smallish aerospace company where I would work on signal processing algorithms for radar, image processing and other things for unmanned aircraft. The second is from a national lab (United States) where I would be working on writing electromagnetic and plasma physics simulation codes.\n\nI have worked on computational electromagnetics research for over a year now and enjoy it enough to consider pursuing a PhD in it or something related. This makes the national lab opportunity very enticing. On the other hand, The aerospace job is more of a typical engineering job (something I have not held yet) so the exposure would help me decide if jumping straight into a job after my BS is a good idea. The national lab would be more of a position to show me what a job after a PhD is like.\n\nLast to mention, the location of the aerospace job is really cool (San Diego), whereas the national lab is not as exciting (although still not a bad place). The financial package at the aerospace job is also very good and I haven't gotten official numbers form the lab yet.\n\nI am looking for thoughts and opinions on my options. What are some strengths and disadvantages of each option? What would you take? etc.",
+        "created_utc": 1519240996,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Verilog Subtract Question",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/ECE/comments/7z7dbn/verilog_subtract_question/",
+        "text": "[deleted]",
+        "created_utc": 1519234594,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Senior design survey, please help by filling it out! (5 mins max!)",
+        "author": "throwawayseniordesig",
+        "url": "https://uic.qualtrics.com/jfe/form/SV_cuxZK3Yc15lOIaF",
+        "text": "",
+        "created_utc": 1519230501,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ADC/DAC/PWM with MSP430",
+        "author": "3FiTA",
+        "url": "https://www.reddit.com/r/ECE/comments/7z6kt9/adcdacpwm_with_msp430/",
+        "text": "I'm trying to upgrade from Arduino and use the MSP430F5529 I purchased. I have a little circuit set up with a 10k resistor and photoresistor acting as a voltage divider. But I don't understand how ADC works with this device and I'm having a lot of trouble finding documentation explaining it in (relative) layman's terms. Any help?",
+        "created_utc": 1519228789,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "P channel MOSFET small signal model",
+        "author": "bharat1999",
+        "url": "https://i.redd.it/gfbj44jx3kh01.png",
+        "text": "",
+        "created_utc": 1519214774,
+        "upvote_ratio": ""
+    }
+]

@@ -1,0 +1,130 @@
+[
+    {
+        "title": "Some choice quotes overheard from my college teachers while evaluating final semester projects",
+        "author": "14mit1010",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rhr0r/some_choice_quotes_overheard_from_my_college/",
+        "text": "a) \"What algorithm are you using to calculate the distance between these 2 points? \" -- After being told its the simple aerial distance between 2 points being calculated (&lt;10km distance between the 2 points)\n\nb) \"Everything that can be invented has been invented and can be found on Google\" -- After informing him that I dont have any research papers referenced or any identical projects mentioned because I couldnt find a project that has the same functionality mine has\n\nc) \"With respect to what point is Latitude and Longitude calculated\" -- After they were told that latitude and longitude information from the GPS sensor is being used",
+        "created_utc": 1332953241,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Blank Line Mystery",
+        "author": "Shurikane",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rgpmv/the_blank_line_mystery/",
+        "text": "While testing a few modifications I'd made on a plug-in I hadn't touched in a while, I was puzzled at seeing several blank lines between the stack traces as I debugged my new feature.  I asked everyone around me about it.  My coworkers were utterly mystified.  No one had any clue whatsoever as to why the console was behaving this way, on that particular program and nothing else.\n\nShrugging, I went back to coding the feature.\n\nLater on, I stumbled onto this:\n\n    for (int i = 0; i &lt; 100; i++)\n    {\n        System.out.println(\"\");\n    }\n\nI checked the annotations.  I went to the person who coded this.\n\n\"What's this?\"\n\n\"This?...  Oh, it's cause there's a function that does its work too quickly and finishes before the work of another function in the API, so I put this in to slow it down.\"\n\nI sighed, split him in half with a chainsaw, and then sent him back to his cubicle.\n\nYep.  He'd solved a race condition by printing a blank line a hundred times.",
+        "created_utc": 1332893966,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This belongs here. Source code of the first game I wrote, 1997.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rdwl2/this_belongs_here_source_code_of_the_first_game_i/",
+        "text": "There's not much right with this code but I'm glad I've kept it all these years.\n\nhttp://elbertf.com/qbasic/fruit.bas/",
+        "created_utc": 1332746497,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I came across this in my very reputable friend's code.",
+        "author": "mszegedy",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rcfy9/i_came_across_this_in_my_very_reputable_friends/",
+        "text": "    char a = '/';\n    char b = '/';\n    printf (\"%c%c\", a, b);",
+        "created_utc": 1332657587,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is this part 2?",
+        "author": "ganjamuncha",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rc04b/what_is_this_part_2/",
+        "text": "&lt;!--main content area--&gt;\n&lt;section id=\"main\"&gt;\n\n\t&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;h1&gt; Welcome&lt;/h1&gt;\n\n\n&lt;aside&gt;\n&lt;p18&gt;Our Collection&lt;/p18&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n\n&lt;p16&gt;Ladie's&lt;/p16&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"diamondweddingbands.html\"&gt;&lt;p17&gt;Diamond Wedding Bands&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"bridlesets.html\"&gt;&lt;p17&gt;Bridal Sets&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"anniversaryrings.html\"&gt;&lt;p17&gt;Anniversary rings&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"geniunecoloredstonerings.html\"&gt;&lt;p17&gt;Genuine Colored Stone Rings&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"eternitybands.html\"&gt;&lt;p17&gt;Eternity Bands&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"engagementrings.html\"&gt;&lt;p17&gt;Engagement Rings&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"vipcollection.html\"&gt;&lt;p17&gt;Garo's Finest&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"studearrings.html\"&gt;&lt;p17&gt;Stud Earrings&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;a href=\"solitairependants.html\"&gt;&lt;p17&gt;Solitaire pendants&lt;/p17&gt;&lt;/a&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n\n&lt;p16&gt;Gents&lt;/p16&gt;\n&lt;br&gt;\n&lt;br&gt;\n&lt;br&gt;\n\n&lt;a href=\"mensrings.html\"&gt;&lt;p17&gt;Men's Rings&lt;/p17&gt;&lt;/a&gt;\n&lt;/aside&gt;\n&lt;br&gt;\n&lt;br&gt;",
+        "created_utc": 1332631963,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "You can learn a lot about the quality of someone's code by looking at their variable names.",
+        "author": "flussence",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rbphx/you_can_learn_a_lot_about_the_quality_of_someones/",
+        "text": "Here's a few I found in a single PHP file just now:\n\n    $datedate\n    $harsss\n    $id\n    $mess\n    $myrow\n    $my_row\n    $myrow2\n    $myrow3\n    $myrows\n    $myuseid\n    $newtime\n    $numrows\n    $numrows2\n    $r\n    $result\n    $result2\n    $result3\n    $results\n    $sql\n    $str\n    $u\n\n`$harsss` doesn't make any more sense in context. Harsss. Harssssss. Horse.",
+        "created_utc": 1332616602,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is this!?",
+        "author": "ganjamuncha",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rb7do/what_is_this/",
+        "text": "&lt;b class=\"rbottom2\"&gt;&lt;b class=\"r42\"&gt;&lt;/b&gt;&lt;b class=\"r32\"&gt;&lt;/b&gt;&lt;b class=\"r22\"&gt;&lt;/b&gt;&lt;b class=\"r12\"&gt;&lt;/b&gt;&lt;/b&gt;\n&lt;/div&gt;\n\n&lt;b class=\"rbottom\"&gt;&lt;b class=\"r4\"&gt;&lt;/b&gt;&lt;b class=\"r3\"&gt;&lt;/b&gt;&lt;b class=\"r2\"&gt;&lt;/b&gt;&lt;b class=\"r1\"&gt;&lt;/b&gt;&lt;/b&gt;\n&lt;/div&gt;\n&lt;br&gt;\n&lt;div class=\"nifty\"&gt;\n&lt;b class=\"rtop\"&gt;&lt;b class=\"r1\"&gt;&lt;/b&gt;&lt;b class=\"r2\"&gt;&lt;/b&gt;&lt;b class=\"r3\"&gt;&lt;/b&gt;&lt;b class=\"r4\"&gt;&lt;/b&gt;&lt;/b&gt;\n&lt;div class=\"nifty2\"&gt;\n&lt;b class=\"rtop2\"&gt;&lt;b class=\"r12\"&gt;&lt;/b&gt;&lt;b class=\"r22\"&gt;&lt;/b&gt;&lt;b class=\"r32\"&gt;&lt;/b&gt;&lt;b class=\"r42\"&gt;&lt;/b&gt;&lt;/b&gt;",
+        "created_utc": 1332576318,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who needs joins?",
+        "author": "nevon",
+        "url": "http://www.reddit.com/r/programminghorror/comments/r3ear/who_needs_joins/",
+        "text": "A discussion over on [/r/webdev](/r/webdev) got me thinking about database normalization, which brought to mind one of my past sins.\n\nI was just starting out learning PHP, and had gotten to the point where I could do basic database interaction. At the time, I was working on a small project where the user would be able to upload game reviews, along with screenshots from the game. It was mostly straightforward stuff, but I was having trouble figuring out how I was going to be able to allow the user to have multiple images attached to the review.\n\nLuckily, my brain came up with a brilliant solution: ***separate each path with a pipe character!***\n\n    INSERT INTO `reviews` (\n        `username`,\n        `review`,\n        `images`\n    ) VALUES (\n        'nevon',\n        'Awesome game lol!!',\n        '/images/uploads/screenshot1.png|/images/uploads/screenshot2.png|/images/uploads/screenshot3.png'\n    );\n\nLet's just say that the concept of joins was something that eventually made my life quite a bit easier.",
+        "created_utc": 1332162611,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "HatePaste. Where the worst code is. ",
+        "author": "Raisins",
+        "url": "http://www.reddit.com/r/programminghorror/comments/r2paz/hatepaste_where_the_worst_code_is/",
+        "text": "http://hatepaste.com/hated/",
+        "created_utc": 1332116542,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "http://thedailywtf.com/",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/r24po/httpthedailywtfcom/",
+        "text": "Programming horror stories",
+        "created_utc": 1332087924,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yep, this is real commercial software.",
+        "author": "Hi_Kate",
+        "url": "http://www.reddit.com/r/programminghorror/comments/r21u0/yep_this_is_real_commercial_software/",
+        "text": "Pic: http://i.imgur.com/SL5PU.jpg",
+        "created_utc": 1332082623,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP n00b (WTF)",
+        "author": "ScottCarmichael",
+        "url": "http://www.reddit.com/r/programminghorror/comments/r1tti/php_n00b_wtf/",
+        "text": "So this was actually me, when I was just starting out doing PHP. I was pulling dozens of fields' of data from thousands of records in a DB in order to show them in an HTML table. Instead of just grabbing each record's data and echo'ing it, for some reason I did this:\n\n&gt;$i = 0; .......\n\n&gt;while ($i &lt; $num) {\n\n&gt;$search_database_field_01 = mysql_result ($result, $i, $search_customer_name_first); .......\n\n&gt;echo \"&lt;td&gt;\" . $search_database_field_01 . \"&lt;/td&gt;\".......\n\nTo this day, I'm horribly embarrassed by this. For starters, WHY am I using a counter!?! I could have simply limited my results via MySQL query. Next, WHY am I cycling through each field, one by one, passing counter information to it? What a waste of unnecessary actions. Then, WHY am I assigning that info to variables when they are used nowhere else and will be written over come the next record? Finally, and worst of all, WHY am I giving a specific field a generic number for a name? Talk about stupid!\n\nWhat ended up happening was the table ultimately had more fields added to it over time and each time all the data got thrown off a bit. Because of this, the ordering of the fields in the DB schema could not be changed easily, because I dumbly referenced their location in relation to one another, from left to right, instead of by field name.\n\nTerrible, terrible, terrible.\n\nAnd it was all me! x_x",
+        "created_utc": 1332055951,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "You can never be to sure that what you have is a String",
+        "author": "Lindby",
+        "url": "http://www.reddit.com/r/programminghorror/comments/r11xv/you_can_never_be_to_sure_that_what_you_have_is_a/",
+        "text": "When I saw saw a row similar to the row below while reviewing some Java code, I knew that I should proceed with caution.\n\n    String str = (String) \"a string\".toString();",
+        "created_utc": 1332009087,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "printf. Wade not in unknown waters.",
+        "author": "Andrey_Karpov_N",
+        "url": "http://www.reddit.com/r/programminghorror/comments/r11vx/printf_wade_not_in_unknown_waters/",
+        "text": "",
+        "created_utc": 1332009020,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "100 bugs in Open Source C/C++ projects",
+        "author": "Andrey_Karpov_N",
+        "url": "http://www.viva64.com/en/a/0079/",
+        "text": "",
+        "created_utc": 1332008404,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Javascript Redirect",
+        "author": "nevon",
+        "url": "http://www.reddit.com/r/programminghorror/comments/qw1iu/the_javascript_redirect/",
+        "text": "Maintaining an old, custom-built CMS, you're pretty much guaranteed to find some WTFs hidden away in the murky depths of the code. The one that I'm about to share wasn't hidden away at all. Instead, it was hiding in plain sight.\n\nAs part of some functionality overhaul, I was tasked with rewriting a part of the CMS front-end that functioned as an archive of items. Each item had a category and a link. In total, there were a few thousand items.\n\nAs I was beginning to take a look at the markup, I noticed that the markup was littered with onclick attributes and strange classes and IDs:\n\n    &lt;li&gt;&lt;span class=\"lb2_cls it\" id=\"itm4lb2\" onclick=\"go_to('itm4lb2')\"&gt;Item number 4&lt;/span&gt;&lt;/li&gt;\n\nConfused by this (especially the parameter they sent along), I searched the dozen or so Javascript files that were included on this page, and finally found this gem:\n\n    function go_to_itm(itm) {\n        window.location='/items.php?category='+parseInt(/lb(\\d+)/.exec(itm)[1])+'&amp;item='+parseInt(/itm(\\d+)/.exec(itm)[1]);\n    }\n\nApparently, using an anchor is just not reliable enough for custom designed software. Clearly, parsing a cryptic string, concatenating the result and redirecting the user with Javascript is the better approach. I later found out that this was a recurring theme throughout parts of the CMS.",
+        "created_utc": 1331725023,
+        "upvote_ratio": ""
+    }
+]

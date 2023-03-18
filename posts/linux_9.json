@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Windows 10 or later is required to run the game",
+        "author": "lemmzlol",
+        "url": "https://www.reddit.com/r/linux/comments/11b2d9v/windows_10_or_later_is_required_to_run_the_game/",
+        "text": "Hey y'all. This is my first post ever here so I hope I'm not breaking any rules.\n\nI have a vanilla Steam Deck. On it I very recently downloaded a very recent AAA quacked game. I usually use Lutris to run my games - same for this game. I checked the depots of the game and installed as many as I could. It requires VC 2019, Directx 10, MS .NET 4.6. I could install all except MS. NET. In Winetricks I tried all the versions and none would install.\n\nI then tried to run the game and I get the error in the title \"Windows 10 or later is required to run the game\". It's the first game to show me this error.\n\nAnybody here has any idea why this could be and what would the solution be to fix this?\n\nThanks a lot everyone!",
+        "created_utc": 1677273456,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Laggy touchpad Zephyrus M16 Ubuntu 20.04 Nvidia",
+        "author": "Independent-Clerk-73",
+        "url": "https://www.reddit.com/r/linux/comments/11b17gk/laggy_touchpad_zephyrus_m16_ubuntu_2004_nvidia/",
+        "text": "[removed]",
+        "created_utc": 1677270602,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "TIP: How I doubled my laptop's battery life.",
+        "author": "funbike",
+        "url": "https://www.reddit.com/r/linux/comments/11b0vci/tip_how_i_doubled_my_laptops_battery_life/",
+        "text": "\nStrategy:\n\n* Lowered screen brightness\n* Found high CPU processes\n* Found out how to lower CPU usage of processes\n* Power management package\n\nAfter some research I found these things helped when I was on battery:\n\n* TLP package\n* \"Auto Tab Discard\" web extension suspends unused tabs.  (Also, cuts down on memory usage)\n* Disable a Neovim plugin that takes +5% CPU (marks.nvim)\n* Dim display\n* Kill a dashboard I usually have running on a spare monitor\n* Open a blank tab in every browser window.  I also had to configure new tabs to open to blank page.\n\nThis is specific to me.  What you would do will depend on what software you use.\n\nI automated this with a script that I run before and after I plug into A/C power:\n\n    #!/bin/bash\n\n    # Power saving script\n    # Usage:\n    # psave ac\n    # psave battery\n\n    set -ac\n\n    main() {\n      \"$@\"\n    }\n\n    _brightness() {\n      gdbus call --session \\\n        --dest org.gnome.SettingsDaemon.Power \\\n        --object-path /org/gnome/SettingsDaemon/Power \\\n        --method org.freedesktop.DBus.Properties.Set \\\n        org.gnome.SettingsDaemon.Power.Screen Brightness \"&lt;int32 $1&gt;\"\n\n      # Same as:\n      # max=\"$(cat /sys/class/backlight/intel_backlight/max_brightness)\"\n      # echo \"$max * $1 / 100\" | bc &gt; /sys/class/backlight/intel_backlight/brightness\n    }\n\n    battery() {\n      # tweaks to take less battery.\n\n      # Disable marks.nvim plugin\n      tmux list-panes -F '#{pane_current_command} #{pane_id}' -a | \\\n        sed -rn 's/^n?vim //p' | \\\n        xargs -tI{} tmux send-keys -t {} :MarksToggleSigns Enter\n\n      # dashboard\n      killall --wait wtfutil\n      tmux send-keys -t 'left:0.0' 'stty sane' Enter\n\n      _brightness 15\n\n      # Open empty tab in all firefox windows\n      origwin=\"$(xdotool getactivewindow)\"\n      ffmain=\"$(xdotool search --onlyvisible --classname '^firefox$')\"\n      for win in $(xdotool search --onlyvisible --class '^firefox$'); do\n        if ! [[ \"$win\" == \"$ffmain\" ]]; then\n          xdotool windowactivate --sync \"$win\"\n          firefox about:blank\n        fi\n      done\n      xdotool windowactivate \"$origwin\"\n    }\n\n    ac() {\n      # undo battery()\n\n      # Enable marks.nvim\n      tmux list-panes -F '#{pane_current_command} #{pane_id}' -a | \\\n        sed -rn 's/^n?vim //p' | \\\n        xargs -tI{} tmux send-keys -t {} :MarksToggleSigns Enter\n\n      # start dashbaord\n      tmux send-keys -t 'left:0.0' 'DISPLAY=:0 wtfutil' Enter\n\n      _brightness 70\n    }\n\n    main \"$@\"",
+        "created_utc": 1677269746,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "win10 on a 2gb ram notebook who wants it",
+        "author": "Sea-Section-6708",
+        "url": "https://i.redd.it/j5wi2oq3j8ka1.jpg",
+        "text": "",
+        "created_utc": 1677269412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Monado's \"Mercury\" hand tracking now ready for use",
+        "author": "mfilion",
+        "url": "https://www.reddit.com/r/linux/comments/11b0ebf/monados_mercury_hand_tracking_now_ready_for_use/",
+        "text": "After a little over year of development, Monado's \"Mercury\" hand tracking is now ready for use! Mercury estimates hand post accurately, supports limited hand-over-hand interactions, tracks fast hand movements, and is useable for drawing, typing and UI interaction.\n\n[https://www.collabora.com/news-and-blog/news-and-events/monados-mercury-hand-tracking-now-ready-for-use.html](https://www.collabora.com/news-and-blog/news-and-events/monados-mercury-hand-tracking-now-ready-for-use.html)",
+        "created_utc": 1677268557,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I have officially made Linux my primary operating system.",
+        "author": "craintain",
+        "url": "https://www.reddit.com/r/linux/comments/11b04br/i_have_officially_made_linux_my_primary_operating/",
+        "text": "[removed]",
+        "created_utc": 1677267859,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "WSL distribution uninstall",
+        "author": "silverTiger78",
+        "url": "https://www.reddit.com/r/linux/comments/11azmqv/wsl_distribution_uninstall/",
+        "text": "I have two ubuntu distributions on WSL, they are both 20.04.\n\nhttps://preview.redd.it/11q5jt66r6ka1.png?width=359&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=5fb1774d194a3d1b77674dbc5df0a5cff6592eb2\n\nI have uninstalled ubuntu-20.04 using windows settings however, I still have the distribution files.\n\nDo you know how I may remove the distribution files? I am scared of doing unwanted damage. I have come across this answer but I'm not sure of how to specify the exact distribution.\n\nhttps://preview.redd.it/cbxmt3tvs6ka1.png?width=693&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=ba08b82d127d039ff4e396ca48164325d49b5d86",
+        "created_utc": 1677266612,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what distro is good for coding? Hi r/Linux! I am coding on rust and trying to find good distro for it, I would really like id it had good battery life on my laptop and had good rice potential and like I said, good for coding. Thanks!",
+        "author": "TourApprehensive7280",
+        "url": "https://www.reddit.com/r/linux/comments/11aza9i/what_distro_is_good_for_coding_hi_rlinux_i_am/",
+        "text": "",
+        "created_utc": 1677265748,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Webdav vs smb file server for linux which one will better and why?",
+        "author": "robertniro1980",
+        "url": "https://www.reddit.com/r/linux/comments/11az9er/webdav_vs_smb_file_server_for_linux_which_one/",
+        "text": "[removed]",
+        "created_utc": 1677265686,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what do you think is the best distro for coding",
+        "author": "TourApprehensive7280",
+        "url": "https://www.reddit.com/r/linux/comments/11az6x7/what_do_you_think_is_the_best_distro_for_coding/",
+        "text": "",
+        "created_utc": 1677265513,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Enable Zram on Linux For Better System Performance",
+        "author": "10MinsForUsername",
+        "url": "https://fosspost.org/enable-zram-on-linux-better-system-performance/",
+        "text": "",
+        "created_utc": 1677265157,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Problem with NetworkManager",
+        "author": "delaey",
+        "url": "https://www.reddit.com/r/linux/comments/11ay0jd/problem_with_networkmanager/",
+        "text": "Hello guys,\n\nI cant edit/create any VPN Connection with the NetworkManger, all fields in every Tab are grayed out (see Screenshot).\n\nAnyone have an idea?  \n\n\nIam using Arch (btw) in a VM with VMware Workstation 17 Pro.\n\nHere  are the versions:  \nnetwork-manager-applet 1.30.0-1  \nnetworkmanager 1.40.10-1  \nnetworkmanager-openconnect 1.2.8-2  \nnetworkmanager-openconnect 1.2.8-2",
+        "created_utc": 1677262590,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "not that old, but not young dog enters noob mode: Is CentOS9 Stream good for desktop?",
+        "author": "rtplor",
+        "url": "https://www.reddit.com/r/linux/comments/11ax66l/not_that_old_but_not_young_dog_enters_noob_mode/",
+        "text": "Installed a couple of evenings ago, but was knocked hard straight from the installer when tried to spread mount points all across 2 ssd and 2 hdd. \n\nThen tried and failed to install something from RPMfufion without enabling crb/EPEL\n\nIn the final moments got pissed off with old 40s vanilla Gnome and with a message that the system could not find drivers for my old Samsung MFU(prnt/scanner).\n\n\\^\\^Had no stamina to withstand all that and rolled back to Ubuntu.",
+        "created_utc": 1677260447,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Who writes Linux and open source software?",
+        "author": "CrankyBear",
+        "url": "https://www.theregister.com/2023/02/24/who_writes_open_source/?utm_medium=share&amp;utm_content=article&amp;utm_source=reddit",
+        "text": "",
+        "created_utc": 1677260283,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux really is so inefficient a game engine takes 8GB ram on windows but 32BG on Linux ram",
+        "author": "Trick-Weight-5547",
+        "url": "https://i.redd.it/90vcuvytj7ka1.jpg",
+        "text": "[removed]",
+        "created_utc": 1677257551,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Timeshift faulty snapshot",
+        "author": "TheWizzler47",
+        "url": "https://www.reddit.com/r/linux/comments/11avb6s/timeshift_faulty_snapshot/",
+        "text": "[removed]",
+        "created_utc": 1677255796,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wine: Wayland Driver Merge Requests Opened",
+        "author": "eszlari",
+        "url": "https://gitlab.winehq.org/wine/wine/-/merge_requests/2275",
+        "text": "",
+        "created_utc": 1677253197,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "7900 xt issues",
+        "author": "Jakes2108",
+        "url": "https://www.reddit.com/r/linux/comments/11atb2d/7900_xt_issues/",
+        "text": "[removed]",
+        "created_utc": 1677250588,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do you think about this slide on the Linux App Submit last year? I see that it is the complete opposite of how most devs I know think.",
+        "author": "Talkys",
+        "url": "https://i.redd.it/eraf764nr4ka1.png",
+        "text": "",
+        "created_utc": 1677242143,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Official Ubuntu flavors told to stop including Flatpak",
+        "author": "Enchantorro",
+        "url": "https://www.theregister.com/2023/02/23/ubuntu_remixes_drop_flatpak/",
+        "text": "",
+        "created_utc": 1677239232,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Using sudo at the end of the command",
+        "author": "MorePr00f",
+        "url": "https://www.reddit.com/r/linux/comments/11aojug/using_sudo_at_the_end_of_the_command/",
+        "text": "[removed]",
+        "created_utc": 1677235642,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "VM size",
+        "author": "User2747224",
+        "url": "https://www.reddit.com/r/linux/comments/11aog4w/vm_size/",
+        "text": "[removed]",
+        "created_utc": 1677235249,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "No Linux for 40 days here we go!",
+        "author": "cruzzeky",
+        "url": "https://www.reddit.com/r/linux/comments/11amnja/no_linux_for_40_days_here_we_go/",
+        "text": "[removed]",
+        "created_utc": 1677228115,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "First experience with window managers",
+        "author": "TariqSabri",
+        "url": "https://www.reddit.com/r/linux/comments/11amcbz/first_experience_with_window_managers/",
+        "text": "I'll be having later my first ever in-depth experience with window managers in fedora,\n\nfor context: I've been using Linux in general for almost 4-5 years and the way I taught myself Linux is pretty much through digging and tinkering with stuff and troubleshooting with the help of communities.\n\nI've been distro hopping the first 3 years, spent 1 year in Manjaro, and then here I am in Fedora and I'm liking it here.\n\nNow I want to experience window managers and see for myself how practical they can be behind the beautiful aesthetics they provide when riced.\n\nI touched the surface by trying AwesomeWM, I3, and Hyprland. Pretty much, I was kinda left in a desert not knowing anything here and there. I actually liked Hyprland with the animations and the support for multiple monitors since that's my setup on my main machine, but I really didn't like the fact that the packages aren't on fedora yet, I'm sure they will be sooner or later though.\n\nwhat tips do you have for me to start and not be just left hanging not knowing what to do in a window manager what do you recommend me to start with. and what can help with dual monitor setups and Nvidia Drivers and be the most good looking potentially yet becomes actually functional in terms of use for development mostly. and have a unified look and feel(Kinda like gnome now).",
+        "created_utc": 1677226883,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with \"cd floobar\"",
+        "author": "Ishatie",
+        "url": "https://www.reddit.com/r/linux/comments/11amc1m/help_with_cd_floobar/",
+        "text": "[removed]",
+        "created_utc": 1677226853,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "cd foobar",
+        "author": "Ishatie",
+        "url": "https://www.reddit.com/r/linux/comments/11amb14/cd_foobar/",
+        "text": "[removed]",
+        "created_utc": 1677226746,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Top 10 Best Things about ChatGPT",
+        "author": "techwithai",
+        "url": "/user/techwithai/comments/11ajfvu/top_10_best_things_about_chatgpt/",
+        "text": "",
+        "created_utc": 1677221564,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Baby Arch user please help!",
+        "author": "rio2998982",
+        "url": "https://www.reddit.com/r/linux/comments/11akj65/baby_arch_user_please_help/",
+        "text": "[removed]",
+        "created_utc": 1677220036,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Reddish tint on the Desktop (Elementary OS)",
+        "author": "IntelligentArt5",
+        "url": "https://www.reddit.com/r/linux/comments/11ajgce/reddish_tint_on_the_desktop_elementary_os/",
+        "text": "[removed]",
+        "created_utc": 1677216294,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Talk by Richard Stallman on March 17th regarding the dangers of cell phones",
+        "author": "PossiblyLinux127",
+        "url": "https://www.reddit.com/r/linux/comments/11aj686/talk_by_richard_stallman_on_march_17th_regarding/",
+        "text": "I know this isn't directly connected to linux but I figured it was related so I am posting it here\n\nOn March 17 RMS will be giving a talk entitled \"A tour of malicious software, with a typical cell phone as example\"\n\nYou can learn more here: https://www.fsf.org/events/talk-by-rms-on-march-17",
+        "created_utc": 1677215343,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Custom Kernel Code Reviews? (Liquorix, Xanmod, Zen, etc. and supply chain attacks)",
+        "author": "KebianMoo",
+        "url": "https://www.reddit.com/r/linux/comments/11aj55v/custom_kernel_code_reviews_liquorix_xanmod_zen/",
+        "text": "These custom kernels clearly have something to offer, but how do they all score regarding supply chain attacks, code review, and public person project leads?\n\nThere isn't a whole lot to be found by searching for 'code review', 'contributor policy', 'code security', etc. for each name.\n\nNow, these are niche-within-niche pieces of software.  Most people don't run Linux and most Linux systems use stock distro kernels.  They won't be targeted as much as popular server installs or outlook.  Still, we've seen lots of supply chain attacks in the silliest of places lately, niche npm, python etc. packages have been targeted rather massively (both directly and with namedupes), and people trying (and succeeding) to backdoor linux distros and kernels is not unheard of either.  While it's a target with a low headcount, the kernel is a very high value target, eg. for a botnet operation it would be worth the effort.  Slipping your evil code into something running close to metal on just 1000 computers worldwide can pay off well enough to be worth the trouble.\n\ntldr; while I don't think these kernels are top contender targets, they're also not unlikely targets.\n\nI did a bit of basic searching to look for stuff like code reviews, policies, project statements, contribution requirements or policies, etc.  Didn't find much yet, but a quick look at the github pages for Liquorix and Xanmod:\n\nLiquorix: 4 contributors\n\nXanmod: 13,000+ contributors\n\nObviously Xanmod doesn't have 13k+ people contributing to every update, but it does give an idea of how many fingers are in the pie.  Liquorix only lists 4 people, so it's a bit easier to get a grasp of who's doing what.  A public figure gives you someone answering for the commits, anonymous or non-proven/non-vetted contributors don't have to answer for themselves and can simply abandond the account if caught doing something unacceptable.\n\nBeyond this, distros like Arch and Gentoo have their own ports of these things, and I *assume* they do a little homework before including a new kernel in their repository, so using these would presumably offer some level of 'review'.\n\nIt'd be nice to see a discussion about this.\n\nThoughts?  What do you know?",
+        "created_utc": 1677215242,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu 22.04.2 LTS Released With Linux 5.19 HWE Stack Option",
+        "author": "Realistic-Plant3957",
+        "url": "https://www.phoronix.com/news/Ubuntu-22.04.2-LTS-Released",
+        "text": "",
+        "created_utc": 1677214697,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need some help with installing Linux with usb drive on chromebook?",
+        "author": "n-o-b-i-t-a",
+        "url": "https://www.reddit.com/r/linux/comments/11ahj45/i_need_some_help_with_installing_linux_with_usb/",
+        "text": "[removed]",
+        "created_utc": 1677210036,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need some help installing Ubuntu its just not working in my Chromebook same thing happened with mint too.",
+        "author": "n-o-b-i-t-a",
+        "url": "https://www.reddit.com/r/linux/comments/11ah38c/i_need_some_help_installing_ubuntu_its_just_not/",
+        "text": "[removed]",
+        "created_utc": 1677208709,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "problem installing from usb",
+        "author": "ajb2645",
+        "url": "https://i.redd.it/mx1xpmr3d3ka1.jpg",
+        "text": "",
+        "created_utc": 1677206864,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Guys I'm new on Linux, I'm play some games, but I'm not addicted. What do you think that needs to improve on ARCO LINUX?",
+        "author": "Bahiano777",
+        "url": "https://www.reddit.com/r/linux/comments/11ag7jc/guys_im_new_on_linux_im_play_some_games_but_im/",
+        "text": "",
+        "created_utc": 1677206070,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux Mint Alternatives with KDE Plasma",
+        "author": "DragoonMaster999",
+        "url": "https://www.reddit.com/r/linux/comments/11ag06l/linux_mint_alternatives_with_kde_plasma/",
+        "text": "[removed]",
+        "created_utc": 1677205468,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing loxilb: eBPF based cloud-native load-balancer",
+        "author": "FeelingCurl1252",
+        "url": "https://www.reddit.com/r/linux/comments/11aenbm/introducing_loxilb_ebpf_based_cloudnative/",
+        "text": "[removed]",
+        "created_utc": 1677201557,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "KDE and GNOME seek $100k to turn Flathub into a store for the Linux desktop",
+        "author": "BrageFuglseth",
+        "url": "https://github.com/PlaintextGroup/oss-virtual-incubator/blob/main/proposals/flathub-linux-app-store.md",
+        "text": "",
+        "created_utc": 1677200074,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can I copy, with rsync, one folder with just one single file out of all the files the folder might contain?",
+        "author": "goahead97",
+        "url": "https://www.reddit.com/r/linux/comments/11adx2z/how_can_i_copy_with_rsync_one_folder_with_just/",
+        "text": "[removed]",
+        "created_utc": 1677199511,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "KDE and GNOME seeks $100k to turn Flathub into a Store for the Linux desktop",
+        "author": "kattagarian",
+        "url": "https://github.com/PlaintextGroup/oss-virtual-incubator/blob/main/proposals/flathub-linux-app-store.md",
+        "text": "",
+        "created_utc": 1677196865,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "UFW Firewall Issue",
+        "author": "vrossv",
+        "url": "https://www.reddit.com/r/linux/comments/11ackw5/ufw_firewall_issue/",
+        "text": "[removed]",
+        "created_utc": 1677195904,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Picking a Linux Distro",
+        "author": "hackeryarn",
+        "url": "https://hackeryarn.com/post/picking-a-linux-distro/",
+        "text": "",
+        "created_utc": 1677195493,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi there, I am new to Linux and I'm having trouble installing something",
+        "author": "UnusualGaming",
+        "url": "https://www.reddit.com/r/linux/comments/11abu0u/hi_there_i_am_new_to_linux_and_im_having_trouble/",
+        "text": "[removed]",
+        "created_utc": 1677193980,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "General Linux software list. Discussion and advice welcome!",
+        "author": "Private_Braeburn",
+        "url": "/r/linuxquestions/comments/11aac9g/linux_software_list_discussion_and_advice_welcome/",
+        "text": "",
+        "created_utc": 1677192094,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux WiFi Hotspot use the same wifi card that's already connected to wifi to create a Hotspot similar to windows 10. Works on Ubuntu some people said it works on Fedora as well. Not sure if works on any other distros but it's worth trying.",
+        "author": "Midnight_Recovery",
+        "url": "https://github.com/lakinduakash/linux-wifi-hotspot",
+        "text": "",
+        "created_utc": 1677189332,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "spacewalk errata import on centos",
+        "author": "Intelligent-Clerk581",
+        "url": "https://www.reddit.com/r/linux/comments/11a9bza/spacewalk_errata_import_on_centos/",
+        "text": "[removed]",
+        "created_utc": 1677187806,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I either force dkms to reinstall modules or remove the modules myself?",
+        "author": "lovelyanon800",
+        "url": "https://www.reddit.com/r/linux/comments/11a93xb/how_do_i_either_force_dkms_to_reinstall_modules/",
+        "text": "[removed]",
+        "created_utc": 1677187242,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any lightweight GUI text editors with column selection (block selection) support?",
+        "author": "pratyushmanocha",
+        "url": "https://www.reddit.com/r/linux/comments/11a7o9k/any_lightweight_gui_text_editors_with_column/",
+        "text": "[removed]",
+        "created_utc": 1677183737,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Flathub Brand Refresh | Jakub Steiner",
+        "author": "TheEvilSkely",
+        "url": "https://blog.jimmac.eu/2023/flathub-brand-refresh/",
+        "text": "",
+        "created_utc": 1677180850,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "PanCSF: A new DRM driver for Mali CSF-based GPUs",
+        "author": "mfilion",
+        "url": "https://www.collabora.com/news-and-blog/news-and-events/pancsf-a-new-drm-driver-for-mali-csf-based-gpus.html",
+        "text": "",
+        "created_utc": 1677180685,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Labbing Question (studying for the RHCSA)",
+        "author": "RealPride_",
+        "url": "https://www.reddit.com/r/linux/comments/11a5vj3/labbing_question_studying_for_the_rhcsa/",
+        "text": "[removed]",
+        "created_utc": 1677179347,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux on my old Spynet watch",
+        "author": "Kildeager05",
+        "url": "https://www.reddit.com/r/linux/comments/11a5t8w/linux_on_my_old_spynet_watch/",
+        "text": "[removed]",
+        "created_utc": 1677179193,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "No bootable device found after installing manjaro",
+        "author": "abdelrahmanhany_",
+        "url": "https://www.reddit.com/r/linux/comments/11a5bq1/no_bootable_device_found_after_installing_manjaro/",
+        "text": "[removed]",
+        "created_utc": 1677178023,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a way for software documentation to be tracked and automatically annotated when relevant changes occur upstream?",
+        "author": "snow_eyes",
+        "url": "https://www.reddit.com/r/linux/comments/11a4s1n/is_there_a_way_for_software_documentation_to_be/",
+        "text": "I'm thinking about software documentation, including tutorials. Let's say a piece of software is used in several places,  then a change happens to it. Is there a way to link or connect the the downstream software to the upstream one so that when a potentially software-breaking change happens upstream, an annotation or a comment or a notification is sent warning of the change? \n\nHere are two completely hypothetical examples, I'm just using my imagination here. Rust is used to write a part of a new Linux kernel, after finishing the Rust code, it is uploaded into a change management system that adds metadata to all the Rust language features used. Later on, Mozilla for some reason changed something about the language, this change is then inputted into a system that sends a warning notification about the changed features. Our change management system picks up that the change is relevant to our kernel code. Now a maintainer of the kernel can look and see what version of Rust downstream changed what features in so and so lines of the kernel code. \n\nAnother example, Python is used to make a scientific desktop app, with the app itself enabling the use of python. A scientist uses the app and writes code for a specific application then makes a youtube tutorial explaining the code. He then uploads the code and the video to our change management system. A few years later, a new python version comes out that changes features relevant to our scientist, so he receives warning notifications at specific locations in his code as well specific minutes:seconds of his youtube video where those features were discussed. \n\nDo you think something like this could be of value? Does something like this exists?",
+        "created_utc": 1677176687,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tuxedo Stellaris 17 Gen 4 Review",
+        "author": "jlpcsl",
+        "url": "https://tilvids.com/w/21d65b1b-31e0-4fae-8cec-1afd7dc58ee6",
+        "text": "",
+        "created_utc": 1677175448,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 6.3 DRM Brings Intel VPU Driver, Drops Legacy Drivers, Many AMD Updates",
+        "author": "Realistic-Plant3957",
+        "url": "https://www.phoronix.com/news/Linux-6.3-DRM",
+        "text": "",
+        "created_utc": 1677174659,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Google Summer of Code 2023 - Organizations, Projects and Proposal Format explained",
+        "author": "thetech_learner",
+        "url": "https://www.youtube.com/live/86Pu0ieb9iw?feature=share",
+        "text": "",
+        "created_utc": 1677173662,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Razer thx spatial audio",
+        "author": "EasyZeke",
+        "url": "https://www.reddit.com/r/linux/comments/11a3grl/razer_thx_spatial_audio/",
+        "text": "I am on cachyos, an arch based distro, which uses pipewire for audio, does anyone know of anything I can use that will enable the spatial audio in the🇨🇬 Razer barracuda, or any sort of spatial audio for Linux? Without having to do a bunch of tweaking? Or if tweaking is necessary, can you help me set it up, please?",
+        "created_utc": 1677173574,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need instruction and/or terminal command to remove Linux OS from my laptop (I can't access the BIOS) / sudo ???",
+        "author": "TMYWSH",
+        "url": "https://www.reddit.com/r/linux/comments/11a3416/need_instruction_andor_terminal_command_to_remove/",
+        "text": "[removed]",
+        "created_utc": 1677172717,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Going back to Windows - need instruction and/or terminal command to remove this Linux OS from my laptop (I can't access the BIOS)",
+        "author": "TMYWSH",
+        "url": "https://www.reddit.com/r/linux/comments/11a2z5c/going_back_to_windows_need_instruction_andor/",
+        "text": "[removed]",
+        "created_utc": 1677172391,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Recon Controller on the Deck",
+        "author": "LF-Mar",
+        "url": "https://www.reddit.com/r/linux/comments/11a1ws4/recon_controller_on_the_deck/",
+        "text": "I'm basically always using the Turtle Beach Recon Xbox Controller and I'm absolutely loving it so far. Only problem it can't connect to the Steamdeck and is not even noticed by it (even the small loading LEDs won't turn on) is there any way to get this changed, except using Windows as OS?",
+        "created_utc": 1677169859,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gnome 44 Beta feature overview",
+        "author": "giannidunk",
+        "url": "https://www.omglinux.com/gnome-44-features/",
+        "text": "",
+        "created_utc": 1677168029,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "no icon. how can i fix it helpp",
+        "author": "KneeRound3450",
+        "url": "https://i.redd.it/wi51dnzk50ka1.png",
+        "text": "",
+        "created_utc": 1677168014,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "htop: The interactive process viewer",
+        "author": "sn0oz3",
+        "url": "https://byte-sized.de/linux-unix/htop-der-interaktive-prozessmanager/",
+        "text": "",
+        "created_utc": 1677167239,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Trying to install Thief Gold on Linux and new to the OS",
+        "author": "Desert-Pop",
+        "url": "https://www.reddit.com/r/linux/comments/119zxeu/trying_to_install_thief_gold_on_linux_and_new_to/",
+        "text": "[removed]",
+        "created_utc": 1677164924,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just inherited vouchers for Linux 1/2 last minute. How feasible is this to pass?",
+        "author": "GooseGIM",
+        "url": "https://www.reddit.com/r/linux/comments/119zqj9/just_inherited_vouchers_for_linux_12_last_minute/",
+        "text": "[removed]",
+        "created_utc": 1677164452,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a list of distros organized by kernel?",
+        "author": "Pleaseclap4",
+        "url": "https://www.reddit.com/r/linux/comments/119zmba/is_there_a_list_of_distros_organized_by_kernel/",
+        "text": "[removed]",
+        "created_utc": 1677164156,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "2023 used/refurb laptop",
+        "author": "Primary-Hyena2032",
+        "url": "https://www.reddit.com/r/linux/comments/119zh79/2023_usedrefurb_laptop/",
+        "text": "[removed]",
+        "created_utc": 1677163783,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Bash scripting tips that can save time on Linux",
+        "author": "glum-platimium",
+        "url": "https://www.codelivly.com/bash-scripting-tips-that-can-save-time-on-linux/",
+        "text": "",
+        "created_utc": 1677162561,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need help !! WiFi not working AMD",
+        "author": "SkyOdd8792",
+        "url": "https://www.reddit.com/r/linux/comments/119yyaq/i_need_help_wifi_not_working_amd/",
+        "text": "[removed]",
+        "created_utc": 1677162289,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Awesome video",
+        "author": "United-Celery2765",
+        "url": "https://youtu.be/1ub-BtEjl70",
+        "text": "",
+        "created_utc": 1677162091,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a way to reach the files of Kali Linux in the ISO file without downloading it?",
+        "author": "This-Negotiation-112",
+        "url": "https://www.reddit.com/r/linux/comments/119y7ee/is_there_a_way_to_reach_the_files_of_kali_linux/",
+        "text": "[removed]",
+        "created_utc": 1677160263,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to reach the files of Kali Linux in the ISO file without downloading it?",
+        "author": "This-Negotiation-112",
+        "url": "https://www.reddit.com/r/linux/comments/119y1yd/how_to_reach_the_files_of_kali_linux_in_the_iso/",
+        "text": "[removed]",
+        "created_utc": 1677159849,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "deleted my login manager",
+        "author": "window_shredder",
+        "url": "https://www.reddit.com/r/linux/comments/119x4d5/deleted_my_login_manager/",
+        "text": "[removed]",
+        "created_utc": 1677157212,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Macbook to Linux?",
+        "author": "Exciting-Pea-171",
+        "url": "https://www.reddit.com/r/linux/comments/119wqiv/macbook_to_linux/",
+        "text": "[removed]",
+        "created_utc": 1677155997,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Sandboxing Software Comparison",
+        "author": "turbopapero",
+        "url": "https://www.reddit.com/r/linux/comments/119vfwq/sandboxing_software_comparison/",
+        "text": "[removed]",
+        "created_utc": 1677151667,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Arbitrum $ARB Airdrop New rewards. Release 23.02.23",
+        "author": "fish-wich",
+        "url": "https://www.reddit.com/r/linux/comments/119v5h6/arbitrum_arb_airdrop_new_rewards_release_230223/",
+        "text": "[removed]",
+        "created_utc": 1677150606,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "foss-north will be held on April 24 - 25 in Gothenburg, Sweden. The call for papers is now open.",
+        "author": "Bro666",
+        "url": "https://foss-north.se/2023/",
+        "text": "",
+        "created_utc": 1677149721,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Buying used Laptop, any particular hardware to look out for?",
+        "author": "RyuShay",
+        "url": "https://www.reddit.com/r/linux/comments/119ufs3/buying_used_laptop_any_particular_hardware_to/",
+        "text": "I am going to buy a used laptop, I was wondering if there is any particular hardware that I should avoid?\n\nFor example, I know not to buy a laptop with NVIDIA graphics card.\n\n&amp;nbsp;\n\nI don't know why is it asking me type extra stuff when I have clearly types all of my question in two lines, maybe you guys wanna rethink this rule, I am only typing so I can post this why are you reading this........",
+        "created_utc": 1677147898,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Buying used Laptop, hardware to look out for?",
+        "author": "RyuShay",
+        "url": "https://www.reddit.com/r/linux/comments/119ubnq/buying_used_laptop_hardware_to_look_out_for/",
+        "text": "[removed]",
+        "created_utc": 1677147458,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing loxilb: eBPF based cloud-native load-balancer",
+        "author": "FeelingCurl1252",
+        "url": "https://www.reddit.com/r/linux/comments/119u4fp/introducing_loxilb_ebpf_based_cloudnative/",
+        "text": "[removed]",
+        "created_utc": 1677146695,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MOFO Linux 8.3 Released",
+        "author": "skip7_tyler",
+        "url": "https://i.redd.it/8ozhzdj9uwja1.jpg",
+        "text": "",
+        "created_utc": 1677146008,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just completely switched from windows to Arch and damn, the zen kernel fixed all my problems",
+        "author": "ledeonKreD",
+        "url": "https://www.reddit.com/r/linux/comments/119tsfw/just_completely_switched_from_windows_to_arch_and/",
+        "text": "My main use for my pc is gaming, but with Linux i had some extreme lag spikes every 10 seconds or so. With the zen kernel installed the problem is completely gone and I even got some extra fps compared to windows",
+        "created_utc": 1677145387,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Video Editing Software",
+        "author": "mvdw73",
+        "url": "https://www.reddit.com/r/linux/comments/119rjtj/video_editing_software/",
+        "text": "Looking for some easy to use video editing software with the ability to add writing animation. I'd like to be able to add text that looks like it's being written.\n\nSomething that's as easy to use as iMovie would be ideal...\n\nAnything like this in the FOSS world?",
+        "created_utc": 1677136794,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "It’s Coming",
+        "author": "samNdez",
+        "url": "https://v.redd.it/e51vpr9vdxja1",
+        "text": "",
+        "created_utc": 1677134478,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "happy joel - I'm a Linux [Alternative]",
+        "author": "PuzzleheadBroccoli",
+        "url": "https://www.youtube.com/watch?v=UjRdA25yauU",
+        "text": "",
+        "created_utc": 1677134005,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ChatGPT couldn't answer this one: What is a realistic hypothetical circumstance wherein a dependency conflict (between two programs who have common pre-requisite packages that need to be installed with differing versions) cannot be resolved with sandboxing or virtualization?",
+        "author": "PragmaticSalesman",
+        "url": "https://www.reddit.com/r/linux/comments/119po88/chatgpt_couldnt_answer_this_one_what_is_a/",
+        "text": "Here's some dummy text for the bot to chew on:\n\n&amp;#x200B;\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula ligula lorem, vel consequat nibh mollis et. Fusce in diam volutpat, fringilla dui iaculis, malesuada ante. Maecenas sed felis ac nunc dictum auctor ac eu odio. Nam at malesuada nisi. Vivamus et urna at odio fringilla molestie. Aenean et varius sem, et venenatis libero. Aenean iaculis condimentum mauris, eu consequat lectus tincidunt sed.\n\nAenean tincidunt, nunc at porttitor maximus, leo urna ultricies ipsum, sed imperdiet nibh velit pulvinar arcu. In a elit nibh. Proin pellentesque turpis sit amet ante lobortis, sit amet ornare purus volutpat. Mauris bibendum purus sit amet posuere laoreet. Sed suscipit blandit dui at porta. Donec at feugiat augue. Pellentesque cursus tellus in nulla consequat venenatis vel nec neque. In auctor eu diam quis eleifend. Sed ultrices lorem mi. Suspendisse a neque ut velit aliquet porttitor. Phasellus leo ligula, viverra a arcu nec, aliquam cursus diam. Etiam pharetra mauris et facilisis mollis.\n\nAliquam ullamcorper erat sem. Phasellus vestibulum ac nunc et blandit. Pellentesque cursus, eros et mattis gravida, libero nibh placerat orci, quis porttitor lacus felis eget erat. Nam sed odio non libero placerat sollicitudin. Curabitur sollicitudin orci in dolor eleifend, et pretium sapien fermentum. Pellentesque hendrerit ultricies velit, nec varius urna convallis lacinia. Donec convallis eros velit, et hendrerit leo luctus vel. Curabitur quis neque in est pulvinar imperdiet non at nunc. Pellentesque finibus auctor vestibulum. Fusce in ligula pellentesque, hendrerit ligula at, faucibus nisi. Suspendisse augue ligula, aliquam at sagittis non, congue non leo. Fusce vel justo ut lectus pharetra maximus.\n\nQuisque bibendum fermentum diam, vel bibendum eros consectetur sed. Vestibulum vel imperdiet velit. Donec egestas felis euismod nisl venenatis, in congue nisl pellentesque. Nullam eu feugiat erat. Proin vitae scelerisque dui. Vivamus a cursus sapien. Maecenas at libero ac risus porttitor porttitor sed a arcu.\n\nCras eleifend varius velit, vitae aliquet nunc aliquet a. Morbi at condimentum risus, et efficitur nunc. Pellentesque diam purus, tincidunt vel mauris ac, faucibus mollis justo. Suspendisse pretium et eros in placerat. Fusce commodo dignissim nulla, et tempus urna iaculis a. Nunc commodo sollicitudin massa, at tempor lectus varius a. Sed semper odio vitae mauris tempor lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean massa justo, mollis ut gravida eu, dapibus ut quam.",
+        "created_utc": 1677130444,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ChatGPT couldn't answer this one: What is a realistic hypothetical circumstance wherein a dependency conflict (between two programs who have common pre-requisite packages that need to be installed with differing versions) cannot be resolved with sandboxing or virtualization?",
+        "author": "PragmaticSalesman",
+        "url": "https://www.reddit.com/r/linux/comments/119pnlc/chatgpt_couldnt_answer_this_one_what_is_a/",
+        "text": "",
+        "created_utc": 1677130388,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[School project] Buy a Microsoft Surface Pro for your favorite Linux distro today",
+        "author": "Awkward-Office-6869",
+        "url": "https://www.reddit.com/r/linux/comments/119o7aq/school_project_buy_a_microsoft_surface_pro_for/",
+        "text": "[removed]",
+        "created_utc": 1677125915,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Elephant in the Room: It's time to get the POSIX elephant off our necks",
+        "author": "mitousa",
+        "url": "https://queue.acm.org/detail.cfm?id=3570921",
+        "text": "",
+        "created_utc": 1677124338,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Easily mount archives on-the-fly to use files without extracting them",
+        "author": "The_Dcoder",
+        "url": "https://github.com/TheDcoder/archive-mount",
+        "text": "",
+        "created_utc": 1677123370,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux Performance Patches Revved To Avoid Too Many Unnecessary Cross-CPU Wake-ups",
+        "author": "unixbhaskar",
+        "url": "https://www.phoronix.com/news/Linux-Wake-Short-Task-CPU",
+        "text": "",
+        "created_utc": 1677122823,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Poste.io ~ complete mail server",
+        "author": "unixbhaskar",
+        "url": "https://poste.io/",
+        "text": "",
+        "created_utc": 1677121920,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the command to open Google Chrome using WSL",
+        "author": "Odd-Home1094",
+        "url": "https://www.reddit.com/r/linux/comments/119mgim/what_is_the_command_to_open_google_chrome_using/",
+        "text": "[removed]",
+        "created_utc": 1677121013,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Live wallpaper",
+        "author": "Midnight_Recovery",
+        "url": "https://www.reddit.com/r/linux/comments/119m0so/live_wallpaper/",
+        "text": "[removed]",
+        "created_utc": 1677119847,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there anyway I can have a live cyber threat map as a background. Not nessarly live like in real-time but live like a motion live wallpaper if a real time one is possible that be great but I doubt it I run Leveno ideapad5 duelboot Ubuntu windows 10 I'm looking to do this on the Ubuntu side....",
+        "author": "Midnight_Recovery",
+        "url": "https://www.reddit.com/r/linux/comments/119lx5s/is_there_anyway_i_can_have_a_live_cyber_threat/",
+        "text": "",
+        "created_utc": 1677119579,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What's the point of Linux",
+        "author": "Broke_Bearded_Guy",
+        "url": "https://www.reddit.com/r/linux/comments/119lf6k/whats_the_point_of_linux/",
+        "text": "Let me start by clarifying my statement. Based on suggestions from r/homelab I've picked a few distros of Linux to play with, as I'm moving my servers away from windows. playing with redhat, Debian, ubuntu, and mint I don't really understand the benefits of having gnome built in when everything is done through the terminal. \n\n**Please excuse my ignorance** on this as I'm only 3 days in playing with distros but why do people make such a big deal out of ubuntu, mint, cinnamon ect. i undersatand from a user perspective replacing windows and gaming ect, but for a server? am i missing something?",
+        "created_utc": 1677118272,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Installing lubuntu on my acer cb-315,but ran into a hick up.",
+        "author": "Adventurous_Copy_38",
+        "url": "https://www.reddit.com/r/linux/comments/119jfam/installing_lubuntu_on_my_acer_cb315but_ran_into_a/",
+        "text": "[removed]",
+        "created_utc": 1677113090,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "need help choosing linux distro",
+        "author": "famoustechmaster",
+        "url": "https://www.reddit.com/r/linux/comments/119j5zm/need_help_choosing_linux_distro/",
+        "text": "[removed]",
+        "created_utc": 1677112427,
+        "upvote_ratio": 1.0
+    }
+]

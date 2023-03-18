@@ -1,0 +1,802 @@
+[
+    {
+        "title": "how to remove uvcvideo ??",
+        "author": "gornero",
+        "url": "https://www.reddit.com/r/linux/comments/10w3szl/how_to_remove_uvcvideo/",
+        "text": "[removed]",
+        "created_utc": 1675781750,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "help archiving this distro",
+        "author": "thesquishablekittens",
+        "url": "https://www.reddit.com/r/linux/comments/10w3psg/help_archiving_this_distro/",
+        "text": "[removed]",
+        "created_utc": 1675781520,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "They are finally here!",
+        "author": "wolfakix",
+        "url": "https://i.redd.it/5ufzo5ie3tga1.jpg",
+        "text": "",
+        "created_utc": 1675774991,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux is so good",
+        "author": "NoProduce3235",
+        "url": "https://www.reddit.com/r/linux/comments/10w0v5u/linux_is_so_good/",
+        "text": "Literally sitting on 4hr battery life right now. Literally 2hrs on shitdoze. Of course a big part is due to my super optimization of this august os but in windows you cant . Not even with a super slimmified one like tiny10 . Linux is so good . Oh yeah . Mint 21 i3wm kernel 6.0.9-060009\n\nDont believe me ? I can't believe it myself because in my earlier distro hops, linux battery life was inferior. Either the new kernels are amazing or mint 21 is amazing or both.",
+        "created_utc": 1675773759,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux has been a really terrible experience for me",
+        "author": "hdsrgtfhrthtr4hdrtht",
+        "url": "https://www.reddit.com/r/linux/comments/10w0arv/linux_has_been_a_really_terrible_experience_for_me/",
+        "text": "[removed]",
+        "created_utc": 1675771899,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "linux on mac",
+        "author": "-_mood_-",
+        "url": "https://www.reddit.com/r/linux/comments/10w0323/linux_on_mac/",
+        "text": "I'm trying to install linux on a macpro 3,1. I tried flashing it to a USB but I can't boot from it. At first I thought it's the USB so I tried an other one. After trying a few more USB's I learned that older mac's can't boot from a USB. Since the mac is 15 years old I think that's the problem. Any other way to install linux?",
+        "created_utc": 1675771180,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My ideas for an immutable Linux Desktop",
+        "author": "Ultra980",
+        "url": "https://www.reddit.com/r/linux/comments/10vz6du/my_ideas_for_an_immutable_linux_desktop/",
+        "text": "Hello,\nThere are a tonne of immutability approaches, such as image-based (like Silverblue), snapshot-based (like microOS, the one I'm using), A/B partitions (like VanillaOS and Android), and almost-immutable (like the old VanillaOS).\nBut all of these have a problem: you can't modify image-based a lot, the snapshot-based ones aren't reproducible (and neither are those with A/B partitions), A/B takes a lot of space and almost-immutable loses most of the benefits of immutability.\nBut there is one more that (AFAIK) no distro uses yet: overlays\nI think Pop!_OS might go with overlays\nAfter reading the kernel docs about overlayFS, I came up with this approach:\nThe system files will be stored in the (immutable) /system, and the folders like /etc/ and /usr/ will be symlinks to /system/etc and /system/usr\nin /overlays there will be directories that contain /usr, /etc and other directories modified by a package; these will all be overlayedon /system (because they can't be overlayed on top of root; that would cause them to be part of the overlay which might infinitely recurse)\npackages are downloaded, with their dependencies, as tarballs, which are extracted in /overlays\nconfiguration can also be applied this way\nthere can also be a rw overlay, that can be converted into a RO one with a command (no longer upper dir, but lower dir)\n\nThe benefit would be that remounting can be done live, so rebooting isn't necessary. Same with rollbacks\nAnd configuration drift would no longer be an issue, since each change to /etc could be a separate overlay and is:\n* kept track of\n* easy to revert\n* easily copied over to any system\n\nWhat do you think about this?",
+        "created_utc": 1675767859,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I disable the power for a PCI bus for a while without shutting down a computer?",
+        "author": "goahead97",
+        "url": "https://www.reddit.com/r/linux/comments/10vyv3x/how_do_i_disable_the_power_for_a_pci_bus_for_a/",
+        "text": "[removed]",
+        "created_utc": 1675766710,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what gpu for a xeon workstation (no 3d rendering/games or very light only) is the least hassle?",
+        "author": "Zestyclose_Ad8420",
+        "url": "https://www.reddit.com/r/linux/comments/10vymd8/what_gpu_for_a_xeon_workstation_no_3d/",
+        "text": "In the last 10years or so I've  basically only used Intel CPUs on laptops with embedded graphics and the  default installs always handled the gpu fine for my needs.\n\nI  just purchased an older workstation with a xeon (an hp z440 with a xeon  e5-2690 v4) and it requires a dedicated gpu. it's mainly gonna be used  for virtualization / headless and remoting into the vms with  spice/rdp/vnc, but if that tunrs out to be a hassle it could very well  moved to my desk, I use 4 monitors, currently attached to a lenovo  thunderbolt dock and they work just fine (with wayland and recent  firmwares on the dock on a 12th gen i5 and fedora 37)\n\nI'm a bit  at a loss to understand how the graphic stack has evolved over time,  what's the deal with mesa/nouveau/vulkan/gallium/proprietary nvidia/amd  drivers nowadays?\n\nI'm really confused as to what is doing what.\n\nconsidering  I really don't do much in terms of graphics and \\*might\\* only need to  drive multiple monitors (1 is 4k the others 1080p) but I'd like to  update my kernel/KVM stack as often as possible what are my options to  not get crazy with kernel updates / modules and support matrixes?\n\nThe  workstations comes with an ancient NVS315, which is only supported by  propietary nvidia drivers v 390, which apparently do not compile anymore  with kernel 6+\n\nhow can I avoid  future pitfalls like that one? are there gpu fully supported by open  source drivers that would allow me to not loose precious time whenever I  update the kernel?\n\nbonus if I can get stuff like sr-iov since I'm gonna do a lot of desktop virtualization.",
+        "created_utc": 1675765784,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wired network went from 1 gbps Gigabit speed to 100mbps, Intel NUC 12",
+        "author": "Altruistic_Counter98",
+        "url": "https://www.reddit.com/r/linux/comments/10vyke7/wired_network_went_from_1_gbps_gigabit_speed_to/",
+        "text": "[removed]",
+        "created_utc": 1675765570,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gnoppix Linux 23.2 is ready to download",
+        "author": "hanifed",
+        "url": "https://cloud7.news/linux/gnoppix-linux-23-2/",
+        "text": "",
+        "created_utc": 1675764151,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "On ELF, Part 1",
+        "author": "unixbhaskar",
+        "url": "https://kestrelcomputer.github.io/kestrel/2018/01/29/on-elf",
+        "text": "",
+        "created_utc": 1675763969,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Today and tomorrow the State of Open Conference is being held in London",
+        "author": "Bro666",
+        "url": "https://stateofopencon.com/",
+        "text": "",
+        "created_utc": 1675763254,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Way To Run Android Apps On Linux",
+        "author": "Realistic_Topic_1014",
+        "url": "https://www.reddit.com/r/linux/comments/10vxut7/best_way_to_run_android_apps_on_linux/",
+        "text": "",
+        "created_utc": 1675762734,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Linux Process Journey - “ksgxd”",
+        "author": "boutnaru",
+        "url": "https://www.reddit.com/r/linux/comments/10vxs9j/the_linux_process_journey_ksgxd/",
+        "text": "The kernel thread “ksgxd” is part of the Linux support for SGX (Software Guard eXtensions). Overall, SGX is a hardware security feature of Intel’s CPU that enables applications to allocate private memory regions for data and code. There is a privilege opcode “ENCLS” which allows creation of regions and “ENCLU” which is a privilege opcode that allows entering and executing code inside the regions ([https://docs.kernel.org/x86/sgx.html](https://docs.kernel.org/x86/sgx.html)). For more information about SGX you can read my writeup about it in the following link [https://medium.com/@boutnaru/security-sgx-software-guard-extension-695cab7dbcb2](https://medium.com/@boutnaru/security-sgx-software-guard-extension-695cab7dbcb2).   \n\n“ksgxd” is a kernel which is started by executing “kthread\\_run()” function ([https://elixir.bootlin.com/linux/v6.1.10/source/arch/x86/kernel/cpu/sgx/main.c#L427](https://elixir.bootlin.com/linux/v6.1.10/source/arch/x86/kernel/cpu/sgx/main.c#L427)). The kernel thread executes the “ksgxd” function ([https://elixir.bootlin.com/linux/v6.1.10/source/arch/x86/kernel/cpu/sgx/main.c#L395](https://elixir.bootlin.com/linux/v6.1.10/source/arch/x86/kernel/cpu/sgx/main.c#L395)).  “ksgxd” is started while SGX is initializing and at boot time it re-initializes all enclave pages. In case of over commitment “ksgxd” is also responsible for swapping enclave memory ([https://elixir.bootlin.com/linux/v6.1.10/source/arch/x86/kernel/cpu/sgx/main.c#L188](https://elixir.bootlin.com/linux/v6.1.10/source/arch/x86/kernel/cpu/sgx/main.c#L188))  like “kswapd” ([https://medium.com/@boutnaru/the-linux-process-journey-kswapd-22754e783901](https://medium.com/@boutnaru/the-linux-process-journey-kswapd-22754e783901)).  \n\nIf you want to know if your CPU supports SGX you can use the following command: “cat /proc/cpuinfo | grep sgx” (you can also use lscpu).  You can also check you UEFI (legacy BIOS) configuration to check if you  - check out the screenshot below\n\nLastly, there is a great guide for an example SGX app using a Linux VM on Azure that I encourage you to read in the following link [https://tsmatz.wordpress.com/2022/05/17/confidential-computing-intel-sgx-enclave-getting-started/](https://tsmatz.wordpress.com/2022/05/17/confidential-computing-intel-sgx-enclave-getting-started/). For more information about the Linux stack for SGX I suggest reading [https://download.01.org/intelsgxstack/2021-12-08/Getting\\_Started.pdf](https://download.01.org/intelsgxstack/2021-12-08/Getting_Started.pdf) and [https://github.com/intel/linux-sgx](https://github.com/intel/linux-sgx). \n\nhttps://preview.redd.it/18q80lh0kqga1.png?width=1024&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=3328672d625e32d6a92f1ea550bd96744179867f",
+        "created_utc": 1675762443,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "switching to Linux and backup device question *newbie*",
+        "author": "Active_Access_4850",
+        "url": "https://www.reddit.com/r/linux/comments/10vxn0q/switching_to_linux_and_backup_device_question/",
+        "text": "[removed]",
+        "created_utc": 1675761865,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I install Linux Mint in the same drive that my windows is in?",
+        "author": "Imaginationgoesdeep",
+        "url": "https://www.reddit.com/r/linux/comments/10vx6al/can_i_install_linux_mint_in_the_same_drive_that/",
+        "text": "[removed]",
+        "created_utc": 1675760005,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "linux boots up in the initramfs screen",
+        "author": "send_me_smal_tiddies",
+        "url": "https://www.reddit.com/r/linux/comments/10vw3p8/linux_boots_up_in_the_initramfs_screen/",
+        "text": "Hello everyone!\nMy mom's computer one day stopped booting uo correctly and staryed booting up in the initramfs with BusyBox.\nI typed 'exit' to the sdaX i needed to 'fsck', but it didnt work. Then i used the recovery mode, and I got that the one i needed to manualy fsck was sda1.\nAfter doing so, i still got an error. And this is how far i've got \nHere is the wall of text i get when i execute exit:  https://ibb.co/7bTmhm2",
+        "created_utc": 1675755819,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "FOSDEM ‘23 - I was wrong about Flatpak, AppImage, and Snap",
+        "author": "rbrownsuse",
+        "url": "https://video.fosdem.org/2023/UA2.114%20%28Baudoux%29/containerised_apps.mp4",
+        "text": "",
+        "created_utc": 1675752786,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Clipboard 0.3.1 - Now with complete Wayland spec compliance",
+        "author": "Slammernanners",
+        "url": "https://github.com/Slackadays/Clipboard/releases/tag/0.3.1",
+        "text": "",
+        "created_utc": 1675739430,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "TIL That flatpak has trouble running packages under su",
+        "author": "DMonitor",
+        "url": "https://www.reddit.com/r/linux/comments/10vq0hv/til_that_flatpak_has_trouble_running_packages/",
+        "text": "At least, on Ubuntu 22.04.1\n\nI did a lot of googling and the only thing to even mention this was half a blog post on google (the other half was behind a dead link, so I only got a hint of a solution from it).\n\nI am making this post in case someone else runs into this issue.\n\nI ssh'd into my headless server in my admin account. I created a new user for running the service that I wanted to install. I installed the service as a flatpak, ran it as my admin user, and it worked fine. su'd into my service user, and it broke. \n\nThe error message was\n\n\n    Note that the directory\n        \n    '/home/user/.local/share/flatpak/exports/share'\n    \n    is not in the search path set by the XDG_DATA_DIRS environment variable, so\n    applications installed by Flatpak may not appear on your desktop until the\n    session is restarted.\n    \n    error: Unable to allocate instance id\n  \nSearching this turned up hardly anything. Every response was just \"reboot your computer\", and while that worked for many others that did not solve my issue.\n\nThe only way to fix this problem was to sign in as the user directly, not through su\n\nI believe the issue was caused by the environmental variable `XDG_DATA_DIRS` not being properly set. On login, it is set to a directory in your user's home. When you su into another user, it is not updated and stays as the original user. \n\nI hope this post saves someone the headache that I experienced from this.",
+        "created_utc": 1675737182,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If a Linux file server hosts files through SAMBA and a user deletes a file through a Windows client, will the file get transferred to Trash or will it be permanently deleted?",
+        "author": "goyayoshiro",
+        "url": "https://www.reddit.com/r/linux/comments/10vno1d/if_a_linux_file_server_hosts_files_through_samba/",
+        "text": "[removed]",
+        "created_utc": 1675731072,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If a Linux file server hosts files through SAMBA and a user deletes a file through a Windows client, will the file get transferred to Trash or will it be permanently deleted?",
+        "author": "goyayoshiro",
+        "url": "https://www.reddit.com/r/linux/comments/10vnlbw/if_a_linux_file_server_hosts_files_through_samba/",
+        "text": "[removed]",
+        "created_utc": 1675730870,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If a Linux file server hosts files through SAMBA and a user deletes a file through a Windows client, will the file get transferred to Trash or will it be permanently deleted?",
+        "author": "goyayoshiro",
+        "url": "https://www.reddit.com/r/linux/comments/10vnh0l/if_a_linux_file_server_hosts_files_through_samba/",
+        "text": "",
+        "created_utc": 1675730562,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "3 computers - 3 DE's - All Smiles 😁",
+        "author": "dorrellkc",
+        "url": "https://www.reddit.com/r/linux/comments/10vlx9x/3_computers_3_des_all_smiles/",
+        "text": "[removed]",
+        "created_utc": 1675726544,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "3 computers 3 environments - All Smiles",
+        "author": "dorrellkc",
+        "url": "https://www.reddit.com/r/linux/comments/10vls3z/3_computers_3_environments_all_smiles/",
+        "text": "[removed]",
+        "created_utc": 1675726177,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "FOSDEM 2023 - I was wrong about Flatpak, AppImage, and Snap",
+        "author": "AnotherOneToo3",
+        "url": "https://www.youtube.com/watch?v=4WuYGcs0t6I",
+        "text": "",
+        "created_utc": 1675725882,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "3 computers 3 different environments - All smiles",
+        "author": "dorrellkc",
+        "url": "https://www.reddit.com/r/linux/comments/10vlnv5/3_computers_3_different_environments_all_smiles/",
+        "text": "[removed]",
+        "created_utc": 1675725861,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Queueing in the Linux Network Stack [Heads up! Snatch it from Dave, Dave Taht @dtaht:matrix.org]",
+        "author": "unixbhaskar",
+        "url": "https://www.coverfire.com/articles/queueing-in-the-linux-network-stack/",
+        "text": "",
+        "created_utc": 1675725242,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to get a pocket PC",
+        "author": "Abumashar",
+        "url": "https://www.reddit.com/r/linux/comments/10vks7a/how_to_get_a_pocket_pc/",
+        "text": "I don't mean a phone, I just want a computer that looks like a decent phone, can be used like a decent phone, but is built to be a decent notebook with Linux.\n\nHardware: to be used as computer, but can perform like a decent phone\n\nSoftware: Linux, with a desktop environment\n\nI'm not a native English speaker, so i want to be sure. Phones are built to be used as phones, I just want a pocket Linux computer that can perform as a phone.\n\nUbuntu touch and KDE mobile and similar are maybe a little too general. I don't want to change this device every 2 years, this is a computer.\n\nAdvice needed",
+        "created_utc": 1675723737,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can't install android studio (not enough space) but just 18GB out of 256 are occupied",
+        "author": "PaulCoraline",
+        "url": "https://www.reddit.com/r/linux/comments/10viur1/cant_install_android_studio_not_enough_space_but/",
+        "text": "The problem could be \"where data are\" in the disk and not just the amount. So I think the problem could be that the system can't find a bigger enough free space segment where put android studio\n\nHow can I fix it? Is there any tool?",
+        "created_utc": 1675719136,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "lucky - a lua-configured input daemon on steroids",
+        "author": "calthrowaway99",
+        "url": "https://github.com/BanchouBoo/lucky",
+        "text": "",
+        "created_utc": 1675718716,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "USB3.0 to connect a GPU (not for gaming)",
+        "author": "thisiszeev",
+        "url": "https://www.reddit.com/r/linux/comments/10vij4i/usb30_to_connect_a_gpu_not_for_gaming/",
+        "text": "I am posting here, because the system I intend to work on is a Linux System, and I don't want to deal with an influx of Windows gamers who will narrate a torrent of reasons why you shouldn't game with a GPU connected on USB3.  \n\n\nI am wanting to take my video editing to the next level. So now I need a GPU. I am trying to avoid the outlay of a new system right now, however it is on the cards for the future to have a dedicated box just for video and graphics and music.  \n\n\nFor now, I want to use my existing scraptop. I have a Asus K53E i5 with 8GB DDR3 and a 480GB SSD. I also ripped out the DVD drive and installed a 1TB HDD.  \n\n\nI am not worried about the speed of the rendering as I can just click render and go to sleep. I am not doing anything Hollywood scale just yet. Just some promo videos for my business. Maybe a few short videos for YouTube. But not going higher than 1080p.  \n\n\nI just wanted to know if anyone has had experience and/or success with using a PCIEx16 USB3.0 riser? I mean, can I just plug the board into my USB3.0 port or will I end up bashing my head into the ground at mach 4 and wish I was never born?  \n\n\nIf I can go this route, I will 3D print a nice enclosure with PSU built in with the GPU and some decent airflow provided. I am hoping I can plug it in when I need it, do my editing and render and then unplug it and put it one side when I am not needing it?  \n\n\nA thousand thank yous to anyone or anymany that can give me some guidance and advice that is not Gaming Related.",
+        "created_utc": 1675718379,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Oracle Linux 7 - Is there a repo that contains the pxeboot images?",
+        "author": "devnull2004",
+        "url": "https://www.reddit.com/r/linux/comments/10vgp51/oracle_linux_7_is_there_a_repo_that_contains_the/",
+        "text": "On other el distros, you can find the pxeboot initrd/kernel in an 'images' folder generally under os/baseos (or for RHEL8, in the kickstart repo).\n\nFor example:\nhttps://download.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/images/pxeboot/\nhttps://vault.centos.org/centos/7.9.2009/os/x86_64/images/pxeboot/\n\nDoes anyone know where this can be found for Oracle Linux (specifically oracle linux 7), apart from the installation media?",
+        "created_utc": 1675714191,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Change From Windows",
+        "author": "Lapp1NeLLo_",
+        "url": "https://www.reddit.com/r/linux/comments/10vgdsq/change_from_windows/",
+        "text": "[removed]",
+        "created_utc": 1675713507,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GNOME Design 2022 in Retrospect",
+        "author": "adila01",
+        "url": "https://puri.sm/posts/design-2022-in-retrospect/",
+        "text": "",
+        "created_utc": 1675712626,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Netdata release 1.38.0",
+        "author": "Chris-1235",
+        "url": "https://www.reddit.com/r/linux/comments/10vf42u/netdata_release_1380/",
+        "text": " Release Notes edited for brevity, original links maintained.\n\n*Full Release notes at* [*https://github.com/netdata/netdata/releases/tag/v1.38.0*](https://github.com/netdata/netdata/releases/tag/v1.38.0)\n\n&amp;#x200B;\n\nHighlights:  \n\n\n* [**DBENGINE v2**](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-dbenginev2)  \nThe new open-source database engine for Netdata Agents, offering huge performance, scalability and stability improvements, with a fraction of memory footprint!\n* [**FUNCTION: Processes**](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-functions)  \nNetdata beyond metrics! We added the ability for **runtime functions**, that can be implemented by any data collection plugin, to offer unlimited visibility to anything, even not-metrics, that can be valuable while troubleshooting.\n* [**Events Feed**](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-feed)  \nCentralized view of Space and Infrastructure level events about topology changes and alerts.\n* [**NOTIFICATIONS: Slack, PagerDuty, Discord, Webhooks**](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-notifications)  \nNetdata Cloud now supports **Slack**, **PagerDuty**, **Discord**, **Webhooks**.\n* [**Role-based access model**](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-rbac)  \nNetdata Cloud supports more roles, offering finer control over access to infrastructure.  \n\n\n### Netdata open-source growth\n\n* Almost 62,000 GitHub Stars\n* Over four million monitored servers\n* Almost 88 million sessions served\n* Over 600 thousand total nodes in Netdata Cloud\n\n## Release highlights\n\n### Dramatic performance and stability improvements, with a smaller agent footprint\n\nWe completely reworked our custom-made, time series database (dbengine), resulting in stunning improvements to performance, scalability, and stability, while at the same time significantly reducing the [agent memory requirements](https://github.com/netdata/netdata/tree/master/database/engine#memory-requirements).\n\nOn production-grade hardware (e.g. 48 threads, 32GB ram) Netdata Agent Parents can easily collect 2 million points/second while servicing data queries for 10 million points / second, and running ML training and Health querying 1 million points / second each!\n\nFor standalone installations, the 64bit version of Netdata runs stable at about 150MB RAM (Reside Set Size + SHARED), with everything enabled (the 32bit version at about 80MB RAM, again with everything enabled).\n\n&amp;#x200B;\n\n[DBENGINE v2](https://preview.redd.it/9rgk6i3h7mga1.png?width=2439&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=44866d550fd8c1e572c0568c8776779a01972a86)\n\n### Functions\n\nAfter the groundwork done on the Netdata Agent in v1.37.0, Netdata Agent collectors are able to expose functions that can be executed on-demand, at run-time, by the data collecting agent, even when queries are executed via a Netdata Agent Parent. We are now utilizing this capability to provide the first of many powerful features via the Netdata Cloud UI.\n\nNetdata Functions on Netdata Cloud allow you to trigger specific routines to be executed by a given Agent on request. These routines can range from a simple reader that fetches real time information to help you troubleshoot (like the list of currently running processing, currently running db queries, currently open connections, etc.), to routines that trigger an action on your behalf (restart a service, rotate logs, etc.), directly on the node. The key point is to remove the need to open an ssh connection to your node to execute a command like top  \n while you are troubleshooting.\n\nThe routines are triggered directly from the Netdata Cloud UI, with the request going through the secure, already established by the agent [Agent-Cloud Link (ACLK)](https://learn.netdata.cloud/docs/agent/aclk). Moreover, unlike many of the commands you'd issue from the shell, Netdata Functions come with powerful capabilities like auto-refresh, sorting, filtering, search and more! And, as everything about Netdata, they are fast!\n\n#### What functions are currently available?\n\nAt the moment, just one, to display detailed information on the currently running processes on the node, replacing top and iotop\n\n&amp;#x200B;\n\n[Real time top\\/iotop info](https://preview.redd.it/ovjkobxk7mga1.png?width=3840&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=1d3cfdba0e5357e0c27666aaa4e534b60f8cb171)\n\n### Events feed\n\n*Coming by Feb 15th*\n\nThe **Events feed** is a powerful new feature that tracks events that happen on your infrastructure, or in your Space. The feed lets you investigate events that occurred in the past, which is obviously invaluable for troubleshooting. Common use cases are ones like when a node goes offline, and you want to understand what events happened before that. A detailed event history can also assist in attributing sudden pattern changes in a time series to specific changes in your environment.\n\nWe start from humble beginnings, capturing [topology events](https://github.com/netdata/netdata/releases/tag/v1.38.0#topology-events) (node state transitions) and [alert state transitions](https://github.com/netdata/netdata/releases/tag/v1.38.0#alert-events). We intend to expand the events we capture to include infrastructure changes like deployments or services starting/stopping and we plan to provide a way to display the events in the standard Netdata charts.\n\n### Additional alert notification methods on Netdata Cloud\n\n*Coming by Feb 15th*\n\nEvery Netdata Agent comes with hundreds of pre-installed health alerts designed to notify you when an anomaly or performance issue affects your node or the applications it runs. All these events, from all your nodes, are centralized at Netdata Cloud.\n\nBefore this release, Netdata Cloud was only dispatching centralized email alert notifications to your team whenever an alert enters a warning, critical, or unreachable state. However, the agent supported tens of notification delivery methods, which we hadn't provided via the cloud.\n\nWe are now adding to Netdata Cloud more alert notification integration methods. We categorize them similarly to our [subscription plans](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-paidplans), as Community, Pro and Business. On this release, we added **Discord** (Community Plan), **web hook** (Pro Plan), **PagerDuty** and **Slack** (Business Plan).\n\n### Improved role-based access model\n\n*Coming by Feb 15th*\n\nNetdata Cloud already provides a role-based-access mechanism, that allows you to control what functionalities in the app users can access.  \nEach user can be assigned only one role, which fully specifies all the capabilities they are afforded.\n\nWith the advent of the [paid plans](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-paidplans) we revamped the roles to cover needs expressed by our users, like providing more limited access to your customers, or being able to join any room. We also aligned the offered roles to the target audience of each plan. \n\n## Integrations\n\n### Collectors\n\n#### Proc\n\nThe [proc plugin](https://learn.netdata.cloud/docs/collect/system-metrics) gathers metrics from the /proc and /sys folders in Linux  \nsystems, along with a few other endpoints, and is responsible for the bulk of the system metrics collected and visualized by Netdata. It collects CPU, memory, disks, load, networking, mount points, and more.\n\nWe added a \"cpu\" label to the per core utilization % charts. Previously, the only way to filter or group by core was to use the \"instance\", i.e. the chart name. The new label makes the displayed dimensions much more user-friendly.\n\nWe [fixed](https://github.com/netdata/netdata/pull/14255) the issues we had with collection of CPU/memory metrics when running inside an LXC container as a systemd service.\n\nWe also [fixed](https://github.com/netdata/netdata/pull/14252) the missing network stack metrics, when IPv6 is disabled.\n\nFinally, we improved how the loadavg alerts behave when the number of processors [is 0](https://github.com/netdata/netdata/pull/14286), or [unknown](https://github.com/netdata/netdata/pull/14265).\n\n#### Apps\n\nThe [apps plugin](https://learn.netdata.cloud/docs/collect/application-metrics) breaks down system resource usage  \nto processes, users and user groups, by reading whole process tree, collecting resource usage information for every process found running.\n\nWe [fixed](https://github.com/netdata/netdata/pull/14156) the nodejs application group node, which incorrectly included node\\_exporter. The rule now is that the process must be called node to be included in that group.\n\nWe also [added a telegraf application group](https://github.com/netdata/netdata/pull/14188).\n\n#### Containers and VMs (CGROUPS)\n\nThe [cgroups plugin](https://learn.netdata.cloud/docs/agent/collectors/cgroups.plugin) reads information on Linux Control Groups to monitor containers, virtual machines and systemd services.\n\nThe \"net\" section in a cgroups  container would occasionally pick the wrong / random interface name to display in the navigation menu. We [removed the interface name](https://github.com/netdata/netdata/pull/14174) from the cgroup \"net\" family. The information is available in the cloud as labels and on the agent as chart names and ids.\n\n#### eBPF\n\nThe [eBPF plugin](https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin) helps you troubleshoot and debug how applications interact with the Linux kernel.\n\nWe [improved](https://github.com/netdata/netdata/pull/14270) the speed and resource impact of the collector shutdown, by reducing the number of threads running in parallel.\n\nWe fixed a bug with eBPF routines that would sometimes cause kernel panic and system reboot on RedHat 8.\\* family OSs. [\\#14090](https://github.com/netdata/netdata/pull/14090), [\\#14131](https://github.com/netdata/netdata/pull/14131)\n\nWe [fixed](https://github.com/netdata/netdata/pull/14131) an ebpf.d crash: sysmalloc Assertion failed, then killed with SIGTERM.\n\nWe [fixed](https://github.com/netdata/netdata/pull/14131) a crash when building eBPF while using a memory address sanitizer.\n\nThe eBPF collector also creates charts for each running application through an integration with the apps.plugin. This integration helps you understand how specific applications interact with the Linux kernel. In systems with many VMs (like Proxmox), this integration  \ncan cause a large load. We used to have the integration turned on by default, with the ability to disable it from ebpf.d.conf. We have now done the opposite, having the integration disabled by default, with the ability to enable it. [\\#14147](https://github.com/netdata/netdata/pull/14147)\n\n#### Windows Monitoring\n\nWe have been making tremendous improvements on how we [monitor Windows Hosts](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/wmi). The work will be completed in the next release. For now, we can say that we have done some preparatory work by [adding more info to existing charts](https://github.com/netdata/netdata/pull/14001), adding metrics for [MS SQL Server](https://github.com/netdata/go.d.plugin/pull/1041), [IIS](https://github.com/netdata/go.d.plugin/pull/972) in 1.37, [Active Directory](https://github.com/netdata/go.d.plugin/pull/1003), [ADFS](https://github.com/netdata/go.d.plugin/pull/1013) and [ADCS](https://github.com/netdata/go.d.plugin/pull/1007).\n\nWe also [reorganized the navigation menu](https://github.com/netdata/go.d.plugin/pull/1065), so that Windows application metrics don't appear under the generic \"WMI\" category, but on their own category, just like Linux applications.\n\nWe invite you to try out with these collectors either from a remote Linux machine, or using our new [MSI installer](https://github.com/netdata/msi-installer), which however is not suitable for production. Your feedback will be really appreciated, as we invest on making Windows Monitoring a first class citizen of Netdata.\n\n#### Generic Prometheus Endpoint Monitoring\n\nOur [Generic Prometheus Collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/prometheus) gathers metrics from any [Prometheus](https://prometheus.io/) endpoint that uses  \nthe [OpenMetrics exposition format](https://prometheus.io/docs/instrumenting/exposition_formats/).\n\nTo allow better grouping and filtering of the collected metrics we now [create a chart with labels per label set](https://github.com/netdata/go.d.plugin/pull/1004).\n\nWe also [fixed the handling of Summary/Histogram NaN values](https://github.com/netdata/go.d.plugin/pull/1027).\n\n#### TCP endpoint monitoring\n\nThe [TCP endpoint (portcheck) collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/portcheck) monitors TCP service availability and response time.\n\nWe [enriched](https://github.com/netdata/netdata/pull/14137) the portcheck alarms with labels that show the problematic host and port.\n\n#### HTTP endpoint monitoring\n\nThe [HTTP endpoint monitoring collector (httpcheck)](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/httpcheck) monitors their availability and response time.\n\nWe [enriched the alerts](https://github.com/netdata/netdata/pull/14133) with labels that show the slow or unavailable URL relevant to the alert.\n\n#### Host reachability (ping)\n\nThe new [host reachability collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/ping) replaced fping in v1.37.0.  \nWe [removed](https://github.com/netdata/netdata/pull/14073) the deprecated fping.plugin, in accordance with the v1.37.0 deprecation notice.\n\n#### RabbitMQ\n\nThe [RabbitMQ collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/rabbitmq) monitors the open source message broker, by querying its overview, node  \n and vhosts HTTP endpoints.\n\nWe [added monitoring of the RabitMQ queues](https://github.com/netdata/go.d.plugin/pull/1047) that was available in the older Python module and  \n[fixed an issue](https://github.com/netdata/go.d.plugin/pull/1052) with the new metrics.\n\n#### MongoDB\n\nWe monitor the [MongoDB](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/mongodb) NoSQL database [serverStatus](https://www.mongodb.com/docs/manual/reference/command/serverStatus/#mongodb-dbcommand-dbcmd.serverStatus) and [dbStats](https://github.com/netdata/netdata/blob/v1.38.0/mongodb.com/docs/manual/reference/command/dbStats/#dbstats).\n\nTo allow better grouping and filtering of the collected metrics we now [create a chart per database, repl set member, shard and additional metrics](https://github.com/netdata/go.d.plugin/pull/1042). We also [improved](https://github.com/netdata/go.d.plugin/pull/1046) the cursors\\_by\\_lifespan\\_count  \n chart dimension names, to make them clearer.\n\n#### PostgreSQL\n\nOur powerful [PostgreSQL database collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/postgressql) has been enhanced with an improved [WAL replication lag calculation](https://github.com/netdata/go.d.plugin/pull/1039) and [better support of versions before 10](https://github.com/netdata/go.d.plugin/pull/1018).\n\n#### Redis\n\nThe [Redis collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/redis) monitors the in-memory data structure store via its [INFO ALL](https://redis.io/commands/info/) command.\n\nWe now support password protected Redis instances, by [allowing users to set the username/password](https://github.com/netdata/go.d.plugin/pull/1051) in the collector configuration.\n\n#### Consul\n\nThe [Consul collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/consul) is production ready! [Consul by HashiCorp](https://www.consul.io/) is a powerful and complex identity-based networking solution, which is not trivial to monitor. We were lucky to have the assistance of HashiCorp itself in this endeavor, which resulted in a monitoring solution of exceptional quality. Look for common blog posts and announcements in the coming weeks!\n\n#### NGINX Plus\n\nThe [NGINX Plus collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/nginxplus) monitors the load balancer, API gateway, and reverse proxy built on top of NGINX, by utilizing its [Live Activity Monitoring](https://docs.nginx.com/nginx/admin-guide/monitoring/live-activity-monitoring/) capabilities.\n\nWe improved the collector that was launched last November with [additional information](https://github.com/netdata/netdata/pull/14080) explaining the charts and the [addition of SSL error metrics](https://github.com/netdata/go.d.plugin/pull/1010).\n\n#### Elastic Search\n\nThe [Elastic Search collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/elasticsearch) monitors the search engine's instances  \nvia several of the provided local interfaces.\n\nTo allow better grouping and filtering of the collected metrics we now [create a chart per node index, a dimension per health status](https://github.com/netdata/go.d.plugin/pull/1040). We also [added several OOB alerts](https://github.com/netdata/netdata/pull/14197).\n\n#### NVIDIA GPU\n\nOur [NVIDIA GPU Collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/nvidia_smi) monitors memory usage, fan speed, PCIE bandwidth utilization, temperature, and other GPU performance metrics using the nvidia-smi cli tool.\n\nMulti-Instance GPU (MIG) is a feature from NVIDIA that lets users partition a single GPU to smaller GPU instances. We [added MIG metrics](https://github.com/netdata/go.d.plugin/pull/1067) for uncorrectable errors and memory usage.\n\nWe also [added metrics for voltage](https://github.com/netdata/go.d.plugin/pull/1048) and [PCIe bandwidth utilization percentage](https://github.com/netdata/netdata/pull/14315).\n\nLast but not least, we significantly improved the collector's performance, by switching to [collecting data using the CSV format](https://github.com/netdata/go.d.plugin/pull/1023).\n\n#### Pi-hole\n\nWe monitor [Pi-hole](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/pihole), the Linux network-level advertisement and Internet tracker blocking application via its [PHP API](https://github.com/pi-hole/AdminLTE).\n\nWe [fixed](https://github.com/netdata/go.d.plugin/pull/1037) an issue with the requests failing against an authenticated API.\n\n#### Network Time Protocol (NTP) daemon\n\nThe ntpd program is an operating system daemon which sets and maintains the system time of day in synchronism with Internet standard time-servers ([man page](https://linux.die.net/man/8/ntpd)).\n\nWe rewrote our previous python.d collector in go, improving its performance and maintainability.  \nThe new collector still monitors the system variables of a local ntpd daemon and optionally the variables of its polled peers. Similarly to ntpq, the [standard NTP query program](http://doc.ntp.org/current-stable/ntpq.html), we used the NTP Control Message Protocol over a UDP socket.\n\nThe python collector [will be deprecated in the next release](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-deprecation), with no effect on current users.\n\n### Notifications\n\nSee [Additional alert notification methods on Netdata Cloud](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-notifications)\n\nThe agents can now [send notifications to Mattermost](https://github.com/netdata/netdata/pull/14153), using the Slack integration! [Mattermost](https://mattermost.com/) has a [Slack-compatible API](https://jeffschering.github.io/mmdocs/monolith/developer/api.html#incoming-webhooks) that only required a couple of additional parameters. Kudos to [@je2555](https://github.com/je2555)!\n\n### Exporters\n\nNetdata can [export and visualize Netdata metrics in Graphite](https://learn.netdata.cloud/guides/export/export-netdata-metrics-graphite).\n\nOur exporter was broken in v1.37.0 due to our host labels for ephemeral nodes. we fixed the issue with [\\#14105](https://github.com/netdata/netdata/pull/14105).\n\n## Alerts and Notification Engine\n\n### Health Engine\n\nTo improve performance and stability, we made [health run in a single thread](https://github.com/netdata/netdata/pull/14244).\n\n### Notifications Engine\n\nThe agent alert notifications are controlled by the configuration file [health\\_alarm\\_notify.conf](https://github.com/netdata/netdata/blob/master/health/notifications/health_alarm_notify.conf). Previously, if one used the |critical modifier, the recipients would always get at least 2 notifications: critical and clear. There was no way how to stop sending clear/warning notifications afterwards. We [added](https://github.com/netdata/netdata/pull/14330) the |nowarn and |noclear notification modifiers, to allow users to really receive just the transitions to the critical state.\n\nWe also [fixed the broken redirects from alert notifications to cleared alerts](https://github.com/netdata/netdata-cloud/issues/656).\n\n### Alerts\n\n#### Chart labels in alerts\n\nWe constantly strive to improve the clarity of the information provided by the hundreds of out of the box alerts we provide. We can now provide more fine-tuned information on each alert, as we [started using specific chart labels instead of family](https://github.com/netdata/netdata/pull/14173). To provide the capability we also had to [change the format of alert info variables](https://github.com/netdata/netdata/pull/14206) to support the more complex syntax.\n\n#### Globally enable/disable specific alerts\n\nAdministrators can now globally, permanently disable specific OOB alerts via netdata.conf  \n. Previously the options where to [edit individual alert configuration files](https://learn.netdata.cloud/docs/monitor/configure-alarms), or to use the [health management API](https://learn.netdata.cloud/docs/agent/web/api/health#health-management-api).\n\nThe \\[health\\] section of netdata.conf now support the setting enabled\\_alarms. It's value defines which alarms to load from both user and stock directories. The value is a [simple pattern](https://github.com/netdata/netdata/blob/v1.38.0/libnetdata/simple_pattern/README.md) list of alarm or template names, with the default value of \\*, meaning that all alerts are loaded. For example, to disable specific alarms, you can provide enabled alarms = !oom\\_kill \\*, which will load all alarms except oom\\_kill.\n\n## Visualizations / Charts and Dashboards\n\nOur main focus for visualization is on the Netdata Cloud **Overview** dashboard. This dashboard is our flagship, on which everything we do, all slicing and dicing capabilities of Netdata, are added and integrated. We are working hard to make this dashboard powerful enough, so that the need to learn a query language for configuring and customizing monitoring dashboards, will be eliminated.\n\nOn this release, we virtualized all items on the dashboard, allowing us to achieve exceptional performance on page rendering. In previous releases there were issues on dashboards with thousands of charts. Now the number of items in the page is irrelevant!\n\nTo make slicing and dicing of data easier, we ordered the on-chart selectors in a way that is more natural for most users:\n\n&amp;#x200B;\n\nhttps://preview.redd.it/bnwtlvqc7mga1.png?width=2774&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=04be6bf0632764f3e2bcf0e280b11bb2d180c7e4\n\nThis bar above the chart now describes the data presented, in plain English: **On 6 out of 20 Nodes, group by dimension, the SUM() of 23 Instances, using All dimensions, each as AVG() every 3s**\n\nA tool-tip provides more information about the missing nodes.\n\nhttps://preview.redd.it/mfdngdzt7mga1.png?width=2790&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=e82ba1324a18b818f23eaba749bad76b579e7330\n\nAnd the drop-down menu now shows the exact nodes that contributed data to the query, together with a short explanation on why nodes did not provide any data:  \n\n\nhttps://preview.redd.it/az6j4f8v7mga1.png?width=2790&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=bd918b443e4a38343aff2b02a8e2b66b94127b6c\n\nAdditionally, the pop-out icon next to each node can be used to jump to the single node dashboard of this node.\n\nAll the slicing and dicing controls (Nodes, Dimensions, Instances), now support filtering. As shown above, there is a search box in the drop-down and a tick-mark to the left of each item in the list, which can be used to instantly filter the data presented.\n\nAt the same time, we re-worked most of the Netdata collectors to add labels to the charts, allowing the chart to be pivoted directly from the **group by** drop-down menu. On the following image, we see the same chart as above, but now the data have been grouped by the label device, the values of which became dimensions of the chart.\n\n&amp;#x200B;\n\nhttps://preview.redd.it/xp6qztwx7mga1.png?width=2772&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=0933cdd9c9f61e0b2e0742ec3e8ad4ebefe8488c\n\nThe data can be instantly be filtered by original dimension (reads and writes in this example), like this:  \n\n\nhttps://preview.redd.it/43v2lck08mga1.png?width=2762&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=32435ce8517c7ee3879d449e1bbe5f55c18fcb58\n\nor even by a specific instance (disk in this example), like this:  \n\n\nhttps://preview.redd.it/26px2pf28mga1.png?width=2776&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=60c502d588bc76214b9402e5f4143a778fc4ed6a\n\nOn the Instances drop down list (shown above), the pop-out icon to the right of each instance can be used to quickly jump to the single node dashboard, and we also made this function automatically scroll the dashboard to relative chart's position and filter on that chart the specific instance from which the jump was made.\n\nOur goal is to polish and fine tune this interface, to the degree that it will be possible to slice and dice any data, without learning a query language, directly from the dashboard. We believe that this will simplify monitoring significantly, make it more accessible to people, and it will eventually allow all of us to troubleshoot issues without any prior knowledge of the underlying data structures.\n\nAt the same time, we worked to improve switching between rooms and tabs within a room, by saving the last visible chart and the selected page filters, we are restored automatically when the user switches back to the same room and tab.\n\nFor the ordering of the sections and subsections on the dashboard menu, we made a change to allow currently collected charts to overwrite the position of the section and subsection (we call it priority  \n). Before this change, archived metrics (old metrics that are retained due to retention), were participating in the election of the priority  \n for a section or subsection and because the retention Netdata maintains by default is more than a year, changes to the priority  \n were never propagated to the UI.\n\n#### Bug fixes\n\nWe fixed:\n\n* [The alignment of the anomaly rate pop-down chart](https://github.com/netdata/netdata-cloud/issues/662)\n* [The width of the right-hand menu bar](https://github.com/netdata/netdata-cloud/issues/704)\n* [A crash when filtering dimensions](https://github.com/netdata/netdata-cloud/issues/695)\n* [The warning when a user tries to leave the last space](https://github.com/netdata/netdata-cloud/issues/649)\n* [The filters of the Metric Correlation screen incorrectly persisting](https://github.com/netdata/netdata-cloud/issues/653)\n* [The wrong value being shown for whether a node has ML enabled](https://github.com/netdata/netdata-cloud/issues/692)\n* [The node filter on the anomalies tab](https://github.com/netdata/netdata-cloud/issues/688)\n* [The visibility of the chart actions menu that appears inside a chart](https://github.com/netdata/netdata-cloud/issues/648)\n* [Logstash metrics not being displayed in Netdata Cloud](https://github.com/netdata/netdata-cloud/issues/667)\n* [The home tab not being updated with the correct number of nodes, after deleting a node](https://github.com/netdata/netdata-cloud/issues/679)\n\n### Real Time Functions\n\nSee [Functions](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-functions)\n\n### Events Feed\n\nSee [Events Feed](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-feed).\n\n## Database\n\n### New database engine\n\nSee [Dramatic performance and stability improvements, with a smaller agent footprint](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-dbenginev2)\n\n### Metadata sync\n\nSaving metadata to SQLite is now faster. Metadata saving starts asynchronously when the agent starts and continues as long as there are metadata to be saved. We implemented optimizations by grouping queries into transactions. At runtime this grouping happens per chart, which on shutdown it happens per host. These changes made metadata syncing up to 4x faster.\n\n## Streaming and Replication\n\nWe introduced very significant reliability and performance improvements to the streaming protocol and the database replication. See [Streaming](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-stream), [Replication](https://github.com/netdata/netdata/releases/tag/v1.38.0#v1380-repl).\n\nAt the same time, we fixed SSL handshake issues on established SSL connections, provide stable streaming SSL connectivity between Netdata agents.\n\n## API\n\nData queries for charts and contexts now have the following additional features:\n\n1. The query planner that decided which tier to use for each query, now prefers higher tiers, to speed up queries\n2. Joining of multiple tiers to the same query now prefers higher resolution tiers and joining is accurate. To achieve that, behind the scenes the query planner expands the query of each tier to overlap with its previous and next and at the time they intersect, it reads points from all the overlapping tiers to decide how exactly the join should happen.\n3. Data queries now utilize the parallelism of the new dbengine, to pipeline query preparation of the dimensions of the chart or context being queried, and then preloading metric data for dimensions that are in the pipeline.\n\n## Machine Learning\n\nWe have been busy at work under the hood of the Netdata agent to introduce new capabilities that let you extend the \"training window\" used by Netdata's [native anomaly detection capabilities](https://learn.netdata.cloud/docs/nightly/setup/configure-machine-learning-ml-powered-anomaly-detection).\n\nhttps://preview.redd.it/ij8xh9rw8mga1.png?width=955&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=62eca7ae68ec2005279be76a65d301f47a2dd1ba\n\nWe have [introduced a new ML parameter](https://learn.netdata.cloud/docs/nightly/setup/configure-machine-learning-ml-powered-anomaly-detection#descriptions-minmax) called number of models per dimension  \n which will control the number of most recently trained models used during scoring.\n\nBelow is some pseudo-code of how the trained models are actually used in producing [anomaly bits](https://learn.netdata.cloud/docs/nightly/setup/configure-machine-learning-ml-powered-anomaly-detection#anomaly-bit) (which give you an \"[anomaly rate](https://learn.netdata.cloud/docs/nightly/setup/configure-machine-learning-ml-powered-anomaly-detection#anomaly-rate)\" over any window of time) each second.\n\n`# preprocess recent observations into a \"feature vector\"`\n\n`latest_feature_vector = preprocess_data([recent_data])`\n\n`# loop over each trained model`\n\n`for model in models:`\n\n`# if recent feature vector is considered normal by any model, stop scoring`\n\n`if model.score(latest_feature_vector) &lt; dimension_anomaly_score_threshold:`\n\n`anomaly_bit = 0`\n\n`break`\n\n`else:`\n\n`# only if all models agree the feature vector is anomalous is it considered anomalous by netdata`\n\n`anomaly_bit = 1`\n\n&amp;#x200B;\n\nThe aim here is to only use those additional stored models when we need to. So essentially once one model suggests a feature vector looks anomalous we check all saved models and only when they all agree that something is anomalous does the anomaly bit get to be finally set to 1 to signal that Netdata considered the most recent feature vector unlike anything seen in all the models (spanning a wider training window) checked.\n\nRead more in [this blog post](https://blog.netdata.cloud/extending-anomaly-detection-training-window/)!\n\nWe now [create ML charts on child hosts](https://github.com/netdata/netdata/pull/14207), when a parent runs a ML for a child. These charts use the parent's hostname to differentiate multiple parents that might run ML for a child.\n\nFinally, we [refactored the ML code and added support for multiple KMeans models](https://github.com/netdata/netdata/pull/14198).\n\n## Installation and Packaging\n\n### New hosting of build artifacts\n\nWe are always looking to improve the ways we make the agent available to users. Where we host our build artifacts is an important piece of the puzzle, and we've taken some significant steps in the past couple of months.\n\n#### New hosting of nightly build artifacts\n\nAs of 2023-01-16, our nightly build artifacts are being hosted as GitHub releases on the new [https://github.com/netdata/netdata-nightlies/](https://github.com/netdata/netdata-nightlies/) repository instead of being hosted on Google Cloud Storage. In most cases, this should have no functional impact for users, and no changes should be required on user systems.\n\n#### New hosting of native package repositories\n\nAs part of improving support for our native packages, we are migrating off of Package Cloud to our own self-hosted package repositories located at [https://repo.netdata.cloud/repos/](https://repo.netdata.cloud/repos/). This new infrastructure provides a number of benefits, including signed packages, easier on-site caching, more rapid support for newly released distributions, and the ability to support native packages for a wider variety of distributions.\n\nOur RPM repositories [have already been fully migrated](https://github.com/netdata/netdata/discussions/14161) and the DEB repositories [are currently in the process of being migrated](https://github.com/netdata/netdata/discussions/14300).\n\n#### Official Docker images now available on GHCR and Quay\n\nIn addition to Docker Hub, our official Docker images are now available on [GHCR](https://github.com/netdata/netdata/pkgs/container/netdata) and [Quay](https://quay.io/repository/netdata/netdata). The images are identical across all three registries, including using the same tagging.\n\nYou can use our Docker images from GHCR or Quay by either configuring them as registries with your local container tooling, or by using [ghcr.io/netdata/netdata](https://ghcr.io/netdata/netdata) or [quay.io/netdata/netdata](https://quay.io/netdata/netdata) instead of netdata/netdata.\n\n### kickstart\n\nThe directives --local-build-options and --static-install-options used to only accept a single option each. We now [allow multiple options to be entered](https://github.com/netdata/netdata/pull/14287).\n\nWe [renamed](https://github.com/netdata/netdata/pull/13881) the --install option to --install-prefix, to clarify that it affects the directory under which the Netdata agent will be installed.\n\nTo help prevent user errors, passing an unrecognized option to the kickstart script [now results in a fatal error](https://github.com/netdata/netdata/pull/12943) instead of just a warning.\n\nWe previously used grep to get some info on login or group, which could not handle cases with centralized authentication like Active Directory or FreeIPA or pure LDAP. We [now use \"getent group\"](https://github.com/netdata/netdata/pull/14316) to get the group information.\n\n### RPMs\n\nWe [fixed the required permissions](https://github.com/netdata/netdata/pull/14140) of the cgroup-network and ebpf.plugin in RPM packages.\n\n### OpenSUSE\n\nWe [fixed the binary package updates](https://github.com/netdata/netdata/pull/14260) that were failing with an error on \"Zypper upgrade\".\n\n### FreeBSD\n\nWe [fixed the missing required package installation of \"tar\"](https://github.com/netdata/netdata/pull/14095).\n\n### MacOS\n\nWe [fixed some crashes on MacOS](https://github.com/netdata/netdata/pull/14304).\n\n### Proxmox\n\nNetdata on Proxmox virtualization management servers must be allowed to resolve VM/container names and read their CPU and memory limits.  \n\n\nWe now [explicitly add](https://github.com/netdata/netdata/pull/14168) the netdata user to the www-data group on Proxmox, so that users don't have to do it manually.\n\n### Other\n\nWe [fixed the path to \"netdata.pid\"](https://github.com/netdata/netdata/pull/14180) in the logrotate postrotate script, which causes some errors during log rotation.\n\nWe also [added pre gcc v5 support](https://github.com/netdata/netdata/pull/14239) and allowed building without dbengine.\n\n## Administration\n\n### Logging\n\nWe have improved the readability of our main error log file error.log  \n, by [moving data collection specific log messages](https://github.com/netdata/netdata/pull/14309) to collector.log  \n. For the same reason we [reduced the log verbosity of streaming connections](https://github.com/netdata/netdata/pull/14117).\n\n### New configuration editing script\n\nWe reimplemented the edit-config script we install in the user config directory, adding a few new features, and fixing a number of outstanding issues with the previous script.\n\n### Netdata Monitoring\n\nThe new Netdata Monitoring section on our dashboard has dozens of charts detailing the operation of Netdata. All new components have their charts, dbengine, metrics registry, the new caches, the dbengine query router, etc.\n\nAt the same time, we added a chart detailing the memory used by the agent and the function it is used for. This was the hardest to gather, since information was spread all over the place, but thankfully the internals of the agents have changed drastically in the last few months, allowing us to have a better visibility on memory consumption. At its heart, the agent is now mainly an array allocator (ARAL) and a dictionary (indexed and ordered lists of objects), carefully crafted to achieve their maximum performance when multithreaded. Everything we do, from data collection, to health, streaming, replication, etc., is actually business logic on top of these elements.",
+        "created_utc": 1675710606,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "FOSDEM 2023 - I was wrong about Flatpak, AppImage, and Snap",
+        "author": "rbrownsuse",
+        "url": "https://www.youtube.com/watch?v=4WuYGcs0t6I",
+        "text": "",
+        "created_utc": 1675708638,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "LV/PV question?",
+        "author": "yoshiatsu",
+        "url": "https://www.reddit.com/r/linux/comments/10vdauv/lvpv_question/",
+        "text": "I hope someone can help out a confused FreeBSD guy.  \n\nI'm running ubuntu in a virtual machine and have a 100G virtual disk for it.  When I installed, though, I noticed that the root filesystem only was using 24G.  So I read a tutorial about PVS, VGS, LVS, etc... and extended the volume group and the filesystem, awesome.  But it is still too small?!  Can someone tell me where the other 50G went and it it's possible to add it to my volume group / logical volume / root filesystem?  Thanks!\n\n    # root@linux:~# lsblk\n    NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS\n    ...\n    vda                       252:0    0   100G  0 disk\n    ├─vda1                    252:1    0     1M  0 part\n    ├─vda2                    252:2    0     2G  0 part /boot\n    └─vda3                    252:3    0    98G  0 part\n      └─ubuntu--vg-ubuntu--lv 253:0    0    48G  0 lvm  /\n\n    # pvdisplay\n    --- Physical volume ---\n    PV Name               /dev/vda3\n    VG Name               ubuntu-vg\n    PV Size               &lt;48.00 GiB / not usable 0\n    Allocatable           yes (but full)\n    PE Size               4.00 MiB\n    Total PE              12287\n    Free PE               0\n    Allocated PE          12287\n    PV UUID               ...\n\n    # vgdisplay\n    --- Volume group ---\n    VG Name               ubuntu-vg\n    System ID\n    Format                lvm2\n    Metadata Areas        1\n    Metadata Sequence No  3\n    VG Access             read/write\n    VG Status             resizable\n    MAX LV                0\n    Cur LV                1\n    Open LV               1\n    Max PV                0\n    Cur PV                1\n    Act PV                1\n    VG Size               &lt;48.00 GiB\n    PE Size               4.00 MiB\n    Total PE              12287\n    Alloc PE / Size       12287 / &lt;48.00 GiB\n    Free  PE / Size       0 / 0\n    VG UUID               ...\n\n    # lvdisplay\n    --- Logical volume ---\n    LV Path                /dev/ubuntu-vg/ubuntu-lv\n    LV Name                ubuntu-lv\n    VG Name                ubuntu-vg\n    LV UUID                ...\n    LV Write Access        read/write\n    LV Creation host, time ubuntu-server, 2023-01-04 06:39:43 +0000\n    LV Status              available\n    # open                 1\n    LV Size                &lt;48.00 GiB\n    Current LE             12287\n    Segments               1\n    Allocation             inherit\n    Read ahead sectors     auto\n    - currently set to     256\n    Block device           253:0\n\n    # df -H\n    Filesystem                         Size  Used Avail Use% Mounted on\n    tmpfs                              412M  1.3M  411M   1% /run\n    /dev/mapper/ubuntu--vg-ubuntu--lv   51G   22G   27G  45% /\n    tmpfs                              2.1G     0  2.1G   0% /dev/shm\n    tmpfs                              5.3M     0  5.3M   0% /run/lock\n    /dev/vda2                          2.1G  369M  1.6G  20% /boot\n    tmpfs                              412M  8.2k  412M   1% /run/user/0\n\nThanks!",
+        "created_utc": 1675706468,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What should i do?",
+        "author": "Pablothekingz",
+        "url": "https://www.reddit.com/r/linux/comments/10vcf4y/what_should_i_do/",
+        "text": "Today i was installing a linux distro alongside my windows partition again on my pc, i knew how to do it and it was alright until i was presented with the root drive location, so I entered it and then knew i f***ed up. I gave the whole drive as the root destination so I thought it would delete my windows partition and it’s drives. I canceled the installation to see if i can save my information, booted up my windows CD to reinstall windows, then i was presented with a whole drive, full in terms of space with 0 kilobytes available, and now I can not install windows on it.\n\nI just want my files back guys. Help",
+        "created_utc": 1675704478,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which Linux is better for beginners?",
+        "author": "Mr_Anonym_Mouse",
+        "url": "https://www.reddit.com/r/linux/comments/10vbfyd/which_linux_is_better_for_beginners/",
+        "text": "[removed]",
+        "created_utc": 1675702217,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu and other \"Beginner\" Distros: A Confession from a long-time Gentoo and Arch user",
+        "author": "froumts",
+        "url": "https://www.reddit.com/r/linux/comments/10vb625/ubuntu_and_other_beginner_distros_a_confession/",
+        "text": "[removed]",
+        "created_utc": 1675701575,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Newbie question - What is Hyprland and i3 gaps ? How to use them?",
+        "author": "BakaSasukr",
+        "url": "https://www.reddit.com/r/linux/comments/10vauyi/newbie_question_what_is_hyprland_and_i3_gaps_how/",
+        "text": "[removed]",
+        "created_utc": 1675700845,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A Non-GNU Linux Distribution Built With LLVM &amp; BSD Software Aims For Alpha Next Month",
+        "author": "Lyndeno",
+        "url": "https://www.phoronix.com/news/BSD-LLVM-Linux-Alpha-Coming",
+        "text": "",
+        "created_utc": 1675700238,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "kernel 6.2 fixes trackpad suspend/resume on many laptops",
+        "author": "chocolatemeowcats",
+        "url": "https://www.reddit.com/r/linux/comments/10va8xp/kernel_62_fixes_trackpad_suspendresume_on_many/",
+        "text": "[https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-pinctrl.git/commit/?id=f883675bf6522b52cd75dc3de791680375961769](https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-pinctrl.git/commit/?id=f883675bf6522b52cd75dc3de791680375961769)",
+        "created_utc": 1675699397,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "KDE Plasma: Full Featured Desktop That's Surprisingly Easy on Resources",
+        "author": "jlpcsl",
+        "url": "https://fossforce.com/2023/02/kde-plasma-full-featured-desktop-thats-surprisingly-easy-on-resources/",
+        "text": "",
+        "created_utc": 1675699342,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "kernel 6.2 fixes track pap suspend on many laptops",
+        "author": "chocolatemeowcats",
+        "url": "https://www.reddit.com/r/linux/comments/10va7wl/kernel_62_fixes_track_pap_suspend_on_many_laptops/",
+        "text": "[https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-pinctrl.git/commit/?id=f883675bf6522b52cd75dc3de791680375961769](https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-pinctrl.git/commit/?id=f883675bf6522b52cd75dc3de791680375961769)",
+        "created_utc": 1675699330,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Automatic GPU switching in Linux",
+        "author": "Plastic_Lynx1335",
+        "url": "https://www.reddit.com/r/linux/comments/10v8t2o/automatic_gpu_switching_in_linux/",
+        "text": "[removed]",
+        "created_utc": 1675695879,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Benchmarks of Different Web Engines Running Using X11 and Wayland Clients(Contributions Are Welcome)",
+        "author": "PotentialSimple4702",
+        "url": "https://pdfhost.io/v/x4ORl5h~2_Benchmarks_of_Different_Web_Engines_Running_Using_X11_and_Wayland_Clients",
+        "text": "",
+        "created_utc": 1675694081,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hello everyone, I'm new into Linux, right now I'm using Fedora with Gnome, and I'd like to change my current terminal to Blackbox, how can I do it?",
+        "author": "Spondora2",
+        "url": "https://www.reddit.com/r/linux/comments/10v7yq6/hello_everyone_im_new_into_linux_right_now_im/",
+        "text": "",
+        "created_utc": 1675693792,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to diagnose my Linux distro [xbuntu]",
+        "author": "Separate_Substance75",
+        "url": "https://www.reddit.com/r/linux/comments/10v6bpr/how_to_diagnose_my_linux_distro_xbuntu/",
+        "text": "[removed]",
+        "created_utc": 1675689288,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux is free*",
+        "author": "Sharpman85",
+        "url": "https://www.reddit.com/r/linux/comments/10v526h/linux_is_free/",
+        "text": "Just chiming in on why “The year of Linux desktop” will unlikely arrive .. ever.\nLinux indeed is free, but you need to have a lot of free time to research how get anything besides the default functionality. It will work out of the box as an Internet browser but not much more. It was tolerable just to get old PCs running and IF everything runs fine. The experience which pushed me to chime in on my experience is trying to clone a drive to replace with an ssd. Theoretically it’s simple and apps like clonezilla or the built in dd should work but both either failed when creating partitions or just took time getting the correct command along with a progress bar or another way to see the current progress. It was like a flashback of the 90s and trying to archive files with arj using the command line. This is doable for power users but frankly speaking I would rather do house chores than waste time on it. Ultimately reinstalling the whole OS along with initial configuration did not even take half the time.\n\nLinux should stay in the server environment or with power users who consider tinkering with it as a good hobby. Not bad, just for a very limited user base.",
+        "created_utc": 1675685421,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Trying to dual boot linux mint on a laptop with preinstalled windows 10.",
+        "author": "alfa_af",
+        "url": "https://www.reddit.com/r/linux/comments/10v47gm/trying_to_dual_boot_linux_mint_on_a_laptop_with/",
+        "text": "[removed]",
+        "created_utc": 1675682492,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which year should we treat H.264 patents as expiring?",
+        "author": "yuhong",
+        "url": "https://www.reddit.com/poll/10v3nvi",
+        "text": "",
+        "created_utc": 1675680595,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which year should we treat H.264 patents as expiring?",
+        "author": "yuhong",
+        "url": "https://www.reddit.com/r/linux/comments/10v3dfg/which_year_should_we_treat_h264_patents_as/",
+        "text": "[removed]",
+        "created_utc": 1675679356,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When we should we treat H.264 patent as expiring?",
+        "author": "yuhong",
+        "url": "https://www.reddit.com/r/linux/comments/10v3chv/when_we_should_we_treat_h264_patent_as_expiring/",
+        "text": "",
+        "created_utc": 1675679249,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A recovery partition would be a godsend for most \"desktop\" distros",
+        "author": "drawingsvin",
+        "url": "https://www.reddit.com/r/linux/comments/10v2rld/a_recovery_partition_would_be_a_godsend_for_most/",
+        "text": "I know only Pop_OS does this and i am not sure why this is not something more distros do. \n\n**What the heck is a recovery partition?**\n\nThe recovery partition is a partition used by Pop_OS created on install. It is a fat formatted partition roughly 4GB in size mounted on /recovery. The pop-upgrade tool will sometimes automatically update it and you can even command your system to boot into it so that you can reinstall your OS with the option to _not_ delete your user files\n\nNow obviously this feature was probably implemented because OEMs like system76 wanted a way to easily recover your laptop in case something bad happens for normal users that did not want to search for a USB drive and a second computer in cases where something **bad** happened.\n\nAnd i think this is would be a very cool feature we could all benefit from. In fact it could also be expanded upon. For example with *Offline point release upgrades:* Similar to the way OpenBSD does release upgrades, by upgrading your system offline from a predictable partition you basically minimize most possible issues that could happen. For example during a blackout you will simply just need to rerun the install process from the recovery partition and not be left with a half broken system.",
+        "created_utc": 1675676915,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any similar resources to Linux Journey?",
+        "author": "ineedeth",
+        "url": "https://www.reddit.com/r/linux/comments/10v2jmm/any_similar_resources_to_linux_journey/",
+        "text": "[removed]",
+        "created_utc": 1675675948,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what the best distribution in term of memory usage can I install",
+        "author": "mostafaLaravel",
+        "url": "https://www.reddit.com/r/linux/comments/10v0x0g/what_the_best_distribution_in_term_of_memory/",
+        "text": "[removed]",
+        "created_utc": 1675669421,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Borderless Gaming",
+        "author": "_FreddyBL_",
+        "url": "https://www.reddit.com/r/linux/comments/10v07g2/borderless_gaming/",
+        "text": "[removed]",
+        "created_utc": 1675666673,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "site to site ikev2 tunnel between linux router server and windows router server using certificate authentication",
+        "author": "Doo_or_Dont",
+        "url": "https://www.reddit.com/r/linux/comments/10v04yv/site_to_site_ikev2_tunnel_between_linux_router/",
+        "text": "[removed]",
+        "created_utc": 1675666410,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I still use Kali Linux 2017.3, without any issues?",
+        "author": "South_Process3009",
+        "url": "https://www.reddit.com/r/linux/comments/10uzud9/can_i_still_use_kali_linux_20173_without_any/",
+        "text": "",
+        "created_utc": 1675665326,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Xfce Wayland Development Roadmap",
+        "author": "ExaHamza",
+        "url": "https://wiki.xfce.org/releng/wayland_roadmap",
+        "text": "",
+        "created_utc": 1675664827,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "lucky - a lua-configured input daemon for X on steroids",
+        "author": "calthrowaway99",
+        "url": "https://github.com/BanchouBoo/lucky",
+        "text": "",
+        "created_utc": 1675660350,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Guide: Install Authy without Snap",
+        "author": "origamitaco",
+        "url": "https://github.com/tyleraharrison/authy-snapless",
+        "text": "",
+        "created_utc": 1675657985,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "2 Different GRUB Menus? (Surface Laptop Go 2 USB Installation)",
+        "author": "PeterDragon50",
+        "url": "https://www.reddit.com/r/linux/comments/10ux6of/2_different_grub_menus_surface_laptop_go_2_usb/",
+        "text": "Bit of  a noob to linux, but I have Mint 21 installed on an external flash drive and have my laptop set up to boot to Ubuntu first, this way my laptop will boot directly to Linux Mint if the flash drive is plugged in  and to Windows if it isn't. I was able to do this on my SL4 and it worked fine. \n\nFor some reason it seems like I have 2 different Grub menus. When I start the laptop, it loads the menu like normal and only stays on for the 1 second timeout that I have made. The laptop then goes back to the Windows logo, and boots the GRUB menu, this time without a TIMEOUT, and successfully loads into Linux. \n\nSecure Boot with 3rd Party CA is enabled, already signed MOK. Boot Order is Ubuntu-&gt;Windows-&gt;Internal Storage-&gt;USB. \n\nAnybody have any ideas as to what is going on?",
+        "created_utc": 1675656579,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 6.3 To Allow Some AMD GPU Power Savings Benefits Even Without S0ix BIOS Support",
+        "author": "Realistic-Plant3957",
+        "url": "https://www.phoronix.com/news/Linux-6.3-AMDGPU-S0ix-No-BIOS",
+        "text": "",
+        "created_utc": 1675651170,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Where can I find these wifi drivers. The ones I was able to find do not work",
+        "author": "Tight_Subjects",
+        "url": "https://i.redd.it/g05pgd4jhiga1.jpg",
+        "text": "",
+        "created_utc": 1675646569,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fedora 38 to add access to full, unfiltered Flathub (when \"enable third-party repositories\" switch is flipped)",
+        "author": "giannidunk",
+        "url": "https://mastodon.social/@fedora@fosstodon.org/109802130482739432",
+        "text": "",
+        "created_utc": 1675646355,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A Whirlwind Tutorial on Creating Really Teensy ELF Executables for Linux",
+        "author": "unixbhaskar",
+        "url": "https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html",
+        "text": "",
+        "created_utc": 1675645775,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "pine64 Buyer Beware ... the sequel",
+        "author": "PestyNomad",
+        "url": "https://www.reddit.com/r/linux/comments/10usbwg/pine64_buyer_beware_the_sequel/",
+        "text": "Basically I am stuck with a damaged board I ordered from pine64 because the enclosure that supposedly fits the SBC I bought does in fact *not* fit the case. The case bows inwards, I assume from long term-storage in improper conditions (heat or cold), or just incorrect manufacturing. Basically a USB port casing got damaged during installation which is ridiculous.\n\npine64 have a terrible return policy of 15 days from getting your equipment which clearly illustrates how pine64 does not stand behind their products at all.\n\nTbf I have had one OK experience with pine64 and this new txn has been bad all around. I firmly suggest keeping away from pine64 as a company overall as they seem to know they have lots of issues and just adjusted their return policy to match the lack of quality in their products. Essentially making sure they do not hemorrhage money in returns while continuing to sell their defective products. \n\nI hope you've had better experiences than I have, but if you have not ordered from pine64 before I suggest you save your money and choose a better company to order your equipment from.",
+        "created_utc": 1675642982,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Printing between Two Linux VMs and a Windows Server VM",
+        "author": "Extendele",
+        "url": "https://www.reddit.com/r/linux/comments/10urp9n/printing_between_two_linux_vms_and_a_windows/",
+        "text": "[removed]",
+        "created_utc": 1675641440,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "i put ubuntu server on a chromebook",
+        "author": "PixelBrickVEVO",
+        "url": "https://i.redd.it/wla9yq3vyhga1.jpg",
+        "text": "first linux install i’ve ever done. it was not easy, google probably didn’t want this to happen. but i did it.",
+        "created_utc": 1675640285,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Windows Power User's Guide to Linux",
+        "author": "Arnoxthe1",
+        "url": "https://intosanctuary.com/index.php?media/the-windows-power-users-guide-to-linux.23/",
+        "text": "",
+        "created_utc": 1675631889,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Remapping Wacom stylus to original screen dimensions with wayland",
+        "author": "fragswag10",
+        "url": "https://www.reddit.com/r/linux/comments/10unell/remapping_wacom_stylus_to_original_screen/",
+        "text": "[removed]",
+        "created_utc": 1675630904,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I want to use a different type of OS for gaming. Would PikaOS be a good OS to use",
+        "author": "Bax7240",
+        "url": "https://www.reddit.com/r/linux/comments/10ulmin/i_want_to_use_a_different_type_of_os_for_gaming/",
+        "text": "[removed]",
+        "created_utc": 1675626699,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "new HDD to aspire 5",
+        "author": "Sparkselot",
+        "url": "https://www.reddit.com/r/linux/comments/10uk6qp/new_hdd_to_aspire_5/",
+        "text": "so, I installed Linux Mint on an old Toshiba satellite a while back. loved it. I have several laptops in various states of disrepair. one is an aspire 5 that is perfectly fine other than a broken screen and has windows 11 (which I despise). the 500GB hard drive from my Toshiba satellite is a compatible HDD for the memory upgrade. \n\nwhen I dropped the HDD into the aspire 5, it wasn't recognized. it was there on the drive list, but couldn't access it. so I turned it all off and took a break. when I rebooted, Linux booted (which is fine-ish cuz I want the aspire 5 to be my new linux machine). \n\nis there a way I can... combine the existing hard drive on the windows 11 aspire 5 with the Linux mint Toshiba satellite so I have the 500GB HDD and the 75GB SSD work together?",
+        "created_utc": 1675623290,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I have a big problem with parrot linux",
+        "author": "Thin_Personality_745",
+        "url": "https://www.reddit.com/r/linux/comments/10uip3y/i_have_a_big_problem_with_parrot_linux/",
+        "text": "[removed]",
+        "created_utc": 1675619756,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Linux applicaions for network/system admins?",
+        "author": "Cheap-Context-231",
+        "url": "https://www.reddit.com/r/linux/comments/10uhe6p/best_linux_applicaions_for_networksystem_admins/",
+        "text": "Hi everyone! I am a college student studying network administration. I am currently learning about Linux and how much it is used in the network/system admin job field. Does anyone know of any applications that are used on Linux for this type of job role? Also, are there any other applications I should learn the fundamentals of that will be beneficial to my IT career? Mainly networking career and a little bit of cyber.\n\nAlso, I am using ubuntu on my VMware. Are there any other flavors of Linux that work well with being a network/sys admin?",
+        "created_utc": 1675616630,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "kernel 6.2 fixes trackpad suspend issues",
+        "author": "chocolatemeowcats",
+        "url": "https://www.reddit.com/r/linux/comments/10ugztx/kernel_62_fixes_trackpad_suspend_issues/",
+        "text": "[removed]",
+        "created_utc": 1675615650,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linuxers, what Wayland-based WM would you recommend?",
+        "author": "ZeStig2409",
+        "url": "https://www.reddit.com/r/linux/comments/10ugzc7/linuxers_what_waylandbased_wm_would_you_recommend/",
+        "text": "I've been using QTile on Xorg for quite some time now - I've enabled *blur* and *rounded corners* in my picom config. I've also set up the status bar with *clickable widgets*.\n\nI'd like to transition to the Wayland side (_mainly_ because of the touchpad gestures) - what compositor has the above  features?\nI've tried Hyprland and Sway - but imho Hyprland is hard to customise (I had a lot of trouble installating on Arco) and Sway is \"incomplete\" (AFAIK it doesn't have the features I'd like).\n\nI'd like to hear your recommendations!!",
+        "created_utc": 1675615616,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Don't know if it's the correct place to ask. Can someone help me find a compatible distro?",
+        "author": "Florimix",
+        "url": "https://www.reddit.com/r/linux/comments/10ugysp/dont_know_if_its_the_correct_place_to_ask_can/",
+        "text": "Hi everyone! I want to jump into Linux for the first time but i'm having an hard time finding a compatible distro. I have a pretty old and crappy tablet PC that doesn't run well anymore on Windows , used in the past LTSB versions but obviously those have licences issues , so i was thinking to install a lightweight distro to make it more usable. I only use it for basics things like surfing the web and download things , i don't need anything else. The problem is: it's a tablet PC with a 64 bit based Intel Atom Z CPU , paired with a 32 bit UEFI. I tried a lot of Linux distros but most of them aren't even showing up in the boot menu , best i could do was live boot a distro but the installation process failed. Secure boot is disabled and the bios is on legacy mode. I use Rufus. Is there any distro that suits this PC or i'm doing something wrong? Thanks for any help!",
+        "created_utc": 1675615577,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can i install DiectX 12 on linux",
+        "author": "DeadWashingMachine",
+        "url": "https://www.reddit.com/r/linux/comments/10ug4t8/how_can_i_install_diectx_12_on_linux/",
+        "text": "[removed]",
+        "created_utc": 1675613492,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can any laptop be configured for long (16hr+) suspend eg. S3 not IRST or hibernate?",
+        "author": "sorryforconvenience",
+        "url": "https://www.reddit.com/r/linux/comments/10ufz5n/can_any_laptop_be_configured_for_long_16hr/",
+        "text": "Haven't really been laptop shopping in a while and I only use Linux so I have no idea how reasonable of a thing this is to expect from a laptop generally but: Is there a laptop that I can leave always-on like a phone and expect instant wakeups from it?\n\nCurrent laptop is a T470s and, despite ensuring it was going into the proper C-state and other details I've since forgotten, I was never really able to get a very long standby from it and had to resort to having it hibernate after it had been sleeping a while. Which works fine for most purposes but I'm looking for something I can use kind of like a journal/notebook and want the ability to just open it up and type.\n\nBut maybe one of the several generations of CPU since then has cracked this fairly well and most current laptops can stay in suspend for quite a while? Or maybe there is better support for Ryzen power management so I need AMD?\n\nI'd also be open to an ARM based system, perhaps that has better odds thanks to phones? eg. can a Pinebook last a fair while in suspend?\n\nRelated: how are fingerprint readers on laptops these days and Linux support for them, would be nice to have that compromise available...",
+        "created_utc": 1675613094,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need help after I try install on a blank drive this happens",
+        "author": "ResourceNumerous9515",
+        "url": "https://www.reddit.com/gallery/10ufhi9",
+        "text": "",
+        "created_utc": 1675612106,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Software that makes it possible to click through PowerPoint slides using presenter.",
+        "author": "MasterVoo",
+        "url": "https://www.reddit.com/r/linux/comments/10ufixn/software_that_makes_it_possible_to_click_through/",
+        "text": "I am looking for a software that makes it possible to click through PowerPoint slides using presenter. In between, videos are played that are not embedded in the PowerPoint - but then PowerPoint again. Do you have any ideas?",
+        "created_utc": 1675611965,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My web-based desktop environment that was first announced here reaches 500,000 alpha users!",
+        "author": "mitousa",
+        "url": "https://puter.com/",
+        "text": "",
+        "created_utc": 1675610310,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "how can ı change bootcurrent number 5 to 1 ?",
+        "author": "Several_Math_4708",
+        "url": "https://i.redd.it/qexbfxe0cdga1.png",
+        "text": "",
+        "created_utc": 1675602227,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Manage Linux services easley",
+        "author": "abolinhas",
+        "url": "https://www.reddit.com/r/linux/comments/10ubev8/manage_linux_services_easley/",
+        "text": "[removed]",
+        "created_utc": 1675600411,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What can I do for Arch Linux?",
+        "author": "ASIC_SP",
+        "url": "https://whatcanidofor.archlinux.org/",
+        "text": "",
+        "created_utc": 1675597683,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux Distribution's State of Gaming - Presentation at the FOSDEM 2023",
+        "author": "YanderMan",
+        "url": "https://www.youtube.com/watch?v=P-Ld7uQEpmw",
+        "text": "",
+        "created_utc": 1675596613,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Xournal++",
+        "author": "unclearimage",
+        "url": "https://www.reddit.com/r/linux/comments/10u62tz/xournal/",
+        "text": "I found this software that's FOSS called Xournal++ it lets you annotate directly on top of a pdf. However when you save it exports a xopp file, and you have to keep the pdf in the same file.\n\nSo basically what was one file, is now two. Is there anyway to combine the xopp and pdf files so I just have one?",
+        "created_utc": 1675579314,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What’s the difference between bash and normal console?",
+        "author": "sam77889",
+        "url": "https://www.reddit.com/r/linux/comments/10u24wk/whats_the_difference_between_bash_and_normal/",
+        "text": "[removed]",
+        "created_utc": 1675572607,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "First impressions review: Framework with i5-1240p",
+        "author": "cunseyapostle",
+        "url": "/r/framework/comments/10u066p/first_impressions_review_framework_with_i51240p/",
+        "text": "",
+        "created_utc": 1675571221,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The Open Source situation in China...",
+        "author": "Pepper-pencil",
+        "url": "https://www.reddit.com/r/linux/comments/10u10ul/the_open_source_situation_in_china/",
+        "text": "We all love open source. And same in China. A good content creator if you want to know more about open source in China is Lander Tee. \n\nAnyways, in China, lots of companies are actually interested in open source, and even investing in it. Some hardware even come with an Open Source OS and software. Chinese distros like deepin, kylin and UOS are quite popular and marketed. The Open Source situation is looking really good in China. As i said, if you want to know about open source in China, check out Lander Tee.\n\nAnd before you go talk about Chinese spyware. Open Source softwares code is open and anybody can have a look at it, including you. However, i do not trust proprietary Chinese software. I do not trust proprietary software in general.",
+        "created_utc": 1675570854,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fans rev up when gaming",
+        "author": "randomuser34324",
+        "url": "https://www.reddit.com/r/linux/comments/10u0nzb/fans_rev_up_when_gaming/",
+        "text": "[removed]",
+        "created_utc": 1675570237,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fan revs up when when gaming",
+        "author": "randomuser34324",
+        "url": "https://www.reddit.com/r/linux/comments/10u0n9k/fan_revs_up_when_when_gaming/",
+        "text": "[removed]",
+        "created_utc": 1675570205,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Spiral Linux",
+        "author": "dorrellkc",
+        "url": "https://www.reddit.com/r/linux/comments/10txqap/spiral_linux/",
+        "text": "I am curious if anyone here is using Spiral  Linux. i have installed it on a T450s and did a full upgrade to Debian Testing/Sid. So yes I know I have a franken-debian, curious if anyone else has tried this. I am running Siduction on a T480 and curious if there really is much difference other than Siduction is on perpetual Sid.",
+        "created_utc": 1675561713,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "IEEE Medal of Honor Goes to Vint Cerf",
+        "author": "unixbhaskar",
+        "url": "https://spectrum.ieee.org/2023-ieee-medal-of-honor#toggle-gdpr",
+        "text": "",
+        "created_utc": 1675559632,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any solution please?",
+        "author": "Luis_usando_Xubuntu",
+        "url": "https://www.reddit.com/r/linux/comments/10twgsz/any_solution_please/",
+        "text": "[removed]",
+        "created_utc": 1675558151,
+        "upvote_ratio": 1.0
+    }
+]

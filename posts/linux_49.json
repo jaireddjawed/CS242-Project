@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Question : Whats up with \"Programmers\" using Linux? Lets say someone uses Visual Studio, are there any benefits you get when switching to Linux? (Saying that because ive already seen some pople with Linux that code in Visual Studio)",
+        "author": "Acceptable_Badger931",
+        "url": "https://www.reddit.com/r/linux/comments/z71x3f/question_whats_up_with_programmers_using_linux/",
+        "text": "",
+        "created_utc": 1669655138,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which distro should i install &amp; learn? (complete noob)",
+        "author": "fuckingnerd69",
+        "url": "https://www.reddit.com/r/linux/comments/z71b54/which_distro_should_i_install_learn_complete_noob/",
+        "text": "[removed]",
+        "created_utc": 1669653810,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Anyone know why my 2TB Crucial X8 is so \"slow\"? Its a 1050MBps NVMe portable drive but I am only seeing speeds of around 300Mbps - 350MBps",
+        "author": "brimur",
+        "url": "https://i.imgur.com/X7BkMci.png",
+        "text": "",
+        "created_utc": 1669649934,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I finally fixed something without having to resort to ask someone else for help! (A Linux success story)",
+        "author": "NormalPersonNumber3",
+        "url": "https://www.reddit.com/r/linux/comments/z6z9nh/i_finally_fixed_something_without_having_to/",
+        "text": "Not that asking for help is inherently bad, it's just that I appreciate my self growth! And I just want to share what went was going wrong, and how I figured it out and fixed it!\n\nSo, this technically has been an ongoing issue for a while. I had packages that quite simply, would not upgrade, and I had no idea why. It wasn't hurting anything at the time, so I left it alone for a while. But this problem finally came around to bite me. I was trying to upgrade from Ubuntu 20.04 to 22.04, and the upgrade command was telling me to update all my packages to the latest... including the ones that would not update. Uh oh.\n\nSo, I did some investigation; I looked up the packages that were refusing to update, and tried to explicitly upgrade them individually, but they gave me an error that I did not understand at the time. (I won't be able to perfectly describe the error, as I did not copy it at the time, but I will describe the steps I took to figure it out).\n\nThe problem was with Intel graphics drivers, it was actually a couple of related packages (and I will not get the names perfect) something called `libdrm2` and `libdrm2:i386`. Spoiler alert: \n\n&gt;!This was the problem, though I didn't understand it yet. !&lt;\n\nMy first hint, was actually something seemingly unrelated. I had added an apt repository for Mono, because I wanted to do some game development and Godot used Mono. It (apt) was warning/complaining about i386 compatibility for that repository, and it was annoying me, so I looked up what it meant, and found out that I needed to add something like `[arc=amd64]` in front of the repository URL to make the warning go away. I did that, and the warning went away, yay! This did not solve my overall problem, however.\n\nSo, going back to the original problem, I was thinking: Huh, maybe it's a problem with the remote repository! I'll double check the references and see if they need updating! So I searched for how and where package repositories were saved and configured, and found what looked like a more reliable repository. Neat! So I tried looking for where the repository was configured so I could update it. But it was strange because... I was having trouble finding where that setting was! I ended up going to the /etc/apt folder and used grep to look up the Intel repository. And here's where it gets a little weird. Those files definitely contained those lines, but when I opened them with gedit... They weren't there? What makes it even weirder, is that I did `CTRL-F` to find the line, but the find didn't highlight anything. What was even WEIRDER was that the find section says it found 1 of 2, but it had an x next to it, but when I clicked what was essential the \"find next\" button, it brought me to the end of the document, nothing was highlighted, and the Intel repository that grep found *wasn't there*. I never found out what that was about, so I can only conclude my gedit was haunted.\n\nI did find a workaround to my problem, however. I went to the software &amp; updates graphical tool on Ubuntu, and unselected the ~~haunted~~ repository. Then, I followed Intel's guide online to add the repository back in a different (read: better and more secure) way.\n\nIn the course of doing this, I noticed that all repositories that were being used had the `[arc=amd64]` that I had to add to mono when it was complaining about i386. Hmmm, why is that familiar...\n\nAnyways, I decided to pay a bit more attention to the error messages this time. I saw the broken packages had two main sections (And I don't remember the section names now, I should have written this down; I will give a close approximation to what it was called): breaking and dependent.\n\nWhat was confusing to me was that libdrm2:i386 and libdrm2 were listing each other. The two packages were breaking one another? How were they installed then? I was confused, and decided to look up what it meant on google. It boiled down to the fact that one package was causing the other to break, so one of them had to be removed. This is where I got a little nervous, I had no idea which one was the right one to remove. (I should have probably asked a forum at this point, but I was both lazy and stupid; I really should have asked in retrospect) But... I was able to make a very educated guess. Earlier I said I had to fix a repository that was complaining about i386 and had to add `[arc=amd64]` to it. I know that my OS is 64 bit. Is i386 the 32 bit package? How did I get that? Huh. So I took an educated guess and `sudo apt remove libdrm2:i386`. Now, there were a lot of packages that were also related to this one (all i386, mind you), and I knew these were likely my display drivers, so if I broke this, then I knew I would be in a lot of trouble (hence my earlier retrospective on doing this without knowing was a bad idea). But I was probably really angry and impatient at the time, so I just said `y` and waited. It removed them all, and there were no issues. I could `sudo apt upgrade` the rest of the packages, and then finally, I was able to update from 20.04 to 22.04. Yay!\n\nWell, technically, it's still updating at the moment, so we'll see if my laptop catches fire because of my incompetence or not later, I guess. Anyways, I just wanted to share my success story! I don't think I can call myself a Linux noob anymore. And I'm very happy about it.",
+        "created_utc": 1669648988,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "openSUSE looking to phase out support for older 64-bit processors",
+        "author": "daemonpenguin",
+        "url": "https://news.opensuse.org/2022/11/28/tw-to-roll-out-mitigation-plan-advance-microarchitecture/",
+        "text": "",
+        "created_utc": 1669647847,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gnome 4.4 beautiful UI design",
+        "author": "CroJackson",
+        "url": "https://www.reddit.com/r/linux/comments/z6yro2/gnome_44_beautiful_ui_design/",
+        "text": "[removed]",
+        "created_utc": 1669647712,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "qBittorrent v4.5.0 release",
+        "author": "ouyawei",
+        "url": "https://www.qbittorrent.org/news.php",
+        "text": "",
+        "created_utc": 1669645219,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How we ran a Unix-like OS (Xv6) on our home-built CPU with our home-built C compiler",
+        "author": "unixbhaskar",
+        "url": "https://fuel.edby.coffee/posts/how-we-ported-xv6-os-to-a-home-built-cpu-with-a-home-built-c-compiler/",
+        "text": "",
+        "created_utc": 1669644854,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Flatpak vs nix vs appimage?",
+        "author": "Advanced-Issue-1998",
+        "url": "https://www.reddit.com/r/linux/comments/z6xk5w/flatpak_vs_nix_vs_appimage/",
+        "text": "[removed]",
+        "created_utc": 1669644593,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Kernel threads v User threads. Do they communicate via IPC for the sake of executing system calls?",
+        "author": "SmoothCCriminal",
+        "url": "https://www.reddit.com/r/linux/comments/z6wz7r/kernel_threads_v_user_threads_do_they_communicate/",
+        "text": "Kernel maintains a set of kernel threads for the sake of internal background jobs like processing interrupts or writing buffered data to disk (?).. and these threads have more or less the same priority(sometimes higher) than user mode  threads, and are scheduled on the CPU the same way.\n\nWhen a user-mode thread needs to execute a system call, **does the user-mode process \\*\\*switch\\*\\* to kernel mode and then execute the system call, and then \\*\\*switch back\\*\\* to user mode? Or does it delegate this sensitive instruction to a already alive (sleeping) kernel thread via IPC?**\n\nIt is said that the switch(if at all it does happen) is expensive. I believe IPC is equally expensive(?)",
+        "created_utc": 1669643110,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Composefs: an opportunistically sharing verified image filesystem",
+        "author": "ouyawei",
+        "url": "https://lore.kernel.org/lkml/cover.1669631086.git.alexl@redhat.com/",
+        "text": "",
+        "created_utc": 1669642039,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a ZSH theme that looks like the default Kali terminal?",
+        "author": "excal_rs",
+        "url": "https://www.reddit.com/r/linux/comments/z6w582/is_there_a_zsh_theme_that_looks_like_the_default/",
+        "text": "[removed]",
+        "created_utc": 1669640892,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Steam deck as a \"home base\" gaming laptop?",
+        "author": "LegatusDivinae",
+        "url": "https://www.reddit.com/r/linux/comments/z6vkqo/steam_deck_as_a_home_base_gaming_laptop/",
+        "text": "So, I might be moving in the future, to a place where I would stay for undefined amount of time.\n\nThing is, I wouldn't have access to my desktop. And I would also like to game. For actual sustained work I'd have a company-provided laptop.\n\nOption 1 is to have a gaming laptop - self explanatory.  It would probably cost me 2-2.5x more than the Deck, but I could do everything on it - main advantage is being able to **game on high FPS**.\n\nOption 2 is to get the deck. I wouldn't be able to play faster paced or newer games at high FPS. But with a dock, external monitor, keyboard and mouse, my use case would be the same as with the laptop, just with (far) less power.\n\nQuestion is, other than the matter of \"juice\" (basically performance in games), does my option#2 use case seem plausible? Since Deck is really a laptop, and I hear it can easily switch between big picture and desktop mode, it should be able to easily be used as one IMO.",
+        "created_utc": 1669639324,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the difference between ping 8.8.8.8 and ping internet IP?",
+        "author": "Aleqooo",
+        "url": "https://www.reddit.com/r/linux/comments/z6v6ce/what_is_the_difference_between_ping_8888_and_ping/",
+        "text": "",
+        "created_utc": 1669638169,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I must have done something while uninstalling unnecessary packages and now the system won't boot at all, in rollback mode I see : reloading system manager configuration starting default.target",
+        "author": "Historical_Degree_59",
+        "url": "https://i.redd.it/6hng2k0p6q2a1.jpg",
+        "text": "",
+        "created_utc": 1669637900,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need help with a command",
+        "author": "Aleqooo",
+        "url": "https://www.reddit.com/r/linux/comments/z6upl8/i_need_help_with_a_command/",
+        "text": "[removed]",
+        "created_utc": 1669636812,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The most popular commands in Linux",
+        "author": "Ansam93",
+        "url": "https://www.reddit.com/r/linux/comments/z6tvlm/the_most_popular_commands_in_linux/",
+        "text": "[removed]",
+        "created_utc": 1669634037,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The most popular commands in Linux",
+        "author": "Ansam93",
+        "url": "https://www.reddit.com/r/linux/comments/z6tuu7/the_most_popular_commands_in_linux/",
+        "text": "[removed]",
+        "created_utc": 1669633967,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Username not in sudoers file and terminal wont open",
+        "author": "Keznuf",
+        "url": "https://www.reddit.com/r/linux/comments/z6sv2t/username_not_in_sudoers_file_and_terminal_wont/",
+        "text": "Hi guys, my terminal wont open (just load and then nothing) and to solve that I need to execute a command that requires sudo statement. Can I solve the sudo problem without using terminal? if yes, pls help (I'm new to this OS so be clear pls,using Ubuntu).",
+        "created_utc": 1669630441,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I've dabbled in kernels &amp; got a basic CLI/build going but do some other Distros really use this method for building their distro?",
+        "author": "NewLinuxLearner",
+        "url": "https://www.youtube.com/watch?v=Cm3yOyQAFQU",
+        "text": "[removed]",
+        "created_utc": 1669629188,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I've dabbled in compiling kernels &amp; got a basic CLI going but do other Distros really use this method for building their distro?",
+        "author": "NewLinuxLearner",
+        "url": "https://youtu.be/Cm3yOyQAFQU",
+        "text": "[removed]",
+        "created_utc": 1669628748,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "PC keeps waking up immediately after suspend/hibernate. I'm on Ubuntu budgie 20.04, how do I fix this?",
+        "author": "edsonelisha16",
+        "url": "https://i.redd.it/gon6uiztuo2a1.jpg",
+        "text": "",
+        "created_utc": 1669621812,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The best note apps for Linux",
+        "author": "hanu33",
+        "url": "https://www.reddit.com/r/linux/comments/z6ooe7/the_best_note_apps_for_linux/",
+        "text": "[removed]",
+        "created_utc": 1669615776,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do you guys think of a visual SSH Client ?",
+        "author": "AbdullahHejazi6",
+        "url": "https://www.reddit.com/r/linux/comments/z6njr0/what_do_you_guys_think_of_a_visual_ssh_client/",
+        "text": "[removed]",
+        "created_utc": 1669612245,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "average Linux user",
+        "author": "orangefcuk",
+        "url": "https://www.reddit.com/r/linux/comments/z6msr0/average_linux_user/",
+        "text": "[removed]",
+        "created_utc": 1669609983,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a comprehensive list of all Linux distros sorted by users?",
+        "author": "i_breathe_slowly",
+        "url": "https://www.reddit.com/r/linux/comments/z6laev/is_there_a_comprehensive_list_of_all_linux/",
+        "text": "[removed]",
+        "created_utc": 1669605509,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does Linux increase OClocking possibilities?",
+        "author": "Former-Theme-1929",
+        "url": "https://www.reddit.com/r/linux/comments/z6jenj/does_linux_increase_oclocking_possibilities/",
+        "text": "[removed]",
+        "created_utc": 1669600073,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does linux on a desktop have less quirks than a laptop?",
+        "author": "kalashnikovBaby",
+        "url": "https://www.reddit.com/r/linux/comments/z6ipwd/does_linux_on_a_desktop_have_less_quirks_than_a/",
+        "text": "I love linux. However there are so many quirks on the laptop that it gets annoying. I don't want to invest the time to fix all of them if it's not so simple. There are issues with the laptop not sleeping, browsers acting weird when plugged into a monitor, mic and camera issues on Zoom, etc. Are there less problems on a desktop? I really want to build a PC and run linux on it, but if it's as problematic, it may not be worth it. My distro is Ubuntu.",
+        "created_utc": 1669598210,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Some thoughts on the unique Void distro",
+        "author": "daemonpenguin",
+        "url": "https://distrowatch.com/weekly.php?issue=20221128#void",
+        "text": "",
+        "created_utc": 1669597815,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Getting vintage (old world) Linux distro’s installed on modern virtualization software impossible?",
+        "author": "Difficult_Abroad_477",
+        "url": "https://www.reddit.com/r/linux/comments/z6hl8h/getting_vintage_old_world_linux_distros_installed/",
+        "text": "This weekend I have been a bit nostalgic for old Linux distributions. My earliest exposure to Linux was in 2003 when the MIS manager at a company I was interning at gave me 3 CDs with Redhat Linux 7.2. I never installed it until about 2004 when my dad got a way more powerful computer (Dell Dimension 8300) and ended up getting it to successfully install in VirtualPC. I should mention I did attempt to install it on my home PC at the time, a Zenith GT Workstation my mom got for me through a church donation. Either the computer was too old or I was clueless how to get it to work. I do remember the anaconda installer defaulting to a text based setup because the PC was not powerful enough to run the GUI. I think at that point I gave up.\n\nThe same network manager gave me a CD with an early version of Knoppix which was the first time I ever used Linux. This weekend though I was kinda reminded of the hardware compatibility issues Linux was notorious for back in the early 2000’s. That same company I interned at in the summer of ‘03, the Network Manager had the same Redhat Linux distro installed on one of the spare PC’s in his office. \n\nI will always remember it because it looks like he had a messed up X configuration with only half of his screen showing. The MIS manager had asked why doesn’t he fix that but he was kinda dismissive about it. But that in itself was likely a sign of how complex it was just to get running right on real hardware. \n\nWhich brings me to my issue. I downloaded two versions of Redhat Linux, 6.0 and 7.2 and tried installing both unsuccessfully in both Virtualbox 7.0 and VMWare Player 17, latest versions. The part where things always seem to go wrong is configuring X. There doesn’t seem to be a supported monitor type and video card for what I call for the period ‘modern Linux’ (kernel 2.4). What’s even stranger, I tried VMWare Workstation 3.2 on Windows 2000 and pretty much faced the same problems as modern hyper visors.\n\nIn some instances I got as far as a working installed with 300 x 280. But it’s unusable.\n\nAre there any recommendations, tips, tricks, workarounds for installing an older distro in a VM? It’s kinda strange considering how easy it is to get say Windows NT 3.1 (1993) up and running in Virtualbox, versus, a relatively 21st century distro such as Redhat Linux 7.2 (2001). \n\nIt’s striking comparison with todays Fedora or Ubuntu which are in some cases easier to setup in virtualization or physical hardware versus Windows 11.",
+        "created_utc": 1669595170,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is .epub a shitty format or are ebook readers on linux just bad?",
+        "author": "plutoniator",
+        "url": "https://www.reddit.com/r/linux/comments/z6hds1/is_epub_a_shitty_format_or_are_ebook_readers_on/",
+        "text": "I've tried calibre, okular, bookworm and foliate, with foliate providing by far the nicest experience for ebooks. But that experience is way worse than it is with a typical pdf reader. Latex doesn't render properly, scrolling is choppy, special text formatting (ie. code) doesn't really work, jumping between pages is buggy, etc. The only real advantage I can see is that with ebooks, you can make a section breakless and scrollable which is nice when reading code, whereas pdfs just split it onto multiple pages. ",
+        "created_utc": 1669594620,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can someone please help me get past this problem during upgrade?",
+        "author": "BTC-brother2018",
+        "url": "https://i.redd.it/6kbl8u5iem2a1.jpg",
+        "text": "",
+        "created_utc": 1669592675,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Pixel 6/Pro/7 - it supports KVM and virtual machines...",
+        "author": "Dalton_90",
+        "url": "https://www.reddit.com/r/linux/comments/z6fjk1/pixel_6pro7_it_supports_kvm_and_virtual_machines/",
+        "text": "With an app called Nestbox (gotta subscribe to a patreon) you can literally load up a VM of any Linux distro (or even Windows) and dual boot with Android 13. \nMind blowing.\n\nHas anyone tried this here?",
+        "created_utc": 1669590025,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Web/DB package is LAMP still a thing?",
+        "author": "slade51",
+        "url": "https://www.reddit.com/r/linux/comments/z6dpsr/webdb_package_is_lamp_still_a_thing/",
+        "text": "I just resurrected my laptop with a Linux Mint distro.  About 10 years ago, I worked on a LAMP (Linux, Apache, MySQL, Perl/php) server for some Asterisk voip apps, and liked it.\n\nI’m retired now and looking for a simple database/web implementation to play around with some scripting.  I’ve been away from Linux for about four years, have MySQL and Perl been replaced by other (just as simple) things?  I don’t want a full-time job to implement, just a hobby to toy with.",
+        "created_utc": 1669585777,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Who doesn't wants a banana cursor? XD. I want one and I have one.",
+        "author": "CryptoMinerOnYourPc",
+        "url": "https://github.com/ful1e5/banana-cursor",
+        "text": "",
+        "created_utc": 1669583121,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to triple boot Linux on a Mac that has MacOS and Windows installed?",
+        "author": "dark_galaxy20",
+        "url": "https://www.reddit.com/r/linux/comments/z6avck/how_to_triple_boot_linux_on_a_mac_that_has_macos/",
+        "text": "Soo I have dual booted windows and linux on laptops other than mac before, but I have no idea how to install it on a macbook that has both MacOS and Windows 11 installed on it(I don't want to wipe them). Is there anything special about this? Any special steps or things that I should take care of? What would be the bootloader in this scenario?",
+        "created_utc": 1669579119,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Was updating/upgrading Ubuntu and I saw something teasing /r/linux in the update notes. What is this place? I only have 1 commit really but I do love this (linux in general) community.",
+        "author": "m1cr05t4t3",
+        "url": "https://www.reddit.com/r/linux/comments/z6aixd/was_updatingupgrading_ubuntu_and_i_saw_something/",
+        "text": "",
+        "created_utc": 1669578296,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My steam deck os Linux says hardware reserved memory",
+        "author": "Creepy_Tourist_3098",
+        "url": "https://www.reddit.com/r/linux/comments/z69o6i/my_steam_deck_os_linux_says_hardware_reserved/",
+        "text": "[removed]",
+        "created_utc": 1669576279,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux on MacBook",
+        "author": "moe_k47",
+        "url": "https://www.reddit.com/r/linux/comments/z699s6/linux_on_macbook/",
+        "text": "[removed]",
+        "created_utc": 1669575353,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Threads v Processes. Is everything a process? Do threads exist or is it just lingo enforced by pThreads?",
+        "author": "SmoothCCriminal",
+        "url": "https://www.reddit.com/r/linux/comments/z693rf/threads_v_processes_is_everything_a_process_do/",
+        "text": "Realised after hours of stackoverflow mining that the classic **\"Threads are lightweight processes\"** or **\"Processes are too heavy to context switch\"**, just doesn't apply to Linux! They seemed to have stemmed from Windows(?). \n\nSo,..(please confirm if this is indeed the case), `\\`clone\\`` system call is essentially the way for a process to spawn a thread (unlike `\\`fork\\`` for spawning a process).. and `\\`clone`\\` accepts parameters w.r.t what exactly it needs to share from the parent, virtual address space being the bare minimum. **Turns out, the so-called \"thread\" is indeed a process in Linux**. Inspection of \\`htop\\`, shows that even threads have PIDs. **So everything is ultimately a process?** \n\nInspection of \\`htop\\`, shows that even threads have PIDs ! So are everything processes?\n\nI understand somewhere down the line(2003), Linux was finally pThreads compliant. Is this the reason why it just exposes systemcalls like `\\`gettid()\\`` ? From an abstract OS model (not biased by linux), processes are just a way to group threads..and its ultimately the threads that are the smallest units of execution that can be scheduled on the core. This is why every process has atleast one thread(main thread). Since linux has it the other way around (processes are the smallest units of execution), did it do a lot of confusing stuff just to be posix compliant? eg. `ls /proc/&lt;PID&gt;/task` actually shows me all the threads belonging to the process with given PID. The ones that have just one thread(main thread), seem to have a single folder under \\`task\\` , with PID exactly equal to the PID of the parent. Basically the main thread has the same PID as the process it is contained in.\n\nDoes all of this mean that there is just an illusion of a thread in linux, while infact, theyre all processes?",
+        "created_utc": 1669574956,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "PSA: Grub EFI has two grub.cfg files that both need to be independently updated; one in /boot/grub/ and one on the EFI system partition where the actual bootloader was installed",
+        "author": "FocusedFossa",
+        "url": "https://www.reddit.com/r/linux/comments/z68op4/psa_grub_efi_has_two_grubcfg_files_that_both_need/",
+        "text": "If you ever change the UUID of your boot filesystem, or you just recreate your boot partition and have it randomly assigned a new UUID (the default), **your system will not boot**. Or rather it will just boot to its console and you'll have to load the main grub.cfg yourself. To avoid this you'll need to mount your ESP read-write and reinstall the bootloader after making that change. **Note: `update-grub` doesn't do this for you.**\n\nI can appreciate why the Grub devs did it this way, but that behaviour was completely opposite to my expectations, considering that most distributions mount the ESP read-only by default, if at all. Anyway, I wasted yesterday evening figuring that out.",
+        "created_utc": 1669573963,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Kali, BlackArch or Parrot?",
+        "author": "ging1992",
+        "url": "https://i.redd.it/kttr2rgyvk2a1.jpg",
+        "text": "",
+        "created_utc": 1669573755,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Autoplay the contents of a folder/USB stick",
+        "author": "Romperull",
+        "url": "https://www.reddit.com/r/linux/comments/z68efl/autoplay_the_contents_of_a_folderusb_stick/",
+        "text": "How do you set up ubuntu to automatically play the contents of a folder when you turn on the computer? I have made it 2/3 of the way; i have changed the settings in the BIOS to start when it get connected to power and I have figured out autologin. \nThe machine will be hidden in a closet and connected to a flat screen tv in a waiting room. \n When the power is turned on, it should start up and automatically start playing the contents of a folder (or an USB stick?) using the default player (or better) in ubuntu.  \n\n (tried first with vlc but it was so slow that it was one frame per second. Then tried the built-in player and it did fine). Maybe mplayer will work fine? I don't know yet. \n\nI am experienced with Windows but I am a complete n00b when it comes to Linux. So, please explain it like you're explaining it to a toddler. Thanks in advance for helping me :)\n\n\n(This is the machine hardware specs:\nNexcom NDiS B325B fan-less PC with 4-core Intel Celeron J3160 CPU. 8GB RAM)",
+        "created_utc": 1669573287,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi, I'm having this problem with WSL in my Windows laptop. It used to work just fine until this. When i press any key the window just closes.",
+        "author": "Shpitipost",
+        "url": "https://i.redd.it/jpzjz7ya6j2a1.png",
+        "text": "",
+        "created_utc": 1669572508,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there any alternative to i3 which uses wayland instead of xorg and is compatible with nvidia drivers?",
+        "author": "Snoo-41982",
+        "url": "https://www.reddit.com/r/linux/comments/z6775z/is_there_any_alternative_to_i3_which_uses_wayland/",
+        "text": "",
+        "created_utc": 1669570484,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "DHCP client request",
+        "author": "Terrible-Ad2760",
+        "url": "https://www.reddit.com/r/linux/comments/z64qc0/dhcp_client_request/",
+        "text": "[removed]",
+        "created_utc": 1669564767,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is There a French Richard Stallman?",
+        "author": "cinquante28",
+        "url": "https://sebastiancarlos.medium.com/is-there-a-french-richard-stallman-8b95d809a9ac",
+        "text": "",
+        "created_utc": 1669563622,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I make a Linux user fall in love? I need help.",
+        "author": "zincasv",
+        "url": "https://www.reddit.com/r/linux/comments/z643jx/how_do_i_make_a_linux_user_fall_in_love_i_need/",
+        "text": "",
+        "created_utc": 1669563243,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does anyone else not enjoy tweaking, and doing everything from CLI anymore after a few years of usage?",
+        "author": "idekwhattototo",
+        "url": "https://www.reddit.com/r/linux/comments/z63zfq/does_anyone_else_not_enjoy_tweaking_and_doing/",
+        "text": "I've been using Arch/Linux for 3 years now. And I love the setup I've built for myself over the years, never going back for sure. But there's a difference between me now and the me 2 years ago. Back then, I loved compiling every program, be as \"bloat\"-free as possible, did everything from the command line, thinking it was the more efficient way for everything. Now that I think about it, I don't enjoy doing that stuff anymore cuz it just takes up too much time. I now prefer to use GUI apps for almost everything. Stuff like zathura and suckless apps doesn't appeal to me now. What do you think?",
+        "created_utc": 1669562977,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Compile this form if you want Goodnotes available for Android or Linux",
+        "author": "allexj",
+        "url": "https://support.goodnotes.com/hc/en-us/articles/4902574529551-GoodNotes-for-Android-Windows-and-Chrome-OS",
+        "text": "",
+        "created_utc": 1669561627,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Elan fingerprint reader driver on Linux",
+        "author": "thinkingperson",
+        "url": "https://www.reddit.com/r/linux/comments/z632bk/elan_fingerprint_reader_driver_on_linux/",
+        "text": "[https://www.reddit.com/r/linux/comments/gc8a2e/i\\_finally\\_found\\_a\\_cheap\\_usb\\_fingerprint\\_reader/](https://www.reddit.com/r/linux/comments/gc8a2e/i_finally_found_a_cheap_usb_fingerprint_reader/)\n\nGot the reader recognised in Ubuntu 22.10 but it tries to enroll fingerprint by swiping when it is a new \"touch/press\" version fingerprinter reader.\n\nDid some investigating and found the following:\n\n&amp;#x200B;\nThe fingerprint reader works perfectly in Windows as a touch biometric reader, but in Ubuntu/Linux, it seem to be configured as a swipe biometric reader.\n\nI believe this is what causes the accuracy to be abysmally poor.\n\nAny idea where I can read up to find out about configuration?\n\n**EDIT 2022/11/27 8:49pm SGT:**\n\n[https://fprint.freedesktop.org/fprintd-dev/Device.html](https://fprint.freedesktop.org/fprintd-dev/Device.html)\n\n**The \"scan-type\" property**\n\n'scan-type'  read      's'\n\nThe scan type of the device, either \"press\" if you place your finger on the device, or \"swipe\" if you have to swipe your finger.\n\nI think the default driver or Ubuntu User fingerprint code is not setting this right for the Elan fingerprint reader 0x04f3::0x0c28\n\nLet me see where I can find the enroll code.\n\n**EDIT 2022/11/27 8:58pm SGT:**\n\n[https://github.com/dsd/libfprint/blob/master/libfprint/core.c](https://github.com/dsd/libfprint/blob/master/libfprint/core.c)\n\nThis function in the libfprint calls the vendor driver to get supported functions\n\n    /** \\ingroup drv\n\n* Retrieves the scan type for the devices associated with the driver.\n* \\\\param drv the driver\n* \\\\returns the scan type \\*/ API\\_EXPORTED enum fp\\_scan\\_type fp\\_driver\\_get\\_scan\\_type(struct fp\\_driver \\*drv) { return drv-&gt;scan\\_type; }\n\n&amp;#x200B;\n\n**Found this hardcoded for elan to swipe!!**\n\n[https://github.com/freedesktop/libfprint/blob/master/libfprint/drivers/elan.c](https://github.com/freedesktop/libfprint/blob/master/libfprint/drivers/elan.c)\n\ndev\\_class-&gt;scan\\_type = FP\\_SCAN\\_TYPE\\_SWIPE;\n\n    static void\n    fpi_device_elan_class_init (FpiDeviceElanClass *klass)\n    {\n    FpDeviceClass *dev_class = FP_DEVICE_CLASS (klass);\n    FpImageDeviceClass *img_class = FP_IMAGE_DEVICE_CLASS (klass);\n    dev_class-&gt;id = \"elan\";\n    dev_class-&gt;full_name = \"ElanTech Fingerprint Sensor\";\n    dev_class-&gt;type = FP_DEVICE_TYPE_USB;\n    dev_class-&gt;id_table = elan_id_table;\n    dev_class-&gt;scan_type = FP_SCAN_TYPE_SWIPE;\n    img_class-&gt;img_open = dev_init;\n    img_class-&gt;img_close = dev_deinit;\n    img_class-&gt;activate = dev_activate;\n    img_class-&gt;deactivate = dev_deactivate;\n    img_class-&gt;change_state = dev_change_state;\n    img_class-&gt;bz3_threshold = 24;\n    }\n\n**Another hardcode in driver initialization.**\n\n[https://github.com/freedesktop/libfprint/blob/master/libfprint/drivers/elanspi.c](https://github.com/freedesktop/libfprint/blob/master/libfprint/drivers/elanspi.c)\n\ndev\\_class-&gt;scan\\_type = FP\\_SCAN\\_TYPE\\_SWIPE;\n\n    static void\n    fpi_device_elanspi_class_init (FpiDeviceElanSpiClass *klass)\n    {\n    FpDeviceClass *dev_class = FP_DEVICE_CLASS (klass);\n    FpImageDeviceClass *img_class = FP_IMAGE_DEVICE_CLASS (klass);\n    dev_class-&gt;id = \"elanspi\";\n    dev_class-&gt;full_name = \"ElanTech Embedded Fingerprint Sensor\";\n    dev_class-&gt;type = FP_DEVICE_TYPE_UDEV;\n    dev_class-&gt;id_table = elanspi_id_table;\n    dev_class-&gt;scan_type = FP_SCAN_TYPE_SWIPE;\n    dev_class-&gt;nr_enroll_stages = 7;       /* these sensors are very hit or miss, may as well record a few extras */\n    img_class-&gt;bz3_threshold = 24;\n    img_class-&gt;img_open = elanspi_open;\n    img_class-&gt;activate = elanspi_activate;\n    img_class-&gt;deactivate = elanspi_deactivate;\n    img_class-&gt;change_state = elanspi_change_state;\n    img_class-&gt;img_close = elanspi_close;\n    G_OBJECT_CLASS (klass)-&gt;finalize = fpi_device_elanspi_finalize;\n    }\n\n[https://github.com/freedesktop/libfprint/blob/master/libfprint/fprint-list-udev-hwdb.c](https://github.com/freedesktop/libfprint/blob/master/libfprint/fprint-list-udev-hwdb.c)\n\n    static const FpIdEntry whitelist_id_table[] = {\n    /* Currently known and unsupported devices.\n    You can generate this list from the wiki page using e.g.:\n    gio cat https://gitlab.freedesktop.org/libfprint/wiki/-/wikis/Unsupported-Devices.md | sed -n 's!|.*([0-9a-fA-F]{4}):([0-9a-fA-F]{4}).|.!  { .vid = 0x\\1, .pid = 0x\\2 },!p' */\n      { .vid = 0x04e8, .pid = 0x730b },\n      { .vid = 0x04e8, .pid = 0x730b },\n      { .vid = 0x04e8, .pid = 0x730b },\n      { .vid = 0x04f3, .pid = 0x036b },\n      { .vid = 0x04f3, .pid = 0x0c00 },\n      { .vid = 0x04f3, .pid = 0x0c4c },\n      { .vid = 0x04f3, .pid = 0x0c57 },\n      { .vid = 0x04f3, .pid = 0x0c5e },\n      { .vid = 0x04f3, .pid = 0x0c5a },\n      { .vid = 0x04f3, .pid = 0x0c70 },\n      { .vid = 0x04f3, .pid = 0x0c72 },\n      { .vid = 0x04f3, .pid = 0x2706 },\n      { .vid = 0x04f3, .pid = 0x3057 },\n      { .vid = 0x04f3, .pid = 0x3104 },\n      { .vid = 0x04f3, .pid = 0x310d },\n\n&amp;#x200B;\n\nProduct Id 0x0c26 and 0x0c28 are not whitelisted in the fprint-list hardwaredb declaration.\n\n&amp;#x200B;\n\nsudo apt install gtk-doc-tools libfprint-2-dev libgirepository1.0-dev libgusb-dev libpam-wrapper libpam0g-dev libpamtest0-dev libpolkit-gobject-1-dev libxml2-utils python3-pip python3-pypamtest",
+        "created_utc": 1669560688,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MyNixOS - Create and share Nix and NixOS configurations",
+        "author": "pveierland",
+        "url": "https://www.reddit.com/r/linux/comments/z62nqp/mynixos_create_and_share_nix_and_nixos/",
+        "text": "[removed]",
+        "created_utc": 1669559609,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What to choose?",
+        "author": "Beneficial_Amoeba774",
+        "url": "https://www.reddit.com/r/linux/comments/z62ndd/what_to_choose/",
+        "text": "Good morning and Good evening dear enthusiasts,\nI want to use Linux distro for Android Development, so I have to install Android Studio for it. Since, MS Win11 is a memory gobbler, I don't want to use it. What distro do you guys think I should pick, here's what on my priority list -\n1 - Stability\n2 - Good Support for aforementioned s/w\n3 - Performance(what to install/uninstall/disable)\n4 - Low battery usage\n5 - More window room(I am a student, so presently can't afford a monitor, also I Can customise, so please suggest theme and method)\n6 - Your own tools for development in such\n7 - Everything needs to be less than 50gb\n\nMy laptop's specification's -\nLenovo legion 5\nRyzen 7 5800H\n16GB ram\nNvidia RTX 3050\n15.6\" FHD display\n500GB SSD\n\nFew more things -\nI don't wanna totally uninstall win11 as I am using it as backup.\nDual booting is the only option.\n\nThank you.\n\nP.S. - I am new to Linux, presently learning android development(Kotlin w/ Jetpack Compose)",
+        "created_utc": 1669559580,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help I tried to install archcraft but this appeared and i tried with 3 different usbs",
+        "author": "Patato_whit_ketchup",
+        "url": "https://i.redd.it/famp73mmjj2a1.jpg",
+        "text": "",
+        "created_utc": 1669557505,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lightscribe on GNU/Linux in 2022?",
+        "author": "Armand_Raynal",
+        "url": "https://www.reddit.com/r/linux/comments/z61gm9/lightscribe_on_gnulinux_in_2022/",
+        "text": "Hello! Yes you read that title right. Am getting into CDs again just for the fun of the nostalgia, and I discovered lightscribe is a thing and it looks pretty rad(printing images in gray-scale on the top part of the CD through the CD burner using the laser for those who don't know), but I can't find any software currently available to do it on GNU/Linux, it seems the one from LaCie is not hosted anywhere anymore, the lightscribe website is dead, not sure if it still could run on current distros anyway ...\n\n&amp;#x200B;\n\nI only use GNU/Linux OSes and I'd like to avoid making a Windows VM just for that, is there a solution? By the way I saw Arch has packages in the AUR that would make it work it seems but am on Fedora and a DNF and flathub search for lightscribe don't return any results :/\n\n&amp;#x200B;\n\nCan I run some CD burning program from Windows with Wine to do it maybe?\n\nAnd by the way am not sure that my computer's CD burner is compatible with lightscribe, I bought it a decade ago to put it in my self-assembled PC, I remember it didn't even came in a proper box back then, just unlabeled cardboard, only thing I know is that it's from Samsung IIRC, is there some way through software means to determine if it supports lightscribe? \n\n&amp;#x200B;\n\nThanks for the help!",
+        "created_utc": 1669556338,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Strange GPU issue. Help please?",
+        "author": "GrimThisx",
+        "url": "https://www.reddit.com/r/linux/comments/z619h9/strange_gpu_issue_help_please/",
+        "text": "[removed]",
+        "created_utc": 1669555769,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need help uninstalling",
+        "author": "NamVu2k",
+        "url": "https://www.reddit.com/r/linux/comments/z5zbmj/need_help_uninstalling/",
+        "text": "[removed]",
+        "created_utc": 1669549736,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 6.1.0-rc6",
+        "author": "archlinuxlovers",
+        "url": "https://v.redd.it/4th9n2nixg2a1",
+        "text": "",
+        "created_utc": 1669543897,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Machine Recommendations?",
+        "author": "BouJUCE",
+        "url": "https://www.reddit.com/r/linux/comments/z5wybv/machine_recommendations/",
+        "text": "[removed]",
+        "created_utc": 1669541694,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do I need for my graphics card? Running elementary 7.0 starting a class on blender, and was surprised to see I don't have a compatible graphics card to use HIP for GPU acceleration... Am I missing something?",
+        "author": "the_l1ghtbr1nger",
+        "url": "https://i.redd.it/2qf00iid7f2a1.png",
+        "text": "",
+        "created_utc": 1669522977,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "New to Linux, need advice.",
+        "author": "williams2242",
+        "url": "https://www.reddit.com/r/linux/comments/z5recq/new_to_linux_need_advice/",
+        "text": "[removed]",
+        "created_utc": 1669522922,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "New to Linux, need advice!",
+        "author": "williams2242",
+        "url": "https://www.reddit.com/r/linux/comments/z5r2wx/new_to_linux_need_advice/",
+        "text": "",
+        "created_utc": 1669521962,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "13yr-old Rudra Saraswat Demoing His Work Reviving Unity7 at UbuCon Asia 2022",
+        "author": "OsrsNeedsF2P",
+        "url": "https://i.imgur.com/h6hO9Og.jpg",
+        "text": "",
+        "created_utc": 1669519636,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Wine 3.0",
+        "author": "Tight-Importance-226",
+        "url": "https://www.reddit.com/r/linux/comments/z5pt3m/wine_30/",
+        "text": "[removed]",
+        "created_utc": 1669518178,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "PSA: Grub EFI needs two grub.cfg files; one in /boot/grub/ and one on the EFI system partition where the actual bootloader was installed",
+        "author": "FocusedFossa",
+        "url": "https://www.reddit.com/r/linux/comments/z5omht/psa_grub_efi_needs_two_grubcfg_files_one_in/",
+        "text": "If you ever change the UUID of your boot (and/or root) filesystem, or you just recreate your boot partition and have it randomly assigned a new UUID (the default), **your system will not boot**. Or rather it will just boot to its console and you'll have to supply all the boot arguments manually. To avoid this you'll need to mount your ESP read-write and reinstall the bootloader after making that change.\n\nI can appreciate why the Grub devs did it this way, but that behaviour was completely different than my expectations, considering that most distributions mount the ESP read-only by default, if at all. Anyway, I wasted this evening figuring that out.",
+        "created_utc": 1669514704,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "WPS Office website and suspicious CPU usage on Chromium-based browsers",
+        "author": "Fulalas",
+        "url": "https://www.reddit.com/r/linux/comments/z5nx6v/wps_office_website_and_suspicious_cpu_usage_on/",
+        "text": "[removed]",
+        "created_utc": 1669512680,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to switch theme to dark in bottles (openbox) in settings no this option",
+        "author": "Historical_Degree_59",
+        "url": "https://www.reddit.com/r/linux/comments/z5njv7/how_to_switch_theme_to_dark_in_bottles_openbox_in/",
+        "text": "[removed]",
+        "created_utc": 1669511634,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Dell has better Linux support than Windows support.",
+        "author": "elatllat",
+        "url": "https://www.reddit.com/r/linux/comments/z5njqk/dell_has_better_linux_support_than_windows_support/",
+        "text": "Normally Linux has a better install experience than Windows (because it's faster and more drivers are included) but the only way I (or Dell support) could get a fresh (offline iso) Windows install onto a new Dell XPS 17 9720, was to install Linux and put Windows in KVM. Even using an Apple computer there are ways to get installer ISOs, but not on this Dell; unreliable online disk image driver hackery only. Windows would not even launch the installer or say what driver it wanted, just that it wanted it.\n\nEvery time I help someone with Windows I'm reminded in multiple ways how nice Linux is.",
+        "created_utc": 1669511623,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to switch theme to dark in bottles (openbox)",
+        "author": "Historical_Degree_59",
+        "url": "https://www.reddit.com/r/linux/comments/z5nj0r/how_to_switch_theme_to_dark_in_bottles_openbox/",
+        "text": "[removed]",
+        "created_utc": 1669511569,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "SSHGuard ..take a peek",
+        "author": "unixbhaskar",
+        "url": "https://www.sshguard.net/",
+        "text": "",
+        "created_utc": 1669511472,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Niagara v0.0.1.2",
+        "author": "keroeslux",
+        "url": "https://www.reddit.com/r/linux/comments/z5n4zj/niagara_v0012/",
+        "text": "[removed]",
+        "created_utc": 1669510448,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Pros and cons of Linux mint and/or tuxlinux?",
+        "author": "kaza12345678",
+        "url": "https://www.reddit.com/r/linux/comments/z5mgs2/pros_and_cons_of_linux_mint_andor_tuxlinux/",
+        "text": "I'm quite new with the linux os\nRecently i was given a old laptop which I wanted to use to experience linux so i did some research betweens distros and i needed a low end requesting os (basically even from start it won't need much when nothing is open) and from some live cd testing I've found linux mint and tuxlinux seem to be my good chooses but i wanna hear people experience between the two any faults,any pros and what people have use these mainly for (as I'm aware some os's are made for one thing over another)\nI don't want to hear from other os's but only between these two\n\nI hope to hear your responses and thank you for taking the time to read from a noobie",
+        "created_utc": 1669508577,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Sorry I went back to the dark side",
+        "author": "InterestingChart4169",
+        "url": "https://www.reddit.com/r/linux/comments/z5krj8/sorry_i_went_back_to_the_dark_side/",
+        "text": "[removed]",
+        "created_utc": 1669503990,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "over 10 years ago, I finally got fed up with my parent's MS Windows woes...",
+        "author": "ayoungethan",
+        "url": "https://www.reddit.com/r/linux/comments/z5jyz3/over_10_years_ago_i_finally_got_fed_up_with_my/",
+        "text": "...and I switched them both over to Linux (different flavors of Ubuntu). \n\nWhen I went to visit them, I was tired of spending hours in front of their computers doing updates and regular maintenance and malware busting just to keep the machines semi-workable. As soon as I switched them over to Linux, the amount of time I spent providing them tech support during visits plummeted. \n\nMy parents are not computer literate. That translated into lots of regular issues with their Windows computers. When we made the switch to Linux, I had to show them where to click or how to navigate the GUI in a couple of cases or do some basic setup work, and field the occasional question. But they were able to maintain the updates and upgrades process themselves, and the computers didn't need any other software-related maintenance other than the occasional reboot. And that's with me approaching them about any computer issues they've been having. Whereas with Windows, it was always them calling me up about the latest issue they'd been having.\n\nNow, we are finally replacing my mom's 12+ year old Core2Duo Dell laptop because it can't even run Lubuntu all that well anymore. While we could upgrade the ram (it only has 3gb) and HDD, that type of ram is actually pretty scarce now, not all that inexpensive, the laptop is fairly banged up, and I think over 12 years is a pretty dang good run for a laptop anyway. I'm thinking of going Lenovo this time, either a Thinkpad E15 or a Thinkbook 15 (both intel, because they seem to be fully certified to work out of the box with Linux).\n\nJust thought I'd share the positive story. Here's another one that had a bit wider reach: Around the same time, I also ran a public technology education program for older adults, and we switched to Lubuntu in the computer lab for similar reasons. The people using the program barely noticed. They said \"windows looks funny\" but a lot of them appreciated the fact that I had \"upgraded the computers\" (they were a lot faster and more responsive)! In fact, it was the Windows techies that complained the most, I think because it was something outside their narrow comfort zone. But the more ignorant people didn't care one bit in the worst cases, and responded positively to the change (more functional, reliable, responsive computers!) otherwise. I don't think the Tech Support guys for the computer lab liked it, though. They only knew Windows, and they charged $70/hr for tech support which was a huge financial drain to the program. Those expenses for us (and revenue for them) all-but went away after the change.",
+        "created_utc": 1669501922,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux on Mac",
+        "author": "imihnevich",
+        "url": "https://www.reddit.com/r/linux/comments/z5hdr6/linux_on_mac/",
+        "text": "So the title says it all, I wanna install Linux on my MacBook Pro 2018, but I hear there are problems with sound and Bluetooth. Are there people who run Linux on their Macs? Do you mind sharing your experience?",
+        "created_utc": 1669495291,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for a linux distro",
+        "author": "Just_Phone_1722",
+        "url": "https://www.reddit.com/r/linux/comments/z5gskr/looking_for_a_linux_distro/",
+        "text": "[removed]",
+        "created_utc": 1669493778,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Sell me on Linux",
+        "author": "HesThePianoMan",
+        "url": "https://www.reddit.com/r/linux/comments/z5gqci/sell_me_on_linux/",
+        "text": "[removed]",
+        "created_utc": 1669493620,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "i struggle to install parrot os. do you Why i have this error message ?",
+        "author": "The-French-GOAT",
+        "url": "https://i.redd.it/esfnznw7zd2a1.jpg",
+        "text": "",
+        "created_utc": 1669490104,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Week in Open Source - Ubuntu Touch 24, Asahi Updates, WSL GA, Stable Diffusion V2 &amp; more",
+        "author": "antsaregay",
+        "url": "https://fossweekly.beehiiv.com/p/foss-weekly-26-ubuntu-touch-24-asahi-updates-wsl-ga-stable-diffusion-v2-more",
+        "text": "",
+        "created_utc": 1669487358,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Kali Linux installation directly on ssd does not have GUI ! How to fix ?!",
+        "author": "Adventurous_Ad3141",
+        "url": "https://www.reddit.com/r/linux/comments/z5e9hj/kali_linux_installation_directly_on_ssd_does_not/",
+        "text": "",
+        "created_utc": 1669487194,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help please",
+        "author": "Bliptq",
+        "url": "https://www.reddit.com/r/linux/comments/z5bz02/help_please/",
+        "text": "[removed]",
+        "created_utc": 1669481362,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can i connect to my switch lite?",
+        "author": "AloofPenny",
+        "url": "https://www.reddit.com/r/linux/comments/z5bnur/how_can_i_connect_to_my_switch_lite/",
+        "text": "[removed]",
+        "created_utc": 1669480551,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do applications store passwords and other sensitive data?",
+        "author": "HiPhish",
+        "url": "https://www.reddit.com/r/linux/comments/z5bjbo/how_do_applications_store_passwords_and_other/",
+        "text": "Some time ago I wanted to give the [aerc](https://aerc-mail.org/) email client a try, but then I deleted it when I found out that it stores the password in plain text. But now I wonder, how do other applications store sensitive information like passwords? For example in [KMail](https://apps.kde.org/kmail2/) I only entered my password initially and the application stored it somewhere.\n\nThe obvious solution is to store data encrypted, but how does the application decrypt it again? It would need some cryptographic key, but then we have just kicked the can down the road: the key itself needs to be either plain text or it needs to be encrypted again, which necessitates another key or a password.\n\nIn [this](https://www.reddit.com/r/linux/comments/bwao4d/comment/epwikl7/) comment the author of aerc says that the config file must have permissions `600` (read+write for owner, nothing for rest of system), so it is not readable by the rest of the system. Is this what other applications do as well? A malicious application I have installed which has access to the file system could just read my settings and an attacker who gets physical access to my machine (e.g. a thief) could just hook up the hard drive to his computer and bypass and OS permissions. For the latter I would have to encrypt my hard drive, and for the former I guess I have to be careful what I run and not just trust \"lol, the password is encrypted\". Am I correct?",
+        "created_utc": 1669480232,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Getting started with Driver Development",
+        "author": "deModivated",
+        "url": "https://www.reddit.com/r/linux/comments/z5b88b/getting_started_with_driver_development/",
+        "text": "[removed]",
+        "created_utc": 1669479425,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why ldd and dynamic loader use different cache file",
+        "author": "terhyrzht",
+        "url": "https://www.reddit.com/r/linux/comments/z590sc/why_ldd_and_dynamic_loader_use_different_cache/",
+        "text": "[removed]",
+        "created_utc": 1669473495,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "made this dope wallpaper at work xD",
+        "author": "Shoddy_Cat_4455",
+        "url": "https://i.redd.it/of3bsd154b2a1.png",
+        "text": "",
+        "created_utc": 1669473438,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why this is the VLC logo",
+        "author": "GeorgiiGrishko",
+        "url": "https://i.redd.it/t7nqlzldkc2a1.jpg",
+        "text": "",
+        "created_utc": 1669473004,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Googling a very popular tool \"vi\" will start an infinite loop",
+        "author": "GeorgiiGrishko",
+        "url": "https://v.redd.it/6atomn5t0b2a1",
+        "text": "",
+        "created_utc": 1669472337,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I am confused whether i switch to linux or not",
+        "author": "Doliprane-",
+        "url": "https://www.reddit.com/r/linux/comments/z58jev/i_am_confused_whether_i_switch_to_linux_or_not/",
+        "text": "[removed]",
+        "created_utc": 1669472140,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I wish I switched to linux distro earlier. OMG i'm blown away. Experience from an easily distracted and overstimulated guy.",
+        "author": "momoajay",
+        "url": "https://www.reddit.com/r/linux/comments/z57pwz/i_wish_i_switched_to_linux_distro_earlier_omg_im/",
+        "text": "Folks, i'm so thankful to have come across linux by chance. Few years ago I purchased a Chromebook because I was broke and couldn't afford to replace windows laptop.\n\nI got tired of Chromebooks limitations so I looked around and came across crouton ony few months ago. It began my journey of steep learning curve and may hours of frustrations.\n\nI persisted and ended up running various distros but settled on lubuntu. Works flawlessly on my Chromebook.\n\nI plan to buy a good laptop and install either Pop!Os or Mint.\n\nBiggest benefit for me - I struggle with hyperactivity and I'm easy distracted and overstimulated.\n\nLinux is basically like taking a ADHD medication for me - clutter free and no distratction. I love it.\n\nWhat tips do you have for an enthustiastic newbie?",
+        "created_utc": 1669469718,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Error while booting Ubuntu everytime .",
+        "author": "Its_FKira",
+        "url": "https://i.redd.it/y7mpzxv6ub2a1.jpg",
+        "text": "Plzz help",
+        "created_utc": 1669464200,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Orange Pi OS",
+        "author": "Efficient_Speed1221",
+        "url": "https://www.reddit.com/r/linux/comments/z55qhz/orange_pi_os/",
+        "text": "[removed]",
+        "created_utc": 1669463433,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best linux flavor for newbie",
+        "author": "notbenj",
+        "url": "https://www.reddit.com/r/linux/comments/z53y3s/best_linux_flavor_for_newbie/",
+        "text": "[removed]",
+        "created_utc": 1669456962,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Not able to find Wi-Fi settings in Linux mint. Wi-Fi adapter is not found",
+        "author": "KINGYOMA",
+        "url": "https://www.reddit.com/r/linux/comments/z52q3m/not_able_to_find_wifi_settings_in_linux_mint_wifi/",
+        "text": "So, I am completely new to Linux and just now got the opportunity to try it, when I replaced my old computer with a new one. I installed linux mint on the old pc. Everything is fine till now, but I am not able to access wi-fi.\n\n&amp;#x200B;\n\n[Picture of wi-fi+bluetooth card of my old computer from its support website.](https://preview.redd.it/48mgek7o792a1.jpg?width=488&amp;format=pjpg&amp;auto=webp&amp;s=de34507c307a06024fb18caf4c893d12f6b1e64f)\n\n&amp;#x200B;\n\nhttps://preview.redd.it/yo47uiwx792a1.png?width=1920&amp;format=png&amp;auto=webp&amp;s=90e1b9fbb65c1db50605037f4f936bb6ebbb31dd\n\nhttps://preview.redd.it/boifeiwx792a1.png?width=1920&amp;format=png&amp;auto=webp&amp;s=15abb8ccc8eb58e45200da4fa6fa9126c0f8d7c5\n\n&amp;#x200B;\n\nhttps://preview.redd.it/zeaprrd4992a1.png?width=1920&amp;format=png&amp;auto=webp&amp;s=70249ee42635582358f23ee89a78f0be3308fcb8\n\nIn my noob opinion, I think the drivers aren't working with this card.\n\n&amp;#x200B;\n\nhttps://preview.redd.it/8mc59wjo992a1.png?width=1920&amp;format=png&amp;auto=webp&amp;s=2702c9656c17edf32f487aa2c1c8458dca7056a3\n\n&amp;#x200B;\n\nWhat do you think?\n\nPlease, provide a solution for this.\n\nCurrently I am using the ethernet port, but I need to keep this system wireless for some absurd reason of my own.\n\n [HP Pavilion 23-q141in TouchSmart All-in-One Desktop PC Product Specifications | HP® Customer Support](https://support.hp.com/in-en/document/c04853384)",
+        "created_utc": 1669452531,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "#71 Increased Circle · This Week in GNOME",
+        "author": "InvisibleShadowGhost",
+        "url": "https://thisweek.gnome.org/posts/2022/11/twig-71/",
+        "text": "",
+        "created_utc": 1669449168,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need to solve a machine for my project in pt",
+        "author": "Acceptable_Dot4315",
+        "url": "https://www.reddit.com/r/linux/comments/z510cr/i_need_to_solve_a_machine_for_my_project_in_pt/",
+        "text": "[removed]",
+        "created_utc": 1669446573,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tunnel Sandbox experiment",
+        "author": "kq6up",
+        "url": "https://www.reddit.com/r/linux/comments/z4xlqd/tunnel_sandbox_experiment/",
+        "text": "This seems like both host should be able to ping each other by their tunneled address:\n\n \n\n\\# LAN Host 1\n\nsudo ip tunnel add tunl1 mode ipip remote 192.168.1.64 dev eth0\n\nsudo ip link set tunl1 up\n\nsudo ip route add 10.44.1.0/24 via 192.168.1.75 dev tunl1 onlink\n\nsudo ifconfig tunl1 10.44.2.1\n\n\\# LAN Host 2\n\nsudo ip tunnel add tunl1 mode ipip remote 192.168.1.64 dev eth0\n\nsudo ip link set tunl1 up\n\nsudo ip route add 10.44.2.0/24 via 192.168.1.5 dev tunl1 onlink\n\nsudo ifconfig tunl1 [10.44.1.1](https://10.44.1.1)\n\n&amp;#x200B;\n\nAny thoughts as to why this would not work?",
+        "created_utc": 1669435778,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Setup proxy to change client OS and other machine info",
+        "author": "sakhik2014",
+        "url": "https://www.reddit.com/r/linux/comments/z4x27r/setup_proxy_to_change_client_os_and_other_machine/",
+        "text": "[removed]",
+        "created_utc": 1669434162,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "how to switch to nvidia gpu",
+        "author": "Ultralucarioninja",
+        "url": "https://www.reddit.com/r/linux/comments/z4wnos/how_to_switch_to_nvidia_gpu/",
+        "text": "[removed]",
+        "created_utc": 1669432918,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Flatpak is not a Sandbox",
+        "author": "devnull010",
+        "url": "https://hanako.codeberg.page/",
+        "text": "",
+        "created_utc": 1669432674,
+        "upvote_ratio": 1.0
+    }
+]

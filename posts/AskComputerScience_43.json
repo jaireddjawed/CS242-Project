@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Computer science or software engineering, based on these specific curricula?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jtqgz/computer_science_or_software_engineering_based_on/",
+        "text": "1. [Bachelor of Computer Science (Advanced)](http://www.adelaide.edu.au/degree-finder/2017/bcmsa_bcmpscadv.html). This is a three-year program, with the option for an honours year, subject to GPA requirements.\n2. [Bachelor of Engineering (Honours)(Software)](http://www.adelaide.edu.au/degree-finder/2017/beng_besoftens1.html). A four-year engineering program, which incorporates all of the content of CS (except a couple of subjects specific to the advanced stream), but has less flexibility in terms of elective choice.\n\nI'm planning to go the software development route rather than research, but I'd be interested to hear which program other people would choose.",
+        "created_utc": 1482448395,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Minimum number of moves to solve a puzzle game? (x-post /r/algorithms)",
+        "author": "Jean-Alphonse",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jtk7a/minimum_number_of_moves_to_solve_a_puzzle_game/",
+        "text": "Hi everyone!\n\nI made a simple puzzle game and i'm struggling to find an algorithm to solve it... here's the game:  \n\nOn a N*N grid, each cell is initialized with a random value. Adjacent cells of same value form a group, and clicking on a group increments the value of each of its cells. Similarly, right-clicking decrements a group. Increment/decrementing costs 1 move.  \nThe goal is to have only one group left on the board (ie. all the cells have the same value), with the minimum number of moves.\n\n[Here](http://entibo.fr/lvlr) is the prototype.  \nSo here's the question: how to determine the minimum number of moves required to solve a level ?\n\nI feel like there exists an algorithm to properly find it but i can't figure it out.  \nI tried a shortest-path algorithm on the graph of game states but of course starting at N = 4 or 5 it grinds to a halt. Am i doing it wrong ?  \n\nAny help would be much appreciated, even pointers to maybe similar games and how they are solved!\n\nthanks!",
+        "created_utc": 1482446319,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Book publisher suggestion",
+        "author": "seabee494",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jqoio/book_publisher_suggestion/",
+        "text": "So I am a subscriber to Safari Books Online, and one thing I've noticed is that the Packt publisher tends to produce content that is with a litany of errors. To me it seems like anything published by O'Reilly media is better in quality, as well as Apress. I have also had a good experience with No Starch Press. Are there any other high quality book publishers / learning resources that I'm not aware of? ",
+        "created_utc": 1482415042,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I need to create a virtual drive for certain users to share on our network using group policy scripts. Does anyone know of a good tutorial for this?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jqodc/i_need_to_create_a_virtual_drive_for_certain/",
+        "text": "[removed]",
+        "created_utc": 1482414984,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Double majoring in Computer Science and Informatics",
+        "author": "misdry",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jom1b/double_majoring_in_computer_science_and/",
+        "text": "Hey guys. I am a student at the University of Michigan and am trying to decide on my major. I know I want to do computer science, but for some reason, I feel like I also need to do something else on top of that. Informatics seems very interesting and it seems like there is a decent amount of overlap with cs that might make it more possible to do. I just wanted to ask, do you think doing both majors is a waste of time because of the overlap?",
+        "created_utc": 1482380732,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How realistic is relocating after getting a degree in CompSci to Manhattan, New York, and succeeding?",
+        "author": "asdff01",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jolv5/how_realistic_is_relocating_after_getting_a/",
+        "text": "",
+        "created_utc": 1482380665,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Booking System is NP Complete?",
+        "author": "Canary_Touch",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jj1m1/booking_system_is_np_complete/",
+        "text": "I want to show that the following problem is NP-Complete and need a bit of guidance as I think I might be going at it wrong. \n\nThe problem:\n\nWe're looking at a meeting booking system. The input is a list n of possible times as well as m lists (where m &lt;= n), one list per person containing their choice of possible meeting times. For each possible time, a priority number is also given. For each reservation time in the list of n, a cost is also given. (Cost of booking the room). The algorithm should assign times so that the combined priority for those who have booked should be as small as possible while the total cost of booking should not be higher than M.\n\nThe Decision problem would be something like \"Is it possible to to verify if that the total cost of meeting booking does not exceed K and that the total priority is lower than V?\" \n\nNP\n\nSo first to show that it's in NP we should show that given a correct solution it can be verified that it is indeed correct. I guess it should verify that that the cost is below the threshold of K and that the priority of the correct solution is indeed the minimum - both of which can be done in Polynomial time I assume. We traverse through the lists of people, assert that each one has a time granted to them, add up the cost in a variable and at the end of this list assert that the cost is below K. The priority can be dealt with in similar fashion I suppose?\n\nNP Hard\n\nThen to show it's NP Hard I can use the Knapsack Problem since they're rather similar. With input S, size of bag, a list of items with weight w and value v as well as the goal W which is the goal-value. I guess it's clear that S can correlate to cost and that W correlate to the priority? So we want S, the size, to be below S i.e we have the similar condition for the problem above where the cost has to be below K. Then W, the total value should generally exceed W, but in our case we want it to be as low as possible which seems doable.\n\nThe reduction to show it's NP Hard is perhaps not thought out all the way. Some pointers would be very helpful! ",
+        "created_utc": 1482312526,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does a greedy strategy exist for this problem",
+        "author": "mynameisforgotten",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jj0u8/does_a_greedy_strategy_exist_for_this_problem/",
+        "text": "I was wondering whether i can solve the following problem by using a greedy strategy: Let's say i have a set of containers with 2 dimensions and a set of items with 2 dimensions. Can a solution be found where each item is assigned to a container so that it fits inside. I can have containers left over, however all items must be assigned. Assuming a solution exist, is there a greedy choice I can make for assigning an item to a container?",
+        "created_utc": 1482312105,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reccomended laptop for CS student?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ji9o8/reccomended_laptop_for_cs_student/",
+        "text": "Looking for something around $1400~ (I know I can get by with a lot cheaper) I'm most likely going to install Linux on it too. Any recommendations?  ",
+        "created_utc": 1482299313,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does a secure way of verifying attendance exist?",
+        "author": "apocalypsedg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jewr6/does_a_secure_way_of_verifying_attendance_exist/",
+        "text": "For example a lecturer wants to check attendance, an insecure example of what I am looking for would be if you had a code displayed on the overhead projector and you had to enter it online. The flaw is that people could leak the code to people outside by texting, allowing them to mark themselves present without being there.\n\nA code unique to everyone suffers from the same problem. You could text friends their code without them being present.\n\n\nIf everyone had a secret function which took as input a code that varied every lecture, and outputted a verification code, that would work, but there is an incentive to leak your secret function allowing people inside to use it and text you back your output.\n\nAny ideas?",
+        "created_utc": 1482259139,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How Should I Get Started on Web Development?",
+        "author": "psybroh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jdi59/how_should_i_get_started_on_web_development/",
+        "text": "[removed]",
+        "created_utc": 1482243958,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Grammar to Chomsky Normal Form",
+        "author": "LucasvRLoL",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5jcvl9/grammar_to_chomsky_normal_form/",
+        "text": "Given is the following grammar\nS -&gt; SS | SaSb | lambda  \nI have to convert it into Chomsky Normal Form. I have no idea how to do this since I can only substitute lambda. Can anyone help me out? I have made a start but am not sure if I am doing this correctly. We started out with this.  \nS -&gt; SS  \nS -&gt; SaSb  \nS -&gt; lambda  \nI added a new start symbol, so now we have:  \nS0 -&gt; S  \nS -&gt; SS  \nS -&gt; SaSb  \nS -&gt; lambda  \nI then substituted S with lambda  \nS0 -&gt; S  \nS -&gt; SS | S | lambda  \nS -&gt; SaSb | aSb | Sab | ab  \nS -&gt; lambda  \nI don't know how to continue",
+        "created_utc": 1482234763,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Curious CompSci Student",
+        "author": "Annoyed_NYC",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ja8sd/curious_compsci_student/",
+        "text": "Going into my 4th semester in computer science and was hoping reddit could answer some questions for me. First I was curious as to how much math you should know for CompSci. Second, does anyone use assembly language in computer science anymore? Because my school makes me take a required semester and it really is just boring to me.",
+        "created_utc": 1482195236,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MSc Student of Computer Software Engineering-Need to choose my Supervisor &amp; Thesis Area",
+        "author": "suddenintent",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j939n/msc_student_of_computer_software_engineeringneed/",
+        "text": "Hi!\n\nTL;DR: I'm looking for a thesis area which isn't CS-ish! (don't like CS)\n\nI'm a computer software engineering master student. Our college required us to choose our supervisor professor in next few days. So I'm seeking an Area, to choose a supervisor who is interested in it.\n\nHonestly I don't like CS and I'm looking for a subject which is related to other areas such as biology and medicine (an interdisciplinary maybe). To date I found data mining, bioinformatics and machine learning.\n\nWhat do you think? Looking for your suggestions and ideas!\n\nThank you\n",
+        "created_utc": 1482182901,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Set Theory? Literally haven't got a clue...",
+        "author": "istoodonalego",
+        "url": "http://imgur.com/FhJfkg3",
+        "text": "",
+        "created_utc": 1482174365,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help Please!Python Range function.",
+        "author": "treyvonbooke",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j69ic/help_pleasepython_range_function/",
+        "text": "can someone explain the time complexities of this function?\nseen here... http://imgur.com/a/QkSOj\nlike tight bounds and worst case best case? thanks!\nAlso if you could give a general proof that would help also..\nsorry if this is basic btw I am a beginner",
+        "created_utc": 1482152531,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help building an auto-downloader for this program?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j5oj5/help_building_an_autodownloader_for_this_program/",
+        "text": "[deleted]",
+        "created_utc": 1482142458,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I got my computer science AA.... now what?",
+        "author": "ramosaleonel",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j4pey/i_got_my_computer_science_aa_now_what/",
+        "text": "I still feel like I do not know shit. I will be working towards my B.S (B.A? idk the difference) for Computer Science and software development but until I finish that, now what? Like I said, I still feel I don't know shit. Not for an internship not for a job in computer science... not for anything really. I am lost, I feel like if I were to get hired for a programming job, I would hide in the corner until I eventually got fired. \n\nI know how to make data structures and implement algortihms and I know how they work but that's all I know (aside from recursion and some threads), can I actually get any job with my limited knowledge? People always say BUILD SHIT! and I say WHAT SHIT! I would not even know where to begin, even if I were to write a program with a shit GUI in eclipse...what then?\n\nShould I pursue doing a project or getting an internship or should I just keep studying until I feel like an actual programmer?",
+        "created_utc": 1482125097,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's the smallest program that can be called \"Linux\" and what does it do?",
+        "author": "winter_mutant",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j4a1o/whats_the_smallest_program_that_can_be_called/",
+        "text": "",
+        "created_utc": 1482119011,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you really need a laptop for computer science?",
+        "author": "ksr_is_back",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j3ziz/do_you_really_need_a_laptop_for_computer_science/",
+        "text": "I'm asking because the program of my future university doesn't specify it.\n\nI was thinking to build a desktop pc with two screens but like I just said I don't really know if I'm going to need a laptop.\n\nSorry for my english",
+        "created_utc": 1482115095,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Proofs and theoretical computer science",
+        "author": "I_love_seaweed",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j3x9f/proofs_and_theoretical_computer_science/",
+        "text": "I don't know what's wrong with me.\n\nI am currently a Junior in College, and I've aced every single calculus class from Calculus I all the way to Calculus III, with ease, Linear Algebra, which was a bit harder to do so, but I can't for the sake of my life come up with proofs for my computer science classes. It's not even the fact I don't know how to write a proper proof, it's that if I had to proof something, I don't even know where to begin with, or even come up with a coherent solution.\n\nI've had 2 courses that required me to proof things, the first one being the introduction to computation which introduced me to all sorts of proofs such as induction, contradiction, as well as other things such as conditional statements. The second course is Algorithms. For this course I pretty much have to proof that my solutions are correct, that the run time is correct, etc. \n\nI don't know how to do most of the proofs in the assignments. For most of my answers, I've literally put down things that did not make any sense to me, but when the solutions are posted, and I read through them, I understand most of them completely, and I just keep wondering to myself why I can't come up with these proofs.\n\nI've somehow made it pass the first course with a B, and possibly a B+ or A- in algorithms. This sucks because I feel like I have to have a good understanding of how to do this in my future classes, and possibly career.\n\nI guess my real question is: Why do I do well in my first few math courses, but is absolutely horrid when it comes to theories and proofs, and how do I improve?",
+        "created_utc": 1482114279,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking to start a small library of Computer Science reading essentials. What non-textbook would you recommend to an aspiring, well-rounded software engineer?",
+        "author": "brianjenkins94",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j2tby/looking_to_start_a_small_library_of_computer/",
+        "text": "[removed]",
+        "created_utc": 1482100438,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you prove an algorithm is not fast by contradiction?",
+        "author": "cmpscistudent",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j296x/how_do_you_prove_an_algorithm_is_not_fast_by/",
+        "text": "I have a specific algorithm im trying to prove isnt fast by using contradiction? can anyone help me please I cant get myself to know how to start this",
+        "created_utc": 1482093829,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which topic would be more interesting for me?",
+        "author": "fylux",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5j1f75/which_topic_would_be_more_interesting_for_me/",
+        "text": "Hi, I'm a second year student studying CS. I want to learn more advanced stuff and I'm going to have as tutor one of my teachers. He asked about which topic would I like to work at. Actually, I'm not completely interested in a specific topic yet though I do like algorithms and trying to make them very efficient. I would like to learn things that are not very specific and can help me in different fields of CS, that is why I considered the following possibilities.\n\n-Evolutionary algorithms\n-Graph algorithms\n-Work on the topics covered in the CS 224: Advanced Algorithms course, http://people.seas.harvard.edu/~minilek/cs224/fall14/lec.html\n-Functional programming\n\nI appreciate any advice.",
+        "created_utc": 1482084193,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone explain to me how exactly Linux makes everything so much easier versus Windows?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5iyfb8/can_someone_explain_to_me_how_exactly_linux_makes/",
+        "text": "How does it work? I'm just curious since I've never used Linux before.. ",
+        "created_utc": 1482032889,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Using LC-3 simulator to learn about assembly language and I'm very confused about a couple things.",
+        "author": "herejust4this",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5iwvvz/using_lc3_simulator_to_learn_about_assembly/",
+        "text": "I've been taking a computer organization class at school and we are using the LC-3 simulator to learn assembly language and I'm having a real hard time grasping a few simple concepts. \n\nWhat's mainly confusing to me is how PCoffset &amp; Base+PCoffset really work. I understand how the PCcounter ticks one line at a time through the code and can jump to different addresses and read/write data, and that instructions with PCoffset allow you to read/write instruction that are \"further away\" than you would get from using a regular LD or ST command. \n\nHowever, I just cannot figure out how to use them correctly so right now I'm stuck with just using LD and ST to grab my data from my data fields, yet I still cannot print out the stored data using PUTS or OUT and I don't understand why.  \n\nHere's a sample of my crowning achievement in LC-3 so far.\nThe addition is working and it appears that the values are being stored &amp; loaded in the correct registers but it does not print. I would really like to be able to utilize the PCOffset &amp; Base+PCOffset capabilities of certain Load and Store instructions but right now I can't even get a simple print routine to work.\n\n\t.ORIG\tx3000\n\n\tAND\tR0, R0, #0\t; clear R0\n\tAND\tR1, R1, #0\t; clear R1\n\tADD\tR2, R2, #5\t; R2 = 5\n\tADD\tR3, R3, #2\t; R3 = 2\n\n\tADD\tR0, R3, R2\t; R0 now is 2+5=7\n\tST\tR0, MEM1\t; Store 7 inside MEM1\n\tLD\tR1, MEM1\t; Load 7 into R1\n\t\n\tAND\tR0, R0, #0\t; clear R0 again\n\tADD\tR0, R0, R1\t; Add 7 into R0\n\tOUT\t\t\t; print 7 to console\n\n\t     HALT\n\n     ;*******data************\n      MEM1\t.BLKW\t1\t\n\n\t     .END",
+        "created_utc": 1482012053,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best recommended laptop to run Linux for coding?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5iwfdo/best_recommended_laptop_to_run_linux_for_coding/",
+        "text": "So I think I'm sold on going with Linux over Windows. I don't know much about it, but I'm gonna learn since it seems like the best way to grasp programming and setting things up the way you want. Does anyone have any Linux advice or a recommended laptop to get that runs Linux? I'm looking to spend roughly $1400~ max. ",
+        "created_utc": 1482006452,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking to start a small library of Computer Science reading essentials. What non-textbook would you recommend to an aspiring, well-rounded software engineer?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ivqin/looking_to_start_a_small_library_of_computer/",
+        "text": "[removed]",
+        "created_utc": 1481998450,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "From a sorted array, find the longest subarray where last - first &lt; a given integer",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ityth/from_a_sorted_array_find_the_longest_subarray/",
+        "text": "[deleted]",
+        "created_utc": 1481971452,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I detect when one text roughly quotes or paraphrases another?",
+        "author": "inquisitive_idgit",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ittis/how_do_i_detect_when_one_text_roughly_quotes_or/",
+        "text": "Student reads a text and during the course of the year writes a (book-length) thesis on it.  \nWe want to semi-automatically flag all instances of quotation or paraphrase of the original text.   Then we're going to try to do statistics to see if quotations correlate with overall course grade, etc.  \n\nBut how do we semi-automatically find paraphrases and quotations?   I've seen algorithms to detect plagarism, but they generally provide only an overall scalar score of text similarity;  for our purposes, we need to detect sentence-level paraphrases or rough quotations.    How?? \n",
+        "created_utc": 1481968193,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Prolog: Shortest Path Chess Board",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5itl8r/prolog_shortest_path_chess_board/",
+        "text": "[deleted]",
+        "created_utc": 1481962988,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you prefer coding on a Mac/PC/Linux?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5itc2a/do_you_prefer_coding_on_a_macpclinux/",
+        "text": "",
+        "created_utc": 1481958002,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Doing horrible in ComSci. Need advice",
+        "author": "Superinduction",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5isu6s/doing_horrible_in_comsci_need_advice/",
+        "text": "Freshmen college student here. Took three courses in first semester of ComSci and absolutely screwed up big time. Currently hovering around 1.8 GPA which is considered as academic probation in my school. The three courses I took were intro programming, discrete math 1 and Calc 1.\n\nDiscrete math was hell. I couldn't fully grasp the concept that was taught in class. Propositional logic, Predicate logic and binary relations were fairly straight forward. Everything after that such as proofs and combinatorics was when I got lost. I spent majority of my time studying discrete math rather than Calc 1 and programming. Went to office hour EVERY WEEK to ask for help. Ended up with 70% before finals then failed the whole course because I didn't pass the final exam.\n\nCalc 1 wasn't as brutal as discrete math. I think I would've done better in Calc if I have done more practice. Ended up with a C in that class.\n\nIntro programming was simple, only learned intro python. Ended up with a B even though I didn't do much studying\n\nIs there any advice that can help me improve my letter grade for next semester? Thanks.\n",
+        "created_utc": 1481950048,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Essay topic ideas for an essay on anything computer related.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5isctq/essay_topic_ideas_for_an_essay_on_anything/",
+        "text": "[deleted]",
+        "created_utc": 1481942868,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Essay topic Ideas on anything computer rea",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5isb0u/essay_topic_ideas_on_anything_computer_rea/",
+        "text": "[deleted]",
+        "created_utc": 1481942177,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "IT Certification Questions",
+        "author": "goblyn7",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5is1ye/it_certification_questions/",
+        "text": "I was thinking about going for a certification or two, cause why not. So could I have a relatively compact list of what I would generally need to know something about for either A+ or Network+? ",
+        "created_utc": 1481938648,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Friend offered to trade my Dell XPS 15 512ssd 16gigs of ram for a 2014 Macbook pro i7, 8gigs, 256gigs",
+        "author": "The_Code_Runner",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ir2dx/friend_offered_to_trade_my_dell_xps_15_512ssd/",
+        "text": "Hi everyone,\nI am a student about to go to college and purchased this dell xps 15. I like ecerythign about it, however, i would like to be able to publish ios apps, which you need a mac for. My friend offered to trade, do you guys think im getting ripped off? \n\nThanks!",
+        "created_utc": 1481926225,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question on basic computer processing",
+        "author": "animagraffs",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5iqi6r/question_on_basic_computer_processing/",
+        "text": "Animagraffs research team here. We're learning how microprocessors work and we think we have the steps/ path of information down but would like some feedback. Here's what we have:\n\n1. Fetch - The input (from a user device like a keyboard or mouse) is sent through the input/ output (I/O) bus to the control unit. The control unit retrieves an instruction via the address bus from the memory (either RAM or ROM).\n\n2. Decode - The control unit \"decodes\" the instruction into commands that the ALU can understand and sends them to the ALU. The control unit also sends the input data to be processed to the ALU via the data bus.\n\n3. Execute - The ALU, with the use of registers (which act as small, temporary storage space), executes those commands on the given data and produces and sends output to the control unit via the data bus.\n\n4. Store - If the output needs to be stored, the control unit sends the output data back to the memory (RAM, in this case) via the address and data bus. The output data is also sent to a user device (like a monitor) via the I/O bus.\n\nA few questions: \n1. How does the control unit know which instruction it needs?\n2. What does the \"decoding\" process look like? The instruction from memory is in bytes, right? What form (or language) does the ALU need to understand the instruction?\n3. What sort of computation, if any, is performed by the ALU for basic functions (like typing)?\n4. In what situations would the output need to be stored?\n\nAny help would be appreciated. If we're off on any of this or if you have any great resources to help point us in the right direction, let us know! Thanks!",
+        "created_utc": 1481919978,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I need help studying for my Theoretical CS final.",
+        "author": "pookei_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ipxxn/i_need_help_studying_for_my_theoretical_cs_final/",
+        "text": "Hi reddit, I'm studying Computer Engineering in India and I have about 4 days to study for my Theoretical CS final. At this point all I can say is I'm barely acquainted with the subject and I need to finish studying for it so that I can at least pass the exam. I'd like to know about any resources where I can learn the basics so I can figure out wtf is going on in my textbooks so if anyone has any ideas as to where I can get a proper explanation for the basics, please post about it here. I'm sorry in advance if this is not the place for such a question; if it isn't then please let me know where I can go for some help with this.  \nI'm listing the syllabus in case anyone needs a more in-depth idea about the stuff I need to know.  \n\n&amp;nbsp;\n\n\nModule 1-Introduction:\n\n\n* Alphabets, Strings and Languages  \n* Chomskey hierarchy and Grammars.  \n* Finite Automata (FA) and Finite State machine (FSM).  \n\n\nModule 2-Regular Grammar (RG):\n\n\n* Regular Grammar and Regular Expression (RE): Definition, Equivalence and Conversion from RE to RG and RG to RE.  \n* Equivalence of RG and FA, Converting RG to FA and FA to RG. *Equivalence of RE and FA, Converting RE to FA and FA to RE.  \n\n\nModule 3-Finite Automata:\n\n\n* Deterministic and Nondeterministic Finite Automata ( DFA and NFA ): Definitions, Languages, Transitions ( Diagrams, Functions and Tables).  \n* Eliminating epsilon-transitions from NFA.  \n* DFA, NFA: Reductions and Equivalence.  \n* FSM with output: Moore and Mealy machines.  \n\n\nModule 4-Regular Language (RL):\n\n\n* Decision properties: Emptiness, Finiteness and Membership.  \n* Pumping lemma for regular languages and its applications.  \n* Closure properties.  \n* Myhill-Nerode Theorem and An application: Text Search.  \n\n\nModule 5-Context Free Grammars (CFG):\n\n\n* Definition, Sentential forms, Leftmost and Rightmost derivations.  \n* Context Free languages (CFL): Parsing and Ambiguity.  \n* CFLs: Simplification and Applications.  \n* Normal Forms: CNF and GNF.  \n* Pumping lemma for CFLs and its applications.  \n* Closure properties and Kleene’s closure.  \n\n\nModule 6-Pushdown Automata(PDA):\n\n\n* Definition, Transitions ( Diagrams, Functions and Tables), Graphical Notation and Instantaneous Descriptions.  \n* Language of PDA, Pushdown Stack Machine ( PSM ) as a machine with stack, Start and Final state of PSM.  \n* PDA/PSM as generator, decider and acceptor of CFG Deterministic *PDA (DPDA) and Multi-stack DPDA.  \n\n\nModule 7-Turing Machine (TM):\n\n\n* Definition, Transitions ( Diagrams, Functions and Tables).  \n* Design of TM as generator, decider and acceptor.  \n* Variants of TM: Multitrack, Multitape and Universal TM.  \n* Equivalence of Single and Multi Tape TMs.  \n* Power and Limitations of TMs.  \n* Design of Single and Multi Tape TMs as a computer of simple functions: Unary, Binary ( Logical and Arithmetic ), String operations ( Length, Concat, Match, Substring Check, etc )  \n\n\nModule 8-Undecidability and Recursively Enumerable Languages:\n\n\n* Recursive and Recursively Enumerable Languages.  \nProperties of Recursive and Recursively Enumerable Languages.  \n* Decidability and Undecidability, Halting Problem, Rice’s Theorem, Grebach’s Theorem, Post Correspondence Problem  \n* Context Sensitivity and Linear Bound Automata.  \n\n\nModule 9-Comparison of scope of languages and machines:\n\n\n* Subset and Superset relation between FSM, PSM and TM.  \n* Subset and Superset relation between RL, CFL and Context Sensitive Language.\n\n&amp;nbsp;\n\nI understand that this may seem stupid to some of you and you might feel that I'd be better off studying rather than wasting my time on reddit but I could really use all the help I can get. Thanks!  \n\n*edit: formatting\n\n",
+        "created_utc": 1481914020,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there viable encryption that doesn't rely on the factoring and discrete logarithm problems?",
+        "author": "zSilverFox",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ipdde/is_there_viable_encryption_that_doesnt_rely_on/",
+        "text": "",
+        "created_utc": 1481908069,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A question about difficulties of facial recognition software",
+        "author": "adirondacktraveler",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ioqds/a_question_about_difficulties_of_facial/",
+        "text": "I'm a very entry level programmer and I'm curious about how difficult something like this would be to take on. This is really a satirical example but it still gets to the point I want. Say you want to make a program that will look through photographs and recognize the face of a certain person consistently from all different angles and lighting conditions. How difficult is this? Also go one step further and when that person is recognized by the program, replace their hands with little tiny baby hands automatically so that every picture becomes them with baby hands. Trump hands, if you will. Seriously though, how difficult is it for a program to recognize certain aspects of a picture and then edit or categorize based on those aspects? ",
+        "created_utc": 1481901114,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I can pause browser music on my phone but not computer. Why is that?",
+        "author": "codythecoder",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5in760/i_can_pause_browser_music_on_my_phone_but_not/",
+        "text": "When I play music through the chrome app on my phone, I get a push notification that lets me pause it from anywhere in my phone. I find it a little odd that there's no similar thing for desktop. It seems to me like the technologies wouldn't be too different, and computers often have a play/pause music button, so why can't they do the same as phones?",
+        "created_utc": 1481876567,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "An optimization problem!",
+        "author": "Murikk",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5im5w1/an_optimization_problem/",
+        "text": "Hey everyone,  \n\nI am working on a project that requires an optimization algorithm and I'm looking for some input on where to start. If anyone knows the name of this problem (something like the _travelling salesman problem_, for example), please let me know. Any input is greatly appreciated. The problem goes like this:   \n\n- Every week, a delivery person drops new packages off to 10 points across town and picks up any packages left from the previous week. This is a “return\"\n- Each drop off point has a variable maximum number of packages that it can hold\n- Throughout each week, the packages are picked up somewhat randomly (perhaps assume exponential distribution?)\n- This process repeats. The delivery person picks up the old packages and puts down new (different) ones each week. This is a “pickup\"\n- Given all the history of how many packages were picked up from where each week, we need to recommend how many to put down each week\n- The delivery person needs to know how many to put down before leaving to drop packages off, so the current week’s return count is unknown\n- The number recommended must be less than the maximum, and aim to minimize the number returned, while maximizing the number picked up randomly",
+        "created_utc": 1481859996,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I need help getting started with CS",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5im2i8/i_need_help_getting_started_with_cs/",
+        "text": "So this past semester I took Pre Calc and Programming 1 (java based). I failed pre calc and got an 88 in Programming, but I didn't really learn as much as I wanted to. I kind of went into it expecting to learn everything about programming that I need to know to get started when in reality it was just basic java assignments.. I could have learned more on the side, but I didn't have a laptop (my old white MacBook died out on me) so this made things a bit more difficult to use my free time learning how to code on the side. So this upcoming semester I'm gonna have to retake Pre Calc to fix my grade and then take Programming 2.. the thing is.. I feel like I don't know enough just yet to take that step forward with such limited knowledge. \n\nAny advice? \n\nAlso, I'm gonna be purchasing a laptop for Christmas.. any suggestions? $1400-",
+        "created_utc": 1481858821,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "AI:Structure and strategies 6th edition (Luger): Question about the definition of the composition of unification substitutions.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ilon4/aistructure_and_strategies_6th_edition_luger/",
+        "text": "I've been trying to understand the unify algorithm for a couple of hours and I think I have found what has been blocking me.\n\nOn page 67 of [Artificial Intelligence: Structures and Strategies for Complex Problem Solving, 6th Edition](http://www.mypearsonstore.com/bookstore/artificial-intelligence-structures-and-strategies-for-9780321545893), George Luger defines the composition of unification substitutions in the following way:\n\n&gt;If S and S' are two substitution sets, then the composition of S and S' (written SS') is obtained by applying S' to the elements of S and adding the result to S.\n\nShouldn't it be *applying S to the elements of S'* instead, or am I understanding the definition wrongly?. To me, applying S to the elements of S' means doing the substitutions contained in S in S', i.e the substitutions are done in S'. This makes the following examples make much more sense.\n",
+        "created_utc": 1481853897,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can/Do VPNs protect you from malicious code?",
+        "author": "Vic_Vega_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5iie8y/cando_vpns_protect_you_from_malicious_code/",
+        "text": "",
+        "created_utc": 1481818907,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Designing UI for children.",
+        "author": "TheMajesticArtichoke",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ieu3r/designing_ui_for_children/",
+        "text": "So I'm building a math game for kids in Primary School (ages 7-11).\n\nI know of so many resources that talk about designing the UI and UX etc.. however I've not been able to find any resources that are specific to designing the UI for children.\n\nIf anyone has any I'd welcome it greatly. Or if you have any opinions/question please post then. ",
+        "created_utc": 1481767618,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "what happens if you have a hdd from another PC with windows 10 in it then you move that hdd to a new pc would the OS work or do you need a new licence?",
+        "author": "CptCoolguy",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5icoi7/what_happens_if_you_have_a_hdd_from_another_pc/",
+        "text": "",
+        "created_utc": 1481744480,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Mac/Windows/Linux for CS major?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ic9zd/macwindowslinux_for_cs_major/",
+        "text": "",
+        "created_utc": 1481740465,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "what is the name given for the numbers that corresponds to the domain name it looks like a IP address?",
+        "author": "CptCoolguy",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ic85i/what_is_the_name_given_for_the_numbers_that/",
+        "text": "",
+        "created_utc": 1481739976,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Recommended laptop for CS major?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ibrq8/recommended_laptop_for_cs_major/",
+        "text": "I know that I can get by with a basic cheap laptop, but I'm looking to spend around $1300~ \nAny suggestions?",
+        "created_utc": 1481735538,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Evaluating CTO",
+        "author": "NF95",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ia7zc/evaluating_cto/",
+        "text": "I have in mind an idea for a fintech startup, but I do not have programming knowledge. How do I understand if the candidate has the ability to build such an app/website?",
+        "created_utc": 1481717145,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I updated my AMD R10 Driver(help)",
+        "author": "amenhofis",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5i4ycx/i_updated_my_amd_r10_driverhelp/",
+        "text": "Yesterday I updated my laptop processor driver, I did it by the Radeon Setting App, When it was finish the whole screen turn black and it wasn't responding. It's an HP laptop with 12gb of ram and an AMD R10 2.6ghz I think ",
+        "created_utc": 1481651045,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Compare SQL queries",
+        "author": "Leeds1234",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5i4fkk/compare_sql_queries/",
+        "text": "I need to correct queries against a correct array of queries.. I'm wondering how would I go about making it possible for e.g SELECT A,B FROM table, to be the exact same as SELECT B,A FROM Table(because these give the same answers only outputted differently) or other similar possible answers that may have the same answer just not in order, the problem here is if theres gonna be a limit or order on a query entered.. Like I was thinking of running the queries and comparing the results of the queries, then compare the data as sets and try get an intersection point, I'm not sure what way should I go about this.. If anyone has any recommendations that would be great, thanks.. I'm using php pdo to do this by the way",
+        "created_utc": 1481645718,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Not quite sure what laptop to get",
+        "author": "ZakDarkElf",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5i12th/not_quite_sure_what_laptop_to_get/",
+        "text": "I'm planning to get a laptop for when I start Computer Science next year, with a rather small budget to work with. I've been trying to decide between the \n\nDell Inspiron 13 (cheapest option) https://www.microsoftstore.com/store/msca/en_CA/pdp/Dell-Inspiron-13-i5368-Signature-Edition-2-in-1-PC/productID.5057684700\n\n\nor the \n\nAsus Vivobook http://www.thesource.ca/en-ca/computers-and-tablets/laptops/all-laptops/asus-vivobook-e403sa-sb91-cb-14%E2%80%9D-laptop-with-intel%C2%AE-n3700%2c-128gb-emmc%2c-4gb-ram-and-windows-10---grey/p/108050220\n\n\nIn your guys professional opinion, which should I choose? If you think they both suck, what would be good within a budget of around $500?",
+        "created_utc": 1481596925,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Got a 2.77 after my first semester. Is it still possible to get into a good CS grad school program?",
+        "author": "sadboys0987654321",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5i0shc/got_a_277_after_my_first_semester_is_it_still/",
+        "text": "So I'm a freshmen in college. I study at a top 5 CS program. Everyone here is so much more hardworking than me; I feel like I don't belong. The thing is, I'm really smart, I was just very depressed and lonely this semster. I could have gotten a 4.0 if I wanted to. I was really looking into doing grad school for either math or CS but I'm not sure if ill be able to do it. Should I be worried about my 2.77 if I'm considering grad school? I worked at an engineering firm before and I didn't like it, I really want to do research instead. Is it even possible for me? I heard CS is REALLLY competitive for grad school. I was really looking to go to one of the top programs. I really have a lot of crazy ideas I wish to expand on but I'm starting to realize maybe this \"professional\" life isn't for me. I had all this ambition when I got here... but I guess I just got too comfortable. \n\nLike this is honestly the most depressed I've ever been in my life. I'm scared about my future. I spend most of time now feeling anxious and sick. I failed my parents. I failed everybody and I'm don't know how to deal with this. Even if I end up not doing research, I'm not sure if I can even get an internship with this horrible GPA. ",
+        "created_utc": 1481593421,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question for any 32 bit i86 experts - Data layout for a function returning more than 32 bits.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5i0sbp/question_for_any_32_bit_i86_experts_data_layout/",
+        "text": "[deleted]",
+        "created_utc": 1481593366,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the difference between object code and target code?",
+        "author": "Stephen_Rothstein",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5i0jk4/what_is_the_difference_between_object_code_and/",
+        "text": "",
+        "created_utc": 1481590465,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this example interview from Google an accurate representation of format and difficulty?",
+        "author": "space__sloth",
+        "url": "https://www.youtube.com/watch?v=XKu_SEDAykw",
+        "text": "",
+        "created_utc": 1481589642,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Questions regarding future interviews",
+        "author": "wait_watchers",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hyzcr/questions_regarding_future_interviews/",
+        "text": "Hello all! I wasn't sure if this was the right sub, but it seemed the best fit. I am a computer science senior at university, and will finish my undergrad next spring and finish Master's next spring. Obviously, this means preparing for and (hopefully) acquiring interviews are looming ahead. I had a question regarding projects to show employers. I know a it is common and helpful to work on side projects apart from school and contribute to open source. I have not done a lot of either. How will this affect me, if I have had previous internships, have good grades in the subject and can answer technical questions well? Also, I do have several projects that I have done for school that I am very proud of and would love to show an employer, but many of them use files and libraries that have high cost licenses and as such I had to run them on the school's cluster, not my personal computer. How would I go about trying to show these off to an employer? Sorry if  these questions sound naive.",
+        "created_utc": 1481574238,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to stay motivated all the time ?",
+        "author": "KaanFresh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hwk7z/how_to_stay_motivated_all_the_time/",
+        "text": "Hey guys\n\nI'm in my freshman year at university. I've a background on programming so I'm familiar with most of the thing they should show us at school. The thing is the thing they teach us like we're 5 years old. 2 weeks ago they've showed us how to copy text and paste it on MS Word in the Introduction to Computer Engineering class. All right I'm not a senior software developer with 30+ years experience but I know how to copy a text... Also every example we solve in Programming Language class is super easy. They show algorithms in first 6 week and it's been 1 month since we started to C Language, still our associate professor show us the basic printf-scanf functions...\n\nI ain't learning anything. My motivation going down pretty fast. How do I prevent this ?",
+        "created_utc": 1481548874,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Simple AI for basic games.",
+        "author": "timmah612",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hv8wb/simple_ai_for_basic_games/",
+        "text": "Ive learned a tiny bit about ai problem solving for things and was wondering how difficult it would be to make a program to find the best solution to something like candy crush or even more basic, games like poppit, where you just remove clusters of baloons or whatever.\nJust an idle thought, feel free to ignore it haha.",
+        "created_utc": 1481525748,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Question/Help] Is there a way to see a page's edit history or the times a page was edited?",
+        "author": "TommySparkle",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5huhcj/questionhelp_is_there_a_way_to_see_a_pages_edit/",
+        "text": "I'm currently in a situation where me and my friend are being penalized for typing an essay response late. We both uploaded it on time but after uploading it we went back on it the next day to fix some stuff, nothing major just some grammar and spelling with permission from our teacher. But now there is a time stamp on it that says it was last edited on 12/8/16 which would be considered late according to my teacher because she believes that's when we uploaded it instead.\n\nIs there any way we can find an edit history or prove to our teacher that we uploaded it on time? Like seeing when the page was first edited so that our projects are still valid.\n\nI have no knowledge of computer science but I've been scouring the page's source and inspecting the page so that I can find any evidence of us changing the page before the due date, proving that we actually did upload our project on time.",
+        "created_utc": 1481514812,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some universities with a research focus in multi-agent systems?",
+        "author": "UmamiSalami",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5httnb/what_are_some_universities_with_a_research_focus/",
+        "text": "So far I've found CMU and Duke.",
+        "created_utc": 1481506567,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Master's in CS as UCSD",
+        "author": "fishy32509",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5htli1/masters_in_cs_as_ucsd/",
+        "text": "Do I have a shot at getting into UCSD for a master's in CS? Straight out of undergrad; I majored in econ, have a 3.3 GPA, a minor in computer science and a little bit of CS research. UCSD is ranked at a tie for #15 by US News. Thanks.",
+        "created_utc": 1481503843,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ARPANET IMPs and TCP/IP",
+        "author": "TOS_Statistics",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hsa7l/arpanet_imps_and_tcpip/",
+        "text": "I'm pretty ignorant of computer hardware and how the internet works, but in reading about the history of the internet the following jumped out to me as contradictory (b/c of my poor understanding):\n\nIf the ARPANET could already, in the late 1960s/early 1970s, through the use of IMPs, facilitate communication between different host computers regardless of the variations and constraints of those host computers, then why was it necessary to develop TCP/IP?  \n\nI'm probably just confused about the function of TCP/IP, but if host computers could already communicate with other host computers through IMPs, why was a TCP/IP protocol necessary?",
+        "created_utc": 1481489180,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good books/textbooks for CS subjects?",
+        "author": "asurarusa",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hs3zv/good_bookstextbooks_for_cs_subjects/",
+        "text": "Does anyone have any recommendations for books about the following subjects?\n\n\t* Introduction to Computer Science\n\t* Discrete Math\n\t* Data Structures\n\t* Algorithms\n\t* Linear Algebra\n\t* Discrete Math\n\t* Software Engineering\n\t* Computer Organization\n\t* Artificial Intelligence\n\t* Computer Vision\n\t* Computer Graphics\n\t* Computer Networks\n\t* Distributed Computing\n\t* Real-Time Computing Systems\n\t* Introduction to Database Systems\n\nI've tried the usual google the subject/check book lists for schools and the only clear recommendation I've found is that CLRS is the gold standard when it comes to Algorithms textbooks.\n",
+        "created_utc": 1481487327,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Define a Prolog predicate noah/3 which is true of three lists when corresponding elements of the first two lists, which are of the same length are lined up two-by-two on the third list",
+        "author": "Leeds1234",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hpwv7/define_a_prolog_predicate_noah3_which_is_true_of/",
+        "text": "new to Prolog, just want to understand it better, using this example\n\n noah([ ],[ ],[ ]).\nnoah([a,b,c,d],[aye,bee,sea,dee],[a,aya,b,bee,c,sea,d,dee]).",
+        "created_utc": 1481460290,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best way to structure code for others' use?",
+        "author": "xZoks",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hourd/best_way_to_structure_code_for_others_use/",
+        "text": "I have a C++ algorithm that I'd like to be able to share with some other people with ease (ideally they just include my header and can call the function). What should I do? Write a header file with a cpp file implementing the declarations in the header?\n\nThanks :)",
+        "created_utc": 1481438096,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is an open password system RE-complete?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hoc5l/is_an_open_password_system_recomplete/",
+        "text": "[deleted]",
+        "created_utc": 1481429831,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need Help Converting Karnaugh Map to Verilog",
+        "author": "TheBurnt",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ho7oj/need_help_converting_karnaugh_map_to_verilog/",
+        "text": "I need help converting this Karnaugh map into Verilog code. Most of it is done I just can't get the equations to represent the Karnaugh maps.\n\nN2,N1,N0 in Karnaugh is D2,D1,D0 in Verilog.\nhttp://m.imgur.com/a/LX8Fl",
+        "created_utc": 1481428045,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Convert Karnaugh Map to Verilog",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ho7jr/convert_karnaugh_map_to_verilog/",
+        "text": "[removed]",
+        "created_utc": 1481427981,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone wanna help me write a program in C# to display news and weather via serial to my TRS Model 200??",
+        "author": "CancerBabyJokes",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hn2l3/anyone_wanna_help_me_write_a_program_in_c_to/",
+        "text": "Was wanting a program that simply parses information like latest news and weather and outputs it via RS-232 serial (Null modem) at 1200 buad for my old TRS model 200 to display in the native Tandy telcom program.\n\n\nHere is what I'm looking for\n\n* It would have to conform to a 40x16 (Would need to be ajustable) text only LCD.\n\n* Basic ASCII data only, no broken XML or HTML output. \n\n* Would need to be able to send CLS commands\n\n* Have have the source code files with basic //instructions listed in the code for customization.\n\n* Would want the code to be open source for the most part and allow other users with serial capable Vintage Comps To use it as well.\n\n\nCan anyone help me? This is outside of my coding ability. And I know a few subs that would shit bricks for this code.\n\n",
+        "created_utc": 1481412865,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Real time data analytics without using any open source library.",
+        "author": "noobeeee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hlqf5/real_time_data_analytics_without_using_any_open/",
+        "text": "Hi all,\n\nI need to process millions of web events - clicks, views, time-spent in real time (maximum 10 minutes delay).\n\nI'm using rabbitmq and python to do the job. However, I'm a bit worried that my solution might not be scalable and of professional standard.\n\nPlease tell me what you think of my solution. \n\nThanks.\n\n---\n\n1. My php web server received web events, and then they are put into rabbitmq queue. \n2. I have python consumers which basically aggregate stats like total views on a web page. The consumers just grab messages from rabbitmq queue in batch, and then update the total stats to the final postgre database. Then delete the processed messages from rabbitmq. Consumers are run in supervisor and they keep checking the queue if there were any messages. If not, they will sleep for 30 seconds before checking again.\n3. I have a watchdog process that looks out for number of messages on the queue and expand the consumers based on the number of messages.\n\nWhat do you think of this solutions? Am I supposed to be looking at better open sources solutions such as twitter storm or hadoop? Will my current solution be able to handle 5 millions events a day?\n\nThanks so much.",
+        "created_utc": 1481397155,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Lifetime Mac user looking to get a nice windows laptop.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hl4ib/lifetime_mac_user_looking_to_get_a_nice_windows/",
+        "text": "[deleted]",
+        "created_utc": 1481390149,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How was the Lexus LIT IS car programmed and actually driven(like the computer giving it data)?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hhb1o/how_was_the_lexus_lit_is_car_programmed_and/",
+        "text": "[deleted]",
+        "created_utc": 1481328806,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you smoke weed?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hff92/do_you_smoke_weed/",
+        "text": "Just a general question for CS students and employees. Do you smoke? Do you get drug tested? Did you smoke while studying CS in college? I'm at a point in my life where all I'm doing is smoking weed and playing video games. I keep skipping class and exercising. All I really have going for me rn is a job as a food runner... I find myself a lot less motivated while on weed. Idk how to handle it. I want to quit, but I don't.. I like getting high.. I like the way it makes me feel. I just don't like being stupid, lazy and unconcerned about my priorities. Any advice/suggestions/criticism is appreciated.\n\nThanks.",
+        "created_utc": 1481308330,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Facing Trouble Understanding the Number System",
+        "author": "iEmerald",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hfcl9/facing_trouble_understanding_the_number_system/",
+        "text": "Hi,  \n  \nSo I'm a CS major freshman and we're currently studying number systems using this book ( https://drive.google.com/file/d/0B4AWDPXCbgauSThDQVAwU3plVUU/view?usp=sharing )  \n  \nThe problem is I'm facing trouble understanding the concepts covered there, is it just me or the book is too difficult for a beginner?! Are there any resources that I can use to understand how binary works and how to convert between numbers and what signed overflow and such means besides relying on that specific .pdf ??  \n  \nThanks in advance",
+        "created_utc": 1481307585,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Algorithm to find all combinations of non-overlapping ranges?",
+        "author": "Tostino",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hepmn/algorithm_to_find_all_combinations_of/",
+        "text": "I have a problem i'm working on which I haven't been able to solve on my own, and I haven't found any good resources online (possibly because i'm searching for the wrong thing?).\n\nMy problem in the abstract is: I have a set of objects with ranges in which a bunch overlap each other. I need to take that set and get every combination of non-overlapping objects.  \n\nIn concrete terms: I'm working on a password strength estimation library. It has a bunch of different methods (`Matcher`) of looking at a password, and finding a `Match`.  The `Matcher` will split the password into parts and try and find patterns, words, repeats, sequences, etc on each part of the password.  Any time a `Match` is found, it's added to a set.  The `Match` contains a starting and ending index, and a weight.  After all `Match`'s have been found, I need to find the combination of them that doesn't overlap and has the lowest weight.",
+        "created_utc": 1481301218,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What determines a hit or a miss for direct mapped cache?",
+        "author": "Okmanl",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hdagi/what_determines_a_hit_or_a_miss_for_direct_mapped/",
+        "text": "Suppose we have a 8KB direct-mapped data cache with 64-byte blocks.\n\nOffset =log2(64)=6\n\nbits\n\nnumber of blocks =8k/64=125\n\nIndex=7\n\nbits\n\nTag=32–13=19\n\nbits\n\nThen how do I tell whether or not I have a hit or a miss given an address?\n\nhttps://i.stack.imgur.com/c2SUW.png\n\nIs it (Block address) modulo (Number of blocks in the cache)\n\nWhere block address = byte address / bytes per blocks?\n\nFor example if (block address) mod (number of blocks in cache) = 2, then does that mean row 2 of my picture is a hit?",
+        "created_utc": 1481283150,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "how does instruction level parallelism impact software performances?",
+        "author": "1621656",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5hb2jl/how_does_instruction_level_parallelism_impact/",
+        "text": "I would like a rough idea on how does instruction level parallelism impact software performances so I know a bit about the topic and them I can research the right things in order to know what it is.",
+        "created_utc": 1481248134,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help on an Algorithms Project",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ha7bu/help_on_an_algorithms_project/",
+        "text": "[deleted]",
+        "created_utc": 1481238052,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's your favorite algorithm?",
+        "author": "TholomewP",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h9u78/whats_your_favorite_algorithm/",
+        "text": "",
+        "created_utc": 1481234262,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ILP's impact on software performance?",
+        "author": "1621656",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h8x9f/ilps_impact_on_software_performance/",
+        "text": "how does instruction level parallelism impact software performances?\n",
+        "created_utc": 1481225193,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Verilog] Help with Computer Organization Homework",
+        "author": "TheBurnt",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h8vkk/verilog_help_with_computer_organization_homework/",
+        "text": "I have to do this worksheet for class, I think I have the first to pages right. If anyone has comments on the first two pages please help.\n\nThe third page, actually making verilog code is where I'm stuck, any help would be very appreciated!\n\nhttp://m.imgur.com/a/bNx4z",
+        "created_utc": 1481224730,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What language(s) were used for some of the older video game consoles?",
+        "author": "winter_mutant",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h5w24/what_languages_were_used_for_some_of_the_older/",
+        "text": "So obviously NES, SNES, and Genesis games were written in pure assembly, because computer technology was still in its infancy at the time. But how about the Nintendo 64 and Playstation 1? Or even the Gamecube, Xbox, and Playstation 2?\n\nAt what point were console games written in languages other than assembly, and what did those languages tend to be?\n\nAnd as a little add-on question: what language was Ocarina of Time written in? I've always wondered that.",
+        "created_utc": 1481186172,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Checking solution for a 2nd order ODE",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h4sel/checking_solution_for_a_2nd_order_ode/",
+        "text": "[deleted]",
+        "created_utc": 1481169483,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "selfdriving car/robot project",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h3o2l/selfdriving_carrobot_project/",
+        "text": "[deleted]",
+        "created_utc": 1481156399,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MatLab/DipImage | Image Processing - Segmentation on Images, tutorials/resources?",
+        "author": "CEP2",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h3egv/matlabdipimage_image_processing_segmentation_on/",
+        "text": "I've got a project coming up in one of my classes having to do with automatic segmentation (no user input) of 8-bit (grayscale) images.\n\nAlthough I do have notes from lecture that are pretty nice, if anyone has any additional resources for Matlab | DipImage that might be able to assist in my learning that'd be awesome!\n\nAlso, if you've any grayscale images that might make for good practice or an interesting challenge, I definitely appreciate those as well! \n\nMany thanks in advance to those who are able to lend a hand! ",
+        "created_utc": 1481153517,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SebPearce's BS",
+        "author": "Splurgejan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5h0hus/sebpearces_bs/",
+        "text": "Hello Reddit! First post but an active reader here. Just wondering if you guys could provide some insight as to how you think http://sebpearce.com/bullshit/ works from a programming perspective! Thanks!",
+        "created_utc": 1481124692,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Employees/ex-employees at Google/Apple, What was you awestruck moment in the company?",
+        "author": "karmicnerd",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gyeb2/employeesexemployees_at_googleapple_what_was_you/",
+        "text": "",
+        "created_utc": 1481091877,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to create an ASCII art picture using a 2D array, sort said 2D array, and have the sorted array be another ASCII art picture?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gwz2r/is_it_possible_to_create_an_ascii_art_picture/",
+        "text": "[deleted]",
+        "created_utc": 1481074058,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's an expression that requires more than two registers to evaluate?",
+        "author": "Robotigan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gwyov/whats_an_expression_that_requires_more_than_two/",
+        "text": "I'm trying to think of one, but it seems like every expression can be created from binary subexpressions.  I'm probably missing something obvious.",
+        "created_utc": 1481073930,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just got word! Now what?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gqk3n/just_got_word_now_what/",
+        "text": "[deleted]",
+        "created_utc": 1480994467,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "REGEX: trying to parse web content. &lt;p&gt;...include...&lt;a href=\"blah\"&gt; include &lt;/a&gt; include...&lt;/p&gt; is what im aiming for in my capture group.",
+        "author": "EESTUFF",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gh7zy/regex_trying_to_parse_web_content_pincludea/",
+        "text": "[removed]",
+        "created_utc": 1480880436,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Threads for General Purpose Operating System",
+        "author": "ThePrime7",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gegfs/threads_for_general_purpose_operating_system/",
+        "text": "If you are designing a general purpose operating system for a common desktop user, which type of threads will you choose in your operating system?\nUser level threads or Kernel level threads?\ncommon desktop user tasks might include: office tasks(word,excel,etc), music, videos, internet accessing, file storage.",
+        "created_utc": 1480837643,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "QUESTION: What is the minimal computational power required for a cluster to provide a fast fourier transform and then a hidden markov model on a ten second mp3?",
+        "author": "EESTUFF",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gd05o/question_what_is_the_minimal_computational_power/",
+        "text": "Given a 8kHz sample with 8bit precision on a sample of up 10(realistically 5) seconds, how much computational power would be necessary to churn out the speech-to-text output within 4 seconds from end-of-sample?\n\nAny pointers to analyzing the problem would be appreciated, thanks\n\nEdit3: I think the architecture of the problem would require the sample being fragmented into relatively smalls chunks, which would be individually handled by different processors, i.e. in parallel. Each data splice would have a packet marker that would allow a merge sort to maintain their context relative to other data, allowing for the HMM to increasingly make sense of context per merge.  Output to be a Speech-to-Text of the input",
+        "created_utc": 1480814830,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Problem with Binary Switch Forwarding",
+        "author": "UnicornFukei42",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gconu/problem_with_binary_switch_forwarding/",
+        "text": "Right now I'm trying to figure out how to forward data through a binary switch in a tree topology. How do I ensure that I get from one specific host to the next?\n\nI don't know if this helps but I'm using Mininet, we are required to use 2 windows, one to SSH into the other. ",
+        "created_utc": 1480810720,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for a specific programming teaching game played years ago",
+        "author": "lordvadr",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gbygj/looking_for_a_specific_programming_teaching_game/",
+        "text": "So more than two decades ago, I was a camper at a summer camp where we learned to program.  There was this game we had that, if you were good enough at it, you could play.  Essentially, you wrote the \"software\" to control a little \"robot\" on the screen, and it they fought each other.  The \"robots\" looked more like tanks.\n\nThis is what I remember about it:\n\nThe language was BASIC-ey.  You had only a handful of things you could do...drive forwards, drive backwards, rotate (either direction) the radar, gun, or body of the tank, \"ping\" with the radar (which would give you distance if it came back), and fire the gun.\n\nEach of the parts rotated at different speeds, with the radar being the fastest, and the body being the slowest...this was where a lot of the strategy came in, or at least what I remember spending the most time on.  You could turn the \"radar\" which was how you located your enemies, the gun, and the body of the tank independently, or you could lock any two (or all three) of them together, but they rotated at the slowest speed of whatever was locked together.  Basically, if you locked your gun and radar together, you could fire as soon as you got a ping back, but when you rotated them searching for enemies, both the radard and gun would rotate at the gun speed, which was slower than the radar could move.\n\nThe software supported a compile-like feature...evidently there were contests (how big, I don't know)...so that you could send your robot to someone but they couldn't see the source.  It came with, what was apparently the champion of one of these contests called \"R2D2\", that was VERY well written...in fact, that was the metric everybody compared their code too...how well it fared against R2D2.\n\nIt was otherwise very simple.  The graphics were not great; it had an editor and the arena and that's about it.\n\nI have no idea what this program was called, and I've on and off looked for it on the internet for the better part of the last 10 years with no luck.  Robocode looks a lot like it (perhapse with graphics improvements), but it was definitely not in java, and this was around 1995 or so the last time I played it.\n\nI would reward anybody who can help me find it.  The camp was called National Computer Camps (NCC) and was located in Connecticut.  I have considered getting in contact with the Camp, but about my 3rd or 4th year I want as a Counselor, I left on bad terms.",
+        "created_utc": 1480801761,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SFTP and 404 errors",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5gbh56/sftp_and_404_errors/",
+        "text": "[deleted]",
+        "created_utc": 1480796103,
+        "upvote_ratio": ""
+    }
+]

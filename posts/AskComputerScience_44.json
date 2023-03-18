@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Depth First Searching Order",
+        "author": "Tacobellington",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ga2bi/depth_first_searching_order/",
+        "text": "I'm curious if the **exact** order matters when referring to DFS. For example in [this](http://www.thecshandbook.com/public_html/img/uploads/graph.png) graph, could the order of traversal, starting from 2 be:\n\n2,1,5,4,6,3\n\nor\n\n2,3,4,5,1,6\n\nor a bunch of other ones? As long as I follow the rules of going as deep as possible and then backing up?\n\n",
+        "created_utc": 1480779513,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Getting started with formal methods for embedded systems",
+        "author": "tech6",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5g9z7p/getting_started_with_formal_methods_for_embedded/",
+        "text": "Can you please recommend resources to get started with formal methods . The implementation language is C as I am constrained by compiler support for the embedded paltform. I am looking for resources from practitioners point of view (use of tools) . ",
+        "created_utc": 1480778289,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Discrete mathematics] x Ry -&gt; x^2 = y^2 in Z",
+        "author": "FOKvothe",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5g9q7a/discrete_mathematics_x_ry_x2_y2_in_z/",
+        "text": "Is this an antisymnetric relation? I dont think so, because:\nx,y in Z: x R y AND y R x  -&gt; x = y, because -2^2 is = to 2^2, but -2 != 2. Is this correct?\n\nAny help is appreciated.",
+        "created_utc": 1480774573,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "In need of Master's Thesis project (Blockchain/P2P)",
+        "author": "Amnestic",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5g9olc/in_need_of_masters_thesis_project_blockchainp2p/",
+        "text": "Hi Reddit,\n\nI've been researching blockchain and P2P a bit, and have a few ideas of what I want to write about, but none of them seem novice or that interesting. I was wondering if any of you guys have any knowledge of the blockchain community, and what the latest hottest thing to do with the tech is?\n\nSo far I've been concerned with using blockchain for either gaming, communication or identification. Any ideas?",
+        "created_utc": 1480773887,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "c++ programming",
+        "author": "ahhneil",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5g5zv2/c_programming/",
+        "text": "Bookmark\nC++ programming\n\nUse the C++ Standard Template Library’s stack class to write a program for processing a file of postfix expressions.\n\nRecall that in a postfix expression, a binary operator comes after its two operands. Thus the infix expression (w + x) * (y – z) becomes w x + y z – * in postfix.\n\nA postfix expression can be efficiently evaluated using a stack as follows.\n\nRead the expression from the left to the right.\n\nWhen an operand is encountered, push it on the stack.\n\nWhen an operator is encountered, pop the top two elements from the stack, perform the operation and then push the result.\n\nThere should be exactly one element on the stack at the end and this element is the value of the expression.\n\nFor example, if the expression 20 5 – 3 * is entered, the evaluation should proceed as follows.\n\nSymbol read\n\n20\n\n5\n\n–\n\n3\n\n*\n\nActions taken\n\nPush 20\n\nPush 5\n\nPop 5, Pop 20, Push 20 – 5\n\nPush 3\n\nPop 3, Pop 15, Push 15 * 3\n\nThe result of 45 should then be output.\n\nYour program should ask the user for the name of an input file. The input file will contain postfix expressions one per line. The program should open the file and evaluate the postfix expressions in the file. Your program should give the user the option of writing the results to an output file or to the screen.\n\nYour program should also check the entered postfix expression for validity. A postfix expression is invalid if there is more than one element on the stack at the end of the evaluation or if ever there are not enough operands on the stack when an operation is performed.\n\nE.g. If the input file contained:\n\n20 5 – 3 *\n\n100 50 60 + +\n\n3 4 5 +\n\n3 4 5 +\n\n3 4 + +\n\n3 4 ?\n\nThe output would be:\n\n45\n\n210\n\nToo few operators.\n\nToo few operators.\n\nToo many operators.\n\nIllegal operation\n\nLimit your postfix expression to the arithmetic operations of +, –, *, and / on integer values.",
+        "created_utc": 1480715185,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Pre, in and post order traversal",
+        "author": "vpjrml_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5g56iv/pre_in_and_post_order_traversal/",
+        "text": "Can pre-order, in-order and post-order traversals be done on only trees or can it be done on graphs too? If it can be done on graphs, then how do i know what's left or right at each stage?\n\nThanks in advance.",
+        "created_utc": 1480706596,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reliable 8bit signed decimal/binary converter with the ability to add &amp; subtract 8bit binary values?",
+        "author": "herejust4this",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5g4ldw/reliable_8bit_signed_decimalbinary_converter_with/",
+        "text": "I'm trying to create a binary calculator that I can add/subtract two 8bit *signed* values together which will give me an answer in the form of another 8bit signed value as well as the decimal value of the answer. \n\nRight now I'm trying to compare the answers that my program spits out to the correct answers using some browser based versions of this program. The problem is that none of the websites I'm using seem to have all the features I need. \n\nSome websites only add/subtract unsigned bits. Other sites only give me a binary answer but no decimal answer, while others seem to just give me a completely wrong answer.\n\nI can do the calculation by hand with 2's compliment but I would much rather compare it to the correct answer quickly for debugging purposes.\n\nDoes anyone know a site (or even an Android app) that could do this cleanly for me?",
+        "created_utc": 1480700585,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Converting an interpreter to a compiler",
+        "author": "MrSoftwares",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5g30t0/converting_an_interpreter_to_a_compiler/",
+        "text": "[removed]",
+        "created_utc": 1480682045,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can a conventional keyboard be used with iPad Mini 4th generation?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fzzf4/can_a_conventional_keyboard_be_used_with_ipad/",
+        "text": "[deleted]",
+        "created_utc": 1480634907,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need information about creating a specific software",
+        "author": "MichelCamarillo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fz28s/need_information_about_creating_a_specific/",
+        "text": "So for my service learning project in college my team was asked to create a software for a man who runs a non-profit institution for jobless people to get a job.\n\nWhat this man needs is a software where his clients can put their resumees and the software is supposed to send this resumes to a list of websites where employers post job offers.\n\nThis class is an Inquiry class and this is also freshman class so we really have no idea on how to do it. \n\nWhat I need are concrete reasons to support our new proposal which is hiring a professionals. I need to know how complex would this software be, how much would it take to creating it and any other information that I could use as a reason of why hiring a professional to do it its the best option.\n\nThank you. Also if this the wrong subreddit please let me know.\n\nEdit 1: I need the info asap so Ill give 20usd (or more, depending how complete the info is) to the person who gives me the most and valid information on this situation. Thanks",
+        "created_utc": 1480625345,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does searching simplified and traditional Chinese work?",
+        "author": "pm_me_gold_plz",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fxw41/how_does_searching_simplified_and_traditional/",
+        "text": "Let's take a database for example. I want to search the word \"from\" in Chinese. In traditional Chinese it's 從 and in simplified it's 从 . If I search the traditional 從 and the website is in simplified Chinese how does the website process my request? Does the website convert my query to simplified Chinese using some kind of database or do computers automatically know that 從 and 从 are the same \"word?\"",
+        "created_utc": 1480613775,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the most impressive piece of software that exists today?",
+        "author": "hassan-6663",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fx3yr/what_is_the_most_impressive_piece_of_software/",
+        "text": "What is the most impressive piece of software that exists today?",
+        "created_utc": 1480605823,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Linear Temporal Logic Question",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fw8xq/linear_temporal_logic_question/",
+        "text": "[deleted]",
+        "created_utc": 1480594365,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is O(n) = 2^lg(n) ?",
+        "author": "vehlad_durjan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fw5i4/why_is_on_2lgn/",
+        "text": "I am following MIT's Intro to Algorithms course, and in an assignment they simplify following equations: http://i.imgur.com/6kntNdH.png\n\nI am unable to understand how and why they are replacing n with 2^lg(n).\n\nI'll very much appreciate if someone could help me understand these equations.\n\n(Yes, my maths is piss poor)",
+        "created_utc": 1480592731,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Graph algorithms complexities",
+        "author": "vpjrml_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fvjhy/graph_algorithms_complexities/",
+        "text": "Hi! I am taking the Algorithms course at the university. I'm unable to understand is how graph complexities are computed. Tips and tricks with some reasoning would be appreciated. Thank you :)",
+        "created_utc": 1480581136,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "In C++, how does the eof function access the set bit that flags end of file?",
+        "author": "NotASmurfAccount",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fuy9y/in_c_how_does_the_eof_function_access_the_set_bit/",
+        "text": "From what I understand, the eof bit will only be changed after read has been attempted at the end of the file. So the eof() stream member function is accessing this flag bit from the stream. How can the function access that specific status bit? What sort of bitwise operations would need to be used, if any? Would it be using a bit mask to select out the relevant bit?\n\ne: Really appreciate everyone's insight! Thanks :)",
+        "created_utc": 1480571183,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Clever name for 2 new meeting rooms",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fs7ua/clever_name_for_2_new_meeting_rooms/",
+        "text": "[deleted]",
+        "created_utc": 1480540331,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "P Turing reducible to Q, but Q not Turing reducible to P.",
+        "author": "asdfqwertylol",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fs18p/p_turing_reducible_to_q_but_q_not_turing/",
+        "text": "I have been asked to prove that for every language P there exists a language Q such that P is Turing reducible to Q but Q is not Turing reducible to P.  \n  \nI came up with the following: Q={&lt;L, x&gt; | L is a language description and x is in L}.\nIt is clear that P is Turing reducible to Q, since we can build a TM with an oracle for Q that decides P. This machine simply queries &lt;P, x&gt; on the oracle for any input x it receives.  \n  \nI am almost certain that Q is not Turing reducible to P, but I don't know how to prove this.  \n  \nAny ideas? Thanks!",
+        "created_utc": 1480538514,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hey guys, computer architecture questions here.",
+        "author": "Matta174",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fs09n/hey_guys_computer_architecture_questions_here/",
+        "text": "So I just missed two questions on a recent homework and I honestly don't know where to begin. I was wondering if someone could give a quick guide on how to answer these:\n\n&gt;Q1. Consider a 32-bit processor that has an on-chip 32-KByes four-way set-associative\n&gt;cache. Assume the cache has a line size of four(4) 32-bit words. How many sets does the cache have?\n\n\n&gt;Q2. Consider a direct-mapping cache of 128 lines and a main memory block size of 8\n&gt;bytes. What cache line number does byte address 120010 map to?\n",
+        "created_utc": 1480538244,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How did you learn to think in such an abstract way?",
+        "author": "SkyewardSword",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fragp/how_did_you_learn_to_think_in_such_an_abstract_way/",
+        "text": "I'm a sixth form student taking computer science. It's a very enjoyable subject for me - I've loved it since I was very young. But in recent lessons we've started talking about abstract data types, like stacks, queues, and trees. My problem is trying to tie those abstract structures to a tangible thing - it's very difficult for me to grasp the concepts I'm taught about without being able to apply it to real life, not to mention seeing a bunch of code and immediately identify that that part of the code declares a stack, or that part of the code declares a tree. Hell, I even find pointers difficult to grasp. So how did you learn? Or was it just an intrinsic thing?",
+        "created_utc": 1480531133,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best way to 'stretch' a list in Python3?",
+        "author": "kratFOZ",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fradx/best_way_to_stretch_a_list_in_python3/",
+        "text": "Given = [1,2,3,4,5] and a stretch_factor 4\n\nWant output:  [1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5]\n\nI think looping through each item in Given then re-adding stretch_factor times is inefficient when working with gigantic lists. Anyone know of another more efficient way? Thanks.\n\nEDIT: This is the algorithm I came up with, don't know if this is any better:\n\n\n    for i in Given:\n        output += [i]*stretch_factor    ",
+        "created_utc": 1480531105,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Time complexity confusion",
+        "author": "Rabrg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fr882/time_complexity_confusion/",
+        "text": "I have a [Java implementation of the count-min sketch data structure](https://gist.github.com/Rabrg/de57dae3f3815b67eb14fd8db04194a7) with an added heavy hitter algorithm and I'm trying to find out the time complexity of the heavy hitter algorithm.\n\nI'm having a hard time figuring it out because the complexity depends on three different variables: *depth*, *min*, and *max*.\n\nHow do you find the Big-O notation for algorithms like this?",
+        "created_utc": 1480530481,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to make maze appear w/ Java?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fqnhs/how_to_make_maze_appear_w_java/",
+        "text": "[deleted]",
+        "created_utc": 1480524696,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Traumlnings Event foumlr Ishockeyspelare och Maumlklare",
+        "author": "sharenmmlessmmm",
+        "url": "http://www.goose.nu/",
+        "text": "",
+        "created_utc": 1480523438,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you contribute to OSS?",
+        "author": "trineroks",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fnqnz/how_do_you_contribute_to_oss/",
+        "text": "Hi guys, question in title. I want to expand my portfolio more and I've heard multiple times that contributing to OSS is extremely helpful. However, I don't know how exactly to do this?\n\nAlmost all of my projects have been solo or done at hackathons with a group. How do I get around to contributing to OSS, and are there any popular repositories for this?",
+        "created_utc": 1480481521,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone explain this diagram to me?",
+        "author": "nmego12345",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fl6pt/can_someone_explain_this_diagram_to_me/",
+        "text": "[Link to the Diagram](http://i67.tinypic.com/2eksqqh.png)\nWhere the second diagram is the circle in the fist diagram (magnified though)\n\nThis diagram explains how does the RAM works. It’s taken from “But how do It know” book\n\nI understand every part of the diagram individually, however, I still cannot understand the whole diagram, can someone explain",
+        "created_utc": 1480452759,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Stress testing a new computer?",
+        "author": "StupidWes",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fkoxr/stress_testing_a_new_computer/",
+        "text": "I got a great deal on a new desktop pretty recently. However, upon reading up on the people behind it (CyberPowerPC), I'm reading a lot of places that their components have a tendency to fail suddenly. The end of the return period is coming up pretty soon.\n\nIs there a way to put a PC through its paces a little bit? Put a manageable amount of strain on the various components, make sure they all at least hold up?",
+        "created_utc": 1480447870,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Lambda Calculus help",
+        "author": "DoneeH",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fj8o3/lambda_calculus_help/",
+        "text": "I've been stuck on the question below for a while and I'm not really making any progress with it. Would anyone with knowledge of Lambda Calculus be able to explain what the questions asking for a bit better.\n\n\n-----\n\n## Setup\n\nConsider the simply typed lambda calculus, with added types t1, t2, ..., t9 and one basis object of type b:t8 and eight basis functions of types f4:t4→t5, f5:t5→t6, ..., f8:t8→t9.\n\nRecall that in the simply typed lambda calculus, a variable after the symbol λ must be given a type, as in:\n\n   λ x:t1 . b\n   \nThis entire term would have type t1→t8, i.e.,\n\n   (λ x:t1 . b) : t1→t8\n\n### Problem 1\n\nDefine a term, using as short a definition as you can manage, of type (t1→t3)→(t2→t3→t5)→t2→t1→t7\n\n\n---- \n\n\n\n",
+        "created_utc": 1480433591,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Lambda Calculus question",
+        "author": "Leeds1234",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fj7vc/lambda_calculus_question/",
+        "text": "I'm struggling doing Lambda Calculus here, is it really that hard?\nCan anyone help me wth this question?\n\nProve (using the Curry-Howard Correspondence) that it is not possible to define a term of type (t7→t1)→t1→t7 but that it is possible to define a term of type (t7→t1)→t1→t8.",
+        "created_utc": 1480433348,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why MSB's are discarded during 2's complement multiplication?",
+        "author": "popfalushi",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fi5wf/why_msbs_are_discarded_during_2s_complement/",
+        "text": "Hello, everyone.\n\nI have a trouble with understanding why we discard MSB when we do multiplication of 2's complements numbers.\nLet's take `101` (decimal: -3) and `011` (decimal: 3) for example. Algorithm goes like this: first we double length of our numbers, than we do usual multiplication as we did in school with decimals, than we take (doubled length)*2=6 least significant bits.\n\n1. Double lengths:\n\n        101 -&gt; 111101\n        011 -&gt; 000011\n\n2. Do multiplication: `111101 * 000011 = 10110111` (decimal: -73). As we see, this result is wrong.\n\n3. Take 6 least significant bits (drop 2 most significant bits): `10110111 -&gt; 110111` (decimal: -9)\n\nAnd so result became magically right. How this can be explained? I understand that MSB is special and the same rules I've used in school cannot be 100% suitable for 2's complements, but while I fully understand school rules of multiplication, I can't wrap my head around last step of 2's complement multiplication (first two steps I understand).",
+        "created_utc": 1480419093,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "High School Senior looking for people in CS careers to take a survey for a school project. (2-3mins)",
+        "author": "cenaice",
+        "url": "https://goo.gl/forms/KztaN0ZEtmPLSAQ82",
+        "text": "",
+        "created_utc": 1480387925,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I have posted amateur porn videos without my face. Is there any chance of me ever getting caught?",
+        "author": "whathaveidone56",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ffk7y/i_have_posted_amateur_porn_videos_without_my_face/",
+        "text": "Yeah, so I have posted like 5 amateur videos on pornhub and shared the stuff on reddit.  I am genuinely concerned that because I didn't use a VPN and my voice can be heard that at some point in the future the videos can be connected back to me.\n\nThere is just something in the back of my mind that tells me one day our technology will have the capacity to do voice matches or literally just figure out who uploaded what video.  \n\nAre my concerns just ignorant, or is there an actual basis? Thanks in advance.",
+        "created_utc": 1480380786,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do the font packages you download from Font Squirrel work, exactly? Why are they needed when we have Unicode?",
+        "author": "adbJ114",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ff0ry/how_do_the_font_packages_you_download_from_font/",
+        "text": "Okay, so I'm an experienced web developer and I know in general what webfonts are and how a site like Font Squirrel basically works. You select a collection of icons and then download .eot, .woff, etc. files, and load them in a style sheet with @font-face.\n\nWhat I'm wondering is why, for example, the \"content\" attribute is filled with a value like \"\\e004\" for each icon. Is this hexadecimal? Why the backslash? How does the loaded font file then know to decode \"\\e004\" into a specific icon?\n\nAlso, aren't these icons part of the Unicode charset? If so, why the need for separate font files in the first place? Are the font files using the Unicode charset, and using strange encoding like \"\\e004\" to double translate them, for some reason?",
+        "created_utc": 1480374880,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are the MiBench benchmarks compatible with the DineroIV cache simulator?",
+        "author": "amicus_nintendi",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fe2nz/are_the_mibench_benchmarks_compatible_with_the/",
+        "text": "I know that DineroIV, being trace driven, only runs trace (.din) files. At least I think that's the case anyway.  Do the MiBench benchmarks even come with trace files or is trying to get DineroIV to run them a big waste of time? Or am I completely mistaken about all of this? That's always a possibility.",
+        "created_utc": 1480365427,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question for Computer Science students",
+        "author": "LikkanChung",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fdubs/question_for_computer_science_students/",
+        "text": "[removed]",
+        "created_utc": 1480363215,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What do you do?",
+        "author": "zxy_xyz",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5fa1wq/what_do_you_do/",
+        "text": "Trying to decide between Physics and CS. Curious what you guys do as careers.\n\nMe:\nAlways toyed with tech and learned about it. Ended up spending hours daily and all of teens coding. Mostly video games. So my biggest skill is programming (from android to arduino) but I feel like CS isn't the best thing i should do. Physics compels me because it makes me feel im doing something important. I both love math and writting code but above all I need to have problems to solve that are interesting and exciting. \n\nSo Im hoping you can give me some thoughts in what makes you passionate. I want the right major so I can study endlessly. I both want to try the hardest and interesting problems as well as feel important doing it.",
+        "created_utc": 1480312088,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "At what point does loop unrolling no longer becomes useful?",
+        "author": "jollytopper",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5f8y0q/at_what_point_does_loop_unrolling_no_longer/",
+        "text": "Most of the time, the unroll factor is 4. Is there a reason for this? Can I keep rolling and get more performance? Is there a memory limit?",
+        "created_utc": 1480297316,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you think this program is legitimate?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5f8evu/do_you_think_this_program_is_legitimate/",
+        "text": "[deleted]",
+        "created_utc": 1480290863,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How would you explain directories, files, and absolute vs. relative paths to a true beginner?",
+        "author": "Murikk",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5f7lqn/how_would_you_explain_directories_files_and/",
+        "text": "Hey /r/AskComputerScience,\n\nI teach a web development course to classes of about 25 adults. The students come from all walks of life and have all different levels of understanding. I have been teaching programming and web development for 5 years and still have not come up with a good way to explain directories to students. For example, when explaining how to link a CSS file to an HTML file using a path that is relative from that HTML file. No matter what I do, I end up having to explain it many times and in different ways for different students. How would you explain it to beginners? What sort of visuals would you use? Just looking for inspiration to help me get this point across more clearly.",
+        "created_utc": 1480281616,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Somebody explain to me how I can store \"trees\" of numbers or even \"graphs\" inside arrays or variables?",
+        "author": "Optometrist__Prime",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5f3zf1/somebody_explain_to_me_how_i_can_store_trees_of/",
+        "text": "The graphs I refer to, are like webs, where there is a node at each intersection (used for pathfinding and that jazz)",
+        "created_utc": 1480226907,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Preparation for Operating System course",
+        "author": "balitimore",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5f0zto/preparation_for_operating_system_course/",
+        "text": "Hi everyone,\nI am an undergrad with an extremely rigorous course load next semester. One of the courses I will be taking is Operating Systems, which is notoriously hard here, so I was wondering what I could do now that might help with the course or at least just save me time? \n\nThank you",
+        "created_utc": 1480187344,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a good reason to cover up your laptop webcam with a sticker or some tape, or is that just paranoid?",
+        "author": "iamyou-whatiseeisme",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ewc11/is_there_a_good_reason_to_cover_up_your_laptop/",
+        "text": "See a lot of people at uni with covered up webcams. I think it looks stupid, but I'm wondering if it's smart to do this or not.",
+        "created_utc": 1480114571,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a difference between turning my compuyer off then back on immediately and turning it off for the night and turning it back in the following morning?",
+        "author": "boomertrooper",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5evmqh/is_there_a_difference_between_turning_my_compuyer/",
+        "text": "My computer is getting pretty old and I end up rebooting after a download or something basic like that. When I turn it back on it runs okay for a couple hours then starts to struggle again. Would I solve this problem by leaving the computer off for longer periods of time?",
+        "created_utc": 1480106008,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[HELP] Writing server-client code (Java)",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5evexz/help_writing_serverclient_code_java/",
+        "text": "[deleted]",
+        "created_utc": 1480103480,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Beginner] what are some recommended languages to learn in order?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ev7f7/beginner_what_are_some_recommended_languages_to/",
+        "text": "Im new to programming and CS. I'm taking Prog1 (intro to object oriented programming).. but it's not very fun and I feel like having no coding background before is really making this a lot harder for me to learn than I imagined. All I know is some basic java and that's it. I feel like I need to take some steps back and learn the basics of other languages before I continue throwing myself into a sinking ship semester after semester. What languages do you recommend a newly hopeful programmer to start off with? Any recommended links or tutorials?\n\nThanks! ",
+        "created_utc": 1480101024,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What does your ISP, or a web proxy server know about web usage with HTTPS?",
+        "author": "brainburger",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eu615/what_does_your_isp_or_a_web_proxy_server_know/",
+        "text": "I have noticed that the net monitoring at my work would block some parts or reddit before reddit used https. Now it doesn't. Is that because it can't?\n\nFriends and I were discussing what can middle-men read from https traffic? I imagine the data itself is encrypted, but how about the URL, and the domain being accessed by a user?\n\nIn the UK ISPs are to be requested to store urls visited for 1 year. What in practice does this mean they would know? For example, could a political dissident post on reddit or FB without being identified?",
+        "created_utc": 1480088979,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it possible to get the running time of this algorithm?",
+        "author": "OptimisticElectron",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5etxib/is_it_possible_to_get_the_running_time_of_this/",
+        "text": "www.pastebin.com/rB5hZVY4\n\nI know there's a O( 2^n ) time complexity solution to this problem, but what's would the running time be if I use the algorithm above instead?",
+        "created_utc": 1480085931,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How are emoticons encoded?",
+        "author": "adbJ114",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5erhz4/how_are_emoticons_encoded/",
+        "text": "Are they part of Unicode? Why are they not 100% compatible across Android, iOS, and Mac OS? Are there efforts to create standards for them? Are they in the UTF-8 character set?",
+        "created_utc": 1480044421,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does using an adjacency list vs adjacency matrix change time complexity?",
+        "author": "mucle6",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eqej4/does_using_an_adjacency_list_vs_adjacency_matrix/",
+        "text": "Right now I'm learning about topological sort and Wikipedia [claims](https://en.wikipedia.org/wiki/Topological_sorting#Depth-first_search) that \"Since each edge and node is visited once, the algorithm runs in linear time\", but if one were to use an adjacency matrix then wouldn't the time complexity have to be O(n^(2)) to check all of the numbers in the NxN matrix.",
+        "created_utc": 1480027867,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is C# really that much better than Java?",
+        "author": "beatbrot",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5epcl7/is_c_really_that_much_better_than_java/",
+        "text": "Hi reddit,\n\nI am a CS student and one of my fellow students always keeps saying how much better C# is than Java and what a bad language Java is overall. \n\nIs he right? Are there any objective arguments/proofs that show that C# is superior to Java? What is your opinion?",
+        "created_utc": 1480014543,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need help deciding the ERD layout",
+        "author": "finalight",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eljyh/need_help_deciding_the_erd_layout/",
+        "text": "I have problem for the database design layout\nright now I have 4 tables:\n\n- company \n- branch \n- category \n- product\n\n\nassumptions made: a company can have multiple branches a company can own a range of products. However some branches can only own certain specific products each product belongs to a category\n\nI actually wanted to do this linkage:\n\ncompany 1---* product \n\ncompany 1---* branch\n\nproduct *---1 category\n\nhowever, i cannot handle for the case that what if certain products belong to certain branch(s)?",
+        "created_utc": 1479957277,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help me get out of a toxic relationship with C++",
+        "author": "whiteguyinCS",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5egyvk/help_me_get_out_of_a_toxic_relationship_with_c/",
+        "text": "So I'm in third year university, and most of my programming courses so far have used C or C++. This term I've finally realized how horrible a language C++ is, and I'm looking for a new language. I've used other platform-specific languages before (e.g.  swift when doing iOS development), but I want to become very good with a \"general\" OOP language like Java or Python. Any suggestions?",
+        "created_utc": 1479903074,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need advice from people in the industry",
+        "author": "plantice",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eftwy/need_advice_from_people_in_the_industry/",
+        "text": "Hello All,\n\nSo a little background before I ask my question (bear with me). I have a CS degree and have been working in the industry for 5 years now. I recently moved to a bigger city in the hopes of finding a new/better job but I am having troubles figuring out what to call myself. \n\nWhile I have a degree in CS, I have been basically a maintenance programmer/enhancement programmer (70% clients, 10% paperwork, 20% coding). After doing some interviews here, I noticed that I wasn't getting anything and I believe it is because: A) I don't code much anymore, B) I really enjoy the relationship building in my current role (weird I know). I am looking for a job in which I do something similar but without all the crazy interviews standard devs go through (they are a nightmare sometimes).\n\nSo the question is: What job title should I be using and what types of positions should I be looking for?\n\nIn college they didn't teach you about all the options you have as a CS major, I went through most of my career expecting to be put into new development sometime. I find I don't care too much about all the details of programming, I know how to read code and how to fix other peoples mistakes. I enjoy problem solving and customer relations much more than I do design methodologies and the like.\n\nThanks for any advice, it has been eating at me for a while now.",
+        "created_utc": 1479881751,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need help",
+        "author": "LostInComputerSC",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eczpb/need_help/",
+        "text": "I am so lost with trying to do my hw. It seems so simple but I have gone mad trying to figure it out. I need some guidance. \nI am doing work from David Reed \"Intro to computer science 3rd Ed\" and I am struggling with exercise 11.15 and 13.5.\n11.15 I have written code but it doesn't seem to work. Can anyone help me? \n\n&lt;!DOCTYPE html&gt;\n&lt;classify.html&gt;\n&lt;head&gt;\n&lt;title&gt;Page Title&lt;/title&gt;\n&lt;script type=\"text/javascript\"&gt;\nfunction ShowMessage()\n// Assumes: valueBox contains a number\n// Results: displays whether number is positive, negative or zero\n{\nvar values;\nvalues=parseFloat(document.getElementById('valueBox').value;\ndocument.getElementById('outputDiv').innerHTML='';\nif (values&gt;0) {\ndocument.getElementById('outputDiv').innerHTML=\ndocument.getElementById('outputDiv').innerHTML + 'Positive';\n}\nelse if (values==0){\ndocument.getElementById('outputDiv').innerHTML=\ndocument.getElementById('outputDiv').innerHTML + 'Zero';\n}\nelse if (values&lt;0){\ndocument.getElementById('outputDiv').innerHTML=\ndocument.getElementById('outputDiv').innerHTML + 'Negative';\n}\n&lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n&lt;p&gt;\nYour Number: &lt;input type=\"text\" id=\"valueBox\" size=6 value=\"\"&gt;\n&lt;/p&gt;\n&lt;input type=\"button\" value=\"Initiate for Analysis\" onclick=\"ShowMessage()\";&gt;\n&lt;div id=\"outputDiv\"&gt;&lt;/div&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n",
+        "created_utc": 1479846571,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "OS related question about scheduling algorithms for CPUs and disk queues",
+        "author": "stupidCSstudent",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eb9kj/os_related_question_about_scheduling_algorithms/",
+        "text": "Other than fcfs, and sjf, and scan, are there other algs for disk scheduling? Any without process starvation?  in general, how do these scheduling algorithms relate to priority and round robin scheduling?  I know the ready queue will most likely use round robin priority, but couldn't a disk queue?\n\n",
+        "created_utc": 1479828516,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can you understand this message, to be sent to an alien civilisation?",
+        "author": "Bernie29UK",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eay6z/can_you_understand_this_message_to_be_sent_to_an/",
+        "text": "The question was raised \"assuming an alien civilisation could transmit binary strings, could we assign meaning to any given message received from them\". The following message was written by someone here on earth who says the aliens would understand it. It needs to be unzipped.\n\nCan you assign meaning to it? If so, could you draft a response, using only Os and 1s? It would also be interesting if you try but can't assign a meaning to the message, if that is the case just say \"no\".\n\nhttps://filenurse.com/download/5127810450986951d94222d986f38c5a.html\n",
+        "created_utc": 1479824657,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Could someone ELI5 how a load balancer works?",
+        "author": "Twelve-Pound",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eapyh/could_someone_eli5_how_a_load_balancer_works/",
+        "text": "I'm trying to do some research for a project explaining load balancing, but I'm having trouble wrapping my brain around the concept. Any help?",
+        "created_utc": 1479821614,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I get into my steam account?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5eap8g/how_do_i_get_into_my_steam_account/",
+        "text": "[deleted]",
+        "created_utc": 1479821365,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Opaque, definition?",
+        "author": "pgoodjohn",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5e9vzz/opaque_definition/",
+        "text": "I was studying for my Systems class and I came across a sentence in which a type was defined as \"opaque\", I don't truly know what this could mean, can somebody explain it to me?\nThe full sentence reads: \"The type pthread_t is opaque\", the subject is POSIX Threads and the pthreads.h library.\nThanks!",
+        "created_utc": 1479807342,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to make a database front end application",
+        "author": "deek1123",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5e8e4u/how_to_make_a_database_front_end_application/",
+        "text": "Hey guys. \n\nFirst time on this subreddit, hopefully i am in the right place for this. So I have a project in intro to databases course where I have to make a database, fill the tables and then create a front end application that allows users to edit, delete and add data form the tables as well as view the tables in a list or report . \n\nThe course covered database design but never talked about how to create a front end application. I used MySQL to build and fill a database, now I need to create an application that connects to it and has a GUI. It is specified that I can use any language or tool.\n\nSo, my question is what do you think is that fastest, or easiest way to accomplish this. Ive only ever done GUI's in java, it was brief and im hoping theres an easier option. I also know C. If there is a easier language or tool to do this in then im willing to learn since i only need a very simple program. \n\nAlso how do I connect an application and my database?\nThanks for the help, any information is greatly appreciated!",
+        "created_utc": 1479783463,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Understanding the run time of the Recursive Fibonacci Algorithm.",
+        "author": "functionallycomplete",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5e8cn1/understanding_the_run_time_of_the_recursive/",
+        "text": "This is not for homework, this is for understanding.\n\nThe professor states the run time for a recursive fibonacci algorithm is as [shown](http://i.imgur.com/4JDSDGZ.png) for the following [algorithm](http://i.imgur.com/kx4rRpV.png). He then [ask](http://i.imgur.com/FDdYDdw.png) how many digits T(100) has.\n\n**Question 1:**\nI do not understand what he means by how many digits T(100) has here, can someone explain?\n\nHe then states the [answer](http://i.imgur.com/ypKVmYx.png) as being ~1.77E21.\n\n**Question 2:** How does he compute the answer ~1.77E21?  Is there an algorithm one can apply here to figure this out?\n\nThis must not be asking what the nth Fib number is, as F(100) is 2147483647 and it has 10 digits. \n\nI don't know what T(100) is suppose to represent nor how he derives this approx.\n\nI didn't know where else to post this, so hopefully someone can enlighten me. \n\n\nThanks!",
+        "created_utc": 1479782924,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "what areas of CS for a math major?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5e7adb/what_areas_of_cs_for_a_math_major/",
+        "text": "Hello everyone,\n\nI recently received my masters degree in pure mathematics, now im taking some time off to travel and think about my next endeavor. \nIm very interested in computer science, not for PhD or research, but for getting into the industry and getting a job.\nI don't know much about the field, but i know that it is based on mathematics. Most friends of mine, however, who are in the software industry, have recommended that I stay away from software development and look at other areas of computer science.\n\nSo I'm here to ask you guys what areas in CS should I look into if I want keep doing math? because I might wanna go back to school for research later.\nHow much programming do I need to learn before I move to anything else in CS?\n\nThank you for your answers in advance.",
+        "created_utc": 1479770241,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do people say computer science guys can't get girls?",
+        "author": "mrtrumpforpresident",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5e293a/why_do_people_say_computer_science_guys_cant_get/",
+        "text": "I know this is partially because there are almost no girls in this field. However, in the 1st 2 years you take gen ed classes, right? Please enlighten me, I'm a high school student and this is freaking me out a little bit. I might actually graduate college a virgin.",
+        "created_utc": 1479703231,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are the most robust open source solutions for object recognition when the objects that need to be recognized are finite?",
+        "author": "redditpirateroberts",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5e226c/what_are_the_most_robust_open_source_solutions/",
+        "text": "The use case for object recognition I am talking about is actually on the more simple end of object recognition as far as I can tell. I need object recognition that works really well, but it only needs to work on specific objects that I would have photos of from different angles and lighting backdrops. What are the best existing open source solutions that you would recommend I check out to do this? \n\nedit: perhaps a better phrasing of what I am looking for is object identification. I need it to look at a still photo and say what objects are in it that it can recognize.",
+        "created_utc": 1479700559,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you guys know what exp{..} notation refers to?",
+        "author": "Cheeseologist",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5e1rnd/do_you_guys_know_what_exp_notation_refers_to/",
+        "text": "So I'm in a class on AI, and right now we're doing stuff with neural networks. And I'm seeing this notation that I'm unfamiliar with that follows the format of \"exp{...}\". Is anyone familiar with this notation? [Here is an example.](http://i.imgur.com/fIipPY9.png) Note that I'm pretty sure that \"neurone\" is supposed to say \"neuron.\"\n\nRight now my best guess is that the exp stands for expression.",
+        "created_utc": 1479696607,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "AN ELABORATE WEINER RATING SYSTEM | Mate Compatibility formula",
+        "author": "[deleted]",
+        "url": "https://www.youtube.com/watch?v=TSc0FrPTVc8&amp;feature=youtu.be",
+        "text": "[deleted]",
+        "created_utc": 1479674901,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I CAN'T BELIEVE SHE DID THAT TO THEM | Bubble Sort Algorithm",
+        "author": "[deleted]",
+        "url": "https://www.youtube.com/watch?v=QmoTwb_4CZQ&amp;feature=youtu.be",
+        "text": "[deleted]",
+        "created_utc": 1479674900,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If I don't know how to code, is getting a degree in IT even worth it?",
+        "author": "achenx75",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dzzl5/if_i_dont_know_how_to_code_is_getting_a_degree_in/",
+        "text": "So I graduated community college with an Associates in Science for \"Computer Information Systems\" (Although it's not written on my degree). I've since moved to a 4 year college and currently on the path for a Communications major and I'm starting to get worried.\n\nA lot of people say Communications is not a very useful degree and will secure you a low paying sales job. On the other hand, I could try my hand at my school's major of Information Technology and Infomatics and continue doing IT, but here's the problem. I don't know how to code. I tried to code during my time in community college but I ended up having to cheat a lot to pass my computer science classes.\n\nSo I ask this...is getting a degree in IT even worth it if I don't know how to code?",
+        "created_utc": 1479674194,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Project direction help",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dzwk4/project_direction_help/",
+        "text": "[deleted]",
+        "created_utc": 1479673195,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "System Monitoring Tool Ideas/Help?",
+        "author": "arjunpur",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dyqh1/system_monitoring_tool_ideashelp/",
+        "text": "Hey guys, I'm trying to write a tool that logs my activity on my computer (based on what tabs I have open, what applications I'm using and for how long etc.) and then later runs a job to aggregate this to provide some kind interesting feedback about my behavior. I'd really appreciate some ideas/pointers as to where to begin (especially with regards to APIs into system level processes running in the foreground). It'd be nice to have some sort of a callback mechanism on noticing certain changes in processes that the system I/O is interacting with rather than polling since I don't want to kill my machine's CPU. Thanks in advance!",
+        "created_utc": 1479659160,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I was recently introduced to the Traveling Salesman Problem. Has a method like this been used before, if so what is it called, if not is there a way to test how well it performs?",
+        "author": "AltInnateEgo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dwtby/i_was_recently_introduced_to_the_traveling/",
+        "text": "http://imgur.com/a/u9rsx\n\nThere is only one shape the optimal path could produce, and it would seem that an outer to inner approach of paths of least resistance (like you see when objects are subjected to vacuum packing) would be a decent way to approach the problem. I thought of this by thinking of a rubber band being placed around the points and moving the rubber band inward to the closest points of the outer boundary while working in concentric circles of \"outer most points\". ",
+        "created_utc": 1479622330,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why are there different computer languages?",
+        "author": "Gravey4rd",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dw5h0/why_are_there_different_computer_languages/",
+        "text": "Why are there different computer languages? Is one superior to another? ",
+        "created_utc": 1479611314,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Alternatives to being a programmer after studying CS.",
+        "author": "itsClarkson",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5duavb/alternatives_to_being_a_programmer_after_studying/",
+        "text": "So after studying CS at uni for 4 years and working for 1 year as a web programmer I've finally realised that I don't like programming. In fact I don't much care for CS but I don't want to ignore the 4 years I've spent studying it, so what alternatives do I have within the field? My issue is obviously personal and complex but I won't bore you with such details, I just want to find a job I won't completely hate while I change the direction of my life. Thank you.",
+        "created_utc": 1479586583,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Learning Object Constraint Language ( OCL ), would appreciate if someone would look over my work as I can't tell if I am right or not",
+        "author": "duchain",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dtk8y/learning_object_constraint_language_ocl_would/",
+        "text": "Question followed by my answers:\nhttp://imgur.com/a/8SUKO\n\nA few specific questions\n\nCan I use an If statement as an invariant?\n\nfor i) and ii) I have assumed that a square only exists if it has been given a value, is this a safe assumption to make ?\n\nfor iv) I have created my own sets, is this allowed? and how do specify what I am returning?\n\nThanks!",
+        "created_utc": 1479577595,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "As a self taught programmer",
+        "author": "JobMar",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dt81o/as_a_self_taught_programmer/",
+        "text": "Am a self taught programmer mostly, lately I have been getting more and more into asymptotic notation and I would like to know what mathematics modules should I learn, and in which order for programming?",
+        "created_utc": 1479573479,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the best way to communicate between the front-end and back-end, with python as the back-end?",
+        "author": "mr_strong_opinions",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dq64d/what_is_the_best_way_to_communicate_between_the/",
+        "text": "I'm trying to make a simple application with Spotify Authentication in the front-end where it asks the user for access and it would send the access token to the back-end where python will process it and send me information back to the front-end. I tried looking at the Django tutorial, but this didn't seem very intuitive to me. It looked like a huge cluster-fuck, with templates, views, models.. etc. Would AngularJS(Haven't really used this, but seems highly recommended from what i came across) be a good option for the front-end.? Is there any sample application you could direct me to, where this is exchange of information between the front and back back-end - simple user inputs, ..etc. \n\nThank you.",
+        "created_utc": 1479519341,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Simulating Hydrogen Atom in Python (computationally, not graphically)",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dmjiu/simulating_hydrogen_atom_in_python/",
+        "text": "[deleted]",
+        "created_utc": 1479477788,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Survey for Computer Science/Computer Engineering students/graduates/wanting to pursue a career in CS/CE. Results will be posted in December.",
+        "author": "ComputerScienceStudy",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dl38m/survey_for_computer_sciencecomputer_engineering/",
+        "text": "Hello /r/AskComputerScience!\n\n\nI am conducting a study on those interested in Computer Science/Computer Engineering as a career. I am just trying to understand the general opinions of those interested in CS/CE.\nThe survey shouldn't take too long, please note that it is mostly open ended, but you can make each answer as short or as long as you want, just looking for answers is all.\n\n\nThe results will be posted December 11th on a TBA subreddit (I am trying to find a subreddit where people would be interested in seeing data like this, I want to post it here but I would have to run it past the mods first). If you have any suggestions regarding that, feel free to shoot me a PM or post here.\nIf you have any questions post them here. \n\n[Link to the Google Forms Survey, this is a survey]\n(https://docs.google.com/forms/d/1nmOxZGTA0KqZdNzzMwFiaKBTHLdh_b2WmN6nMNPUwV8)\nThis survey is being conducted by me, a nerdy redditor who is just interested in seeing CS/CE data, not being sponsored or conducted by any company, also if this violated this subreddits rules, I am sorry and the mods can feel free to delete it.\nThanks for the help guys!",
+        "created_utc": 1479451800,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What do you see the future with AI like?",
+        "author": "zxy_xyz",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dk5kg/what_do_you_see_the_future_with_ai_like/",
+        "text": "I tend to think about these things as well as humanity and reason for existence. I was wondering what you think about AI. I can't help but imagine that humans will become useless and robots will cary our history and create there own while replicating and finding everything out about the universe. Maybe they'll do so then just die. Makes me question why even bother sometimes, but I do think of fun positives!",
+        "created_utc": 1479437842,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with pumping lemma problem?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5djpcu/help_with_pumping_lemma_problem/",
+        "text": "I'm doing a problem where I have to prove that the language {w w w: w∈{'a,'b}*} is not context free.  The string I've been looking to show isn't pump-able is a^p b^p a^p b^p a^p b^p.  From the pumping lemma, we can try to write this string as s=uvxyz and show that no matter how we arrange u, v, x, y, and z, the string is un-pumpable.  Is a legitimate way to attempt this proof to just exhaust all the possibilities of where the substring vxy can be, bearing in mind that the pumping lemma stipulates |vxy|&lt;p?  There are eleven possibilities (the entire substring is in the first sequence of a's, it's partly in the first sequence of a's and partly in the first sequence of b's, entirely in the first sequence of b's, etc.) and, pumping down, they all seem to yield strings like a^m b^n a^p b^p a^p b^p (where at least one of either m or n is not equal to p) or a^p b^p a^m b^p a^p b^p (with m=/=p).  Am I correct in thinking that strings like this can't be written in the form x x x?  If I am, then it seems like after I've exhausted all the possibilities of where vxy can be, the proof would be done?  \n\nAny help would be much appreciated.  ",
+        "created_utc": 1479432015,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Small simple implementation of RAR/PAR-like parity system?",
+        "author": "sparr",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dhhek/small_simple_implementation_of_rarparlike_parity/",
+        "text": "In the dark ages of low-bandwidth illicit file downloading, it was common to find a large file split into many smaller files using the RAR archive tool, on ftp servers or usenet or elsewhere.\n\nTo combat the problem of single files becoming unavailable, solutions like http://www.quickpar.org.uk/AboutPAR2.htm were developed. A lot of math is applied to the split files to produce \"parity files\" which can be used to replace any individual lost file(s).\n\nIs there a simple / free / reusable implementation of this sort of solution? Something that I can pass an arbitrary block of text or data into and get back M chunks of which I only need N to reconstruct my text, without all the file format complexity of RAR or ZIP?",
+        "created_utc": 1479408084,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does apple mail essentially freeze up all of my computers resources while opening?",
+        "author": "esboardnewb",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dgz7s/why_does_apple_mail_essentially_freeze_up_all_of/",
+        "text": "I'm on a video editing (Avid MC) workstation mac pro (2 x 2.4 GHz Quad-Core Intel Xeon w/ 16GB memory) but when I open apple mail I literally can't open other apps or even really use any that are already open for about 30 secs while mail opens and catches up on incoming emails, WTF? \n\nProcessors aren't really engaged, memory doesn't seem taxed (can see their usage in an app called menu meters) anyone have any idea whats going on here? \n",
+        "created_utc": 1479402917,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does anyone have information/resources on Linear Genetic Programming?",
+        "author": "oracular_demon",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ddqmp/does_anyone_have_informationresources_on_linear/",
+        "text": "",
+        "created_utc": 1479354279,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Few questions about use of wrapper methods",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dcoi7/few_questions_about_use_of_wrapper_methods/",
+        "text": "[deleted]",
+        "created_utc": 1479340873,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does DKIM really verify Clinton's emails as her emails?",
+        "author": "hysterian",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5dbgst/does_dkim_really_verify_clintons_emails_as_her/",
+        "text": "I noticed that most reporting on this were independent bloggers, I also noticed that in the blog I read that all they pointed out was that the emails matched the DKIM, date, addressee, and subject, but does that mean that's all that's publicly verifiable and the bodies of the emails can be edited without proof of the edit?",
+        "created_utc": 1479327726,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can a windows virus damage a linux partition on the same hard drive in any way?",
+        "author": "sweezinator",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5db06w/can_a_windows_virus_damage_a_linux_partition_on/",
+        "text": "",
+        "created_utc": 1479322953,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Course recommendations for undergrad",
+        "author": "fishy32509",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5darfa/course_recommendations_for_undergrad/",
+        "text": "Hi. Could you explain which of these courses seem more or less relevant if I am planning to do AI research?\n\n**Real Analysis:** \"Introduction to analysis. Real numbers, limits, continuity, uniform continuity, sequences and series, compactness, convergence, Riemann integration. An in-depth treatment of the concepts underlying calculus.\"\n\n**Information Theory** \"This introduction to information theory will address fundamental concepts, such as information, entropy, relative entropy, and mutual information. In addition to giving precise definitions of these concepts, the course will include a probabilistic approach based on equipartitions. Many of the applications of information will be discussed, including Shannon's basic theorems on channel capacity and related coding theorems. In addition to channels and channel capacity, the course will discuss applications of information theory to mathematics, statistics, and computer science.\"\n\n**Scientific computing** \"Errors. Curve fitting and function approximation, least squares approximation, orthogonal polynomials, trigonometric polynomial approximation. Direct methods for linear equations. Iterative methods for nonlinear equations and systems of nonlinear equations. Interpolation by polynomials and piecewise polynomials. Numerical integration. Single-step and multi-step methods for initial-value problems for ordinary differential equations, variable step size. Current algorithms and software.\"\n\n**Number Theory** \"The subject of number theory is one of the oldest in mathematics. The course will cover some basic material and describe interesting applications. One of the recurrent themes is the realization that mathematics that was developed usually for its own sake, has found applications in many unexpected problems. Some of the topics covered in the class are Pythagorean triples, prime numbers, divisibility and the highest common divisor, linear diophantine equations, congruences, round-robin tournaments and perpetual calendars, multiple functions, perfect numbers, primitive roots, pseudo-random numbers, decimal fractions and continued fractions, quadratic reciprocity.\"\n\nThank you",
+        "created_utc": 1479320445,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with creating proofs for Languages/Automata etc.",
+        "author": "hicksy994",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d993b/help_with_creating_proofs_for_languagesautomata/",
+        "text": "We have a module on Languages, Automata and Computation. We are assessed on several class tests and one piece of ongoing coursework. So far on all the class tests I have done well, only dropping a few marks on each. The class tests don't typically ask for formal proofs. It's more about specific examples. \n\nI feel like I understand everything in the material really well but every question on the coursework is asking for formal proofs and I really don't know where to start. Does anyone have any tips for creating formal proofs? ",
+        "created_utc": 1479304022,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Has anyone been introduced to the TAGE predictor in a class or lecture?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d7dls/has_anyone_been_introduced_to_the_tage_predictor/",
+        "text": "[deleted]",
+        "created_utc": 1479271388,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a stigma with open source i dont know about?",
+        "author": "zxy_xyz",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d778i/is_there_a_stigma_with_open_source_i_dont_know/",
+        "text": "Youngster here in HS who finally figured out passion for CS (even after years of programming and learning about electronics). So I usually write ideas down and script up some of the simple ones. \n\nBut im curious why you dont see people like zuckerburg on github. This one guy i knew online thought open source was dumb but gavr no reasoning and i think it's pretty useful. I dont look into many bigger projects source though but is there something about sharing code that turns people off? Idea stealing or something? Linus torvalds sorta needs one but had only 2 projects on there. Is useful sourcecode usually better for research papers? Just wondering. But I do see things look google or spaceX on github, it's just certain people i wonder why not.",
+        "created_utc": 1479268932,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with Data Types?",
+        "author": "shigubaru",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d6qx4/help_with_data_types/",
+        "text": "[removed]",
+        "created_utc": 1479263135,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need help with predicate logic",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d5jir/need_help_with_predicate_logic/",
+        "text": "[deleted]",
+        "created_utc": 1479248970,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Memory Content (Java)",
+        "author": "Fawxhox",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d301n/memory_content_java/",
+        "text": "On the study guide for my Data Structures midterm there's these two questions. I answered the first which I think is correct, but I'm not sure on the second.\n\n1. Scanner kb;\n\n2.   kb = new Scanner(System.in);\n\n3.   int x;\n\n4.   x = 5;\n\n\nDescribe the memory cell kb and its contents after executing line 1\n\nKb is allocated to hold a scanner.\n\n\nDescribe the memory cell kb and its contents after executing line 2\n\nKb points to a new scanner taking its input from the keyboard.\n\n\nDescribe the memory cell x and its contents after executing line 3\n\nX is cleared to hold an integer worth of bits\n\nDescribe the memory cell x and its contents after executing line 4\n\nX can still hold an integer, and the integer it holds is 5.\n\n\n1.   Chicken farm[];\n\n2.  farm = new Chicken[5];\n\nDescribe the memory cell farm and its contents after executing line 1\n\nDescribe the memory cell farm and its contents after executing line 2\n\nDescribe any other interesting memory cells after executing line 2\n",
+        "created_utc": 1479222904,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Looking for a cool name and tagline for a coding competition?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d1how/looking_for_a_cool_name_and_tagline_for_a_coding/",
+        "text": "[deleted]",
+        "created_utc": 1479198296,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is a masters/PHD in Machine Learning/AI necessary?",
+        "author": "furl18",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5d0ga9/is_a_mastersphd_in_machine_learningai_necessary/",
+        "text": "[removed]",
+        "created_utc": 1479181353,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Threading Question From Book",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5czqoo/threading_question_from_book/",
+        "text": "[deleted]",
+        "created_utc": 1479172583,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Equivalent to Petzold's \"Code\" for the Internet or Operating Systems?",
+        "author": "adbJ114",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5czkdh/equivalent_to_petzolds_code_for_the_internet_or/",
+        "text": "Hey Everyone,\n\nI just finished Charles Petzold's \"Code\" and found it to be one of the most interesting books on computer technology I've ever come across. Are there equivalent books like this about Operating Systems or the Internet?\n\nSpecifically what I liked about Code: \n\n* The way Petzold covers the entire history of the computer, going back to it's spiritual predecessor, the telegraph key\n\n* The fact that he never oversimplifies concepts to make them more easily understandable. He takes the time to build up the readers' understanding, piece by piece\n\n* There is a perfect amount (IMO) of historical context, including short bios on some of the major pioneers that made breakthroughs along the way and companies that played significant roles in advancing computer technologies\n\n* The storytelling aspect of the book. This is key for me. One of my favorite things about Code was that every section flowed into the next, and the human side of computer technology was never ignored \n\n* a good amount of theory, followed up by how the theory comes into play in the real world, e.g. when he talks about the binary adding machine, and moves into the Altair and other microcomputers\n\nWhat books would guys recommend? I am computer literate, so I don't need books that talk down to me, and I definitely don't want anything that oversimplifies complex concepts. I'm interested in books that take their time, and go down to the bit and switch (heh, bit and switch) level, when necessary, but still make the journey interesting.\n\nThanks in advance for any recommendations!",
+        "created_utc": 1479170453,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with AP CompSci Homework?",
+        "author": "OneThousandOut",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5cz8xk/help_with_ap_compsci_homework/",
+        "text": "Question:\n\nMany languages do not use the characters of U.S. English. Suppose you wanted to be able to encode the characters of every language on earth within a single protocol. Guess how many characters would need to be encoded and calculate the number of bits that would be required per character. Then discuss the benefits and drawbacks of using this single unified system.",
+        "created_utc": 1479166769,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Live in a rural neighborhood and needing a good ISP.",
+        "author": "alexschjoll",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5cz6ne/live_in_a_rural_neighborhood_and_needing_a_good/",
+        "text": "I have internet over air I guess is what they call it because no other ISP has cables going out to my neighborhood.\nI'm trying to find out how I or we as a neighborhood can have an ISP set lines out to us? I know that century link has phone lines but nothing else out here. When ever I call century link or any other ISP they always say the same thing. \"We don't know when we will have service in your area.\"\nWhat are my options?",
+        "created_utc": 1479166065,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Queueing Theory/Little's Law Question",
+        "author": "WarHawk098",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5cyzue/queueing_theorylittles_law_question/",
+        "text": "There's a problem in my textbook that states, \"Using Queueing Theory and Little's Law, Explain how a single-core CPU 2x faster would be preferable to keeping the speed the same and adding another core\".\n\nAny thoughts? I'm not sure how a single-core CPU that's 2x faster would be better.  ",
+        "created_utc": 1479163923,
+        "upvote_ratio": ""
+    }
+]

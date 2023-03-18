@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Using steamdeck as a off grid privacy forward’laptop’",
+        "author": "TheCardweller",
+        "url": "https://www.reddit.com/r/linux/comments/z8wuc8/using_steamdeck_as_a_off_grid_privacy/",
+        "text": "[removed]",
+        "created_utc": 1669828031,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Using a steam deck as a off grid privacy forward ‘laptop’ any tips you could give a Linux newbie?",
+        "author": "TheCardweller",
+        "url": "https://www.reddit.com/r/linux/comments/z8ws0w/using_a_steam_deck_as_a_off_grid_privacy_forward/",
+        "text": "[removed]",
+        "created_utc": 1669827881,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would Virtual Box or Containers be better for building install scripts?",
+        "author": "GrayLiterature",
+        "url": "https://www.reddit.com/r/linux/comments/z8w331/would_virtual_box_or_containers_be_better_for/",
+        "text": "[removed]",
+        "created_utc": 1669826262,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Xmodmap ctrl/caps swap?",
+        "author": "No_Possible6399",
+        "url": "https://www.reddit.com/r/linux/comments/z8vfck/xmodmap_ctrlcaps_swap/",
+        "text": "I'm trying to set up a custom keyboard layout but struggling to get the caps key to act as control. I had got it working initially via Gnome tweaks but it seems to have stopped working completely. Xev registers the key as L Ctrl but it's being treated as caps by the system. I'm using Debian Stable / Gnome, is there anything to disable so I can just use xmodmap?",
+        "created_utc": 1669824687,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux Security - What do you folks think?",
+        "author": "RandomJerk2012",
+        "url": "https://madaidans-insecurities.github.io/linux.html",
+        "text": "",
+        "created_utc": 1669823575,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Check out what's new in Plasma Mobile Gear ⚙️ 22.11: Changes and improvements to the shell, to the overall performance of the system, and to apps like Recorder, NeoChat, Tokodon, Kasts and more.",
+        "author": "Bro666",
+        "url": "https://plasma-mobile.org/2022/11/30/plasma-mobile-gear-22-11/",
+        "text": "",
+        "created_utc": 1669819575,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I run GUI apps in a CLI distro?",
+        "author": "NoConnection4305",
+        "url": "https://www.reddit.com/r/linux/comments/z8q8no/can_i_run_gui_apps_in_a_cli_distro/",
+        "text": "[removed]",
+        "created_utc": 1669811292,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any good trackpad with linux?",
+        "author": "MacTheZazou",
+        "url": "https://www.reddit.com/r/linux/comments/z8plgz/any_good_trackpad_with_linux/",
+        "text": "[removed]",
+        "created_utc": 1669809294,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any good trackpad laptop with linux?",
+        "author": "marionette1312",
+        "url": "https://www.reddit.com/r/linux/comments/z8piue/any_good_trackpad_laptop_with_linux/",
+        "text": "[removed]",
+        "created_utc": 1669809042,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Extracting Syscalls from a Suspended Process",
+        "author": "twmopbuy",
+        "url": "https://cymulate.com/blog/extracting-syscalls-from-a-suspended-process/",
+        "text": "",
+        "created_utc": 1669807861,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "the maddening truth of using Qubes",
+        "author": "Tall-Start1041",
+        "url": "https://www.reddit.com/r/linux/comments/z8ou6u/the_maddening_truth_of_using_qubes/",
+        "text": "Qubes  is a security-oriented operating system. Its now fairly mature. It  brands itself as being 'reasonably secure'. Its based on the Xen  hypervisor, and Fedora, Debian and Whonix OSes. I'll let you do your own  reading if you want to know more.\n\nIts  not without problems, though. Security is inversely proportional to  convenience ( &lt;- apparently from the first Unix handbook). This is a  good summary of Qubes. I find it can really disrupt workflow.\n\nThis is an account of Qubes for prospective users.\n\nI've been using Qubes for 5 years. I'm not technical, I'm not a power user. I am not using high-end hardware.\n\nI  run Qubes on a Lenovo Thinkpad x230 (with Coreboot and ME\\_Cleaner  applied): i5-3320M CPU @ 2.6GHz, 16GB memory (the maximum it can take),  with an SSD.\n\nI make comparisons to  my second, less powerful machine, a Lenovo Thinkpad x230 i3-3120M CPU @  2.5GHz, 12GB memory, with an SSD. It runs a normal Debian-based distro.\n\nIts  important to know as you read this - if you don't already - that Qubes  achieves its security by isolation. It gets that by compartmentalizing  everything in separate virtual machines (VMs).\n\n**Irritations that make me question my choice to run Qubes:**\n\n**Slow**\n\nHere's  an example: I am launching my Firefox instance (with existing tabs from  a previous session) in my Personal VM (virtual machine). This VM uses a  VPN, so that will automatically launch as well to provide networking,  as a prerequisite to Personal VM. Here's the timing:\n\n* 0s            Q-button &gt; Personal &gt; Firefox to launch\n* 1m 10s   VPN VM is up and running.\n* 1m 55s   Personal Firefox window appears, but tabs aren't yet reloaded.\n* 3m 09s   Uppermost Firefox tab now displays/reloaded content.\n\n3m 09s. To launch a webpage. That sux.\n\nTo  test this, I've just done that all again  but with a different VM,  after a restart of the machine: 3m 09s again. Now for a third time: this  time only 1m 28s. I can't point to any factor that could cause the  difference.\n\nThat's an average of 2m 35s to reopen a webpage in Firefox.\n\nFirefox is an offender here. I have typically 10-20 tabs open at any one time and 10 extensions (Firefox Recommended).\n\nOpening  a Firefox instance with no extensions, in a fresh, stock Fedora-based  VM (i.e. a regular disposable VM) that doesn't use a VPN to connect to  the internet, takes 1m 32s to get to the Firefox startpage.\n\nIf  I open Personal VM again - but this time with the VPN VM already up and  running - it takes 46s to start the machine, but Firefox displayed a  fully functional tab at 1m 00s.\n\nMy ‘normal’ laptop takes mere seconds to open Firefox with a VPN running.\n\nBoot  up to ‘ready’ – including the disk decryption and the login – takes me  around 3m 10s. Just for the record. Getting to a working VM from a  powered off stance can take around 6-7 minutes.\n\nSo there you have it: nothing is quick and sometimes its very very slow. Security is inversely proportional to convenience.\n\n**Focus hijacking**\n\nFocus  hijacking is what I call Qubes’ habit of opening its VM right over the  top of whatever you are working on. Because of that, because it takes so  long to open things, but because it will open the window long before it  has finished setting up the application (e.g. browser tabs), its  pointless to get on with something else while you wait. You’ll just be  interrupted, like someone shoving a newspaper under your nose while you  are writing something. Maddening.\n\n**Updater**\n\nQubes  has a special app for handling updates (after all, it has at least 5  different 'guest' OSes to keep updated). Usually once a day there is an  update to at least one of the distros Qubes uses (usually Fedora). The  updater app is slow, clunky and resource-heavy. My fan starts running  every time, and sometimes the system becomes visibly sluggish. The  Updater requires a manual start, and once started it will run to  completion - the 'cancel' button doesn't seem to work at all. It tends  to run \\~5-10 minutes (a guess, not measured). You have to deal with this  pretty much every day.\n\nOnce  you've updated, all the individual VMs that use that OS need to be  restarted. They need to be shutdown and started in order (e.g.  application VM shutdown, then VPN shutdown, etc, etc then VPN restarted,  then application VM restarted). Its so time-consuming its best to  shutdown and restart the entire machine. Since boot-to-ready takes me 3m  10s, getting back to where I was working can take around 7 minutes.\n\n**Connections**\n\nQubes  is built on clever isolations. Its probably no surprise that connecting  anything is just harder in Qubes. That includes: VPNs, SSH, printers,  cloud services (at least using them for backups) and USB devices. Some  devices will just never work, it seems, like smartphones (I’ve tried 3).  So don’t throw out your other laptop!\n\nDoing something new, trouble-shooting and problem-solving\n\nBasically,  Qubes adds another layer of complexity to whatever you are doing. Your  resources for figuring things out are reduced to the documentation (not  always what you need) and the community (good but has its limits). This  compares with the oceans of Linux-relevant material available for almost  every other distro – its a big difference.\n\n**Lock-in (sort of)**\n\nWith  Qubes you split your activities across different VMs. With just a  handful of these VMs, each with its own files, (e.g. documents,  spreadsheets), and browser with bookmarks, histories, etc., you  effectively have several independent computers' worth of stuff to back  up. Were I ever to transfer it, not only would it be tedious to extract  from Qubes, assembling all those Home folders and subdirectories into a  unified system on a normal distro would be a real pain.\n\nQubes  offers its own backup tool (again, its not quick but I don't think we  should expect it to be). It creates backup files that can easily restore  to a new Qubes system. But browsing those backups and extracting  information from a *normal*  computer may not be so simple. Qubes specifies a particular archive  software (available through most distro repositories) to accomplish  this, but I have never done it.\n\nThere’s  also a conceptual lockin. Going back to a normal distro is kind of like  reemerging on Flatland after a period in 3D. Gone is the separation of  activities, no comforting security wall of virtualization, nothing. You  open your password manager in a normal distro and it is on *exactly the same* system as your webbrowser - it makes you pause and think, 'is this safe?'. Indeed, was normal computing *ever* safe?\n\n**Nothing here is enough to make me quite Qubes.**\n\nI’d  say if you are going to try Qubes, use a system that has more than 16GB  RAM. It would be a mistake to not have a ‘normal’ computer around as a  just-in-case.\n\nQubes is great, and  reasonably secure, but all too often I find it inversely proportional to  anything remotely resembling convenience. Perhaps these gripes can be  viewed as the 'price of entry' to that security. That's your choice to  make, but make sure its an informed choice.",
+        "created_utc": 1669806751,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "HELLO FRIENDS HERE'S ANOTHER OS KNOWN AS FYDEOS WHICH IS NOW FREE AND OPEN SOURCE GIVE IT A TRY https://youtu.be/IGNRP9kRJjg",
+        "author": "Efficient_Speed1221",
+        "url": "https://i.redd.it/vfjm7teve23a1.png",
+        "text": "",
+        "created_utc": 1669804019,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to host servers in your living room on publicly routed static IPv4 and IPv6 subnets",
+        "author": "libreleah",
+        "url": "https://vimuser.org/l2tp.html",
+        "text": "",
+        "created_utc": 1669802645,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to ensure a redirected input stream is echoed to terminal?",
+        "author": "mikef22",
+        "url": "https://www.reddit.com/r/linux/comments/z8mxz7/how_to_ensure_a_redirected_input_stream_is_echoed/",
+        "text": "Does anyone know a clever solution to this problem we have for some open-source auto-marking software?\n\nSuppose I have a simple program in any language, e.g. python in this case:\n\n    name=input(\"What is your name?\")\n    print(\"Hello,\",name)\n\nAnd we run it from a terminal with an input stream, e.g. \"python3 programName &lt;text.txt\", where \"text.txt\" is a file with one line that says \"John\" say, then we see this output in the terminal:\n\n    What is your name?Hello, John.\n\nBut if we run the program manually, and type in \"John\", then we see something different:\n\n    What is your name? John\n    Hello, John\n\nIs there clever trick we can use to make it so that the first method produces output similar to the second method?    We want \"python3 programName &lt;text.txt\" to produce:\n\n    What is your name? John\n    Hello, John.\n\nusing some clever modification to the command line we issue.  In summary, we want to see the word \"John\" appear twice (without modifying the python program content)",
+        "created_utc": 1669800110,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to make input stream echo to terminal?",
+        "author": "michaelf4014",
+        "url": "https://www.reddit.com/r/linux/comments/z8msmr/how_to_make_input_stream_echo_to_terminal/",
+        "text": "[removed]",
+        "created_utc": 1669799573,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Some app ideas",
+        "author": "Andrewbd12",
+        "url": "https://www.reddit.com/r/linux/comments/z8mc0v/some_app_ideas/",
+        "text": "Hey guys, there are already many great programs available on Linux. Are there any programs which are not on Linux that you miss? Or do you have any app ideas? \n\nPlease do share here. We developers need some ideas, we need inspiration.",
+        "created_utc": 1669797863,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Flatpak is not a Sandbox",
+        "author": "devnull010",
+        "url": "https://www.reddit.com/r/linux/comments/z8lpyl/flatpak_is_not_a_sandbox/",
+        "text": "[removed]",
+        "created_utc": 1669795801,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Kolibri] What DE is this distro based out of? It feels DOS-sy",
+        "author": "calebchris0000",
+        "url": "https://i.redd.it/k9u5vi4m813a1.png",
+        "text": "",
+        "created_utc": 1669789784,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The maddening reality of Qubes",
+        "author": "Tall-Start1041",
+        "url": "https://www.reddit.com/r/linux/comments/z8jpt7/the_maddening_reality_of_qubes/",
+        "text": "Qubes is a security-oriented operating system. Its now fairly mature. It brands itself as being 'reasonably secure'. Its based on the Xen hypervisor, and Fedora, Debian and Whonix OSes. I'll let you do your own reading if you want to know more.\n\nIts not without problems, though. Security is inversely proportional to convenience ( &lt;- apparently from the first Unix handbook). This is a good summary of Qubes. I find it can really disrupt workflow.\n\nThis is an account of Qubes for prospective users. \n\nI've been using Qubes for 5 years. I'm not technical, I'm not a power user. I am not using high-end hardware.\n\nI run Qubes on a Lenovo Thinkpad x230 (with Coreboot and ME\\_Cleaner applied): i5-3320M CPU @ 2.6GHz, 16GB memory (the maximum it can take), with an SSD.\n\nI make comparisons to my second, less powerful machine, a Lenovo Thinkpad x230 i3-3120M CPU @ 2.5GHz, 12GB memory, with an SSD. It runs a normal Debian-based distro.\n\nIts important to know as you read this - if you don't already - that Qubes achieves its security by isolation. It gets that by compartmentalizing everything in separate virtual machines (VMs).\n\n**Irritations that make me question my choice to run Qubes:**\n\n**Slow**\n\nHere's an example: I am launching my Firefox instance (with existing tabs from a previous session) in my Personal VM (virtual machine). This VM uses a VPN, so that will automatically launch as well to provide networking, as a prerequisite to Personal VM. Here's the timing:\n\n* 0s            Q-button &gt; Personal &gt; Firefox to launch \n* 1m 10s   VPN VM is up and running. \n* 1m 55s   Personal Firefox window appears, but tabs aren't yet reloaded. \n* 3m 09s   Uppermost Firefox tab now displays/reloaded content.\n\n3m 09s. To launch a webpage. That sux.\n\nTo test this, I've just done that all again  but with a different VM, after a restart of the machine: 3m 09s again. Now for a third time: this time only 1m 28s. I can't point to any factor that could cause the difference.\n\nThat's an average of 2m 35s to reopen a webpage in Firefox.\n\nFirefox is an offender here. I have typically 10-20 tabs open at any one time and 10 extensions (Firefox Recommended).\n\nOpening a Firefox instance with no extensions, in a fresh, stock Fedora-based VM (i.e. a regular disposable VM) that doesn't use a VPN to connect to the internet, takes 1m 32s to get to the Firefox startpage.\n\nIf I open Personal VM again - but this time with the VPN VM already up and running - it takes 46s to start the machine, but Firefox displayed a fully functional tab at 1m 00s.\n\nMy ‘normal’ laptop takes mere seconds to open Firefox with a VPN running.\n\nBoot up to ‘ready’ – including the disk decryption and the login – takes me around 3m 10s. Just for the record. Getting to a working VM from a powered off stance can take around 6-7 minutes.\n\nSo there you have it: nothing is quick and sometimes its very very slow. Security is inversely proportional to convenience.\n\n**Focus hijacking**\n\nFocus hijacking is what I call Qubes’ habit of opening its VM right over the top of whatever you are working on. Because of that, because it takes so long to open things, but because it will open the window long before it has finished setting up the application (e.g. browser tabs), its pointless to get on with something else while you wait. You’ll just be interrupted, like someone shoving a newspaper under your nose while you are writing something. Maddening.\n\n**Updater**\n\nQubes has a special app for handling updates (after all, it has at least 5 different 'guest' OSes to keep updated). Usually once a day there is an update to at least one of the distros Qubes uses (usually Fedora). The updater app is slow, clunky and resource-heavy. My fan starts running every time, and sometimes the system becomes visibly sluggish. The Updater requires a manual start, and once started it will run to completion - the 'cancel' button doesn't seem to work at all. It tends to run \\~5-10 minutes (a guess, not measured). You have to deal with this pretty much every day.\n\nOnce you've updated, all the individual VMs that use that OS need to be restarted. They need to be shutdown and started in order (e.g. application VM shutdown, then VPN shutdown, etc, etc then VPN restarted, then application VM restarted). Its so time-consuming its best to shutdown and restart the entire machine. Since boot-to-ready takes me 3m 10s, getting back to where I was working can take around 7 minutes.\n\n**Connections**\n\nQubes is built on clever isolations. Its probably no surprise that connecting anything is just harder in Qubes. That includes: VPNs, SSH, printers, cloud services (at least using them for backups) and USB devices. Some devices will just never work, it seems, like smartphones (I’ve tried 3). So don’t throw out your other laptop!\n\nDoing something new, trouble-shooting and problem-solving\n\nBasically, Qubes adds another layer of complexity to whatever you are doing. Your resources for figuring things out are reduced to the documentation (not always what you need) and the community (good but has its limits). This compares with the oceans of Linux-relevant material available for almost every other distro – its a big difference.\n\n**Lock-in (sort of)**\n\nWith Qubes you split your activities across different VMs. With just a handful of these VMs, each with its own files, (e.g. documents, spreadsheets), and browser with bookmarks, histories, etc., you effectively have several independent computers' worth of stuff to back up. Were I ever to transfer it, not only would it be tedious to extract from Qubes, assembling all those Home folders and subdirectories into a unified system on a normal distro would be a real pain.\n\nQubes offers its own backup tool (again, its not quick but I don't think we should expect it to be). It creates backup files that can easily restore to a new Qubes system. But browsing those backups and extracting information from a *normal* computer may not be so simple. Qubes specifies a particular archive software (available through most distro repositories) to accomplish this, but I have never done it.\n\nThere’s also a conceptual lockin. Going back to a normal distro is kind of like reemerging on Flatland after a period in 3D. Gone is the separation of activities, no comforting security wall of virtualization, nothing. You open your password manager in a normal distro and it is on *exactly the same* system as your webbrowser - it makes you pause and think, 'is this safe?'. Indeed, was normal computing *ever* safe?\n\n**Nothing here is enough to make me quite Qubes.**\n\nI’d say if you are going to try Qubes, use a system that has more than 16GB RAM. It would be a mistake to not have a ‘normal’ computer around as a just-in-case.\n\nQubes is great, and reasonably secure, but all too often I find it inversely proportional to anything remotely resembling convenience. Perhaps these gripes can be viewed as the 'price of entry' to that security. That's your choice to make, but make sure its an informed choice.",
+        "created_utc": 1669789615,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I made this CLI tool to generate script templates files. This was for a specific use case where I can't do something as simple as installing a Vim plugin (or any software for that matter), and turned into a fun project that may be useful for someone!",
+        "author": "membersincewayback",
+        "url": "https://github.com/membersincewayback/gen",
+        "text": "",
+        "created_utc": 1669782737,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "DBAs and SQL devs be like …",
+        "author": "ajaanz",
+        "url": "https://i.redd.it/hjk2t6zfh03a1.jpg",
+        "text": "",
+        "created_utc": 1669780825,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gaming on Linux",
+        "author": "PunkTF2",
+        "url": "https://www.reddit.com/r/linux/comments/z8fdkq/gaming_on_linux/",
+        "text": "[removed]",
+        "created_utc": 1669777687,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "help me",
+        "author": "Minute-Cupcake-4862",
+        "url": "https://www.reddit.com/r/linux/comments/z8fc9g/help_me/",
+        "text": "[removed]",
+        "created_utc": 1669777595,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Noob here, I'm on Linux Lite. How do I \"safely remove\" an external hard drive?",
+        "author": "-ThatGingerKid-",
+        "url": "https://www.reddit.com/r/linux/comments/z8f3ps/noob_here_im_on_linux_lite_how_do_i_safely_remove/",
+        "text": "",
+        "created_utc": 1669777012,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I made this CLI tool to generate script templates files. This was for a specific use case where I can't do something as simple as installing a Vim plugin (or any software for that matter), and turned into a fun project that may be useful for someone!",
+        "author": "membersincewayback",
+        "url": "https://www.reddit.com/r/linux/comments/z8f1cb/i_made_this_cli_tool_to_generate_script_templates/",
+        "text": "[removed]",
+        "created_utc": 1669776839,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I made this CLI tool to generate script templates files. This was for a specific use case where I can't do something as simple as installing a Vim plugin (or any software for that matter), and turned into a fun project that may be useful for someone!",
+        "author": "membersincewayback",
+        "url": "https://i.redd.it/b59da33b303a1.gif",
+        "text": "",
+        "created_utc": 1669776655,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Found this Easter egg in Call of Duty: Black ops for Xbox 360. Better late than ever",
+        "author": "Intelligent-Disk9934",
+        "url": "https://i.redd.it/htc82egwl13a1.png",
+        "text": "",
+        "created_utc": 1669776189,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ubuntu touch",
+        "author": "Fuck_Life_421",
+        "url": "https://www.reddit.com/r/linux/comments/z8e3v6/ubuntu_touch/",
+        "text": "I was searching for a linux os that can be installed on a phone and I found out about ubuntu touch, but I have a question about it, is it just anoter phone os or does it have a terminal? can I install tools on it like you can with ubuntu on a computer? I was searching for a way to install kali on an old phone that I have but its not possible, so can I at least install the tools on kali on a ubuntu touch?.",
+        "created_utc": 1669774559,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I am using Linux mint cinnamon, it cannot detect my second which is connected with usbc to dp, and it works on windows, does anyone know how I can get it to work on Linux?",
+        "author": "Tranken587",
+        "url": "https://i.redd.it/hovnihute13a1.jpg",
+        "text": "",
+        "created_utc": 1669773812,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "any one knows how to install Linux on a phone as the main OS?",
+        "author": "Fuck_Life_421",
+        "url": "https://www.reddit.com/r/linux/comments/z8d4yv/any_one_knows_how_to_install_linux_on_a_phone_as/",
+        "text": "[removed]",
+        "created_utc": 1669772226,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I want to contribute back but don't know how",
+        "author": "DaisyLee2010",
+        "url": "https://www.reddit.com/r/linux/comments/z8cli5/i_want_to_contribute_back_but_dont_know_how/",
+        "text": "Ok. I can't code, couldn't tell you the difference between code and *SpaghettiOs.*\n\n&amp;#x200B;\n\nBut I want to give back to the community (and several projects inside those) I've enjoyed for years. But what is the best way to do this? Please someone ELI5 some easy points of entrance to this kind of process.",
+        "created_utc": 1669770926,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A less invasive captcha",
+        "author": "PossiblyLinux127",
+        "url": "https://github.com/sequentialread/pow-captcha",
+        "text": "",
+        "created_utc": 1669769507,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "not sudoers and no administrator password",
+        "author": "Raichu_A_Love_Song",
+        "url": "https://www.reddit.com/r/linux/comments/z8b53p/not_sudoers_and_no_administrator_password/",
+        "text": "Hey everyone, Everything was writing great until I did some work with docker. Now, when I try to sudo anything I get \" 'user' is not the sudoers\". But I can't do any sort of sudo su or anything bc the administrator password doesn't work.  \nI don't think I ever explicitly set an admin password. I just set up the user and it had the admin privileges (I think).\n\nI'm running Ubuntu 22.04.1",
+        "created_utc": 1669767383,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Am I the only one that mistakenly types sudio and then starts hearing Phil Collins in my head?",
+        "author": "ocelat_already",
+        "url": "https://www.reddit.com/r/linux/comments/z89uq9/am_i_the_only_one_that_mistakenly_types_sudio_and/",
+        "text": "[removed]",
+        "created_utc": 1669764422,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Off-Topic]Rereading: The Soul of a New Machine by Tracy Kidder ..I have my well-thumbed copy ...a must read",
+        "author": "unixbhaskar",
+        "url": "https://auxiliarymemory.com/2017/01/06/rereading-the-soul-of-a-new-machine-by-tracy-kidder/",
+        "text": "",
+        "created_utc": 1669764297,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Error : Permission denied (Publickey)",
+        "author": "dpgm10",
+        "url": "https://www.reddit.com/r/linux/comments/z89r2r/error_permission_denied_publickey/",
+        "text": "[removed]",
+        "created_utc": 1669764188,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "In Ubunutu, whenever i type a sudo command, it says this-",
+        "author": "beatboxburp",
+        "url": "https://www.reddit.com/r/linux/comments/z89h5d/in_ubunutu_whenever_i_type_a_sudo_command_it_says/",
+        "text": "[removed]",
+        "created_utc": 1669763564,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "x11vnc replacement in wayland",
+        "author": "MissionQuality",
+        "url": "https://www.reddit.com/r/linux/comments/z89cbn/x11vnc_replacement_in_wayland/",
+        "text": "[removed]",
+        "created_utc": 1669763245,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with the system call",
+        "author": "DeOnlyBob",
+        "url": "https://www.reddit.com/r/linux/comments/z880ar/help_with_the_system_call/",
+        "text": "[removed]",
+        "created_utc": 1669760211,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Syscall",
+        "author": "DeOnlyBob",
+        "url": "https://www.reddit.com/r/linux/comments/z87oza/syscall/",
+        "text": "[removed]",
+        "created_utc": 1669759470,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If you find many blank pages in a scanned book PDF test them with an internet browser",
+        "author": "cipricusss",
+        "url": "https://www.reddit.com/r/linux/comments/z87dlh/if_you_find_many_blank_pages_in_a_scanned_book/",
+        "text": "There is [a bug](https://gitlab.freedesktop.org/poppler/poppler/-/issues/1319) with `poppler` that makes main Linux PDF viewers fail to display some pages in scanned books saved as PDF.\n\nhttps://preview.redd.it/2gsfd62smy2a1.png?width=1130&amp;format=png&amp;auto=webp&amp;s=1e0d1acac866621bb80140fd5835366cd1124e7b\n\n Okular, qpdfview, Evince, Atril are affected. But other internet browsers (except Falkon!),  and PDF viewers (WPS PDF,  LibreOffice Draw, ImageMagick, mupdf, PDF Studio Viewer, Foxit, Master PDF) are not affected.\n\nSuch PDF pages/files have some obscure variations or defaults that cannot be handled by poppler. They can be fixed by printing them \"as pdf\" in Firefox or other browsers (in Chrome, Vivaldi, Opera you have to select \"print to image\" too).",
+        "created_utc": 1669758728,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ChromeOS vs Fedora",
+        "author": "CheeseYT3",
+        "url": "https://www.reddit.com/r/linux/comments/z86fsa/chromeos_vs_fedora/",
+        "text": "[removed]",
+        "created_utc": 1669756561,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "delete file directory?",
+        "author": "F34r_me160",
+        "url": "https://www.reddit.com/r/linux/comments/z851xa/delete_file_directory/",
+        "text": "[removed]",
+        "created_utc": 1669753552,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The junior sysadmin course at r/LinuxUpskillChallenge restarting 5 December 2022",
+        "author": "livia2lima",
+        "url": "https://www.reddit.com/r/linux/comments/z84c1u/the_junior_sysadmin_course_at/",
+        "text": "[removed]",
+        "created_utc": 1669752034,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Simplest way to create a GUI interface?",
+        "author": "AlternativeMustache",
+        "url": "https://www.reddit.com/r/linux/comments/z83z2y/simplest_way_to_create_a_gui_interface/",
+        "text": "I have a usecase for a very basic GUI program that will literally just print dynamic text repeatedly.\n\nI have tried with GTK but it doesn't seem optimal for this kind of use and it's not the easiest to learn, what other options do I have?",
+        "created_utc": 1669751250,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Towards a More Sensible Analysis of Non-GPL2 Loadable Linux Kernel Modules",
+        "author": "small_kimono",
+        "url": "https://www.reddit.com/r/linux/comments/z83u3e/towards_a_more_sensible_analysis_of_nongpl2/",
+        "text": "If you've ever searched for a differing perspective on the potential limits of the GPLv2 licensing (perhaps described as FSF skeptical?), especially related to current American copyright law, this series of articles is fantastic.  \n\nPart 1: [Encouraging closed source modules part 1: copyright and software](https://www.networkworld.com/article/2301697/encouraging-closed-source-modules-part-1--copyright-and-software.html)\n\nPart 2: [Encouraging closed source modules part 2: law and the module interface](https://www.networkworld.com/article/2301698/encouraging-closed-source-modules-part-2--law-and-the-module-interface.html)\n\nPart 3: [Encouraging closed source modules part 3: eliminating the \"API update tax\"](https://www.networkworld.com/article/2301701/encouraging-closed-source-modules-part-3--elimating-the--api-update-tax-.html)\n\nIt's just amazing that certain other analyses, often cited as gospel within tech forums, don't take into account underlying copyright law.  Especially when these articles seem to pore over it!  Re: ZFS and the GPLv2, this focus is especially relevant concerning the GPLv2 term \"derived works\" as \"any derivative work under copyright law\" is incorporated into the definition of the covered \"Program\".\n\nFYI these articles are actually linked to by the ZFS [docs] under additional reading.",
+        "created_utc": 1669750935,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Set terminal colors to just two colors.",
+        "author": "grghk",
+        "url": "https://www.reddit.com/r/linux/comments/z839vn/set_terminal_colors_to_just_two_colors/",
+        "text": "[removed]",
+        "created_utc": 1669749655,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A solution to the CSD controversy",
+        "author": "ComprehensiveAd8004",
+        "url": "https://www.reddit.com/r/linux/comments/z838lq/a_solution_to_the_csd_controversy/",
+        "text": "For anyone who's unaware, CSD refers to \"Client-Side Decoration\", such as GTK headerbars. I have an idea for a specification that apps could use to describe a layout of widgets (butons, sliders, checkboxes, menus, etc) to the window manager/compositor, which could then draw it on the titlebar of the app. This combines the benifits of both CSD and no-CSD, but most importantly it makes everyone happy.\n\nOriginally, I went to the XDG mailing list and asked them if it could become a spec, and gave some examples of how it could benifit a couple of desktop environments I mentioned. Basially all the told me is that \"GNOME probably won't add support for that\" and \"GTK headerbars won't work with that design\". After a bit of arguing I basically said \"Ok, then it can still benifit other desktop environments\", and then they just stopped responding. I clicked on some of the respondents GitLab accounts, and they all were GNOME developers who managed XDG as a side-job. That's when I realized that, like GTK, XDG no longer cared about adding features that don't directly benifit GNOME. It also explains Wayland's lack of native support for things like external panels.\n\nAfter that I forgot about the idea for a couple of months, but now I'm hoping that I could use this post as a sort of petition, and ask individual window managers if they would like to implement this one by one. I'll try to help with development as much as possible. First I'll ask smaller, independant projects like Openbox or Enlightenment, and then I'll try using their support to encourage larger projects like XFWM and Marco, and hopefully eventually KWM and Mutter. The current design has the following wigdets:\n\n* Spacer - Empty space for separating widgets.\n* Separator - A vertical bar for separating widgets.\n* Label - just text. Could optionally be **bold**, *italic*, underlined, ~~strikethgough~~.\n* Icon - An icon. Could be formed from a file, icon theme icon, or character/emoji.\n* Button - A button, with a label and optionally an icon, Can also be a toggle button, where 1 click for *on* and another for *off*.\n* IconButton - A button with only an icon. It will look like the maximize/minimize/close icons on the window manager/compositor.\n* TextInput - A text input, where you write text. Could be configured to only show dots (a password input), or to only allow numbers, dates, times, colors, and many other things.\n* Slider - A slider. Customizable min/max values, and can be configured to have dashes (aka \"stops\" or \"markers\"), to mark significant points on the slider.\n* ComboBox - A list of options where you can choose one. Also known as a dropdown.\n* Menu - Internally a list of buttons, but will appear as a menu on a menubar.\n* ButtonGroup - A group of buttons with no space in between. Good for tabs, or similar actions (like undo/redo)\n* Stack - Contains multiple groups of widgets, where only one can be shown at a time. Similar to the center of a wizard app with the \"next/back\" buttons for choosing the group of widgets to show.\n* Scrollview - Stores widgets inside it, where the user can scroll left/right to see other ones.\n\nAside from properties special to each widget, each one will have three common properties:\n\n* width - The width of the widget in pixels\n* raw - Data stored by the window manager/compositor, which lays outside of the specification. Useful because, for example, GTK window managers like Mutter and Marco could store a GtkButton object here, and the app could change button properties specific to GTK (like \"highlighted\" blue buttons or \"dangerous\" red buttons). The code would basically say `if wm_name == \"Mutter\" or \"Marco\": mySpecialBtn.raw.isHighlighted = true`. That isn't real code, but you get the idea.\n\nAnything that isn't in the specification is up to the wm/compositor. For example, separators could be dashed, hidden, or even just a dot.\n\nThe way it will work is that there will be a library called *libtbw* (Titlebar widgets). Window managers/compositors can tell the library to send it messages about everything apps say to draw, and apps could use the library to 1: Check if the current wm/compositor supports toolbar widgets 2: If it does, draw stuff without having to worry about the current one 3: Or get the name of the current one to use special \"raw\" powers.\n\nIf anyone wants to see the source for the old one, here it is, but note that it's a bit out of date and I'm planning on making big changes before asking projects if they would like the idea. The .c file will be completely rewritten later so just ignore it. The .h file is here: [https://github.com/sammonius/TbWidgets/blob/main/tbwidgets.h](https://github.com/sammonius/TbWidgets/blob/main/tbwidgets.h). Here's a link to the GitLab issue I created asking XDG about this: [https://gitlab.freedesktop.org/xdg/xdg-specs/-/issues/95](https://gitlab.freedesktop.org/xdg/xdg-specs/-/issues/95).\n\nI'd love to hear what everyone thinks about this idea.",
+        "created_utc": 1669749575,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "One liner to find root encrypted partition block device",
+        "author": "Phys-Tech",
+        "url": "https://www.reddit.com/r/linux/comments/z82kq6/one_liner_to_find_root_encrypted_partition_block/",
+        "text": "[removed]",
+        "created_utc": 1669748108,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "trying other distros",
+        "author": "amir_khaki",
+        "url": "https://www.reddit.com/r/linux/comments/z81tui/trying_other_distros/",
+        "text": "[removed]",
+        "created_utc": 1669746463,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Cyber Monday Hot Deals] Buy Microsoft Software Product Key Get Up to 80% Off Use Promo code: (CYBER28)",
+        "author": "MarilynBankse",
+        "url": "https://mskeydeals.site/jO8ZYkOx",
+        "text": "",
+        "created_utc": 1669742503,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tales of the M1 GPU - Asahi Linux",
+        "author": "shab-re",
+        "url": "https://asahilinux.org/2022/11/tales-of-the-m1-gpu/",
+        "text": "",
+        "created_utc": 1669741421,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "un look write protected",
+        "author": "Significant_Hippo818",
+        "url": "https://i.redd.it/ykwh2kmpmy2a1.png",
+        "text": "",
+        "created_utc": 1669740142,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Question about dual boot",
+        "author": "Kraggno",
+        "url": "https://www.reddit.com/r/linux/comments/z7ykn3/question_about_dual_boot/",
+        "text": "[removed]",
+        "created_utc": 1669739111,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Flatpak is not a sandbox",
+        "author": "devnull010",
+        "url": "https://hanako.codeberg.page/",
+        "text": "",
+        "created_utc": 1669738688,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Try to sell me on using Ubuntu vs Windows",
+        "author": "crua9",
+        "url": "https://www.reddit.com/r/linux/comments/z7xkmn/try_to_sell_me_on_using_ubuntu_vs_windows/",
+        "text": "So I have an old computer my sister's kids play on. More than less 1 of them, and they are 7.\n\nAnyways, I think I bought this machine in 2015 and it isn't able to get Win 11. It sometimes has problems getting new Win 10 updates, the thing is slow, and the machine is only really good for as a glorified browser.\n\nLike the kid plays Minecraft and StarDew on it. Other than that, they mostly watch YouTube kids videos.\n\n&amp;#x200B;\n\nAnyways, leaning towards throwing Ubuntu or Mint on it. Like I don't use the computer, and most likely will never again. And the entire reason to keep it is so the kid has something to do and if he needs to do his school remotely again he can.",
+        "created_utc": 1669736786,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "For the first time, I've had almost a perfect experience with Wayland on a 3080",
+        "author": "Drostina",
+        "url": "https://www.reddit.com/r/linux/comments/z7x986/for_the_first_time_ive_had_almost_a_perfect/",
+        "text": "Setup Info: Gnome Wayland, OpenSUSE Tumbleweed, Latest Nvidia Drivers, 3080\n\nSo every couple of weeks or so, I kept trying Wayland to see how it's working, and I never dreamt of being able to use Wayland for at least another year. This is because I have always had severe graphical problems, visual glitches and intense lags.\n\nHowever, about 48 hours ago I decided to switch to Wayland once again and try it, and what do you know, I've actually had almost 0 problems (And the ones I had were so rare and minor).\n\nSo for once, I am actually using Wayland and loving it. Might be worth trying Wayland again if you have been in my shoes. (Haven't had much luck with KDE Wayland still)\n\nThank you, everyone who has worked to have it working like it is now.",
+        "created_utc": 1669736040,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[ANNOUNCE] wayland-protocols 1.31",
+        "author": "bl4ck_goku",
+        "url": "https://lists.freedesktop.org/archives/wayland-devel/2022-November/042524.html",
+        "text": "",
+        "created_utc": 1669733334,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "adding icon to clock widget in kde plasma",
+        "author": "innerbeastismyself",
+        "url": "https://www.reddit.com/r/linux/comments/z7uzka/adding_icon_to_clock_widget_in_kde_plasma/",
+        "text": "[removed]",
+        "created_utc": 1669730675,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to Install LibreOffice on Linux Mint 21",
+        "author": "linuxgenie",
+        "url": "https://www.youtube.com/watch?v=FfXVP4DgHII",
+        "text": "",
+        "created_utc": 1669730140,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "https://github.com/G-Core/linux-regex-module/",
+        "author": "gcorelabs",
+        "url": "https://www.reddit.com/r/linux/comments/z7trag/httpsgithubcomgcorelinuxregexmodule/",
+        "text": "",
+        "created_utc": 1669727666,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "need to run fusion 360(not the web/vitual machine version) and solidworks on linux(pop os)",
+        "author": "prom_king56",
+        "url": "https://www.reddit.com/r/linux/comments/z7tltz/need_to_run_fusion_360not_the_webvitual_machine/",
+        "text": "[removed]",
+        "created_utc": 1669727278,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "VS Code - WGU C# Project",
+        "author": "Stalker401",
+        "url": "https://www.reddit.com/r/linux/comments/z7thda/vs_code_wgu_c_project/",
+        "text": "I'm currently in WGU and I'm needing to work on a project that creates an inventory system in C#. I'm new to visual studio, and I'm new to Ubuntu (so this is likely a horrible combination). My computer that's currently down had windows on it, and VS on it. I put Ubuntu on an 6 year old laptop to have something to work on in the mean time. I downloaded VS Code last night with .NET core, and I don't see a way to make graphical interfaces... Is that something that can be done on Linux's version? If so does anyone have a tutorial they can point me to?",
+        "created_utc": 1669726957,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Testing New SD Card",
+        "author": "MagicMick76",
+        "url": "https://www.reddit.com/r/linux/comments/z7ryji/testing_new_sd_card/",
+        "text": "[removed]",
+        "created_utc": 1669722833,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GUI for managing SSH tunnels",
+        "author": "pseudomorphous",
+        "url": "https://www.reddit.com/r/linux/comments/z7rg89/gui_for_managing_ssh_tunnels/",
+        "text": "[removed]",
+        "created_utc": 1669721343,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu 22.10 not loading after grub. Can't even enter recovery mode. What should I do!",
+        "author": "dot_ASH",
+        "url": "https://i.redd.it/bfx1v3s3fv2a1.jpg",
+        "text": "",
+        "created_utc": 1669719266,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Linux Distro for my needs",
+        "author": "universalholocaust",
+        "url": "https://www.reddit.com/r/linux/comments/z7qhwv/best_linux_distro_for_my_needs/",
+        "text": "[removed]",
+        "created_utc": 1669718451,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I created a bootable Linux store",
+        "author": "Better_Dark4895",
+        "url": "https://www.reddit.com/r/linux/comments/z7q63o/i_created_a_bootable_linux_store/",
+        "text": "[removed]",
+        "created_utc": 1669717477,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just opened a bootable Linux store",
+        "author": "Better_Dark4895",
+        "url": "https://www.reddit.com/r/linux/comments/z7q3mi/just_opened_a_bootable_linux_store/",
+        "text": "[removed]",
+        "created_utc": 1669717269,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What's everyone's opinion on the Nothing Phone?",
+        "author": "Skriblos",
+        "url": "https://www.reddit.com/r/linux/comments/z7pfn8/whats_everyones_opinion_on_the_nothing_phone/",
+        "text": "So I recently saw what to me was a new phone producer. [https://no.nothing.tech/](https://no.nothing.tech/) \n\nThe Nothing Company producing the Nothing Phone using the Nothing OS. A whole lot of Nothing if you ask me. But puns aside, the company claims that Nothing OS \"... delivers only the best of Android. No bloatware. Just speed and smooth experience. Hardware and software speak a single visual language, with bespoke widgets, fonts, sounds and wallpapers. Enables seamless integration with third party products.\" There are a bunch of other claims for integration and single pane of glass like solutions (example given direct Tesla (red flag 1) integration without additional apps) speed being a priority etc. etc. But also worryingly, they seem to be catering to the NFTbros by offering an NFT gallery, red flag 2.\n\nOn the face of it, I'm all for someone forking android and removing bloat while creating specifically dedicated hardware for the OS to run on. But I'm getting this irked feeling that they're replacing a form of bloatware with another by catering to NFTs. Additionally that wholly spirals into another issue, where nothing good or ethical has ever come out of anything associated in any way with NFTs, I'm almost expecting some sort of long con rug-pull where you buy the phone and suddenly you're left with an LED besparkled lump plastic with a snapdragon core and a dead OS.\n\nSo I'm wondering if anyone has  had any experience with Nothing. Anyone know anything about the company or the software and how legit it is? What are the odds they go down konami's way and sell off their company's valued products after the C-levels have invested heavily into the NFT scam and need to recoup loses?\n\nI was sort of excited to see a standard android competitor with a phone in store for purchase (quite reasonably priced at that) with an interesting though vain concept of the back cover glyphs, but after seeing these additional things on their website I've gotten a sour taste in my mouth. Your opinions?",
+        "created_utc": 1669715273,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fractional scaling got merged into wayland. What does this mean for KDE?",
+        "author": "water_aspirant",
+        "url": "/r/kde/comments/z7iwpm/fractional_scaling_got_merged_into_wayland_what/",
+        "text": "",
+        "created_utc": 1669714966,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Running Shell in Builder | Jakub Steiner",
+        "author": "xaedoplay",
+        "url": "https://blog.jimmac.eu/2022/Builder-Shell/",
+        "text": "",
+        "created_utc": 1669712096,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do you think about the Fydetab Duo tablet",
+        "author": "theiotdeveloper",
+        "url": "https://www.reddit.com/r/linux/comments/z7mitb/what_do_you_think_about_the_fydetab_duo_tablet/",
+        "text": "Hi, I am planning on buying a Linux system so that I could take my projects with me while I travel. I travel a lot and I thought this tablet [fydetab](https://fydetabduo.com) would be good. But the internal storage is only 128 GB and the ram is again only 8 GB. What’s your comments ?",
+        "created_utc": 1669705912,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Create Your Own SpeedTest - Free and Open-Source SelfHosted HTML5 SpeedTest",
+        "author": "GoRedPlanet",
+        "url": "https://v.redd.it/zjcd2ow26u2a1",
+        "text": "",
+        "created_utc": 1669704194,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi from the How-to-Linux research labs",
+        "author": "PaulGureghian1",
+        "url": "https://www.reddit.com/r/linux/comments/z7jpc7/hi_from_the_howtolinux_research_labs/",
+        "text": "",
+        "created_utc": 1669697196,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Laptop Freezes",
+        "author": "trail-barista",
+        "url": "https://www.reddit.com/r/linux/comments/z7j5f5/laptop_freezes/",
+        "text": "I have been having this issue for a while now. While using my laptop, it would suddenly freeze while using it. The mouse and keyboard are unresponsive. Sometimes, the light on Cap Lock will blink. Also, if I leave it unattended for maybe 30 mins or so, it will get logged out and appear on the login screen. I am not sure if the laptop restarted or just logged out.  \n\n\nI was using Manjaro before this and just move to Fedora 37 2 weeks ago. I did a clean install and the issue is still happening. I believe it is hardware related and I do not know where should I begin to troubleshoot.   \n\n\nLooking for advice on which log files should I be paying attention to.",
+        "created_utc": 1669695584,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ClamAV 1.0.0 LTS released | OpenSource AntiVirus | Cisco Talos",
+        "author": "Neustradamus",
+        "url": "https://blog.clamav.net/2022/11/clamav-100-lts-released.html",
+        "text": "",
+        "created_utc": 1669691274,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gen 10 X1 Carbon Linux throttling issue",
+        "author": "parheli0n",
+        "url": "/r/Lenovo/comments/z7groj/gen_10_x1_carbon_linux_throttling_issue/",
+        "text": "",
+        "created_utc": 1669689339,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "compatibility streaming/obs/nvidia",
+        "author": "SimplyJeevS",
+        "url": "https://www.reddit.com/r/linux/comments/z7guem/compatibility_streamingobsnvidia/",
+        "text": "[removed]",
+        "created_utc": 1669689272,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "To all the Windows fans who are saying Windows is more user friendly....",
+        "author": "k-u-sh",
+        "url": "https://www.reddit.com/r/linux/comments/z7gsb8/to_all_the_windows_fans_who_are_saying_windows_is/",
+        "text": "I wanted a game from Steam for a very long time, which was on sale today. I know that it was Windows only, and I was like \"no big deal, I can reinstall Windows on my old gaming laptop which has been sitting on the shelf for a while\".\n\n&amp;#x200B;\n\nI make a bootable USB, get to Windows setup. And this hellscape of an installer with bits from 2007 HAS BEEN UNABLE TO CREATE A NEW PARTITION ON MY EMPTY UNALLOCATED DISK!!!\n\n&amp;#x200B;\n\nI tried diskpart, I tried formatting my drive in way too many different ways, but Windows just gives me a stupid \"We were unable to create a new partition or locate an existing one\" message without even an error code or something that I can look up quick. \n\n&amp;#x200B;\n\nThe \"foolproof solutions\" to the problem are also so damn outdated, dating back to most solutions on Windows 7 with a HDD and an MBR partition, while Windows 11 needs GPT and I am obviously running a SSD. \n\n&amp;#x200B;\n\nI have been stuck on this stupid error for so long I just quit the process and left my computer without an OS. I'm going back to downloading Fedora or Pop. This is 3 hours and a game I genuinely wanted down the drain (sadly I have already paid for it, hopefully I can run it in a VM or something).\n\n&amp;#x200B;\n\nI have had so much of this garbage OS that gives limited CLI privileges on installation, no guides or anything, and is the most stubborn, vile, unsupported, practically has no community aspect (despite people saying they do), and NO GODDAMN GOOD DOCUMENTATION OF ANYTHING!!!! IT'S AS IF MSFT THOUGHT \"oh well most people use our thing anyway we don't need to make it user friendly or optimized, we just need to aggressively market\"!!!\n\n&amp;#x200B;\n\nFUCK THIS HELLSCAPE.\n\n&amp;#x200B;\n\nsorry for the rant.",
+        "created_utc": 1669689121,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The truth hurts.",
+        "author": "KwoopZ",
+        "url": "https://i.redd.it/d8uy3zjlyt2a1.jpg",
+        "text": "",
+        "created_utc": 1669683606,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GCC question for school",
+        "author": "throwaway927572324",
+        "url": "https://www.reddit.com/r/linux/comments/z7d85j/gcc_question_for_school/",
+        "text": "[removed]",
+        "created_utc": 1669679986,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I love LINUX but the notion that Linux breathes new life into an old PC should be debunked.",
+        "author": "asifrajani",
+        "url": "https://www.reddit.com/r/linux/comments/z7b2lr/i_love_linux_but_the_notion_that_linux_breathes/",
+        "text": "[removed]",
+        "created_utc": 1669675081,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Yet another try at the BPF program allocator [LWN.net]",
+        "author": "unixbhaskar",
+        "url": "https://lwn.net/SubscriberLink/915005/e6719b680bacbdfe/",
+        "text": "",
+        "created_utc": 1669674984,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "college apple store uses Raspbian",
+        "author": "Critical-Function-69",
+        "url": "https://i.redd.it/lgnpyicr5t2a1.jpg",
+        "text": "",
+        "created_utc": 1669673905,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "script or command to create folder and cd it automaticly?",
+        "author": "Lord_Schnitzel",
+        "url": "https://www.reddit.com/r/linux/comments/z79rku/script_or_command_to_create_folder_and_cd_it/",
+        "text": "I'm creating a ton of dirs so is there a script/alias/command/tool which allows me to create the dir and cd automaticly to that new dir?\n\nI know 'mkdir dir1 &amp;&amp; cd $\\_' but it so very slow way to write every single time.",
+        "created_utc": 1669672249,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Searching for] Electronic designing software",
+        "author": "EchoTheRat",
+        "url": "https://www.reddit.com/r/linux/comments/z79r9o/searching_for_electronic_designing_software/",
+        "text": "I'm new in the world of SPICE software, I used to use Native Instruments Multisim on Windows age ago at school but i didn't find an alternative on Linux (sorry i don't have USD 1000 to spend on a single license). The ones i found are command line programs, while i recall a K program for kde that kinda worked. Any idea?",
+        "created_utc": 1669672229,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Troubleshooting Guest Additions for Kali Linux Virtualbox 6.1",
+        "author": "IceedT",
+        "url": "/r/learnprogramming/comments/z79a15/troubleshooting_guest_additions_for_kali_linux/",
+        "text": "",
+        "created_utc": 1669671700,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Samsung Odyssey G7 28 4k 144hz monitor doesnt work in Ubuntu",
+        "author": "Living-Performer-414",
+        "url": "https://www.reddit.com/r/linux/comments/z77exn/samsung_odyssey_g7_28_4k_144hz_monitor_doesnt/",
+        "text": "So, in windows 10 this 4k monitor gladly works with 144hz frequency. On ubuntu in the other hand, the OS only allows for 120hz..\n\nSo is 4k 144hz not supported in linux? If yes and linux is the problem, it will push me to windows :(",
+        "created_utc": 1669667183,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Forensic analysis tools",
+        "author": "deathsfaction",
+        "url": "https://www.reddit.com/r/linux/comments/z778aq/forensic_analysis_tools/",
+        "text": "I need to search a machine that may have been used for nefarious activities.. Or have such content on it. \n\nParticularly images. \n\nI'll be taking an image of the drive and then using that image, on a Linux machine, to investigate. \n\nWhat would your go-to tools be?",
+        "created_utc": 1669666781,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "CutenoobQQ: Using make to avoid repeating file generation",
+        "author": "LaughingBiscuit",
+        "url": "https://www.reddit.com/r/linux/comments/z7675n/cutenoobqq_using_make_to_avoid_repeating_file/",
+        "text": "[removed]",
+        "created_utc": 1669664535,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "X11 WCG Monitor SRGB Clamp. Meanwhile on Windows it just works. Val--AMD pls fix",
+        "author": "MammothResearch2965",
+        "url": "https://arjun.lol/notes/clamping-wcg-displays-to-srgb-in-linux/",
+        "text": "",
+        "created_utc": 1669662846,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi. I have a problem with my wifi on my laptop. I'm on linux and my wifi is not detected. same thing happens on windows. I've always used cable but now I need wifi. #linux",
+        "author": "Artistic-Ad4909",
+        "url": "https://i.redd.it/bdlrr6lr7s2a1.jpg",
+        "text": "",
+        "created_utc": 1669662475,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Well played Canonical, well played.",
+        "author": "stidmatt",
+        "url": "https://i.redd.it/mi7bilbt2s2a1.jpg",
+        "text": "",
+        "created_utc": 1669660811,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Primary display not detecting",
+        "author": "SreeksRee",
+        "url": "https://www.reddit.com/r/linux/comments/z742eu/primary_display_not_detecting/",
+        "text": "[removed]",
+        "created_utc": 1669659889,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can i find a fast an beautiful distro ?",
+        "author": "SadQuarter3128",
+        "url": "https://www.reddit.com/r/linux/comments/z73kgr/how_can_i_find_a_fast_an_beautiful_distro/",
+        "text": "[removed]",
+        "created_utc": 1669658838,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "imgcrypt not working when using the 'make' command",
+        "author": "MembershipNo9626",
+        "url": "https://www.reddit.com/r/linux/comments/z72yvz/imgcrypt_not_working_when_using_the_make_command/",
+        "text": "[removed]",
+        "created_utc": 1669657497,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Flatpak is not a sandbox",
+        "author": "devnull010",
+        "url": "https://hanako.codeberg.page",
+        "text": "",
+        "created_utc": 1669657186,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "imgcrypt docker not working with the 'make' command",
+        "author": "MembershipNo9626",
+        "url": "https://www.reddit.com/r/linux/comments/z726d3/imgcrypt_docker_not_working_with_the_make_command/",
+        "text": "[removed]",
+        "created_utc": 1669655707,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Razer Core X won't work on Pop_OS!",
+        "author": "Ejo2001",
+        "url": "https://www.reddit.com/r/linux/comments/z721wv/razer_core_x_wont_work_on_pop_os/",
+        "text": "Hello! \n\nI bought a Razer Core X recently, and it just arrived, so I decided to plug it into my laptop. My laptop is an Acer Swift 3 with:\n\n- Intel i7-1065G7\n- 16Gb DDR4 \n- Nvidia MX350\n- 512Gb SSD\n\nIt's running Linux (Pop_OS!), and it's working fine, but for some reasson it won't work with the Razer Core X. The Razer Core X has a GTX 1050 Ti in it, and when I run \"lspci | grep VGA\", the GTX 1050 Ti shows up. However, I can't seem to connect it to anything (My monitor doesn't even detect that something is plugged into it). What should I do?",
+        "created_utc": 1669655430,
+        "upvote_ratio": 1.0
+    }
+]

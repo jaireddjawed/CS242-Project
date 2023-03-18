@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Insert(flag){If(flag)update()}",
+        "author": "110011001100",
+        "url": "https://www.reddit.com/r/programminghorror/comments/3iyrp7/insertflagifflagupdate/",
+        "text": "     private void Insert(TKey key, TValue value, bool add) {\n        \n            if( key == null ) {\n                ThrowHelper.ThrowArgumentNullException(ExceptionArgument.key);\n            }\n \n            if (buckets == null) Initialize(0);\n            int hashCode = comparer.GetHashCode(key) &amp; 0x7FFFFFFF;\n            int targetBucket = hashCode % buckets.Length;\n \n    #if FEATURE_RANDOMIZED_STRING_HASHING\n            int collisionCount = 0;\n    #endif\n \n            for (int i = buckets[targetBucket]; i &gt;= 0; i = entries[i].next) {\n                if (entries[i].hashCode == hashCode &amp;&amp; comparer.Equals(entries[i].key, key)) {\n                    if (add) { \n                        ThrowHelper.ThrowArgumentException(ExceptionResource.Argument_AddingDuplicate);\n                    }\n                    entries[i].value = value;\n                    version++;\n                    return;\n                } \n\n\nJust find it interesting that even in the CLR code, they have a function called Insert, which takes a flag called add, and if add is false performs an update instead\n\nhttp://referencesource.microsoft.com/#mscorlib/system/collections/generic/dictionary.cs,fd1acf96113fbda9,references",
+        "created_utc": 1440950048,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just came across this little gem. Please comment \"why you are doing it\", not \"what you are doing\"",
+        "author": "StainlSteelRat",
+        "url": "https://www.reddit.com/r/programminghorror/comments/3ilo1n/just_came_across_this_little_gem_please_comment/",
+        "text": "    // Get Product \n    String product; // Variable used to store product\n\nSO MANY THINGS WRONG HERE. A) Not getting a product, just initializing a variable. B) Oh, \"product\" is a variable used to store product? Holy shit! I had no idea!",
+        "created_utc": 1440685352,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So apparently this is valid",
+        "author": "roomzinchina",
+        "url": "https://www.reddit.com/r/programminghorror/comments/3ihnsv/so_apparently_this_is_valid/",
+        "text": "",
+        "created_utc": 1440610096,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Someone in the Angular team apparently saved the day...",
+        "author": "soundwrite",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3huagc/someone_in_the_angular_team_apparently_saved_the/",
+        "text": "This is from line 791 - 799 of angular-animate.js version 1.4.3 [link](http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js):\n\n    //the line below will force the browser to perform a repaint so\n    //that all the animated elements within the animation frame will\n    //be properly updated and drawn on screen. This is required to\n    //ensure that the preparation animation is properly flushed so that\n    //the active state picks up from there. DO NOT REMOVE THIS LINE.\n    //DO NOT OPTIMIZE THIS LINE. THE MINIFIER WILL REMOVE IT OTHERWISE WHICH\n    //WILL RESULT IN AN UNPREDICTABLE BUG THAT IS VERY HARD TO TRACK DOWN AND\n    //WILL TAKE YEARS AWAY FROM YOUR LIFE.\n    var width = bod.offsetWidth + 1;\n\nThat guy needs a raise. Imagine catching that bug!...",
+        "created_utc": 1440160002,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fuck me, pip",
+        "author": "qsfact",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3hpxcn/fuck_me_pip/",
+        "text": "Let me tell you a short story of my 6 year fuckup. I've been using python for roughly 6 years right, learnt it after c++, I was using windows until about a year ago when i swapped to Linux. Every time i've had to install a python library in windows i've downloaded the source, built it and then installed it. If it had dependencies, I then did the same for each of them when the error came up about failing to import the correct module. When I got to linux i learnt I could actually use this godly command 'pip' I always read about people recommending to install x with 'pip install x' and I never could as 'pip' never existed. Well thats where my fuckup is, I thought it was only on linux as my windows path was wrong. TODAY, after at least 6 years, I learn that pip is under PythonX/Scripts. I fucked up man. I fucked up real bad. \n\nThe amount of modules I've found a way around because I didn't want to go find the correct binary is ghastly. Fuck.",
+        "created_utc": 1440079322,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "NPath complexity of WHAT?",
+        "author": "cronofdoom",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3hneko/npath_complexity_of_what/",
+        "text": "This is the codebase I've just stepped into...\n\nhttps://imgur.com/dFpjjxQ",
+        "created_utc": 1440026335,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Best part of the day.",
+        "author": "MuffinsLovesYou",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3gvke6/best_part_of_the_day/",
+        "text": "So I find that I get more upvotes when I submit horror done by someone else rather than by myself.  This amuses me so I'll always declare horrors as being mine.  \n\nSo today I get asked \"hey muffins, what are these three fields in this database table?\"  \n    fdu1 nvarchar(50), fdu2 nvarchar(50), fdu3 nvarchar(50)  \n\"never heard of em\"    \n     select * from table where fdu1 is not null...  \n\"they've never been used\"  \nctrl+f on data access library  \n\"code does not seem to reference them\"  \n\"so tell ya what.  lets do this\"  \n   alter table table drop column fdu1, fdu2, fdu3  \n\"now we just listen to the wind. \"  \n::one hour later::  \n\"people can't log in to our legacy delphi app, and are having trouble looking stuff up in legacy cold fusion app\"  \n::types furiously::  \n    alter table table add fdu1 nvarchar(50), fdu2 nvarchar(50), fdu3 nvarchar(50)  \n\n\"problem is fixed\"  \n\"That was fast!\"  \n\"I'm fast\"  \n\nLesson: never refactor or normalize; it breaks your unmaintainable legacy applications.\n",
+        "created_utc": 1439489145,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tiny, dirty, iffy, good enough, basic multi-threaded web crawler in Python",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3gpu9t/tiny_dirty_iffy_good_enough_basic_multithreaded/",
+        "text": "import sys, thread, Queue, re, urllib, urlparse, time, os, sys\n\ndupcheck = set()  \n\nq = Queue.Queue(100) \n\nq.put(sys.argv[1]) \n\ndef queueURLs(html, origLink):\n \n    for url in re.findall('''&lt;a[^&gt;]+href=[\"'](.[^\"']+)[\"']''', html, re.I): \n\n        link = url.split(\"#\", 1)[0] if url.startswith(\"http\") else '{uri.scheme}://{uri.netloc}'.format(uri=urlparse.urlparse(origLink)) + url.split(\"#\", 1)[0] \n\n        if link in dupcheck:\n\n            continue\n\n        dupcheck.add(link)\n        if len(dupcheck) &gt; 99999: \n            dupcheck.clear()\n        q.put(link) \ndef getHTML(link): \n    try:\n        html = urllib.urlopen(link).read() \n        open(str(time.time()) + \".html\", \"w\").write(\"\" % link  + \"\\n\" + html) \n        queueURLs(html, link) \n    except (KeyboardInterrupt, SystemExit): \n        raise\n    except Exception:\n        pass\nwhile True:\n    thread.start_new_thread( getHTML, (q.get(),)) \n    time.sleep(0.5)\n",
+        "created_utc": 1439384169,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "That's ONE way to do buttons in Unity",
+        "author": "DoomTay",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3ghgc2/thats_one_way_to_do_buttons_in_unity/",
+        "text": "Looking back at code for a group project from last semester when I saw how the group in question approached coding buttons in Unity. They COULD use the Button GameObject's own OnClick event modifier and make a reusable \"one size fits all\" for loading a given level.\n\nOr they could do this...\n\n\tpublic class TutorialStart: MonoBehaviour {\n\t\t\n\t\tpublic Button tutorialButton;\n\t\t\n\t\t// Use this for initialization\n\t\tvoid Start () {\n\t\t\ttutorialButton.onClick.AddListener(() =&gt; { StartThisGame(); });\n\t\t\t\n\t\t}\n\t\t\n\t\t// Update is called once per frame\n\t\tvoid Update () {\n\t\t\t\n\t\t}\n\t\t\n\t\tvoid StartThisGame (){\n\t\t\t\n\t\t\tApplication.LoadLevel(\"Tutorial\");\n\t\t}\n\t}\n\nWhich means having a button to load a different level meant having a different script. Not very DRY if you ask me.\n\nEven better: The graphics for the buttons and the menu background are all a single graphic. The button objects themselves are invisible colliders!",
+        "created_utc": 1439226169,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to use variables",
+        "author": "jazzelhawk",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3frd4w/how_to_use_variables/",
+        "text": "    int sp_ext = 0;\n    \n    // randspeciesnum is set\n\n    for (sp_ext = 0; sp_ext &lt; randspeciesnum; sp_ext++) {\n    }\n    randspecies = (Species) sorted_species.elementAt(sp_ext);\n\nI really don't understand why you wouldn't just use *randspeciesnum* for the index...",
+        "created_utc": 1438703846,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How we synchronized databases around the world in 1996.",
+        "author": "ElGuaco",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3fr49p/how_we_synchronized_databases_around_the_world_in/",
+        "text": "I worked for a small privately owned information broker in the late 90's (heavily anonymized to protect me and the guilty). I was a paid intern still going through college. However, I was the only programmer on staff of about 4 or 5 people who had any formal education related to the job. That's not to put anybody down, it was just the reality of a small company in desperate need of programmers. \n\nWe worked on a rather strange platform based on the PICK database which was programmed in a flavor of BASIC. This platform, although outrageously expensive to license was really only designed to be a small-ish customer/order/inventory system that could easily be programmed to adopt to a small company's needs. It wasn't really up to the task of acting as a central database for a multinational repository of legal information. Which it soon grew into, and we programmers suddenly found that the platform was not up to the task.\n\nOne of the biggest hurdles was that the company opened international offices. We needed to synchronize international records that had legal details that were related to records at the HQ office. The naive approach meant that users were creating duplicate records, or worse, they were overwriting each other's work. We ultimately resolved this by creating master records (with a master ID) with info common to all countries and creating local child records that pointed back to the master record. For a database that wasn't relational, this was a feat for us to get it working in a way that met our needs.\n\nThe biggest challenge with this approach was that we didn't have the internet or tools we have today. We didn't have a live connection to the foreign offices. Hell, just getting a working modem or DSL connection in some countries was an achievement. We had a dedicated server that would dial up or connect to a foreign office, and download/upload the users' changes for the day.  This process could take hours for each office, then the data would have to processed on the local server. Even with the changes to allow child records dedicated to each foreign office, users were still creating master records that were overwriting each other because they were creating the same record ID's for different things. A user in the US would create record 123 with info ABC, and a user in Europe would created record 123 with info XYZ. Users would spend half their day reviewing the previous day's work to make sure they hadn't lost anything important. Draconian rules were setup to prevent users from creating records without jumping through a bunch of hoops. Users still clashed often.\n\nMy manager was at his wits end and called me into his office one morning and told me flat out that we had to solve this and soon or the company was in trouble. To this day, I'm not sure if it was a stroke of brilliance or ignorance or stupidity, but we pulled out a working solution in the next hour of discussion. I remember being really tired all the time from being in an intense Computer Science program and still working 25-30 hours a week. I blame the exhaustion. Because I'm sure someone could come up with a better solution if they tried. Note that there was no concept of a built-in GUID on this platform.\n\nOur solution was to create a \"bank\" of unused record ID's on the central server. Every day, the foreign server would call into the central server as part of the daily data synchronization process. The foreign server was given a daily allotment of unused record ID's for exclusive use and the central \"bank\" would record the ID's assigned to that server. When an application needed a new record, it would use one of the allotted ID's for that server. The allotted ID's were updated daily and each server was given enough ID's to make sure users were always able to create a new record on average.  One perk of this approach was the central office could audit all the new records created by each office and review them for accuracy or potential duplicates of existing master records. But more importantly, we no longer had users overwriting each other's work by accident. This did not come without downsides. We had to have a dedicated server act as The Bank, and all applications that needed new record ID's needed to update their write routines to request a new key from the local repository instead of just creating an ID on their own. If they ran out of keys for that day, new records could not be created until the daily update.\n\nI still don't know if I should be proud or ashamed of this. It was a working solution in the heady days of the early internet. After leaving the company years later, I was told that they converted their platform over to a proper SQL database and those legacy headaches went away.\n\n",
+        "created_utc": 1438700108,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yo dawg, I hear you like position data...",
+        "author": "ThirdTimeNotTheCharm",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3fkasl/yo_dawg_i_hear_you_like_position_data/",
+        "text": "    typedef struct coordinate {\n\tint        row;\n\tint        column;\n    } Coordinate;\n\n    typedef struct cell {\n\tchar       symbol; \n\tCoordinate position;\n    } Cell;\n\n    ....Later in the code .... \n\n    void initializeGameBoard (Cell gameBoard[][COLS]) {\n\tint i = 0, j = 0;\n\n\tfor (i = 0; i &lt; ROWS; i++)\n\t\tfor (j = 0; j &lt; COLS; j++) {\n\t\t\tgameBoard[i][j].symbol          = WATER;\n\t\t\tgameBoard[i][j].position.row    = i;\n\t\t\tgameBoard[i][j].position.column = j;\n\t\t}\n    }",
+        "created_utc": 1438561489,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do British people think binaries are trash?",
+        "author": "minkcv",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3fjrsc/do_british_people_think_binaries_are_trash/",
+        "text": "",
+        "created_utc": 1438551552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to make an object go along a line from point A to point B",
+        "author": "Zhuinden",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3efnkn/how_to_make_an_object_go_along_a_line_from_point/",
+        "text": "Someone from Stack Overflow asked me to help them out and fix their code to actually make it work... then I saw this.\n\n    public class GameUtils {\n\t\tpublic static Point lastTaped;\n\n\t\tpublic static ArrayList&lt;Point&gt; line(int x,int y,int x2, int y2) {\n\n\t\t\tArrayList&lt;Point&gt; point_list = new ArrayList&lt;Point&gt;();\n\n\t\t\tint w = x2 - x ;\n\t\t\tint h = y2 - y ;\n\t\t\tint dx1 = 0, dy1 = 0, dx2 = 0, dy2 = 0 ;\n\t\t\tif (w&lt;0) dx1 = -1 ; else if (w&gt;0) dx1 = 1 ;\n\t\t\tif (h&lt;0) dy1 = -1 ; else if (h&gt;0) dy1 = 1 ;\n\t\t\tif (w&lt;0) dx2 = -1 ; else if (w&gt;0) dx2 = 1 ;\n\t\t\tint longest = Math.abs(w) ;\n\t\t\tint shortest = Math.abs(h) ;\n\t\t\tif (!(longest&gt;shortest)) {\n\t\t\t\tlongest = Math.abs(h) ;\n\t\t\t\tshortest = Math.abs(w) ;\n\t\t\t\tif (h&lt;0) dy2 = -1 ; else if (h&gt;0) dy2 = 1 ;\n\t\t\t\tdx2 = 0 ;            \n\t\t\t}\n\t\t\tint numerator = longest &gt;&gt; 1 ;\n\t\t\tfor (int i=0;i&lt;=longest;i++) {\n\t\t\t\tpoint_list.add(new Point(x, y)) ;\n\t\t\t\tnumerator += shortest ;\n\t\t\t\tif (!(numerator&lt;longest)) {\n\t\t\t\t\tnumerator -= longest ;\n\t\t\t\t\tx += dx1 ;\n\t\t\t\t\ty += dy1 ;\n\t\t\t\t} else {\n\t\t\t\t\tx += dx2 ;\n\t\t\t\t\ty += dy2 ;\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn point_list;\n\t\t}\n\nThe original purpose was that when the user taps the screen, an arrow would be created, which would fly in that direction. So what they did for that was...\n\n    public class Weapon extends Sprite{\n\n\tprivate int current_level;\n\tprivate int level_required;\n\tprivate int state;\n\tprivate boolean isSelected;\n\tArrayList&lt;Point&gt; points_list;\n\tint index = 0;\n\n\tpublic void onDraw(Canvas canvas) { \n\t\tif(state &lt; 1)\n\t\t\treturn;\n\n\t\tLog.i(\"DrawingPannel\", \"onDraw\");\n\t\tif(state == 1){\n\t\t\tPoint weaponInitialLocation = new Point(370,280);\n\t\t\tpoints_list = GameUtil.line(weaponInitialLocation.x, \n\t\t\t\t\tweaponInitialLocation.y, GameUtil.lastTaped.x, GameUtil.lastTaped.y);\n\t\t\tstate = 2;\n\t\t\tindex = 0;\n\t\t}\n\t\tif(state == 2) {\n\t\t\tif (index &lt; points_list.size()) {\n\t\t\t\t// Increment the value of index and use it as index for the point_list\n\t\t\t\tsetCurrentX(points_list.get(index).x);\n\t\t\t\tsetCurrentY(points_list.get(index).y);\n\t\t\t\tindex=index+20;\n\t\t\t}\n\t\t\tif(index &gt;= points_list.size() - 1) {\n\t\t\t\tstate = 0;\n\t\t\t}\n\t\t}\n\t\tcanvas.drawBitmap(getCurrentBitmap(), getCurrentX(), getCurrentY(), new Paint());\n\t}\n\nNormally, you'd make an object with a position and a velocity, or just define the two points and interpolate between the positions... but not like this.\n",
+        "created_utc": 1437737569,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "how to skip 11 lines",
+        "author": "m_sporkboy",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3eea70/how_to_skip_11_lines/",
+        "text": "This was a long time ago, and some minor details might be wrong.  But on my honor, I haven't exaggerated one single thing.\n\nThis was about 1993, and my roommate was working at a job doing some kind of computer animation stuff on SGI workstations.  He showed me this code, and I wish I could have convinced him to let me make a copy.\n\nTask: skip the 11 line header of a file, and then process() the rest.\n\nThe solution:\n\n    Open up a file in /tmp (called StripBright)\n    Into that file, write out a c-shell script, which:\n    * Used wc -l to count the number of lines in the file\n    * Used c-shell expressions to subtract 11 from the line count\n    * used tail -%d to get the last N lines of the file and put them in another file (hardcoded to I think /tmp/stripped).\n\n    Then call system(\"chmod a+x /tmp/StripBright\");\n    Then call system(\"/tmp/StripBright\");\n\n    Then open the new file and call process() on it.\n    Then system(\"rm /tmp/stripped /tmp/StripBright\")\n\nNow mind you, this file was 40 megabytes long, back when that was a big deal.  1.44 megabyte floppy days.  At the time I had a lunchbox-sized 3 Gigabyte hard drive that cost $3200.  So instead of just, say, reading and ignoring the first 11 lines and continuing, they copied nearly the whole damn file in the stupidest way I could imagine, then or since.  \n\nThis only came to my roommate's attention because the hardcoded paths made it fail intermittently when more than one person tried to run the code at once.",
+        "created_utc": 1437702886,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tell me your worst programming experience!",
+        "author": "Mandarin_Defense",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3e637h/tell_me_your_worst_programming_experience/",
+        "text": "",
+        "created_utc": 1437545746,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "isMobile = true;",
+        "author": "greyscales",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3e2wqv/ismobile_true/",
+        "text": "    var isMobile = false; //initiate as false\n    \n    // device detection\n    if(/(android|bb\\d+|meego).+mobile|avantgo|bada\\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\\-(n|u)|c55\\/|capi|ccwa|cdm\\-|cell|chtm|cldc|cmd\\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\\-s|devi|dica|dmob|do(c|p)o|ds(12|\\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\\-|_)|g1 u|g560|gene|gf\\-5|g\\-mo|go(\\.w|od)|gr(ad|un)|haie|hcit|hd\\-(m|p|t)|hei\\-|hi(pt|ta)|hp( i|ip)|hs\\-c|ht(c(\\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\\-(20|go|ma)|i230|iac( |\\-|\\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\\/)|klon|kpt |kwc\\-|kyo(c|k)|le(no|xi)|lg( g|\\/(k|l|u)|50|54|\\-[a-w])|libw|lynx|m1\\-w|m3ga|m50\\/|ma(te|ui|xo)|mc(01|21|ca)|m\\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\\-2|po(ck|rt|se)|prox|psio|pt\\-g|qa\\-a|qc(07|12|21|32|60|\\-[2-7]|i\\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\\-|oo|p\\-)|sdk\\/|se(c(\\-|0|1)|47|mc|nd|ri)|sgh\\-|shar|sie(\\-|m)|sk\\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\\-|v\\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\\-|tdg\\-|tel(i|m)|tim\\-|t\\-mo|to(pl|sh)|ts(70|m\\-|m3|m5)|tx\\-9|up(\\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\\-|your|zeto|zte\\-/i.test(navigator.userAgent.substr(0,4))) {\n        isMobile = true;\n    }\n\nWell, that's one way to do it.",
+        "created_utc": 1437492406,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TIFU with my /usr",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3e1v43/tifu_with_my_usr/",
+        "text": "I was working on creating chroot jails and was struggling with running python in a jail because of too many dependencies. So I did this: \n\n&gt; sudo mount --bind /usr ./jail/usr/\n\nEverything was working fine until I decided to unmount it, but got an error that the device is busy. So I did this:\n\n&gt; sudo rm -rf ./jail/usr/\n\nAnd restarted the PC.",
+        "created_utc": 1437468846,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Terminating loops early",
+        "author": "roosyn",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3e1uao/terminating_loops_early/",
+        "text": "Maybe the author wasn't aware of \"break\". Perhaps there was some ... confusion on what a \"break\" would do in a foreach loop *within* a case.\n\nSpecial prize for the \"contact support\" exception.\n\n    switch (actionId) {\n        case (int)SomeEnum.AValue:\n            // ...\n            break;\n      \n        case (int)SomeEnum.AnotherValue:\n            var processes = new AggregateRoot(identifier).LazyLoadedProperty.Where(x =&gt; somePredicate(x)).OrderByDescending(x =&gt; x.DateCompleted);\n            long selectedProcessId = -1;\n\n            foreach (var process in processes)\n            {\n                var closedByAgent = true;\n                if (!new ProcessType(process.ProcessInstanceId).Close_Process &amp;&amp; closedByAgent)\n                {\n                    selectedProcessId = process.ProcessInstanceId;\n                    closedByAgent = false;\n                }\n            }\n\n            if (selectedProcessId != -1)\n            {\n                // Do something.\n            }\n            else\n            {\n                throw new Exception(\"Handler failed, please log issue with support\");\n            }\n\n            break;\n    }",
+        "created_utc": 1437468125,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "how about we make all methods synchronized and throw Exception?",
+        "author": "Rockytriton",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3dnl2c/how_about_we_make_all_methods_synchronized_and/",
+        "text": "",
+        "created_utc": 1437159346,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My day today.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3ct2lu/my_day_today/",
+        "text": "",
+        "created_utc": 1436542117,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Spotted this terrifying fragment in the ol' legacy codebase...",
+        "author": "5mk",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3ch63e/spotted_this_terrifying_fragment_in_the_ol_legacy/",
+        "text": "    &lt;?php\n    # inc/common.php\n    \n    [...]\n    \n    # WARNING: deprecated -- do not use\n    # will delete all records\n    # use agg_unzip() instead\n    \n    function aggInflate ($file) {\n        $deleteAllRecordsQuery = \"DROP TABLE records\";\n        @mysqli_query($deleteAllRecordsQuery, $dbCon);\n        die();\n    }\n\nNobody knows who changed the function to do that or why it's there. Even worse, this function is referenced by about **14** other legacy files (luckily, they seem to be for obscure/unused features). \n\nWHY WHY WHY",
+        "created_utc": 1436305496,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Senior Java Code ..",
+        "author": "TehHustla",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3ca55p/senior_java_code/",
+        "text": "I had a hard time to figure out why the \"framework\" my company build didn't found a private field in one of my classes; after digging for a few hours I found this gold nugget: \n\n    Field idField = null;\n    if (idFieldName != null) {\n        try {\n            idField = clazz.getField(idFieldName);\n        } catch (Exception e) {}\n    }\n\nand no documentation about it at all .. and yeah let's just ignore the exception ..\n\n---\nEDIT: For those who don't know java - getField() only returns the field if it's public. When no public field is found it throws a NoSuchFieldException.",
+        "created_utc": 1436170696,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Read Stream as Text\"",
+        "author": "Zhuinden",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3c85pp/read_stream_as_text/",
+        "text": "Got some legacy Android software's source code. The entire thing could go on /r/programminghorror, but that'd be an issue with licensing. So I'll just share my favorite method.\n\n\tpublic static String ReadStreamAsText(String url) {\n\t\tString txt = \"\";\n\t\ttry {\n\t\t\tURL aURL = new URL(url);\n\t\t\tURLConnection conn = aURL.openConnection();\n\n\t\t\tconn.setConnectTimeout(10000);\n\t\t\tconn.connect();\n\t\t\tInputStream is = conn.getInputStream();\n\n\t\t\tbyte[] buf = new byte[100000];\n\t\t\tbyte[] buf2 = new byte[100000];\n\n\t\t\tint length = is.read(buf, 0, 100000), i = 0, l = 0;\n\n\t\t\twhile (i &lt; length - 3) {\n\t\t\t\tif (buf[i] != (byte) 0xe2 &amp;&amp; buf[i + 1] != (byte) 0x80\n\t\t\t\t\t\t&amp;&amp; buf[i + 2] != (byte) 0xa8) {\n\t\t\t\t\tbuf2[l] = buf[i];\n\t\t\t\t\ti++;\n\t\t\t\t\tl++;\n\t\t\t\t} else\n\t\t\t\t\ti = i + 3;\n\t\t\t}\n\n\t\t\tif (i == length - 3) {\n\t\t\t\tbuf2[l] = buf[i];\n\t\t\t\tbuf2[l + 1] = buf[i + 1];\n\t\t\t\tbuf2[l + 2] = buf[i + 2];\n\t\t\t\tl = l + 3;\n\t\t\t}\n\n\t\t\ttxt = new String(buf2, 0, l);\n\n\t\t\tis.close();\n\t\t} catch (IOException e) {\n\t\t\tLog.e(TAG, \"Error getting bitmap\", e);\n\t\t} catch (Exception ex) {\n\t\t\tLog.e(TAG, \"Error getting bitmap\", ex);\n\t\t}\n\n\t\treturn txt;\n\t}\n\nI have zero clue what is going on.",
+        "created_utc": 1436127497,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yes, Java supports shebangs.",
+        "author": "Xor_Boole",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3c4mtn/yes_java_supports_shebangs/",
+        "text": "Let Hello.java be the following:\n\n    public class Hello {\n        public static void main(String... args) {\n            System.out.println(\"Hello, World!\");\n        }\n    }\n\nThen, running the following shell commands:\n\n    javac Hello.java\n    jar -cfe Hello.jar Hello Hello.class\n    echo \"#\\!/usr/bin/env java -jar\" &gt; hello\n    cat Hello.jar &gt;&gt; hello\n    chmod +x hello\n    ./hello\n\nwill produce the output \"Hello, World!\". Java will ignore the shebang when parsing the jar, until it hits the zip header.\n\nWat.",
+        "created_utc": 1436036749,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "From the depths of the ancient invoicing system",
+        "author": "bamfg",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3c01ei/from_the_depths_of_the_ancient_invoicing_system/",
+        "text": "\t// Create OB10 file.\n\tif (!_ob10FileGenerationService.CreateOB10File(Invoice.Id, ob10InvoicesFolder))\n\t{\n\t\ttry\n\t\t{\n\t\t\tthrow new PBSException(\n\t\t\t\tString.Format(\"Failed to create OB10 file for invoice: {0}, Invoice Id : {1}\",\n\t\t\t\t\t\t\t  Invoice.InvoiceNumber, Invoice.Id));\n\t\t}\n\t\tcatch\n\t\t{\n\t\t\t// Register issue on BB take no further action.\n\t\t}\n\t\treturn;\n\t}\n\nat least they commented it...",
+        "created_utc": 1435936825,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this horror in my company code",
+        "author": "Awkewainze",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3auquo/found_this_horror_in_my_company_code/",
+        "text": "        Trace.WriteLine(\"UsePartialIsAt: \" + (object) (bool) (this.UsePartialIsAt ? 1 : 0));\n        Trace.WriteLine(\"Matched URI Path: \" + (object) (bool) (uriComparison.AbsolutePathMatched ? 1 : 0));\n        Trace.WriteLine(\"Matched Query Strings: \" + (object) (bool) (flag2 ? 1 : 0));\n\nand yes, all those variables are bools",
+        "created_utc": 1435081631,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I once nearly bricked my workstation",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3at4m6/i_once_nearly_bricked_my_workstation/",
+        "text": "A few months ago I wrote a program that crawled the directory it was given and listed all files depending on a set of attributes. Stuff like is it a directory? Is it a text file? Does its name end with an i? etc.  \n  \nI decided I needed a way to automate the generation of these files for testing purposes and wrote this script. A quick look through the code should tell you how I almost wrecked my computer in about 3 seconds.  \n  \n    File currentDirectory = mySuperSecretMethod();\n    for (int i = 0; i &lt; 5; i++) {\n      for (int a = 0; a &lt; 9; i++) {\n        currentDirectory.mkdir(\"Folder no \" + i + \".\" + a);\n      }\n    }",
+        "created_utc": 1435047594,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This will not be over quickly. You will not enjoy this.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3aeq5i/this_will_not_be_over_quickly_you_will_not_enjoy/",
+        "text": "I'm possibly going to be tasked with updating a classic asp site. Which is actively used by a large user base at a pretty successful company.\n\n\nThese horrors are from just the login page.... \n\n\nLord Have Mercy On My Soul....\n\n\n&gt; Please Upgrade to Internet Explorer 5.0 or greater\n\n\nComments Include a link to:\n\n\n    /IESetup/WIN95_NT/DOWNLOAD/WIN95_NT/en/ie4setup.exe\n\n\nThere are tons of these type of definitions \n\n\n    var HtmlEndSpan = \"&lt;/span&gt;\"; &lt;-- actually in the JS\n    var SomeElementToWriteToPage = \"&lt;span&gt;&lt;SomeHTML&gt;&lt;/SomeHTML&gt;\";\n\n\nWhich are then used hundreds of times as so:\n\n\n    document.write(SomeElementToWriteToPage);\n    document.write(HtmlEndSpan);\n\n\nEven though what appears to be another developer that worked on it would include the closing tag in other instances.\n\n\nAnd my favorite part of the whole page begins with:\n\n\n    &lt;script language=\"vbscript\" type=\"text/vbscript\"&gt;\n    ' Insert code here that only validates one form field and allows the form to submit.\n\n\nEven though right above it is another set of validation code for the same form written in JS.\n\n\nMore JS comment goodness:\n\n\n    //var UserID = 18888\n    //var UserPass = 18888\n\n\nWhich is a valid login.... \n\nAnd:\n\n    &lt;!-- Notice, Copyright (c) 2000 CompanyName. All Rights Reserved. --&gt;\n\n\nGod I really hate working on old code bases....\n\n\n\n",
+        "created_utc": 1434725991,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reacting to unknown command and other \"severe\" errors",
+        "author": "ydoom",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3a6tsd/reacting_to_unknown_command_and_other_severe/",
+        "text": "I was talking with the deployment dude and he told me about his strange problem that's been around for years. There is a legacy server app, which he needs to deploy now and then. However, it randomly \"crashes\". No message, no nothing, it just closes. His solution was to write a script that checks every minute if the server is running, and if not, then it spawns it. This worked fine for years, but I decided to take a peek at that \"crashing\". Here's how the \"severe\" errors were handled:\n\n    if (command == \"command1\") {...}\n    else if (command == \"command2\") {...}\n    else\n    {\n        exit(0);\n    }",
+        "created_utc": 1434564293,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Swapping 2 variables according to 10th grade programming book",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3a4xqu/swapping_2_variables_according_to_10th_grade/",
+        "text": "http://i.imgur.com/9jECdnT.jpg\n\nTranslation to english:\n\n    #include&lt;iostream.h&gt;\n    void main()\n    {int u=5,v=9; //attribution/initialization with values\n     u=u+v;  {attributing a value to an expression}\n     v=u-v;  {attributing a value to an expression}\n     u=u-v;  {attributing a value to an expression}\n     cout&lt;&lt;\"u=\"&lt;&lt;u&lt;&lt;\"v=\"&lt;&lt;v;\n    }\n\nBecause fuck using std, main returning a value, overflows or commenting using //\n\nEdit: typo",
+        "created_utc": 1434523945,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bloomberg's Invisible Computer Code Runs Your Life",
+        "author": "helloinvader",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3a2n0p/bloombergs_invisible_computer_code_runs_your_life/",
+        "text": "Found this code in the video at 1:10 (linked, don't worry).\nhttps://youtu.be/P86w6CHhmQ4?t=1m10s\n\nThe video is from Bloomberg Business' YouTube channel.\n\nApparently its some kind of javascript creation:\n\nThe first line is:\n\n    }}}} return true;    \n\nAnd the lack of whitespace is horrific.",
+        "created_utc": 1434482165,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I was young and needed my own JS framework.",
+        "author": "bebe3000",
+        "url": "http://www.reddit.com/r/programminghorror/comments/39wcby/i_was_young_and_needed_my_own_js_framework/",
+        "text": "3 years ago I thought I can create my own js framework so I made it as short as possible because it helps you in RAD (or something). example:\n\n    d.i(\"foo\")\n        ._bg(\"#000\")\n        ._mt(\"100px\")\n        .h(\"Hello World!\")\n        .d();\n\nIt selects the element with the **i**d foo and changes its (**_**)**b**ack**g**round then sets the (**_**)**m**argin-**t**op value, changes the inner **h**tml and **d**eletes the element.\n\n\nThis could be awful enough but it's just the preface so you can see what I was working on. The real deal is this ajax function:\n\n    function ajaxSend(server,data,type){\n        // ...\n        if (type == \"GET\"){\n            setTimeout(\"return this\", 2000);\n            http.open(\"GET\", server+\"?\"+data, false);\n            http.onreadystatechange = function() {\n                if(http.readyState == 4 &amp;&amp; http.status == 200)\n                    if (http.responseText)\n                        ajaxResponse = http.responseText;\n            };\n        }\n        // ...\n        return ajaxResponse;\n    }\n\nAt this point I desperately wanted to return synchronously from the function. It meant to be such a serious coding project but I still doubt that at that point I expected it to work. ",
+        "created_utc": 1434361088,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Don't tell me what to do",
+        "author": "meekstadt",
+        "url": "http://www.reddit.com/r/programminghorror/comments/39merw/dont_tell_me_what_to_do/",
+        "text": "Found this in the code of an app that I'm rewriting (thankfully):\n\n    //*****************************************************************************\n    // The functionality of this function is duplicated in Trans.c.  So, if you\n    // change ANYTHING here, you better damn well change it there as well!!!\n    //*****************************************************************************    \n\nAnd then there are 800 lines of manually creating a CSV file with `fprintf()`.",
+        "created_utc": 1434137720,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "and the day he just gave up.",
+        "author": "MuffinsLovesYou",
+        "url": "http://www.reddit.com/r/programminghorror/comments/39htyr/and_the_day_he_just_gave_up/",
+        "text": "My state (North Carolina) released a travesty of a tax form a little while ago and I had to scratch together some stuff for it.  \nThe form: http://www.dornc.com/downloads/nc4.pdf  \n\nIt obviously needed its own table to store data, so I start writing up the statement to create that.  I don't know how many columns I actually attempted to give meaningful names to, but I figure I probably gave up pretty quick, which makes sense if you look at the form.  \nSingleDeductionsExceed9999,\nSingleAdjDedFromPage3Sched2...  \nThe names quickly become meaningless (if they had meaning to begin with), and/or ridiculously long.  \n\nSo I gave up and just defined the table more or less like this.  \n\n\tdeclare @TableCreateString varchar(max)\n\tset @TableCreateString = 'create table NCTaxBS ('\n\tdeclare @Loop int\n\tset @Loop = 1\n\twhile @Loop &lt; 101\n\n\tbegin\n\t\tset @TableCreateString = @TableCreateString + 'Field' + cast(@Loop as varchar) + ' varchar(25), '\n\n\t\tset @Loop = @Loop+1\n\t\tprint @Loop\n\tend\n\tset @TableCreateString = @TableCreateString + ')'\n\texecute(@TableCreateString)\n\nThe page is done the same way with textboxes/radiobuttons/checkboxes using names like 'tbxField43' and 'cbxField22'.  \n\nThe code is ugly.  But sometimes art imitates life.",
+        "created_utc": 1434054719,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If you ever want to change that namespace, you better watch out...",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/39bgwh/if_you_ever_want_to_change_that_namespace_you/",
+        "text": "",
+        "created_utc": 1433955971,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Happened today in production",
+        "author": "ultrakd001",
+        "url": "http://www.reddit.com/r/programminghorror/comments/39623h/happened_today_in_production/",
+        "text": "So today I was in work and I logged in to a production server using putty. I had to fix some php scripts. So firstly I ran\n    cat file.php\n\nand I used the mouse to copy it.\nHowever after I copied it I somehow\nright clicked in the terminal. Now comes the horror. The clipboard contents were copied to the terminal I stood there like and idiot watching bash try to run line by line the php code I accidentally pasted.\nI had to go through 250 lines of code one by one and try to see if anyone did something bad like \n    rm -rf /*\n\nFortunately nothing happened",
+        "created_utc": 1433861387,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to determine if x was created within 10 seconds of y completing",
+        "author": "roosyn",
+        "url": "http://www.reddit.com/r/programminghorror/comments/38iwcg/how_to_determine_if_x_was_created_within_10/",
+        "text": "    private ProcessType GetProcessThatStarted(ProcessType dcrp)\n    {\n        var proposalproc = new Application(dcrp.ApplicationID).InactiveHistory.Where(x =&gt; x.ActivityID == (int)Statuses.Restructure);\n\n        // Get the restructure by the datecompleted of that process and the datecreated of this specialised restructure process\n        foreach (var psh in proposalproc)\n        {\n            if (psh.DateCompleted.Value.Year == dcrp.DateCreated.Year &amp;&amp; psh.DateCompleted.Value.Month == dcrp.DateCreated.Month &amp;&amp; psh.DateCompleted.Value.Day == dcrp.DateCreated.Day\n                &amp;&amp; (psh.DateCompleted.Value.Hour == dcrp.DateCreated.Hour || dcrp.DateCreated.AddSeconds(-1).Hour == psh.DateCompleted.Value.Hour || dcrp.DateCreated.AddSeconds(-2).Hour == psh.DateCompleted.Value.Hour || dcrp.DateCreated.AddSeconds(-3).Hour == psh.DateCompleted.Value.Hour\n                    || dcrp.DateCreated.AddSeconds(-4).Hour == psh.DateCompleted.Value.Hour || dcrp.DateCreated.AddSeconds(-5).Hour == psh.DateCompleted.Value.Hour || dcrp.DateCreated.AddSeconds(-6).Hour == psh.DateCompleted.Value.Hour\n                    || dcrp.DateCreated.AddSeconds(-7).Hour == psh.DateCompleted.Value.Hour || dcrp.DateCreated.AddSeconds(-8).Hour == psh.DateCompleted.Value.Hour || dcrp.DateCreated.AddSeconds(-9).Hour == psh.DateCompleted.Value.Hour\n                    || dcrp.DateCreated.AddSeconds(-10).Hour == psh.DateCompleted.Value.Hour)\n                &amp;&amp; (dcrp.DateCreated.Minute == psh.DateCompleted.Value.Minute || dcrp.DateCreated.AddSeconds(-1).Minute == psh.DateCompleted.Value.Minute || dcrp.DateCreated.AddSeconds(-2).Minute == psh.DateCompleted.Value.Minute\n                    || dcrp.DateCreated.AddSeconds(-3).Minute == psh.DateCompleted.Value.Minute || dcrp.DateCreated.AddSeconds(-4).Minute == psh.DateCompleted.Value.Minute || dcrp.DateCreated.AddSeconds(-5).Minute == psh.DateCompleted.Value.Minute\n                    || dcrp.DateCreated.AddSeconds(-6).Minute == psh.DateCompleted.Value.Minute || dcrp.DateCreated.AddSeconds(-7).Minute == psh.DateCompleted.Value.Minute || dcrp.DateCreated.AddSeconds(-8).Minute == psh.DateCompleted.Value.Minute\n                    || dcrp.DateCreated.AddSeconds(-9).Minute == psh.DateCompleted.Value.Minute || dcrp.DateCreated.AddSeconds(-10).Minute == psh.DateCompleted.Value.Minute))\n            {\n                return new ProcessType(psh.ProcessInstanceID);\n            }\n        }\n\n        return null;\n    }",
+        "created_utc": 1433429578,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Well, it's valid HTML I guess...",
+        "author": "Sarke1",
+        "url": "http://www.reddit.com/r/programminghorror/comments/38fx1f/well_its_valid_html_i_guess/",
+        "text": "Found this gem while making some changes to an old website:\n\n\t&lt;table width=\"540\" border=\"0\"&gt;\n\t\t&lt;tbody&gt;\n\t\t\t&lt;tr valign=\"top\"&gt;\n\t\t\t\t&lt;td colspan=\"2\" align=\"right\" valign=\"baseline\"&gt;\n\t\t\t\t\t&lt;div align=\"left\"&gt;\n\t\t\t\t\t\t&lt;strong&gt;Fill out the form below to contact us!&lt;/strong&gt;\n\t\t\t\t\t&lt;/div&gt;\n\t\t\t\t&lt;/td&gt;\n\t\t\t&lt;/tr&gt;\n\t\t&lt;/tbody&gt;\n\t&lt;/table&gt;",
+        "created_utc": 1433373329,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHDays presentation \"200 Open Source Projects Later: Source Code Static Analysis Experience\"",
+        "author": "Resistor510",
+        "url": "http://www.reddit.com/r/programminghorror/comments/37u3d7/phdays_presentation_200_open_source_projects/",
+        "text": "The PVS-Studio analyzer is a methodology of detecting errors in program code. However, error is not an incorrect work of the program but also a potential vulnerability. Everything depends on perspectives you look at this errors.\n\nThat is why we took part in this forum and tried to demonstrate how often programmers make mistakes or make it vulnerable without any suspicions. The report is based on checking more than 200 projects experience. We were finding [various defects](http://www.viva64.com/en/examples/) with the help of PVS-Studio.\n\nHere we suggest you to acquaint with our report:\n\n * English version of presentation : http://www.slideshare.net/Andrey_Karpov/200-open-sourceprojectslater\n * Russian version of presentation : http://www.slideshare.net/Andrey_Karpov/200-open-sourceprojectslaterru\n * The record of Russian version of presentation with English submits: http://www.phdays.ru/broadcast/ . The report's start: 06:13:21. You can easily find it by number 200 on the page and choosing this report in the list.\n",
+        "created_utc": 1432987169,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This bot responds to every mention of \"Linux\" with \"Actually, it's GNU/Linux, not Linux!\"",
+        "author": "MadFrand",
+        "url": "http://www.reddit.com/r/programminghorror/comments/37no1u/this_bot_responds_to_every_mention_of_linux_with/",
+        "text": "Less horror, more cringe. \n\n/u/StallmanBot\n\nScreenshot: http://i.imgur.com/diwGjVH.png",
+        "created_utc": 1432856624,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this beauty while looking for Unity scripting resources",
+        "author": "Mouaijin",
+        "url": "http://www.reddit.com/r/programminghorror/comments/37n1y0/found_this_beauty_while_looking_for_unity/",
+        "text": "While looking for resources that could clarify some questions I had about terrain generation in Unity3d, I stumbled upon this work of genius. At least the author seems to realize that it's not a great solution, as the title is:\n[My custom terrain generation plugin instantiates to much prefabs](https://gist.github.com/Mouaijin/27d0c3dd343d3638b0d6)",
+        "created_utc": 1432846617,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Regexified JSON",
+        "author": "Burnin8",
+        "url": "http://www.reddit.com/r/programminghorror/comments/37mq2n/regexified_json/",
+        "text": "We were tasked to investigate why a particularly crusty C# application stopped displaying some data from our API. The code fetched the JSON data successfully from the API but silently failed somewhere thereafter.\n\nWe traced the problem to a line of code that was doing a regex split. The regex was set to match a single JSON record from an array that looked something like this:\n\n    [\n        {\"id\":1,\"name\":\"foo\", ... \"comments\":5},\n        {\"id\":2,\"name\":\"bar\", ... \"comments\":3},\n        ...\n    ]\n\nCurious, because elsewhere we could see that the code parsed JSON. Hopefully they weren't parsing our JSON with regexes! It turns out the C# master who wrote the code thought it would be good to use a regex to split the JSON into an array of records before parsing. In other words, the JSON response string was split to individual records (id 1, id2, etc.) AND THEN parsed into objects.\n\nSo when we added a feature to the API, the JSON contained a new field after \"comments\". The regex no longer matched and the code reported that zero records were returned.\n\nWe looked at changing the C# code but discovered that the regex and its bizarre splitting was copy pasted all over! We decided instead to update our API and move \"comments\" to the end (after our new fields) so that the regex would match again. Long live the regexes!\n\nSo many headdesks.",
+        "created_utc": 1432841558,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "and the case of the 8192 single quotations.",
+        "author": "MuffinsLovesYou",
+        "url": "http://www.reddit.com/r/programminghorror/comments/37gqio/and_the_case_of_the_8192_single_quotations/",
+        "text": "I started with a company as web support.  One problem we had was periodically user's web browsers would crash repeatedly when doing anything on their account.  You would look at their data and find thousands of single quotations in their resume.  \n\nA year+ later I'm now a programmer and decide to look at the issue. One past dev didn't know how to do null checks when running a sql update on a table.\n\nso instead of null checking the parameter with something like\n    update Table set Field1 = isnull(@Field1, Field1)  \nhe would construct a dynamic sql statement  \n    if @Field1 is not null set @SqlString = @SqlString + ' ,Field1 = '  cast(@Field1 as varchar)  ...... exec(@SqlString)\n\nThen another dev recognized this as a security flaw (injection attacks).  So he decided to sanitize the data before it went into the database.  \n    inputString.Replace(\"'\", \"''\"); // Replacing instances of a single quote ' with two of em '' \n\nWhich led to hilarious consequences.  If someone's resume had them working at O'Flannigan's.  Every page submit that involves a table update turns that into O''Flannigan''s, O''''Flannigan''''s, O''''''''Flannigan''''''''s.\n",
+        "created_utc": 1432737732,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Parsing xhtml with regex",
+        "author": "FUZxxl",
+        "url": "http://www.reddit.com/r/programminghorror/comments/377s57/parsing_xhtml_with_regex/",
+        "text": "For compiler construction class, we had the following exercise. It's exactly as ridiculous as it sounds:\n\n&gt; Use `flex` to implement a scanner that extracts URLs and the corresponding link descriptions from the input stream resp. input file. To simplify the analysis, the following conventions shall hold:\n&gt;\n&gt;\n&gt; * the input stream is valid xhtml. Links have the format `&lt;a ... href=\"URL\" ... &gt;LINK TEXT&lt;/a&gt;` with zero or more blanks or newlines after the `&lt;/a`. Inside the opening tag other attributes may be present before or after the `href` attribute which shall be ignored.\n&gt; * newlines inside `LINK TEXT` are part of the link text; anything inside the `a`-tag is part of the link text.\n&gt; * no tags appear between `&lt;a ...&gt;` and `&lt;/a&gt;`.\n&gt; * `a`-tags which do not contain an `href` attribute are to be ignored.\n&gt; * the input does not contain any comments.\n&gt;\n&gt; Please refrain from submitting an answer until your program yields the sample output on the sample input.\n\nThe deadline for this exercise has passed, so I can finally publish this including my [answer](https://gist.github.com/fuzxxl/1d66f419f44a1d3154af).\n\nBonus points: The sample input is not valid xhtml in any version. It's not even well-formed xml. The way the testing program (which uses the lexer we're supposed to set up) is written makes it clear that whoever made this task doesn't have much of an idea about how to use `lex`. For example, it does this to check if the end of file is reached:\n\n    \twhile ((token = yylex()) != EOF) {\n\nwhere `EOF` is from `stdio` and equals to `-1`. Everybody who used `lex` at least once knows that `yylex` returns `0` on end of file. While it's possible to hack something to this effect with some unportable extensions of `flex`, it's not what you're supposed to do. Also, the makefile that is used to compile our lexer (we're not supposed to change it) does not link with `-ll`, so certain functions are absent and some things cannot be done.\n\nThis is the first time an exercise made me seriously doubt the competence of our TAs.\n\n",
+        "created_utc": 1432570009,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Splitting a string by underscore, a detailed guide",
+        "author": "rscarson",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36x3p1/splitting_a_string_by_underscore_a_detailed_guide/",
+        "text": "Found in a codebase I'm working in\n\n    $fieldheader=explode(\"_\",$fieldmodlabel,2);\n    $fldlabel=$fieldheader[1];\n    $pos=strpos($fldlabel,\"_\");\n    if($pos==true){\n    \t$fldlabel=str_replace(\"_\",\" \",$fldlabel);\n    }\n\nIt then uses that value to check against another table. If the string isn't composed of some GARBAGE IT THROWS AWAY and then 1 underscore and the search key... It fails.\n\nI don't... I...\n\nWhy though",
+        "created_utc": 1432328357,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The classic ASP way of checking if a number is even...",
+        "author": "LainIwakura",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36wycx/the_classic_asp_way_of_checking_if_a_number_is/",
+        "text": "This is so mind-boggingly far away from how I'd do this it took me a minute to realize what was going on..\n\n\tFUNCTION IsEven(sNum)\n\t\tIsEven = False\n\t\tif len(trim(sNum)) &gt; 0 then\n\t\t\tSelect Case right(trim(sNum),1)\n\t\t\t\tcase 0,2,4,6,8\n\t\t\t\t\tIsEven = True\n\t\t\tEnd Select\n\t\tend if\n\tEND FUNCTION\n\n",
+        "created_utc": 1432325932,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Because ASCII isn't fun",
+        "author": "Shpirt",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36w1ta/because_ascii_isnt_fun/",
+        "text": "http://i.imgur.com/JRPx9tr.png\n\nA code snippet in scripting language of [pretty popular russian ERP](https://en.wikipedia.org/wiki/1C_Company#Business_software).\n\nA weird mix of VBA with some other stuff.\n\nIt wouldn't be that bad if all function parameters weren't passed by reference…",
+        "created_utc": 1432311917,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Some of my old code written in Visual Basic",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36oht7/some_of_my_old_code_written_in_visual_basic/",
+        "text": "My old code was absolutely terrible. Look at this example for an e-mail system that worked over networks (but not over internet), if you dare.\n\n    Sub Main()\n    Startup:\n        Dim path As String = \"C:\\Users\\Seth\\Mail\"\n        System.Console.WriteLine(\"Register or Login?\")\n        System.Console.WriteLine(\"(keep in mind everything is case sensitive.)\")\n        Dim regorlog As String\n        regorlog = System.Console.ReadLine\n        If regorlog = \"Login\" Then\n            GoTo Login\n        ElseIf regorlog = \"Register\" Then\n            GoTo Register\n        Else\n            GoTo Startup\n        End If\n\nIt would go on to have multiple segments of code that all started with goTo flags and all were in the same sub. I don't know why I never considered using subs, because they're much simpler and better than gotos.\n\nI used to be terrible at this kinda stuff.",
+        "created_utc": 1432158629,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "my worst line of code",
+        "author": "blurrr2",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36cf1o/my_worst_line_of_code/",
+        "text": "    max(zip(self.output, self.ACTIONS), key=lambda p:p[0].charge)[1]()\n\nfrom a couple years back... \"output\" contains several objects with a \"charge\" attribute, and I wanted to trigger a specific function based on which object had a higher charge. It worked, so oh well.",
+        "created_utc": 1431932543,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Calculating Italian fiscal numbers (x-post /r/programminghumor)",
+        "author": "YMK1234",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36a1cx/calculating_italian_fiscal_numbers_xpost/",
+        "text": "http://www.reddit.com/r/ProgrammerHumor/comments/369yov/calculating_italian_fiscal_numbers/\n\nSneak peak (also for automoderator):\n\n    var genders = {\n      male: 0,\n      female: 40\n    };\n",
+        "created_utc": 1431883357,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Calculating Italian fiscal numbers (x-post /r/programminghumor)",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36a0ab/calculating_italian_fiscal_numbers_xpost/",
+        "text": "",
+        "created_utc": 1431882747,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just found this little gem.",
+        "author": "lijmer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/36267e/just_found_this_little_gem/",
+        "text": "https://i.imgur.com/5fNlLZ4.png\n\nThere is a for loop, looping through a vector. Somewhere in the update function of the element in the vector, it's being changed, which caused the iterator to be invalid. His fix? Change a boolean when the vector is changed and just stop updating the elements until the next frame if it's set to true.",
+        "created_utc": 1431697746,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Of all the times for taskkill to fail.",
+        "author": "flarn2006",
+        "url": "http://www.reddit.com/r/programminghorror/comments/35x1od/of_all_the_times_for_taskkill_to_fail/",
+        "text": "I'm trying to create a Windows screensaver from scratch. I have the window set to automatically fill the screen and set to \"always on top\", and quit when it detects mouse or keyboard activity. Now I temporarily disabled the part of the code that makes it quit so I could debug something.\n\nYou may know where this is heading. I start the program, having forgotten it runs \"always on top\", and find myself unable to use any other applications. But it's not *that* bad, right? I could always do Win+R, C, M, D, Enter, alt+tab over to the command prompt window, and blindly type a taskkill command, right?\n\nNope. `taskkill /f /im` isn't enough. It just gives me the dreaded (well, for me) error \"There is no running instance of the task.\" I've gotten this error before, and in every case I've given up and rebooted my computer before I was able to quit the process, when I got tired of having a useless window that I can't close or minimize serving as dead weight.\n\nUsually this happens with Cheat Engine when it stops responding in kernel mode. In that case I can understand it, as that program is designed to run as much \"above\" the operating system as it can. But yesterday it inexplicably happened with another program I was debugging. Annoying, yes, but that's no big deal. Unfortunately, it decided to happen again, with the worst type of window for it to occur with.\n\nNow normally I would just reboot. Only I'm copying a bunch of files in the background, totaling almost a terabyte, if not more. I don't want to interrupt that, cause it might be a pain to get running again, I want to be absolutely sure everything is copied correctly. So I try some other things.\n\nI know Windows provides a function to have multiple \"desktops\". This isn't what you're probably thinking, like what other operating systems have had for a while but Windows won't have until Windows 10. This functionality isn't directly exposed to the user, but rather can be created and switched to using the Windows API. These other desktops don't have a taskbar or icons or anything, and are more like the screen that appears when the computer is locked. But I can still open windows on one, so I try using some test programs I created for that. But apparently I don't have one that will actually create a new one to switch to, only one that will switch to an existing one. And the only other existing one is Winlogon (the lock screen) which I can't just switch to and open programs on. So that plan's out.\n\nNext, I remember NirCmd (Google it; I'm not going to find a link, for reasons that will be explained later) and its ability to manipulate windows from the command line, including hiding them so they basically don't appear. I try `nircmd win hide title` and then the name of the window that's in the way, and...nothing. I use Alt+Tab and hover over the command prompt window so I can see its contents in the preview, and it didn't give me any kind of error message. I try again with a Calculator window I have running, and that works fine, so it can't be a problem with the syntax. I guess it just doesn't work on those glitched processes, because that would just be too good to be true. (I happen to have Cheat Engine in that state as well, so I tried it with that, and that doesn't work either.)\n\nIt's then that I press the Windows key and realize the Windows 8.1 Start screen is still able to display. (I probably pushed the key before, but that didn't register as important until now.) I get the idea to try opening a Metro-style app. I figure having a Web browser would be useful, so I type \"Internet Explorer\" in the search box. Only one result, and it's the desktop version. I check the apps list, and the Metro version isn't installed.\n\nSo I go to the Windows Store to download it--or, rather, if I'm going there anyway, I might as well download a better browser like Firefox or Chrome. I type \"Store\" and select the icon, and it actually opens! I search for \"Firefox\", and nothing comes up but the usual ebook spam or whatever that is. I try \"Chrome\" and there it is--wait, no, that says \"Desktop app\". So I guess I'll settle for Internet Explorer then. I type \"Internet Explorer\" and...*still nothing?* I could have sworn Internet Explorer has a Metro version. In fact I know for a fact that it does.\n\nSo, what web browsers *are* available then? I search for \"web browser\" to see what my options are. The top result is literally just called \"Web Browser\" and costs $19.99. What could justify spending 20 bucks on a Web browser I've never heard of? Let's read the description:\n\n&gt; Don't like Major Web Browsers like Chrome, Firefox and Internet Explorer?  Web Browser is a great alternative Web Browser for anybody looking for something a little different.\n\n...Really. The vast majority of the other options either cost money or aren't actually a web browser. I find one called \"Quebracho\" that's free and is the second result, so I decide to give it a try. I install it, and all that's on the screen are the back/forward buttons, an address bar (that displays the URL but doesn't actually let you enter one; instead it searches for the URL on Google, and it's the Russian Google for some reason) and the browser logo. And the bottom third or so of the screen isn't even used; it's just solid red, like they forgot to make the browser scale vertically.\n\nSo here I am, typing this post in a shitty Web browser I doubt anyone here has heard of, hoping it doesn't crash on me. (Hold on one second, let me select and copy this text just in case...there.) What will I try next? I guess I'll look for a Metro-style text editor that will let me write a quick C program to use that \"desktop\" functionality to create and switch to a new desktop. Then at least I'll be able to use a decent Web browser to try and find a solution, and actually use other desktop applications to troubleshoot without just blindly typing into them.\n\nWell, here goes!\n\n----\n\n**EDIT:** Okay, apparently that doesn't work. I can switch to a new desktop, but I can't actually open windows on it. I could have sworn I could have before. I guess I could create a new user, but I don't know how to do that from the command line.....wait a minute, Windows' Metro-style Settings app! Finally, it's useful in a way Control Panel isn't! Okay, that should do for now.\n\n**EDIT2:** So creating another user account wasn't as helpful as I thought it would be, mainly because I couldn't as easily try things to get rid of that window without constantly switching users. But from there I was able to switch my monitor to portrait mode. So instead of 1920x1080, it was 1080x1920. The window was still horizontal though, so I had some space at the bottom of the screen to try some stuff. And I don't know what I did, but suddenly I noticed the window wasn't set as \"always on top\" anymore! I could actually put windows over it! And if I do Win+D, I can even access the desktop! Opening another window will cause it to come back, but at least I can comfortably use my PC.",
+        "created_utc": 1431582341,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What kind of arcane dark art is this Fizz Buzz thing?",
+        "author": "CongoSecrets",
+        "url": "http://www.reddit.com/r/programminghorror/comments/35rtve/what_kind_of_arcane_dark_art_is_this_fizz_buzz/",
+        "text": "https://css-tricks.com/tales-of-a-non-unicorn-a-story-about-the-trouble-with-job-titles-and-descriptions/\nThis person complains about being asked to solve Fizz/Buzz during an interview.\n&gt;Me: (OMG MATH. I tried to talk through it a bit, but then said:) Me: Ok, again to be honest, my JS knowledge is more regarding UI/UX based tasks. And I don't really understand the point of the question. Like, what's the use case? When would this come up in the role?\n\nMy favorite part, however, is in the comments, by Mr RioBrewster:\n&gt;I mean – I would be suspicious of someone who could solve fizzbuzz off the cuff. They are likely to:\n1. have too much time on their hands\n2. had too many interviews asking that question\n3. be unsufferably arrogant\n4. or all of the above.",
+        "created_utc": 1431475074,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A gem from a Computing teacher",
+        "author": "Rand0mUsers",
+        "url": "http://www.reddit.com/r/programminghorror/comments/35duzc/a_gem_from_a_computing_teacher/",
+        "text": "This absolute gem came from a computing teacher from another form. Feel free to facepalm. Not the original code.\n\n    # Python 3 code to ask QUESTION and get a yes/no response\n    \n    value = input(\"QUESTION? (yes or no): \")\n    \n    while value == \"yes\":\n        do_something()\n        value = \"no\"\n    \n    more_code()\n\n[As I read this (warning: cartoon violence)](http://i242.photobucket.com/albums/ff281/Zomg_A_Chicken/280i45c.gif)\n\nEDIT: Because == is an assignment operation... right? Oh.",
+        "created_utc": 1431169338,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Currently the longest constructor I've ever written.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/358st5/currently_the_longest_constructor_ive_ever_written/",
+        "text": "",
+        "created_utc": 1431049135,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Professional commenting habit!!!!",
+        "author": "haris3301",
+        "url": "http://www.reddit.com/r/programminghorror/comments/34y445/professional_commenting_habit/",
+        "text": "Ok, so me and my friend had just finished a project for the semester. And we needed to comment our code, since the teacher needs a well documented code. I somehow had commented my code while i was coding in the beginning. She started to comment, to add description for her variables. When i turned towards her screen, this is what i see...\nhttp://imgur.com/mJLfzB6",
+        "created_utc": 1430838068,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MD5 is the best around, right?",
+        "author": "plaintextisbetter",
+        "url": "http://www.reddit.com/r/programminghorror/comments/34wc80/md5_is_the_best_around_right/",
+        "text": "Today I was sitting in on a CS Capstone presentation (Final presentation before graduating, etc). One of my peers' presentation was today and I thought I'd check it out. \n\nThe person mentions that they salted and encrypted the stored user credentials within the database. At the end of the presentation, someone asked: \n\n&gt;You mentioned that you store your user credentials by encrypting and salting them, so which algorithm did you use and how did you randomize the salt on each?\n\nTheir response:\n&gt;I ended up researching algorithms a lot and decided to use MD5 because it's the most secure algorithm I've found. It also has a salt built in so I didn't have to worry about that.\n\nThis was in front of all of the department's professors and other students as well. I'm not sure what to think, honestly. At least they got logging in and registering users for an application finished after two semesters..",
+        "created_utc": 1430792906,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TRUNCATE, but sometimes drop",
+        "author": "110011001100",
+        "url": "http://www.reddit.com/r/programminghorror/comments/34naxx/truncate_but_sometimes_drop/",
+        "text": "    DECLARE @dt INTEGER\n    SET @dt datepart(dw,getdate()) \n    IF(@dt &lt;&gt; 7)\n    BEGIN\n    TRUNCATE TABLE TempEmployees\n    END\n    ELSE IF (@dt = 7)\n    BEGIN\n    DROP TABLE TempEmployees\n    CREATE TABLE TempEmployees (EmpID INT PRIMARY KEY, EmpName NVARCHAR(100))\n    END\n    \nSo, found this code in a Stored proc that runs 3 times a day\n\n* That IF\\ELSE IF\n\n* Apparently original author didnt know of #temp tables (Table is used exclusively in this proc)\n\n* Whats the point of dropping the table and recreating it? AND. if you HAD to do that, why do it 3 times on the same day",
+        "created_utc": 1430592713,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wonders of professors' code: Provided code-base for a Clue AI",
+        "author": "blastedt",
+        "url": "http://www.reddit.com/r/programminghorror/comments/34l3bk/wonders_of_professors_code_provided_codebase_for/",
+        "text": "&gt;... Additionally, notice that the main program, Clue.java, has several public static data structures that are accessible to methods outside of that class. For example, to access the first card in the hand of Colonel Mustard, you can use this code in CluePlayer:\n\n    String card = (String)Arrays.asList((Clue.allCards.get(Clue.MUSTARD)).keySet().toArray()).get(0); \n\n\nSo Clue.allCards must be a dictionary of dictionaries, we take the key set of Mustard's dictionary, we turn that to an array, we turn that array into a list, then get the zeroth value and cast to a String.\n\n\n...\n\n\n\n???",
+        "created_utc": 1430534212,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "For enterprise development, meeting driven development",
+        "author": "berlinbrown",
+        "url": "http://www.reddit.com/r/programminghorror/comments/34fshw/for_enterprise_development_meeting_driven/",
+        "text": "Whenever there is an issue with bugs and problems in your application and you are approaching a deadline.  Make sure to have as many stress filled meetings as possible when you are approaching the deadline.  So that you eat up all developer time. Schedule the 4-8 hour meeting daily to ensure...that the project never gets completed.\n\nMaybe if you have enough meetings, the code will get done...somehow.\n\nI wish I had some bad code to show you.  But there is no code, we are in a meeting.\n\nMeeting Driven Development:\n\n  * Schedule as many meeting as possible to discuss potential code changes\n  * Ensure that the number of meetings are increased as your deadline approaches\n  * Make sure that developers must attend all meetings and are available to answer questions after the meetings\n  * Ensure that no code is written during this time even though the topic of the meeting is to produce code\n   \nEdit: wow, someone coined this phrase before I did.\n\nhttp://www.happybearsoftware.com/things-incompetent-developers-do.html",
+        "created_utc": 1430423729,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "my worst line of code (aka \"seems legit\")",
+        "author": "Somakia",
+        "url": "http://www.reddit.com/r/programminghorror/comments/349kg5/my_worst_line_of_code_aka_seems_legit/",
+        "text": "Hi.  \nFirst i wanted to say i am new to reddit as a contributor (this is my first contribution) and am new to this specific subreddit (LTL over at /r/talesfromtechsupport).  \nAnyway, for my humble beginnings i will present to you my (possibly) worst line of code i've ever written (in commercial software, that is!).\n\nLanguage is C# ;) (btw code is anonymized)\n\n    somestring = somestring.Trim(\" \".ToCharArray());\nyes... this works ofc, and it works as intended, but is everything but good code for string.Trim().\n\nIf you don't understand why, the correct way of writing this would simply be:\n\n    somestring = somestring.Trim();\nSo basically, in this simple line of code i managed to make 3 mistakes:\n\n* provide a value for a parameter which is not needed because the method would do exactly that (and a little bit more which would be needed too but i forgot about).\n\n* since the parameter is defined as \"params char[]\", i simply could have passed a single character space (' ') instead of an array.\n\n* instead of providing a char[], i took a string (consisting solely of one single char ...) and transformed it into a char[]\n\nGood thing is, as soon as i had finished writing this piece of art, i saw what i had done, copied it for the future (like now) and fixed it.  \nThis happened in my 2nd year of apprenticeship (around 3 years ago).\n\nHope you enjoyed my little mistake and if so, i will make sure to provide some real \"good\" (aka horrible) code from an old codebase i am currently working on!",
+        "created_utc": 1430307518,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sometimes a function prototype is enough to convey the amount of thought that appears to have gone into a codebase",
+        "author": "niklasni1",
+        "url": "http://www.reddit.com/r/programminghorror/comments/33v88e/sometimes_a_function_prototype_is_enough_to/",
+        "text": "    void USBAudioInit(unsigned long UnsignedLongInteger)",
+        "created_utc": 1430003702,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Surest way to force memory free in a garbage-collected language",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/33beae/surest_way_to_force_memory_free_in_a/",
+        "text": "**Edit: I'm now convinced this isn't a horror, so deleting!**\n\nI've been maintaining a legacy C# codebase at my company for about a year and a half. I hadn't seen this pattern before today. Yet I saw it twice today, in two of our console apps.\n\nI guess the idea operative in the developer's mind was, if it's obvious to a human that a reference is no longer needed, then it should be *very* obvious to a garbage collector, and so it will free that allocated memory instantly.\n\n    public static void Main(string[] args)\n    {\n        Console.WriteLine(\"Starting the beefy processor.\");\n        \n        var processor = new BeefyProcessor();\n        var steakResults = processor.ProcessThatBeef();\n        // The processor is beefy, so it takes a lot of memory.\n        // Since it can take a long time for the user to press a key,\n        // we do the following to drop that memory immediately.\n        processor = null;\n        \n        Console.WriteLine(steakResults.ToString());\n        Console.WriteLine(\"Press any key to continue.\");\n        Console.ReadKey();\n    }",
+        "created_utc": 1429587308,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Another gem from my companies 12y.o+ classic ASP codebase..because who knows when you'll need all these fonts",
+        "author": "LainIwakura",
+        "url": "http://www.reddit.com/r/programminghorror/comments/32x859/another_gem_from_my_companies_12yo_classic_asp/",
+        "text": "So this is a common piece of code that can be found at the top of a lot of files, it kind of baffled me when I first came across it.  \n\n\t\t&lt;%\n\t\tDim lsa_pxStyles, ls_pxStyles\n\t\tlsa_pxStyles = Array(8,9,10,11,12,13,14,16,18,20,22,24,26,28,36,48,72)\n\t\tls_pxStyles = \"&lt;style type='text/css'&gt;\"\n\t\tfor t = 0 To UBound(lsa_pxStyles)\n\t\t\tls_pxStyles = ls_pxStyles &amp; \".px\" &amp; lsa_pxStyles(t) &amp; \"c{\"\n\t\t\tls_pxStyles = ls_pxStyles &amp; \"font-family: \tverdana, arial, sans-serif;\"\n\t\t\tls_pxStyles = ls_pxStyles &amp; \"font-size: \t\t\" &amp; lsa_pxStyles(t) &amp; \"px;\"\n\t\t\tls_pxStyles = ls_pxStyles &amp; \"font-weight:\tnormal;\"\n\t\t\tls_pxStyles = ls_pxStyles &amp; \"color:\t\t\t#000000;\"\n\t\t\tls_pxStyles = ls_pxStyles &amp; \"font-variant:\tsmall-caps;\"\n\t\t\tls_pxStyles = ls_pxStyles &amp; \"}\"\n\t\tnext\n\t\tls_pxStyles = ls_pxStyles &amp; \"&lt;/style&gt;\"\n\t\tresponse.write ls_pxStyles\n\t\t%&gt;\n\nYep...",
+        "created_utc": 1429278694,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP server takes calls, executes node scripts via shell to process, captures console output and returns to client. WTF",
+        "author": "light24bulbs",
+        "url": "http://www.reddit.com/r/programminghorror/comments/32dzfe/php_server_takes_calls_executes_node_scripts_via/",
+        "text": " I can't post do the the NDA but WHAT.  THE.  JESUS?  Can you imagine the overhead of starting a nodeJS process on every request?  ",
+        "created_utc": 1428884984,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Checking for an alphabet? Let's make 26 queries",
+        "author": "_LePancakeMan",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3259v8/checking_for_an_alphabet_lets_make_26_queries/",
+        "text": "    \n    \tprivate function getAlphabet() {\n    \t\t$letters = array(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\", \"I\", \"J\", \"K\", \"L\", \"M\", \"N\", \"O\", \"P\", \"Q\", \"R\", \"S\", \"T\", \"U\", \"V\", \"W\", \"X\", \"Y\", \"Z\");\n    \t\tif ($this-&gt;settings[\"checkLetters\"] == 1) {\n    \t\t\tforeach ($letters as $letter) {\n\n    \t\t\t\t$tmp = $this-&gt;entryRepository-&gt;findOneByLetter($letter);\n\n    \t\t\t\tif (!empty($tmp[0])) {\n    \t\t\t\t\t$alphabet[$letter] = $letter;\n    \t\t\t\t}\n    \t\t\t\tunset($tmp);\n    \t\t\t}\n    \t\t} else {\n    \t\t\tforeach ($letters as $letter) {\n    \t\t\t\t$alphabet[$letter] = $letter;\n    \t\t\t}\n    \t\t}\n    \t\treturn $alphabet;\n    \t}\n\n\nLooks like I was a even bigger idiot 2 years ago",
+        "created_utc": 1428689812,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "chars and strings",
+        "author": "andrianodia",
+        "url": "http://www.reddit.com/r/programminghorror/comments/321meg/chars_and_strings/",
+        "text": "So... I was without internet and did not know how to declare a char in unity (C#). It turns out that ' _ ' means the char and \" _ \" means the string. I did not know this \n\nDue to my internet absence I settled with:\n\n\"_\".ToCharArray () [0]\n\nI am not proud of it... ",
+        "created_utc": 1428614063,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How about some magic?",
+        "author": "TheDanBob",
+        "url": "http://www.reddit.com/r/programminghorror/comments/320y6u/how_about_some_magic/",
+        "text": "I used to maintain a Wordpress site that hooked into our in-house authentication system for user accounts. I noticed having trouble logging in if my password contained an apostrophe. It took forever to track down this WP function as the culprit:\n\n    function wp_magic_quotes() {\n        // If already slashed, strip.\n        if ( get_magic_quotes_gpc() ) {\n            $_GET    = stripslashes_deep( $_GET    );\n            $_POST   = stripslashes_deep( $_POST   );\n            $_COOKIE = stripslashes_deep( $_COOKIE );\n        }\n\n        // Escape with wpdb.\n        $_GET    = add_magic_quotes( $_GET    );\n        $_POST   = add_magic_quotes( $_POST   );\n        $_COOKIE = add_magic_quotes( $_COOKIE );\n        $_SERVER = add_magic_quotes( $_SERVER );\n        \n        // Force REQUEST to be GET + POST.\n        $_REQUEST = array_merge( $_GET, $_POST );\n    }\n\nRegular Wordpress installs don't have a problem of course because passwords are mangled the same way during account creation. I couldn't think of a better way to deal with it than this:\n\n    function wp_magic_quotes() {\n        if( isset($_POST['pwd']) ) $pwd = $_POST['pwd'];\n\n        // If already slashed, strip.\n        if ( get_magic_quotes_gpc() ) {\n            $_GET    = stripslashes_deep( $_GET    );\n            $_POST   = stripslashes_deep( $_POST   );\n            $_COOKIE = stripslashes_deep( $_COOKIE );\n        }\n\n        // Escape with wpdb.\n        $_GET    = add_magic_quotes( $_GET    );\n        $_POST   = add_magic_quotes( $_POST   );\n        $_COOKIE = add_magic_quotes( $_COOKIE );\n        $_SERVER = add_magic_quotes( $_SERVER );\n\n        if( isset($pwd) ) $_POST['pwd'] = $pwd;\n        \n        // Force REQUEST to be GET + POST.\n        $_REQUEST = array_merge( $_GET, $_POST );\n    }",
+        "created_utc": 1428603660,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A simple shell command implemented in 60 lines of PHP with an injection vulnerability",
+        "author": "Lokaltog",
+        "url": "http://www.reddit.com/r/programminghorror/comments/31myj0/a_simple_shell_command_implemented_in_60_lines_of/",
+        "text": "The other day I participated in an absolute disaster of a programming thread, where the OP shared their command-line script for fetching Wikipedia article summaries.\n\nWritten in PHP.\n\nThat's right, a tool that can be implemented as a simple [shell command](https://gist.github.com/Lokaltog/c3368b62b7888b4da676) somehow ended up as a [solid 60 lines of messy PHP code](https://gist.github.com/Lokaltog/8ff534805a04bbed6722) that only runs curl and `exec`s existing shell utils, with a dependency on both php and php-curl.\n\nHere's an excerpt from the script that was initially posted:\n\n    $subdata = $data['query']['pages']; // Unsanitized JSON data from Wikipedia\n    $subsubdata = $subdata[array_keys($subdata)[0]]; // Referencing dict keys BY INDEX (they aren't guaranteed to appear in any particular order)\n    // ...\n    exec(\"fold -s -w 80 &lt;&lt;EOF\\n\" . $subsubdata['extract'] . \"\\nEOF\", $lines, $_);\n\nYep, that's feeding unsanitized data from publicly editable Wikipedia articles directly to `exec()`.\n\nAfter this vulnerability was pointed out, OP went ahead and silently updated their script to include this \"fix\":\n\n\texec(\"fold -s -w 80 &lt;&lt;EOF\\n\" . escapeshellarg($subsubdata['extract']) . \"\\nEOF\", $lines, $_);\n\nProblem solved, right? Except `escapeshellarg()` only wraps a string in single quotes, and escapes single quotes inside the string. Since it's in a heredoc block it doesn't do anything to resolve the issue (single quotes are ignored inside the heredoc block).\n\nThe script has yet to be updated by OP, who left the thread after stating his opinion on fixing security vulnerabilities:\n\n&gt; If I were to go back and fix for security vulnerabilities and still accomplish the same functionality, I'd be better off reimplementing it in another language.\n\nTo be fair, he did add a disclaimer at the bottom of his blog post referencing the script:\n\n&gt; Please note that allowing strings from the MediaWiki API to be passed directly as  an argument to a shell command could be harmful if someone maliciously edited the article being queried to include special shell characters and commands.\n\nProblem solved!\n\nEdit: formatting.",
+        "created_utc": 1428334912,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How I \"Hacked\" C++",
+        "author": "110011001100",
+        "url": "http://www.reddit.com/r/programminghorror/comments/31erii/how_i_hacked_c/",
+        "text": "So, this was when I first learnt about classes, access specifiers,etc and thought I had discovered a security bug in C++\n\n    #include&lt;iostream&gt;\n    using namespace std;\n    class A\n    {\n        public: int a;\n        A()\n        {\n            a = 100;\n            b = 200;\n        }\n        private: int b;\n    };\n    int main()\n    {\n        A a;\n        int *ptr = &amp;a.a;\n        ptr++;\n        cout&lt;&lt;*ptr&lt;&lt;endl;\n    }\n    \nYou can access private variables if you get hold of a public variable :) ",
+        "created_utc": 1428145375,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "You can solve any problem if you throw enough regex at it",
+        "author": "TheDanBob",
+        "url": "http://www.reddit.com/r/programminghorror/comments/31cxe2/you_can_solve_any_problem_if_you_throw_enough/",
+        "text": "I got into web development about 5 years ago. At the time, I knew next to nothing about programming in general, let alone webdev. My first job was to maintain a PHP application written by my predecessor, who knew little more than I (it's very much learn-as-you-go here - all of my training was basically on the job).\n\nAnyway, as you can imagine a lot of the code I found in this application was... less than perfect. Part of the app deals with warehouse inventory. In particular, there are certain item codes (user specified) that should be omitted from processing. Users can specify patterns to ignore that then needed to be translated into regex. My predecessor's solution was to match the pattern strings themselves with regex and return the regex that corresponds to the pattern. Here's what that looked like:\n\n    $ignore = $db-&gt;query(\"Select To_Ignore from Auto_Ignore\");\n    unset($matchType);\n    unset($found);\n    while($result = $ignore-&gt;fetch_array())\n    {\n        if(!isset($found))\n        {\n            $new = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\](.+)/\", \"$2\", $result['To_Ignore']);\n            if($new == $result['To_Ignore'])\n            {\n                $new = preg_replace(\"/\\[\\[(\\w+)\\]\\](.+)/\", \"$1\", $result['To_Ignore']);\n                if($new == $result['To_Ignore'])\n                {\n                    $new = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\]/\", \"$2\", $result['To_Ignore']);\n                    if($new == $result['To_Ignore'])\n                    {\n                        //Dictionary Value can not be resolved\n                    }\n                    else\n                    {\n                        $matchType = 3;\n                    }\n                }\n                else\n                {\n                    $matchType = 2;\n                }\n            }\n            else\n            {\n                $matchType = 1;\n            }\n            if($new == \"VAR\")\n            {\n                if($matchType == 1)\n                {\n                    $first = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\](.+)/\", \"$1\", $result['To_Ignore']);\n                    $second = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\](.+)/\", \"$3\", $result['To_Ignore']);\n                    $pattern = \"/\".$first.\"(\\w+)\".$second.\"/\";\n                }\n                elseif($matchType == 2)\n                {\n                    $first = preg_replace(\"/\\[\\[(\\w+)\\]\\](.+)/\", \"$2\", $result['To_Ignore']);\n                    $pattern = \"/(\\w+)\".$first.\"/\";\n                }\n                elseif($matchType == 3)\n                {\n                    $first = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\]/\", \"$1\", $result['To_Ignore']);\n                    $pattern = \"/\".$first.\"(\\w+)/\";\n                }\n            }\n            else\n            {\n                if($matchType == 1)\n                {\n                    $first = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\](.+)/\", \"$1\", $result['To_Ignore']);\n                    $second = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\](.+)/\", \"$3\", $result['To_Ignore']);\n                    $pattern = \"/\".$first.\"(\\w{\".$new.\"})\".$second.\"/\";\n                }\n                elseif($matchType == 2)\n                {\n                    $first = preg_replace(\"/\\[\\[(\\w+)\\]\\](.+)/\", \"$2\", $result['To_Ignore']);\n                    $pattern = \"/(\\w{\".$new.\"})\".$first.\"/\";\n                }\n                elseif($matchType == 3)\n                {\n                    $first = preg_replace(\"/(.+)\\[\\[(\\w+)\\]\\]/\", \"$1\", $result['To_Ignore']);\n                    $pattern = \"/\".$first.\"(\\w{\".$new.\"})/\";\n                }\n            }\n            if(isset($matchType))\n            {\n                $check = preg_replace($pattern, \"$1\", $key);\n                if($key != $check)\n                    $found = 1;\n            }\n            if($result['To_Ignore'] == $key)\n                $found = 1;\n        }\n    }\n\nAnd here's the same section after I changed it to manipulate the pattern strings themselves:\n\n    $ignore = $db-&gt;query(\"Select To_Ignore from Auto_Ignore\");\n    $found = false;\n    while($result = $ignore-&gt;fetch_array())\n    {\n        if( $result['To_Ignore'] == $key ) {\n            $found = true;\n            break;\n        }\n        //Convert Auto_Ignore entry into a regular expression\n        elseif(strpos($result['To_Ignore'], \"[[\") !== false &amp;&amp; strpos($result['To_Ignore'], \"]]\") !== false) {\n            list($front, $inside) = explode(\"[[\", $result['To_Ignore']);\n            list($inside, $back) = explode(\"]]\", $inside);\n            \n            if($inside == \"VAR\")\n                $inside = \"+\";\n            else\n                $inside = \"{\".$inside.\"}\";\n\n            $check = preg_replace(\"/\".$front.\"(\\w\".$inside.\")\".$back.\"/\", \"$1\", $key);\n            \n            if($key != $check) {\n                $found = true;\n                break;\n            }\n        }\n    }",
+        "created_utc": 1428098592,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When programmers have no idea what kind of mistakes they are making...",
+        "author": "drderper",
+        "url": "http://www.reddit.com/r/programminghorror/comments/31bbpb/when_programmers_have_no_idea_what_kind_of/",
+        "text": "So our group works in academia...we have some websites that have some legacy history. I suppose everyone was a tech savvy bunch, but some things that we do would probably make a grown software engineer blush...\n\nSo anyways, I decided to check the HTTP error logs and it was just a goddamn mess. The only way that I can explain the horror is that the programmers simply did not have access to the http error logs since it requires admin permissions, so they had no idea how many mistakes they were making.\n\n\nWithout further ado, here is just one minute extracted from the log...some things redacted...\n\n    [Thu Apr 02 15:43:58 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 1., referer: redacted\n    [Thu Apr 02 15:43:58 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 2., referer: redacted\n    [Thu Apr 02 15:43:58 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:43:58 2015] [error] Package=HASH(0x18d4b560) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:43:59 2015] [error] Package=HASH(0x18d4b560) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:43:59 2015] [error] Package=HASH(0x18d4b560) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:43:59 2015] [error] Package=HASH(0x18d4b560) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:16 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:16 2015] [error]    =&gt; Can't modify constant item in concatenation (.) or string at (eval 108) line 11, at EOF\n    [Thu Apr 02 15:44:16 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:17 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 201) line 1.\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 201) line 2.\n    [Thu Apr 02 15:44:17 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] \"my\" variable %seen masks earlier declaration in same scope at (eval 272) line 46.\n    [Thu Apr 02 15:44:17 2015] [error] \"my\" variable @uniqu masks earlier declaration in same scope at (eval 272) line 47.\n    [Thu Apr 02 15:44:17 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':\n    [Thu Apr 02 15:44:17 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 357) line 5.\n    [Thu Apr 02 15:44:17 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':\n    [Thu Apr 02 15:44:17 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 358) line 6.\n    [Thu Apr 02 15:44:17 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':\n    [Thu Apr 02 15:44:17 2015] [error]    =&gt; syntax error at (eval 368) line 8, near \"'\n    [Thu Apr 02 15:44:17 2015] [error]  my $not = '\n    [Thu Apr 02 15:44:17 2015] [error]  return\"\n    [Thu Apr 02 15:44:17 2015] [error]   (Might be a runaway multi-line '' string starting on line 6)\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 368) line 8.\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 368) line 8.\n    [Thu Apr 02 15:44:17 2015] [error] syntax error at (eval 368) line 9, near \";\n    [Thu Apr 02 15:44:17 2015] [error]  }\"\n    [Thu Apr 02 15:44:17 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':\n    [Thu Apr 02 15:44:17 2015] [error]    =&gt; syntax error at (eval 369) line 8, near \"'\n    [Thu Apr 02 15:44:17 2015] [error]  my $not = '\n    [Thu Apr 02 15:44:17 2015] [error]  return\"\n    [Thu Apr 02 15:44:17 2015] [error]   (Might be a runaway multi-line '' string starting on line 6)\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 369) line 8.\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 369) line 8.\n    [Thu Apr 02 15:44:17 2015] [error] syntax error at (eval 369) line 9, near \";\n    [Thu Apr 02 15:44:17 2015] [error]  }\"\n    [Thu Apr 02 15:44:17 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:17 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 398) line 1.\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 398) line 2.\n    [Thu Apr 02 15:44:17 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] An error occurred while evaluating the callback at section='section', option='link':\n    [Thu Apr 02 15:44:17 2015] [error]    =&gt; syntax error at (eval 503) line 1, near \"cd my \"\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 1.\n    [Thu Apr 02 15:44:17 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 2.\n    [Thu Apr 02 15:44:17 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:17 2015] [error] Package=HASH(0x20c9d2a0) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:17 2015] [error] Package=HASH(0x20c9d2a0) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:17 2015] [error] Package=HASH(0x20c9d2a0) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:17 2015] [error] Package=HASH(0x20c9d2a0) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; Can't modify constant item in concatenation (.) or string at (eval 108) line 11, at EOF, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 201) line 1., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 201) line 2., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] \"my\" variable %seen masks earlier declaration in same scope at (eval 272) line 46., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] \"my\" variable @uniqu masks earlier declaration in same scope at (eval 272) line 47., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 357) line 5., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 358) line 6., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; syntax error at (eval 368) line 8, near \"', referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  my $not = ', referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  return\", referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]   (Might be a runaway multi-line '' string starting on line 6), referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 368) line 8., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 368) line 8., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] syntax error at (eval 368) line 9, near \";, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  }\", referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; syntax error at (eval 369) line 8, near \"', referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  my $not = ', referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  return\", referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]   (Might be a runaway multi-line '' string starting on line 6), referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 369) line 8., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 369) line 8., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] syntax error at (eval 369) line 9, near \";, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  }\", referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 398) line 1., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 398) line 2., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] An error occurred while evaluating the callback at section='section', option='link':, referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]    =&gt; syntax error at (eval 503) line 1, near \"cd my \", referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 1., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 2., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:26 2015] [error] Package=HASH(0x85fde40) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:27 2015] [error] Package=HASH(0x85fde40) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:27 2015] [error] Package=HASH(0x85fde40) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:27 2015] [error] Package=HASH(0x85fde40) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:35 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:35 2015] [error]    =&gt; Can't modify constant item in concatenation (.) or string at (eval 108) line 11, at EOF\n    [Thu Apr 02 15:44:35 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:35 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:35 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 201) line 1.\n    [Thu Apr 02 15:44:35 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 201) line 2.\n    [Thu Apr 02 15:44:35 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:36 2015] [error] \"my\" variable %seen masks earlier declaration in same scope at (eval 272) line 46.\n    [Thu Apr 02 15:44:36 2015] [error] \"my\" variable @uniqu masks earlier declaration in same scope at (eval 272) line 47.\n    [Thu Apr 02 15:44:36 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':\n    [Thu Apr 02 15:44:36 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 357) line 5.\n    [Thu Apr 02 15:44:36 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:36 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':\n    [Thu Apr 02 15:44:36 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 358) line 6.\n    [Thu Apr 02 15:44:36 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:36 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':\n    [Thu Apr 02 15:44:36 2015] [error]    =&gt; syntax error at (eval 368) line 8, near \"'\n    [Thu Apr 02 15:44:36 2015] [error]  my $not = '\n    [Thu Apr 02 15:44:36 2015] [error]  return\"\n    [Thu Apr 02 15:44:36 2015] [error]   (Might be a runaway multi-line '' string starting on line 6)\n    [Thu Apr 02 15:44:36 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 368) line 8.\n    [Thu Apr 02 15:44:36 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 368) line 8.\n    [Thu Apr 02 15:44:36 2015] [error] syntax error at (eval 368) line 9, near \";\n    [Thu Apr 02 15:44:36 2015] [error]  }\"\n    [Thu Apr 02 15:44:36 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:36 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':\n    [Thu Apr 02 15:44:36 2015] [error]    =&gt; syntax error at (eval 369) line 8, near \"'\n    [Thu Apr 02 15:44:36 2015] [error]  my $not = '\n    [Thu Apr 02 15:44:36 2015] [error]  return\"\n    [Thu Apr 02 15:44:36 2015] [error]   (Might be a runaway multi-line '' string starting on line 6)\n    [Thu Apr 02 15:44:36 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 369) line 8.\n    [Thu Apr 02 15:44:36 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 369) line 8.\n    [Thu Apr 02 15:44:36 2015] [error] syntax error at (eval 369) line 9, near \";\n    [Thu Apr 02 15:44:36 2015] [error]  }\"\n    [Thu Apr 02 15:44:36 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:36 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:36 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 398) line 1.\n    [Thu Apr 02 15:44:36 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 398) line 2.\n    [Thu Apr 02 15:44:36 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:36 2015] [error] An error occurred while evaluating the callback at section='section', option='link':\n    [Thu Apr 02 15:44:36 2015] [error]    =&gt; syntax error at (eval 503) line 1, near \"cd my \"\n    [Thu Apr 02 15:44:36 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 1.\n    [Thu Apr 02 15:44:36 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 2.\n    [Thu Apr 02 15:44:36 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:36 2015] [error] Package=HASH(0xb5d13d0) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:36 2015] [error] Package=HASH(0xb5d13d0) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:36 2015] [error] Package=HASH(0xb5d13d0) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:36 2015] [error] Use of uninitialized value in concatenation (.) or string at /var/www/cgi-bin/gbrowse line 3278.\n    [Thu Apr 02 15:44:37 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:37 2015] [error]    =&gt; Can't modify constant item in concatenation (.) or string at (eval 108) line 11, at EOF\n    [Thu Apr 02 15:44:37 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:37 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:37 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 201) line 1.\n    [Thu Apr 02 15:44:37 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 201) line 2.\n    [Thu Apr 02 15:44:37 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:37 2015] [error] \"my\" variable %seen masks earlier declaration in same scope at (eval 272) line 46.\n    [Thu Apr 02 15:44:37 2015] [error] \"my\" variable @uniqu masks earlier declaration in same scope at (eval 272) line 47.\n    [Thu Apr 02 15:44:38 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':\n    [Thu Apr 02 15:44:38 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 357) line 5.\n    [Thu Apr 02 15:44:38 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:38 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':\n    [Thu Apr 02 15:44:38 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 358) line 6.\n    [Thu Apr 02 15:44:38 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:38 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':\n    [Thu Apr 02 15:44:38 2015] [error]    =&gt; syntax error at (eval 368) line 8, near \"'\n    [Thu Apr 02 15:44:38 2015] [error]  my $not = '\n    [Thu Apr 02 15:44:38 2015] [error]  return\"\n    [Thu Apr 02 15:44:38 2015] [error]   (Might be a runaway multi-line '' string starting on line 6)\n    [Thu Apr 02 15:44:38 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 368) line 8.\n    [Thu Apr 02 15:44:38 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 368) line 8.\n    [Thu Apr 02 15:44:38 2015] [error] syntax error at (eval 368) line 9, near \";\n    [Thu Apr 02 15:44:38 2015] [error]  }\"\n    [Thu Apr 02 15:44:38 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:38 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':\n    [Thu Apr 02 15:44:38 2015] [error]    =&gt; syntax error at (eval 369) line 8, near \"'\n    [Thu Apr 02 15:44:38 2015] [error]  my $not = '\n    [Thu Apr 02 15:44:38 2015] [error]  return\"\n    [Thu Apr 02 15:44:38 2015] [error]   (Might be a runaway multi-line '' string starting on line 6)\n    [Thu Apr 02 15:44:38 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 369) line 8.\n    [Thu Apr 02 15:44:38 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 369) line 8.\n    [Thu Apr 02 15:44:38 2015] [error] syntax error at (eval 369) line 9, near \";\n    [Thu Apr 02 15:44:38 2015] [error]  }\"\n    [Thu Apr 02 15:44:38 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:38 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:38 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 398) line 1.\n    [Thu Apr 02 15:44:38 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 398) line 2.\n    [Thu Apr 02 15:44:38 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:38 2015] [error] An error occurred while evaluating the callback at section='section', option='link':\n    [Thu Apr 02 15:44:38 2015] [error]    =&gt; syntax error at (eval 503) line 1, near \"cd my \"\n    [Thu Apr 02 15:44:38 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 1.\n    [Thu Apr 02 15:44:38 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 2.\n    [Thu Apr 02 15:44:38 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:38 2015] [error] Package=HASH(0x8b21000) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:38 2015] [error] Package=HASH(0x8b21000) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:38 2015] [error] Package=HASH(0x8b21000) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:38 2015] [error] Package=HASH(0x8b21000) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587.\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; Can't modify constant item in concatenation (.) or string at (eval 108) line 11, at EOF, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 201) line 1., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 201) line 2., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] \"my\" variable %seen masks earlier declaration in same scope at (eval 272) line 46., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] \"my\" variable @uniqu masks earlier declaration in same scope at (eval 272) line 47., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 357) line 5., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 358) line 6., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; syntax error at (eval 368) line 8, near \"', referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  my $not = ', referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  return\", referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]   (Might be a runaway multi-line '' string starting on line 6), referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 368) line 8., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 368) line 8., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] syntax error at (eval 368) line 9, near \";, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  }\", referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; syntax error at (eval 369) line 8, near \"', referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  my $not = ', referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  return\", referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]   (Might be a runaway multi-line '' string starting on line 6), referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 369) line 8., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 369) line 8., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] syntax error at (eval 369) line 9, near \";, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  }\", referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 398) line 1., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 398) line 2., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] An error occurred while evaluating the callback at section='section', option='link':, referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]    =&gt; syntax error at (eval 503) line 1, near \"cd my \", referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 1., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 2., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Package=HASH(0x4ad5280) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Package=HASH(0x4ad5280) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Package=HASH(0x4ad5280) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:42 2015] [error] Package=HASH(0x4ad5280) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    :q[Thu Apr 02 15:44:55 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:55 2015] [error]    =&gt; Can't modify constant item in concatenation (.) or string at (eval 108) line 11, at EOF, referer: redacted\n    [Thu Apr 02 15:44:55 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    \n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 201) line 1., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 201) line 2., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] \"my\" variable %seen masks earlier declaration in same scope at (eval 272) line 46., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] \"my\" variable @uniqu masks earlier declaration in same scope at (eval 272) line 47., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 357) line 5., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; Can't find string terminator \"'\" anywhere before EOF at (eval 358) line 6., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='section', option='fgcolor':, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; syntax error at (eval 368) line 8, near \"', referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  my $not = ', referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  return\", referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]   (Might be a runaway multi-line '' string starting on line 6), referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 368) line 8., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 368) line 8., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] syntax error at (eval 368) line 9, near \";, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  }\", referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='section', option='bgcolor':, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; syntax error at (eval 369) line 8, near \"', referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  my $not = ', referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  return\", referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]   (Might be a runaway multi-line '' string starting on line 6), referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$ok\" requires explicit package name at (eval 369) line 8., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$not\" requires explicit package name at (eval 369) line 8., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] syntax error at (eval 369) line 9, near \";, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  }\", referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='general', option='header':, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 398) line 1., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 398) line 2., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='section', option='link':, referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; syntax error at (eval 503) line 1, near \"cd my \", referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 1., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$feature\" requires explicit package name at (eval 503) line 2., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; Can't modify constant item in concatenation (.) or string at (eval 108) line 11, at EOF\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n    [Thu Apr 02 15:44:56 2015] [error] Package=HASH(0x19005770) at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 587., referer: redacted\n    [Thu Apr 02 15:44:56 2015] [error] An error occurred while evaluating the callback at section='general', option='header':\n    [Thu Apr 02 15:44:56 2015] [error]    =&gt; Global symbol \"$output\" requires explicit package name at (eval 201) line 1.\n    [Thu Apr 02 15:44:56 2015] [error] Global symbol \"$output\" requires explicit package name at (eval 201) line 2.\n    [Thu Apr 02 15:44:56 2015] [error]  at /usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/Package.pm line 160.\n",
+        "created_utc": 1428072859,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Even we screw up sometimes",
+        "author": "doctorhow95",
+        "url": "http://www.reddit.com/r/programminghorror/comments/31289e/even_we_screw_up_sometimes/",
+        "text": "So last night a fellow mod attempted to set up automoderator to help in removing self posts that do not contain any actual code and reduce the amount of \"shit posts\".  This mod then put automoderator live on a sub with 10K subscribers and **went to bed** causing automoderator to remove several comments.\n\n    body: \"^    \"\n    modifiers: [regex, inverse]\n    action: remove\n    comment: |\n        Your submission has been removed because we did not find a code block in it.\n\n        Please reformat with a code block (4 spaces at the start of code lines), or add relevant code and resubmit.\n\n        Please [contact the moderators](http://www.reddit.com/message/compose?to=%2Fr%2Fprogramminghorror) if you believe this was in error.\n\nOn behalf of all of us here at /r/programminghorror I apologize for any inconveniences / frustrations this caused.  Even the best of us screw up sometimes.  Happy April Fools Day!",
+        "created_utc": 1427899429,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "We've recruited automoderator",
+        "author": "rscarson",
+        "url": "http://www.reddit.com/r/programminghorror/comments/3121eh/weve_recruited_automoderator/",
+        "text": "The mod-bot will now enforce the code rule from the sidebar, removing posts not following it\n\nI hope I didn't screw up with the config again\n\nSorry again to that one guy",
+        "created_utc": 1427896412,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Code my professor gave us in a sample final",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/30xy63/code_my_professor_gave_us_in_a_sample_final/",
+        "text": "So my professor included this code as a part of a question for a sample final exam for an introductory real time systems course:\n\nSuppose that the HCS12 is executing the following instruction segment and the IRQ interrupt occurs when the TSY instruction is being executed. What will be the contents of the top 10 bytes in the stack?\n\n    org $2000 \n    lds #$2000 \n    clra \n    ldx #$0 \n    bset 10,X $48 \n    ldab #$40 \n    inca \n    tap \n    pshb \n    tsy\n    adda #10\n\nedit: Formatting",
+        "created_utc": 1427820144,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My job involves porting a bunch of classic ASP to C#, I'm so happy when I get to remove stuff like this.",
+        "author": "LainIwakura",
+        "url": "http://www.reddit.com/r/programminghorror/comments/30x6ml/my_job_involves_porting_a_bunch_of_classic_asp_to/",
+        "text": "\tFunction hasSpecialChars(s_string)\n\t\tchar_flag = False\n\t\tif inStr(s_string, \"!\")&gt;0 or inStr(s_string, \"@\")&gt;0 or inStr(s_string, \"$\")&gt;0 or inStr(s_string, \"%\")&gt;0 or inStr(s_string, \"^\")&gt;0 or inStr(s_string, \"|\")&gt;0 or inStr(s_string, \"/\")&gt;0 or inStr(s_string, \"+\")&gt;0 or inStr(s_string, \"=\")&gt;0 or inStr(s_string, \"{\")&gt;0 or inStr(s_string, \"}\")&gt;0 or inStr(s_string, \"[\")&gt;0 or inStr(s_string, \"]\")&gt;0 or inStr(s_string, \";\")&gt;0 or inStr(s_string, \":\")&gt;0 or inStr(s_string, \"&lt;\")&gt;0 or inStr(s_string, \"&gt;\")&gt;0 then\n\t\t\tchar_flag = True\n\t\tend if\n\n\t\thasSpecialChars = char_flag\n\tEnd Function  \n\n...yeah...This is pretty standard in this code base.",
+        "created_utc": 1427807091,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Brainf*ck style language in one java class",
+        "author": "berlinbrown",
+        "url": "http://www.reddit.com/r/programminghorror/comments/30w3on/brainfck_style_language_in_one_java_class/",
+        "text": "It is my code  back in the day when I was bored and was probably have a drink at the time.\n\nhttps://github.com/berlinbrown/ImperativeStaticCompiledLangOneFile/blob/master/newUpdates/ImperativeStaticCompiledLangOneFile/doc/simpleWithoutMain/CompiledLangOneFile.java",
+        "created_utc": 1427775818,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My programming manager's trick to eliminate configuration errors",
+        "author": "peaches6666",
+        "url": "http://www.reddit.com/r/programminghorror/comments/30v7w8/my_programming_managers_trick_to_eliminate/",
+        "text": "You might remember my manager, [who 'mentors' me on Pythonic Programming](http://www.reddit.com/r/programminghorror/comments/2y6fvl/pythonic_exception_handling/).\n\nHis apps read configurations into a `dict`. But all too often, the config files get all messed up, causing `KeyError`'s.\n\nProblem 'solved', by his widespread use of statements like these:\n\n    AWS_ACCESS_KEY = SETTINGS.get('aws_access_key')\n    AWS_SECRET_KEY = SETTINGS.get('aws_secret_key')\n\nEDIT: **The root issue is that he doesn't understand to \"fail fast, fail often\"; he actually went out of his way to avoid it, by using `get()` instead of `[]`.**\n\nHere's what I've been changing these to:\n\n    AWS_ACCESS_KEY = SETTINGS['aws_access_key']\n    AWS_SECRET_KEY = SETTINGS['aws_secret_key']\n\n`dict.get()` will always return something, usually a specified default value, although _here there's no reasonable default value_. `dict[]` on the other hand, throws an error if the key isn't found. He doesn't understand how to handle errors, though, and thinks they're a Bad Thing. So he changes his code to never throw errors.\n\n**Instead, his code simply fails mysteriously sometime, somewhere.**",
+        "created_utc": 1427759187,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When I think about code I've written that will piss someone off someday I think of this",
+        "author": "MuffinsLovesYou",
+        "url": "http://www.reddit.com/r/programminghorror/comments/30f0oj/when_i_think_about_code_ive_written_that_will/",
+        "text": "Not the worst thing I've written, but perhaps one of the most sarcastic things I've written.  Replaced some names with \"Thingy\", but all the swag stuff is checked in and out in production.\n\n                public void ImportFromDataTable(FileInfo import)\n        {\n            try\n            {\n                DataTable SwaggyDogStories = FileImport.ImportFile(import, true);\n                List&lt;ThingyDeduction&gt; TheSpyWhoSwaggedMe = BramStokersSwagula(SwaggyDogStories);\n\n                foreach (ThingyDeduction HashTagSwag in TheSpyWhoSwaggedMe)\n                {\n                    try\n                    {\n                        HashTagSwag.Save(66);\n                    }\n                    catch (Exception ex) { Exceptions.WriteToEventLog(\"Do Client Stuff\", \"Error saving deduction for Thingy \" + HashTagSwag.ThingyID, System.Diagnostics.EventLogEntryType.Warning); }\n                }\n                if (File.Exists(ConfigurationManager.AppSettings[\"ProcessedFileDirectory\"] + import.Name))\n                    import.MoveTo(ConfigurationManager.AppSettings[\"ProcessedFileDirectory\"] + import.Name.Replace(\".xls\", DateTime.Now.ToString(\"MMddyyyy\") + \".xls\"));\n                else\n                    import.MoveTo(ConfigurationManager.AppSettings[\"ProcessedFileDirectory\"] + import.Name);\n            }\n            catch (Exception ex) { throw ex; }\n        }\n\n        private List&lt;ThingyDeduction&gt; BramStokersSwagula(DataTable SwaggyDogStories)\n        {\n            List&lt;ThingyDeduction&gt; TheLightSwagtastic = new List&lt;ThingyDeduction&gt;();\n            try\n            {\n                SqlClient GrimSwagdango = SqlClient.getInstance(ConfigurationManager.ConnectionStrings[\"XXXX\"].ConnectionString);\n\n                string SSNa = \"\";\n                int ThingyID = 0;\n\n                foreach (DataRow SwagKillsDumbledore in SwaggyDogStories.Rows)\n                {\n                    string SSNb = SwagKillsDumbledore[0].ToString();\n                    if (SSNa != SSNb)\n                    {\n                        DataTable RomeoSwagulet = GrimSwagdango.ExecuteDataTable(\"YYY\", new SqlParameter[] { new SqlParameter(\"@SSN\", SwagKillsDumbledore[0].ToString()) });\n                        ThingyID = (RomeoSwagulet != null) ? (int)RomeoSwagulet.Rows[0][\"ThingyID\"] : 0;\n                        SSNa = SSNb;\n                    }\n                    if (SwagKillsDumbledore[0].ToString().Length &gt; 0)\n                    {\n                        try\n                        {\n                            ThingyDeduction MaryShellysSwagenstein = new ThingyDeduction();\n                            if (ThingyID &gt; 0) \n                            {\n                                string x = SwagKillsDumbledore[2].ToString();\n\n                                int i = MaryShellysSwagenstein.AgencyID;\n\n                                MaryShellysSwagenstein.ThingyID = ThingyID; //(int)RomeoSwagulet.Rows[0][\"ThingyID\"];\n                                MaryShellysSwagenstein.StartDate = DateTime.ParseExact(SwagKillsDumbledore[2].ToString(), \"MMddyyyy\", null);//ElectionDate is ‘start date’.  \n                                MaryShellysSwagenstein.DedStatus = (SwagKillsDumbledore[3].ToString() == \"A\") ? 1 : 3; //Record Status Code = ‘A’ means active (dedstatusid = 1). ANY Other code means set the statusid to 3,\n                                if (MaryShellysSwagenstein.DedStatus == 3)\n                                    MaryShellysSwagenstein.EndDate = (string.IsNullOrEmpty(SwagKillsDumbledore[8].ToString())) ? DateTime.Now : DateTime.ParseExact(SwagKillsDumbledore[8].ToString(), \"MMddyyyy\", null);\n                                //MaryShellysSwagenstein.EndDate = (MaryShellysSwagenstein.DedStatus == 3) ? DateTime.Now : DateTime.MinValue; // Not on sheet yet; default getdate()\n                                MaryShellysSwagenstein.DedAmount = Decimal.Parse(SwagKillsDumbledore[4].ToString());\n                                MaryShellysSwagenstein.PayPeriodType = 1; // only weekly\n                                MaryShellysSwagenstein.AgencyID = Convert.ToInt32(ConfigurationManager.AppSettings[\"AgencyID\"]);\n                                MaryShellysSwagenstein.DedTypeID = TypeSwitch(Convert.ToInt32(SwagKillsDumbledore[6].ToString()));\n                                MaryShellysSwagenstein.PeriodLimit = MaryShellysSwagenstein.DedAmount;\n                                MaryShellysSwagenstein.LimitMonth = 0;// MaryShellysSwagenstein.DedAmount;\n                                MaryShellysSwagenstein.LimitYear = 0;// MaryShellysSwagenstein.DedAmount;\n                                MaryShellysSwagenstein.LimitLife = 0;// MaryShellysSwagenstein.DedAmount;\n                                MaryShellysSwagenstein.LimitQtr = 0;\n                                TheLightSwagtastic.Add(MaryShellysSwagenstein);\n                            }\n                            else\n                            {\n                                Exceptions.WriteToEventLog(\"ClientName\", \"Could not find Thingy using SSN \" + SSNb, System.Diagnostics.EventLogEntryType.Warning);\n                            }\n                        }\n                        catch (Exception ex) { Exceptions.WriteToEventLog(\"ClientName\", \"Error parsing row for SSN \" + SSNb + Environment.NewLine + ex.Message, System.Diagnostics.EventLogEntryType.Warning); }\n                    }\n                }\n            }\n            catch (Exception ex) { throw ex; }\n            return TheLightSwagtastic;\n        }",
+        "created_utc": 1427403566,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"The hacker first uploaded a file, class.php [..] The database credentials WERE in a non-www accessible directory, however, anyone smart enough can find the include lines [..] Then, he uploaded adminer.php – a web based database management tool . It was a simple task to then query the database.\"",
+        "author": "momslatin_dadsasian",
+        "url": "http://www.reddit.com/r/programminghorror/comments/304qy0/the_hacker_first_uploaded_a_file_classphp_the/",
+        "text": "https://www.allcrypt.com/blog/2015/03/what-happened-and-whats-going-on/\n\n",
+        "created_utc": 1427205441,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The parser broke",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/302712/the_parser_broke/",
+        "text": "There is a parser that we use at work, and it broke. I went ahead and tried fixing it, but gave up. Check out some sample code I found inside (this switch goes to case 36).\n\n    switch (state) {\n\tcase -1: { t.kind = eofSym; break; } // NextCh already done\n\tcase 0: {\n\t\tif (recKind != noSym) {\n\t\t\ttlen = recEnd - t.pos;\n\t\t\tSetScannerBehindT();\n\t\t}\n\t\tt.kind = recKind; break;\n\t} // NextCh already done\n\tcase 1:\n\t\trecEnd = pos; recKind = 1;\n\t\tif (ch &gt;= '0' &amp;&amp; ch &lt;= '9' || ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z' || ch == '_' || ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') {AddCh(); goto case 1;}\n\t\telse {t.kind = 1; t.val = new String(tval, 0, tlen); CheckLiteral(); return t;}\n\tcase 2:\n\t\trecEnd = pos; recKind = 2;\n\t\tif (ch &gt;= '0' &amp;&amp; ch &lt;= '9') {AddCh(); goto case 2;}\n\t\telse {t.kind = 2; break;}",
+        "created_utc": 1427147102,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Korean web code strikes again",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2zt7pl/korean_web_code_strikes_again/",
+        "text": "Korean webpages make me confused in general (see this [post](http://www.reddit.com/r/korea/comments/2f4d14/are_there_web_programming_jobs_for_foreigners/ck5tcot)) but I think this one takes the cake. \n\nThis particular webpage has very nice, clever, animated logo design and I thought \"hey I wonder how they did that\" ...\n\nSo I go looking at the code and find that the animation is literally [one photo](https://pbs.twimg.com/media/CAbBAwWUYAA4PPM.png:large) where the background-position property is being [recalculated every couple milliseconds](http://pastebin.com/MFRKJEZj)\n\nWHY?? It seems like such a brute-force way of doing it, but at the same time I can't deny it's actually pretty creative?\n\n[see it in action here](https://33.media.tumblr.com/94c4ccf8b6018308be38a6e05bfe194e/tumblr_nlki8e8C511r5lasio1_540.gif)",
+        "created_utc": 1426951157,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The nightmare of GetExists",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2zn0vz/the_nightmare_of_getexists/",
+        "text": "A little bit of back story - I was working for a software company for about 9 months and there were many, MANY stories I could tell about that place, but the most interesting ones are the code, I'm gonna shorten the code a little because there was a whole chunck of code that is not nessasary for context.\n\nSo very basically the programmer in question wanted to know if something existed in a SQL table so this was his logic\n     Result res = Database.Get&lt;Result&gt;(\"SELECT * FROM [Table]\");\n        foreach(Result r in res){\n            if(r.ID == 15) {\n                return true;\n            } \n        }\n\n\n\n",
+        "created_utc": 1426806085,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Grade A List Creation In Python",
+        "author": "chipolux",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2zihyu/grade_a_list_creation_in_python/",
+        "text": "Refactoring a codebase recently inherited from some offshore developers and I stumble across [this](https://gist.github.com/chipolux/9d656180b6141175a3e3) gem.\n\n    INSTRUMENTS = filter(lambda x: x, map(str.strip, \"\"\"\n        Flow %d (gpm)\n        Target Flow (gpm)\n        Intake (psi)\n        Discharge (psi)\n        Pressure (psi, ft)\n        Torque %d (ft lbf)\n        Power (hp)\n        Speed (rpm)\n        Temperature (F)\n    \"\"\".split(\"\\n\")))\n\nI feel sick...",
+        "created_utc": 1426713588,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "IT managers: Your PRIMARY JOB is create a great work environment and then set your people free to do their thing.",
+        "author": "peaches6666",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2za3vc/it_managers_your_primary_job_is_create_a_great/",
+        "text": "",
+        "created_utc": 1426542696,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who needs a proper data structure anyway",
+        "author": "scrager4",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2z8lit/who_needs_a_proper_data_structure_anyway/",
+        "text": "Found this gem in our archaic code base:\n\n    public static Dictionary&lt;long, List&lt;string&gt;&gt; GetFacebookPageData(type1 variable1, DataTable table, out string status, bool includePersonalPages)\n\n* input table is processed for facebook information.  You have to figure out what the columns are and what they mean.  You have no idea where this table came from (though it should have come from another method that returned a specifically formatted table)\n* the key of the dictionary is a facebook page id.  (all facebook ids should be treated as strings)\n* the value of the dictionary is a list of strings about that page.\n* * Index 0: page name\n* * Index 1: page oauth token\n* * Index 2: facebook account name\n* * Index 3: true/false if account is a page admin\n* * Index 4: database record id\n* If 'includePersonalPages' is true, then there is a record in the dictionary for the user profile where the list of strings differs:\n* * Index 3: the string 'Facebook'\n* * Index 4: true/false string if the user is authorized\n\nThis return structure is then passed back through several methods in different places all over the code base, including assigned to global class variables to be used in other methods in that class.",
+        "created_utc": 1426518677,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I present for your enjoyment (or displeasure) the full source code of the original bourne shell",
+        "author": "BowserKoopa",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2z5dj3/i_present_for_your_enjoyment_or_displeasure_the/",
+        "text": "After some extensive searching, I have found what some would consider to be the holy grail of terrifying code: S.R. Bourne's original unix shell.\n\n[You may view it here](https://bitbucket.org/okuoku/csrg/src/d9a8f930036f62c64650f2e26915fa781a306841/old/sh/?at=master). \n\nIn the same repository you will find other uses of `mac.h` (the infamous AlGOL68-inspired C macros).\n\nA few samples:\n    \n    DOLPTR\tuseargs()\n    {\n    \tIF dolh\n    \tTHEN\tdolh-&gt;doluse++;\n    \t\tdolh-&gt;dolnxt=argfor;\n    \t\treturn(argfor=dolh);\n    \tELSE\treturn(0);\n    \tFI\n    }\n\n====\n    \n    LOCAL\tgetch(endch)\n    \tCHAR\t\tendch;\n    {\n    \tREG CHAR\td;\n    \n    retry:\n    \td=readc();\n    \tIF !subchar(d)\n    \tTHEN\treturn(d);\n    \tFI\n    \tIF d==DOLLAR\n    \tTHEN\tREG INT\tc;\n    \t\tIF (c=readc(), dolchar(c))\n    \t\tTHEN\tNAMPTR\t\tn=NIL;\n    \t\t\tINT\t\tdolg=0;\n    \t\t\tBOOL\t\tbra;\n    \t\t\tREG STRING\targp, v;\n    \t\t\tCHAR\t\tidb[2];\n    \t\t\tSTRING\t\tid=idb;\n    \n    \t\t\tIF bra=(c==BRACE) THEN c=readc() FI\n    \t\t\tIF letter(c)\n    \t\t\tTHEN\targp=relstak();\n    \t\t\t\tWHILE alphanum(c) DO pushstak(c); c=readc() OD\n    \t\t\t\tzerostak();\n    \t\t\t\tn=lookup(absstak(argp)); setstak(argp);\n    \t\t\t\tv = n-&gt;namval; id = n-&gt;namid;\n    \t\t\t\tpeekc = c|MARK;;\n    \t\t\tELIF digchar(c)\n    \t\t\tTHEN\t*id=c; idb[1]=0;\n    \t\t\t\tIF astchar(c)\n    \t\t\t\tTHEN\tdolg=1; c='1';\n    \t\t\t\tFI\n    \t\t\t\tc -= '0';\n    \t\t\t\tv=((c==0) ? cmdadr : (c&lt;=dolc) ? dolv[c] : (STRING)(dolg=0));\n    \t\t\tELIF c=='$'\n    \t\t\tTHEN\tv=pidadr;\n    \t\t\tELIF c=='!'\n    \t\t\tTHEN\tv=pcsadr;\n    \t\t\tELIF c=='#'\n    \t\t\tTHEN\tv=dolladr;\n    \t\t\tELIF c=='?'\n    \t\t\tTHEN\tv=exitadr;\n    \t\t\tELIF c=='-'\n    \t\t\tTHEN\tv=flagadr;\n    \t\t\tELIF bra THEN error(badsub);\n    \t\t\tELSE\tgoto retry;\n    \t\t\tFI\n    \t\t\tc = readc();\n    \t\t\tIF !defchar(c) ANDF bra\n    \t\t\tTHEN\terror(badsub);\n    \t\t\tFI\n    \t\t\targp=0;\n    \t\t\tIF bra\n    \t\t\tTHEN\tIF c!='}'\n    \t\t\t\tTHEN\targp=relstak();\n    \t\t\t\t\tIF (v==0)NEQ(setchar(c))\n    \t\t\t\t\tTHEN\tcopyto('}');\n    \t\t\t\t\tELSE\tskipto('}');\n    \t\t\t\t\tFI\n    \t\t\t\t\targp=absstak(argp);\n    \t\t\t\tFI\n    \t\t\tELSE\tpeekc = c|MARK; c = 0;\n    \t\t\tFI\n    \t\t\tIF v\n    \t\t\tTHEN\tIF c!='+'\n    \t\t\t\tTHEN\tLOOP WHILE c = *v++\n    \t\t\t\t\t     DO pushstak(c|quote); OD\n    \t\t\t\t\t     IF dolg==0 ORF (++dolg&gt;dolc)\n    \t\t\t\t\t     THEN break;\n    \t\t\t\t\t     ELSE v=dolv[dolg]; pushstak(SP|(*id=='*' ? quote : 0));\n    \t\t\t\t\t     FI\n    \t\t\t\t\tPOOL\n    \t\t\t\tFI\n    \t\t\tELIF argp\n    \t\t\tTHEN\tIF c=='?'\n    \t\t\t\tTHEN\tfailed(id,*argp?argp:badparam);\n    \t\t\t\tELIF c=='='\n    \t\t\t\tTHEN\tIF n\n    \t\t\t\t\tTHEN\tassign(n,argp);\n    \t\t\t\t\tELSE\terror(badsub);\n    \t\t\t\t\tFI\n    \t\t\t\tFI\n    \t\t\tELIF flags&amp;setflg\n    \t\t\tTHEN\tfailed(id,badparam);\n    \t\t\tFI\n    \t\t\tgoto retry;\n    \t\tELSE\tpeekc=c|MARK;\n    \t\tFI\n    \tELIF d==endch\n    \tTHEN\treturn(d);\n    \tELIF d==SQUOTE\n    \tTHEN\tcomsubst(); goto retry;\n    \tELIF d==DQUOTE\n    \tTHEN\tquoted++; quote^=QUOTE; goto retry;\n    \tFI\n    \treturn(d);\n    }",
+        "created_utc": 1426446072,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Yes\" and \"No\"",
+        "author": "Seasniffer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2ywzq8/yes_and_no/",
+        "text": "This legacy intranet page stores booleans as varchar(45) string of \"Yes\" and \"No\"..... Burn it with fire! ",
+        "created_utc": 1426259219,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just found this gem in an old php application at work",
+        "author": "DFYX",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2yudun/just_found_this_gem_in_an_old_php_application_at/",
+        "text": "    public function findContext($request) {\n        for($this-&gt;_contexts as $key =&gt; $ctxt) {\n            if(ereg(\"^$key$\", $request)) {\n                return new CContext($this-&gt;_contexts($key));\n            }\n        }\n    }\n\nI only got to see this because `ereg` threw errors after upgrading to a new version of PHP and our server admin showed it to me.",
+        "created_utc": 1426197829,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Just started a new job and encountered this beautiful anti-pattern",
+        "author": "fact_hunt",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2yqjde/just_started_a_new_job_and_encountered_this/",
+        "text": "\n    public class FascadeForSeveralDaos {\n        ...\n\n        public List&lt;SomeObject&gt; getSomeObjectById(Long someObjectId) {\n            List&lt;SomeObject&gt; fromDatabase = someObjectDao.getSomeObjectsByVarArgIds(someObjectId);\n            if (fromDatabase.isEmpty()) {\n                return null;\n            }\n            else {\n                return Collections.singletonList(fromDatabase.get(0));\n            }\n        }\n\n        // and repeat\n    }\n\n",
+        "created_utc": 1426117783,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Word-pointer",
+        "author": "Valmond",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2yoioi/the_wordpointer/",
+        "text": "I'm working in medical imaging so what we do usually has to be bulletproof and is tested *a lot*. Means code standards should be kind of hight right?\n\nToday I needed to grab some data from a notification (to get the notifications running you have to set up a system invoking macros and other horrors to produce an 'almost singleton'. You have to instantiate the class yourself, is someone else does it, it overrides your instantiation too. You also can't use your instantiation, only the static entrypoint. Sweet).\n\nWell so I finally catch the notifications and, of course, depending the kind of notification, you want to do different things. So how do I check what type it is?\n\nThe notification comes as a (size_t data) variable that, I promise, you have to cast on a TriggerEvent class as a pointer. Not even a void pointer, a friggin int.\n\nThat's okay right? I mean what could go wrong here?\n\nSo I'm checking out the type of the triggered action, okay, this type is one I want to treat, so how do I do that? In the interface of TriggerEvent there is just one function that doesn't return zero...\n\n*\n\nIt returns a pointer.\n\nSort of.\n\nThis particular pointer is actually a TCHAR string that has the pointers address encoded as a hexadecimal string.\n\nO_o\n\nDecode to a number, force the reference of a pointer to that value, cast it on the right class and I could finally check out my notification.\n\nYeah, the guy doing it is the chief architect of the project... wish me good luck.\n",
+        "created_utc": 1426084425,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Programming manager: \"My code is a nightmare...\"",
+        "author": "peaches6666",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2y9uih/programming_manager_my_code_is_a_nightmare/",
+        "text": "&gt;...can you take a look at my Pull Request? I need a +1.\n\nThis is a direct quote, god's honest truth. \n\nSix months down the road, I've stopped giving him +1's, and he's stopped asking for them. The really sad part is what \"nightmare\" means to him, considering how his [\"well designed\"](http://www.reddit.com/r/programminghorror/comments/2y6fvl/pythonic_exception_handling/) code looks.",
+        "created_utc": 1425761572,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Pythonic exception handling",
+        "author": "peaches6666",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2y6fvl/pythonic_exception_handling/",
+        "text": "...as demonstrated by my programming manager, employed by a famous tech startup:\n\n    try:\n        some_dangerous_method()\n    except:\n        pass\n    \n    try:\n        the_next_dangerous_method()\n    except SomeError:\n        pass\n    \n     try:\n        the_final_dangerous_method()\n     except SomeError:\n        log_something()\n        \n    # etc.\n\nMe: Umm, I'm pretty sure that's not how exceptions are supposed to be used.\n\nHim: That's pythonic coding.",
+        "created_utc": 1425678135,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Our dev group charges $10,000+ for apps which usually fail, are coded with worst practices, and our Slack channel motto is...",
+        "author": "peaches6666",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2y6ep2/our_dev_group_charges_10000_for_apps_which/",
+        "text": "",
+        "created_utc": 1425677533,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who needs exceptions?",
+        "author": "rscarson",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2y1dv1/who_needs_exceptions/",
+        "text": "So a co-worker of mine was doing this instead of using exceptions... I mean, it works, but...\n\n    try:\n        assert( condition )\n    catch AssertionError:\n        print \"Error\"",
+        "created_utc": 1425575002,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Please add localhost",
+        "author": "Firesphere",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2xxnly/please_add_localhost/",
+        "text": "",
+        "created_utc": 1425495091,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Behold an enterprise compareTo()",
+        "author": "Trig90",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2xx191/behold_an_enterprise_compareto/",
+        "text": "    @Override\n    public int compareTo(ButtonActionModel obj) {\n\n        if (obj instanceof ButtonActionModel) {\n            ButtonActionModel comparingObj = (ButtonActionModel) obj;\n            try {\n                String currentName = this.getName();\n                String comparedName = comparingObj.getName();\n\n                return currentName.compareToIgnoreCase(comparedName);\n            } catch (Exception ex) {\n            }\n\n        }\n        return 0;\n\n    }",
+        "created_utc": 1425484871,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "We don't have foreign keys",
+        "author": "agony_inside00000000",
+        "url": "http://www.reddit.com/r/programminghorror/comments/2wwagw/we_dont_have_foreign_keys/",
+        "text": "I've just discovered LINQPad and it's the best thing EVER for querying databases (and inserting/updating them if you want to). Instead of writing antique long ass TSQL to perform even the simplest queries you can just go `Order.Take(10)` or `Order.Where(x =&gt; x.amount &gt; 10).Select(x =&gt; new { x.amount, x.date})`, or, and this is quite literally the best of the best things,  you can do joins by just using the dot notation: `Order.Where(x =&gt; x.customer.name == \"Super Dude\").Take(10)`.\n\nOf course, the last feature requires a foreign key constraint between the two tables so that Linq2Sql can generate the accessors.\n\nAnd we don't do foreign keys. Hundreds of thousands of SLOC, hundreds of \"soft\" foreign keys, thousands of clients that will probably maybe throw away important data when they synchronize themselves with the server and the foreign key constraint is no longer valid or maybe the client didn't check the constraint in the first place because god knows what sqlite version is running on the client. And even if I find time to add the constraints I can already feel the ABSOLUTE FUN of manually checking every single bloody table for references (upshot: we don't do foreign keys, but we also don't do DELETEs!).\n\nLINQPad is awesome and I can't use the most awesome feature of them all because we don't do foreign keys.\n\nI also have a small internal tool that has maybe 10 references or so but each and every one of them refers to an object on a web service.\n\nDAMN",
+        "created_utc": 1424716953,
+        "upvote_ratio": ""
+    }
+]

@@ -1,0 +1,794 @@
+[
+    {
+        "title": "I believe I have encountered one of the strangest problems...",
+        "author": "Toadster88",
+        "url": "https://www.reddit.com/r/linux/comments/103rn51/i_believe_i_have_encountered_one_of_the_strangest/",
+        "text": "My son is huge into 3d printing and we have a NUC that was running Ubuntu 20.04, it was running great and somehow the build got fuxxxed up so we decided to rebuild it.\n\nSame hardware, using Ubuntu 22.04 now - we have ssh installed and Octoprint which is a really slick webservice that allows you to send/monitor/review your 3d prints.   I setup the NUC in my office, did all the standard updates, etc.  I can ssh and use the web services no problem  - this is all over wifi.  I have a pretty robust Unifi setup at home.  \n\nHere's the crazy part.  When I move the NUC to his room and plug it in (of course we have auto-on enabled) the system doesn't respond.  If I move it back to my office, it works great.  The two rooms are 10 feet apart, and both locations are 10-15 feet from the wireless AP.  \n\nWhat is even stranger, is he unplugged from his power strip and plugged directly into the wall outlet and it worked!  So we thought it was maybe a power supply issue with the NUC.  I have an older one, and so I built it up just like the first one.   Same scenario, I build in my office it all works, I can ssh, he can ssh, I can use web interface, he can use the web interface.\n\nI move the 2nd NUC to his office and - nothing!   I've never seen anything like this in my life... So I figured I'd share with r/linux to get some insight or at least some sympathy for my craziness :)\n\ntl;dr - NUC works in my office perfectly, move to my son's room it doesn't work, move back and it works",
+        "created_utc": 1672899602,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux — cgroups (Control Groups) — Part 1",
+        "author": "boutnaru",
+        "url": "https://www.reddit.com/r/linux/comments/103qxhl/linux_cgroups_control_groups_part_1/",
+        "text": " “Control  Groups” (aka cgroups) is a Linux kernel feature that organizes  processes into hierarchical groups. Based on those groups we can limit  and monitor different types of OS resources. Among those resources are:  disk I/O usage , network usage, memory usage, CPU usage and more ([https://man7.org/linux/man-pages/man7/cgroups.7.html](https://man7.org/linux/man-pages/man7/cgroups.7.html)).  cgroups are one of the building blocks used for creating containers  (which include other stuff like namespaces, capabilities and overlay  filesystems).\n\nThe  cgroups functionality has been merged into the Linux kernel since  version 2.6.24 (released in January 2008). Overall, cgroups provide the  following features: resource limiting (as explained above),  prioritization (some process groups can have larger shares of  resources), control (freezing group of processes) and accounting ([https://docs.kernel.org/admin-guide/cgroup-v1/cgroups.html](https://docs.kernel.org/admin-guide/cgroup-v1/cgroups.html)).\n\nMoreover,  there are two versions of cgroups. cgroups v1 was created by Paul  Menage and Rohit Seth. cgroups v2 was redesigned and rewritten by Tejun  Heo [https://www.wikiwand.com/en/Cgroups](https://www.wikiwand.com/en/Cgroups) . The documentation for cgroups v2 first appeared in the Linux kernel 4.5 release on March 2016 ([https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/diff/Documentation/cgroup-v2.txt?id=v4.5&amp;id2=v4.4](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/diff/Documentation/cgroup-v2.txt?id=v4.5&amp;id2=v4.4)).\n\nI  will write on the differences between the two versions and how to use  them in the upcoming writeups. A nice explanation regarding the concept  of cgroups is shown in the image below ([https://twitter.com/b0rk/status/1214341831049252870](https://twitter.com/b0rk/status/1214341831049252870)). By the way, since kernel 4.19 OOM killer ([https://medium.com/@boutnaru/linux-out-of-memory-killer-oom-killer-bb2523da15fc](https://medium.com/@boutnaru/linux-out-of-memory-killer-oom-killer-bb2523da15fc)) is aware of cgroups, which means the OS can kill a cgroup as a single unit.\n\n&amp;#x200B;\n\n[ https:\\/\\/twitter.com\\/b0rk\\/status\\/1214341831049252870\\/photo\\/1 ](https://preview.redd.it/wd4v1kf1x5aa1.jpg?width=1744&amp;format=pjpg&amp;auto=webp&amp;s=e204de908917ccf7a2f5d908085b2731df7a24aa)",
+        "created_utc": 1672897312,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does Linux work? I have Debian xfce.",
+        "author": "RevolutionarySolid52",
+        "url": "https://www.reddit.com/r/linux/comments/103qkp2/how_does_linux_work_i_have_debian_xfce/",
+        "text": "",
+        "created_utc": 1672896212,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "grub error after dual booting Ubuntu with already installed windows 11",
+        "author": "Ahsan_1122",
+        "url": "https://i.redd.it/f92ygxrw77aa1.jpg",
+        "text": "",
+        "created_utc": 1672895063,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "grub error after dual booting Ubuntu with already installed windows 11",
+        "author": "Ahsan_1122",
+        "url": "https://i.redd.it/tzdth62w77aa1.jpg",
+        "text": "",
+        "created_utc": 1672895056,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Resurrected $9 SOC",
+        "author": "lannes",
+        "url": "https://www.reddit.com/r/linux/comments/103pki7/resurrected_9_soc/",
+        "text": "It was an ordeal of old SDKs , Debian 8 original image upgraded to 9 over the course of many hours, numerous hardware issues, but it lives. This thing has wifi, bluetooth, and a 3.5mm audio jack. Sounds like a good candidate for a dumb -&gt; smart speaker conversion. If it stays stable.   \n\n\nFor reference this is a \"Next Thing CHIP\" SOC from \\~2015. The SOC itself was $9 + shipping and the HDMI hat I have for it was actually more expensive due to HDMI royalties, at \\~$13. The company that sold it didn't last long after initial production.",
+        "created_utc": 1672893182,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to change permissions for a disk partition?",
+        "author": "awkward1person",
+        "url": "https://www.reddit.com/r/linux/comments/103ox8k/how_to_change_permissions_for_a_disk_partition/",
+        "text": "I've dual-booted my laptop, now it has  windows, Ubuntu and a \"D\" partition.  The problem is I can't write on  D: tried the ' sudo chmod uq+rw /media/user/D ' command, followed by a ' mkdir test  ' on  on this partition and  I got the  \"mkdir: cannot create directory ‘test’: Read-only file system\" message.\n\nI'm  a newbie and dunno what' s going on, but it seems  the chmod command is being ignored by the system. Can somebody help ?",
+        "created_utc": 1672891269,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I'm using Linux mint cinnamon and I don't know how to boot it.",
+        "author": "Ace_of_spades_42",
+        "url": "https://i.redd.it/z7qk6fegw6aa1.png",
+        "text": "",
+        "created_utc": 1672891211,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux still does not have a decent PDF editor that is not paid for or proprietary. This is the state of the \"open source\" community.",
+        "author": "Bowspecialist",
+        "url": "https://www.reddit.com/r/linux/comments/103o9hm/linux_still_does_not_have_a_decent_pdf_editor/",
+        "text": "",
+        "created_utc": 1672889414,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "New shc-based Linux Malware Targeting Systems with Cryptocurrency Miner",
+        "author": "Realistic-Plant3957",
+        "url": "https://paulponraj.com/linux-malware-targeting-systems/",
+        "text": "",
+        "created_utc": 1672888327,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with fstab for luks encrypted btrfs raid array",
+        "author": "ClemPhlagm",
+        "url": "https://www.reddit.com/r/linux/comments/103n058/help_with_fstab_for_luks_encrypted_btrfs_raid/",
+        "text": "[removed]",
+        "created_utc": 1672885898,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing 'Smart-Debug': the AI-powered command line tool for analyzing and fixing errors",
+        "author": "cwr97",
+        "url": "https://github.com/ColinRoye/Smart-Debug",
+        "text": "",
+        "created_utc": 1672880893,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing 'Smart-Debug': the AI-powered command line tool for analyzing and fixing errors",
+        "author": "cwr97",
+        "url": "https://www.reddit.com/r/linux/comments/103l1x8/introducing_smartdebug_the_aipowered_command_line/",
+        "text": "[removed]",
+        "created_utc": 1672880716,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing ‘Smart-Debug’: the AI-powered command line tool for analyzing and fixing errors",
+        "author": "cwr97",
+        "url": "https://github.com/ColinRoye/Smart-Debughttps://github.com/ColinRoye/Smart-Debug",
+        "text": "",
+        "created_utc": 1672879705,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "s it possible to make an Early 2008 Macbook Pro run Big Sur, Windows 10 and Linuxfx 11 with OpenCore Legacy Patcher? What about rEFInd?",
+        "author": "shiningprince7",
+        "url": "https://www.reddit.com/r/linux/comments/103k9ak/s_it_possible_to_make_an_early_2008_macbook_pro/",
+        "text": "[removed]",
+        "created_utc": 1672878664,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Running Ubuntu 16, trying to run graphics through my GTX 770.",
+        "author": "Doc85",
+        "url": "https://www.reddit.com/r/linux/comments/103k95a/running_ubuntu_16_trying_to_run_graphics_through/",
+        "text": "In Settings-&gt;About graphics is listed as llvmpipe\nHere is the output of glxinfo | grep OpenGL\n    OpenGL vendor string: VMware, Inc.\n    OpenGL renderer string: llvmpipe (LLVM 10.0.0, 256 bits)\n    OpenGL core profile version string: 3.3 (Core Profile) Mesa 20.0.8\n    OpenGL core profile shading language version string: 3.30\n    OpenGL core profile context flags: (none)\n    OpenGL core profile profile mask: core profile\n    OpenGL core profile extensions:\n    OpenGL version string: 3.1 Mesa 20.0.8\n    OpenGL shading language version string: 1.40\n    OpenGL context flags: (none)\n    OpenGL extensions:\n    OpenGL ES profile version string: OpenGL ES 3.1 Mesa 20.0.8\n    OpenGL ES profile shading language version string: OpenGL ES GLSL ES     3.10\n\nHow do I force OpenGL to run through my GPU, and stop using integrated graphics?\nOpenGL ES profile extensions:",
+        "created_utc": 1672878654,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Newsraft: feed reader with ncurses user interface",
+        "author": "gtstar",
+        "url": "https://codeberg.org/grisha/newsraft",
+        "text": "",
+        "created_utc": 1672877693,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to use FixParts anyone",
+        "author": "hum2727",
+        "url": "https://www.reddit.com/r/linux/comments/103jap4/how_to_use_fixparts_anyone/",
+        "text": "I'm trying to use the windows version  fixparts64.exe, but when it starts I enter '2' then 'enter' , and the window closes. I thought that should tell it to use disk 2 as the device filename. \n\nAnyone used this app before ?",
+        "created_utc": 1672876281,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How cool are Akamai that bought Linode in March?",
+        "author": "Wu_Fan",
+        "url": "https://www.reddit.com/r/linux/comments/103iahq/how_cool_are_akamai_that_bought_linode_in_march/",
+        "text": "I am a loyal Linux Unplugged fan. I love me my coder robe and I love me Lady Jupes and Wes and any bacon that is coming past. \n\nSo I am considering using Linode. But I wonder… are they cool? Or are they _the man_ now they have been acquired by Akamai. \n\nHmm. Anyone know this Akamai? Linode was cool because it was Linuxy. Are Akamai nerdy? Might I just as well host my secret sauce with Mucusoft?",
+        "created_utc": 1672873871,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Leaf Node Monitoring 2023.01 released! - Open source network monitoring tool written in C++/Qt (paid GPLv3 software)",
+        "author": "raymii",
+        "url": "https://www.leafnode.nl/news/leaf-node-monitoring-2023-01-released/",
+        "text": "",
+        "created_utc": 1672871138,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Baremetal Mainline Linux on android device with Framebuffer graphics",
+        "author": "ikosewi",
+        "url": "https://www.reddit.com/r/linux/comments/103gaki/baremetal_mainline_linux_on_android_device_with/",
+        "text": "[removed]",
+        "created_utc": 1672869278,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Switching from a debian based distro to an arch based one!",
+        "author": "TheRocketFL",
+        "url": "https://www.reddit.com/r/linux/comments/103fb84/switching_from_a_debian_based_distro_to_an_arch/",
+        "text": "[removed]",
+        "created_utc": 1672867003,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Switching from a debian based distro to an arch based one!",
+        "author": "TheRocketFL",
+        "url": "https://www.reddit.com/r/linux/comments/103f6nu/switching_from_a_debian_based_distro_to_an_arch/",
+        "text": "[removed]",
+        "created_utc": 1672866701,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can a Dell Precision 3470 use its graphics card with Ubuntu installed?",
+        "author": "Tomirk",
+        "url": "https://www.reddit.com/r/linux/comments/103ex54/can_a_dell_precision_3470_use_its_graphics_card/",
+        "text": "",
+        "created_utc": 1672866088,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How Cursor is Rendered",
+        "author": "jlpcsl",
+        "url": "https://blog.vladzahorodnii.com/2023/01/03/how-cursor-is-rendered/",
+        "text": "",
+        "created_utc": 1672865459,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Switching to Linux from Windows",
+        "author": "Thrillsteam",
+        "url": "https://www.reddit.com/r/linux/comments/103e1jq/switching_to_linux_from_windows/",
+        "text": "I am thinking about switching to Linux  from Windows because I am beginning to hate Windows with a passion. I can go all day, from using  unnecessary resources ,Cortina and Microsoft trying to sync everything. \n\nI have some experience with Linux. Not great at  it but I know how to search for stuff on google. lol ..But my only issue with Linux is, sometimes if you plug a basic external drive or even access another internal drive, linux doesnt allow you to just have access to it.  Yes I can reformat the drive but when I have stuff on it already I dont want to format it. I found ways I can access it but it took me a little bit to see what was going on. \n\nIs there a easy way to make that transition over?  I may use Mint or Ubuntu. Also why do I have to put a sudo everytime I run something if I am already part of the sudo group?",
+        "created_utc": 1672864091,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Intel Smart Sound Card doesn't work",
+        "author": "Fontanelas",
+        "url": "https://www.reddit.com/r/linux/comments/103e1aj/intel_smart_sound_card_doesnt_work/",
+        "text": "[removed]",
+        "created_utc": 1672864073,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Red Hat Planning A Hackfest To Further Advance HDR Support On The Linux Desktop",
+        "author": "adila01",
+        "url": "https://www.phoronix.com/news/Red-Hat-2023-HDR-Hackfest",
+        "text": "",
+        "created_utc": 1672860251,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Red Hat Planning A Hackfest To Further Advance HDR Support On GNOME",
+        "author": "adila01",
+        "url": "https://www.phoronix.com/news/Red-Hat-2023-HDR-Hackfest",
+        "text": "",
+        "created_utc": 1672860212,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Docker Installation on Linux Explained",
+        "author": "thetech_learner",
+        "url": "https://youtu.be/V8sCr9ZZgZ0",
+        "text": "",
+        "created_utc": 1672860176,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "this is a tutorial on free open source vpn and how to download it on kali linux",
+        "author": "Haider21213",
+        "url": "https://www.reddit.com/r/linux/comments/103au6m/this_is_a_tutorial_on_free_open_source_vpn_and/",
+        "text": "[removed]",
+        "created_utc": 1672856681,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "i made a tutorial on how to install openvpn",
+        "author": "Haider21213",
+        "url": "https://www.reddit.com/r/linux/comments/103alu5/i_made_a_tutorial_on_how_to_install_openvpn/",
+        "text": "[removed]",
+        "created_utc": 1672856146,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Windows Manager Compatibility",
+        "author": "poor-impulseControl",
+        "url": "https://www.reddit.com/r/linux/comments/103a7tl/windows_manager_compatibility/",
+        "text": "I am ready to start my transition to identify as a linux user. However, I am trepidatious about choosing a GUI. I want to just use a windows manager (for aesthetic and footprint reasons); I would also like to use certain programs such as spotify, a pdf viewer, libre office, etc. Does choice of windows manager or desktop environment affect the usability of different apps? Furthermore, does choice of an X server have an effect (wayland, X11)?",
+        "created_utc": 1672855256,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MX Linux updater app",
+        "author": "trailruns",
+        "url": "https://www.reddit.com/r/linux/comments/1038v54/mx_linux_updater_app/",
+        "text": "[removed]",
+        "created_utc": 1672852129,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a quick-add application on Linux similar to Things, OmniFocus or Todoist?",
+        "author": "Carmeloojr",
+        "url": "https://www.reddit.com/r/linux/comments/1038rju/is_there_a_quickadd_application_on_linux_similar/",
+        "text": "[removed]",
+        "created_utc": 1672851900,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[OC] XFiles: A modular X11 file browser (WIP)",
+        "author": "narrow_assignment",
+        "url": "https://v.redd.it/vswxzb2gy1aa1",
+        "text": "",
+        "created_utc": 1672849502,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "OpenWrt 22.03.3 - Service Release - 6 January 2023",
+        "author": "TheOldPharaoh",
+        "url": "https://openwrt.org/releases/22.03/notes-22.03.3",
+        "text": "",
+        "created_utc": 1672848047,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "hosting your own data storage on linux/debian",
+        "author": "KingKongBingBong1",
+        "url": "https://www.reddit.com/r/linux/comments/1036v9o/hosting_your_own_data_storage_on_linuxdebian/",
+        "text": "I was working on setting up my own data storage and FTP server and decided to create a nextcloud intance based on docker, It was quite tricky to setup and i decided to create a youtube video helping people install it. I hope this will help someone too. Nextcloud is amazing and I have been very satisfied with it. It supports a ton of features and have become a defacto google drive alternative for me. I hope you will like it as well.",
+        "created_utc": 1672847411,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gnome Quick settings rearrange",
+        "author": "decipher3114",
+        "url": "https://www.reddit.com/r/linux/comments/1036rz6/gnome_quick_settings_rearrange/",
+        "text": "[removed]",
+        "created_utc": 1672847185,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Google announces official Android RISC-V support",
+        "author": "wiki_me",
+        "url": "https://www.xda-developers.com/google-officially-supports-risc-v/",
+        "text": "",
+        "created_utc": 1672839936,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can i run multiple command parallel",
+        "author": "nam_Angus",
+        "url": "https://www.reddit.com/r/linux/comments/103417a/how_can_i_run_multiple_command_parallel/",
+        "text": "[removed]",
+        "created_utc": 1672839872,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help us reach more developers in your community!",
+        "author": "vjmde",
+        "url": "https://developernation.net/survey/affiliate?utm_medium=some&amp;utm_source=reddit&amp;utm_campaign=r/linux",
+        "text": "",
+        "created_utc": 1672834879,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fedora vs OpenSUSE, which one runs better with KDE Plasma?",
+        "author": "Sniptes",
+        "url": "https://i.redd.it/sl8usba1n0aa1.jpg",
+        "text": "",
+        "created_utc": 1672833414,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Kali Virtual Machine GUI won’t boot",
+        "author": "Lion-of-Faith",
+        "url": "https://i.redd.it/1x9u08lr02aa1.jpg",
+        "text": "[removed]",
+        "created_utc": 1672832123,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How could I do to mmap a large memory area with Anonymous Mappings but no-zero-filled to be done?",
+        "author": "juststayreal",
+        "url": "https://www.reddit.com/r/linux/comments/1030ktk/how_could_i_do_to_mmap_a_large_memory_area_with/",
+        "text": "[removed]",
+        "created_utc": 1672829262,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "NEED HELP: WINDOWS10 + LINUX PARTITION / INSTALL ON A DIFFERENT DRIVE",
+        "author": "Frequent_West_7725",
+        "url": "https://www.reddit.com/r/linux/comments/102zapg/need_help_windows10_linux_partition_install_on_a/",
+        "text": "[removed]",
+        "created_utc": 1672824916,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Nostalgy: Pardus 2011 release poster and DVD (not out of gelatine)",
+        "author": "Zaryob",
+        "url": "https://i.redd.it/54glljotrz9a1.jpg",
+        "text": "",
+        "created_utc": 1672822903,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "help, critical medium error",
+        "author": "ImpossibleSnail",
+        "url": "https://www.reddit.com/r/linux/comments/102wotd/help_critical_medium_error/",
+        "text": "[removed]",
+        "created_utc": 1672815450,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Dell/Thinkpad for Linux",
+        "author": "OkTemperature1435",
+        "url": "https://www.reddit.com/r/linux/comments/102vn2q/dellthinkpad_for_linux/",
+        "text": "[removed]",
+        "created_utc": 1672811945,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is this icon? Looks like a chain link or two connected boxes",
+        "author": "parkerjg13",
+        "url": "https://i.redd.it/z15lon7e20aa1.jpg",
+        "text": "",
+        "created_utc": 1672808458,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Audio Problem in Linux Mint. I can only hear the audio when using headphones. However, when I unplug my headphones, I cannot hear anything. Can anyone help me out?",
+        "author": "SlimeySn23",
+        "url": "https://i.redd.it/7133kly0fy9a1.png",
+        "text": "",
+        "created_utc": 1672806542,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Before i buy a windows key.",
+        "author": "MurkyyLurkss",
+        "url": "https://www.reddit.com/r/linux/comments/102trtg/before_i_buy_a_windows_key/",
+        "text": "[removed]",
+        "created_utc": 1672806211,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Extra pins on micro SD Card.",
+        "author": "mazarax",
+        "url": "https://i.redd.it/fmncdncsoz9a1.jpg",
+        "text": "",
+        "created_utc": 1672803882,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "is there a sites full of tutorial on how to hack using Linux?",
+        "author": "n-o-b-i-t-a",
+        "url": "https://www.reddit.com/r/linux/comments/102sy1p/is_there_a_sites_full_of_tutorial_on_how_to_hack/",
+        "text": "[removed]",
+        "created_utc": 1672803806,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to upgrade Linux kernel?",
+        "author": "kiwiheretic",
+        "url": "https://www.reddit.com/r/linux/comments/102q8r1/how_to_upgrade_linux_kernel/",
+        "text": "[removed]",
+        "created_utc": 1672796365,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I install Intel ethernet drivers (debian)?",
+        "author": "SpookyHeaD",
+        "url": "/r/debian/comments/102oeng/how_to_install_intel_network_adapter_drivers/",
+        "text": "",
+        "created_utc": 1672793587,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux developments you're looking forward to in 2023",
+        "author": "Indolent_Bard",
+        "url": "https://www.reddit.com/r/linux/comments/102nh3i/linux_developments_youre_looking_forward_to_in/",
+        "text": "Happy belated New Year everyone! Last year was quite a year for Linux. The first mainstream consumer gadget based on Linux released, rust support got in the kernel, and Linux growth has just ballooned ever since the steam deck released. Also a bunch of other cool stuff that I can't remember. With all the work being done currently, what developments are you most excited for in 2023? Personally, I'm really hoping that valve starts trying to get in contact with studios whose anti-cheat doesn't support Linux yet, like the guys who made Genshin Impact. I'm also really excited to see the cosmic desktop, as it'll be nice to get some competition between KDE and gnome as the big two desktop environments that support Wayland.",
+        "created_utc": 1672789314,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What Linux developments are you looking forward to in the new year?",
+        "author": "Indolent_Bard",
+        "url": "https://www.reddit.com/r/linux/comments/102n028/what_linux_developments_are_you_looking_forward/",
+        "text": "[removed]",
+        "created_utc": 1672788179,
+        "upvote_ratio": 0.99
+    },
+    {
+        "title": "Oh come on ChatGPT, please humor me...",
+        "author": "Hopperkin",
+        "url": "https://www.reddit.com/r/linux/comments/102mswz/oh_come_on_chatgpt_please_humor_me/",
+        "text": "[removed]",
+        "created_utc": 1672787697,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gaming on Linux, what distro and why for both gaming and daily driver",
+        "author": "NigelGreenway",
+        "url": "https://www.reddit.com/r/linux/comments/102mf25/gaming_on_linux_what_distro_and_why_for_both/",
+        "text": "[removed]",
+        "created_utc": 1672786802,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which monitor for terminal work?",
+        "author": "whoisteve",
+        "url": "https://www.reddit.com/r/linux/comments/102m7cb/which_monitor_for_terminal_work/",
+        "text": "Which monitor for terminal work?\n\nI’m searching for a monitor that has good colours for terminal work, coding, reasearch,….. which monitor do you use?\n\nI have a monitor with a VA Panel…it’s horrible…that black isn’t black :D\n\nNow I have two 24” monitors and I want it to replaced it with one monitor. Do you guys have ans suggestions?",
+        "created_utc": 1672786299,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which monitor for terminal work?",
+        "author": "whoisteve",
+        "url": "https://www.reddit.com/r/linux/comments/102m520/which_monitor_for_terminal_work/",
+        "text": "[removed]",
+        "created_utc": 1672786153,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need help with a photography project",
+        "author": "red_dub",
+        "url": "https://www.reddit.com/r/linux/comments/102luve/i_need_help_with_a_photography_project/",
+        "text": "[removed]",
+        "created_utc": 1672785479,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lol. I got this on ubuntu while doing `sudo apt upgrade`",
+        "author": "null_rm-rf",
+        "url": "https://i.redd.it/rz22cyozjw9a1.jpg",
+        "text": "",
+        "created_utc": 1672783985,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Cant install lutris",
+        "author": "slippyslo",
+        "url": "https://www.reddit.com/r/linux/comments/102kqcg/cant_install_lutris/",
+        "text": "[removed]",
+        "created_utc": 1672782950,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Today I learned that the infotainment system in my Camry is based on Linux, what other places have you seen it implemented outside of regular computers and smartphones?",
+        "author": "ngagner15",
+        "url": "https://i.redd.it/kcpj3jb5rx9a1.jpg",
+        "text": "",
+        "created_utc": 1672780463,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Release Announcement: Nitrux 2.6.0 \"ff\"",
+        "author": "xaedoplay",
+        "url": "https://nxos.org/changelog/release-announcement-nitrux-2-6-0/",
+        "text": "",
+        "created_utc": 1672776458,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "gaming/programming",
+        "author": "iqthegoat",
+        "url": "https://www.reddit.com/r/linux/comments/102hnk5/gamingprogramming/",
+        "text": "[removed]",
+        "created_utc": 1672775783,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I create a Ubuntu USB Stick that can launch Ubuntu from a USB Stick as well as access the Data through Windows (via Emulator or smthing)?",
+        "author": "R3lex42",
+        "url": "https://www.reddit.com/r/linux/comments/102hen8/can_i_create_a_ubuntu_usb_stick_that_can_launch/",
+        "text": "[removed]",
+        "created_utc": 1672775175,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I create a Ubuntu USB Stick that can launch Ubuntu from a USB Stick as well as access the Data through Windows (via Emulator or smthing)?",
+        "author": "R3lex42",
+        "url": "https://www.reddit.com/r/linux/comments/102h8db/can_i_create_a_ubuntu_usb_stick_that_can_launch/",
+        "text": "[removed]",
+        "created_utc": 1672774757,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fixing an unresponsive gnome-software on Fedora",
+        "author": "strzibny",
+        "url": "https://nts.strzibny.name/fixing-unresponsive-gnome-software-on-fedora/",
+        "text": "",
+        "created_utc": 1672774717,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "xrdp with 2 factor authentication",
+        "author": "notamind",
+        "url": "https://www.reddit.com/r/linux/comments/102h33i/xrdp_with_2_factor_authentication/",
+        "text": "Hi everyone!\nI need an help configuring the xrdp  2 factor authentication in my Linux server. \nIm using Google authenticator, the problem is that the login works both with the OTP and the combinato password+OTP. \nI need to fix this in order to make only the combination valid. \n\nAnyone can help? \nThanx a lot",
+        "created_utc": 1672774406,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "when u try to change a lnk to cmd",
+        "author": "PristineElevator285",
+        "url": "https://www.reddit.com/r/linux/comments/102gqc4/when_u_try_to_change_a_lnk_to_cmd/",
+        "text": "[removed]",
+        "created_utc": 1672773555,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Remove distractions in GNU/Linux?",
+        "author": "heptapod",
+        "url": "https://www.reddit.com/r/linux/comments/102fwtc/remove_distractions_in_gnulinux/",
+        "text": "I have an awful habit of using the internet, getting distracted, and not being able to accomplish anything. Running Ubuntu 18.04 and was wondering what programs are out there to enable one to block time sink websites, like reddit, for a period of time and playing games on Steam. I've tried willpower but it's not that robust and need help. Thank you in advance.",
+        "created_utc": 1672771642,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "when u change a lnk to a cmd",
+        "author": "WalrusAlternative178",
+        "url": "https://www.reddit.com/r/linux/comments/102ftw5/when_u_change_a_lnk_to_a_cmd/",
+        "text": "[removed]",
+        "created_utc": 1672771452,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Vanilla OS and the next-generation Linux desktop",
+        "author": "memoryfile_",
+        "url": "https://memoryfile.codeberg.page/posts/Vanilla-OS-and-the-next-generation-Linux-desktop/",
+        "text": "",
+        "created_utc": 1672770348,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "cursed commands be like:",
+        "author": "umikali",
+        "url": "https://i.redd.it/gxdzzthvev9a1.png",
+        "text": "",
+        "created_utc": 1672770186,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is Opensuse the best choice for me ?",
+        "author": "Samaykom",
+        "url": "https://www.reddit.com/r/linux/comments/102er6c/is_opensuse_the_best_choice_for_me/",
+        "text": "[removed]",
+        "created_utc": 1672768975,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "i don't find kali linux after installation",
+        "author": "abdrrhmen0x",
+        "url": "https://www.reddit.com/r/linux/comments/102eigl/i_dont_find_kali_linux_after_installation/",
+        "text": "[removed]",
+        "created_utc": 1672768431,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to auto select persistent mode on boot.",
+        "author": "Lanky_Comfortable_39",
+        "url": "https://www.reddit.com/r/linux/comments/102e5tu/how_to_auto_select_persistent_mode_on_boot/",
+        "text": "Finished setting live linux to persistent but when I turn it on it gives me a selection of like live , on ram , persistent, mem+ test , etc... i just want it to skip that step and go straight into loading.",
+        "created_utc": 1672767618,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for recent motherboards that have CSM (compatibility support module) option...",
+        "author": "Bern_Down_the_DNC",
+        "url": "https://www.reddit.com/r/linux/comments/102d8cw/looking_for_recent_motherboards_that_have_csm/",
+        "text": " I was just hoping for a list of recent motherboards with CSM, but couldn't find anything on google, so I thought linux users might have experience with looking for CSM motherboards. In particular I am looking for Intel LGA 1700 motherboards, as the Win 7 community is trying to find candidate boards for legacy operating systems. (We are at the point where 7 is working on some new boards. As far as drivers we either need to install a network card with 7 drivers, or try to force Win 10 drivers to work  but we are trying to find more candidate boards (those with CSM or other ways to boot legacy OSs). I know that most MSI boards have CSM, and I heard some Asus boards do too, but not sure about other brands. Thank you.",
+        "created_utc": 1672765374,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How rusty is the future?",
+        "author": "Lord_Schnitzel",
+        "url": "https://www.reddit.com/r/linux/comments/102ceaj/how_rusty_is_the_future/",
+        "text": "Will Linux soon be fully rusty workhorse? Wayland compositors, Kernels, WM's and tools written in rust? Would that offer benefits such as better battery life?\n\nI watched the video from EmacsConf where Emacs is turning to be a Wayland compositor. What it does actually mean? I'm not a developer so that video was pretty cryptic for me. If Emacs comes to a Wayland compositor, will the actual Emacs be affected? Extra plugins or such?\n\nIs there a universal keybind system for Wayland yet? Like sxhkd or xdotool.",
+        "created_utc": 1672763379,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Automatically switching screen input when plugging USB device or: how I learned about udev and ddcutil",
+        "author": "MortimerErnest",
+        "url": "https://www.reddit.com/r/linux/comments/102bwkc/automatically_switching_screen_input_when/",
+        "text": "I am often switching between my work computer and my fixed computer and I have to manually switch the screen input each time I do it. Today, I took it upon myself to automate this.\n\nEach time I am switching between the two computers, I plug a USB hub with the mouse, keyboard and headset to the computer I want to use. So I made a udev rule which detects each time my mouse is plugged in and use ddcutil to switch to the correct screen input. Here is the udev rule (located in \\`/etc/udev/rules.d/switch-screen-input-on-usb-plug.rules\\`):\n\n\\`\\`\\`\n\nACTION==\"add\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c051\", RUN+=\"/usr/local/sbin/switch-screen-input-on-usb-plug.sh\"\n\n\\`\\`\\`\n\nAnd the corresponding script:\n\n\\#!/bin/bash\n\nFILE=/tmp/last-udev-scree-switch\n\nlast\\_run=\\`stat $FILE -c %Z\\`\n\nmin\\_delay=$(( \\`date +%s\\` - 30 ))\n\n&amp;#x200B;\n\nif \\[ -z \"$last\\_run\" \\] || \\[ \"$last\\_run\" -lt \"$min\\_delay\" \\]; then\n\nddcutil -g AOC setvcp 60 0x0f\n\ntouch $FILE\n\nfi\n\n\\`\\`\\`\n\n&amp;#x200B;\n\n\\`\\`\\`\n\nAt first, I just had the ddcutil command in the udev rule but it was executing multiple times when I plugged the hub in causing the screen to flicker. So I made this wrapper script which contains some code to execute the script at most every 30 seconds.\n\nThe vendor and product ID of the USB device can be found using \\`lsusb -v\\` and the capability name and values using \\`ddcutil capabilities\\`. The \\`-g\\` switch for ddcutil selects the screen I am interested in, it is the only one made by the manufacturer AOC.\n\nI was quite amazed that I was able to do this kind of automation with just a few lines of code. Linux is  amazing for this kind of tinkering! I hope this post helps someone who wants to do something similar.",
+        "created_utc": 1672762173,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ClickUp app should just ShutUp",
+        "author": "iamonkara",
+        "url": "https://www.reddit.com/r/linux/comments/102bulp/clickup_app_should_just_shutup/",
+        "text": "I  just stumbled across a task/calendar management app called ClickUp  where everything is nice except this one super annoying thing. ClickUp,  on Linux, registers a global listener for Ctrl+E keystroke and reacts by  bringing ClickUp app to foreground. This not only interferes with my  workflow in Terminal, since Ctrl+E is used to move to the end of line,  but it is also a [security nightmare](https://www.reddit.com/r/clickup/comments/wb4o2v/comment/ii58amf/?utm_source=share&amp;utm_medium=web2x&amp;context=3). Since Ctrl+E  shortcut cannot be overridden in ClickUp on Linux, hence the title of OP and for good measure ClickUp should just ShutUp.",
+        "created_utc": 1672762038,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ClickUp app should Shutup - a security nightmare",
+        "author": "iamonkara",
+        "url": "https://www.reddit.com/r/linux/comments/102bah2/clickup_app_should_shutup_a_security_nightmare/",
+        "text": "I just stumbled across a task/calendar management app called ClickUp where everything is nice except this one super annoying thing. ClickUp registers a global listener for Ctrl+E keystroke and reacts by bringing ClickUp app to foreground. This not only interferes with my workflow in Terminal, since Ctrl+E is used to move to the end of line, but it is also a [security nightmare](https://www.reddit.com/r/clickup/comments/wb4o2v/comment/ii58amf/?utm_source=share&amp;utm_medium=web2x&amp;context=3). Hence the title of OP and for good measure ClickUp should just ShutUp.\n\n&amp;#x200B;\n\nI am not sure if there is even a workaround this annoyance. Anyone ?",
+        "created_utc": 1672760652,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Do any other Linux gamers use GOG? What do you think about it? Do Linux users hate it?",
+        "author": "Raiderofthelostark81",
+        "url": "https://www.reddit.com/r/linux/comments/102b2yc/do_any_other_linux_gamers_use_gog_what_do_you/",
+        "text": "[removed]",
+        "created_utc": 1672760118,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Running Ubuntu 22 with an older Nvidia GPU. It seems to be rendering using my cpu and llvmpipe rather than my gpu, although it shows nouveau as the active driver for the card.",
+        "author": "Doc85",
+        "url": "https://www.reddit.com/r/linux/comments/102aii7/running_ubuntu_22_with_an_older_nvidia_gpu_it/",
+        "text": "[removed]",
+        "created_utc": 1672758634,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Valve is working on HDR support on Linux",
+        "author": "mrharold_finch",
+        "url": "https://nitter.net/Plagman2/status/1610200412854046720#m",
+        "text": "",
+        "created_utc": 1672758552,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fedora Budgie &amp; Sway Spins Approved For Fedora 38",
+        "author": "adila01",
+        "url": "https://www.phoronix.com/news/Fedora-Budgie-Sway-Spins",
+        "text": "",
+        "created_utc": 1672757820,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Nitrux 2.6 Is Out Powered by Linux 6.1, Adds PipeWire and Wayland by Default",
+        "author": "Realistic-Plant3957",
+        "url": "https://9to5linux.com/nitrux-2-6-is-out-powered-by-linux-6-1-adds-pipewire-and-wayland-by-default",
+        "text": "",
+        "created_utc": 1672754852,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I have a flaw in every distro",
+        "author": "Varuncupid",
+        "url": "https://www.reddit.com/r/linux/comments/1028kau/i_have_a_flaw_in_every_distro/",
+        "text": "[removed]",
+        "created_utc": 1672753343,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "qBittorrent v4.5.0: The Hitchhiker's Guide to Legible Text",
+        "author": "GlumWoodpecker",
+        "url": "https://datalars.com/2023/01/03/qbittorrent-v450-the-hitchhikers-guide-to-legible-text-2/",
+        "text": "",
+        "created_utc": 1672753199,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Advice sought: your preference for a laptop for business use with Linux pre-installed and with 5g",
+        "author": "Rik8367",
+        "url": "https://www.reddit.com/r/linux/comments/1028bah/advice_sought_your_preference_for_a_laptop_for/",
+        "text": "",
+        "created_utc": 1672752670,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What are your boot-time benchmarks?",
+        "author": "xucrodeberco",
+        "url": "https://www.reddit.com/r/linux/comments/1027mpp/what_are_your_boottime_benchmarks/",
+        "text": "During the holidays I have been dabbling around creating a [unified kernel image](https://wiki.archlinux.org/title/Unified_kernel_image) from my custom kernel that can be booted directly form EFI.\n\nI have measured the boot-times using [systemd-analyze](https://www.freedesktop.org/software/systemd/man/systemd-analyze.html) and saw an improvement over debian distro-kernel - so far I am happy. But I working with embedded linux systems I have seen much faster boot-time on weaker hardware. \n\nOn a X1 Carbon with  i5-8350U with encrypted root-fs on an NVMe flash systemd-analyze gives me:\n\n  `Startup finished in 7.492s (firmware) + 1.971s (loader) + 15.012s (kernel) + 8.475s (userspace) = 32.951s` \n\nI am curious about your boot-times to see if mine are okayish or if I have lots of room to optimize.",
+        "created_utc": 1672750869,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for a Linux distro:",
+        "author": "YanBouw",
+        "url": "https://www.reddit.com/r/linux/comments/1027e5g/looking_for_a_linux_distro/",
+        "text": "[removed]",
+        "created_utc": 1672750242,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "why reboot fail in linux centos7?",
+        "author": "brucezhang63",
+        "url": "https://www.reddit.com/r/linux/comments/1026rtv/why_reboot_fail_in_linux_centos7/",
+        "text": "[removed]",
+        "created_utc": 1672748498,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux samba server",
+        "author": "alexsvihak",
+        "url": "https://www.reddit.com/r/linux/comments/1026dui/linux_samba_server/",
+        "text": "[removed]",
+        "created_utc": 1672747378,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Valve dev teases HDR support for Linux Gaming",
+        "author": "Chiccocarone",
+        "url": "https://www.gamingonlinux.com/2023/01/valve-dev-teases-hdr-support-for-linux-gaming/",
+        "text": "",
+        "created_utc": 1672742367,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which laptop brands provides good and qualified technic/customer service for linux OSs?",
+        "author": "cepci1",
+        "url": "https://www.reddit.com/r/linux/comments/10249ft/which_laptop_brands_provides_good_and_qualified/",
+        "text": "[removed]",
+        "created_utc": 1672740556,
+        "upvote_ratio": 1.0
+    }
+]

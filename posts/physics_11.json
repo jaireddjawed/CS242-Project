@@ -1,0 +1,794 @@
+[
+    {
+        "title": "Went to grab my tp how is it holding up like that",
+        "author": "glimmer9191",
+        "url": "https://i.redd.it/yd2p3zgw7xia1.jpg",
+        "text": "",
+        "created_utc": 1676696625,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Phyics 2 for Bio Homework",
+        "author": "Brave_Bid_6261",
+        "url": "https://www.reddit.com/r/Physics/comments/1156dmp/phyics_2_for_bio_homework/",
+        "text": "[removed]",
+        "created_utc": 1676693135,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Requesting Feedback on the Design of an Electrostatic Vacuum Pump",
+        "author": "gwolffe356",
+        "url": "https://www.reddit.com/r/Physics/comments/1154rne/requesting_feedback_on_the_design_of_an/",
+        "text": "As part of some experiments that I'm trying to conduct (which require high vacuum conditions, but I can't afford or easily make use of high-vacuum pumps for them), I've gone out of my way to try to design a vacuum pumping system which uses exclusively electromagnetic forces; no motors, pumps, blades, oil, or cryo. However, before I move on to building a prototype, I'd like some feedback on the feasibility of the design, and if there are any factors or quirks of physics that I may have forgotten or overlooked. Please thoroughly read the device's description before commenting and provide a thorough explanation of any faults or criticisms you find with the design; positive feedback is also appreciated. Alternatively, if there is a more appropriate subreddit or forum for me to ask, please let me know.\n\nThe device is designed and expected to work as follows:\n\nAn airtight, electrically insulated tube has an electrically conductive grate on one side and is filled with an electrically conductive powder on the other, shown in orange and purple respectively in the diagram below.\n\n[Proposed Electrodynamic Vacuum Pump](https://preview.redd.it/k6lyywtxcuia1.png?width=1400&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=38454d0d0a3fd7a040dfad9af41f413ea1d598a3)\n\nThe powder is loosely packed such that gasses can diffuse or flow easily through it; it doesn't matter how the powder is contained in the tube so long as the containment method doesn't interfere with the passage of gasses through it, or its ability to be electrically charged.\n\nA voltage is then applied to the opposite sides of the tubes, causing it to function like a pair of charged plates.\n\nIf a neutral air molecule randomly impacts the powder-side of the tube (shown above as the green arrows at the bottom-right of the diagram), it should pick up an electrical charge from it (shown as negative in purple in the diagram above) and experience a force attracting it towards the electrode on the opposite end of the tube (shown above as the purple arrows on the right side of the diagram). As the air molecule travels through the conductive powder, it should collide with the powder grains, deflecting it in random directions, but still generally following a path between them towards the opposite side of the tube under the Coulomb Force, like a ball falling through a Pachinko Board; the conductive grains would also help the air molecule retain and/or accumulate a similar charge. Once the charged air molecule reaches the opposite side of the powder, it should accelerate towards grate on the opposite side of the tube and out the opposite side, like a simple ion thruster, generally becoming discharged in the process, (shown above as the green arrow on the upper right side of the diagram).\n\nIn like manner, neutral air molecules will enter the tube from the grated side (shown above as green arrows on the upper left side of the diagram) and generally acquire the opposite charge (shown as positive in red in the diagram above), causing them to be accelerated towards the powdered side of the device and opposite the desired direction of air flow. However, upon impacting the conductive powder, the positively charged air molecule should quickly become neutralized again (shown as a green arrow within the purple box on the left side of the diagram above), before picking up a negative charge from them (shown as the purple arrows on the left side of the diagram) and being accelerated out the grated side of the tube and neutralized (shown as the green exiting arrow on the upper center of the diagram).\n\nIn this way air molecules should tend to move out through the grated side of the tube, but not back in, eventually evacuating any attached airtight chamber on the powdered side of the tube. Likewise, the lower the pressure in the vacuum chamber, the fewer collisions impinging air molecules should experience keeping them out, though the conductive powder and Columb Force subsequently acting on them should oppose this motion, functionally emulating an opposing pressure, which I would compare to trying to push a bunch of balls *up* through the bottom of a Pachinko Board.\n\nThis therefore begs the question of how much electrostatic force the device would have to generate to maintain a vacuum on the opposite side of the tube, which leads nicely into the math-part of the design, (AKA \"the fun part.\")\n\nThe impinging air molecules will possess some kinetic energy and momentum towards the vacuum side of the device, which will be conserved and otherwise unimpeded by opposing collisions. The average kinetic energy of these molecules is given by the equation:\n\nKE = 3/2 NkT\n\nwhere N is the number of molecules we're looking at (in this case one at a time)\n\nk is the Boltzmann Constant, which is 1.38\\*10\\^-23 J/K\n\nand T is the temperature in Kelvin; let's say room temperature, or about 300 K\n\nOnce the air molecules are charged, they will experience an electrostatic force opposing this motion, turning their kinetic energy into electrical potential energy upon reaching the opposite side of the device, given by the equation:\n\nPE = qV\n\nwhere q is the electrical charge of the particle in a uniform electric field; let's say one elementary charge or 1.6\\*10\\^-19 C\n\nand V is the voltage between the charged plates.\n\nIf we assume energy is conserved in this situation (no net gain or loss of momentum from collisions because everything is at roughly the same temperature, and ignoring any Van der Walls forces comparable to friction at this scale), then we may say:\n\nKE = PE\n\nor\n\n3/2 NkT = qV\n\nIf we want to find the minimum voltage required to keep gasses out of the vacuum side of the device, then we may rearrange the equation to:\n\nV = 3NkT/2q\n\nor 0.0388 V per molecule, though in reality the device would probably need to be charged to a much higher voltage to ionize the air molecules in the first place, suggesting that any reasonable voltage to which this device may be charged would be more than adequate for effective operations.\n\nThe motion of ionized gasses out of the device also represents a comparable current which must be continuously supplied to it. Let us say we want the pump to have a volumetric flow rate of 1 L/min, or 0.000016 m\\^3/s.\n\nAt an initial, atmospheric pressure of 101,325 Pa that a cubic meter of air has a certain number of air molecules in it, which can be determined from the ideal gas equation:\n\nPV = NkT\n\nwhere P is the pressure of the air (at least initially)\n\nand V is the volume of air being examined, or:\n\nN = PV/kT, to solve for the number of air molecules in play, which is: 2.45\\*10\\^25 molecules per cubic meter, giving us a total molecular flow rate of 4.1\\*10\\^20 molecules per second.\n\nif each of those molecules has an electric charge of 1.6\\*10\\^-19 C, then that represents an equivalent current of: 65.3 A.\n\nAt the calculated minimum voltage, this would require the device to be supplied with 2.5 W of power or more continuously; perhaps more if a faster flow rate is desired or a higher voltage is needed; perhaps less if the flow rate is made lower and/or the device is used in combination with a roughing pump.\n\n&amp;#x200B;\n\nPlease let me know if there was anything you thought I missed, any faulty or hidden assumptions in my design and analysis, any practical limitations I failed to see, alternate applications or ideas to make it better, or potentially better places to get these questions answered.\n\nThanks!",
+        "created_utc": 1676687845,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "UC Irvine -Remote Viewing and Statistical Validation",
+        "author": "skyersjet",
+        "url": "https://www.youtube.com/watch?v=YrwAiU2g5RU",
+        "text": "",
+        "created_utc": 1676687480,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Recommendations for diagram drawing softwares/online tools?",
+        "author": "Subrosa34",
+        "url": "https://www.reddit.com/r/Physics/comments/1153r0z/recommendations_for_diagram_drawing/",
+        "text": "What are the go to tools for making things like wiring diagrams, experimental setup diagrams, or even just simple things like free body diagrams. I feel like I’m at the point where I’d like to be a tad more professional than Microsoft shapes. Plus, dragging arrows around is such a pain sometimes.",
+        "created_utc": 1676684748,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can we get theoretical about the black hole/dark energy paper?",
+        "author": "RufussSewell",
+        "url": "https://www.reddit.com/r/Physics/comments/1152dae/can_we_get_theoretical_about_the_black_holedark/",
+        "text": "I think I’ve absorbed the concept at least a little bit. \n\nBlack holes contain larger amounts of vacuum energy than previously thought and their mass has grown at the same rate as the expansion of the universe and thus is the source dark energy. \n\nThis was predicted by Einstein but he didn’t think it would be correct. It also leaves no need for a singularity. \n\nWhat are some new ideas that this might lead to?",
+        "created_utc": 1676680652,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Enamel Pin Manufacturer | Custom Medals",
+        "author": "MakenzieCannc5",
+        "url": "https://custommedalsandpins.com",
+        "text": "",
+        "created_utc": 1676678099,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Scientists Uncover Anomaly In GRACE-FO Satellite Laser Ranging Data Over South-Atlantic",
+        "author": "CoherentPhoton",
+        "url": "https://405nm.com/grace-fo-satellite-laser-ranging-data-south-atlantic-anomaly/",
+        "text": "",
+        "created_utc": 1676675867,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Has there been any progress in the pursuit of a theory that unifies quantum mechanics and general relativity?",
+        "author": "MyFirstRedditUserID",
+        "url": "https://www.reddit.com/r/Physics/comments/11504td/has_there_been_any_progress_in_the_pursuit_of_a/",
+        "text": "My question is exactly what the title says.\n\nAs background: I took AP physics in high school and I did a chem &amp; math double major in college, but otherwise self-taught knowledge of physics. Last summer I heard an interview on NPR with Chanda Prescod-Weinstein about her book \"The Disordered Cosmos\" so I read it. I am a Black female scientist so I was attracted to the book because of its social commentary on the marginalization of black women/femmes within STEM fields, but I found myself very much interested in the physics parts of the book, most of which I was pretty much unfamiliar with. So I read \"The universe in a nutshell\" by Stephen Hawking and \"the theory of relativity and other essays\" by Albert Einstein. The Einstein essays are from the 1930s and 1940s (almost a century ago) and he talks about his skepticism of quantum mechanics and his pursuit of a field theory to explain elementary particles of matter. So now I am wondering, have physicists made any progress to describe motion and energy on the subatomic scale using relativity in the past hundred years, or do they only use wave/particle models?",
+        "created_utc": 1676674459,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My grandfather, Juan Maldonado, was a physicist. He’s dying and I want to understand his work. Can someone put this in laymen’s terms?",
+        "author": "Ask_platypus",
+        "url": "https://www.researchgate.net/profile/Juan-Maldonado-16",
+        "text": "Hi r/physics. My grandfather is Juan R Maldonado. He’s a physicist who worked for Bell Labs and Stanford, and from what I understand, did some important and interesting research. Unfortunately, every time he talked about his work, it went completely over my head. He now has final-stage dementia, so I can’t ask him to clarify.  I’m hoping someone here can summarize what his work was about? Obviously he did a lot of things in his long career, but instead of asking you to summarize the whole thing, I’ll focus on one of his more recent publications: High gradient rf gun studies of CsBr photocathodes. What does this mean? What was he working on and what are the implications? \n\nThank you in advance. His time is limited, and he can no longer talk to me about his work. I’d like to know a little more about what he did and what his impact was as I try and come to terms with his condition.",
+        "created_utc": 1676672614,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "One of my fav purchases ever :)",
+        "author": "Securetant",
+        "url": "https://i.redd.it/siueralvltia1.png",
+        "text": "",
+        "created_utc": 1676670998,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to change my research specialization after PhD?",
+        "author": "ytegab14",
+        "url": "https://www.reddit.com/r/Physics/comments/114ybcg/how_to_change_my_research_specialization_after_phd/",
+        "text": "[removed]",
+        "created_utc": 1676669749,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Vacuum energy calculations: modes of EM field vs positive and negative frequency modes",
+        "author": "FlexingIron2",
+        "url": "https://www.reddit.com/r/Physics/comments/114xz34/vacuum_energy_calculations_modes_of_em_field_vs/",
+        "text": "I have heard about and seen the calculations of the vacuum energy from various sources. According to this [video](https://youtu.be/8loIYt4QKqQ?t=2441), it says that the predicted vacuum energy is about\n\n\\\\varepsilon\\_\\\\Lambda \\\\sim 10\\^{114} J/m\\^{3}\n\nAnd the measured value is\n\n\\\\varepsilon\\_\\\\Lambda \\\\sim 10\\^{-10} J/m\\^{3}\n\nSo, this leads to the “worst prediction in physics”\n\n\\\\frac{predicted \\\\varepsilon\\_\\\\Lambda}{measured\\\\varepsilon\\_\\\\Lambda} \\\\sim 10\\^{124} \n\nI understand that. It involves summing all the modes of the EM field, meaning\n\n\\\\sum\\_{n=0}\\^{\\\\infty} \\\\hbar \\\\omega\\_n = \\\\infty\n\nWhich is not possible for the vacuum energy, so we enforce that the sum goes down to the plank length instead and we attain\n\n \\\\varepsilon\\_\\\\Lambda \\\\sim 10\\^{114} J/m\\^{3}\n\nWhich is still astronomically large.\n\nAll that is fine and good. However, I have heard in interviews with Leonard Susskind (I cannot remember where), that he said that in order to obtain the vacuum energy you have to sum over all the positive and negative frequency (positive and negative energy) modes in order to arrive at a positive vacuum energy value. This is because there is a small difference between the positive and negative modes that leads them being in unequal number, thus creating a net positive energy vacuum.\n\nAfter knowing this, it seems that the math done in the video is different from the sum of all positive and negative frequency modes of all quantum fields. The video only considers the EM field while the other considers all quantum fields and summing over them.\n\nI never seen the calculation of positive and negative frequency modes to arrive at the vacuum energy in textbooks or in videos. Would someone be able to show that here? It would greatly improve my understanding of the topic of the vacuum energy.\n\nI have posted this on [PSE](https://physics.stackexchange.com/questions/749853/vacuum-energy-calculations-modes-of-em-field-vs-positive-and-negative-frequency) but it did not receive much attention and that is why I am posting it here. Thanks.",
+        "created_utc": 1676668873,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Did you guys know the name of this optical effect?",
+        "author": "musicatristedonaruto",
+        "url": "https://v.redd.it/82s6as24ftia1",
+        "text": "",
+        "created_utc": 1676668620,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does the coriolis effect apply to light?",
+        "author": "Bjoern_Kerman",
+        "url": "https://www.reddit.com/r/Physics/comments/114xokx/does_the_coriolis_effect_apply_to_light/",
+        "text": "I asked this question a while ago to my professor. If I shine a laser down a deep hole, does the coriolis effect apply to it? \n\nWe both got to agreeing, that it *probably* *should* not apply but we did not find a reason why it shouldn't. \n\nMoving light particles have impulse so they have (a very tiny) mass. It's moving with a lot of speed. So the effect would apply. On the other hand, if coriolis would apply all our measurements we do using lasers would be off.\n\nOr would the wave character of light be significant here and if yes, why isn't it significant when calculating the impulse of light.",
+        "created_utc": 1676668146,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Vacuum energy calculations: modes of EM field vs positive and negative frequency modes",
+        "author": "FlexingIron2",
+        "url": "https://www.reddit.com/r/Physics/comments/114xlr2/vacuum_energy_calculations_modes_of_em_field_vs/",
+        "text": "I have heard about and seen the calculations of the vacuum energy from various sources. According to this \\[video\\]\\[1\\], it says that the predicted vacuum energy is about\n\n$$\\\\varepsilon\\_\\\\Lambda \\\\sim 10\\^{114} J/m\\^{3}$$\n\nAnd the measured value is\n\n$$\\\\varepsilon\\_\\\\Lambda \\\\sim 10\\^{-10} J/m\\^{3}$$\n\nSo, this leads to the “worst prediction in physics”\n\n$$\\\\frac{predicted \\\\varepsilon\\_\\\\Lambda}{measured\\\\varepsilon\\_\\\\Lambda} \\\\sim 10\\^{124} $$\n\nI understand that. It involves summing all the modes of the EM field, meaning\n\n$$\\\\sum\\_{n=0}\\^{\\\\infty} \\\\hbar \\\\omega\\_n = \\\\infty$$\n\nWhich is not possible for the vacuum energy, so we enforce that the sum goes down to the plank length instead and we attain\n\n $$\\\\varepsilon\\_\\\\Lambda \\\\sim 10\\^{114} J/m\\^{3}$$\n\nWhich is still astronomically large.\n\nAll that is fine and good. However, I have heard in interviews with Leonard Susskind (I cannot remember where), that he said that in order to obtain the vacuum energy you have to sum over all the positive and negative frequency (positive and negative energy) modes in order to arrive at a positive vacuum energy value. This is because there is a small difference between the positive and negative modes that leads them being in unequal number, thus creating a net positive energy vacuum.\n\nAfter knowing this, it seems that the math done in the video is different from the sum of all positive and negative frequency modes of all quantum fields. The video only considers the EM field while the other considers all quantum fields and summing over them.\n\nI never seen the calculation of positive and negative frequency modes to arrive at the vacuum energy in textbooks or in videos. Would someone be able to show that here? It would greatly improve my understanding of the topic of the vacuum energy.\n\n  \\[1\\]: [https://youtu.be/8loIYt4QKqQ?t=2441](https://youtu.be/8loIYt4QKqQ?t=2441)",
+        "created_utc": 1676667951,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to perform energy efficient ultrafast light-induced magnetization reversal at nanoscale ? Check this issue in Advanced Science",
+        "author": "TheFrenchyPhysicist",
+        "url": "https://doi.org/10.1002/advs.202204683",
+        "text": "",
+        "created_utc": 1676661509,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Will this object rotate? If so what makes one part of the box go forward and another drag behind.",
+        "author": "yabadabadoo4207",
+        "url": "https://i.redd.it/20c3l2v91uia1.jpg",
+        "text": "[removed]",
+        "created_utc": 1676658078,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Escape velocity",
+        "author": "hygili4k",
+        "url": "https://www.reddit.com/r/Physics/comments/114s3s8/escape_velocity/",
+        "text": "Hello guys.\n\nI am confused with the concept of escape velocity. I'd like to know if I have a powerful enough rocket, but slow bellow the escape velocity of a celestial body, with a constant pull can it escape the gravity of the celestial body?\n\nThank you in advance.",
+        "created_utc": 1676654066,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can i take up physics after college?",
+        "author": "shakesppear",
+        "url": "https://www.reddit.com/r/Physics/comments/114qqc7/can_i_take_up_physics_after_college/",
+        "text": "So basically I'm from a place where the physics programs at college are just really bad and i can't afford to study abroad. But thing is I find physics and math really fascinating, especially quantum physics, so I was just wondering if these are things i can pursue as a masters degree or something else after studying computer science (which i also like) at college. Or should i just study physics from here anyway (cuz its pretty bad)? I'm open to literally any option. \n\nEssentially I'm interested in physics, math and computer science but i have no clue how to do all three\n\nAlso what are the different types of jobs I can do with all three of those subjects?\n\nthanks for any help!",
+        "created_utc": 1676651011,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If the cosmological principle was violated, would this mean that fundamental symmetries are violated in different places?",
+        "author": "stifenahokinga",
+        "url": "https://www.reddit.com/r/Physics/comments/114qami/if_the_cosmological_principle_was_violated_would/",
+        "text": "The cosmological principle assumes that all laws of physics are the same no matter where you are in the universe [1]\n\nHowever, what would it mean if we lived in a universe that violates the cosmological principle (a universe that is not homogeneous, not uniform and not isotropic). Would it mean that all fundamental symmetries could be broken depending on your location in the universe? \n\nUntil recently I thought that breaking the Lorentz invariance would mean that all fundamental laws and symmetries would be broken for different observers but I learnt that fundamental laws would not necessarily change for different observers and that some symmetries (like internal/gauge symmetries) would remain intact. But according to the the link I gave before, if the cosmological principle was found to be invalid then truly fundamental laws of physics would change for different observers in different locations. \n\nTherefore, if the breaking of the Lorentz invariance does not necessarily mean that there are different fundamental laws for different observers, but if the cosmological principle was violated it would mean that fundamental laws would change, would all fundamental symmetries (not only the Lorentz invariance) be broken for different locations in that case?\n\n[1]: https://whatifshow.com/what-if-the-universe-isnt-uniform/",
+        "created_utc": 1676650271,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Scientists find first evidence that black holes are the source of dark energy",
+        "author": "indigenous_apache",
+        "url": "https://www.guardianmag.us/2023/02/scientists-find-first-evidence-that.html?m=1",
+        "text": "",
+        "created_utc": 1676649573,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a scıence cookbook like the Course Companion Harvard Book that contains only physics ?",
+        "author": "Lopsided_Cricket_155",
+        "url": "https://www.reddit.com/r/Physics/comments/114ophh/is_there_a_scıence_cookbook_like_the_course/",
+        "text": " **Is there a scıence cookbook like the Course Companion Harvard Book that contains only physics ?**",
+        "created_utc": 1676648032,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the best structure of a falling object such that it is least affected by side wind?",
+        "author": "BillyTheBillbob",
+        "url": "https://www.reddit.com/r/Physics/comments/114ncft/what_is_the_best_structure_of_a_falling_object/",
+        "text": "[removed]",
+        "created_utc": 1676646136,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Changing from Windows 11 to Linux ?",
+        "author": "Vikastroy",
+        "url": "https://www.reddit.com/r/Physics/comments/114l07l/changing_from_windows_11_to_linux/",
+        "text": "I'm a new PhD student in experimental high energy physics and also new at computing stuff. The most I know is python and I have just started to learn C++. My guide and also many seniors use Mac and Linux os, whereas I have Windows 11 home on my laptop. They ask me to change to Linux. At first, I panicked thinking that is my laptop is wasted and I have to buy a new one or something. But then I heard that you can just delete windows 11 and install Ubuntu 20.04 and use it. Can I ask my retailer to do it or I have to do it myself coz I'm kinda afraid that I will do something bad.\n\nAlso, why do students or profesors prefer Ubuntu over windows?",
+        "created_utc": 1676642544,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Textbooks &amp; Resources - Weekly Discussion Thread - February 17, 2023",
+        "author": "AutoModerator",
+        "url": "https://www.reddit.com/r/Physics/comments/114ky7a/textbooks_resources_weekly_discussion_thread/",
+        "text": "This is a thread dedicated to collating and collecting all of the great recommendations for textbooks, online lecture series, documentaries and other resources that are frequently made/requested on /r/Physics.\n\nIf you're in need of something to supplement your understanding, please feel welcome to ask in the comments.\n\nSimilarly, if you know of some amazing resource you would like to share, you're welcome to post it in the comments.",
+        "created_utc": 1676642420,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What would an electron in a superposed state \"see\"?",
+        "author": "quququa",
+        "url": "https://www.reddit.com/r/Physics/comments/114hz1y/what_would_an_electron_in_a_superposed_state_see/",
+        "text": "[removed]",
+        "created_utc": 1676632550,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "is there anyone need help with his homework ?",
+        "author": "Icy-Succotash7454",
+        "url": "https://www.reddit.com/r/Physics/comments/114fo04/is_there_anyone_need_help_with_his_homework/",
+        "text": "",
+        "created_utc": 1676627532,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Could gravity be a result of the nature of particles, rather than part of their nature?",
+        "author": "andrespngz",
+        "url": "https://www.reddit.com/r/Physics/comments/114fl8i/could_gravity_be_a_result_of_the_nature_of/",
+        "text": "Sort of how color isn't a property of light, but rather a phenomenom caused by the properties of light, maybe quantum gravity isn't really a thing? \n\nI'm a complete physics noob, but I was wondering whether gravity had something to do with statistics. If at the deepest level of particle physics particles exist sort of on a probability distribution of where they are, maybe the \"probability distribution\" of one particle affects another, causing it to be more likely for particle to want to exist wherever there are more particles.\n\nIf particles want to exist wherever they are more likely to exist, it would mean that particles want to exist around other particles, so they inevitably pull together. This doesn't explain how bigger clumps of mass exert gravity over longer distances than smaller clumps of mass, but my friends told me this seemed like a cool idea and since I don't have the tools to develop this theory I thought I'd share it and see if it's actually any good.",
+        "created_utc": 1676627212,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Revolutionary Solar Panels: New Ferroelectric Crystals Boost Photovoltaic Effect by 1000x",
+        "author": "National-Evidence-66",
+        "url": "https://www.shifted.in/2023/02/revolutionary-solar-panels-new.html?m=1",
+        "text": "",
+        "created_utc": 1676626678,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Flat mars society",
+        "author": "kCharminas",
+        "url": "https://i.redd.it/w2hdy8t0wpia1.png",
+        "text": "",
+        "created_utc": 1676625932,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "industry job with a physics degree",
+        "author": "Evening_Spinach6087",
+        "url": "https://www.reddit.com/r/Physics/comments/114f36q/industry_job_with_a_physics_degree/",
+        "text": "I'm graduating with a BS in physics in May, and I've been applying to a bunch of industry jobs recently. I'm applying to mostly software/data science jobs, but I have not gotten a single interview. Though it's a lot of programming, all I've done in college is research (because I wanted to go to grad school until very recently and when I changed my mind it was too late to switch my major to something else. It was my senior year), and I'm starting to realize that employers do not care about my research experiences/internship or publications at all. I just feel hopeless that I worked so hard to get this degree, and it's getting me 0 job offers let alone interviews. I'm starting to think that my degree is completely useless. Did anyone here successfully get an industry job with a physics degree? If so, what was your strategy? What advice do you have for me? I made sure to tailor my resume for industry so that it's less academic and CV looking. I guess it really is a stretch to get a job outside of physics...",
+        "created_utc": 1676625094,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My amateur study of the vortex showed contradictions in hydrodynamics and possibly fundamental physics.",
+        "author": "pavlokandyba",
+        "url": "https://ojs.ukrlogos.in.ua/index.php/2663-4139/article/view/14185/13047",
+        "text": "",
+        "created_utc": 1676611051,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Theory of everything and spontaneous symmetry breaking?",
+        "author": "stifenahokinga",
+        "url": "https://www.reddit.com/r/Physics/comments/1149gf0/theory_of_everything_and_spontaneous_symmetry/",
+        "text": "Inagine our universe was described by a fundamental theory of everything (like string theory). Then the vacuum underwent a phase transition and now the fundamental symmetries of the underlying theory are spontaneously broken. Could we say that string theory applies to this new vacuum if all the fundamental symmetries of the theory would be spontaneously broken?",
+        "created_utc": 1676604447,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I know the General Relativity theory already suggests that the universe is 4 dimensional, but I thought of another way to prove it.",
+        "author": "PressureSure",
+        "url": "https://www.reddit.com/r/Physics/comments/114913y/i_know_the_general_relativity_theory_already/",
+        "text": "I’m not sure if this has been said before, but let me explain.\n\nWhen we graph a function on a 2 dimensional plane, the result is a 1 dimensional line that curves along the plane. \n\nSince photons, when observed, travel as 3 dimensional waves that can be graphed as a function similar to the 1 dimensional line, the wave must exist on a 4 dimensional plane.",
+        "created_utc": 1676603144,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Astronomy/Physics",
+        "author": "Austynation",
+        "url": "https://www.reddit.com/r/Physics/comments/1147qu4/astronomyphysics/",
+        "text": "",
+        "created_utc": 1676599297,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Recommendations",
+        "author": "Personal-Ad-3761",
+        "url": "https://www.reddit.com/r/Physics/comments/1145g5h/recommendations/",
+        "text": "Could you recomend an electromagnetism book? I need it to be a book for a physics degree student.",
+        "created_utc": 1676592649,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can someone help me with this question?",
+        "author": "Gh0stieeeee",
+        "url": "https://i.redd.it/7nsowzvggoia1.jpg",
+        "text": "I am a physics student in secondary school and I would like to ask for someone to do these two questions and provide working and formulas so I can properly understand and can recreate. If possible please explain why each major step is done",
+        "created_utc": 1676590541,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hey physics people! Does anyone know how these floating orb toys work? I’ve seen people say it’s using Bernoullis theory all the way to saying it’s using a torque, this just doesn’t feel right so I was wondering if anyone could explain. (they could totally be right but I’m just curious)",
+        "author": "i_dont_eXiisT1",
+        "url": "https://i.redd.it/fwnhnztjfoia1.jpg",
+        "text": "",
+        "created_utc": 1676590232,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Will this natural water filter flow forever?",
+        "author": "Virta15",
+        "url": "https://v.redd.it/otnjgj1dwnia1",
+        "text": "",
+        "created_utc": 1676583798,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Quantum Field Theory Pries Open Mathematical Puzzle",
+        "author": "gravitationalfield",
+        "url": "https://www.quantamagazine.org/quantum-field-theory-pries-open-mathematical-puzzle-20230216/",
+        "text": "",
+        "created_utc": 1676582968,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How long will this natural water filter flow for?",
+        "author": "Virta15",
+        "url": "https://youtube.com/shorts/MCO-5bk6tAE?feature=share",
+        "text": "",
+        "created_utc": 1676582713,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "double halo rainbow? how dis real? please.",
+        "author": "insightfullmess",
+        "url": "https://v.redd.it/gha31jgs8mia1",
+        "text": "",
+        "created_utc": 1676581745,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Electromagnetic field, electrostatic medium, and ionospheric cavity",
+        "author": "mechmi0",
+        "url": "https://www.reddit.com/r/Physics/comments/1140tby/electromagnetic_field_electrostatic_medium_and/",
+        "text": "I am reading something in which these terms are used almost interchangeably. Could someone please explain what any of them mean and the differences between them? \n\nThanks in advance",
+        "created_utc": 1676580860,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I proceed with this?",
+        "author": "bright_blue_fire",
+        "url": "https://www.reddit.com/r/Physics/comments/1140qbr/should_i_proceed_with_this/",
+        "text": "https://www.scientificamerican.com/article/slide-show-do-it-yourself-diy-quantum-eraser/\n\nI saw lot of discouraging comments &amp; reviews regarding the above cited delayed choice quantum eraser experiment \n\nCan someonw please clarify wheather theanove cited article published by Scientific American legitimate or not \n\nWill it be called 'delayed choice quantum eraser'?",
+        "created_utc": 1676580641,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does a vacuum that spontaneously break symmetries have those symmetries?",
+        "author": "stifenahokinga",
+        "url": "https://www.reddit.com/r/Physics/comments/113ywm4/does_a_vacuum_that_spontaneously_break_symmetries/",
+        "text": "I am studying the concept of the vacuum and I am having some difficults when understanding the spontaneous break of symmetries\n\nFor example, we have a set of fundamental symmetries (Poincaré invariance, Lorentz invariance, CPT symmetry, gauge symmetries, time translation symmetry, space translation symmetry...) which explain the fundamental laws of the universe. But, can there be vacua that spontaneously break these symmetries? So, even if they would be at the fundamental level, would that vacuum not experience those symmetries? I mean, if we lived in such a vacuum, would we see violations of all these symmetries? But if we did, why would they still be fundamental if they would be violated?",
+        "created_utc": 1676575919,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can a switch without connection short-circuit?",
+        "author": "Turbulent-Broccoli97",
+        "url": "https://www.reddit.com/r/Physics/comments/113ynt8/can_a_switch_without_connection_shortcircuit/",
+        "text": "Hi,\n\nI'm feeling really dumb to post this, but I really am confused.\n\n\nMy friend claims that he burned his fingers from short-circuit while trying to turn the switch of a power supply on.\n\nI went over and really did saw the plastic switch melted (He claimed it caught fire) and black soot covering the area.\n\nHe showed his hands and he got blisters in 2 of his fingertips, while the rest 3 wasn't that serious, just mildly burned. \n\nHe went over to the doctor, and the doctor prescribed him to use ointments and bandaid.\n\nWe together decided to take the power supply to a repairman to see what went wrong. \n\nThe repairman dismantled the power supply infront of us, and it was revealed that the switch that got melted WASN'T EVEN CONNECTED TO THE SOURCE!\n\nHow is this even possible!?\n\nThe repairman fiddled with the wires, checked with ammeter and voltmeters, still couldn’t figure out how did the switch short-circuit. \n\nTo give a bit of context, \n\nThe switch that he turned on wasn’t of the power supply itself, but one supposed to be connected to the \"main\" source of his electricity. For some reason unknown, the switch later wasn’t connected to the main source as it was supposed to.\n\nGenerally, the other switch (There are only 2) is just for turning the power supply off and on. Nothing else.\n\nHe told me that the power supply was malfunctioning. He couldn’t figure out why, but he was sure it's battery was full, because he recharged it hours ago.\n\nSo he decided to \"Do random stuff till it gets fixed\". He plugged, unplugged, switched outlets, and at the very end, turned the \" main\" switch on.\n\nI tried to think about it, and all I can think of is that something paranormal happened.\n\nBecause, can a switch that isn’t even connected to the source really short-circuit?\n\n\nPardon me if I'm asking a dumb question.\n\n\nThanks.",
+        "created_utc": 1676575288,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "İs it possible to turn a black hole into a normal dwarf star etc.",
+        "author": "GAIUSS2",
+        "url": "https://www.reddit.com/r/Physics/comments/113ylzm/is_it_possible_to_turn_a_black_hole_into_a_normal/",
+        "text": "So a black hole occurs when a super massive star dies and lost his force of pushing itself from collapsing so the new born black holes are similar to stars but with out push force and much more density I just wondered what would happen if we create a similar pull force that similuate a stars push force from it's core wouldn't ot negate the pull force of a black hole?(I assume nothing would happen bc of when 2 black hole collided nothing happen but i still wonder maybe there is something that i am missing)",
+        "created_utc": 1676575161,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "New black hole, dark energy hypothesis and its implications on the far future.",
+        "author": "mixmasterpayne",
+        "url": "https://www.reddit.com/r/Physics/comments/113yjfd/new_black_hole_dark_energy_hypothesis_and_its/",
+        "text": "How would this new hypothesis rectify with Hawking radiation? What are the implications for the far future of the universe. \n\nIf black holes are the cause of positive vacuum energy that fuels the expanding universe and black holes evaporate, does that mean that the cosmological constant will eventually decrease?",
+        "created_utc": 1676574977,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can a switch without connection short-circuit?",
+        "author": "Turbulent-Broccoli97",
+        "url": "https://www.reddit.com/r/Physics/comments/113y9e9/can_a_switch_without_connection_shortcircuit/",
+        "text": "Hi,\n\nI'm feeling really dumb to post this, but I really am confused.\n\n\nMy friend claims that he burned his fingers from short-circuit while trying to turn the switch of a power supply on.\n\nI went over and really did saw the plastic switch melted (He claimed it caught fire) and black soot covering the area.\n\nHe showed his hands and he got blisters in 2 of his fingertips, while the rest 3 wasn't that serious, just mildly burned. \n\nHe went over to the doctor, and the doctor prescribed him to use ointments and bandaid.\n\nWe together decided to take the power supply to a repairman to see what went wrong. \n\nThe repairman dismantled the power supply infront of us, and it was revealed that the switch that got melted WASN'T EVEN CONNECTED TO THE SOURCE!\n\nHow is this even possible!?\n\nThe repairman fiddled with the wires, checked with ammeter and voltmeters, still couldn’t figure out how did the switch short-circuit. \n\nTo give a bit of context, \n\nThe switch that he turned on wasn’t of the power supply itself, but one supposed to be connected to the \"main\" source of his electricity. For some reason unknown, the switch later wasn’t connected to the main source as it was supposed to.\n\nGenerally, the other switch (There are only 2) is just for turning the power supply off and on. Nothing else.\n\nHe told me that the power supply was malfunctioning. He couldn’t figure out why, but he was sure it's battery was full, because he recharged it hours ago.\n\nSo he decided to \"Do random stuff till it gets fixed\". He plugged, unplugged, switched outlets, and at the very end, turned the \" main\" switch on.\n\nI tried to think about it, and all I can think of is that something paranormal happened.\n\nBecause, can a switch that isn’t even connected to the source really short-circuit?\n\n\nPardon me if I'm asking a dumb question.\n\n\nThanks",
+        "created_utc": 1676574262,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Noob question that is bugging me.",
+        "author": "Papapadopoulos",
+        "url": "https://www.reddit.com/r/Physics/comments/113vyq7/noob_question_that_is_bugging_me/",
+        "text": "I have 2 same bulbs connected in parallel. \n\nIf one burns out will the other one get brighter since all the electrons are going through that path?\n\ncheers",
+        "created_utc": 1676568405,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Noob question that is bugging me.",
+        "author": "Papapadopoulos",
+        "url": "https://www.reddit.com/r/Physics/comments/113vyif/noob_question_that_is_bugging_me/",
+        "text": "I have 2 same bulbs connected in parallel. \n\nIf one burns out will the other one get brighter since all the electrons are going through that path?\n\ncheers",
+        "created_utc": 1676568390,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Scientists Can Now Map Lightning in 3D",
+        "author": "Galileos_grandson",
+        "url": "https://eos.org/research-spotlights/scientists-can-now-map-lightning-in-3d",
+        "text": "",
+        "created_utc": 1676563065,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Gravity",
+        "author": "jalspace",
+        "url": "https://www.reddit.com/r/Physics/comments/113tsou/gravity/",
+        "text": "Ou. So little energy element. But, it is a very wearing. How long time need to go, when We can understand it. What is mechanism in the background?",
+        "created_utc": 1676562862,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Shooting from a moving vehicle.",
+        "author": "shortbus-admiral",
+        "url": "https://www.reddit.com/r/Physics/comments/113trg0/shooting_from_a_moving_vehicle/",
+        "text": "Thought of this while watching a video of some road rage. Would physics allow you to shoot someone’s tires out while driving at highway speed approx 60-70 mph. I want to think yes but feel that the air traveling over the vehicle would disturb flight path of a bullet",
+        "created_utc": 1676562765,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I have slightly mind boggling ( or maybe retarded ) question.",
+        "author": "itsmeDreadShock",
+        "url": "https://www.reddit.com/r/Physics/comments/113sehc/i_have_slightly_mind_boggling_or_maybe_retarded/",
+        "text": "If something travels faster than the speed of light, it starts going back in time ya ?  Obviously, I mean in theoretical context.\n\nSo assuming some mega explosion in space far away (currently in 2023) has caused an asteroid to go faster than the speed of light towards earth, does that mean the asteroid would hit (or shoot through like a bullet) earth millions of years ago (in the past) ?",
+        "created_utc": 1676559151,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Periodic transparent nanowires in ITO film fabricated via femtosecond laser direct writing",
+        "author": "Badatu",
+        "url": "https://www.oejournal.org/article/doi/10.29026/oes.2023.220002",
+        "text": "",
+        "created_utc": 1676558372,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Careers/Education Questions - Weekly Discussion Thread - February 16, 2023",
+        "author": "AutoModerator",
+        "url": "https://www.reddit.com/r/Physics/comments/113r9v0/careerseducation_questions_weekly_discussion/",
+        "text": "This is a dedicated thread for you to seek and provide advice concerning education and careers in physics.\n\nIf you need to make an important decision regarding your future, or want to know what your options are, please feel welcome to post a comment below.\n\nA few years ago we held a graduate student panel, where many recently accepted grad students answered questions about the application process.  That [thread is here](https://www.reddit.com/r/Physics/comments/3i5d4u/graduate_student_panel_fall_2015_1_ask_your/), and has a lot of great information in it.\n\nHelpful subreddits: /r/PhysicsStudents, /r/GradSchool, /r/AskAcademia, /r/Jobs, /r/CareerGuidance",
+        "created_utc": 1676556018,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just a little question",
+        "author": "Beaky_Sneaky_Unlike",
+        "url": "https://www.reddit.com/r/Physics/comments/113pkel/just_a_little_question/",
+        "text": "So I was studying some nuclear reactions and stumbled upon a question which I cannot seem to get a definitive answer.\n\nthe question is multiple choice based question which reads as-\n\n \" In nuclear reactions, there is a conservation of...\"\n\n1. Energy only\n2. mass only\n3. Energy, mass and momentum\n4. Momentum only\n\nNow my guess is that it should be third option, but I'm confused because some mass is converted to energy in nuclear reactions and mass defect occurs. My reasoning is that since mass is equal to energy, the total quantities should still be conserved?\n\nYour opinions and thoughts are welcomed, thanks in advance for giving my question your time.",
+        "created_utc": 1676550806,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The universe is a perpetual motion generator. Change my mind",
+        "author": "Glittering-Net-1133",
+        "url": "https://i.redd.it/5jzvvscz4jia1.jpg",
+        "text": "",
+        "created_utc": 1676544147,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can you explain hierarchy problem to me, especially the gravity part?",
+        "author": "MichalMali",
+        "url": "https://www.reddit.com/r/Physics/comments/113n8bw/can_you_explain_hierarchy_problem_to_me/",
+        "text": "Hi All,\nCan someone explain to me why physicists worry about \"hierarchy problem\"? From what I understood one of the examples is that gravity is much weaker than the other 3 forces and this discrepancy is apparently worrying. How does that square up with the notion that gravity is not a force but a manifestation if curved spacetime? \nPlease be gentle. I am just a simple chemist.\nCheers",
+        "created_utc": 1676542125,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "potential difference",
+        "author": "AntiGoi",
+        "url": "https://www.reddit.com/r/Physics/comments/113mrna/potential_difference/",
+        "text": "Hey, I am trying to understand voltage a bit better on the atomic level, when we say potential difference, are we talking about between electrons and protons? Also, is that exclusive or can happen with different \" arrangements\"",
+        "created_utc": 1676540272,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can someone please provide the Mathematica code to calculate the renormalized Fermi velocity of twisted bilayer graphene? following the BM Hamiltonian.",
+        "author": "Bong95",
+        "url": "https://www.reddit.com/r/Physics/comments/113mbnr/can_someone_please_provide_the_mathematica_code/",
+        "text": "",
+        "created_utc": 1676538411,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If the laws of physics change on a small inough scalle, so what do we know about them on a big inough scalle?",
+        "author": "jozebaze",
+        "url": "https://www.reddit.com/r/Physics/comments/113m4cy/if_the_laws_of_physics_change_on_a_small_inough/",
+        "text": "i know very litle about physics so sorry if its a dumb question. \n\nBut im very qurious.\nWe know that when we \"zoom in\" inough the laws of physics change. What if we where to \"zoom out\" the same ammount? or even more? what do the laws of physics look like when our galaxy is the equivalent in size of a subatomic particle?\n\noviously i know it cant be directly researched but are there any theories? \n\nsorry again if the question itself is flawed.",
+        "created_utc": 1676537548,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "how to transform a diagram from pressure and temperature axis to pressure and volume. i know that 1-2 is izobaric and 1-2 is isothermal, but i dont know how to draw the diagram.",
+        "author": "nfisrealiamevidence",
+        "url": "https://i.redd.it/f61cqq90jiia1.png",
+        "text": "",
+        "created_utc": 1676536795,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can someone explain me this?",
+        "author": "FilmTop7590",
+        "url": "https://www.reddit.com/r/Physics/comments/113lkll/can_someone_explain_me_this/",
+        "text": "“Newton argued that this would indeed happen if there were only a finite number of stars distributed over a finite region of space. But he reasoned that if, on the other hand, there were an infinite number of stars, distributed more or less uniformly over infinite space, this would not happen, because there would not be any central point for them to fall to.”\n\nI’m not able to make sense of this.",
+        "created_utc": 1676535259,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": ":)",
+        "author": "temufan2001",
+        "url": "https://www.reddit.com/r/Physics/comments/113jd5m/_/",
+        "text": "[removed]",
+        "created_utc": 1676526738,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Difficulty finding employment",
+        "author": "Masshole0617",
+        "url": "https://www.reddit.com/r/Physics/comments/113icte/difficulty_finding_employment/",
+        "text": "I recently graduated with a bachelor’s degree in physics in May 2022 and haven’t had any luck getting hired anywhere. I am an army veteran if that helps too. Is it this hard for everyone to find employment?",
+        "created_utc": 1676523182,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Pressure coming out of syringes",
+        "author": "TspoonT",
+        "url": "https://www.reddit.com/r/Physics/comments/113hq6p/pressure_coming_out_of_syringes/",
+        "text": "If you have a 1ml syringe with a narrow barrel and a wider diameter barrel 10ml syringe.  The exit hole size is identical for both syringes.\n\nNurses at the hospital I work are taught that for iv injections you must use the wider barrel syringes (larger 10ml) because the exit pressure is lower. \n\nIs this true?\n\nIf the rate of injection is the same x/mls per second,  surely the pressures are identical?\n\nIs it a case that you are able to generate higher potential pressures with the smaller barrels?",
+        "created_utc": 1676521045,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to properly learn physoics?",
+        "author": "EternalContemplator",
+        "url": "https://www.reddit.com/r/Physics/comments/113gxuo/how_to_properly_learn_physoics/",
+        "text": "Hi, I am a college student trying to major in physics, however things are not going so well.\n\n i do not care about other courses as long as I understand my craft. However, the questions the professors put in the exams and the slides are just so difficult and their accents don't help with understanding the content.\n\n&amp;#x200B;\n\nWHat is a tried and true way I can catch up to the content and solidify my learning at the same time?\n\n&amp;#x200B;\n\nI do not have money for tutoring as most of it goes to my college tuition and sustenance.\n\n&amp;#x200B;\n\nThanks!",
+        "created_utc": 1676518498,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does anyone know the maths here? I don't necessarily want the \"textbook\" method, any type of mathematical proof would be appreciated, thanks!",
+        "author": "PhysicsEnthusiast001",
+        "url": "https://i.redd.it/6yg51qzeciia1.jpg",
+        "text": "",
+        "created_utc": 1676516537,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Simple physics problem with non intuitive correct answer.",
+        "author": "_electrodacus",
+        "url": "https://www.reddit.com/r/Physics/comments/113e9mp/simple_physics_problem_with_non_intuitive_correct/",
+        "text": "Vehicle in this [diagram](http://electrodacus.com/temp/Windup.png) has the output wheel (left wheel) on a slippery surface (red box) with static friction coefficient of 0.25 and kinetic friction of 0.15 while input wheel (right wheel) has excellent grip on the treadmill with say static friction coefficient of 0.6 and kinetic 0.4.  \nThe wheels are connected with a belt and the diameter of the left pulley is twice as large as the one on the right. Weight distribution is 50% so same weight on both wheels.\n\nVehicle start as stationary and the treadmill is turned ON. Surface of the treadmill will move to the left as indicated by arrows.\n\nQuestion is what will happen with the vehicle ?\n\nhttps://preview.redd.it/xlfgontyagia1.jpg?width=1920&amp;format=pjpg&amp;auto=webp&amp;v=enabled&amp;s=773854fe0c32ca58aefbf4e380d054c020f1a0d1\n\n[View Poll](https://www.reddit.com/poll/113e9mp)",
+        "created_utc": 1676510390,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Finding coefficient of kinetic friction",
+        "author": "Onkey123",
+        "url": "https://www.reddit.com/r/Physics/comments/113d709/finding_coefficient_of_kinetic_friction/",
+        "text": "Does anyone happen to know the coefficient of friction between paper and a toy car with plastic wheels? If not the exact value, would it be high or low, or what would you guess the coefficient would be?",
+        "created_utc": 1676507315,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "im not sure but could this guy be a genius?, would like the opinion from people who know more about physics than me",
+        "author": "rippersocial",
+        "url": "https://www.youtube.com/watch?v=0xShho0JW_0&amp;t=298s",
+        "text": "",
+        "created_utc": 1676502982,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A Preferential Growth Channel for Supermassive Black Holes in Elliptical Galaxies at z ≲ 2 - IOPscience",
+        "author": "On_The_Road_13",
+        "url": "https://iopscience.iop.org/article/10.3847/1538-4357/acac2e",
+        "text": "",
+        "created_utc": 1676502382,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "An Intriguing Problem",
+        "author": "Salty-Rodrick",
+        "url": "https://www.reddit.com/r/Physics/comments/113ajfy/an_intriguing_problem/",
+        "text": "  \nAt the same moment, two balls of the same mass take off (with an infinitesimal impulse) from point A to point B along two different paths (Trajectory 1 = Red line, Trajectory 2 = Blue line). These trajectories are created from a single curve by a simple 180° rotation.\n\n&amp;#x200B;\n\nhttps://preview.redd.it/faax4qgaifia1.png?width=1555&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=cd7a5f7962a37be857777a91649d06b588516f51\n\nI've been given this problem by my professor for fun, but I can't wrap my head around it. So, any ideas?  \nApparently the balls don't reach point B at the same time.",
+        "created_utc": 1676500294,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can this Rule 30 thing apply to physics? I know little about physics and even less about computer science.",
+        "author": "New_Language4727",
+        "url": "https://www.reddit.com/r/Physics/comments/1137ow8/can_this_rule_30_thing_apply_to_physics_i_know/",
+        "text": "I came across this thing called rule 30 when I was looking at wolfram’s model, and I wasn’t sure if this could apply to physics, as it describes how his model can both violate and not violate bell’s theorem. I came across this comment:\n\nIt can allow for both, actually. All that's required is for otherwise distant nodes to have some connections to each other in the hypergraph. So imagine that there are typically 30 connections between clusters of nodes which make up space.\nEntangled particles may have 31 connections, so they are 'distant' spatially yet can influence each other via that extra connection. When one takes the state of up, the other becomes down.",
+        "created_utc": 1676492953,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Scientists find first evidence that black holes are the source of dark energy",
+        "author": "Beatnik77",
+        "url": "https://www.imperial.ac.uk/news/243114/scientists-find-first-evidence-that-black/",
+        "text": "",
+        "created_utc": 1676492861,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Electrons with opposite spins",
+        "author": "Infj6w5-1w9-4w5",
+        "url": "https://www.reddit.com/r/Physics/comments/1137h2b/electrons_with_opposite_spins/",
+        "text": "[removed]",
+        "created_utc": 1676492367,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does mass affect the speed of an object already in motion?",
+        "author": "Jazzlike_Surprise985",
+        "url": "https://www.reddit.com/r/Physics/comments/1135z7v/does_mass_affect_the_speed_of_an_object_already/",
+        "text": "So here's a thought experiment that I've been trying to find answers too. \n\nImagine a cannonball is fired in the vacuum of space. It reaches a constant speed and there are no forces/friction acting on it. \n\nIf the mass of the cannonball suddenly (magically) increased, would it affect the speed of the cannonball? \n\nSome sources I read say that a higher mass would mean more kinetic energy would need to be applied, but that is considering the cannonball is at rest. What if it's already moving? Would it continue moving at the same speed regardless of it's mass?",
+        "created_utc": 1676488469,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Double slit Experiment question",
+        "author": "Halle_K",
+        "url": "https://www.reddit.com/r/Physics/comments/1135bw3/double_slit_experiment_question/",
+        "text": "[removed]",
+        "created_utc": 1676486786,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "how do I start learning physics",
+        "author": "mantel200",
+        "url": "https://www.reddit.com/r/Physics/comments/11350tk/how_do_i_start_learning_physics/",
+        "text": "I didn't learn physics in school but I want to start now. I can't go to university or pay money for any books or classes. Can I learn on my own? Im not very good at math but I can do some if necessary. Thank you",
+        "created_utc": 1676486007,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Quantum computing",
+        "author": "e_lonmustard",
+        "url": "https://www.reddit.com/r/Physics/comments/11348gd/quantum_computing/",
+        "text": "Hi, I just finished my bachelor in physics and I'm interested in quantum computing. Whats the best literature to get into the subject?",
+        "created_utc": 1676484030,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "hello, I’m asking for your advice!",
+        "author": "searchingf0rthetruth",
+        "url": "https://www.reddit.com/r/Physics/comments/1133om2/hello_im_asking_for_your_advice/",
+        "text": "\nI’m 13 going on 14 soon and I’m extremely interested in astronomy/astrophysics. I really want to study it in the future at uni and look into jobs including astrophysics. I’m wondering how can I start from now? I’m in top classes for maths and all sciences. But I feel like I could be doing more? I live in the uk btw.  What do you recommend me doing?\nBtw do I need to be good at coding?",
+        "created_utc": 1676482613,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Here’s why icicles made from pure water don’t form ripples - The skewers grow drop by drop instead of via a coat of water like their salty counterparts",
+        "author": "Galileos_grandson",
+        "url": "https://www.sciencenews.org/article/icicles-pure-water-salt-ripples",
+        "text": "",
+        "created_utc": 1676480318,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fully objective comparison of grad schools for High Energy Physics",
+        "author": "zPrimeCoupling",
+        "url": "https://www.reddit.com/r/Physics/comments/1132lq9/fully_objective_comparison_of_grad_schools_for/",
+        "text": "Hi Physics, I need some advice\n\nMy area is high energy physics-exp and ph (phenomenology of DM).\n\nAside from faculty, location, etc. I am trying to objectively compare the following schools with regards to department size, degree of opportunity with regards training in multiple disciplines (computational, plasma physics, experimental particle/nuclear crossover), and prestige/ranking. I am having a hard time parsing out the differences and advantages of one over the others:\n\n&amp;#x200B;\n\nMSU, OSU, UVA, UMASS, Case Western.\n\n&amp;#x200B;\n\nANY input/help/advice would be appreciated. My question is, from which of these would I more likely have a larger number of publications; more exposure to national/international conferences and researchers, etc.\n\n&amp;#x200B;\n\nThanks!",
+        "created_utc": 1676480228,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "in a space vacuum",
+        "author": "bansie1234",
+        "url": "https://www.reddit.com/r/Physics/comments/1130x5d/in_a_space_vacuum/",
+        "text": "if your in the vacuum of space and there is no resistance is an object moving at warp speed always moving in warp speed. if yes how do you slow it down?",
+        "created_utc": 1676475763,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Grade 12 Physics. It's been 15+ years since I last took Physics, &amp; I need help! I was trying to calculate Total Displacement of these 2 Vectors &amp; my answer is wrong. I tried keeping 6-8 digits to the right of the decimal to improve accuracy, but it didn't seem to help.",
+        "author": "StrykerL23O",
+        "url": "https://i.redd.it/mp877f5tyeia1.jpg",
+        "text": "",
+        "created_utc": 1676475640,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Positive Linear G's are only in change in acceleration?",
+        "author": "KarynEstella77",
+        "url": "https://www.reddit.com/r/Physics/comments/1130k2a/positive_linear_gs_are_only_in_change_in/",
+        "text": "I have a question, when we talk about Positive linear g's are we only talking about the change in velocity? Like the sudden launch of Kingda Ka?   \n\n\nHow about Mach number does Mach 10 have linear g's? or does it have no g force at all if the acceleration was gradual\n\nI know that at the bottom of a roller coaster hill and when it goes up there are vertical g's but I've always been wondering what positive linear g's are .... is it a 0 - 40 mph thing? However linear is more tolerable because it isn't quite weighty and normal force doesn't quite push hard on you like vertical g's?   \n\n\nWe know that astronauts experience positive 3g's or so during launch  \n\n\nHow about ballistic re-entry why must there be positive g's? Is that stronger than free fall? Or similar to the deceleration of a parachute thus causing weight?",
+        "created_utc": 1676474778,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why does high voltage in power lines allow low current??",
+        "author": "thatman0000000",
+        "url": "https://www.reddit.com/r/Physics/comments/11303jp/why_does_high_voltage_in_power_lines_allow_low/",
+        "text": "While studying transformers i came across the following lines :-\n\n\"The large scale transmission and distribution of electrical energy over long distances is done with the use of transformers. The voltage output of the generator is stepped up, so that current is reduced and consequently , the I\\^2 R loss is cut down.\"\n\nIs this not counter-intuitive?? Supposing the wire has fixed resistance , high voltage output should allow high current to pass , right???\n\nPLS explain....",
+        "created_utc": 1676473544,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Physics of fractal -like pattern in bubble",
+        "author": "glizzyman6942o",
+        "url": "https://www.reddit.com/gallery/112zm0k",
+        "text": "Any pointers as to what might be going on here?",
+        "created_utc": 1676472245,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Scientists boost quantum signals while reducing noise",
+        "author": "qptbook",
+        "url": "https://www.youtube.com/watch?v=8F_alJTQhbk",
+        "text": "",
+        "created_utc": 1676471608,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Physics graduate program at UMD and UT Austin",
+        "author": "Timely_Werewolf_6132",
+        "url": "https://www.reddit.com/r/Physics/comments/112z9lo/physics_graduate_program_at_umd_and_ut_austin/",
+        "text": "I wonder which school has a better physics graduate program?",
+        "created_utc": 1676471315,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why is centripetal force categorised as a real force?",
+        "author": "ihavenofyckingidea",
+        "url": "https://www.reddit.com/r/Physics/comments/112yfez/why_is_centripetal_force_categorised_as_a_real/",
+        "text": "Im studying Newton’s Laws and I cannot understand why centripetal is classified as a real force when it actually doesn’t exist by itself in nature. It is a result of other forces like tension and gravity. Or am i the one at fault for not understanding the parameters that make a force real?",
+        "created_utc": 1676469003,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I want to start physics (not quantum physics, just basic physics, matter, electricity etc.) Which book should I start with?",
+        "author": "bokhamsi",
+        "url": "https://www.reddit.com/r/Physics/comments/112ybm4/i_want_to_start_physics_not_quantum_physics_just/",
+        "text": "I have Feynman Physical Lectures of Physics, is this book a good start?",
+        "created_utc": 1676468692,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Dynamical system of our solar system, written in python and visualised with matplotlib, initial condition of planets’ position and velocity taken from nasa",
+        "author": "Secure-Sea6273",
+        "url": "https://i.redd.it/jc4mpa92scia1.gif",
+        "text": "",
+        "created_utc": 1676467161,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi guys. I am having trouble finding a supplier for zinc oxide electro pixel layer/ film. Could any one recommend where I could look and what type common device use zinc oxide electro pixel layers/film. Thank you.",
+        "author": "Simonnilla",
+        "url": "https://www.reddit.com/r/Physics/comments/112xo9b/hi_guys_i_am_having_trouble_finding_a_supplier/",
+        "text": "",
+        "created_utc": 1676466712,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Apart from a vacuum phase transition could there be any other process that could change the fundamental symmetries of the universe?",
+        "author": "stifenahokinga",
+        "url": "https://www.reddit.com/r/Physics/comments/112xj2y/apart_from_a_vacuum_phase_transition_could_there/",
+        "text": "As far as I know, the vacuum could change into another vacuum with a different energy potential (which would have different properties like different symmetries). For example,in some \"bumblebee models\"¹, it is an assumption that some vacua may break the Lorentz symmetry.\n\nHowever, apart from this, are there any other possible processes that could change the fundamental symmetries of the universe?\n\n¹https://en.wikipedia.org/wiki/Bumblebee_models",
+        "created_utc": 1676466271,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "does Feynman Physics Lectures still worth reading",
+        "author": "bokhamsi",
+        "url": "https://i.redd.it/o8cehdc25eia1.png",
+        "text": "",
+        "created_utc": 1676465642,
+        "upvote_ratio": 1.0
+    }
+]

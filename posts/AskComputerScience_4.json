@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Tool to compare Windows 10 VS Windows 11 performance",
+        "author": "Thiago_Rangel7",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/106luko/tool_to_compare_windows_10_vs_windows_11/",
+        "text": "How can I compare if my PC (currently windows 10) has any drops in performance if I install Windows 11? Is there any software for that?\n\nI'm willing to run the software on windows 10, get some numbers, then install windows 11 and run it again, and compare the results. I just don't know which software I should use, or the name of this \"category\" of software. Can someone help please?",
+        "created_utc": 1673191637,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the most challenging computer science problem you have ever tackled, and how did you overcome it?",
+        "author": "Useful_Customer4022",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/106cdib/what_is_the_most_challenging_computer_science/",
+        "text": "",
+        "created_utc": 1673160540,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What \"discrete mathematics\" do I need for this type theory/programming book?",
+        "author": "bluefish1432",
+        "url": "/r/learnmath/comments/105zxke/what_discrete_mathematics_do_i_need_for_this_type/",
+        "text": "",
+        "created_utc": 1673126385,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "synchronisation problem",
+        "author": "Human-Fun-8413",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/105x7pd/synchronisation_problem/",
+        "text": "The question is the following: (code doesn't have to be executed in a compiler, just pseudo C is fine as it's written on paper)\n\nGiven a system with two threads, A and B. They both make use of a critical section where at most 3 threads may be active, of which maximum 2 of the same type (so AAA or BBB is not allowed). Model the entry and exit section of thread A: \n\n    My attempt at a solution is: \ninit() {   \n        sem A = 2;  \n        sem B = 2;   \n        sem A_B = 3;   \n        mutex mtx; \n    } \n    entry_A() { \n        A.P();   \n        A_B.P();  \n        lock(mtx);   \n          \n    } \n    exit_A() {   \n        unlock(mtx); \n        A_B.V(); \n        A.V();    \n    }\n\nwhenever I'm doing these synchronization exercices I feel like I'm either overcomplicating it and adding way too much things, or oversimplifying and missing stuff. In this case, it feels like I'm not doing enough and I've tried to go over multiple cases but I'm still not sure. Can anyone help me out with a proper solution or some tips?\n\n&amp;#x200B;\n\nThanks!",
+        "created_utc": 1673119388,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I wonder how can I make this bold text font on iPhone on windows pc I like it bold like this",
+        "author": "lvbelx",
+        "url": "https://i.redd.it/a8bckxcpyoaa1.jpg",
+        "text": "",
+        "created_utc": 1673109889,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Question about threading",
+        "author": "Luckinhas",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/105asga/question_about_threading/",
+        "text": "I'm reading [this](https://pages.cs.wisc.edu/~remzi/OSTEP/) book about OSs and in the chapter about locks and data structures the author wrote the following C code for a simple thread-safe counter:\n\n    typedef struct __counter_t {\n        int value;\n        pthread_mutex_t lock;\n    } counter_t;\n\n    void init(counter_t *c) {\n        c-&gt;value = 0;\n        Pthread_mutex_init(&amp;c-&gt;lock, NULL);\n    }\n\n    void increment(counter_t *c) {\n        Pthread_mutex_lock(&amp;c-&gt;lock);\n        c-&gt;value++;\n        Pthread_mutex_unlock(&amp;c-&gt;lock);\n    }\n\n    void decrement(counter_t *c) {\n        Pthread_mutex_lock(&amp;c-&gt;lock);\n        c-&gt;value--;\n        Pthread_mutex_unlock(&amp;c-&gt;lock);\n    }\n\n    int get(counter_t *c) {\n        Pthread_mutex_lock(&amp;c-&gt;lock);\n        int rc = c-&gt;value;\n        Pthread_mutex_unlock(&amp;c-&gt;lock);   // 1\n        return rc;                        // 2\n    }\n\n\nIn the `get()` function, what's the point in using the lock? Couldn't the OS context switch between points `1` and `2` and update the counter anyway?",
+        "created_utc": 1673051855,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "is my project too complex for a CS bachelor?",
+        "author": "cyberzone2",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/105a7m8/is_my_project_too_complex_for_a_cs_bachelor/",
+        "text": "Hey guys do you think my project is too complicated? I'm proposing a topic that focus on the effects of standard of living during industrial revolution. Basically I want to create an agent based modelling for economics sim. I need to model a labour market, the supply and demand system, and population system (duh) to achieve my proposal project. The project must be done in 8 months, so I’m not sure if this is really feasible considering the time limit. \n\nFYI: I’m a final year CS student interested in economics.",
+        "created_utc": 1673050387,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "No suitable driver found for jdbc/OkStore2 in Netbeans and glassfish",
+        "author": "Makito106",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1056mll/no_suitable_driver_found_for_jdbcokstore2_in/",
+        "text": " Good day everyone, I have been watching this video series as a guide line for my own netbeans e commerce project but at 27:00 the teacher [test](http://www.javaranch.com/unit-testing.jsp) the data source but when I try to run the file one I got this error message. “jakarta.servlet.jsp.JspException: Unable to get connection, DataSource invalid: \"java.sql.SQLException: No suitable driver found for jdbc/OkStore2\"” I’m on windows 11. The program versions I’m using are Apache Netbeans [IDE](https://coderanch.com/wiki/696337/IntelliJ-IDEA) 16, MySQL WorkBench 8.0 CE, Eclipse GlassFish 6.2.5 (build 6.x-b66-g0159b68 2022-02-12T17:39:59+0000). My driver is mysql-connector-j-8.0.31. [https://www.youtube.com/watch?v=JlLGrqHSSjk&amp;list=PLWS58wV27xi5AFrSfru26h4KWNMv1h2XA&amp;index=7&amp;ab\\_channel=CS.Math.Educator](https://www.youtube.com/watch?v=JlLGrqHSSjk&amp;list=PLWS58wV27xi5AFrSfru26h4KWNMv1h2XA&amp;index=7&amp;ab_channel=CS.Math.Educator)  \n\n\nHere's the error message [https://i.stack.imgur.com/Pc1En.png](https://i.stack.imgur.com/Pc1En.png)",
+        "created_utc": 1673041783,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Floyd Cycle detection- tortoise and hare in linked list",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/10552sl/floyd_cycle_detection_tortoise_and_hare_in_linked/",
+        "text": "hi, so in this post:\n\n[https://stackoverflow.com/a/41647626](https://stackoverflow.com/a/41647626)\n\nthe answer by   [John Bupit](https://stackoverflow.com/users/1102626/john-bupit) \n\nclaim that if the fast pointer move by 3 and the slow pointer move by 1\n\nthe tortoise and the hare might never meet, so we wont detect the cycle\n\nIm trying to find an example for this and so far dont seem to able to come up with one\n\nwould appreciate if someone could tell me if this answer might be worng, or help me find an example",
+        "created_utc": 1673038140,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "good library for device location",
+        "author": "Thin_Beyond4341",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1054ywq/good_library_for_device_location/",
+        "text": "would need it to get the location of a cellular device\n\nneed it to be for c++",
+        "created_utc": 1673037887,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it normal for RAR compression to make a ~3% difference?",
+        "author": "IKEAsans",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/104zxyy/is_it_normal_for_rar_compression_to_make_a_3/",
+        "text": "I wanted to compress games that I don't want to uninstall and save them in an SSD. I started compressing Overwatch (23.6GB). After compression, it made only a few percent difference (20.3GB).\n\nI also tried compressing VMware just to check if the same happens to other apps. It also made a few percent difference.\n\nFrom what I've been told, by compressing with RAR, the compression difference from the uncompressed folder/s should be 20-40%. NOT 2-5%.",
+        "created_utc": 1673025998,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "career advice",
+        "author": "chihiroo888",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/104ywp8/career_advice/",
+        "text": "I would appreciate it if I could receive some career advice.\nI'm about to choose my university major/subject.\n\nI have a huge interest in the healthcare and medical field, and Biology was always my most favourite and interesting subject during my school years.\nAfter doing some research, I found allied healthcare professions (eg. PT, OT, nurse etc.) the most interesting field in the healthcare industry. \n\nHowever, I would also prefer something with higher income/salary potential, and I know I.T/CS offers opportunities to earn higher salary compared to allied healthcare professions (PT, OT, nurse, etc.)\nBut I don't really enjoy programming, and CS-related topics don't really interest me. \nBut I do know I have the potential to do academically well in any subject, but obviously the 'interest in the subject' will be missing if I do choose I.T/CS.\n\nNow should I consider something that will lead me towards allied healthcare professions, which I will find interesting, or rather I.T/CS just because it provides higher income potential?\n\nTo sum up: \nShould I consider something that I find interesting to study and perform the job?\nOr something that I don't find much interesting to study, but it offers higher income potential?",
+        "created_utc": 1673023584,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do you use for drawing software architecture diagrams?",
+        "author": "robotic-rambling",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/104hazz/what_do_you_use_for_drawing_software_architecture/",
+        "text": "Are there good standard tools for drawing software architecture diagrams?\n\nI'm really looking to draw high level system level architecture more so than just UML.\n\nI'm joining a new team working on a project without any code yet. We're doing some initial work on our software architecture and I'd like to draw some diagrams for proposals. Is there any tools you'd recommend?",
+        "created_utc": 1672969965,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to have access to people who create software?",
+        "author": "bluecollarGod",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1049gn6/how_to_have_access_to_people_who_create_software/",
+        "text": "hey all\n\ni m into sports betiing and i m looking for statistic software to help me with predictions\n\ni found a few by chance\n\ni suspect there gonna be a lot of this kind of stuff in Asia\n\nhow do i hace access to this?\n\nhow do i search for it?",
+        "created_utc": 1672951102,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need in help to create data flow diagram of my project it's a online IDE where you can share your code in c,c++ and java language",
+        "author": "Aniking_20",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/103u82i/i_need_in_help_to_create_data_flow_diagram_of_my/",
+        "text": "",
+        "created_utc": 1672908818,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Unable to understand IRC",
+        "author": "brijeshjoshi_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/103brij/unable_to_understand_irc/",
+        "text": "What actually is an IRC? Protocol or software? In eli5 someone comments it's like multi-player notepad. I read that it's like real time messaging. How is it different than whatsapp/reddit chat? Which software/app uses irc protocol? As per my knowledge same real time messaging can be achieved with ftp, isn't it?",
+        "created_utc": 1672858815,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to see who messaged you and then blocked you on linkedin",
+        "author": "arawsh",
+        "url": "https://i.redd.it/2vr8lj7ju3aa1.jpg",
+        "text": "",
+        "created_utc": 1672854242,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what is this tell me?",
+        "author": "210mEATpopsicle",
+        "url": "https://i.redd.it/m5wm1bzao1aa1.jpg",
+        "text": "",
+        "created_utc": 1672827933,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Alternative names for computer science books",
+        "author": "CursedSoul2003",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/102rmos/alternative_names_for_computer_science_books/",
+        "text": "I'm trying to make a list of all the books with names given by the community. Here are the ones I have so far:\n\n\nCompilers: Principles, Techniques, and Tools -&gt; Dragon book\n\nOperating System Concepts -&gt; Dinosaur book \n\nStructure and Interpretation of Computer Programs -&gt; Wizard book\n\nIntroduction to Algorithms -&gt; CLRS\n\n\nI know there are but I can't find/remember any. If you got some let me know.",
+        "created_utc": 1672800117,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with building calculator on circuit verse",
+        "author": "Xenomorph25rekall",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/102hvvm/help_with_building_calculator_on_circuit_verse/",
+        "text": "Hello guys,\n\nI am trying to build a 8 bit with range 0-255 calculator on circuit verse. The calculator should be able to add multiply and clear memory (I have already completed those sub-circuits). To input the numbers you should click the buttons just like in IRL, however the part I am struggling with is  if the users presses 2 and then 7 to get 27. How can I shift the bits for number 2 to be in the digit place and the bits for 7 to be in the ones place. Hope you guys were able to understand my problem. If you don't understand it ask me anything I will try to be more clear.\n\nThank you in advance.",
+        "created_utc": 1672776322,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What to do with an old PC",
+        "author": "into_the_ozone",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/102budv/what_to_do_with_an_old_pc/",
+        "text": "Hi all. My friend was recently clearing out his house to prepare for moving away and he found his mums old Dell Dimension 9200 PC from 2006 (I believe). He asked me if there was anything useful we could do with it in our new home or if we should just dump it. I took it with the hopes of converting it to Linux but when I booted it up it had very little ram, I think around 1.5gb (it's from about 2005). After some googling the two best things that I could find to do with it were to turn it into a router or a server. My questions I have are these: \n\n1. What is the benefit of turning an old PC into a router or server?\n2. Is it actually useful to do so?\n3. Is this old PC too old and crappy to do these things?\n\nPC specs:\n\n* Chipset:  Intel G965 Express \n* Processor Type:  Intel Celeron D/Pentium 4 with HT/Pentium D/Core2 Duo \n* Architecture:  DDR2 SDRAM \n* Memory Module Slots:  4 DDR2 SDRAM slots \n* Max Memory:  4096 MB \n* Clock Speed:  533-, 667-, and 800-MHz DDR2 unbuffered SDRAM \n\nAny advice on this would be greatly appreciated, thanks guys and happy hacking.",
+        "created_utc": 1672762024,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can atomicity be guaranteed in a database if at some point, a write must occur one step at a time?",
+        "author": "Gutscazerk",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1028una/how_can_atomicity_be_guaranteed_in_a_database_if/",
+        "text": "What I mean is that with transactional databases you have this notion of a \"container\" holding all the writes ready to go. With atomicity you're ensured that either this transaction takes place, or it doesn't, there is no \"half write\" that can occur. \n\n&amp;#x200B;\n\nWhat I'm having trouble with is suppose I insert a new piece of data. The program is now at the step of writing the information to the disk. Just as it writes a few bytes, the power goes out. Now I have half written data. Is it the case then that as soon as the power comes back on, this program will \"know\" it was in the middle of something and knows what to undo? \n\n&amp;#x200B;\n\nI suppose I could envision creating an atomic system where before any writing of the info occurs it first stores some metadata like \"is\\_complete\" which is only changed to be true after the last byte is written for the actual data. \n\n&amp;#x200B;\n\nCan anyone explain more in detail?",
+        "created_utc": 1672754113,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Guide to MVP Development For Startups",
+        "author": "ARFASOFTECH",
+        "url": "https://arfasoftech.com/blog/Guide-to-MVP-Development-For-Startups",
+        "text": "",
+        "created_utc": 1672748085,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why can we tell when a program will have an infinite loop but a computer can't?",
+        "author": "alejopolis",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1022l3o/why_can_we_tell_when_a_program_will_have_an/",
+        "text": "Or is it that just like a computer we can't actually do it for some of them and just have heurisitcs that catch most of them by looking at them, and then also know how to debug by trial and error?",
+        "created_utc": 1672734663,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can I find the X in this on the weighted edges (Using Kruskal)",
+        "author": "King-Maximus",
+        "url": "https://i.redd.it/225bgnhxbs9a1.jpg",
+        "text": "",
+        "created_utc": 1672732908,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "HP PA-RISC vs IBM PowerPC",
+        "author": "daibido1123",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/101zdn3/hp_parisc_vs_ibm_powerpc/",
+        "text": "Hi all, so I am curious, what are to pros/cons, advantages/disadvantages of HP's PA-RISC vs. IBM's PowerPC?\n\nI am asking this in part as an Amiga collector since if Commador had not died due to the mismanagement as it had, there were plans to switch to PA-RISC, unlike what the community did with adopting PowerPC. So I am curious what the differences would have been, whether one would have benefited the Amiga more than the other or offered performance options that the other did not. So this is a bit of a What if for me.  \n\n\nAs well, as a learning experience, since little of both processor architecture's uses and design information is in layman's enough for me to understand fully.\n\n&amp;#x200B;\n\nThanks for your time.",
+        "created_utc": 1672723957,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "It's known to be impossible to create a program that can take in any arbitrary program as input and correctly say whether it will halt or not. But what if we restrict the type of programs allowed as input in some manner?",
+        "author": "dcfan105",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/101t89w/its_known_to_be_impossible_to_create_a_program/",
+        "text": "I mean, obviously if we restrict the domain in a really artificial way, such as by making it a finite list of programs we already know eventually halt, that would work. \n\n But what I'm more interested in knowing is, is it possible to have a _useful and/or interesting_ function, call it X, such that, for some set of other functions, call it Y, X will always correctly predict whether a member of Y will halt?  \n\nOr, to put it another way, are there any _non-trivial_ answers to the question, \"What are the possible sets of functions that we can, at least in principle, always predict if they will halt or not?\"?  \n\nWhat prompted this question is that, IIRC, when I previously asked about why C++ programs that involve undefined behavior are even considered valid programs that the compiler is allowed to compile (as opposed to giving an error message for), someone mentioned something about it being impossible to detect all undefined behavior ahead of time given the language model C++ uses; that being able to always detect that sort of thing requires a much more restrictive language model, and that this is related to the halting problem, but didn't explain the relationship.  If that person was correct, it would seem to imply that there _are_ interesting subsets of functions where we can always tell whether any one of them will halt or not, since the majority of programming languages don't even have undefined behavior at all (and so, presumably, use much more restrictive language models?). Is that the case?",
+        "created_utc": 1672706866,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it possible, even in principle, to write a program that cannot by deleted by any means short of physically modifying the hardware?",
+        "author": "dcfan105",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/101ssuw/is_it_possible_even_in_principle_to_write_a/",
+        "text": "To be clear, I'm not actually trying to create such a program.  Rather, I'm in the middle reading of a sci-fi story where the villain claims to have sabotaged things so cleverly such that what was intended to be a beneficial change to an addictive VR system, to make it less addictive, is instead a virus that's wreaking all sorts of havoc and that, when the hero attempted to delete it, instead replicated itself and caused even _more_ havoc.  Within the story itself, I'm 99% sure the villain (who fits the classic trope of \"evil genius defeated due to his sheer _arrogance_ making him think he's invincible\") will end up being either a lier or simply wrong. \n\nBut now I'm curious whether his claim about creating a program it's _impossible_ to delete is, itself, even possible.  I added the caveats about physically modifying the hardware because it's fairly obvious that no matter how clever of a program someone writes, it can't stop me from just physically destroying the infected computer(s), or, for instance, using a strong magnet to just completely scramble all the physical bits in an HDD.\n\nBut is it even theoretically possible to create a program that _cannot_ be deleted by any other program, even if user has full access to the entire system?   To be clear, I'm not asking about situations where simply trashing the computer and getting a new one is _easier/cheaper_ than trying to recover from a malware attack.  Rather, I'm asking whether it's theoretically possible to create a program, call it X,  that cannot, _even in principle,_ be deleted by _any_ other program, period.  Like, is there a proof that such a thing is or isn't possible, perhaps similar to the proof that there cannot be a program that can tell if any arbitrary program will halt or not?",
+        "created_utc": 1672705757,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "suggestion required",
+        "author": "Leonamessi12",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/101lscd/suggestion_required/",
+        "text": "What is the best system for programming, give me suggestion guys'",
+        "created_utc": 1672689100,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to add a Session Beans For Entity Classes in Netbeans?",
+        "author": "Makito106",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1011wzd/how_to_add_a_session_beans_for_entity_classes_in/",
+        "text": " Good day everyone, I have been watching this video series as a guide line for my own netbeans e commerce project but at 19:45 the teacher adds a Session Beans for Entity Classes but when I try to create one I didn’t get the option to add it. Is there a key board command to adds a Session Beans for Entity Classes? I’m on windows 11 and I’m using Apache Netbeans [IDE](https://coderanch.com/wiki/696337/IntelliJ-IDEA) 15  \n\n\n[https://www.youtube.com/watch?v=CbS4Jjd5Z98&amp;list=PLWS58wV27xi5AFrSfru26h4KWNMv1h2XA&amp;index=8&amp;ab\\_channel=CS.Math.Educator](https://www.youtube.com/watch?v=CbS4Jjd5Z98&amp;list=PLWS58wV27xi5AFrSfru26h4KWNMv1h2XA&amp;index=8&amp;ab_channel=CS.Math.Educator)  \n\n\n\\[Teacher’s screen\\]([https://i.stack.imgur.com/zabjD.png](https://i.stack.imgur.com/zabjD.png))  \n\n\n\\[My screen\\]([https://i.stack.imgur.com/kaQwo.png](https://i.stack.imgur.com/kaQwo.png))",
+        "created_utc": 1672629760,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Using tablet as a locked out remote device",
+        "author": "letusjustrelax",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/100t62u/using_tablet_as_a_locked_out_remote_device/",
+        "text": "Is it possible to use as an Android or iPad as a display for something like A PDF or Excel? It's it possible to lock the tablet out so the only user would be from the remote device?\n\nThanks",
+        "created_utc": 1672606503,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why not program ML models in assembly?",
+        "author": "0xE4-0x20-0xE6",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/100rtdu/why_not_program_ml_models_in_assembly/",
+        "text": "I understand that Python shortens the amount of time necessary to code a ML model, since the language is much closer to English than Assembly, but wouldn’t inefficiencies in the compiled code make training time take much longer than if the same model were written in Assembly? This seems especially important given the most cutting edge ml models take millions of dollars to train. Wouldn’t it be prudent to significantly reduce those costs by coding a much more efficient program?",
+        "created_utc": 1672602969,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GiliSoft USB Lock v10.3 Multilingual Free Download | universeofsoftware.com",
+        "author": "Aggravating_Donut147",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/100q704/gilisoft_usb_lock_v103_multilingual_free_download/",
+        "text": "[removed]",
+        "created_utc": 1672598771,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Emurasoft EmEditor Professional v21.8.1 Free Download | universeofsoftware.com",
+        "author": "Aggravating_Donut147",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/100q69t/emurasoft_emeditor_professional_v2181_free/",
+        "text": "[removed]",
+        "created_utc": 1672598716,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "App Data Collection",
+        "author": "Rabbitthefrog",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1009gaf/app_data_collection/",
+        "text": "How do apps like yelp and Alltrails create a database with all their restaurants/trails?",
+        "created_utc": 1672538817,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "rx 570 8gb vs rx 580 4gb",
+        "author": "nzzirul",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/1005dnw/rx_570_8gb_vs_rx_580_4gb/",
+        "text": "Hi guys, which better for gaming(csgo,valorant,apex,ow2) photoshop and premiere pro?",
+        "created_utc": 1672525816,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best major for good money while also having a social life MIS or CS?",
+        "author": "Putin666",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zzxsjt/best_major_for_good_money_while_also_having_a/",
+        "text": "Making money is important to me, but I don't need 200K/year. I do however want a safe job with good work life balance and decent pay. I want to be able to spend a decent amount of my life making friendships and spending time with friends.\n\nPlease help me decide Management Information Systems vs Computer Science, I'm losing my mind lol.\n\n# Computer Science (CS)\n\nPros:\n\n* More likely to make a lot amount of money.\n* Probably more work from home jobs.\n* If AI starts stealing everyone's job 15 years from now, CS might be a good place to be if I can get into machine learning and help run the AI.\n* Problem solving can be cool\n* Maybe way worse work life balance than MIS in college, but way better work life balance than MIS like 2 years out of college??\n\nCons:\n\n* Courses are much harder than MIS, thus less time to spend building friendships.\n* To be competitive for internships and jobs you also need to spend a significant amount of time outside of classes learning actual skills. So even less time free time as if the classes don't demand enough time.\n* Supposedly there is huge saturation, at the very least there is in the entry level. This is maybe one of the biggest cons. The big issues from my understanding that causes this and why it is a real issue and not just short term like the recession/tech layoffs are as follows:\n\n1. The huge rise of social media selling the idea that everyone can make 100K if they come into the industry. Now seems like everyone is doing boot camps.\n2. Even without the self-learning and boot camp craze, the computer science graduates per year have doubled from 50K ten years ago to now over 100K new CS grads per year.\n3. Global outsourcing.\n4. ChatGPT/AI will advance exponentially, and will allow for workers to be more efficient leading to less workers needed, if any at all eventually.\n\n# Management Information Systems (MIS)\n\nPros:\n\n* Supposedly it's pretty common for people to make 80K starting from Temple University with MIS, I can easily go to this school.\n* MIS is mix of CS and business stuff, so I'd imagine I'd have way more jobs I can get into with this degree for way better job safety. AND if I want to, I can always self-learn most CS skills if I wanted to get CS jobs. And I could get masters in CS if I wanted to.\n* Probably was less competition and saturation than CS field.\n* MIS is known to be an easier degree, plus I don't need to learn a hole bunch of stuff on top of the courses just to get hired, so more time for friends.\n\nCons:\n\n* Maybe easier job to replace with AI?? If AI takes over every job, it will be harder to get into the AI/ML stuff with MIS\n* Probably slightly lower average pay and lower ceiling for pay??\n* People call it the CS drop out degree\n* Maybe not as many work from home jobs, although honestly it's probably comparable??\n* Maybe initially work life balance is better than CS, but not long term??\n\n&amp;#x200B;\n\nNo matter which degree I choose, I am still a dedicated student and will work hard to be competitive for internships and jobs, I just really value work life balance so I can spend time with friends.\n\nWhich path do you think makes sense if I want to make decent money, but also be able to have plenty of time to touch grass and hang with friends?\n\n&amp;#x200B;\n\nTLDR: MIS will maybe give me more free time than CS with only a bit less money???",
+        "created_utc": 1672504159,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hey Folks , I am not from science background but I want to learn computer vision and machine learning from basics? How to approach and where to start?",
+        "author": "Prior_Commission912",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zzvlkm/hey_folks_i_am_not_from_science_background_but_i/",
+        "text": "",
+        "created_utc": 1672497915,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Are those LinkedIn assessments really easy?",
+        "author": "bluemoss_co",
+        "url": "/r/AskProgrammers/comments/zziedy/are_those_linkedin_assessments_really_easy/",
+        "text": "",
+        "created_utc": 1672466992,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need help with finding out the shortest way to \"chain\" math problems using only the numbers 1-9.",
+        "author": "Double_K_A",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zzakjm/i_need_help_with_finding_out_the_shortest_way_to/",
+        "text": "\nBasically, I'm trying to find an algorithm to help find the most efficient pathways in Donkey Kong Jr. Math for NES. I'm wondering if maybe this would be easy for someone who knows how to code, or maybe not (IDK, but it's worth a shot for me to ask).\n\n\nLet's say I wanted to find the shortest amount of math problems to get to 16, while only using numbers 1-9, and only the four basic operations (add, subtract, multiply, divide).\n\nThe answer of course would be a chain of 1, since you're able to do this in just one problem (like 8+8 or 4*4).\n\nBut say I wanted to find the shortest chain for 26. Using only numbers 1-9, that would mean the shortest chain would be a chain or two (assuming we start at 0). This is because we can just say 8*3 to get 24, and then add 2 to get 26.\n\nBasically I want to be able the find the shortest chain like this with any number. Ideally, I'd be able to pick a starting digit. So in the 25 example, if I made my starting digit 20, the shortest chain would be 1 (because I can just add 5 once to 20 and get 25).\n\nBesides only using digits 1-9 and the four basic operations, I also need it to round down to the nearest whole number when dividing (no decimals allowed).\n\nThanks!",
+        "created_utc": 1672432000,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to understand 16 bit addresses.",
+        "author": "TheSillyLion",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zzaae1/how_to_understand_16_bit_addresses/",
+        "text": "Hi all,\n\nI'm currently a programming noob and and learning about binary and hexadecimal.\n\nI am programming 14 segment displays and am trying to learn how to understand the segment addresses.\n\nIn this picture ([https://imgur.com/a/aAarFew](https://imgur.com/a/aAarFew)) it gives an example where it says to turn on just the **G1** segment, use 0x0040.\n\nHow do I get 0x0040 knowing that G1 is the 7th but from the right? I can only find resources online telling me how 0x0040 is the hex representation of 64 which isn't helpful.\n\nThanks!",
+        "created_utc": 1672431315,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Academic sources on AI/ML theory?",
+        "author": "berrmal64",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zz9lsf/academic_sources_on_aiml_theory/",
+        "text": "Hi all.  I'm a CS masters student in my last year, but I'm on an elective track that means I'm not taking any AI/ML focused courses, so I'd like to self study.\n\nI'd appreciate recommendations for texts that are rigorous, and I'm especially interested in examining limitations on AI, ML, and AGI in terms of classical CS (complexity classes, runtime analysis, halting problem, etc).  Is there a standard text on this, the way CLRS's *Algorithms* is for classic data structures and algos?\n\nSo far I've mostly found either very basic blog posts, how-to/cookbook type things, or pure hype, which is not what I'm after.\n\nCheers",
+        "created_utc": 1672429649,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What are books or resources that I can use to understand linux at a deep level?",
+        "author": "Perfect_Show2246",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zz0lj1/what_are_books_or_resources_that_i_can_use_to/",
+        "text": "I want to have an in depth knowledge about how linux works. What books or websites can I read to understand linux",
+        "created_utc": 1672407074,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "At how much percentage salary increase raise would IT professionals be interested to consider changing job to another company? (residing in Europe)",
+        "author": "Careful-Enthusiasm19",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zyzk6k/at_how_much_percentage_salary_increase_raise/",
+        "text": "Hello! I am a master student and this is for my master thesis. I need help to get participants on my research and I would be grateful if you could take part. Answering the questions takes around 6 - 8 minutes, fully anonymous. Upon request, I am happy to share the research result with you after the publication of my master thesis.\n\nLink to the questionnaire: [https://www.unipark.de/uc/UNIQUE\\_chandra\\_leo/cc5b\\_final/](https://www.unipark.de/uc/UNIQUE_chandra_leo/cc5b_final/)\n\nEligibility criteria: working in ICT related jobs or in ICT industry / residing in Europe.\n\nThank you very much in advance! Appreciate your support.",
+        "created_utc": 1672403903,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Projects! Projects! Projects!",
+        "author": "Sbinmaster69",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zymyve/projects_projects_projects/",
+        "text": "Everywhere I go I just get bombarded with the message \"Have exceptional projects in your resume to land good internships\", but what actually is an exceptional project, is that website resume that every other aspiring full stack developer has,\n\nOr the Python chatbot, Or the tic tac toe, or another crappy website.\n\nI just want to really know what would be actually an exceptional project\n\n\"Please be considerate of the fact that I'm still a student and am willing to put in the effort to learn new things, but suggesting to make the next ChatGPT, DALL E, or the next Facebook is pretty out of bounds for me ATM\"",
+        "created_utc": 1672363578,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Few questions regarding computer science education in Europe.",
+        "author": "ErenAwesome",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zyiqrt/few_questions_regarding_computer_science/",
+        "text": "Hello r/AskComputerScience,  \n\n\nI'm a senior getting close to my graduation and I want to pursue computer science. Just for some background information before I ask my questions, I'm a U.S/Turkish citizens living in Turkey who is planning on studying in either Turkey or Europe.   \n\n\nNow my questions are....  \n\n\n* What are the job opportunities of computer science in Europe? Would it be stupid of me to stay in Europe instead of moving to the United States to pursue a U.S job?\n* Is it easy to get a job in the States and Europeon countries in general after graduation? *(Kinda similar to first question)*\n* Could you guys recommend me any universities in Europe? I'm looking specifically into the Netherlands but anything outside the UK is fine. \n\nThanks so much guys!",
+        "created_utc": 1672353253,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AP Computer Science Principles (Unit 3 Optional Project - Animation studios)",
+        "author": "ilovekenshiyonezu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zyh9jl/ap_computer_science_principles_unit_3_optional/",
+        "text": "Hello, I'm using Snap Berkeley to code for my computer science project and I need to create a code that allows for a drawing to be moved up and down using the arrow keys. I successfully created a list of points of the x and y coordinates that move as I press the arrows but I don't know how I can move the actual drawing. If someone knows how to do this that would be awesome.",
+        "created_utc": 1672349853,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AP Computer Science Principles (Unit 3 Optional Project - Animation studios)",
+        "author": "ilovekenshiyonezu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zyh8eo/ap_computer_science_principles_unit_3_optional/",
+        "text": "Hello, I'm using Snap Berkeley to code for my computer science project and I need to create a code that allows for a drawing to be moved up and down using the arrow keys. I successfully created a list of points of the x and y coordinates that move as I press the arrows but I don't know how I can move the actual drawing. If someone knows how to do this that would be awesome.",
+        "created_utc": 1672349776,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "pubsub pattern using Unix socket API",
+        "author": "rapchickk",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zy746x/pubsub_pattern_using_unix_socket_api/",
+        "text": "Hey all,\n\nI'm currently using zmq for pubsub. Facing latency issues so decided to try Unix sockets instead. Problem is, socket API doesn't have pubsub implemented. I've to write it from scratch. Any suggestions? \n\nThanks.",
+        "created_utc": 1672325271,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need your advice",
+        "author": "menna9090",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zy6owf/need_your_advice/",
+        "text": "Hi,\n\nI have a bachelor's degree in accounting (outside the USA), and now I am a freshman computer science student at CUNY.  \nWhich is better for me in the future computer science, data science, or any other related major? and why?  \nI really appreciate any advice you can provide.",
+        "created_utc": 1672324111,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can someone explain the terminology of “sync” and “async”",
+        "author": "threespeaks",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxxg9n/can_someone_explain_the_terminology_of_sync_and/",
+        "text": "Even though I’ve read about the differences between sync and async, if I don’t consistently refresh myself on them (the last time I really researched it was about a year ago) I get tripped up when I start using it again. \n\nThe word “synchronous” means two events existing or occurring at the same time. Okay. In synchronous programming your code is executed from top to bottom and it only goes to the next step once it’s finished the current step. Okay. That does not really seem like “happening at the same time”.\n\nThe word “asynchronous” means two event NOT existing or happening at the same time. Okay cool, now let’s see how asynchronous programs are executed. “In an async programming model, you write code as tasks, which are then executed CONCURRENTLY”. Concurrently - at the same time. So how does “two events not happening at the same time” = “concurrent” \n\nI’m certain I am having some sort of mental lapse here. Can someone please help. Hopefully you can see why I’m confused.\n\nThe execution of multiple tasks at the same time is considered concurrent and asynchronous?",
+        "created_utc": 1672293412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "programming question",
+        "author": "GoldMarketing9034",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxo94e/programming_question/",
+        "text": "I have a quick question. I am looking to submit an idea to a company and I wanted to work with someone who is familiar with possibly creating a simulation of my idea via an app so that I have something tangible to submit. What type of person should I be looking for who would be able to do that? Would that be a programmer?",
+        "created_utc": 1672269132,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "C# book/course recommendations for experienced progammer",
+        "author": "joshua6point0",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxnnyk/c_bookcourse_recommendations_for_experienced/",
+        "text": "Hello AskComputerScience-\n\nI'm an experienced programmer with Python, JavaScript, HTML/CSS, and SQL background. Wanting to dive into C# and .NET. When learning JavaScript, I enjoyed \"Modern JavaScript for the Impatient,\" and am looking for similar recommendations for teaching myself C#.",
+        "created_utc": 1672267774,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "For those who have graduated with a Computer Science degree",
+        "author": "leoqti",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxlaez/for_those_who_have_graduated_with_a_computer/",
+        "text": "What are you currently working in and what was your first job? How hard was it to get it?  \n\n\nI'm interested in the degree and would like to know where the graduates are working.   \n\n\nThank you very much for your time, and sorry for the Bad English.",
+        "created_utc": 1672262250,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would you suggest web development to someone willing to self study? Why and why not?",
+        "author": "david_bragg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxf7jf/would_you_suggest_web_development_to_someone/",
+        "text": "If someone with no background in tech and wants to break into tech.\n\nWould you recommend web development or another field?",
+        "created_utc": 1672248022,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does the industry create AI's for machines etc. ?",
+        "author": "renobueno",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxdyuk/how_does_the_industry_create_ais_for_machines_etc/",
+        "text": "Hey Im playing a bit around with arduinos at the moment and cause of that I have a question now.\n\nLets say you have asked an engineer to build a drone and now you give the drone to an computer scientist. How would he implement an AI that e.g. learns to fly the quickest route from an start to endpoint? \n\nHow would he create a communication between drone and pc? Does he have to rely on API's that are already existing or does he create them himself?\n\nAre there tools to create neuralnetworks etc.\n\nYou know on arduino you basically have to plug your device via usb to your pc and you can start programming. But I assume in real life the circumstances won't be that easy. \n\nI feel like my question is a bit unspecific as well :3\n\n&amp;#x200B;\n\nHope you can help me :D",
+        "created_utc": 1672245077,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Where can I find a JavaScript tutor?",
+        "author": "Kindly-Ad-7340",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxdp5m/where_can_i_find_a_javascript_tutor/",
+        "text": "Hi everyone, I’m new to programming and I would like to find a tutor to help me better understand certain topics. Is there a site of some sort where I can find a coding tutor? Preferably 1on1.",
+        "created_utc": 1672244434,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what would be different today if from it's inception the internet was built with today's use in mind?",
+        "author": "throwawaybjjtoday",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxcos7/what_would_be_different_today_if_from_its/",
+        "text": "If during the early days of the internet those who were working on it knew that it wasn't going to just be the military, IBM and universities on the network, but rather billions of people how would the internet we have today differ from the internet we have now? How would the early days of the internet be different, other than just using encryption?",
+        "created_utc": 1672242037,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is self teaching computer science and getting a job as a felon realistic?",
+        "author": "Alwaysaloneforever97",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxccw4/is_self_teaching_computer_science_and_getting_a/",
+        "text": "I have a degree already in industrial maintenance technology and am working on a degree in CIT - programming track. \n\nI've been told pretty often that 2 year degrees don't mean anything but both of my degree transfer, industrial maintenance technology transfers to a manufacturing engineering degree, and the CIT degree transfers to a CIT degree at one of the best schools in the state. CIT being computer information technology. \n\nI am really interested in tech, but getting a pure CS degree doesn't seem possible. The 2 year degrees at a community College are actually not too expensive, like 150 a credit hour. But a 4 year degree from a true university costs tons. \n\nMy only real option is to get a 4 year transfer degree if I wanted a bachelor's. And the only CS degrees I can find will start me off near at square one and cost me nearly 60k. \n\nI have been told a lot to just give up on my dreams and to just work in a factory or something. Which sounds miserable. \n\nI want to get a job involving programming and get told it requires a CS degree. And that without a CS degree I won't be taken seriously. \n\nI'm wondering also if employers and recruiters are really that picky about the name of your degrees? I mean really? Oh chose this degree... well you're screwed. \n\nI'm also a felon, and am wondering if that will hold me back completely. Or if it will simply be more challenging? \n\nI don't mind a challenge, but a slight speed bump is a lot different than a castle wall with armed soldiers surrounding it doing anything they can to make sure I don't pursue it lol.",
+        "created_utc": 1672241262,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What could it change for the compagnies using the internet for getting data on the consumers if a \"critical\" mass of people used vpn ?",
+        "author": "Known_Instreddit55",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zxalgs/what_could_it_change_for_the_compagnies_using_the/",
+        "text": "Does any of you has a take what it could change for the compagnies using the internet for gathering data on the consumers if a \"critical\" mass of people started using vpn ? if it changed much of course ...\n\nI'm sorry if this question looks like it belongs more to marketing question but iI was looking for a more technical computer scientist' approach of it.\n\n&amp;#x200B;\n\nThanks in advance.",
+        "created_utc": 1672236897,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "falsely accused of cheating on hw in level 200 comp sci course",
+        "author": "SML_BlackYoshi",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zwyita/falsely_accused_of_cheating_on_hw_in_level_200/",
+        "text": "&amp;#x200B;\n\nHi, I'm posting this here and a few other subreddits because I don't know what to do, I feel trapped and hopeless. It is now the end of the semester and winter break just rolled around, I'm anxiously waiting for my grades as I was having serious trouble in some of my classes, Some of my grades roll around I noticed my hw grades are surprisingly low, I check the feedback and she says that she knows that I copied the homework from a classmate or that they copied it from me saying that \"there are no shortcuts to coding\". the thing is that I did not cheat with another student for this homework, I have used outside sources such as stack overflow, and YouTube videos as she had encouraged us to do so. I sent her an email telling her there must be some mishap and that we had probably just seen the same video or other outside sources but she won't give in at all and is very sure that I took it from this other classmate. We went back and forth a little and she seems firm on the fact that I took it and there is no coincidence on this. I had talked to the other student and looked at the homework and while there were some similarities there were differences in the code and mainly the comments. Now it seems I have to take this to the dean but here is where it gets a little tricky. I fucked up earlier in the semester, I don't know if it's truly my adhd to blame or im a lazy fuck but I was having trouble with doing the hw on time and I had a very bad mental breakdown and had missed a past test. she has a no test makeup policy so her compromise with me was to take the grade of my final test and making it the same grade as the test I had missed and she gave all of my late hw's a 50/100. This was all prior to this accusation of me taking the homework, I don't know if im entitled to talking to the dean after all she's done for me and if she could simply revert those changes upon me making this an official dispute. do you guys have advice for me please? (the coding language is mips/mars/assembly code)",
+        "created_utc": 1672196663,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Sudoku Backtracking Algorithm Question",
+        "author": "groundctrl2",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zwtesm/sudoku_backtracking_algorithm_question/",
+        "text": "Hey guys quick question. I've been working on my own version of the standard backtracking algorithm used to solve sudoku grids represented by a list of lists, and to test my solving function on a \\~1/3rd completed grid I added a print function to keep track of the working backtrack count, well it's currently at 16 million and it's still going up. Is this normal? And if so, what count would you say I should stop it down and see if something is going wrong? Thanks!",
+        "created_utc": 1672182870,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What determines how much information can be conveyed via a single bit change?",
+        "author": "dcfan105",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zwqwik/what_determines_how_much_information_can_be/",
+        "text": "Specifically, I'm thinking about the \"Almost Impossible Chessboard Puzzle\" solution from here(article also contains the statement of the puzzle is itself): https://www.creativelydo.com/blog/how-to-solve-the-impossible-escape-puzzle-with-almost-no-math/# (I'm posting here instead one of the math subreddits because, while this is a math puzzle, it's clearly related to information theory and error correcting, which are very computer-scienceesqu). \n\nI can understand the logic of the solution outlined in the article, but one thing that stands out is that, it seems like the amount of information (in bits) that can be encoded via a single bit change is directly related to the size of the system containing the bits (or coins, or whatever).  But that would seem to imply that I can just keep adding on more and more random states to the system (e.g. make it an 16x16 instead of an 8x8 chessboard) and then more information can be conveyed via a single bit change(or coin flip), because now we'd need to answer 8 questions, or, equivalently, we'd need to use an 8-bit binary number to indicate the exact location of any particular square on the board.  That doesn't seem right, because just adding more random states to a system shouldn't let me convey more information using the same strategy as before, should it?  But then maybe it's not actually more information, since it's still just the location of a single square, even if we need more bits to represent it?  \n\nWhat comes to mind is entropy (in the information theory sense of the term) and how larger systems tend to have larger entropy values, simply because there's a larger number of possible microstates they could be in.  Is that actually what I've been getting at in regards to a larger chessboard puzzle resulting in location encodings with more bits than a smaller chessboard?  It certainly feels related, and, IIRC, shannon entropy, given in bits, can be thought of as the average number of yes/no questions that'd we need to ask about a system in order to determine its exact configuration, or, equivalently, the minimum number of bits needed to specify the exact configuration.  Hmmm...I suppose the entropy would then be, not the number of bits needed to specify the location of a single square on the board, but the minimum number of bits needed to specify the locations of _all_ the squares.",
+        "created_utc": 1672176890,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which complexity does this function have (Java) ? ChatGPT says it's O(n) but I believe it's O(n^2).",
+        "author": "justV_2077",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zwinay/which_complexity_does_this_function_have_java/",
+        "text": "```java\t\nstatic void drawTriangle(int sizeOfTriangle) {\n  for (int i = 0; i &lt; sizeOfTriangle; i++) {\n    for (int j = 0; j &lt; sizeOfTriangle - i; j++) {\n      System.out.print(\"*\");\n    }\n    System.out.println();\n  }\n}\n```",
+        "created_utc": 1672156142,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which computer scientists do you personally find fascinating?",
+        "author": "TetsuyaShibayu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zwfjf4/which_computer_scientists_do_you_personally_find/",
+        "text": "I'd say it's Feynman for physics but for computer science, maybe I don't know enough computer scientists.",
+        "created_utc": 1672147339,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any good learning apps for non-beginners?",
+        "author": "djames843",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zwca2v/any_good_learning_apps_for_nonbeginners/",
+        "text": "Im looking for something I can install on my phone so that I can spend the time I waste on Reddit more productively.\n\nObviously there are dozens of apps but I don’t really need to be told that “an integer is a whole number” or that “an if statement will execute the code below if the condition is true” anymore.\n\nSo, anybody know of some good learning apps that are intermediate to advanced? My goals are mostly programming based but any CS topic would be interesting. \n\nAt the risk of answering my own question - I suppose ebooks are the answer but any app suggestions would be cool.",
+        "created_utc": 1672135608,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there an image filetype that can store OCR info about the image?",
+        "author": "chidedneck",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zw6dry/is_there_an_image_filetype_that_can_store_ocr/",
+        "text": "Optical Character Recognition has progressed so that now most smart phones allow you to highlight text that is contained in an image. Unfortunately this doesn’t seem to have crossed over to searching through the photos on your device. I’m assuming the OCR that allows for highlighting text in an image is processed as needed. But if OCR was done on all photos in one’s library the text they contain could be annotated to the file to assist with searching. Is there a reason this isn’t being done? I appreciate any info.",
+        "created_utc": 1672114749,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "On EE-wifi can the bill-payer see what numbers I have called on an itemised bill?",
+        "author": "MXarasj",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zw30z8/on_eewifi_can_the_billpayer_see_what_numbers_i/",
+        "text": "UK if it matters.",
+        "created_utc": 1672104904,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can you explain DNS in a few succinct steps?",
+        "author": "TuggmoreCox1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zvzn0o/can_you_explain_dns_in_a_few_succinct_steps/",
+        "text": "Context: I have a homelab and the following problem has absolutely belegured me from the day I first plugged more than one computer into my 10mb hub (cause thats all I could afford 20 years ago). How do I control the host names on my LAN so I can ping/ssh them by name, regardless of what their IP address is? \n\nThis sounds like such a stupid question because I'm running my own fucking DHCP server and I *still* can't get it to work. So I understand that the MAC address is read during a DHCP request, and ultimately the physical machine is what I want to call by name (but of course if you get super technical, I could theoretically run different OS's on the same physical box - one at a time - and want to give them unique names but let's not overcomplicate).\n\nSo if I set up BIND (which I *know* is wayyy overkill if **all** I wanted to do was call machines by name, but this is a homelab so why not go all-in?), how do I associate hostnames with physical computers? I'm running DHCPd which associates MACs with addresses/networks (which technically I shouldn't care about, they should be able to change) but if the addresses change, how the hell does BIND know how to resolve a hostname to them?\n\nNotes: I'm only considering IPv4 now, and I want to learn the \"old-school\" way, i.e. not avahi or zeroconf or DNSmasq. The problem with those 3 is that they *partially* work. like if I plug in another machine that is also ubuntu+systemd,etc. But as soon as I plug in windows or FreeBSD (or some internet-of-shit appliance) DNS doesn't work for them. I would really like to find a FINAL solution to this debacle, if at all possible.\n\nThanks in advance.",
+        "created_utc": 1672095798,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Unsolvable question:",
+        "author": "cDiva111",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zvm4p5/unsolvable_question/",
+        "text": "[removed]",
+        "created_utc": 1672057471,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why is starting a home router so slow.",
+        "author": "Lorentari",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zvj597/why_is_starting_a_home_router_so_slow/",
+        "text": "With home computers being able to do most common tasks pretty much instantaneously, and with home ethernet connections (where I live) starting at 1000 Mbit/s - how is it that a router still takes 5-6 minutes to establish a connection to the gigabit connection? (which it has no problem handling once it is actually running)",
+        "created_utc": 1672045053,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to study computer architecture?",
+        "author": "colorname_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zvftv9/how_to_study_computer_architecture/",
+        "text": "I want to start studying software engineering, and I plan to start from the lower level, i.e. from the level of digital logic and processor microarchitecture, then study assembler, operating systems, etc\n. Earlier I tried to start, read books on computer architecture, but there was no clear understanding that I mastered this topic at the proper level. After a while, most of the information was completely forgotten. I would like to understand this well, but I don't understand how to do it effectively, how to consolidate knowledge in practice, which materials are better to study, etc.\nI have some basic knowledge on this topic, but I can't say for sure that I understand everything.\nIn my opinion, in order to really be able to say I understand the architecture of a computer, you either need to physically create your own computer or write a simple virtual machine. I can't do either. I would like to be able to write a virtual machine, but I have no idea how to do it at all.\n\nTell me how to independently study what is at the lower levels, in what sequence and how to practice all this?\n\nI'm getting discouraged from the fact that I can't figure it out. The motivation to move on disappears.",
+        "created_utc": 1672031975,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hurry Up Your Deals! Buy Microsoft Office 2021 Home and Business Only $100, Use Promo Code XMAS22",
+        "author": "Hot-Abbreviations658",
+        "url": "https://affordablekey.site/RXw67qEx",
+        "text": "",
+        "created_utc": 1672030181,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I calculate 1min indicators on 1sec data?",
+        "author": "farflungshow",
+        "url": "/r/algotrading/comments/zvdylz/how_do_i_calculate_1min_indicators_on_1sec_data/",
+        "text": "",
+        "created_utc": 1672026400,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Computer science sounds really cool, but I'm not sure if it's for me?",
+        "author": "Alwaysaloneforever97",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zv2gac/computer_science_sounds_really_cool_but_im_not/",
+        "text": "I get told I don't know what I'm talking about a lot on here. \n\nSo I'm somebody who does indeed enjoy programming. I have a degree in industrial maintenance technology. And my favorite parts of that degree were robotics programming and programming plcs. \n\nNow this was FANUC industrial arms, they're programmed in more of a scripting language. Then the PLC course used ladder logic. These are used in factories often and it's a graphical language so maintenance can look at the code and see where a machine is hanging up. \n\nI am explaining this cause a lot of computer science degrees I see online don't cover these kinds of things. But it wouldn't surprise me if you did know about them. \n\nNow let me get this straight, ugh.... idc about business courses much. I'm a tech person, I care about tech and that's it tbh. \n\nWell I keep being told CIT is just a business degree, it's for people who don't know anything about computers. I had people laugh at me for even looking into a CIT degree. They said all you'd learn is how to plug in a router. \n\nIt honestly seemed like some troll hater stuff. \n\nThey said jobs would toss the resume in the trash, that I'll be stuck in a help desk position, resetting passwords for life, even with a masters degree. \n\nSo I started looking into different degrees in my state. For one, I actually am currently working on a 2 year CIT degree. \n\nIt's cheap. Like 125$ a credit hour. I've literally been paying it as I go. \n\nIt has different tracks and I'm taking the CIT - Software Development Track. \n\nIt seems pretty good to me tbh. \n\nCool thing is, the 2 year CIT degree actually transfers to basically every college in the state. \n\nWell it transfers to both a bachelor's in CIT, and a bachelor's in CS. \n\nCIT being computer information technology. \n\nCS being computer science. \n\nI read up a few programs all over my state, and found a CIT degree that isn't at the business school. It's a part of the engineering school. \n\nIdk if that makes a big difference, but no business classes are required. You can take them as electives or you can take all the cool tech courses. \n\nI'm kind of really into web development and computer hacking. But I'm also into computer networks and entire computer systems. I'm interested in servers, I love reading about networking protocols. \n\nPLCs are networked, they even communicate with SQL databases. The computer information technology covers this stuff. \n\nAlso, I'm into manufacturing environments. I want to understand how entire systems are set up in places like a factory. I want to learn about user access through kiosks and security in the whole factory. \n\nI know that sounds lame lol but I'm into that stuff. \n\nI'm really interested in this degree because it's from a pretty well known college known for being a good school. \n\nI'm not the most knowledgeable on this stuff, I've only done 2 courses for the 2 year CIT degree. So please forgive my ignorance. \n\nhttps://www.wku.edu/cit/cit_v2_curriculum.php \n\nThis is the 4 year degree I'm very interested in. Would you say its... not as cool as I'm thinking it is? \n\nShould I just study CS instead? I don't want to strictly focus on software though, I want to work with networks, and in security, I do want to code though. I'm so lost lol \n\nThere's so many fascinating jobs in computers. \n\nThey also do have different concentrations, for programming etc. \n\nIf you look they even have a industrial IT concentration. But that concentration does indeed have business courses. \n\nI want to be good with technology, I don't want to be a fraud. \n\nAny help would be appreciated. Thank you so much.",
+        "created_utc": 1671989479,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How would you convince your friend to give coding a try if he thinks it’s difficult?",
+        "author": "david_bragg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zutwrc/how_would_you_convince_your_friend_to_give_coding/",
+        "text": "If you deep down believe if he worked for it he can turn out to become a very talented coder, what are you gonna do ?\n\nOR.. you would earn $100k if you get him hooked onto programming",
+        "created_utc": 1671956417,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Questions for computer science majors and current computer scientists",
+        "author": "Syrup_gizzler",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zulk8u/questions_for_computer_science_majors_and_current/",
+        "text": "**Hi, I'm still in high school and love the idea of being a computer scientist after college. But before I do I wanted someone to answer a few questions. Very thankful for any responses at all! Also, if you respond, some background of where you are based and your age would be great, thanks!**\n\n1. Work/Life Balance? (hours you work, free time, respect from higher-ups, family and friend time, gym, etc.)\n2. How much stress do you take in your work? \n3. How much stress did you take during your studies?\n4. What was college like and what kind of classes did you take? \n5. What things should I know before applying to colleges, like should I have some projects under my belt, and if so what? And how many?\n6. Are there \"busy\" seasons? How long are they, how busy are they really, when are they, and how different are they from normal seasons?\n7. What specific jobs can you acquire from this major? \n8. what kind of certifications should I go for after my undergrad?\n9. And any other things you feel I should know!",
+        "created_utc": 1671924553,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do computers do mathematical functions?",
+        "author": "InspiratorAG112",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zugnnf/how_do_computers_do_mathematical_functions/",
+        "text": "What I am wondering:\n\n* Is there a faster method for multiplication than repeated addition?\n   * (I have heard somewhere on YouTube that this can be used for division.)\n* Is there a faster method for exponentiation than repeated multiplication?\n* If such methods exists, can they be continued (efficiently) for [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) (mainly [tetration](https://en.wikipedia.org/wiki/Tetration) and higher)?\n   * Can it be interpolated just as easily with floating-point operation?\n   * How about inverses, such as [super-logarithms](https://en.wikipedia.org/wiki/Super-logarithm) and [super-roots](https://en.wikipedia.org/wiki/Tetration#Super-root) (inverses of tetration)?\n* How is modulation performed?\n* How are the following operations performed? (Obviously, symmetries can be used to the computer's advantage)\n   * Interpolated exponentiation\n   * Interpolated factorials\n   * Trigonometry\n      * Including the inverses\n   * Logarithms\n* Desmos can do calculus. How is that even possible?\n* Can all math operations be done in O(1) time (namely relative to the values, not the number of bits)? If not, which ones can not?\n\n&amp;#x200B;\n\nI have a decent idea of how addition/subtraction works:\n\n* For integer addition: \n   * XOR + AND carry, add the carry bit to the next bit.\n   * Another more advanced trick would be using the fact that adding 1 to a string of *k* binary 1s will result in a binary 1 followed by *k* binary 0s.\n* For integer subtraction:\n   * Abusing integer overflow by adding the flipping all of the bits of the second argument and then adding 1 achieves this. \n* For floating point arithmetic:\n   * The exponent of 2 would have to be taken into account.\n   * Negative numbers and subtraction however, I would imagine, are more complicated (probably not that much though).",
+        "created_utc": 1671909527,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the best place for a portfolio?",
+        "author": "AnyLibrarian6156",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zudo67/what_is_the_best_place_for_a_portfolio/",
+        "text": "I’m thinking about making a portfolio of some sort for my current projects and future ones. I assume the best place would be github but I just want to make sure.",
+        "created_utc": 1671900762,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can I leverage ChatGPT to help me with learning to code / working?",
+        "author": "david_bragg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zubky1/how_can_i_leverage_chatgpt_to_help_me_with/",
+        "text": "I know for a fact that ChatGPT isn't going to replace programmers anytime soon\n\nbut... it's only smart to use it as an assistant.\n\nI wanted to know what you guys came up with to leverage ChatGPT as a student and a programmer",
+        "created_utc": 1671894309,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Confusion regarding \"epsilon\" transition in NFAs",
+        "author": "tiredOfStressFr",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zu4i5x/confusion_regarding_epsilon_transition_in_nfas/",
+        "text": " Let's say we have a NFA as follows:\n\n&amp;#x200B;\n\nhttps://preview.redd.it/t15bv6zors7a1.png?width=601&amp;format=png&amp;auto=webp&amp;s=29d5cb39f96263371e4e2847751d0c8ba0c8b37f\n\nIt has 3 states, q1 - q2 - q3 and can make transition from q1 to q2 on 0 or epsilon and from q2 to q3 on 1 or epsilon\n\nMy question is do we take epsilon transition before reading input or after reading input and after reading the input, if we reach a state where we have epsilon transition do we take that transition? if the latter part is correct then we can conclude that: we can take epsilon transition without consuming input at any point in time i.e before or after reading the input\n\nLet's try processing some input string, so you can better understand my problem, input is \"0\"\n\nCase 1: We split ( not literally ) the NFA ***before*** reading anything. So, since there's an epsilon transition from the start state q1, we start in q1 and q2 but there's also an epsilon transition from q2 to q3. Meaning that we are going to start in q1, q2, q3 ( consider 3 branches )\n\nThen we read in our input which is 0:\n\n* from q1 the machine would visit q2, now ***before*** reading the next input we can take the epsilon arrow and split q2 into q2 and q3. Meaning the next symbol would be processed in these two states\n\n***Note***: Above once we split before reading 0, then changed state and then again took the epsilon from the new state, is it legal to take epsilon from q2 since it would technically be \"***after***\" reading 0 but \"***before***\" reading the next input\n\n* from q2 the machine would go to a trap state and hence reject\n* from q3 the machine would go to a trap state and hence reject\n\nCase 2: We split ( not literally ) the NFA ***after*** reading anything. In this case we start in just q1, read in the input 0 and move to state q2. And ***after*** reading the 0, we realise that we are on a state that has an epsilon transition to q3, so we split q2 to q2 and q3\n\nThere can be a 2b case: where instead of taking the epsilon from the new state, we first read in the input - take the epsilon transitions and then move on to the new resultant state, in this case after processing the current input, we would have q1, q2 and q3 as the final states\n\nWe can clearly see that in case 1 ( splitting before reading ) and case 2 ( spliting after reading ) we landed in the same set of final states, does this mean it does not matter if we split before or after?\n\nThis is important concept, because it's used in NFA to DFA, PDA and turing machine. Please help me!",
+        "created_utc": 1671866422,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What exactly are these keywords and what do they all fall under? architecture, pipeline, data flow, modeling, etc.",
+        "author": "goldenpanda78",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zu42b7/what_exactly_are_these_keywords_and_what_do_they/",
+        "text": "Like I understand they are kinda like blueprints or roadmaps for certain things, but what are the differences in terms and what does this all fall under? is it devops? or even like algorithms; they are blueprints for a certain code to do a certain thing. thanks in advanced",
+        "created_utc": 1671864709,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is compsci hard major?",
+        "author": "silkypants500",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ztue55/is_compsci_hard_major/",
+        "text": "",
+        "created_utc": 1671834173,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is a backdoor a simpler explanation for an apparent zero-click attack on high-profile targets (Pegasus)?",
+        "author": "vinamrsachdeva",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ztsw6o/is_a_backdoor_a_simpler_explanation_for_an/",
+        "text": "**Clarification.**  By backdoor I mean, for example, the  OS developer deliberately  leaving  vulnerabilities, sharing them with a  front organization (NSO  Group)  which could then develop the spyware (Pegasus) based on them and  offer  it to intelligence agencies of  friendly governments.\n\n**Questions.**\n\n1. Would this process be easier than just executing a zero-click attack?\n2. This   might work for Apple with iOS but I don’t know how difficult  would it   be for Google to introduce vulnerabilities and let it go  unnoticed  for a  lot of time in Android which is open source. Does the  incident  of  polkit privilege escalation vulnerability being unnoticed  for 12  years  show that it could also be possible to do with Android?\n\n**Motivation.**   (This is unrelated to this sub but I'm  just adding this so that  people  could understand why I'm asking this.)  First, revelations of  PRISM  showed that both intelligence agencies and  all the major OS  developers  for smartphones would be willing to  collaborate on such a  program.  Second, this strategy would make it safer  for both since it  would limit  the number of insiders who are aware of  this and also  offer them  plausible deniability in case the front is  caught. They  could have  multiple fronts working at the same time which  can undergo   closure/prosecution and be replaced as and when they are caught.",
+        "created_utc": 1671830276,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there an example of a project that uses “real OOP” that’s described by Alan Kay?",
+        "author": "Gloomy-Pineapple1729",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ztso1g/is_there_an_example_of_a_project_that_uses_real/",
+        "text": "I’ve been reading and following Alan Kay’s posts on Quora. And a lot of times he talks about how people are doing OOP wrong. And languages like Java, C++ etc… isn’t what he envisioned when he came up with OOP. \n\n\nThere’s also this medium article I’ve read on the subject. \n\nhttps://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f\n\n\n\nHowever a lot of his posts are pretty high level and abstract. Is there a concrete example maybe on GitHub that does OOP the way that Alan Kay talks about??",
+        "created_utc": 1671829666,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Time Series Forecasting Tool",
+        "author": "JamesJacob18",
+        "url": "https://odyxyhat.com/",
+        "text": "",
+        "created_utc": 1671820175,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What made you start programming?",
+        "author": "david_bragg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ztmnw5/what_made_you_start_programming/",
+        "text": "Curious to know what made you guys start learning to code.  \nI'll start first. I wanted to make my own game",
+        "created_utc": 1671815446,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Struggling Self-taught dev in need of guidance",
+        "author": "Run0fTheRex",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ztm8qm/struggling_selftaught_dev_in_need_of_guidance/",
+        "text": "[removed]",
+        "created_utc": 1671814461,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do you think the current web development courses are missing / suffering from?",
+        "author": "david_bragg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zted84/what_do_you_think_the_current_web_development/",
+        "text": "Everyone is making courses right now and claiming that they will fix your problem for example in CSS. You will become a Css master or Python Django etc...",
+        "created_utc": 1671799416,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "PC not working with hdd disconnected",
+        "author": "Seif90",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zt4cmn/pc_not_working_with_hdd_disconnected/",
+        "text": "my pc was showing this screen when i try to start it, i tried few things i found online but nothing worked, i tried to disconnect my hdd hard disk and it started just fine.\n\nwhat should i do to make it work with hdd connected?\n\nps : one of the stuff i found on bios was uefi boot order and legacy were both checked   \nso i only checked legacy but nothing changed. after i disconnected the hdd and found my pc works.\n\ni connected it back and checked both uefi and legacy and now my pc boots up but only shows black screen with only cursor showing",
+        "created_utc": 1671763276,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does a streaming service work? What does it need?",
+        "author": "Kionn42",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zsl06l/how_does_a_streaming_service_work_what_does_it/",
+        "text": "You start studying CS and everyone you know will leave the tech questions for you. Someone asked me about Netflix, as in how does it work, how much it costs to build a platform and maintain it. And I realise I have no idea at all. \n\nIf I were to build a streaming service, Netflix alike, what would I need? What are the main points to focus? Is creating and launching a smart tv app harder than a mobile app or web? How would you start?",
+        "created_utc": 1671712151,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does anyone have advice on making impressive CS projects/Looking at someone's resume/I can only code school projects, what am I missing?",
+        "author": "superrenzo64",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zs6q0o/does_anyone_have_advice_on_making_impressive_cs/",
+        "text": " No hate to this outstanding student, but looking at one resume, [https://imgur.com/a/KS1n415](https://imgur.com/a/KS1n415), I boiled it down to they\n\n\\- Built a scheduler app using Java and Android Studio with doctor/patient classes, dashboard\n\n\\- Built a photo sharing application (full stack CRUD using MERN)\n\n\\- Built a confessional web app (MERN stack)\n\n\\- visualized sorting algorithms with React\n\nThen I further boiled it down to what I actually see when I read this\n\n\\- made three classes\n\n\\- made something where you can upload and view a slideshow of photos\n\n\\- made something where you can write text and it appears formatted on a screen\n\n\\- mostly copy pasted algorithms linked to some sort of visualizer\n\nMost of these aren't impressive to me, although the student is obviously outstanding. In fact, these projects were done in hours. I don't know about MERN, nor have I ever taken something out of the IDE.\n\nI can easily code any school project, my 4.0 should speak for that matter, but I don't know what is the best/most desirable way/skill (building web app, iPhone app, etc) to take something out of the IDE.\n\nWhat are the most compatible skill and fundamental properties of big projects (for a cs student seeking FAANG, or business, or science/engineering research -- basically anything lol).",
+        "created_utc": 1671669057,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would it be better to major in CS, AI or both?",
+        "author": "ManWhoIsOnlyHuman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zs4ba9/would_it_be_better_to_major_in_cs_ai_or_both/",
+        "text": "My strongest passion is AI. I don't have any experience in the field, but I am extremely interested. I am a computer science major currently. Would it be better to double major in Ai and comp sci, major only in AI or comp sci, or stick with comp sci now and eventually move into AI?",
+        "created_utc": 1671663456,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What can someone do with Phython? (newbie)",
+        "author": "Scary_Fig_8570",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zrubhu/what_can_someone_do_with_phython_newbie/",
+        "text": "Apologies for the stupid question... I've always thought being able to code is like a super power. Yet never had the balls to learn. So I'm thinking during the holidays, is a perfect time!  \n\n\nI couldn't quite get answers to these questions online: What can I do/build with python? Are we talking websites, systems, automation, jail breaking?? I have zero clue but am keen to explore (I love building shit, and automating shit). Where/how do I implement python code? What's the best way to learn?   \n\n\nLack of clarity is definitely holding me back so I'm trying to eliminate that. \n\nI appreciate all the support in advance!",
+        "created_utc": 1671642409,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Project or Course-work for Master with a full-time job in the industry?",
+        "author": "PegasusInvasion",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zrl55y/project_or_coursework_for_master_with_a_fulltime/",
+        "text": "I am planning to pursue a master's in Computer Science. I will be working full-time in the industry.  \n\nShould I choose project-work or course-work?\n\nI am inclined towards project-work, but I am afraid it will be too much. On the other hand, I think course-work will be easy but won't benefit me much.",
+        "created_utc": 1671627935,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Free Review Copies of \"The C# workshop\" Book.",
+        "author": "Ankur_Packt",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zr9oy9/free_review_copies_of_the_c_workshop_book/",
+        "text": " Packt published \"The C# Workshop\" in September this year.\n\nAs part of our marketing activities, we are offering free digital copies of the book in return for unbiased and honest feedback in the form of a reader review.\n\nHere’s what’s included in the book:\n\n1. Understand the fundamentals of programming with C# 10 and .NET 6 \n2. Build your familiarity with .NET CLI and Visual Studio Code \n3. Master the fundamentals of object-oriented programming (OOP) \n4. Understand and implement concurrency to write more efficient code \n5. Create a database and handle data using C#, SQL, and Entity Framework \n6. Build web applications using the ASP.NET framework \n7. Run automated unit tests with NUnit to validate your code \n8. Use principles including SOLID, KISS, ACID, DRY, and design patterns \n\nIf you feel you might be interested in this opportunity, please comment below.\n\n**\\[Please note: I would appreciate people from the US, but this is not mandatory.\\]**\n\nAnyone who is interested can connect with me over LinkedIn, message me or comment on this post.\n\nThanks and Regards,\n\nAnkur Mulasi\n\n[https://www.linkedin.com/in/ankurmulasi/](https://www.linkedin.com/in/ankurmulasi/)\n\n&amp;#x200B;\n\n&amp;#x200B;\n\nhttps://preview.redd.it/yx52vw5fd67a1.png?width=643&amp;format=png&amp;auto=webp&amp;s=91762a0985fbb3b306a78560bb712b5e8cecc889",
+        "created_utc": 1671595294,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "If there is a virus in USB, will virus file be transmitted from USB to the computer while formatting the same computer?",
+        "author": "Attila_the_Roman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zqwjsj/if_there_is_a_virus_in_usb_will_virus_file_be/",
+        "text": "[removed]",
+        "created_utc": 1671562860,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Christmas Great Deals On https://microsoftprokey.com , Buy Microsoft Office 2021 Professional Plus for Windows PC - Microsoftprokey With Extra 30% Discount By Coupon Code \"MIC30OFF\" So Buy And Enjoy 30!!!",
+        "author": "KosherFastball",
+        "url": "https://microprokey.site/1zAsBqtZ",
+        "text": "",
+        "created_utc": 1671546099,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "best programming quizes and solutions which will increase your programming knowledge",
+        "author": "uzairbhatti",
+        "url": "https://learnprogrammingindetail.blogspot.com/2022/12/program-in-c-to-check-if-it-is-possible.html",
+        "text": "",
+        "created_utc": 1671508412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why does copying and pasting data seem to be an exact carbon copy but not really? Question detailed further in main body of post.",
+        "author": "FlairV1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zq5pi1/why_does_copying_and_pasting_data_seem_to_be_an/",
+        "text": "Can someone explain to me how when you copy let's say a .txt file it's said that the copy is almost exactly the same in every way except let's say the meta data but when you keep copying a video over and over again and copying the copy of the copy why it loses quality. Shouldn't it just be a carbon copy of the original? Isn't it just the exact bits being copied over? Am I missing something?",
+        "created_utc": 1671488978,
+        "upvote_ratio": 1.0
+    }
+]

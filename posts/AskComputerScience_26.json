@@ -1,0 +1,802 @@
+[
+    {
+        "title": "database management",
+        "author": "toxicxsagara",
+        "url": "https://i.redd.it/l0vf9vhz9w101.png",
+        "text": "",
+        "created_utc": 1512388545,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it necessary to learn Compilers if I want to go to graduate school?",
+        "author": "KrustyKrab111",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7hfh7n/is_it_necessary_to_learn_compilers_if_i_want_to/",
+        "text": "I don't intend to study Computer Science theory in grad school, but a concentration such as AI. In that case, would not having done a course on Compilers hurt my application to graduate school?",
+        "created_utc": 1512367460,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should I work on outside of class to develop my abilities?",
+        "author": "Lictus",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7hdf9d/what_should_i_work_on_outside_of_class_to_develop/",
+        "text": "I'm working towards a CS degree, and above all want to be sure my ability and skill set is as good as it can be when I finish. I'm *not* talking here about how to market myself--I'm talking purely about actual capability, and being able to get it done. I'm highly motivated and quite willing to work hard outside of formal coursework. But I'm not sure what I should actually be doing to make this happen.\n\nSo far, I'm in my first term; I have plans to try to teach myself Python over break, and work on Project Euler challenges as much as possible during the next semester. What else would be a good investment of my time?",
+        "created_utc": 1512345104,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is computer science a good degree if I want to go into research?",
+        "author": "dreymatic",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7hcsvy/is_computer_science_a_good_degree_if_i_want_to_go/",
+        "text": "This may sound a bit fantastical but I would like to as a career work on something that will impact lives in a good way. I really like math and am somewhat fond of science (but not enough to want to seek out being like a Chemist or Biologist, ETC.) However, I do want to have a career that I can do extensive research that will hopefully be significant. It seems like every person I know going to school for CS wants to be a software programmer but I don't want that. I want to work on AI, spend hours in a lab wanting to go home; because I just love the feeling of helping other peoples lives and I want to do it through my aspiration of Engineering. I just don't know which field of engineering I should go into.\n\nMaybe this would have been a better question for an AskEngineering reddit but this question is specifically about pursuing a career with a Computer Science degree to do research",
+        "created_utc": 1512339015,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Algorithm Analysis] How do I calculate the run time of a triple nested loop?",
+        "author": "PM_Me_Compliments",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7h9myr/algorithm_analysis_how_do_i_calculate_the_run/",
+        "text": "Hi!\n\nSo I have developed an algorithm that calculates the distance between a subseries S and all the series in a list of series T.\n\nI have come up with this (For simplicity I have removed the unnecessary code.\n\n    n = T.length\n    k = S.length\n    \n    //loops over the list of series (Arrays)\n    for i = 0 to n do\n        end = k-1\n        //Loops through each value in those arrays\n        for j = 0 to n-k do\n            iterates over each subseries of length k in those arrays\n            for m = j to end do\n                //distance calculation\n            for end\n            end++\n        for end\n    for end\n\n\nSo I have been trying to calculate the runtime complexity of this piece of code.  I am new to this and while comfortable on simple algorithms, this one has thrown me a bit.\n\nFrom looking at it I believe it is O(n^3) as there is a triple nested for loop. But I want to prove this.\n\nSo I started using the technique of making each loop a summation and then solving. (Sorry in advanced for the poor summation symbol formatting, I've no idea how to do it another way)\n\n    Outer loop\n   \n         n\n    ----------\n    \\\n     \\\n     /\n    /\n    ----------\n        i=0\n\n    \n    Middle loop\n    \n        n-k\n    ----------\n    \\\n     \\\n     /\n    / \n    ----------\n        j=0\n\n\n    Inner loop\n\n        end\n    ----------\n    \\\n     \\\n     /        1\n    /\n    ----------\n        k=j\n\n\nIf I am correct (which it is very likely I get this TOTALLY wrong :)) then;\n\nThe first two loops can be expressed simply as n*n\n\nand the inner most loop can be expressed as (n - j + 1)\n\nSo that should become n^3 - j + 1\n\nI believe that I can ignore constants so the final equation I am left with is\n\n    n^3 - j\n\nFirstly is that even correct? and also what do I do with that j?\n\nIf I have gotten this totally wrong could someone lend a hand on how to do this correctly?\n\nThanks guys.\n",
+        "created_utc": 1512307793,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Data structure detection",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7h7bbs/data_structure_detection/",
+        "text": "[deleted]",
+        "created_utc": 1512270502,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Step in to the building cluster",
+        "author": "Chinnning",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7h6r19/step_in_to_the_building_cluster/",
+        "text": "Hello everyone ! \n\nTo begin with i am 3rd grade IT system engineering student. For quite a while i was thinking about a project for my bachelors  final year 'project' and recently i felt in passion to build and deploy a cluster computer. Since i have little bit background in embedded systems, Linux administration and server-client communication this project fits me very well. My idea is to deploy a concept of cluster which runs some kind of WEB scraping ( not decided yet ) and is build from ~5 slave and 1 master single board computers like Raspberry, ODROID, Tinker, etc... \nAfter spending some time in library and searching information all around the internet i encountered some questions and hope so that this subreddit is the place to ask.\n\nAlso i should mention that since i am a student i am not planning to build something similar to enterprise cluster, my budget should be around ~500 EUR.\nFirstly, i want to ask how important is gigabit switch, SBC ports in cluster? Should i look into gigabit or 10/100 Mbps system?\n\nI have considered about Parallella board production, which is for building clusters, but it is quite expensive for me and hardly accessible from East Europe. Raspberry Pi model 3 is good choice for it's price and performance, but doesn't have gigabit port. On the other hand SBC like Asus Tinker looks like more durable with much greater performance, but has quite a bad Linux, community support ( red some articles ). Could someone help to pick a right choice?\nSince i am looking to the master-slave cluster i think i would need master node with higher processing power than Raspberry? The cluster 'brains' will run on python.\n\nWhat would the best solution for storage of the data?\n\nMaybe someone could guide me with some sort of guides, blogs, books which is worth reading about clustering?\n\n\n",
+        "created_utc": 1512264043,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Regular Expression",
+        "author": "carlosMCH",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7h6a9f/regular_expression/",
+        "text": "Let the alphabet\t ∑={\t0,1}.\t I am trying to write a regular\texpression\tfor each of\tthe following. I'm only using only union, concatenation, and Kleene star.\n\na) Bit strings that have an even number of 0’s\n\nb) All words in which '1' appears tripled (and only tripled,\tmeaning\tall\t1's must appear\tin groups of three). The empty string is also accepted. Note that blocks of four 1’s\tshould not\tbe accepted here.\n\nSo far I have ;\n\n  a) 1 * (01 * 01 *) *    \n\n b) However, confused on how to do B",
+        "created_utc": 1512259119,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What graphics algorithms should I know to make simple video games or movies?",
+        "author": "kamalist",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7h5e8v/what_graphics_algorithms_should_i_know_to_make/",
+        "text": "Hi all!\n\nI've been studying a course of a computer graphics this semester. There are some basics algorithms in the course: line clipping, polygon clipping, polygon filling and hiding of hidden surfaces.\nI understand that these basics algorithms should be useful in the fields mentioned in the title but consider that they aren't enough. All this stuff works with polygons, but I hardly imagine a game or a movie with only simple polygonal models. Could these simple polygonal algorithms be useful?\n\nAlso the question I can't answer is how to transform the objects more complex than polygons and lines. In case of polygons we just calculate new coordinate with the of matrix products, what to do with bitmap images?\n\nAnd what do you recommend me to study further in the computer graphics field? ",
+        "created_utc": 1512250020,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Interview Question puzzler: create a function that identifies all segmentations for 12258 whose segments are &lt;=26",
+        "author": "JuniorCoder",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7h4olq/interview_question_puzzler_create_a_function_that/",
+        "text": "Saw this asked in a mock JavaScript interview but not answered. Preferably in JavaScript or Ruby (but pseudocode fine too) return all segmentations of a number sequence whose segments contain numbers below 27. For instance, the number sequence 12258 would give us:\n\n    [\n     [1, 2, 2, 5, 8],\n     [12, 2, 5, 8],\n     [1, 22, 5, 8],\n     [1, 2, 25, 8],\n     [12, 25, 8]\n    ]\n\nIt's easy to with a for loop identify and extract the double number combinations under 27 [12, 22, 25], but managing the larger sequences in which one or some of these doubles appear is eluding me. Anyone do this before and have a solid answer? Thanks.",
+        "created_utc": 1512242967,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do Facebook stalkers show up in your \"people you may know\" list?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7h26ys/do_facebook_stalkers_show_up_in_your_people_you/",
+        "text": "[deleted]",
+        "created_utc": 1512214480,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to download videos in one second",
+        "author": "irfan115",
+        "url": "https://youtu.be/T9qOUSotSig",
+        "text": "",
+        "created_utc": 1512182162,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can there exist a thousandth of a bit?",
+        "author": "NutellaTornado",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gzc0z/how_can_there_exist_a_thousandth_of_a_bit/",
+        "text": "I was doing a software cleaning of my computer (uninstalling unwanted programs and such), and I noticed that Revo Uninstaller displayed the file size of one program (Mozilla Firefox) as 139.841 MiB. This boiled down to 139 MiB plus 6.728 bits.\n\nHowever, I don't understand how there can be anything less than 1 bit, since that's the fundamental unit of information in binary computer systems.\n\n---\n**Specifications:**\n\nMake &amp; Model: Lenovo G50-45\n\nOperating System: Windows 10 Home 64-Bit\n\nFirefox Version: 57.0 (64-Bit)\n\nRevo Version: 2.0.4.0\n\n---\n\n###EDIT: Many thanks to /u/triscuitzop and /u/anamorphism for making this comprehensible to me. I really appreciate you clearing it up! \\^_\\^",
+        "created_utc": 1512174014,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which is the more efficient in a loop structure for ~50-75 thousand iterations (and should I care?)",
+        "author": "Ten_Mile_Hike",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gtjon/which_is_the_more_efficient_in_a_loop_structure/",
+        "text": "for x:= 1 to 5 do if A[x] in [76..100] then inc(counter);\n                               vs.\nfor x:= 1 to 5 do if (A[x] &gt;75) and (A[x]&lt;101) then inc(counter);\n\nP.S. I'm just a hobbyist... using Free Pascal... Trying to learn ",
+        "created_utc": 1512113659,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If you were to add a black censor bar on an image or video, and send that video to someone (ex. youtube upload), is it possible for that person to remove the added censor bar?",
+        "author": "Anonatf",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gt26o/if_you_were_to_add_a_black_censor_bar_on_an_image/",
+        "text": "Curious and shady sounding question, I also may be totally oblivious...",
+        "created_utc": 1512107747,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is a good name for a mobile app that provides reviews/ratings for places in your local area (restaurants, events...etc.)?",
+        "author": "abrod262000",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gqysh/what_is_a_good_name_for_a_mobile_app_that/",
+        "text": "",
+        "created_utc": 1512087259,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Computer Scheduler Multilevel Feedback Queue question",
+        "author": "TBoarder",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gpe5d/computer_scheduler_multilevel_feedback_queue/",
+        "text": "I'm trying to make a simulation for a computer scheduler and am running into a problem that I can't seem to get an answer for.\n\nThe scheduler that I am doing has 8 processes and 3 queues, where **absolute priority goes to higher queues**.  Queue 1 is Round Robin with a time quantum of 6, Queue 2 is Round Robin with a time quantum of 11, and Queue 3 is First Come-First Serve.\n\nThe question that I have is... For example, I am running a process in Queue 2.  If I am in the middle of Q2's time quantum and a Queue 1 process becomes available, WHEN will the Queue 1 process start?  Will it allow the time quantum to finish, or does it interrupt the time quantum to perform its burst (which is what **absolute priority** implies to me)?  I'm just not sure how \"solid\" a time quantum is, if something else can break into it like that.",
+        "created_utc": 1512074201,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Formal Grammer Palindrome",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gkwue/formal_grammer_palindrome/",
+        "text": "[deleted]",
+        "created_utc": 1512030312,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is a good name for a mobile app that shows reviews and cool things to do in an area (restaurants, events...etc)?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gjced/what_is_a_good_name_for_a_mobile_app_that_shows/",
+        "text": "[deleted]",
+        "created_utc": 1512012551,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Size calc question",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ggph9/size_calc_question/",
+        "text": "[deleted]",
+        "created_utc": 1511989727,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Having a hard time understanding Finite Automata",
+        "author": "iEmerald",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ggc1k/having_a_hard_time_understanding_finite_automata/",
+        "text": "We have a really bad teacher in college he can't really explain FA that well, I've tried looking through his notes which are even way more terrible.  \n  \nI tried Sipser's and Ulman's book on the subject as well but both of them delve too deep on the mathematical side of stuff, our courses depend mostly on designing FA machines and also checking whether a string gets accepted or not and DFA &lt;-&gt; NFA conversions.  \n  \nI've tried many sources but I just can't understand it. Are there any books that someone here read and really recommend to everyone else? I would really appreciate it if someone helps me out!  \n  \nThanks in advance",
+        "created_utc": 1511986826,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Destructors in C++",
+        "author": "maikasan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gdd9b/destructors_in_c/",
+        "text": "Can someone tell me how destructors work in C++? The thing where theres a '~'  .\nAn example would help.\n",
+        "created_utc": 1511963326,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm not sure if this is correct sub for this but is there anyway for me to track down and delete and online accounts I made but don't use?",
+        "author": "aleister94",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7gat5a/im_not_sure_if_this_is_correct_sub_for_this_but/",
+        "text": "hi so I don't know a ton about computers and once or twice in the past I've gotten drunk and made accounts on a ton of hookup sites I don't remember the names of, I didn't put any pictures personal information on them other than my email address to make the accounts so is there a way a can find accounts associated with me email address and delete them? ",
+        "created_utc": 1511932534,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "regex question about capturing optional groups at the end of a string",
+        "author": "Zalack",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ga11y/regex_question_about_capturing_optional_groups_at/",
+        "text": "I'm designing a solution to a much larger regex problem, but am trying to wrap my head around this little snippet of it first. I'm fairly new to regex but it seems like a really powerful tool. I have already solved this problem with python string parsing, but I want to try and solve it with regex as well in order to learn more about the language. Please keep answers to regex solutions since that is what I am focusing on learning. Thanks!\n\nWorking with regex in Python.\n\nLets say I have a regex, and as part of that regex I want to check and see if there are certain letters at the end of my string and capture them if so. The reason for this is that these special strings are signifiers of something about the data\n\nTo use a mundane example. Lets say if I want to capture whether a verb has been conjugated with \"ing\" so that if I run my regex on \"hearing\" or \"running\" I get a match and capture the (\"ing\") as a group. That way I can check and see if the group was captured and set a \"present_tense\" flag if so.\n\nRight now here are my attempts. Note: I don't want to capture underscores which is why I am not using \\w:\n\n[A-Za-z0-9]+(?P&lt;present_tense&gt;[iI][nN][gG])$\nthis properly matches 'running' and captures my 'present_tense' group but will not match 'run'\n\n[A-Za-z0-9]+(?P&lt;present_tense&gt;[iI][nN][gG])$?\nthis properly matches both 'run' and 'running' but does not capture my 'present_tense' group.\n\nWhat is the proper way to capture an optional string at the end of a pattern? I am hoping to make one big regex that could capture all of my info into a dict.",
+        "created_utc": 1511924870,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Could you please give me some suggestions on 'Virtual Classrooms'",
+        "author": "The_meme_alchemist",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7g3tek/could_you_please_give_me_some_suggestions_on/",
+        "text": "I am a Cs student from Pakistan. My university has decided to set up virtual classrooms for Cs students and they need ideas. The concept of virtual classrooms is kind of new here.\n\nFor me , a virtual classroom is where students interact with each other and take up group projects. A place where creative ideas are discussed. A place where students can find like minded people. \n\nThey are focusing on making it more like a Skype group chat. Please help me put my  scattered ideas into presentable words.\n\n\nI want them to make it a  community of learners. Where students can review each others ideas and code. \n\n",
+        "created_utc": 1511872248,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is, exactly, spooling? Does it require multi-programming?",
+        "author": "Menesio",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7g369j/what_is_exactly_spooling_does_it_require/",
+        "text": "",
+        "created_utc": 1511863857,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Drawing a FSM diagram that accepts the following language description?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7g21y4/drawing_a_fsm_diagram_that_accepts_the_following/",
+        "text": "[deleted]",
+        "created_utc": 1511849273,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ssh into mac computer",
+        "author": "kdrummz",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fzq9x/ssh_into_mac_computer/",
+        "text": "Hello, I am taking an ios class next semester. We will be using xcode to create a few apps using swift. I am sure that I want to take this class. But I don't have a mac, I have a thinkpad. We do have mac lab computers in our lab though to use for this class. My question is will I be able to use xcode and program in swift from my apartment since I will be able to ssh in to them? It won't be like a remote desktop where I can open xcode when sshed in and have it be like working in osx, or will it? I figured it would all be on command line and not sure how this would work out.. Any help is great!",
+        "created_utc": 1511827144,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm an automotive sw developer, looking to switch to web development/services job.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fz59h/im_an_automotive_sw_developer_looking_to_switch/",
+        "text": "[deleted]",
+        "created_utc": 1511822173,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What will happen if there's an if statement in Peterson's algorithm",
+        "author": "Marorin",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fwg3t/what_will_happen_if_theres_an_if_statement_in/",
+        "text": "I have read this for Peterson's algorithm for mutual exclusion, and I had a question in what would happen if in the final statement in the enter portion to the critical section has an if statement on it: \n\n    flag[j] = true;\n    turn = j\n    if(turn ==j)\n          while(flag[k]);\n\nI figured there would be mutual exlusion as if one process goes through the first two statements, the second process could sneak in it's first statement before the first process heads into the important section, and then the second process can get in after wards, thereby ruining the property but I wasn't sure about fairness or liveliness? ",
+        "created_utc": 1511801052,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are the pros and cons of going to a coding camp?",
+        "author": "Jbu1022",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fvpfo/what_are_the_pros_and_cons_of_going_to_a_coding/",
+        "text": "",
+        "created_utc": 1511794755,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Graph search algorithm for two weights",
+        "author": "UnsurmountableHands",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fvccp/graph_search_algorithm_for_two_weights/",
+        "text": "Hi,\n\nIm trying to optimize the velocity trajectory of a car over a known track with varied height and slopes. \n\nMy optimization objective is to reduce the energy used over the whole track. My only constraint is that the traversal time should be less than or equal to a time limit. \n\nMy first thought was to create it as a graph traversal problem. By having nodes be velocities at certain points on the track. I would get a uniform distribution of nodes with known accelerations from one velocity to another. I also want the start velocity and end velocity be zero. I can also easily compute the time between each node. I have no trouble doing the car dynamics either. \n\nThis graph would become a Directed Acyclic Graph and then i could just use DAG-shortest path algorithm from start node to end node. The trouble is that the shortest path would most likely be very slow and not be a viable solution, because of my time limit. \n\nCould I modify the A* algorithm to use the time as another weighing function? or is there other graph search algorithms that are more viable?  \n",
+        "created_utc": 1511791243,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"No internet, secured\" when connecting to wifi after installation of Tunnel Bear, even after uninstall, on windows 10. How can i check what is causing this probem?",
+        "author": "ZoranSumadinac",
+        "url": "https://www.reddit.com/r/techsupport/comments/7ftuwy/no_internet_secured_when_connecting_to_wifi_after/",
+        "text": "",
+        "created_utc": 1511781998,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Has Conway's Game of Life ever been used to solve a computational problem more efficiently than other theoretical computing methods?",
+        "author": "NeoMarxismIsEvil",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ft49a/has_conways_game_of_life_ever_been_used_to_solve/",
+        "text": "What I mean is, say you have an idealized implementation where each cell will update in parallel such as you would have if there were a real Conway Life universe out there somewhere, or as with a hardware version where each cell was wired to update on a clock edge.\n\nEven with this sort of situation, is it possible for Conway Life to be practical as a computing machine for any purpose other than Conway Life itself?\n\nWhat about &gt;2D versions of the same sort of cellular automata?",
+        "created_utc": 1511763095,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CFG for a repeated string",
+        "author": "luh_maow",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ft488/cfg_for_a_repeated_string/",
+        "text": "L = {x ε {a, b}* | x =/= ww}\n\nThe CFG for this language would be \n\nS→A|B|AB|BA  \n\nA→a|aAa|aAb|bAb|bAa\n\nB→b|aBa|aBb|bBb|bBa\n\nHowever you will not be able to produce the string aabb, which is a string that is not x=ww.\nIs this CFG correct or am I just not seeing something really obvious?",
+        "created_utc": 1511763085,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "opening time-sensitive locked pdf files?",
+        "author": "DanLikesCats",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fskwg/opening_timesensitive_locked_pdf_files/",
+        "text": "i have a college transcript i need to open, but whenever i try to open it i get the error:\n\"this document is locked. your permission to view it has expired. if you want to open this document, contact the person who sent it to you and ask them to extend the expiration date.\"\n\nhaven't had any luck opening them with website based unlocks or printing it off. do i have to buy the transcript from the college again just to have access to my documents?",
+        "created_utc": 1511757081,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is building a Beowulf Cluster worthwhile?",
+        "author": "cincospenguinos",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fqx3z/is_building_a_beowulf_cluster_worthwhile/",
+        "text": "Forgive me if this is the wrong place to post this question.\n\nI have a few different computers that are all several years old. They are lying around doing nothing. I sometimes have to run code for a few of my classes that takes a lifetime to do. \n\nWould it be worthwhile if I put them together into a cluster computer? If so, would I need to invest in a network switch or can I get away with using my router? What resources would you recommend if I were to give it a go?",
+        "created_utc": 1511740592,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Quick question about note taking OS / file systems?",
+        "author": "6vNyLG2kaQqMmEj7u",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fpojr/quick_question_about_note_taking_os_file_systems/",
+        "text": "How do you (would you) go about it? Not quite in CS classes yet at the moment but learning as much as a I can in an autodidactic manner. I'm currently reading some open-source macOS documentation (IOKit / file system / etc.) and as happy as I am to have this information available, I've got not realistic way to take notes on all of this information, and my memory is quite terrible. Anyone with experience in this, formally or not, wish to help me out? Thanks in advance. \n\nAlso if you know of any more macOS documentation please let me know!\n\n\n\ntldr; how do you take notes about file / operating systems on paper without laboring 7000 pages of hand-written copy pasta?",
+        "created_utc": 1511729440,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the best laptop for a new computer science student to buy?",
+        "author": "pillowduster",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fnw1q/what_is_the_best_laptop_for_a_new_computer/",
+        "text": "Gonna be doing computer science in uni next year and deciding on a new laptop. With the new Surface Book 2 out im thinking of it instead of my original option the Macbook Pro with Touchbar 2017\n\nAnybody that have experience with either or both laptops, looking at the 13inch models, does the touchbar have any advantage when programming? Or is the surface book 2 better bang for my buck.",
+        "created_utc": 1511713722,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Outside of the standard college curriculum, what math and CS theory is broadly likely to be useful to a developer?",
+        "author": "Lictus",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fnjud/outside_of_the_standard_college_curriculum_what/",
+        "text": "I'm in college right now and planning on going into development, but even if I were pursuing a different career path entirely, I would be self-studying math and CS theory for sheer personal enrichment.\n\nSince I *am* pursuing development professionally, however, I figure I may as well try to focus any self-study on areas that would be of professional use. I'm not yet sure just what I want to do in my career, but generally, are there any topics applicable to large swaths of development that many devs seem often ill-prepared for by their college education? I'll make an effort to try to self-study these over the summer or something.\n\nYou can assume I'll have calculus, stats, discrete, data structures, and algorithms by the time I graduate.",
+        "created_utc": 1511710439,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Student] A question about the language {0ⁿ0²ⁿ0³ⁿ|n≥1}",
+        "author": "aren70",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fn9ds/student_a_question_about_the_language_0ⁿ0²ⁿ0³ⁿn1/",
+        "text": "Through looking it up online, it seems this language may be regular but not context free. The question is, I fail to understand this grammar at all so I have no clue how to prove it.\n\nThe reason is that for example, the string 000000 is in the language and is not at the same time (by my understanding). It can be interpreted as 0-00-000, therefore in the language, but it can also be interpreted as 00-00-00, where it is not in the language.\n\nIs my assumption correct that if there is a possible interpretation for a string to be in the language, then it is overall, in the language?",
+        "created_utc": 1511707388,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does it seem like most StackOverflow answers from ~2013?",
+        "author": "___Edward___",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fikv4/why_does_it_seem_like_most_stackoverflow_answers/",
+        "text": "It seems like a majority of them are from '12/13. Or if they are from semi recent times they'll be blasted in the comments and edited saying to the effect of 'fuck you this a duplicate' then linking off to something unrelated. ",
+        "created_utc": 1511649609,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Creating a complete page table",
+        "author": "Marorin",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fgtjl/creating_a_complete_page_table/",
+        "text": "So I'm trying to understand a question for homework, but I'm changing numbers around to understand a more complex version of this question. So we're given a process with a number of pages that the process would have, and the start byte (5120). Given that the page size is 512, and that it was stated that the process is said to be contiguous, the pages would just be one after the other I think. The question tasks in creating the whole page table of the process and only showing the PFN and the valid bit. As the process is contiguous I was wondering if the PFN would just be the page number would be. 0th, first, second, etc, and it wouldn't matter that much. I guess what I'm a bit confused on is the valid bit and how to write it all out in a way to understand it. The problem also dictates the # of bits for the physical and logical addresses are the same (10 for this example). I believe as the page size is 2^5 , that would mean to there are 2^5 addresses possible yes? \n\n",
+        "created_utc": 1511633100,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Am I missing something here, or is this video about calculating the smallest positive IEEE 754 single precision float value wrong?",
+        "author": "chrisoffner3d_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fga5p/am_i_missing_something_here_or_is_this_video/",
+        "text": "For homework I have to calculate and present the smallest and largest possible 32-bit (single precision) float values in the IEEE 754 standard. Looking at **[this video](https://www.youtube.com/watch?v=SMLcrWgE2sk)** however, I'm confused.\n\nHe claims that the exponent `0000 0000` is *reserved* but as I understand it, it actually represents the same exponent as `0000 0001` would (namely `-126`).\n\nHowever, if the exponent is `0000 0000`, that means the mantissa gets denormalised and the first bit of the mantissa is now presented explicitly (rather than implicitly).\n\nWhat's actually reserved for exceptions like `NaN`, `Infinity` and `-Infinity` is an exponent of `1111 1111`.\n\nIf I try it out in **[this IEEE 754 converter](https://www.h-schmidt.net/FloatConverter/IEEE754.html)** I'm finding that the smallest value you can reach is actually \n\nSign|Exponent|Mantissa\n:--|:--|:--\n0|0000 0000|000 0000 0000 0000 0000 0001\n\nand that number is `1.4 * 10^(-45)`, which is even smaller than the `1.1754945 * 10^(-38)` he presents in that video.\n\nAm I correct in my assumption here or did I miss something important?",
+        "created_utc": 1511628038,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CPU",
+        "author": "efuc",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fg5s8/cpu/",
+        "text": "Is it better to replace a CPU manually or replace the entire computer? For example, if I am upgrading from an i3 to an i5 will that negatively impact any other functions and/or procedures of the computer other than processing speed? I don't know if this is the right place to ask this but fuck it.",
+        "created_utc": 1511626890,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Certain characters in tags of songs keep changing",
+        "author": "gjbrostep",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ffesc/certain_characters_in_tags_of_songs_keep_changing/",
+        "text": "Idk if this is the right place to ask, but I am using an app called Star Tag Editor on my phone to change the tags of some songs. One song features Beyoncé but every time i set the e as \"é\" it changes the character to \"Ã©\" every time i save it. I've tried changing the character set, but no luck. Could someone please help?",
+        "created_utc": 1511619099,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why does my computer become unresponsive in general when internet is broken?",
+        "author": "MrOaiki",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fej4a/why_does_my_computer_become_unresponsive_in/",
+        "text": "I’m in my computer. Everything works just fine. Internet doing great. \n\nThen I connect to a network that is really shitty. It manages to connect to the DNS server sporadically. Maybe it loses connection. Maybe it doesn’t. Just a really crappy connection altogether.\n\nWhile I’m connected to the shitty router, my whole computer is laggy. The “color ball” on Mac comes in now and then, or the “thinking” cursor in Windows. \n\nWhy is the whole computer effected?",
+        "created_utc": 1511606946,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Whatever happened to the little question mark buttons on the top right of GUI windows?",
+        "author": "gatherinfer",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fbljx/whatever_happened_to_the_little_question_mark/",
+        "text": "I'm talking about these things: https://i.imgur.com/HXzBVG1.png\n\nYou used to see them all the time on computer interfaces, in the 90s and early 00s(?). You'd click it, and then you could click any part of the application and it would tell you stuff about how to use it. Sort of like a more detailed tooltip.\n\nYou hardly see them anymore. Even the one I screenshotted here doesn't do anything, it seems to be vestigial.\n\nWhere'd they all go? Why did everyone decide to stop using them? I liked them ...",
+        "created_utc": 1511569466,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Motivation to learn C and/or C++",
+        "author": "Morocco_Bama",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fbatf/motivation_to_learn_c_andor_c/",
+        "text": "I’ve been programming for a few years now but never learned the C languages. I spend most of my time in Python, MatLab and Java (my main language of choice), and Java has always seemed similar enough to C++ that I just stick to it for object-oriented projects.\n\nI’m into machine learning. Is there any strong argument for me as to why I should learn C or C++ aside from the latter being so prominent in the workplace ? Are there good starter projects I can look into?",
+        "created_utc": 1511566513,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "help with simple code",
+        "author": "Pixel-Shark",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7fbana/help_with_simple_code/",
+        "text": "[this](https://imgur.com/a/CVGh1) is part of some code i am writing. it is reading from a file which has a list of questions and then the answer on the next line. \nmy problem is that the answer is always wrong and therefore the total is always 0. [this](https://imgur.com/a/qkZKI) is an example.\ni tried printing answer and line to check i am reading them from the file correctly and i am; even when both are printed exactly the same, it says they're not the same and therefore wrong.\ncan someone please help?",
+        "created_utc": 1511566461,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Public IP's and me",
+        "author": "Ghost_Killer811",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7f884e/public_ips_and_me/",
+        "text": "I was in a Skype call and one of the members in the call found my public IP, posted it in the chat, and then he (what appeared to be) DDOSed me for 10ish seconds... How can I get him back? More specifically how can I find his IP through Skype. I just wanna scare him and show that I'm not gonna take this sh*t lightly.",
+        "created_utc": 1511538176,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does tcptraceroute actually work?",
+        "author": "grandalf2017",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7f75j0/how_does_tcptraceroute_actually_work/",
+        "text": "I know the standard traceroute sets a low TTL to figure out the intermediate routers. What field in the TCP header is changed for this?\n\nAlso, just to clarify, intermediate routers are not aware of whether a particular tcp packet is part of an established connection right?\n\n",
+        "created_utc": 1511526128,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So does anyone actually still use LaTeX for anything?",
+        "author": "siriustau",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7f30yq/so_does_anyone_actually_still_use_latex_for/",
+        "text": "Just wondering if people still use LaTeX for anything that isn't a professional document. Do people still use it for write-ups, presentations etc.",
+        "created_utc": 1511475775,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Missing return statement error? Even though the compiler HAS to go through a return?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/oichk2rphszz.png",
+        "text": "[deleted]",
+        "created_utc": 1511471461,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wrong error message?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7f2ifi/wrong_error_message/",
+        "text": "[deleted]",
+        "created_utc": 1511470782,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you build the front-end and back-end of a web app that's based on a neural network?",
+        "author": "ASamir",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7f26vv/how_do_you_build_the_frontend_and_backend_of_a/",
+        "text": "We're trying to build a facial recognition web app using a camera and we're trying to use neural networks to achieve this. I was wondering, since both of us know nothing about web development, how do we connect this to the back-end? We want to stream it in real time and build some extras like matching faces with names and saving these data in a database.",
+        "created_utc": 1511467745,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A level computer science help",
+        "author": "JustAGuyBruh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7es66l/a_level_computer_science_help/",
+        "text": "This is in my text book and i don't understand it, could some one explain this as easily as possible please?\n    \n    search(list[0..n-1], value, low, high) {\n    if (high &lt; low)\n     return error_message\n    mid = (low + high) / 2\n    if = (list[mid] &gt; value)\n       return search(list, value, low, mid-1)\n     else if (list[mid] &lt; value)\n       return search(list, value, mid+1, high)\n     else\n       return mid\n    }\n",
+        "created_utc": 1511368150,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Uber paid hackers 100k to delete stolen data. How can Uber be sure they followed through?",
+        "author": "discoyetiohyeah",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7emjls/uber_paid_hackers_100k_to_delete_stolen_data_how/",
+        "text": "https://www.forbes.com/sites/bizcarson/2017/11/21/uber-hack-payoff-57-million-data-exposed/\n\nHow could any entity determine with absolute certainty that the compromised data was destroyed? Is there any way to demonstrate as such? Thanks ",
+        "created_utc": 1511309586,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Student] writing ASCII charts/diagrams and comprehensions",
+        "author": "KurzGedanke",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7em3ti/student_writing_ascii_chartsdiagrams_and/",
+        "text": "`TLDR: So, the question is... are there any guides or tools which helps by creating ASCII diagram? Even a standard?`\n\nHi, I’m studying Computer Science and it is in the mid of the semester. Now it is the time for me to write comprehensions of my courses to study with. Especially I want to focus on two courses which is  `Logic and Discrete Structures` and `introduction to technical computer science` (I’m from Germany, so the translations might be a bit of... ^^”). With this courses come a lot of text, of course math and diagrams like logical diagram or electronic circuits. \n\nSo, because I like my comprehension clean and tidy I would like to write them digital and with this the first impression comes with LaTeX. I took a look at it and I really can’t stand, nor I have the time to learn it in my needs. \n\nThen I discovered that I can write LaTeX Math in Markdown and it was like “booom!” I’m saved! My favorite mark up language with great looking and relatively easy to write math expressions.\n\nBut there was this one thing: the diagrams...\n\nMaking them up in a Programm and edit the screenshot in the markdown? Nope... this looks awful. But what is with this fancy RFC? There is always a txt of them and they have different diagrams in them. Got it!\n\nSo, the question is... are there any guides or tools which helps by creating ASCII diagram? Even a standard? \n\nThanks a lot for your help! ",
+        "created_utc": 1511305757,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone give me a tip on transversal of a graph where each node has multiple connections?",
+        "author": "Klinging-on",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7elr9q/can_someone_give_me_a_tip_on_transversal_of_a/",
+        "text": "I am currently working a Dijktra's Algorithm project for school, however I've run into a wall in transversing the graph. Since each link creates a link in the opposite direction, I think what is happening is that the transversal method keeps going back and forth, however I'm not sure how to circumvent this. I'd be grateful for any sort of tip or hint.\n\nHere I defined GraphicalLink as a graphical represenation of a link between two nodes, so it consists of a forward node and length, and NetNode as the circles. Net node also has a stack of Links.\nNote: flash is just a method that highlights the node red\n\nExample screen shot: https://imgur.com/a/1C4Ug\n\n public void traverse(NetNode root) {\n    root.flash();\n\n    if (!root.name.equals(end.name)) {\n        LinkedList&lt;GraphicalLink&gt; links = root.getAllLinks();\n        for (int i = links.indexOf(links.peek()); i &gt;= 0; i--) {\n            GraphicalLink n = links.pop();\n\n            System.out.println(root.name);\n            n.flash();\n\n            if (n.end != null) {\n                System.out.println(n.end.node.name);\n\n                GraphicalLink temp = n.end.getAllLinks();\n                int z = temp.indexOf(root);\n                if (z &gt;= 0) temp.remove(z);\n\n                traverse(n.end);\n            }\n        }\n    }\n}\n\nEdit:better formatting",
+        "created_utc": 1511302822,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ideas for displaying a splash screen through boot",
+        "author": "kjhislop",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ekujz/ideas_for_displaying_a_splash_screen_through_boot/",
+        "text": "Hello all,\n\nI'm currently working on the UI for an integrated electrical system, and I have been asked to display a splash screen on start up. It needs to be the first thing displayed, and continue to be on-screen until the interface appears.\n\nThe graphics will be run on a single board computer running Linux (Ubuntu 16.04). It has an Intel Celeron J1900, and will be connected to a standard commercial display through a VGA or DisplayPort cable. \n\nMy problem comes from the number of stages it takes to boot. When first powered on, the BIOS has control of the display. From there it hands it over to the Boot Loader, in this case GRUB. Then it goes to the Linux kernel which displays it's start-up graphics before finally giving control to the window manager that displays my UI. \n\nEven after configuring the BIOS, Boot Loader, and creating a custom Ubuntu theme to display the same splash image in each stage, there are still large chunks of time during the transitions that the screen is back. \n\nIs there any way to simply display a static splash parallel to this whole process?\n\nI considered a hardware solution where a different controller displays the splash and the main board can trigger an input signal switch for the display, but this not only seems like kind of a patchy workaround, but it's also way more involved than I would like to get for a simple splash screen.\n\nAny help would be greatly appreciated!",
+        "created_utc": 1511295638,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does the FCC's Net Neutrality vote affect people outside of the US?",
+        "author": "HelpMeRunAway",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ej2ye/does_the_fccs_net_neutrality_vote_affect_people/",
+        "text": "If so, how? If not, why not? \nIn both cases, what can a non-American do to help? \n\n(Not sure if this is the best place to post this... please redirect me if there is a more suitable sub)",
+        "created_utc": 1511281996,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help deciding on prototype software",
+        "author": "12MoreSeconds",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7ecqle/help_deciding_on_prototype_software/",
+        "text": "I am a CS student and I have to do an assignment where I am supposed to have a \"working prototype\" of an application that I designed but I was allowed to mock it or hardcode it a lot.\n\nThis basically means that all I need is some software that lets me create a mock application where I can go from one page to another and pass variables around that determine what page to display. I don't have much UI experience and while I'd normally use this opportunity to learn a language, I'm completely swamped with other courses so I won't have time to do it.\n\nDoes anyone have any recommendations?",
+        "created_utc": 1511216448,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A question about greedy algorithms and the activity selection problem.",
+        "author": "Redemption_Unleashed",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7eccp2/a_question_about_greedy_algorithms_and_the/",
+        "text": "The question:\n\n&gt;We use greedy strategy to solve the activity selection problem: each time we select the\nactivity with the smallest finishing time and remove the activities which have overlap with it, then reduce\nthe problem to the sub-problem for the remaining activities. \n\n&gt;But **if we have two CPUs instead**, and we\nstill want to select as many as possible activities to process by these two CPUs, **does this greedy strategy\nstill work?** Please explain your reason (specifically, do the two properties of greedy algorithms hold in\nthis case? ).\n\nThe two properties being the greedy choice property and optimal substructure.\n\nI was under the impression that they would not hold but I feel like I am misguided. Could somebody explain.\n\nMuch thanks.",
+        "created_utc": 1511213357,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do machine code instructions have corresponding physical designs in a CPU?",
+        "author": "patientdev",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7e9v91/do_machine_code_instructions_have_corresponding/",
+        "text": "I'm trying to understand how a CPU processes bits. For example, with a jump, does the processor recognize that it's an incoming jump, then send the instructions off to the corresponding jump subsystem.\n\nApologies for incorrect vocabulary.",
+        "created_utc": 1511193996,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Final project idea",
+        "author": "jurgonaut",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7e8kzm/final_project_idea/",
+        "text": "I am currently in the process of searching a suitable idea for my final project. My idea is to create a website that generates random strings that could be used in passwords. Its similar to how cloudflare gets their randomness [link](https://www.youtube.com/watch?v=1cUUfMeOijg) . So basically its an arduino with a a camera filming a lava lamp. Then this information is sent do a raspberry pi. On the pi there is a web server running. When a user comes to the web site he chooses the length and character range and the server generates true random string with the the help of the camera and sends the result back to the user. I think it would be a fun project and that I am able to do it. My main concern is that the web server/client part is to easy (it would be a website with a single page). Do you have any idea how could I enrich this project? Do you have any other similar or not so similar ideas? I would like my final to include front end, backed or sysadmin or arduino.  ",
+        "created_utc": 1511181555,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is This Build Good And Will It Work Out And Be Functioning When I Get It?",
+        "author": "CSBaldwin13",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7e3hsx/is_this_build_good_and_will_it_work_out_and_be/",
+        "text": "[removed]",
+        "created_utc": 1511125669,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can you guys help me what computer is better. PC SPECS IS AT THE COMMENTS help plz😇😇",
+        "author": "TheGamingToadX",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7e3ei4/can_you_guys_help_me_what_computer_is_better_pc/",
+        "text": "",
+        "created_utc": 1511124853,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone give me advice on my current career path? Is it a bad idea to get a nano degree in data analysis from udemy?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7e1vuv/can_someone_give_me_advice_on_my_current_career/",
+        "text": "[deleted]",
+        "created_utc": 1511111748,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does TCP work when data is generated from the server?",
+        "author": "Klausar",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dzstw/how_does_tcp_work_when_data_is_generated_from_the/",
+        "text": "So basically the way I understood it is, that when you visit a website a TCP connection opens, you get all the data and the TCP Connection is closed. But what if later some data is generated from the server, for example with a PHP Echo. The connection is already closed, how does that work?",
+        "created_utc": 1511086765,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can we design a \"determinate\" puzzle that a human can solve faster than a standard computer?",
+        "author": "rjromero",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dxbzw/can_we_design_a_determinate_puzzle_that_a_human/",
+        "text": "Perhaps 30 years ago or so, it was entirely possible that there were some puzzles you could solve faster than a computer. Things like a Sudoku puzzle, or the 8 Queens problem. (Now millions of Sudoku boards can be solved per minute, and there exists a backtracking algorithm for a 1,000 Queens problem that my laptop can run in 0.25 seconds).\n\n\nStill, computers are inherently bad at recognizing context, size, and relationships between objects, and they're pretty slow at \"visual\" rendering in comparison to humans, so using this I synthesized a puzzle: Imagine a 1024x1024 image, speckled with boxes of random sizes and random colors. Within each box there would be \"child\" boxes, that would be random colors as well, or a color similar to their parent. The \"puzzle\" would involve specifying the color of the box in the image with the most children, a valid child being a box with a color that is no more than ~20RBG_distance values away from the parent box (e.g. A red parent box with a pink child, blue child, and green child, technically has \"one\" child and that is the pink one). You could add a few more transformations to the base problem to make it exponentially more complex. Like having random polygons instead of boxes, adding orientation, and changing the rules of valid \"child\" nodes to have to match the same orientation, same # of vertices, etc.. Still, with a standard discreet GPU this problem could be solved within ~4 seconds just iteratively checking every pixel.\n\n\nAny ideas? That was just an example I've come up with over the past day. The idea is to have a problem that the computer could eventually calculate on it's own, with 100% probability and absolute determination, but the human would still be able to freehand it much faster. (while this example is 4s, even a problem that would take 30s+ for a computer to solve would be interesting).\n\n\nAlso, by \"determinate\" I mean yes humans can look at any image on the internet and immediately recognize whether it is a photo of a dog or cat or house or something, and while this is something neural networks and computers can be trained to recognize, a neural network can not discreetly \"recognize\" whether the image is a dog or cat but only offer a probability, leaving it up to interpretation of the user to determine if it was solved or not, rather than being proven through a logical or mathematical process.",
+        "created_utc": 1511054640,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nested Time Complexity",
+        "author": "smellofnaphta",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dw5c5/nested_time_complexity/",
+        "text": "Hi folks, \nlet's say I know that the time complexity of a certain Algorithm **A**(n) is O(n^3 ). What would be the time complexity of the following procedure:\n\n    for i in 1...N\n        A(i)\n    end\n\nI assume it is O(N^4 ). If so, how can I prove it? If I'm wrong, what is the right answer and why?\nThanks! :-)",
+        "created_utc": 1511042893,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are these specs good desktop intel core i9 7900x 32gb NVIDIA GeForce gtx 1080ti-240gb solid state drive + 3tp hard drive black. And can it last me a long time and will be good for gaming plz anwser me 😇😇😇",
+        "author": "TheGamingToadX",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dus52/are_these_specs_good_desktop_intel_core_i9_7900x/",
+        "text": "",
+        "created_utc": 1511030324,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can you guys plz help me I’m trying to see which one is better an i7 7820x or i9 7900x (I’m looking to buy a new computer)",
+        "author": "TheGamingToadX",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dttew/can_you_guys_plz_help_me_im_trying_to_see_which/",
+        "text": "",
+        "created_utc": 1511021519,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Pumping Lemma for regular Languages",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dsm27/pumping_lemma_for_regular_languages/",
+        "text": "[deleted]",
+        "created_utc": 1511007959,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help! Using command prompt to test a python program?",
+        "author": "moronology",
+        "url": "https://www.reddit.com/r/programmingrequests/comments/7dq8x7/help_using_command_prompt_to_test_a_python/",
+        "text": "",
+        "created_utc": 1510975519,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I make a video from an mp3 file with a gif looping over it?",
+        "author": "ReallyKenny",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dpmd1/how_do_i_make_a_video_from_an_mp3_file_with_a_gif/",
+        "text": "",
+        "created_utc": 1510968365,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "NP-Completeness: SAT formula to a graph [reduction]",
+        "author": "dmsad",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dpbh5/npcompleteness_sat_formula_to_a_graph_reduction/",
+        "text": "Hello,\n\nUsually, when we transform a boolean formula F to a graph we use the literals to form vertices. \nIs anybody aware of a reduction that also takes the clauses themselves, and make vertices out of them?\n\nThank you.",
+        "created_utc": 1510965345,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Asymptotic time complexity",
+        "author": "Arctic_23",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dmhz1/asymptotic_time_complexity/",
+        "text": "Can someone help me, please?\nI can't find out polynomial of this code and statement to it.\n\n\n\n    def function(n):\n        for i in range(n):\n            if i == 0:\n                for j in range(n):\n                    for k in range(10000):\n                        print(\"Run\")\n\n\nThanks!",
+        "created_utc": 1510939479,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Asymptotic time complexity",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dmfbs/asymptotic_time_complexity/",
+        "text": "[deleted]",
+        "created_utc": 1510938838,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why has machine learning been able to master Go but not chess?",
+        "author": "Garrotxa",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dm0qe/why_has_machine_learning_been_able_to_master_go/",
+        "text": "From what I've read, deep neural networks have been able to beat the very best Go players (AlphaGo), but only attain FIDE IM status in chess. \n\nYet with traditional computer play, the best computers thrash chess GMs but can't compete with master Go players. \n\nWhy does this seeming paradox exist?",
+        "created_utc": 1510935309,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hoare triples: Can anyone double-check my results?",
+        "author": "kiraora",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dlvze/hoare_triples_can_anyone_doublecheck_my_results/",
+        "text": "So the format is a a whee bit tricky so I put my calculations also here:\n[https://pastebin.com/Uj5mjbUB](https://pastebin.com/Uj5mjbUB)\n\nProve the validity of the following hoare triples, if possible, or give a counterexample! All used variables are initialized (with unknown value) and have the type int.\n\n&gt; 1) {a&gt;7 ∧ b≥0} n = a-b {n&lt;a ∧ a+b≥0}\n\nThis triple is **false** because you can give the following counterexample:\na=8; b=0\n(8&gt;7 ∧ 0≥0) -&gt; (8-0&lt;8 ∧ 8+0≥0)\n8-0 is not smaller than 8.\n\n&gt; 2) {x ≥ y+1 ∧ y is even} z=x+2;x=x+y+z; {x even}\n\nThis triple is **true**. See the following proof:\n\n\t\t\t\t\t\t\t\t    (x+y+z even)\n\t\t\t\t\t\t                 /-----------------\\\n(x ≥ y+1 ∧ y is even)-&gt; R[z:=x+2] R -&gt; (x even [x:=x+y+z]) \n---------------------------------------------------------\n{x ≥ y+1 ∧ y is even} z=x+2 {R} {R} x=x+y+z {x even}\n---------------------------------------------------------\n{x ≥ y+1 ∧ y is even} z=x+2; x=x+y+z; {x even}\n\nAssuming:\nR: (x+y+z even) -&gt; x+y+z even\n\nInserting our assumption:\n\n\t\t\t\t\t\t\t(x+y+(x+2) even)   \t\t(x+y+z even)\n\t\t\t\t\t\t\t/-------------------\\   \t\t/-----------------\\\n(x ≥ y+1 ∧ y is even)-&gt; (x+y+z even[z:=x+2]) x+y+z even -&gt; (x even [x:=x+y+z])\n\nIs this proof correct? Im not so sure to be honest.\n\n\n&gt; 3) {x≥y+1 ∧ y even} if(0!=y%2) {x=x+y;} else {z=x+2;x=x+y+z;} {x even} This should be **true** as well.\n\n\t\t\t\t\t\t   (x+y even)\t\t\t\t\t                        (x+y+x+2 even)\n\t\t\t\t\t\t/----------------\\   \t\t\t\t\t                 /---------------\\\n(x≥y+1 ∧ y even ∧ 0≠ymod2)-&gt; (x even [x:=x+y]) (x≥y+1 ∧ y even ∧ 0=ymod2)-&gt; x+y+z even[z:=x+2] x+y+z even-&gt;(x+y+z even)\n\n\t\t\t\t\t\t (x+y even)\t\t\t\t\t\t\t\t\t\t\t(x+y+z even)\n\t\t\t\t\t\t/----------------\\\t\t\t\t\t\t\t\t\t\t\t/-------------\\\n(x≥y+1 ∧ y even ∧ 0≠ymod2)-&gt; (x even [x:=x+y]) (x≥y+1 ∧ y even ∧ 0=ymod2)-&gt; R[z:=x+2; R-&gt;(x even[x=x+y+z])\n---------------------------------------------------------------------------------------------------\n{x≥y+1 ∧ y even ∧ 0≠ymod2} x=x+y; {x even} {x≥y+1 ∧ y even ∧ 0=ymod2}z=x+2 {R} {R} x=x+y+z;{x even}\n----------------------------------------------------------------------------------------------------------\n{x≥y+1 ∧ y even} if(0!=y%2) {x=x+y;} else {z=x+2;x=x+y+z;} {x even}\n\n\nAs always. Any help is much appriciated!  :)",
+        "created_utc": 1510934239,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Neural Network resources?",
+        "author": "Touch0fGray",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dhifi/neural_network_resources/",
+        "text": "I am starting an independent study next semester on image recognition using neural networks. I was wondering if there were any resources, whether it be books or online, that would be helpful in my research? Also, is there a preferred language to use with neural networks that would give me the best results? Thanks in advance!",
+        "created_utc": 1510884548,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What does \\\\d+ mean in Java?",
+        "author": "happytabbycat",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7df0o0/what_does_d_mean_in_java/",
+        "text": "My teacher gave us this code to use in our project about Stacks. I'm having a hard time understanding it. From what I understand, the if statement sees if the scanner has an integer. Then the \\ \\d+ forces the scanner to get all the digits and push it onto exprStack until it reaches a non-digit token. But I don't how the else statement tells it to get a non-digit token and the \\ \\d+ knows to stop when it reaches a non-digit token. We weren't taught about \"regex\". \n\nHere is the code: https://pastecode.xyz/view/e6241a6a \n\nSorry I don't know how to format code on reddit. ",
+        "created_utc": 1510862307,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Additional topics for my Computer Organization class?",
+        "author": "olyko20",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7de0vy/additional_topics_for_my_computer_organization/",
+        "text": "Hello /r/AskComputerScience,\n\nMy professor is leaving the last couple of lectures as open-ended where we could ask about anything relative to the course material. As I'm not exactly sure what concepts I want to know more about, or what I feel should be covered in this class, I figured I'd ask you guys! What do you think should be covered in a computer organization class?\n\nHere are the topics we've discussed so far:\n\n* bits, bytes, bases, signed/unsigned, arithmetic for computers\n\n* parallelism\n\n* the power wall\n\n* big/little endian\n\n* the processor and components (basic overview of ALU, register file, control, etc)\n\n* pipelining\n\n* SRAM v DRAM\n\n* cache and cache structures (direct mapping, n-way set, etc)\n\n* reliability and availability\n\n* error correcting codes\n\n* RAID (0, 1, 4, 5, 0+1, 1+0)\n\n* virtual machines\n\n* virtual memory\n\n* multicore multiprocessors\n\n* CISC v RISC\n\n* ARM assembly programming (basic operations, load/store, branching, addressing modes, strings, stdin/stdout, stack, subroutines)\n\nWhat is my professor missing? Thanks in advance!",
+        "created_utc": 1510854070,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Want to get into Cloud Computing as a new grad. Any suggestions on where to start?",
+        "author": "ChadRStewart",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dda38/want_to_get_into_cloud_computing_as_a_new_grad/",
+        "text": "I'm going to graduate from school within the next few weeks and I really want to get into software development for the Cloud. I spoke with someone about this some weeks ago and he suggested that I take a MOOC to train for the AWS certification and that'll teach me everything I need to know about Cloud development. Are there other suggestions?\n\nAlso, what are the applications of Cloud Architecture? Been poking around and haven't seen a good list of things that I can mess around with as I learn or afterwards.",
+        "created_utc": 1510847785,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is 'Software and Architecture Design' Computer Science?",
+        "author": "HelpMeRunAway",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dcmje/is_software_and_architecture_design_computer/",
+        "text": "I am busy studying for my 3rd year Computer Science exams, and half the exam is on a section the university calls 'Advanced Software Design' which is basically about how to run software development projects (eg: agile vs waterfall), which architecture patterns to follow in various situations etc. This whole section seems really wishy-washy - like a lot of opinions, or just anecdotal experience. \nMy question is, is this stuff actually computer science? How important is this stuff in the real world? ",
+        "created_utc": 1510841544,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to solve Two Rats in a Maze Problem",
+        "author": "oralclimax",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dclk2/how_to_solve_two_rats_in_a_maze_problem/",
+        "text": "Rat in a Maze is a backtracking problem where given an NxN matrix, you have to get the solution on how to find a path from the source to the destination cell. Having one rat is a bit easier but having two rats in a problem is quite difficult. They should move simultaneously in each find of another cell and they should not be on adjacent cells. I know it is a backtracking problem but I'm kinda lost on how should I do it. The rats can move up, left, right, down and diagonally too but cannot go in an obstacle/landmine in the matrix. How should the pseudocode be?",
+        "created_utc": 1510841289,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "HDD is enclosed in a big box where as a CD is not... How come?",
+        "author": "lolimjon",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7dbv9x/hdd_is_enclosed_in_a_big_box_where_as_a_cd_is_not/",
+        "text": "",
+        "created_utc": 1510832759,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What does compareTo(\"string\")!=0 mean?",
+        "author": "happytabbycat",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7d6n26/what_does_comparetostring0_mean/",
+        "text": "This is part of the a code. Op is a string that are numbers like 1,2,3,4,5. We are supposed to compare it to -, +, *, and /. I saw this part of the code and I don't get what !=0 means. What does it mean for the comparision to not equal 0?\n\nwhile (op.compareTo(\"-\")!=0 &amp;&amp; op.compareTo(\"+\")!=0 &amp;&amp; op.compareTo(\"*\")!=0 &amp;&amp; op.compareTo(\"/\")!=0) {",
+        "created_utc": 1510775096,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What gets saved before a timer interrupt",
+        "author": "Marorin",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7d4n0h/what_gets_saved_before_a_timer_interrupt/",
+        "text": "So this is based out of a question I postulated earlier about the timer interrupt. In class we discussed that %eax and %eip get saved before the timer interrupt in the k stack and that its not possible to really save it in the trap handling stage. I was curious to ask both what does get saved in xv6 and what doesn't, not to mention why its not possible to save it in the trap handling stage of a timer interrupt (Looking for specifics, I have some general idea here). I looked at earlier chapters ( http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf this one, page 8 ) and I didn't see %eax, so that's where my confusion is born from. ",
+        "created_utc": 1510758110,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How can a direct P2P connection work ?",
+        "author": "theguy2108",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7d3543/how_can_a_direct_p2p_connection_work/",
+        "text": "I have read about about how torrents work, that trackers are not actually involved in transfer of data and they just provide information so that different peers can connect to each other. But how is that possible? How can two clients connect to each other directly?\nAFAIK, a client connects to a server and then the server replies to the client. The server can never directly send something to a device because multiple devices can have the same public IP address. for example, if two laptops are connected to the same router which is then connected to the internet, the laptops would have the same public IP address and therefore a server would not be able to directly communicate to any single laptop. If it tries to send something to that IP address, the router wouldn't know to which laptop should it send the data. \nA BitTorrent P2P transfer however, seems to solve this problem. I am curious to how it does that.\n",
+        "created_utc": 1510740392,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Computer science senior project",
+        "author": "hazyKnights",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7d0yf8/computer_science_senior_project/",
+        "text": "Hello all! \nI need help, long story short my boyfriend is doing a unity related project for his senior project to graduate college.\n\nI’ve watch him crunch and put so much money into this and he’s not getting anywhere. His professor is a hard ass and he’s going crazy just trying to graduate and it really hurts me to see him like that. If he can’t get this project in he’ll have to wait another semester to graduate.\n\nBasically from my understanding the project is hooking unity up to the oculus(the virtual reality helmet thing.) and being able to play a unity game while using an android phone as the controller.\n\nDoes ANYONE have any familiarity with this? So far he’s only gotten the unity screen to show up through the phone. That’s it.\n\nPlease any help would be great like KILLER GREAT.\n\nLike help someone get a degree great.",
+        "created_utc": 1510713141,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Q] How to construct the intersection of 2 NFA?",
+        "author": "Kibouo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7cy86k/q_how_to_construct_the_intersection_of_2_nfa/",
+        "text": "Without converting them to DFAs beforehand.\n\nCan one use the product construction like with DFAs? How do I handle epsilon-transitions using this method?",
+        "created_utc": 1510688988,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Computer architecture for a newbie?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7cy7yh/computer_architecture_for_a_newbie/",
+        "text": "[deleted]",
+        "created_utc": 1510688932,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Weird Java install error",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7culjr/weird_java_install_error/",
+        "text": "[deleted]",
+        "created_utc": 1510652936,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you overcome the Google 'search bubble'?",
+        "author": "mildlycustard",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7cuaid/how_do_you_overcome_the_google_search_bubble/",
+        "text": "Hi everyone,\n\nI'm a second year IT student, and I was just curious about the disc burning process, libraries and documentation on CD formats all the way from the physical format to getting a CD player to recognise an audio CD burnt by a computer. How do you interface with a disk drive?\n\nI try Googling this stuff, but it's impossible. No combination of \"developer\" or \"documentation\" or \"technical\" or anything gets me more than \"Top 10 CD burning Apps\" and \"How to make a Playlist in iTunes\". \n\nHow do you overcome the technical Google search problem?",
+        "created_utc": 1510648188,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Context Free Grammars in NLP",
+        "author": "edwardsrk",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7cu3zl/context_free_grammars_in_nlp/",
+        "text": "Looking for someone who has worked with or implemented CFGs in the realm of NLP",
+        "created_utc": 1510645402,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Masters at Good C.S. schools",
+        "author": "throwaway_billy_bob",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7cst9c/masters_at_good_cs_schools/",
+        "text": "Is it possible to get into a top C.S. school (graduate program) with a crappy GPA (3.2) and no recommendations from teachers/professors?",
+        "created_utc": 1510630052,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Array-list implementation of tree that's assumed to be a complete tree, but the tree is not complete. How do I proceed? Do I just increase the size of the array, and that's it, or what?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/7cq9a0/arraylist_implementation_of_tree_thats_assumed_to/",
+        "text": "[removed]",
+        "created_utc": 1510606951,
+        "upvote_ratio": ""
+    }
+]

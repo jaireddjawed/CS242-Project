@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Is my computer safe after ProctorU online classes?",
+        "author": "Method_Coding",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/9631pj/is_my_computer_safe_after_proctoru_online_classes/",
+        "text": "So I just finished an online semester of Algebra, which required us to take tests through ProctorU.\n\nWhen connecting to ProctorU, we have to consent to allowing them control. Then they scan my computer for virtual machines, etc. Then the assistant controls my mouse to look around for open windows, etc. After the test is done and I close my browser, my camera light goes off.\n\nThis all seems fine. But in the past few startups I've noticed a CMD Prompt window pop up and scroll some text real fast on the desktop before I can read it. My mouse is also double clicking sometimes when I single click.\n\nSince my semester is done, I want to be sure everything is as secure as I can. I ran MalWareBytes with rootkit checker enabled, and found no problems. I looked in the task manager, and nothing stood out (but there's a lot of stuff in services). I Googled how to remove ProctorU's \"LogMeIn\" stuff, and didn't see anything on my computer that matched it.\n\nIs there some tool I can use besides a malware checker? Like a remote access vulnerability checker? I'd really like a program to audit my computer for openings if possible.",
+        "created_utc": 1533868591,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What do you guys think about plain text passwords...",
+        "author": "Calboron",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/962y8t/what_do_you_guys_think_about_plain_text_passwords/",
+        "text": "...sent on SSL to Access Managers.\n\nSo here's the long story. Our software uses Oracle Access Manager to generate access tokens that authorise the REST API calls and the Access Manager stores the passwords in one way hash.. blah blah blah. The REST API calls are SSL only.\n\nNow when the pen testers especially the client ones test the app, the first observation is the password is plain text on the browser and this should be encrypted on browser. The justification is the plain text would be tracked in browser cache. \n\nAny thoughts please.",
+        "created_utc": 1533867789,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Comcast Bizarre MoCA Hole",
+        "author": "Ryan-PDX",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/962a45/comcast_bizarre_moca_hole/",
+        "text": "So last night, I went to login to my Comcast provided router to turn on a port forward, and I saw something strange... My neighbors WIFI Credentials on my modems login page. (My SSID is \"Bill Wi the Science Fi\")\n\n[https://imgur.com/sEIMMyr](https://imgur.com/sEIMMyr)\n\nStrange! Especially because after refreshing the page it would sometimes show my SSID. I just use the default IP ranges from the Comcast modem at home, so both my modem and my neighbors modem are configured as [10.0.0.1](https://10.0.0.1).\n\nI was able to stay logged into my modem long enough to re-address it to [10.10.10.1](https://10.10.10.1) and do some digging.\n\nI noticed an unknown device come up in my connected devices list. It was listed as a MoCA device, and I don't have any MoCA devices in my house! I also noticed that my neighbors modem was showing a MoCA connected device as well, so on a hunch I tracked down my MoCA MAC.\n\n[https://imgur.com/nQZao4Z](https://imgur.com/nQZao4Z)\n\nWhy on earth would my modem be connecting to my neighbors modem? Is MoCA really that unsecured?\n\nI tried disabling MoCA, but the modem kept re-enabling it after 30 seconds. So I added the neighbors modems MAC to my blacklist and rebooted. Still connected. \n\n[https://imgur.com/2QGfost](https://imgur.com/2QGfost)\n\n[https://imgur.com/0EuyaCa](https://imgur.com/0EuyaCa)\n\nI eventually had to call Comcast and have them disable MoCA remotely. After reading up a bit, I will keep my appointment with them tomorrow and request a Point of Entry Filter... However, this was something new to me, and quite fun to learn about.. I hope it helps someone!",
+        "created_utc": 1533862274,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do your remember/keep up to date with all this information?",
+        "author": "FoldingCheese34",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/960pu0/how_do_your_rememberkeep_up_to_date_with_all_this/",
+        "text": "So something i notice about job postings in this industry is they provide a ton of requirements as information go. For example one I recently saw was looking for scripting, linux, sysadmin, and networking. Others want that stuff plus c# coding.\n\nI can't remember all these subjects easily so how do you do it? My current job doesn't do a lot of scripting, so I've been looking at online guides to try to keep my skills up to date past college. Similar woth networking. I'm studying for the CCNA but its hard to believe ill be able to remember this stuff on the fly. Currently i do some sysadmin on linux + risk assessments + managing a vulnerability scanner + reading c code. But even now i can't switch to answering questions easily unless i have recently been working with it.\n\nHow do you experience professionals remember so much information?",
+        "created_utc": 1533850558,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TPM Firmware update",
+        "author": "cwil2405",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/960k68/tpm_firmware_update/",
+        "text": "Guys quick question. I'm sure everyone has received the TPM firmware error message mentioning the need for an update. My question is, if you don't use the secure boot process is it something that needs to be updated immediately? Also, is there a faster way to do a mass deployment of the update.. non-manually?",
+        "created_utc": 1533849437,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does this 3 year Cyber Security Advanced Diploma seem like a good use of time and money?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95yxdc/does_this_3_year_cyber_security_advanced_diploma/",
+        "text": "I asked this question in cscareerquestions and got a negative response but I thought this may be a more appropriate forum:\n\nI have no post secondary education and pursuing a bachelors degree isn't really an option for me at this point in time. I do have several years of experience working as a web developer, a job I very much lucked into and is strongly WordPress-oriented, and have picked up a lot of programming knowledge on my own over the years. \n\nI am in my late 20's and was strongly considering taking a 3 year Advanced Diploma \"Computer Programmer Analyst\" details [here](https://www.fanshawec.ca/programs/cpa2-computer-programmer-analyst/next). I know this sub tends to advise people away from getting diplomas and toward degrees, but this particular program has a very good reputation and many of its former students had success locating good jobs right out of school.\n\nThe problem is I'm not so sure I'm enamored with the curriculum anymore (software/web/mobile development in popular frameworks) both because I'm not sure I want to risk spending the rest of my life working as a \"code monkey\" and because I've found I'm pretty good at picking up things like this through self-study and faster than I would in a classroom environment.\n\nThere is also a program (3 year Advanced Diploma) at the same school in [Cyber Security](https://www.fanshawec.ca/programs/cyb1-cyber-security/next) that strikes me as genuinely interesting. The impression I have is that I would have a less common skill set at the end of those 3 years than if I had pursued the other program and I think the work would be more interesting to me. It would be a nice thing to pair with my current knowledge of webdev/programming and I could work on picking up an extra skill or two in the 3 years I'd be in the program.\n\nMy problem is I have virtually no sense whatsoever of what the Diploma is worth. I'm confident I would learn a lot, but I don't know if I would end up with a useless scrap of paper for my efforts.\n\nAnyone have any words of wisdom?\n\nThank you",
+        "created_utc": 1533838476,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SATCOM vulnerabilities identified at BlackHat convention.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95ytw5/satcom_vulnerabilities_identified_at_blackhat/",
+        "text": "[deleted]",
+        "created_utc": 1533837844,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Where can I find the leaked source code of various operating systems?",
+        "author": "PabloSkywalk",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95ym28/where_can_i_find_the_leaked_source_code_of/",
+        "text": "[removed]",
+        "created_utc": 1533836422,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's your Take on AI and \"machine learning\" as it encroaches on the Security field?",
+        "author": "topazsparrow",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95yfet/whats_your_take_on_ai_and_machine_learning_as_it/",
+        "text": "Is it a threat to your job or something that is a valuable tool but ultimately won't and can't displace many jobs in this field?",
+        "created_utc": 1533835172,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Facebook cache understanding.",
+        "author": "Baloogab0t",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95y699/facebook_cache_understanding/",
+        "text": "Browsing my mobile phones root files I found the cache for what I assume is my old Facebook (creepy stuff). Viewed in text editor first and they appeared as packets would (hashed). Then, when viewed in HTML they displayed small portions of Google maps images. My question is: why are some of these maps labeled \"dirty\" and \"clean\" and why are some of the maps over other countries such as Bolivia and the Ukraine? Is this anything to be concerned about?",
+        "created_utc": 1533833523,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Blackhat USA 2018 Livestream ?",
+        "author": "siddis_",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95xd9f/blackhat_usa_2018_livestream/",
+        "text": "Hi. Is there a free or cheap way to see the Blackhat USA 2018 in Livestream?\nOr if not,  is there a way to get the briefings free or cheap early?",
+        "created_utc": 1533828169,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Here is the evidence they got my Tails.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95xaub/here_is_the_evidence_they_got_my_tails/",
+        "text": "[deleted]",
+        "created_utc": 1533827718,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Opinions on these add-ons?",
+        "author": "ate-too-many-humans",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95xa19/opinions_on_these_addons/",
+        "text": "Are they reliable? Open sourced? Personal experience? In the world of keeping what you’re doing on the internet private will any of these affect that negatively?\n\nHTTPS Everywhere\n\nGhostery\n\nNoScript\n\nBloody Vikings!\n\nGrammarly \n\nuBlock Origin (one I’m super excited to use hopefully)\n\nI also use a VPN.\n\nThank you all!",
+        "created_utc": 1533827560,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can you go back if turned down a job offer",
+        "author": "Uscuba2_18",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95wdfz/can_you_go_back_if_turned_down_a_job_offer/",
+        "text": "So I had been interviewing and got  offered a position for  a blue team. The same day that I got their final offer, I got  a call from gov agency saying that my application was re opened and I was moving  forward. Fine, so I declined. The next week I am on site with the agency and the  recruiter  realizes  that my birthday  ages me out because you have to be under a certain age to when you graduate.  Thankfully,  I did not give notice to my current employer but can I go back other company and ask if the offer still  stands since the opening is available? Or did I torch  the bridge?",
+        "created_utc": 1533820819,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the best entry level job for a CS/IT student to get while still in school?",
+        "author": "crypto-anarchist86",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95vv6t/what_is_the_best_entry_level_job_for_a_csit/",
+        "text": "So i'm currently enrolled in a local community college to get by basics out of the way. My degree plan is currently for CS but I'm much more interested in cyber-security and related areas of expertise. Most entry level jobs I've seen for IT and cybersecurity require previous work history and experience that I don't have. This is a big career change for me. Ideally I'd like to get some work experience while I'm still in school, that way when I do graduate, I can hit the ground running. I'd rather not wait for and depend on an internship...especially since I'm still a couple years away from that point in my education. I'm thinking an entry level IT support desk position or something similar would be the best fit?? But then again, I'm not sure...like I said, this is a new field for me so I'm not even sure which positions I should be looking into. \n\nAny suggestions? ",
+        "created_utc": 1533816519,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Network Flows to Cloud QRadar All-in-one Appliance (Software)",
+        "author": "Pavi_Pavi",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95vq0l/network_flows_to_cloud_qradar_allinone_appliance/",
+        "text": "Hello Experts,\n\nWe are in the process of planning the External flow collection from Juniper J-Flow and Checkpoint firewall flows forward to Cloud QRadar All-in-one Appliances\n\nI need detailed info on that:\n\n1: what all the firewall ports required to forward the Network flows to Cloud QRadar All-in-one Appliances .\n\n2: By Juniper end, if they enable to forward the flows to QRadar, then is there any configuration required at QRadar end.\n\n3: Any dedicated Network interface required for Flows collections on Cloud Qradar AIO.\n\n4: My thought is, without any SPAN/Mirror Port on Network interface. Can I forward the Flows from Juniper or any Firewall devices directly to Cloud Qradar All-in-one Appliances.\n\nNeed your inputs and thanks in advance!\n\nRegards!\n\nPavi",
+        "created_utc": 1533815200,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you study for ECSA?",
+        "author": "sanext15",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95uzuw/how_do_you_study_for_ecsa/",
+        "text": "Hey folks, I was just wondering if anyone has a solid grasp of the ESCA course and exam. Id be more than happy to hear from you.\n\nKind regrads",
+        "created_utc": 1533807658,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I accidentally caused my organization to be hacked and costed them thousands - But I don't think it's my fault",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95tvxs/i_accidentally_caused_my_organization_to_be/",
+        "text": "[deleted]",
+        "created_utc": 1533794776,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Entry-level cybersecurity jobs?",
+        "author": "kuuderesaremoe",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95thit/entrylevel_cybersecurity_jobs/",
+        "text": "I’m in the process of getting an Associates in cybersecurity. So far, I’ve been learning IT basics with minimal focus on security. I really want to get some experience on my belt. It seems like most entry level jobs that I qualify for are helpdesk or hardware-related. What entry level jobs would you all recommend for someone wanting to end up in a cybersecurity position? Would help desk be good enough experience to land me a cybersecurity job afterwards?",
+        "created_utc": 1533790472,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good free VPNs?",
+        "author": "thatSlytheringirl",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95rk15/good_free_vpns/",
+        "text": "I know what many are gonna say, that I should pay, but my money is limited right now and I can't afford to pay for one. Especially since I need it for something minimal. I need a VPN that gives me an IP for South Korea to create an account on a page that is only available for people with Korean IPs. Help please?",
+        "created_utc": 1533773505,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Good smart locks and security camera's",
+        "author": "Zoomer826",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95r53m/good_smart_locks_and_security_cameras/",
+        "text": "Hey all,\n\nI usually dabble more on the software side of things, but a client asked me for recommendations on smart locks and security camera systems for their offices. I'm doing my own research on the side, but would like to solicit your input too at the same time, as I know many of you may have already handled this question before in the field.\n\nIdeally the smart lock would have some kind of access monitoring so we can tell who entered and when, and while this may just be the security guy in me getting paranoid, if there's one that required both a key AND a secondary verification such as a pin (something you have, something you know), that would be even better.\n\nAppreciate it!",
+        "created_utc": 1533770258,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need Help Identifying Hacker",
+        "author": "ReturnPolicyNow",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95qs0h/need_help_identifying_hacker/",
+        "text": "Hello! How can I find out if someone has access to my computer? I have tried using command prompt and typing netstat -a and netstat -b, but am not too sure what is what, as far as if what I am seeing in the columns is correct. Please help! Thank you.",
+        "created_utc": 1533767454,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are my options when my vendors get spear phished?",
+        "author": "nuubles",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95qodu/what_are_my_options_when_my_vendors_get_spear/",
+        "text": "One of my vendors (PC and Parts Supplier) is getting spearphished attempting to get quotes and intercept payment information. The phish is spoofing my organizations email addresses. Other area businesses in the same industry (healthcare/hospital) are seeing the same with their emails being spoofed. Seeing as I cant control either end of this email exchange, what are my options for protecting against this?",
+        "created_utc": 1533766686,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Learn Cyber Forensic Quickly",
+        "author": "invisiblesecretx",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95q7oo/learn_cyber_forensic_quickly/",
+        "text": "[removed]",
+        "created_utc": 1533763388,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Arp Spoof",
+        "author": "ForrestDump6",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95q71q/arp_spoof/",
+        "text": "Whenever I use arpspoof over wireless networks  it takes down the targets WiFi? What’s happening here and how can I fix it. Also, what’s the best man in the middle application to use. MITMF doesn’t work for me as it doesn’t change the targets router mac address to mine and when it does, rarely, it still takes down the targets WiFi. Help. ",
+        "created_utc": 1533763263,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Recommended newer tools/utilities for simple behavioral analysis",
+        "author": "PreNinja",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95p6ih/recommended_newer_toolsutilities_for_simple/",
+        "text": "I've just recently been getting into more behavioral analysis and I'm looking to find a good list or set of recommended tools are out there. Lots of lists have some pretty old stuff on there and some aren't maintained any more, are built more for old versions of Windows, etc. I'm looking more along the lines of things like I found at [www.carbonblack.com](https://www.carbonblack.com/) (looks cool but not free) or [www.achievesecurity.com](https://www.achievesecurity.com/), if that helps. Stuff that I can throw into a malware lab and just get some quick results and that is free. Thanks! ",
+        "created_utc": 1533756468,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "DDOS switching with circuits after they fail over.",
+        "author": "BlackSquirrel05",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95p668/ddos_switching_with_circuits_after_they_fail_over/",
+        "text": "So have an issue with random DDOS attacks happening semi periodically. (NTP reflection, ICMP, all spoofed.) Happens for literally a few minutes.\n\nFirewall holds up fine essentially the circuits clog. \n\nNothing is really being hosted on these addresses. \n\nMy question is when the next circuit does kick in how are they able to jump so quickly? The circuits all are different ISPs with different IPs. \n\nOne theory is malware communicating with a c2. Internal Pcap showed nothing last time... Just all broadcast/multicast from internal traffic not being able to communicate. (Though I was using net monitor and not WS, and i'm wondering if it's default made to run in promiscuous mode...)  \n\nUnfortunately splunk shit the bed from the last one after attempting to run a more detailed report from the FW logs. To thus go back and see if internal traffic was headed out to some nefarious/random place. \n\nSo lessons learned, but the mystery/s remain. I suppose someone could write into the script to ping those as well and then switch targets? Or querying our DNS in some way I havent thought of.\n\nThus I turn to the internet to help me learn. \n\nThanks in advance.",
+        "created_utc": 1533756402,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Crest and the USA",
+        "author": "Faloop-10",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95ozmn/crest_and_the_usa/",
+        "text": "Does anyone think Crest will start gaining traction and become a worthwhile set of qualifications to have in the USA?\n\nTo give some background here I am a penetration tester and already have the offsec certs (OSCP/E) and presently I am looking at what to pursue next. Crest seem to be trying to gain a foothold in the US and they seem to be big elsewhere in the world. They also do an infrastructure cert and a red teaming cert (as far as I know), however GIAC do not offer any equivalent certifications but they do offer sans training courses on these topics.\n\nSo in short, how relevant and worthwhile do people think the Crest certs are and how do people think Crest will progress in the US?",
+        "created_utc": 1533755189,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Enterprise Encryption Solutions?",
+        "author": "Javathemut",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95oq1j/enterprise_encryption_solutions/",
+        "text": "Any suggestions for enterprise encryption similar to Veronis and pkware? Basically blanket file encryption across the network.",
+        "created_utc": 1533753436,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Golden ticket attack with no domain admin hashes?",
+        "author": "microsuck",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95ogg9/golden_ticket_attack_with_no_domain_admin_hashes/",
+        "text": "If an attacker can breach a domain member workstation, but the workstation only has domain user hashes, no DA hashes present, is there any way they could still execute a golden ticket attack if they move laterally to a DC passing just a user hash?  Even if the domain user is a local admin on the workstation.",
+        "created_utc": 1533751687,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nessus scan of a hardened computer",
+        "author": "pbutler6163",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95nqsr/nessus_scan_of_a_hardened_computer/",
+        "text": "So here is the background. We have a need to deploy computers that are not domain joined. We also decided (finally!!) to have Security built in. So the workstation (windows 10 1803) is hardened. But now management wants a CIS scan using Nessus professional. The scan runs and almost no data is returned, even using the local admin credentials. I am trying to get this done without braking the hardening. Suggestions?",
+        "created_utc": 1533747069,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PCI-DSS question",
+        "author": "security_guy_",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95n6uv/pcidss_question/",
+        "text": "For those who need to be PCI compliant, how can you prevent customers from emailing their credit card info to you? We have O365 and their DLP functionality, but i’m not sure if that’ll work or not.",
+        "created_utc": 1533743344,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am about to buy the CCNA study guide along with \"Learn Python The Hard Way\" and will be moving onto Violent Python and Kali Linux Revealed. Is this a good starting point? Anyone know about any problem sets?",
+        "author": "PUBG_INTENSIFIES",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95myno/i_am_about_to_buy_the_ccna_study_guide_along_with/",
+        "text": "I am getting tired of being on my xbox all the time.  I've spent so much time on there and would like to spending that time developing a skill that I can actually use.  I am possibly going to be in a CS course this month or definitely next year.   I'd really like to get some momentum going before then though.  I have watched some Professor Messer \"A+\" videos but I need practice to get things stuck in my head.  Problem sets about anything netsec related would be awesome.  I am not ready to set up labs or anything yet but i'd like to get to that point as efficiently as possible.  Thanks if you can help.",
+        "created_utc": 1533741823,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there an iOS browser app that prevents websites knowing your real IP address hidden behind VPN?",
+        "author": "SoftDevice3",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95mw8e/is_there_an_ios_browser_app_that_prevents/",
+        "text": "Countering webrtc, scripts, dns leaks etc",
+        "created_utc": 1533741393,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MITMF arp spoofing not working?",
+        "author": "ForrestDump6",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95mqdg/mitmf_arp_spoofing_not_working/",
+        "text": "When I start mitmf using this — \nmitmf —arp —spoof —gateway 192.168.1.1 —target 192.168.1.4 -i wlan0 \n\nIt starts up and acts like it will work but it doesn’t change the MAC address of my gateway when I do arp -a on the target. Therefore I’m not receiving any packets as the middle man? What’s the issue here and is there a way to fix it?\n\n[Edit] It also usually denies the target WiFi when I start the attack.",
+        "created_utc": 1533740329,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A Call for Participation in a Research Study",
+        "author": "pbutler6163",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95mj2b/a_call_for_participation_in_a_research_study/",
+        "text": "Hmms eems this post was destoryed. Reposting:\nA Call for Participation in a Research Study\n\nThe research topic:\n\nCybersecurity of Internet of Things devices within an industrial environment\n\nThe research problem:\n\nThe systems that make up every level of the Internet of Things (IoT) have rapidly been assimilated into critical and essential roles in daily lives. As the entire ecosystem of the IoT evolves and expands, the wide range of functions and supporting components involved are resulting in significant security and ultimately privacy challenges that need to be addressed. The Industrial applications of IoT (IIoT) also referred as Industry 4.0 (Schwab, 2017) suffer from very similar security and privacy concerns as implementations that expand existing Operational Technologies (OT) networks through the interconnection of smart sensors and actuators with integrations into cloud computing platforms to create intelligent infrastructures create vital links within energy, transportation, manufacturing and automation.\n\nThe Research Purpose\n\nThe purpose of the proposed qualitative study is to explore, the experiences of cyber-security professionals who have practical knowledge in implementing Industrial Internet of Things systems and devices and their perceptions of the security risks to these systems, giving rise to a better understanding of the security and privacy concerns that must be overcome.\n\nThe research question:\n\nWhat are the experiences of cyber-security professionals who have implemented Industrial Internet of Things systems and their perceptions of the security risks to these systems? This exploration may lead to a better understanding of the security implications of a technology that is rapidly growing but is overlooked within Industrial Control Systems due to a false sense of security.\n\nResearch study participation:\n\nFor data collection, this research study needs at least 10 participants for semi-structured interviews with an additional 2 for a pilot phase to fine tune the questions. The interviews will be conducted via Skype video conference calls in a nationwide scope. The primary focus of participants will be individuals who currently work within the manufacturing industries. Additionally, participants should be identifiable cybersecurity professionals. Each participant will answer about 10 interview questions. Interviews will likely be no longer than one hour.\n\nBenefits of Participation\n\nThere may or may not be a direct benefit to participants in the study, but we hope to further the knowledge required to implement IoT Devices into industrial settings that will help organizations to improve their security posture that could indirectly benefit everyone. Your contribution will be recognized and acknowledged in the dissertation.\n\nYou will receive the following payment/reimbursement: $25 Amazon Gift Card for participation, presentable upon completion of the interview.\n\nConfidentiality\n\nDuring the data collection and data analysis, every effort will be made to ensure that participants of the study will in no way be able to correlate their responses to their identity; the information will be coded to mask participants identities and ensure the confidentiality of the respondents. The data and records will be stored within an encrypted offline medium, and this will be stored within a locked container. Only the researcher will be allowed access to the data and the records, and once the study is complete, the data and records will be securely destroyed.\n\nContact information:\n\nIf you would like to participate in this research study or functions as a pilot for the questions or have any other questions regarding this study, you may contact Patrick Butler at\n\n- Cell phone number: 201-873-4938\n\n- Email address: patrick.butler1@student.ctuonline.edu or patrick.butler@gmail.com\n\n- Linkedin social media network: r/https://www.linkedin.com/in/patrickmbutler/\n\nFor questions regard the rights of research subjects, any complaints or comments regarding the manner in which the study is being conducted, you may contact Colorado Technical University – Doctoral Programs at 719-598-0200.\nReferences\n\nSchwab, K. (2017). The fourth industrial revolution. New York: Crown Business.",
+        "created_utc": 1533738887,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone have Blogs/ websites for news/ tools relating to new pentesting tools/ attacks?",
+        "author": "allidoispk",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95manp/anyone_have_blogs_websites_for_news_tools/",
+        "text": "Anyone have any ",
+        "created_utc": 1533737200,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone use MS Threat Modeling Tool? i'm lookong for examples and templates to get started modeling web applications",
+        "author": "lseconi",
+        "url": "https://www.reddit.com/r/threatmodeling/comments/95m4in/any_good_tutorials_and_example_threat_models_for/",
+        "text": "",
+        "created_utc": 1533736651,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Scanning for rogue fileservers on a lan?",
+        "author": "irishsofabread",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95lsif/scanning_for_rogue_fileservers_on_a_lan/",
+        "text": "So I work with Varonis a lot at work and was made aware of a file server with a few shares that aren't monitored by Varonis and kind of startled my team and I that there's gotta be more of these out in our network. Anyone know of a good way of being able to pick these up? ",
+        "created_utc": 1533733305,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tool to check for web server configuration changes for IIS and apache?",
+        "author": "lseconi",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95lgqw/tool_to_check_for_web_server_configuration/",
+        "text": "I'm looking for free to use tools to verify if there are any changes to the webserver configuration (iis and Apache). Can be a tool run separately to check for changes to a \"gold\" configuration, or run continuously to alert any modifications to the gold config. Do u guys know what I can use? Thanks!",
+        "created_utc": 1533730445,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bypassing ntfs permission \"list folder contents\"",
+        "author": "RXCR2",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95l5zb/bypassing_ntfs_permission_list_folder_contents/",
+        "text": "I believe I've come across a way for a Win 10 standard user account to bypass the NTFS permission \"list folder contents\" and list files in folders to which the user does not have access. (The contents of those files,  however,  remain out of reach).\nWould this be considered a serious vulnerability?",
+        "created_utc": 1533727635,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why are checks safe?",
+        "author": "vrek86",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95l2if/why_are_checks_safe/",
+        "text": "Everyone knows you should never give out your checking account number and routing number. It's even stupider to then sign that piece of paper. Now if you want the hat trick of stupid ideas write your complete address on that same person.\n\nNow if you really want to go out with a bang, hand that paper to poorly vetted, minimum wage earning, random person who you likely won't even remember the name on their name tag.\n\nYet this is exactly what you do when you pay with a check. How is that even close to safe?\n\nA credit card I swipe a magnetic strip/insert a encrypted chip that in turns sends a secret number to my bank, I then have to type a secret number/sign a signature that gets compared to known records, and those two secret things are analyzed to see if they are similar to criminal activity and if so any future use(as well as current use) is disabled until a new one is created and linked to my account.\n\nYet, I constantly hear of credit card theft and don't think I ever heard of people having their account missing money due to people writing fake checks.\n\nSo are checks actually safer? If so how? If not why do you so rarely hear of fake checks being used(only ever seen them in Craigslist scams and those are normally cashier checks)? ",
+        "created_utc": 1533726620,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If you use an authenticator app, should you remove your phone number from online accounts for extra security?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95kp9e/if_you_use_an_authenticator_app_should_you_remove/",
+        "text": "[deleted]",
+        "created_utc": 1533722595,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'd like to learn exploit development. Would creating exploits for old vulnerabilities be a good use of my time?",
+        "author": "pantheredesneiges",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95hyau/id_like_to_learn_exploit_development_would/",
+        "text": "I come from a programming background. My idea was to setup unpatched VMs of Windows XP, 7, 8, etc. and then craft exploits that take advantage of previously published security vulnerabilities from [here](https://www.cvedetails.com/vendor/26/Microsoft.html).\n\nGood for learning or a waste of time?",
+        "created_utc": 1533694119,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which exam should I take, CEH or Security+?",
+        "author": "HGCODE",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95gc5p/which_exam_should_i_take_ceh_or_security/",
+        "text": "I am available for a program for my local area where I can either take the Security+ exam or the CEH exam for free. I know that the CEH exam is not what it was once worth, but in comparison which is better? If neither, which exam should I ask about or save up for?  ",
+        "created_utc": 1533681012,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Junior pentester salary",
+        "author": "phi10s",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95el7u/junior_pentester_salary/",
+        "text": "I'm a new OSCP seeking a job, and a few companies have shown interest. Had a couple interviews with a couple companies so far that went really well and now one company is asking me what my compensation expectations/needs are. I don't really know how best to answer. I don't want to low ball myself, but I don't want to kick myself out of the running either. I wish companies would just tell me what they're offering, but that isn't the world we live in, apparently. What do you guys think is reasonable compensation for a new pentester with an OSCP and a couple years of IT job experience, assuming the technical interviews went really well?",
+        "created_utc": 1533668972,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Facebook using third partyAuthenticator. Option saying “Allow logins without code for 1 week”.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95ed17/facebook_using_third_partyauthenticator_option/",
+        "text": "[deleted]",
+        "created_utc": 1533667496,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Python for Netsec?",
+        "author": "Sweeece",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95e8k4/python_for_netsec/",
+        "text": "What are some projects in Python that I could write out related to Network Security? I'm looking to start building my Python portfolio and need some ideas.",
+        "created_utc": 1533666665,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nessus Scan Config Help",
+        "author": "Adam2675",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95dr8r/nessus_scan_config_help/",
+        "text": "Hi all,\n\nI am using Nessus for the first time as part of an assignment on my course. Our instructions say to simply run a scan on one of our Ubuntu Servers, however I am having trouble getting the scan to work. My professor is very bad at e-mailing back to students (there are a few of us having issues as it is our first time using the software) so I am hoping I can get some help on here. \n\nI managed to install Nessus on my server with no problem, connecting to it through the web browser allows me to login just fine, and presents me with this dashboard:\n\nhttps://imgur.com/a/3acAvs0\n\nSo I thought I would start with a Basic Network Scan against one of the linux servers (IP: 18.237.118.164), which looks like this on my dashboard: https://imgur.com/a/bHjcoLs\n\nNow for the credentials part; I input the username (which is Ubuntu, as that is the username I use to Putty in to the server, which looks like: https://imgur.com/a/nlVjAeX)\n\nI put the .PEM key into the private key section. This key was provided by the professor. Everything else I leave as is, so my credentials page looks like: https://imgur.com/a/chO1nzO\n\nHowever when I run and export the scan all I get is an empty looking page: https://imgur.com/a/8LmtQkn\n\nI have installed Nessus on the same IP as above, however I have also tried it on the second server IP which produces the same result.\n\nI must be missing some steps - can anybody help?\n\nThank you all\n\nA",
+        "created_utc": 1533663435,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Security DNS for a corporate environment. DNS tunneling data exfil",
+        "author": "Kajunga",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95dbew/security_dns_for_a_corporate_environment_dns/",
+        "text": "I read an interesting article regarding DNS tunneling and how you can exfil data this way over a corporate network.\n\nThere was an interesting excerpt from this article that I'll place below. He is using the nslookup command and mentions that is a corporate network successfully uses a public DNS server, as opposed to using the local DNS server, to resolve IP address then this poses a security issue. Here is the excerpt from the link I'll provide:\n\n* ➜ \\~ nslookup pentest.blog 8.8.8.8\n* Server: 8.8.8.8\n* Address: [8.8.8.8#53](https://8.8.8.8/#53)  \n\n\n\"Most of the secure networks will not allow you to communicate with external DNS. If you are allowed to do it, this is an another security issue you must report!\"\n\nI have not heard of this before I can't seem to find any articles that mention this as a security issue. So, if anyone could provide me some insight on what this person is saying and if its correct (regarding this specific topic and not the article as a whole).\n\nLink: [https://pentest.blog/data-exfiltration-tunneling-attacks-against-corporate-network/](https://pentest.blog/data-exfiltration-tunneling-attacks-against-corporate-network/)",
+        "created_utc": 1533660519,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What would be my list of learning priorities for getting a cybersecurity engineer internship?",
+        "author": "The_Grey_Wolf",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95csmo/what_would_be_my_list_of_learning_priorities_for/",
+        "text": "Hello guys,\n\nI would like to get an internship in a company which deals with cybersecurity. They deal with penetration testing, but also other stuff. Anyhow, I'd like to get that internship.\n\nHere is a list of priorities I think is valid. The first priority gets the most attention/depth, while others get less. If something is separated with a '/', that means it is equal priority. The list is incomplete and thus I would like your help.\n\n    1. Computer networks\n    2. Operating systems / Computer architecture\n    3. Algorithms / Specific operating systems (how is Linux implemented, how is Windows\n       implemented) / Debugging and memory analysis\n    4. Linux command line (side note about Linux command line: I started learning this, but dropped\n       this since I do not use the command line)\n\nI would also add a book about how the compiler translates the program to assembly - surely I need to know this (and am also interested in this).\n\nSo my questions:\n\n - Is my list of priorities valid? If it is to be amended, how would you do so?\n - What do I really need to know about the Linux command line (the most fundamental things, nothing \n   too fancy; GUI is enough for me as a user)\n\nThanks in advance!",
+        "created_utc": 1533656932,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to place IDPS in front of Heroku webapp?",
+        "author": "Brumhartt",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95cly3/how_to_place_idps_in_front_of_heroku_webapp/",
+        "text": "Hi guys!\n\nWe are a small developer company. We are growing quickly and we are getting lots of inquiries from bigger corporations. Lately we got a lot of request for our ISO27001 certificate and such and it seems to be a weak point of ours so we decided to get certified within about a year. \n\nWe host our webapp and website on Heroku. Heroku itself provides us great flexibility etc. \n\nWhat we are facing difficulties now is that Heroku does not provide any security services for us which leaves us having to do this part ourselves too. \n\nWe have little experience in cloud security and there are not that many papers about this part either that is easy to apply to our case. We are unsure how would one go about placing an IDPS in front of our webapp that is running on Heroku for example? Does it even make sense? Does anyone have any experience with it? Any ideas? Any pointers how we could keep most things cloud hosted yet still abide by ISO27001 and SOC1/2? \n\nAny help and pointer is very much appreciated. \n\nThanks guys!",
+        "created_utc": 1533655679,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Flood of 100+ Phising Emails overnight",
+        "author": "d396",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95bvcu/flood_of_100_phising_emails_overnight/",
+        "text": "As of about 12 hours ago I have been receiving 100+ spam/phishing emails to my personal gmail account. Never really received any before. They all seem to come from \"rehabpro@quitalcohol.c.wciserver-168814.internal\" or \"anonymous@gold.phpwebhosting.com\". Various different things including marketing but also southwest flight confirmations (not in my name) that look very legit. About half are caught by gmail spam filters. However among these I noticed two legit emails from websites I do use that where password reset requests and one where the paypal payout email was changed. Stupidly the one with the paypal email was originally using a password probably exposed in the BTC-E hack (I'm an idiot I know) and I have since updated it (using the original website not clicking on the email ;) ). Going through all accounts possibly using that password and replacing with randomly generated Lastpass (shouldn't be many though). My question is: do I have anything to worry about these emails or are they just a distraction so people don't catch the legit security emails. Any reason why this could have randomly started? Targeted attack or mass?\nThanks!",
+        "created_utc": 1533650393,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "No vulnerabilities found in a pentest. What do you do?",
+        "author": "webbic",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95bgqd/no_vulnerabilities_found_in_a_pentest_what_do_you/",
+        "text": "Hi guys,\n\nI'm about to apply to penetration testing jobs. I was wondering what you guys do when you can't find any vulnerability / hacking opportunities while doing a pentest. And did you ever experience a similar situation?\n\nThank you for all replies!",
+        "created_utc": 1533647220,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How often do web scripts and email images expose your real IP while using VPN?",
+        "author": "SoftDevice3",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95bedv/how_often_do_web_scripts_and_email_images_expose/",
+        "text": "I read:  \n\n- whatever website you visit probably runs scripts to read your real IP address even when you use VPN.  \n  \n- Receiving emails with images means those images read your real IP even when you use VPN.  \n\nHow often does this happen? Is this something to worry about only when you don’t trust the website/email sender? Or do a bunch of legitimate big-name companies like in e-commerce or banking use these methods to read your real IP?",
+        "created_utc": 1533646711,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is it safe to have phone numbers tied to online accounts such as google or Microsoft accounts?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95ba0x/is_it_safe_to_have_phone_numbers_tied_to_online/",
+        "text": "[deleted]",
+        "created_utc": 1533645660,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do yubikeys work, i am thinking of getting one. Can they be used for signing into accounts on phones? For example, gmail.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95ab69/how_do_yubikeys_work_i_am_thinking_of_getting_one/",
+        "text": "[deleted]",
+        "created_utc": 1533636194,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SOC Tier II technical interview questions",
+        "author": "silveracex",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95a513/soc_tier_ii_technical_interview_questions/",
+        "text": "Hi All,\n\nI have an interview scheduled for a tier II SOC position, and I was hoping for some insight on the types of technical questions I would be expected to answer. I've searched r/AskNetsec for previous posts and the majority of the results are for junior level SOC positions, and I'm looking for some more intermediate questions. \n\n**Interview Company**: An international financial company\n\n**Background**: I have about 5 years of experience managing the security tools in my current place of employment (firewalls, proxies, fireeye) which is another international financial company. \n\n**Certifications**: CISSP, GCIH, GSEC\n\n**Degree**: MS in CS\n\nI'm expecting general OWASP questions, and questions related to my certs, but I'm curious to the type of Onion model questions described here: [https://danielmiessler.com/study/infosec\\_interview\\_questions/](https://danielmiessler.com/study/infosec_interview_questions/) that I might get.\n\nThanks for your help!",
+        "created_utc": 1533634241,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Windows Pentest Lab",
+        "author": "riesenratte",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/9585p6/windows_pentest_lab/",
+        "text": "I want to learn more about windows pentesting and would like to get some hands-on with mimikatz and try out attacks such as:\n\n* Pass the Hash\n* Pass the Ticket\n* Over-Pass the Hash (Pass the Key)\n* Kerberos Golden Ticket\n* Kerberos Silver Ticket\n* Pass the Cache\n* Attacking the Kerberos Session Ticket\n\nIn the past I did more web security stuff and for that I found a lot of testing resources such as DVWA and many others. Is there a  testing environment for Windows with an AD, fileshare and some clients where I can directly test the above attacks or do I need to set one up myself?",
+        "created_utc": 1533612983,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Security Clearance question",
+        "author": "asd2asdasda21",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/957on2/security_clearance_question/",
+        "text": "[removed]",
+        "created_utc": 1533608910,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Business Side of Netsec",
+        "author": "iskiloveland",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/957j64/business_side_of_netsec/",
+        "text": "Hi guys, \n\nI have the unique opportunity of choosing a business or technical role at my new company. I am somewhat familiar with the technical career side, but not as much with the business side. What type of careers and roles can you work on the business side and what are your experiences?\n\nThanks in advance ",
+        "created_utc": 1533607617,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Today my NVR security camera system showed me that my DNS is hijacked",
+        "author": "amr_morsey",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/95672b/today_my_nvr_security_camera_system_showed_me/",
+        "text": "So today while checking my home security camera system, my NVR flashed an error that my DNS is hijacked.\n\nI did a quick google search and fixed it by changing my DNS to google DNS.\n\nHowever, up until now I have no idea why that happened and how was it hijacked.\n\nCan anyone explain why and how DNS is hijacked ?",
+        "created_utc": 1533596763,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What can a hacker do with my modem's serial number and MAC address?",
+        "author": "weimin3196",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/955v56/what_can_a_hacker_do_with_my_modems_serial_number/",
+        "text": "I had my email compromised recently and long story short, today the hacker got into my isp account. On my account, my modem's serial number and MAC address is displayed. What can they do with this information?",
+        "created_utc": 1533594275,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Payloads for XSS in open redirect using Location header?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/955med/payloads_for_xss_in_open_redirect_using_location/",
+        "text": "[deleted]",
+        "created_utc": 1533592534,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "future of pentesting?",
+        "author": "marnas2",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/955eul/future_of_pentesting/",
+        "text": " I'm not sure if that's the right place to ask it, but I'm just looking for different opinions about it.\n\nWhat do you guys think about penetration testing? Would you recommend it as carrier path? Will it be mostly automated in 5-10 years from now, that will make it no longer such a requested and high payed title?\n\nPlease feel free to link any related documentation.",
+        "created_utc": 1533591032,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Defining \"Software Defined Security\"",
+        "author": "fartinator_",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/953jfm/defining_software_defined_security/",
+        "text": "In 2017 Gartner put \"software defined security\" on their emerging technology hype cycle. I've been asked to define what software defined security is, and if it is something we should pursue for our setup.\n\nI've read several articles but I haven't been able to find anything concrete as to what software defined security is. I've found software defined networking but is that under a umbrella of technologies under software defined security?\n\nAny pointers here? Thanks!",
+        "created_utc": 1533578247,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "About masscan output",
+        "author": "ericnyamu",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/953hac/about_masscan_output/",
+        "text": "so i am testing out masscan and i must say is pretty fast.but is there away to have the ip address in the output be a hostname instead.for instance a sample output looks like \n\n    Discovered open port 27017/tcp on xxx.201.137.21\n\ninstead of xxx.201.137.21 it should be the hostname.how can it be done?",
+        "created_utc": 1533577860,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone have thoughts on TheHive vs CyberCPR?",
+        "author": "cappinmcnasty",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/9532mp/anyone_have_thoughts_on_thehive_vs_cybercpr/",
+        "text": "Which would satisfy a SOC and/or Legal the best?",
+        "created_utc": 1533575129,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the point of using Tails and Tor if a hacked router can easily intercept and read whatever you do on the internet using Tails and Tor?",
+        "author": "RemarkableAnimator",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/952kin/what_is_the_point_of_using_tails_and_tor_if_a/",
+        "text": "Non-native English speaker here.\n\nMost people have a WiFi router in their home and they connect several devices to it. Now, I read that if your router is compromised/hacked then using Tails  and Tor provides you no security since everything that you do on the internet can be intercepted and read by the hackers through the hacked router. Furthermore, most people do not have the technical know-how nor the risk-willingness to flash their router or make changes to it given that it is very easy to brick it.\n\nNow, the question is, what is the use of creating and using Tails OS and Tor browser if simply, a hacked router can compromise your entire security and enable hackers to intercept and read whatever you do on the internet?\n\nSource: [https://www.reddit.com/r/AskNetsec/comments/94jxte/eli5\\_how\\_likely\\_is\\_it\\_that\\_a\\_hacker\\_would\\_be\\_able/](https://www.reddit.com/r/AskNetsec/comments/94jxte/eli5_how_likely_is_it_that_a_hacker_would_be_able/) ",
+        "created_utc": 1533571619,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Required/Optional Certs",
+        "author": "HikariYami",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/952i4l/requiredoptional_certs/",
+        "text": "So I'm finally able to have time to start studying for Security/Networking certs and was curious as to what certs are essential for a career in cyber security and in what order is best to obtain them from a practical standpoint? I have a few years experience with hands on work and have entry level certs regarding hardware for PC and Mac (Dell, ACMT, A+). I'm open to any and all opinions.\n\nMany thanks.",
+        "created_utc": 1533571190,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Workstation/Desktop Hardening Policy?",
+        "author": "VolatileGamer",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/951xj3/workstationdesktop_hardening_policy/",
+        "text": "Hi \n\nI’m looking for any guidance for a hardening policy for workstations, to suffice PCI DSS requirements. \n\nAny resources I can make use of? \n\n",
+        "created_utc": 1533567131,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What would you expect from a Red Team exercise?",
+        "author": "C0tt",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/951b4w/what_would_you_expect_from_a_red_team_exercise/",
+        "text": "Looking at doing some infrastructure testing, phishing and OSINT stuff (vuln scans)\n\nWould there be anything you would add?\n\n\nEDIT: Thanks guys, really helpful! Rather than throw mud at the wall and see what sticks, we will find out what the objectives are!",
+        "created_utc": 1533562335,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Conclusion. it's Google.",
+        "author": "facebooktoo",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94v7bo/conclusion_its_google/",
+        "text": "They can see my Tails access, phone but limited to youtube, google search, sites with analytics code and somehow facebook.  \nThis is Google. they are selling my data to rival companies. problem is they knew more than you'd expect. like Youtube video from Tails. probably they are tracking patterm of me.  \nOne of employee cursed me with his email. and they droped my income to below lowest. yes lowest. I know average and lowest about Google ad income. they drop mine to half of lowest. 1/10 of avarage with very high PV.  \nI concidered about posting one of my attacker remain logs in my trap site I made from Tails. but maybe  I will not get worth to it from here. so.  \n\n ",
+        "created_utc": 1533503112,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is using payment, etc limits for a credit card a good practice?",
+        "author": "KawaiLevi",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94v052/is_using_payment_etc_limits_for_a_credit_card_a/",
+        "text": "I was told that I was paranoid because I used payment, mobile wallet payment, virtual payment limits \"very widely\" e.g. I set them as low as possible to avoid losing the card / mobile phone and then (some of) my money. My bank's mobile app usually allows me to re-set these limits, modify them ad hoc if needed. However, one time it happened that I was unable to pay because my limit modification request was rejected (and I d have needed more money than the limit).\n\nTL;DR\nIs using credit card limits (the described way) a bad practice? ",
+        "created_utc": 1533501567,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Private IP Address between my router and ISP",
+        "author": "WonderfulDiscussion",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94uwyg/private_ip_address_between_my_router_and_isp/",
+        "text": "I apologize if this is the wrong sub. \n\nI have a question about a private IP address that shows up between my router and my ISP when I run a traceroute. I am at best a novice when it comes to security, so I’m not sure how to fix the problem. \n\nHere is the traceroute output:\n\nStarting Nmap 7.70 ( r/https://nmap.org ) at 2018-08-05 11:24 Pacific Daylight Time\n\nNmap scan report for google-public-dns-a.google.com (8.8.8.8)\n\nHost is up (0.024s latency).\n\nTRACEROUTE (using proto 1/icmp)\n\nHOP RTT ADDRESS\n\n1 1.00 ms 192.168.20.1 – My router\n\n2 7.00 ms 10.178.24.1 – Unknown private IP address\n\n3 8.00 ms XX.XX.XX.XX – ISP IP Address\n\n4 11.00 ms XX.XX.XX.XX\n\n5 31.00 ms 68.1.1.199\n\n6 33.00 ms ip70-167-151-23.at.at.cox.net (70.167.151.23)\n\n7 28.00 ms 108.170.243.1\n\n8 35.00 ms 74.125.37.41\n\n9 22.00 ms google-public-dns-a.google.com (8.8.8.8)\n\nI did a ping sweep of 10.178.24.1/24 and got a response back from each address. Doing a port scan came back with 0 open ports. \n\nMy setup:\n\nRouter – Ubiquity Edgerouter Lite \n\nSwitch – Ubiquity Edgeswitch \n\nModem – Arris SB6190\n\nAll firmware is up to date.\n\nMy question is where the problem is? Any ideas?",
+        "created_utc": 1533500892,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Currently InfoSec focused, and considering a coding bootcamp to help transition to AppSec. Opinions?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94ugte/currently_infosec_focused_and_considering_a/",
+        "text": "[deleted]",
+        "created_utc": 1533497424,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How will block chain effect Google search and privacy generally?",
+        "author": "h8td-skool",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94ua6g/how_will_block_chain_effect_google_search_and/",
+        "text": "I read somewhere that Blockchain is a threat to Google search and I didn't really understand how. Is there a documentary I could watch that might describe the future of blockchain techniques. ",
+        "created_utc": 1533495989,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Starting a Career in a the SOC",
+        "author": "unix400",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94u6yw/starting_a_career_in_a_the_soc/",
+        "text": "I have just started a job with a company that are migrating from an MSSP to having their own internal SOC .  I am currently doing a computer science degree and have complete Splunk Fundamentals. Any advice on how to proceed and how to advance? I am eager to learn more and establish myself as a knowledgable resource \n\nEdit: I am signed up to complete Splunk Fundamentals 2 and checkpoint IPS training",
+        "created_utc": 1533495283,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "NCC protocol challenge",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94tohx/ncc_protocol_challenge/",
+        "text": "[deleted]",
+        "created_utc": 1533491293,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How secure is the app FireChat?",
+        "author": "Alex09464367",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94tgkh/how_secure_is_the_app_firechat/",
+        "text": "https://en.wikipedia.org/wiki/FireChat",
+        "created_utc": 1533489588,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What skills are required to be a security engineer?",
+        "author": "DanteParadisio",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94srwi/what_skills_are_required_to_be_a_security_engineer/",
+        "text": "So I'm currently an analyst at a medium sized company in the process of taking ownership of our SIEM and it's development. I'm very interested in the engineer role but would like some further clarification on that role. Could any engineers out there outline the scope of their job? I understand that the SIEM is a huge component but I'd like to know what other skills and technology I should be learning. ",
+        "created_utc": 1533484089,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "E-Mail Security?",
+        "author": "mohd98",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94sru1/email_security/",
+        "text": "Today, my hotmail account was hacked, luckily Microsoft blocked the account?, I am not sure what happened because they sent me an SMS, and my phone was demanding my credentials, however my PC was still logged in, and I changed my password via a link they sent on my email...\nMy first worry is, how can I find the way I was compromised?, Is it because it was a Hotmail account?, Is it my 12 lettered password, a combo of small and capital letters and a couple of numbers?, Did my AV fail? Or was it my iPad, perhaps my phone? This is killing me more than the fact that I was hacked.\nAlso, is it more secure to use RiseUp e-mail, or perhaps ProtonMail? Just for the sensitive stuff, like banking and money... etc.\nMy current password is a much more robust combo, but from my experience, no one \nbrute-forces anymore...",
+        "created_utc": 1533484072,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can Blockchain technology stop DDoS Attacks ?",
+        "author": "Sidxzx",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94scmt/can_blockchain_technology_stop_ddos_attacks/",
+        "text": "",
+        "created_utc": 1533480455,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Picking asknetsec's brain: Remote penetration station",
+        "author": "PineappleBoots",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94s45v/picking_asknetsecs_brain_remote_penetration/",
+        "text": "I’m trying to put together a laptop running Kali (just so it has all of the tools I’d need in the base image) that we can ship to a customer site and have them plug into their network. What I’d like to be able to do with this is as follows:    \n\n1. Must obtain a DHCP address on the built-in NIC and “phone home”, i.e. allow me to remote connect to it once it’s connected to the network and has a valid address / internet connection.    \n2. The connection must be something standard that a typical network security appliance would see regularly, i.e. http, https, ssh, etc. Cannot be a VPN tunnel.\n1. Must be capable of handling disruptions to the connection, i.e. timeouts, connectivity loss, etc. and reestablishing the connection when it becomes available again.\n\n\nDoes anyone here have experience/ideas about this?",
+        "created_utc": 1533478277,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Understanding ANSI/AAMVA encoded data (pdf417 data matrix) on back of NYS ID card",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94rz6w/understanding_ansiaamva_encoded_data_pdf417_data/",
+        "text": "[deleted]",
+        "created_utc": 1533477027,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Trying to add GPG's signatures, getting error (\"server 'dirmngr' is older than us\"). Can anyone tell me where I'm going wrong? (X-Post from /r/GnuPG)",
+        "author": "iceposeid0n",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94qdq0/trying_to_add_gpgs_signatures_getting_error/",
+        "text": "[removed]",
+        "created_utc": 1533456509,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Trying to add GPG's signatures, getting error (\"server 'dirmngr' is older than us\"). Can anyone tell me where I'm going wrong? (X-Post from /r/GnuPG)",
+        "author": "KillerTuxedo",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94qdjc/trying_to_add_gpgs_signatures_getting_error/",
+        "text": "I installed a new instance of Pop!_OS (Ubuntu-based distro) on my laptop and made sure gnupg:i386 and gnupg1 were removed. Then I installed the packages zlib1g-dev, gtk2.0, libgtk2.0-dev, libgpgme11. I then installed the following tarballs from gnupg.org (in this order): \n\n* libgpg-error 1.32\n* libgcrypt 1.8.3\n* libksba 1.3.5\n* ntbtls 0.1.2\n* nPth 1.6\n* libassuan\n* gnupg 2.2.9\n* gpgme 1.11.1\n* gpa 0.9.10\n\nAll good, no errors. Then I tried to execute this command:\n\n`gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89`\n\nIn return, I got this error:\n\n`gpg: WARNING: server 'dirmngr' is older than us (2.2.4 &lt; 2.2.9)`\n\n`gpg: Note: Outdated servers may lack important security fixes.`\n\n`gpg: Note: Use the command \"gpgconf --kill all\" to restart them.`\n\n`gpg: keyserver receive failed: Server indicated a failure`\n\nThe \"kill all\" command did not help and I can't find anything useful on Google.\n\nCan anyone help me out?",
+        "created_utc": 1533456445,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "No-Script HTTP Header like DNT header for more privacy and speed?",
+        "author": "odencon",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94peug/noscript_http_header_like_dnt_header_for_more/",
+        "text": "Just like **Do Not Track (DNT)** HTTP Header, what if we propose a **No-Script** Header stating that the client (browser) wants JavaScript free version of the page (if possible) ?\n\nEven if the services do not give us script free pages, they'll atleast get insight of how much of us do not want bloated fancy pages, but just the content.\n\nWhat do you think of?",
+        "created_utc": 1533444263,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Replace all files prior to a system crash or infection as a cure all fix?",
+        "author": "sragan16",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94ocpd/replace_all_files_prior_to_a_system_crash_or/",
+        "text": "Sorry this is off topic from the netsec focus of the sub, but I’m not sure where else to get a reliable answer. \n\nIf somehow I had a perfect record of every file change on my hard drive, every change being saved as a new version of the same file (being saved on a backup hard drive) over the last hour. Say my machine gets infected, blue screens, or otherwise fucks up. If I were to replace every file (a second computer interacting with my hard drive) that has changed since 1 minute before the issue began (or however long needed to prevent the issue from occurring again, up to 1 hour). Would this effectively restore my machine to a safe state, like a much faster system restore? Sorry if it doesn’t make sense, please let me know if I need to clarify anything. Thanks in advance. ",
+        "created_utc": 1533433843,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "why won't my rogue AP work at home?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94o0ih/why_wont_my_rogue_ap_work_at_home/",
+        "text": "[deleted]",
+        "created_utc": 1533430607,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Which Information Security/Cybersecurity Certifications Are \"The Gold Standard\"?",
+        "author": "ZestyPesty",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94npha/which_information_securitycybersecurity/",
+        "text": "I've researched this, and it seems everyone names a different one as the gold standard in the industry. What is it/what are they, in your assessment? \n\nAlso, of them, which are the easiest to study and get? Which are the hardest to study and get?",
+        "created_utc": 1533427763,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How would you recommend people new to the industry get \"Enterprise Level Experience\"",
+        "author": "DudePassTheBeans",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94nllm/how_would_you_recommend_people_new_to_the/",
+        "text": "Something I see a lot is that there's very little entry positions. The positions that are low experience requirements (such as 3 minimum or 5 minimum) usually want pre-existing experience with tools. Enterprise level tools like vendor specific SIEMs, next gen firewalls, etc.\n\nSadly, a lot of these things are not cheap. Not only that, but even if people buy them they may not have the capabilities to really use them. So all we can do is read about them, not really get any hands on experience.\n\nThere are some courses and certification training things you can take, but again these are not uncommonly expensive. Especially when you're asking someone who is new to the industry to do it.\n\nYes I've heard it before. Do another role first. I'm in pretty much a low level Sysadmin position/help desk position right now. I do a lot of work, but I don't see any chance of getting experience with these tools that I'm seeing a lot of cybersecurity positions requesting. Most job reqs I'm reading for things I'm \"qualified\" for don't indicate the chance to work with these. Trying to find an entry level network engineer position isn't much better either.\n\nSo are there any free tools out there that can give users some hands on experience (and real life scenario training) to enterprise level tools. ",
+        "created_utc": 1533426803,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there any legailty issues surrounding H0nda1337's data collecting?",
+        "author": "IamNothingButTruth",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94mart/is_there_any_legailty_issues_surrounding/",
+        "text": "This may seem childish or even petty but I have a question surrounding the legality of a database made up of information collected from Discord servers using selfbots that were created by someone using the name H0nda1337.\n\nWhat this discord user has done is use selfbots to join several servers listed on discord.me collecting information such as UserIDs, ServerIDs, Memeber Counts, then put them all into a database that anyone can use to find what servers anyone in the database is on and could be used for people to stalk others. \n\nMy concern however is this is data on other users collected without consent and renders most privacy settings pointless as all someone needs is the UserID of someone to find them on discord.\n\nI dont see this as a serious threat to privacy but I do question how legal it is do such a thing. ",
+        "created_utc": 1533415546,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Digital image forensics",
+        "author": "What_R_YOU_Doin_Here",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94m19n/digital_image_forensics/",
+        "text": "I was analyzing some images with ghiro. None of the images have any exif metadata. Does that mean the images were tampered with? ",
+        "created_utc": 1533413364,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do websites implement some sort of back firing defense?",
+        "author": "kira156",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94lai2/do_websites_implement_some_sort_of_back_firing/",
+        "text": "So I've entered the world of cybersecurity a year ago and lately I saw a post on r/hacking about a phishing program that clones websites and .. you all probably know how it works. So I decided I would write a program that works the same way. So I started with writing a program that connects to sites and requests html files through a GET message so then I would use them in my fake version of the website. What surprised me is when trying this little piece of program against thepiratebay.org I get a weird looking string. Also some time later after getting that string I installed a tcp/ip client on my phone and after connecting to thepiratebay.org and writing the http message manually I get a non ending row of messages that look like this:\n&lt;23.14 - 29.8.18&gt; server : null\nThen the tcp/ip Android app freezes.\nIs this some sort of a way on defending against crawling bots through buffer overflow crashes?\nI know how thepiratebay's reputation isn't so good.\nSo could what I am assuming be true?",
+        "created_utc": 1533407371,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is the SSID “5ecur3w3p5tor3” used so much?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94l9sg/why_is_the_ssid_5ecur3w3p5tor3_used_so_much/",
+        "text": "[deleted]",
+        "created_utc": 1533407223,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice Needed: macOS (2012 hardware) possibly infected by an unknown third party",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94l94x/advice_needed_macos_2012_hardware_possibly/",
+        "text": "[deleted]",
+        "created_utc": 1533407070,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does the compromise of Apple chipmaker TSMC affect iOS Device Security?",
+        "author": "lnri",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94ktvu/how_does_the_compromise_of_apple_chipmaker_tsmc/",
+        "text": "I recently read an article (See: [https://www.bloomberg.com/news/articles/2018-08-04/tsmc-takes-emergency-steps-as-operations-hit-by-computer-virus](https://www.bloomberg.com/news/articles/2018-08-04/tsmc-takes-emergency-steps-as-operations-hit-by-computer-virus)) that says TSMC was affected by malware. As an iOS user this concerns me. To what extent is the security of my iOS (and/or macOS) devices affected by this? Are there are precautions I should take as a result of this news?",
+        "created_utc": 1533403743,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Dissertation Research - Quantum Computing",
+        "author": "QuantumResearcher",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94ktiw/dissertation_research_quantum_computing/",
+        "text": "Hello AskNetSec,\n\nPosted in netsec, posting here for additional visibility. - Throw away account to remain anonymous.\n\nI am looking for support from those of you in the Information Security field. I am completing research for my dissertation on Quantum Computing and it's Impact on Information Security and I am looking for volunteers to complete a quick 15 min survey.  (Your responses can remain anonymous)\n\nPlease feel free to share this with anyone in your network who works in Information Security and may be interested in participating.\n\nAny and all support is appreciated, thank you!",
+        "created_utc": 1533403659,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Pathways towards learning Web App pentesting.",
+        "author": "rethit",
+        "url": "https://www.reddit.com/r/AskNetsec/comments/94kqmj/pathways_towards_learning_web_app_pentesting/",
+        "text": "Hi,\n\nI've been a sysadmin for the past 10 years and now I would like to switch to the infosec field.\n\nAs such, I have a decent grasp of how systems and networks work, but I lack (mainly) two things:\n\n1) Any kind of HTML5/web programming experience.\n\n2) Any knowledge of Javascript/PHP/MySQL/SQL/.NET/...\n\nI'm aware of guides such as OWASP: [https://www.owasp.org/images/7/72/OWASP\\_Top\\_10-2017\\_%28en%29.pdf.pdf](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)\n\nor\n\nbooks like \"HackNotes(tm) Web Security Pocket Reference\"\n\n[https://www.amazon.com/HackNotes-Web-Security-Pocket-Reference/dp/0072227842](https://www.amazon.com/HackNotes-Web-Security-Pocket-Reference/dp/0072227842)\n\nor\n\n\"The Web Application Hacker's Handbook\"\n\n[https://www.amazon.com/Web-Application-Hackers-Handbook-Exploiting/dp/1118026470](https://www.amazon.com/Web-Application-Hackers-Handbook-Exploiting/dp/1118026470)\n\nbut I'm afraid I cannot benefit from reading those yet, for I even don't know what should I know (which is why I'm hoping you can help me here).\n\nSo, I'm wondering what do you think that I could do to be prepared to pentest web apps and to look for vulnerabilities like XSS or SQLi, or, in other words, what's the pathway that you followed and that worked for you to be prepared enough to pentest these.",
+        "created_utc": 1533403027,
+        "upvote_ratio": ""
+    }
+]

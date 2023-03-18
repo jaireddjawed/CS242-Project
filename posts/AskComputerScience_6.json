@@ -1,0 +1,794 @@
+[
+    {
+        "title": "Can a Math major get a job in Computer Science?",
+        "author": "GabeAV1122",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zasvk8/can_a_math_major_get_a_job_in_computer_science/",
+        "text": "Heya. I'm currently a freshman in college and trying to decide between Math or Computer Science, however the CS program at my university is extremely difficult to get into, and I doubt I would get in even with the years of experience I currently have. Either way, if I were to graduate with a degree in math and have years of coding experience, would it be likely to get a job within the computer science field? thanks in advance :)",
+        "created_utc": 1670004201,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Democratic Ledger Technology",
+        "author": "Electronic_Release76",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zaq5wu/democratic_ledger_technology/",
+        "text": "I’d like to know if it is theoretically possible to build a distributed ledger that has very specific requirements. It is supposed to be the basis for a special kind of a socio-economic network.\n\nNetwork participants must be able to secretly vote on network nodes. Votes must be stored on the ledger. Let’s assume that all participants go through an offline verification procedure and are generally non-adversarial. There is some research in similar types of ledgers but that use pre-selected nodes instead of elected:\n\nElisa, N., Yang, L., Li, H., Chao, F. &amp; Naik, N. (2019). Consortium blockchain for security and privacy-preserving in e-government systems. In Proceedings of The 19th International Conference on Electronic Business (pp. 99- 107). ICEB, Newcastle upon Tyne, UK, December 8-12\n\n[https://arxiv.org/pdf/2006.14234.pdf](https://arxiv.org/pdf/2006.14234.pdf)\n\nThe ledger must be encrypted but such that it can be queried by authorized users:\n\nDawn Xiaoding Song, D. Wagner and A. Perrig, \"Practical techniques for searches on encrypted data,\" Proceeding 2000 IEEE Symposium on Security and Privacy. S&amp;P 2000, 2000, pp. 44-55\n\n[https://people.eecs.berkeley.edu/\\~dawnsong/papers/se.pdf](https://people.eecs.berkeley.edu/~dawnsong/papers/se.pdf)\n\nNetwork users have the authority to query their own data. Network nodes have the authority to query anything, however all elected nodes must be notified what the query was and which node performed it. Anybody can download the encrypted ledger and mathematically verify its consistency.\n\nThere must be a possibility for an elected node to upload a Docker image to the network. The image when instantiated must be able to query the ledger, do the work and return a result. It shouldn't be able to make any outside requests during runtime. It shouldn't be possible for the node to access the runtime state of a container.\n\nThe underlying socio-economic theory of the network:\n\nPolitical Theory of Decentralized Democracy\n\nFoundational principles and practical approaches to decentralized self-governance at the state level\n\n[https://drive.google.com/file/d/18RL2nAklSdVsVv7mW5mM1EI3FsG5EKsA/view?usp=share\\_link](https://drive.google.com/file/d/18RL2nAklSdVsVv7mW5mM1EI3FsG5EKsA/view?usp=share_link)\n\n[r/DecentraliseDemocracy](https://www.reddit.com/r/DecentraliseDemocracy/)",
+        "created_utc": 1669997645,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "3D Layer map",
+        "author": "thatjamesemo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zamdo5/3d_layer_map/",
+        "text": " I want to make a layer map for an automatic Lego Placer, where the robot would read this and layer by layer go through and use this map to build up the layers to make things with lego, Ideally I would want to have it in some form of JSON or something easy enough to program in Python with, however I really have no clue. Any help or suggestions would be good!!",
+        "created_utc": 1669987978,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Trying to get into coding and started with Lua and already problem setting it up",
+        "author": "Certain-Baker9548",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zafyvh/trying_to_get_into_coding_and_started_with_lua/",
+        "text": "Trying to set up it by learning various youtube (mostly following any recent guide) and rn this link: [https://www.youtube.com/watch?v=XCwXWOe6VcU&amp;ab\\_channel=pikuma](https://www.youtube.com/watch?v=XCwXWOe6VcU&amp;ab_channel=pikuma)  \nSo far every setup go smoothly until the setup for the terminal in Visual Studio Code, anyone got any ideas on how to fix this or should I just start with another coding language?",
+        "created_utc": 1669969488,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Queues! I'm having a hard time understanding someone else's explanation",
+        "author": "Round_Log_2319",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zad50n/queues_im_having_a_hard_time_understanding/",
+        "text": "So on another sub, there was a thread about queues, specifically the FIFA World Cup one. A Redditor made it clear that people saying it is/should be built with web sockets are a bad idea and shouldn't be done. I asked him to elaborate, and it just made me feel dumb, I couldn't really wrap my head around what he was saying or make sense of it.\n\nI was just wondering if anyone else can make sense of what he was trying to say, or if i'm just being dumb. Either way, a simple expiation or link to any good resources about the topic would be appreciated.\n\n Redditor\n\n&gt;This  is a queue. It may have nothing to do with server capacity as some  transactions take a few minutes to run through. You don't want bots to  fire up sales. User needs to be in line, has an open spot. Then choose  their seats, pay. A bot would just fire of 10,000 requests and pick up  whatever is available.  \n&gt;  \n&gt;Has nothing  to do with infrastructure or server capacity. I had to do this for a  parking lot for a popular venue once. You had to open the slot time  window. User has to say what size car they had. SUVs take up more space.  Check the incoming queue then allocate a spot.  \n&gt;  \n&gt;Same  thing with flu vaccine booking. If you every built a site that had  40,000 or 100,000 people at the front door, you don't want a stampede.  \n&gt;  \n&gt;And  no websockets is not the answer. You can open up a socket and if the  person has 3 sessions (browsers) up so they can start their order 1st,  that means 2 others are not in the queue and causes a lot of pissed off  people.\n\nMe\n\n&gt; Not following with your last bit about web sockets, from what I can  attempt to make sense of, your saying it prevents people from connecting  multiple times? But that’s a good thing no ? \n\nRedditor\n\n&gt;There  are some comments suggesting to use websockets which is NOT the  cure-all. Websockets is used as a full-duplex, two-way communication  from server to client (browser). E.G. If there is an open slot  available, the server will push notify awaiting web browser and user to  respond. This doesn't solve the inherent problem of bots waiting and  filling up all the connections; awaiting their chance to buy all of  Taylor swift concert tickets. Someone can easily spool up 50,000 bots on  AWS lambda to saturate a bunch of websockets in 5 minutes.  \n&gt;  \n&gt;A queue can use sockets but it will tell the users that hey,  \n&gt;  \n&gt;\"in  20 minutes, you have a 15 minute window book say an an appointment with  a doctor. You have to actually do something or have this window open  until that booking is available as others are making their selection.  Then you get 15 minutes when your time is ready.  We expect 20 minute  wait but if someone ahead of you finishes before you, it can be 12  minutes. So just keep an eye on the counter as it goes down.\"  \n&gt;  \n&gt;That  15 minute will give you 5 open slots on different days and we will   hold the reservations those spots from other patients while you have  that 15 minute window to decide. Once you make your appointment, 4 slots  go back into the queue. Same thing can happen for venue seats. But  simply saying \"websockets\" is the solution is not a complete answer.  As  you can just leave, go to lunch, BRB and that 20 minutes moves up to 3  minutes as the people of you happen to be very quick that day. The  visual queue helps the users.\n\nMe\n\n&gt; Ok so you would send requests on a interval to see if the users is  allowed to enter ? I also don’t see how not using sockets prevents bots,  they can join the queue with or without sockets right ? \n\nRedditor\n\n&gt;You  never do intervals if it is a real queue. If your queue is 20 people at  a given time with each having 5 options. You withold 100 spots and  subtract 5 for each time a single person finishes. Some users may take 4  minutes, others 30 seconds.  \n&gt;  \n&gt;That  is how a real queue works. Bots would have to be smart enough to do  random selections, random interaction to make sure each transaction is  varying in time like real user(s). Furthermore, bots would have to join a  queue and if that queue is more than 30 minutes, it needs to internally  keep its own internal session alive. So how would it do that? poll  itself so it's session doesn't time out. Most python bots run like what 5  minute sessions? Managing an internal session for the bot means the bot  maker is spending money on compute resources if it a bot farm. They  can't spool up and spool down serverless functions that require  persistent session. They have to spend more money.  \n&gt;  \n&gt;When  would it know to continue the queue? Run an interval itself. I am bot, I  will ping myself to keep myself alive. Then ping the server to see if  the random notifcation I coded to &lt;div id  \"availability-12dfsdf3\"&gt;queue #&lt; /div&gt; still exist. But what, I  now see \"spot-in-line-443242\" Is that a real link? Wait, that div is  not align to the parent div I was coded to backup look for. Or how do I  continue? A good queue designer would randomize the layout where  \"scrapeable\" things that are bots are trained for will be so randomized,  it would be difficult.",
+        "created_utc": 1669960233,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Silly/fun question: In memory, an integer like '5' takes up a finite amount of space. Hypothetically if this space was the size of, let's say, a shoebox, how big would a room have to be to hold all of the \"shoeboxes\" in ram?",
+        "author": "Clownbaby43",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/za9ja3/sillyfun_question_in_memory_an_integer_like_5/",
+        "text": "Or should I ask r/theydidthemath ?\n\nAssuming the int takes up 4 bytes and there's 8GB of RAM. \n\nIm literally just curious to know how big of an area you would need to house all potentially allocated memory, but in human terms; just to see how big memory is compared to, say, a desert or ocean. 1 ocean? 2 oceans? 100 oceans?!!?!?!\n\nThanks.",
+        "created_utc": 1669950650,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Encoding of a Simulation",
+        "author": "CanadaPlus101",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/za0rgu/encoding_of_a_simulation/",
+        "text": "The definition of simulation treats the machine in question as a state transition system. It seems like you should be able to define the states however you want. It also seems to me that any machine that deterministically goes through n states before halting should simulate every other machine, then.\n\nThis is obviously questionable if one is counting up in binary, and the other is doing image recognition. Basically, the encoding is doing all the work that the computer is supposed to. What's the resolution to this?",
+        "created_utc": 1669930851,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can you identity a problem as NP-complete, versus P or NP?",
+        "author": "xFearful425",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z9qzs0/how_can_you_identity_a_problem_as_npcomplete/",
+        "text": "Struggling with the concept of the three. Any help is appreciated.",
+        "created_utc": 1669909195,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tell me any real life problems related to computer software that can be solved.",
+        "author": "AngleThat8380",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z9ll5v/tell_me_any_real_life_problems_related_to/",
+        "text": "I want to start a startup and want to know what real life problems exist that can be solved.",
+        "created_utc": 1669894427,
+        "upvote_ratio": 0.67
+    },
+    {
+        "title": "How are complicated mathematical operations like logs, square roots, floating point division, and trigonometric functions performed with primative operations like addition and bitwise operations?",
+        "author": "a_hairbrush",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z9dhyv/how_are_complicated_mathematical_operations_like/",
+        "text": "My apologies in advance if my question doesn't make sense or isn't clear.\n\nI'm currently working through Nand2Tetris Part 1 as well as the CS:APP textbook, and it is my understanding that CPU designers generally strive to minimize the hardware complexity as best as they can, since it's relatively expensive to try and fit more units/bus lines/whatever it may be into a chip. For example, instead of having a separate instruction for both integer addition and subtraction, the complier can just convert the number that is subtracting to a negative, then do addition on the two numbers instead. 5 - 8, for instance, can be converted to 5 + (-8). For more complicated operations like the ones mentioned in the title, how does the OS or complier convert this to a series of primative instructions that the processor can then read?\n\nAnother example that I hope illustrates my question is a scientific calculator, any regular one you can buy from the store for $20. Its CPU is relatively simple, and I'm assuming it wouldn't have dedicated units for complicated mathematical operations. How does this device break complex expressions into simple instructions?",
+        "created_utc": 1669866894,
+        "upvote_ratio": 0.94
+    },
+    {
+        "title": "im dumb what does this mean exactly.",
+        "author": "R6enjoyer",
+        "url": "https://i.redd.it/utyzl690m73a1.jpg",
+        "text": "",
+        "created_utc": 1669848867,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Amortized analysis - help understanding the solution - dynamic table",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z91m48/amortized_analysis_help_understanding_the/",
+        "text": "hello\n\nI was reading this:\n\n [algorithms - Amortized analysis on a dynamic table that grows its size by $\\\\sqrt{size} $ - Computer Science Stack Exchange](https://cs.stackexchange.com/questions/151490/amortized-analysis-on-a-dynamic-table-that-grows-its-size-by-sqrtsize) \n\n&amp;#x200B;\n\nand while I was able to understand the upper bound, I have troblue understanding the lower bound\n\n&gt; Consider the last √n/2 expansions. The earliest one of them happens when the number of elements is at least n−1/2√n√n\n\n&amp;#x200B;\n\nwould love if someone could explain why in the last exoansions this is the number of elements",
+        "created_utc": 1669838676,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there any way to use multiple cores as one core, for the purposes of running old 1 core games? You could revolutionize a modding community!",
+        "author": "lucidity5",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z8zud9/is_there_any_way_to_use_multiple_cores_as_one/",
+        "text": "I dont want to run only one core, I want to use multiple cores to \"pretend\" to be one more powerful core. There is an old Star Wars RTS game that only uses one core, but the modding community is still pushing it's limits 16 years later. The biggest problem is the bottleneck of running on 1 weak core, instead of multicore processing. If anyone knows of any way around this, you could blow thousands of people's minds, enabling higher detail models, textures, unit/projectile count could go way way up, it would be nothing short of revolutionary for those who work on this game to this day. I cant find anything useful, but maybe you know something I dont.\n\nHelp me reddit, you are my only hope!",
+        "created_utc": 1669834785,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Laptop for programming",
+        "author": "Credaence",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z8xrp1/laptop_for_programming/",
+        "text": "I'm about to start college, I've done some programming and have an old laptop, but I'd prefer a laptop that would last my four years in school (possibly more, if I pursue a masters).  I've been looking at Lenova ThinkPads and was wondering if this laptop would, hopefully, last me during my\nCollege years. If you have any recommendations for a budget ~1k let me know, thanks! \n\nLenovo Thinkpad E15 Gen 3\n\n Processor\n\nAMD Ryzen 7 5700U (8C / 16T, 1.8 / 4.3GHz, 4MB L2 / 8MB L3)\n\nGraphics\n\nIntegrated AMD Radeon Graphics\n\nMemory\n\n16GB DDR4\n\nStorage\n\n1TB SSD M.2 PCIe NVMe\n\nScreen Size:\n15.6\"",
+        "created_utc": 1669830190,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Compressing data structures on-the-fly",
+        "author": "comptheoryTA",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z8vwr4/compressing_data_structures_onthefly/",
+        "text": "Lets say I have some traditional data structure that supports reads and writes. One way to store this structure efficiently might be to apply a compression algorithm to its bit representation. The downside to this is that I’ll have to completely decompress the structure, apply the operation, and recompress it. Is there a better option? In particular, what if at every time point I know that the next operation will come from a small subset of all possible operations?",
+        "created_utc": 1669825832,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do you handle creating unique IDs in a microservice architecture?",
+        "author": "Muted-Editor8929",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z8sung/how_do_you_handle_creating_unique_ids_in_a/",
+        "text": "Suppose you need to create order IDs which should be user friendly (in case they need to communicated it to CS). Do you create a specific service which can be invoked to return unique IDs? Is using incrementing IDs bad practice in this scenario?",
+        "created_utc": 1669818429,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hope it's useful friends!",
+        "author": "Vairavandinesh",
+        "url": "https://wolfpeachcs.blogspot.com/2022/11/python-basics-2.html",
+        "text": "",
+        "created_utc": 1669812919,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How To Develop ERP Software For Small Businesses?",
+        "author": "ARFASOFTECH",
+        "url": "https://www.arfasoftech.com/blog/How-To-Develop-ERP-Software-For-Small-Businesses?",
+        "text": "",
+        "created_utc": 1669796973,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[🎉Cyber Monday Deals🎉] Buy Microsoft Office 2021 Professional Plus. Only $35.99 Get Up To 80% Off (Use Coupon Code: CYBER28)",
+        "author": "Hot-Abbreviations658",
+        "url": "https://affordablekey.site/6Vc7CZEt",
+        "text": "",
+        "created_utc": 1669783003,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hello I’m going to college almost done what’s your recommendation need find intern or job I don’t have experience too",
+        "author": "Biglove000000",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z8ae2j/hello_im_going_to_college_almost_done_whats_your/",
+        "text": "",
+        "created_utc": 1669765651,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Computational complexity of Metropolis-Hastings and potential speed-up",
+        "author": "tanishqkumar07",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z86clg/computational_complexity_of_metropolishastings/",
+        "text": "The MH algorithm essentially involves generating a sample destination state from a proposal distribution, computing the acceptance probability as a function of that sample, and checking whether a uniform random variable is above the acceptance probability to determine whether to move to the new state or not.\n\n* What is the time complexity of each step? Is it the case that each step in this algorithm is really fast, and so MH is time-bottlenecked by the mixing time it takes for the distribution to converge?\n* How does the time complexity depend on the dimension of the data in the underlying joint distribution being approximated in the first place (recall MH seeks to provide samples drawn from a PDF approximating some target distribution/PDF)?\n* For the exponential family, the acceptance probability involves a min(1, exp\\_1Q\\_2/exp\\_2Q\\_2) where both exponentials contain a dot product involving the sufficient statistic. Since approximate isometries are guaranteed to exist for data sets (by JL Lemma), why can't we always project data down into a much lower dimension such that all data points have the same pairwise dot products, then compute the acceptance probability/run M-H with the lower dimensional data points (much faster, since in lower dimension), if the only thing we use about the data points are their dot products with other data points?",
+        "created_utc": 1669756361,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Questions regarding Image Compression",
+        "author": "nitronthe1st",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z80o0p/questions_regarding_image_compression/",
+        "text": "Hello! I’ve been working on Image Compression topics recently as projects for CSE majors, and i’m still confused about certain things.\n\n1. What does the encoding step do for JPEG compression? The way i understand it based of reading JPEG compression steps, is that it is an additional layer of lossless compression. Now I’m fine with understanding it as that, but why do some codes ([link](http://pi.math.cornell.edu/~web6140/TopTenAlgorithms/JPEG.html)) discard the results of the encoding step, and present only the resulting image after being quantized, but before being encoded. An additional question for this is that would Huffman encoding work alone as a way to compress an image?\n\n2. Why do diagrams and codes reverse the steps after encoding? I’ve read papers and skimmed codes and noticed some of them include reversing the operations performed on them. Isn’t the image already compressed, why are there some that include reversing the steps, is it part of the compression as well? If so, wouldn’t it be useless for lossy compression such as JPEG compression as data was already lost in the first half, why would you try to retrieve it again.\n\nThose two main things are the most confusing stuff i’ve been facing, as the encoding step gets ignored, (and was only used to get the length of the file for the example link  i gave), and some code and diagrams discuss what i would call decompression when the topic is image compression\n\nThank you!",
+        "created_utc": 1669743875,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "SAT solver",
+        "author": "rahli-dati",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z7ylmz/sat_solver/",
+        "text": "I wonder what is SAT solver. How resolution, elimination of pure literal and elimination of singleton clauses can help in that case? I know what SAT is. I guess by SAT solver means we eliminate some literal from the clauses that it could be efficient to assign T and F values to the literals maybe?",
+        "created_utc": 1669739174,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do Tuner apps determine the pitch of a note?",
+        "author": "SealEnthusiast2",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z7xrms/how_do_tuner_apps_determine_the_pitch_of_a_note/",
+        "text": "I'm currently looking into building a (Instrument) Tuner app for my Apple Watch and was looking into Online tuning apps like TunerNinja that are able to calculate the frequency and note of an input pitch.\n\nHow do these apps manage to calculate these frequencies/pitch to such precision (often to 1-2 decimal places for the Hz)? Do they use a certain API, or is it more machine learning?",
+        "created_utc": 1669737246,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a programming language that has no ‘undefined behavior’ ?",
+        "author": "bass1012dash",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z7ty62/is_there_a_programming_language_that_has_no/",
+        "text": "",
+        "created_utc": 1669728137,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Computer science or computer systems engineering?",
+        "author": "BeginningEntire8153",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z7r7b3/computer_science_or_computer_systems_engineering/",
+        "text": "So I am a gap year student in the UK applying to universities with grades A\\*AB, I have applied to Birmingham, KCL, Nottingham, Bristol, and Southampton. I am considering switching from computer science in Nottingham to Computer system engineering in Warwick (as Warwick is more reputable).\n\nIs this fine to do or too much of a leap?",
+        "created_utc": 1669720597,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[🎉Cyber Monday Deals🎉] Buy Microsoft Office 2021 Professional Plus. Only $34.99 Get Up To 80% Off (Use Coupon Code: CYBER28)",
+        "author": "Hot-Abbreviations658",
+        "url": "https://affordablekey.site/31WH5tym",
+        "text": "",
+        "created_utc": 1669696048,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I have a notebook to remember programming languages?",
+        "author": "ManWhoIsOnlyHuman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z7elxr/should_i_have_a_notebook_to_remember_programming/",
+        "text": "",
+        "created_utc": 1669683433,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I am lost in the midst of programming languages, what do I do?",
+        "author": "ManWhoIsOnlyHuman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z7efj7/i_am_lost_in_the_midst_of_programming_languages/",
+        "text": "Hello, I am a sophomore in college looking to apply for an internship for the summer of 2023.   \nHere is my dilemma:  \nI am still learning C++, it is the only language I know the best. The thing is, I see a lot of companies require Java Or Python. Now I am wondering whether or not I should continue to learn the basics and etc of C++ or if I should call it quits for C++, and learn Java or Python. I could learn both languages at once, but I do not think that would be a great idea considering I'm still in my fall semester (maybe I can in the winter break).   \nWhat should I do?",
+        "created_utc": 1669682951,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Getting scammed with phone number",
+        "author": "cloven_potato",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z73rrp/getting_scammed_with_phone_number/",
+        "text": "Hello, I don’t know if this is the right sub, but you can probably answer that question I guess.\nWhat can a scammer do with your phone number?\nI think, that it is relatively easy to get the phone number nowadays. Are there some scams out there, that somebody can do by only having the phone number? No direct acces to the phone yet, just the number.",
+        "created_utc": 1669659261,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Amortized analysis - analyzing \"Binary\" counter with three digits value",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z72tpk/amortized_analysis_analyzing_binary_counter_with/",
+        "text": "hello, I saw this queston on Stack exchange:\n\n [time complexity - Changing binary counter structure such that increament and decreament methods will work in O(1) amortized - Computer Science Stack Exchange](https://cs.stackexchange.com/questions/140837/changing-binary-counter-structure-such-that-increament-and-decreament-methods-wi) \n\n&amp;#x200B;\n\nand the following answer:\n\n&gt;They may by suggesting that you use a binary counter with three digit values, {−1,0,1}, and budget a fixed additional time whenever you set a digit to ±1\n\nand I wanted to try analyzing similar binary counter using potenial method:\n\nwe will look at a counter that has three possible values for each digit, and the actions  decreasment and increament\n\nwhen we increamenting we add \"1\" when we decreasment  we do \" -1\"\n\nso its also possible to get something like this:\n\n1 0 -1\n\nwhich will translate to 2\\^2 - 2\\^0 = 3\n\n(so its also possible to represent each number with 2 possible binary representation)\n\nI wanted to use the potential method to analysis the cost of changing a digit\n\n&amp;#x200B;\n\nmy idea:\n\nwe start with counter = 0, and the potenial function should be how many digits are not equal to 0\n\nevery time we increament or decreasment we will change a series of digits (maybe one, maybe more)\n\nto be honest I dont really know how to go from here, or if even the very basic start I did is ok\n\n&amp;#x200B;\n\nthanks for all the helpers",
+        "created_utc": 1669657168,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "\"CYBER MONDAY\" super sals Running on Microprokey.com, With Attractive great offer up to 80% Discount by using code: CYBER28 Buy Microsoft Office 2019 Pro Plus And Microsoft Visio Professional 2019 and enjoy the offer",
+        "author": "KosherFastball",
+        "url": "https://i.redd.it/7u0tdfrf4q2a1.png",
+        "text": "",
+        "created_utc": 1669655156,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hope you criticize it friends!",
+        "author": "Vairavandinesh",
+        "url": "https://wolfpeachcs.blogspot.com/2022/11/blog-post.html",
+        "text": "",
+        "created_utc": 1669648080,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does one start with low-level physical computing?",
+        "author": "ButterscotchInitial3",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6tpnh/how_does_one_start_with_lowlevel_physical/",
+        "text": "Hello,\n\nas I was getting deeper into physical computing, I began to wonder on going into the more low-level stuff, making one's own libraries for components and etc.. Problem is that even with a basic knowledge of C, there is still a bunch of unknown terms and concepts. From my research I could only find very professional docs, or simple articles explaining what physical computing is in general. What I am searching for is sort of a *demystifying* guide, which helps one get started and know how to search when needing to know more. A good example of what I am searching for would be the [Book of Shaders](https://thebookofshaders.com/), which goes into deep concepts, but explains them in a simple and understandable way. Anyone has anything like that? \n\nIf you're confused on what I mean by low-level physical computing, then making a library for a ssd1309 display would be an example, where setting it up needs you to understand the machine code underneath.",
+        "created_utc": 1669633455,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "CYBER MONDAY Great offer on microprokey.com Microsoft Windows 10 Professional Full Version License only $21.53 with 80% discount by using the code: CYBER28 And enjoy the offer.",
+        "author": "KosherFastball",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6sxok/cyber_monday_great_offer_on_microprokeycom/",
+        "text": "[removed]",
+        "created_utc": 1669630688,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I desperately need help (Flex/Bison)",
+        "author": "NextGEN_24",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6sdj0/i_desperately_need_help_flexbison/",
+        "text": "So I made a simple calculator using flex and bison. However, I can't seem to implement the variable declaration in bison.\n\nHere is my lex file:\n\n    %{\n        #include \"simple_calc.tab.h\"\n    %}\n    \n    INT [0-9]+\n    FLOAT [0-9]+\\.[0-9]*\n    VAR [a-zA-Z]{2}\n    INVALIDVAR [a-zA-Z]{3,}\n    LP  \"(\"\n    RP  \")\"\n    EQ \"=\"\n    \n    %%\n    \"+\"     {return ADD;}\n    \"-\"     {return SUB;}\n    \"*\"     {return MUL;}\n    \"/\"     {return DIV;}\n    {EQ}    {return EQ;}\n    {VAR}   {yylval.args.string = yytext; return VAR;}\n    {INT}   {yylval.args.floatVal = atof(yytext); return INT;}\n    {FLOAT} {yylval.args.floatVal = atof(yytext); return FLOAT;}\n    \\n      {return EOL;}\n    [[:space:]] {}\n    {LP}     {return LP;}\n    {RP}     {return RP;}\n    .               {printf(\"\\nUnrecognized string %c\\n\", *yytext);}\n    \"exit\"  {return QUIT;}\n    {INVALIDVAR}    {return INVALIDVAR;}\n    %%\n\n And here is my parser code: \n\n    %{  // Section 1a: C declarations\n        #include&lt;stdio.h&gt;\n        #include&lt;string.h&gt;\n        #include&lt;stdlib.h&gt;\n        int yylex();\n        void yyerror(char *);\n    \n        typedef struct symtab {\n            char *str;\n            float val;\n            struct symtab *next;\n        } SYM;\n    \n        SYM *head = NULL;\n    \n    %}\n    \n    //Section 1b: YACC/Bison declarations\n    /*Declaring tokens*/\n    %code requires {\n        struct node {\n            float floatVal;\n            char *string;\n        };\n    }\n    \n    %union {\n        struct node args;\n    }\n    \n    %token LP RP\n    %token &lt;args&gt; ADD SUB MUL DIV INT FLOAT\n    %token &lt;args&gt; VAR EQ INVALIDVAR\n    %token EOL QUIT\n    /*Operator Associativity*/\n    %left ADD SUB\n    %left MUL DIV\n    %type &lt;args&gt; exp factor term\n    %% // Section 1b: Grammar Rules\n    calclist: /*nothing*/\n        | calclist exp EOL {printf(\"%.2f\\n\", $2.floatVal);}\n        | calclist QUIT {printf(\"Exiting...\\n\"); return 0;}\n        | calclist INVALIDVAR {printf(\"Invalid variable syntax\\n\"); return 0;}\n        | calclist VAR EQ exp EOL {\n                // Getting the first two symbols only for the variable\n                char temp[2];\n                memcpy(temp, &amp;$2.string[0], 2);\n                temp[2] = '\\0';\n                char *res = temp;\n    \n                // Creating new node to store both string and value to the struct list\n                SYM *node = (SYM*) malloc(sizeof(SYM));\n                node-&gt;str = res;\n                node-&gt;val = $4.floatVal;\n                node-&gt;next = NULL;\n                if(head == NULL){\n                    node-&gt;next = head;\n                    head = node;\n    \n                    printf(\"why here?\\n\");\n                } else {\n                    SYM *temp = head;\n                    while(temp-&gt;next != NULL){\n                        temp = temp-&gt;next;\n                    }\n                    temp-&gt;next = node;\n                }\n    \n            }\n        ;\n    exp: factor \n        | exp ADD factor {$$.floatVal = $1.floatVal + $3.floatVal;}\n        | exp SUB factor {$$ .floatVal= $1.floatVal - $3.floatVal;}\n        ;\n    factor: term\n        | factor MUL term {$$.floatVal = $1.floatVal * $3.floatVal;}\n        | factor DIV term {$$.floatVal = $1.floatVal / $3.floatVal;}\n        ;\n    term: INT\n        | FLOAT\n        | VAR {\n            // to implement as soon as I'm done fixing the structure list\n            // For now, I'm printing the contents of the list of structs\n            // and displaying the contents whenever I enter a variable (only) in the\n            // terminal\n    \n            // Printing contents of list\n                SYM *print= head;\n                while(print!= NULL){\n                    printf(\"%s - %.2f\\n\", print-&gt;str,  print-&gt;val);\n                    print = print-&gt;next;\n                }\n        }\n        | LP exp RP {$$.floatVal = $2.floatVal;}\n        ;\n    %%\n    \n    // Section 3: Additional C code\n    \n    /* Called by yyparse on error. */\n    void yyerror (char *s)\n    {\n      fprintf (stderr, \"%s\\n\", s);\n    }\n    \n    int main (int argc, char **argv)\n    {\n      yyparse ();\n    \n      \n    }\n\nWhenever I try to declare and initialize the variable, it should be stored in the \\*SYM head list. However, when I try to print the list, it does show the correct appending of values, but the strings are messed up and I don't know how to fix it. Here's the test run. Can someone please help me? \n\n    &gt;&gt; ab=1\n    &gt;&gt; cd=2\n    &gt;&gt; ef\n    &gt;&gt; cd - 1.00\n    &gt;&gt; cd - 2.00\n    &gt;&gt; gh = 3\n    &gt;&gt; ok\n    &gt;&gt; gh - 1.00\n    &gt;&gt; gh - 2.00\n    &gt;&gt; gh - 3.00",
+        "created_utc": 1669628741,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why are NaNs represented with 2^52 -1 different combinations of bits in IEEE standard? Isn't that inefficient?",
+        "author": "tail-recursion",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6ptck/why_are_nans_represented_with_252_1_different/",
+        "text": "I'm listening to some lectures on Scientific Computing specifically on floating point arithmetic and according to the lectures the IEEE standard for double precision says if you have a zero sign bit, exponent all ones, then if the mantissa is any 52 bits not all zero that corresponds to a NaN. It seems like it would make more sense to use only one bit representation for NaNs and then you could represent 2\\^52-2 extra floating point numbers (2\\^52-2 because you are discounting the case when the mantissa is 52 zeros for inf as well as the single binary representation for NaN).",
+        "created_utc": 1669619517,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Questions regarding internship experience.",
+        "author": "ausTINMANpro",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6p6pz/questions_regarding_internship_experience/",
+        "text": "Hello all, quick background: I'm a junior in college, I expect to graduate 12/23 with a BS in Informatics. I have accepted two different internships, one for the Spring (Dec-Apr) and the other for the Summer. I live in the capitol of my state and the spring internship is working for the state legislative branch's technology department as a 'Business Analyst Intern'. The Summer internship is with Infosys as a SWE intern (I am looking for other internships for the summer, but I immediately accepted to ensure I have something at the very least. They, as well as my state, are at-will so I will not be held responsible for reneging on the offer). I have other prospects I am currently pursuing (clearly I don't want to work for Infosys), but I am in different stages of the application process so I am still waiting. \n\nMy questions are as follows:\n\nIs the spring internship working fory states legislative branch's technology department as a business Analyst Intern a good role/be looked at positively?\n\nAre government IT roles looked at as positive experience from other companies in the IT industry?\n\nI've seen a lot said bout WITCH companies, is it really that bad?\n\nIs it bad to have a WITCH job on your resume? What about if it's an internship as a SWE intern?\n\nAny advice/comment is much appreciated.\nThank you all in advance, this sub has been great alongy journey so far!",
+        "created_utc": 1669617431,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Supper sales offer for ''CYBER MONDAY '' Buy Microsoft Office 2021 - with up to 80% Discount.",
+        "author": "KosherFastball",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6myf9/supper_sales_offer_for_cyber_monday_buy_microsoft/",
+        "text": " \n\n[**affordablekey.com**](http://affordablekey.com/) is the best online store for all your software needs. Visit us today and take advantage of our amazing Cyber Monday sale. **Get 80% off your purchase** when you use the code ; **CYBER28** at checkout. We have a huge selection of Microsoft software products available you're sure to find the perfect one for your needs. This sale won't last long!\n\nBuy your choice software at a cheap price and the License key will be delivered instantly after payment. Pay easily using a variety of payment methods.\n\nSo Enjoy the offer and save 80%\n\n \n\n### [MICROSOFT OFFICE PROFESSIONAL PLUS 2021 FOR WINDOWS](https://microprokey.site/cWO9CAkU)\n\nOffice Professional Plus 2021 provides the essentials to get it all down. Ideal for small businesses and families who need the most popular Microsoft Office apps including Word, Excel, PowerPoint, OneNote.\n\nAll apps are frequently updated so you will always be up to date with the latest features.\n\n**This Package is for Windows 10 and windows 11 only. Please ensure you check your compatibility.**\n\n#### What's included?\n\nWith a new modern look, and time-saving features the 2021 Office Professional Plus edition improves collaboration and with the ability to save your documents to the cloud with OneDrive you can access them from anywhere.\n\n* 1x License (Product Key) for Microsoft Office 2021 Professional Plus which lasts a **Lifetime**\n* Safe &amp; Official Microsoft Download Link\n* Complete installed 2021 versions of Word, Excel, PowerPoint, Publisher, OneNote, Access.\n* All language packs included\n* For 1 PC Only (Windows 11 or later)",
+        "created_utc": 1669610478,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "HOW TO ACTIVATE CONSERVATION MODE?",
+        "author": "ClingyTailor",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6gwbr/how_to_activate_conservation_mode/",
+        "text": "Im having a Lenovo Ideapad 330 but I dont want to install Lenovo Vantage because there are too much background processes running if i install it. May I know other ways to activate conservation mode to keep my battery healthy? Thanks for any suggestion given",
+        "created_utc": 1669593389,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Pop OS help",
+        "author": "-ShadowFang-",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z6btrl/pop_os_help/",
+        "text": "I used a 2 TB hhd to put Pop OS on my HP 245 G8 notebook laptop to fix some issues and make just about everything I needed it to do easier/better. I wanted to use that hhd for storage for 2 games that used to be on it but it’s not listed as an install location. I thought I would be smart and create a new folder on my desktop as the new mount point for it and went through the process of setting it up. Finished and powered off the pc but when rebooted it still isn’t an install point…… Did I mess something up? What am I missing?",
+        "created_utc": 1669581315,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Happy Birthday Wishes Gif and Wishes for Sister",
+        "author": "bilalmunsif",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z64v9z/happy_birthday_wishes_gif_and_wishes_for_sister/",
+        "text": " \n\nCelebrating a birthday is always a special occasion. Whether it’s your own birthday or someone else’s, it’s a time to celebrate and show your loved ones how much you care. One of the best ways to show your loved ones you care is by sending them a thoughtful birthday wish. But what if you’re not sure what to say? Don’t worry, we’ve got you covered. In this blog post, we’ll share some of the best happy birthday wishes for your sister. From funny wishes to heartwarming messages, we’ve got something for everyone. So whether she’s your big sister or little sister, make her birthday extra special with one of these wishes.\n\n**The Different Types of birthday wishes**\n\nWhen it comes to birthday wishes, there are many different types that you can choose from. For example, you can opt for a sentimental wish that expresses your love and appreciation for the birthday girl or boy. Alternatively, you could go for a funny wish that will make them laugh out loud. Whichever route you decide to take, make sure that your birthday wish is sincere and heartfelt.\n\nHere are some examples of different types of [birthday](https://play.google.com/store/apps/details?id=com.happyBirthday.wallpaper.bilalnew.apps.free.android) wishes that you can use for inspiration:\n\n\\-I’m so grateful to have you in my life. Happy birthday!\n\n\\-Wishing you all the happiness in the world on your special day.\n\n\\-May your birthday be filled with lots of love, joy, and laughter!\n\n\\-I hope this year is even better than the last. Happy birthday!\n\n**Why we should celebrate birthdays**\n\nWe should celebrate birthdays because they are a special day to commemorate the day we were born. It is a day to reflect on our life so far and to be thankful for all that we have experienced. It is also a day to celebrate with family and friends and to make new memories.\n\n**What are the best ways to celebrate a birthday?**\n\nThere are many ways to celebrate a birthday, but some of the best ways to show someone you care are with a thoughtful gift, a handwritten card, or even just a phone call. Whatever you do, make sure it’s something that will make the birthday girl or boy feel special on their big day.\n\n**How to make a birthday wish?**\n\nWhen it comes to making a birthday wish, the options are endless. You can go the traditional route and simply say \"Happy Birthday!\" or get creative and write something more personal. If you're looking for some inspiration, here are a few ideas:\n\n\\-Wish them a happy and healthy year ahead.\n\n\\-Send them your love on their special day.\n\n\\-Tell them how much you appreciate them and everything they do for you.\n\n\\-Let them know how lucky you feel to have them in your life.\n\n\\-Reminisce about the good times you've shared together and look forward to many more in the future.\n\nNo matter what you choose to say, simply conveying that you care will make all the difference. So take a moment to think about what would mean the most to your loved one on their birthday, and let those words guide your wish.\n\n**Birthday wish examples**\n\n1. \"Wishing you all the happiness your birthday can hold! Have a wonderful day!\"\n\n2. \"Sending you lots of love on your special day!\"\n\n3. \"May your birthday be as beautiful and joyous as you are!\"\n\n4. \"Wishing you a birthday that's as wonderful as you are!\"\n\n5. \"Hope your birthday is as amazing as you are!\"\n\n**Conclusion**\n\nOn this special day, I want to let you know that you are the best sister in the world and that I am so happy to have you in my life. I hope your birthday is as wonderful as you are and that all of your dreams and wishes come true. Happy [birthday, sis](https://play.google.com/store/apps/details?id=com.happyBirthday.wallpaper.bilalnew.apps.free.android)!\n\n**0**",
+        "created_utc": 1669565066,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Degree from a non-reputable university",
+        "author": "derkadur0",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z63iq3/degree_from_a_nonreputable_university/",
+        "text": "I won't go into details but for some reason I am studying CS in a non reputable university. Most people may not even know the name of it where I live. I also can not transfer anywhere else.\n\nI'm in my 2nd year and so far I think I've taught myself very well. I'm learning from MIT's, Stanford's courses instead of from my professors. If these kinds of great schools do not have video courses of the class I'm taking, then I get the same book they are using and study from there. My classmates are almost all pretty much non-interested and not that intelligent. I'm trying to be at the same level as one of the schools I mentioned by teaching myself.\n\nI feel depressed when I go to school because most people there are basicly idiots who are just there to party or sth. So, I do not attend any class that is not mandatory and only attend the midterms and finals from those. My GPA is above 3.5/4.\n\nI am looking for encouragements and and truth from you guys. I do feel pretty depressed because I do not belong here but if there is nothing I can do to go anywhere else... I must do my best with the 2 years of school I have left.\n\nI'm hoping to work in a job with better and more qualified people and in a respectable company when I graduate or a couple years later at least.\nBut so many people just say that... no no no, you can get a good job from a bad university. There will always be so many people from the best top schools in front of you and you can never beat them. I know my chances are slim, but I'm really trying my best.\n\nWhat are my chances?",
+        "created_utc": 1669561847,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need help for buying laptop",
+        "author": "ProllyHigh22",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5ypov/need_help_for_buying_laptop/",
+        "text": "I am starting my university next month and I'll be studying management information systems and i dont currently own a laptop.\nI need suggestions from you guys to purchase a laptop as algorithms and programming is gonna be part of my course.\n Do you guys have any budget/cheap laptop in mind for the use?",
+        "created_utc": 1669547633,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is python being slow really an issue in the industry?",
+        "author": "Sake99",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5vd5o/is_python_being_slow_really_an_issue_in_the/",
+        "text": "I know it is the slowest language but is it really an issue that other languages should be learn, if so what do you suggest C# or Java? can I just understand C# without going to C/C++?",
+        "created_utc": 1669536049,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to study computer science on your own?",
+        "author": "colorname_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5so6v/how_to_study_computer_science_on_your_own/",
+        "text": " I immediately apologize for the long post. I hope there will be people who will read it and help me with some advice and answers to my questions.\n\nI have some experience in JS/React programming, but I don't know anything about more fundamental things. Now I would like to do game engine development, game development and graphics programming. As I know, this field of activity requires serious knowledge in various topics, namely in the architecture of the platform, in operating systems, assembly language, mathematics, algorithms, C/C++ and other topics and subtopics. All this is quite difficult for independent study without feedback, but I do not have the opportunity to enroll in a good university to get this knowledge, so I will have to study independently and for a long time. I want to start from scratch.\n\nI'm interested not just in making some games on ready-made engines like UE, I'm more interested in figuring out how to write my engine from scratch and then write some indie games on it. I understand that it will be very difficult to study, you will need to constantly draw motivation and not give up. I want to become a good engineer. Unfortunately, my English is at the very elementary level, and I will have to study English in parallel, which will further complicate my path.\n\n**And I have a few questions:**\n\n1. How do I plan my training and how many hours is it optimal to study every day or maybe not every day?\n2. In what sequence or maybe in parallel to study topics?\n3. What topics specifically will you need to study to become a good engineer?\n4. How long can it take to train to a confident middle level?\n5. Which books to read and in what order?\n6. When and how to start practicing? What kind of projects to write? \\*\n\n**(To the 5th question):**\n\nI found information on SOF on C++ books. I also know which books on mathematics and algorithms will suit me. But I do not know from which books it is better to study processor architecture, operating systems, assembly language, as well as all other topics that I may not even know about.\n\n**Important (To the 6th question):**\n\nI would like to clarify about the last question. I am inspired by many software engineers. I look at them and envy how they can write anything. And at the same time, I don't really understand how you can reach such a level, how to learn to write whatever I want. For example, studying processor architecture and assembly language, many then write their own implementations of virtual machines, their compilers for them, and the like. It seems unreal to me. Let's say I started studying the platform, started reading the same Tanenbaum or other books on the topic, how do I consolidate my knowledge? I won't be able to physically create my own processor or something like that, and I won't be able to write my own virtual one either, since I don't know how to program yet and don't know many things. I don't understand how deep you need to dive into the topic. It seems that these are super difficult tasks that will take several months. I have a clear conviction that if I cannot create something in the studied area, then I have not studied this area at the proper level. It confuses me, I don't understand how I can learn on my own and in what sequence.\n\n\\-------------------------------------------------------------------------------------------------------------------\n\nWho has already passed this way, perhaps also independently as I plan it, share your experience, how you studied, give some tips on how to plan everything so as not to give up after a week from burnout and depression that nothing works out. I hope I was able to explain my thoughts and get good advice on this",
+        "created_utc": 1669526860,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there any software that can guess what mathematical function generates a large given set of data points?",
+        "author": "DaveRubinsLeftNut",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5skff/is_there_any_software_that_can_guess_what/",
+        "text": "Suppose you write a complicated function in code that takes in and outputs floats. The function actually inefficiently implements a compact mathematical function and you know this, but you don't know which function it really is, and furthermore the outputs it produces are only approximately the same as the mathematical function it corresponds to due to floating point errors and indeterminism in the digital implementation. Is there any software that can guess the mathematical function, given the ability to generate as many datapoints as it wants?",
+        "created_utc": 1669526511,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any non-traditional routes to having a successful career in software programming/cybersecurity",
+        "author": "bigbentower",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5mdlb/any_nontraditional_routes_to_having_a_successful/",
+        "text": "Currently in my graduating year for general science. I'm now interested in software/comp sci. I could go for an after degree in another province for 3 years, but it'll be alot of $ for tuition+ living expenses. \n\nAny ideas on how I can do things on my own to have the same value as someone with a degree?",
+        "created_utc": 1669508337,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to get uncover someone’s identify legally ;)",
+        "author": "august-13",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5l2jb/how_to_get_uncover_someones_identify_legally/",
+        "text": "There was this guy trying to groom me when I was 14, I never sent him any pictures but I understand and now that it was his plan. \nNow he’s trying to groom my friends little sister and I need to know who he is. I think it’s someone that we both know but I have no idea who. \nI need to uncover his identity to help us protect young girls. \nI know this is the wrong place to ask but I hope some kind tech-savvy is willing to help me before this post gets deleted.",
+        "created_utc": 1669504790,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Amortized analysis - help with understanding the answer from stackexchange",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5iu4y/amortized_analysis_help_with_understanding_the/",
+        "text": "so in the post:\n\n [complexity theory - Accounting method - dynamic array - Computer Science Stack Exchange](https://cs.stackexchange.com/questions/140738/accounting-method-dynamic-array) \n\nhe says:\n\n&gt; Suppose that you just extended your array from size k to size ⌈(1+α)k⌉. You would need to add an additional ⌈(1+α)k⌉−k elements before the next extension, which will require ⌈(1+α)k⌉ operations. \n\nwhen he says \"which will require ⌈(1+α)k⌉ operations\" we look at the number of operation from the beginning?\n\nbecuase when we extened our array we only need  ⌈(1+α)k⌉−k  operations for the next extension\n\nIm a bit confused if Im missing something or if he really counted how much operations from the \"zero\" state\n\nsorry for the question, this subject is a bit hard for me to understand",
+        "created_utc": 1669499003,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can I teach Computer Science on my own?",
+        "author": "colorname_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5fms0/how_can_i_teach_computer_science_on_my_own/",
+        "text": "I immediately apologize for the long post. I hope there will be people who will read it and help me with some advice and answers to my questions.\n\nI have some experience in JS/React programming, but I don't know anything about more fundamental things. Now I would like to do game engine development, game development and graphics programming. As I know, this field of activity requires serious knowledge in various topics, namely in the architecture of the platform, in operating systems, assembly language, mathematics, algorithms, C/C++ and other topics and subtopics. All this is quite difficult for independent study without feedback, but I do not have the opportunity to enroll in a good university to get this knowledge, so I will have to study independently and for a long time. I want to start from scratch.\n\nI'm interested not just in making some games on ready-made engines like UE, I'm more interested in figuring out how to write my engine from scratch and then write some indie games on it. I understand that it will be very difficult to study, you will need to constantly draw motivation and not give up. I want to become a good engineer. Unfortunately, my English is at the very elementary level, and I will have to study English in parallel, which will further complicate my path.\n\n**And I have a few questions:**\n\n1. How do I plan my training and how many hours is it optimal to study every day or maybe not every day?\n2. In what sequence or maybe in parallel to study topics?\n3. What topics specifically will you need to study to become a good engineer?\n4. How long can it take to train to a confident middle level?\n5. Which books to read and in what order?\n6. When and how to start practicing? What kind of projects to write? \\*\n\n**(To the 5th question):**\n\nI found information on SOF on C++ books. I also know which books on mathematics and algorithms will suit me. But I do not know from which books it is better to study processor architecture, operating systems, assembly language, as well as all other topics that I may not even know about.\n\n**Important (To the 6th question):**\n\nI would like to clarify about the last question. I am inspired by many software engineers. I look at them and envy how they can write anything. And at the same time, I don't really understand how you can reach such a level, how to learn to write whatever I want. For example, studying processor architecture and assembly language, many then write their own implementations of virtual machines, their compilers for them, and the like. It seems unreal to me. Let's say I started studying the platform, started reading the same Tanenbaum or other books on the topic, how do I consolidate my knowledge? I won't be able to physically create my own processor or something like that, and I won't be able to write my own virtual one either, since I don't know how to program yet and don't know many things. I don't understand how deep you need to dive into the topic. It seems that these are super difficult tasks that will take several months. I have a clear conviction that if I cannot create something in the studied area, then I have not studied this area at the proper level. It confuses me, I don't understand how I can learn on my own and in what sequence.\n\n\\-------------------------------------------------------------------------------------------------------------------\n\nWho has already passed this way, perhaps also independently as I plan it, share your experience, how you studied, give some tips on how to plan everything so as not to give up after a week from burnout and depression that nothing works out. I hope I was able to explain my thoughts and get good advice on this",
+        "created_utc": 1669490736,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can I teach Computer Science on my own?",
+        "author": "compscistudying",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5fi85/how_can_i_teach_computer_science_on_my_own/",
+        "text": "[removed]",
+        "created_utc": 1669490404,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How can I teach Computer Science on my own?",
+        "author": "compscistudying",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5fdms/how_can_i_teach_computer_science_on_my_own/",
+        "text": " I immediately apologize for the long post. I hope there will be people who will read it and help me with some advice and answers to my questions.\n\nI have some experience in JS/React programming, but I don't know anything about more fundamental things. Now I would like to do game engine development, game development and graphics programming. As I know, this field of activity requires serious knowledge in various topics, namely in the architecture of the platform, in operating systems, assembly language, mathematics, algorithms, C/C++ and other topics and subtopics. All this is quite difficult for independent study without feedback, but I do not have the opportunity to enroll in a good university to get this knowledge, so I will have to study independently and for a long time. I want to start from scratch.\n\nI'm interested not just in making some games on ready-made engines like UE, I'm more interested in figuring out how to write my engine from scratch and then write some indie games on it. I understand that it will be very difficult to study, you will need to constantly draw motivation and not give up. I want to become a good engineer. Unfortunately, my English is at the very elementary level, and I will have to study English in parallel, which will further complicate my path.\n\n**And I have a few questions:**\n\n1. How do I plan my training and how many hours is it optimal to study every day or maybe not every day?\n2. In what sequence or maybe in parallel to study topics?\n3. What topics specifically will you need to study to become a good engineer?\n4. How long can it take to train to a confident middle level?\n5. Which books to read and in what order?\n6. When and how to start practicing? What kind of projects to write? \\*\n\n**(To the 5th question):**\n\nI found information on SOF on C++ books. I also know which books on mathematics and algorithms will suit me. But I do not know from which books it is better to study processor architecture, operating systems, assembly language, as well as all other topics that I may not even know about.\n\n**Important (To the 6th question):**\n\nI would like to clarify about the last question. I am inspired by many software engineers. I look at them and envy how they can write anything. And at the same time, I don't really understand how you can reach such a level, how to learn to write whatever I want. For example, studying processor architecture and assembly language, many then write their own implementations of virtual machines, their compilers for them, and the like. It seems unreal to me. Let's say I started studying the platform, started reading the same Tanenbaum or other books on the topic, how do I consolidate my knowledge? I won't be able to physically create my own processor or something like that, and I won't be able to write my own virtual one either, since I don't know how to program yet and don't know many things. I don't understand how deep you need to dive into the topic. It seems that these are super difficult tasks that will take several months. I have a clear conviction that if I cannot create something in the studied area, then I have not studied this area at the proper level. It confuses me, I don't understand how I can learn on my own and in what sequence.\n\n\\-------------------------------------------------------------------------------------------------------------------\n\nWho has already passed this way, perhaps also independently as I plan it, share your experience, how you studied, give some tips on how to plan everything so as not to give up after a week from burnout and depression that nothing works out. I hope I was able to explain my thoughts and get good advice on this",
+        "created_utc": 1669490074,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can you please explain me what is TensorFlow ?",
+        "author": "KoustavDChakladar",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z5fbpq/can_you_please_explain_me_what_is_tensorflow/",
+        "text": "",
+        "created_utc": 1669489930,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Black Friday Offer! Hurry Up For Buy Microsoft product! Best Deals On Microsoft Windows 11 Pro License . Get 25% Off only $29.99 Coupon Code: BlackFriday",
+        "author": "timtroyrrtyl",
+        "url": "https://microprokey.site/CHFOo59n",
+        "text": "",
+        "created_utc": 1669487311,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I really like programming, but I don't see the goal of doing it. How to quit programming?",
+        "author": "colorname_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z53wzp/i_really_like_programming_but_i_dont_see_the_goal/",
+        "text": "  \nI've been doing a lot of things over the years in the IT field. I have always liked this field of activity. I really like programming and everything related to it, but I don't see the point and purpose of doing programming for a long time. I always started and gave up everything after a maximum of half a year. Then I took a break and then for some reason I started to dive into programming again.\n\nhttps://preview.redd.it/iu7vfu0tq92a1.jpg?width=1920&amp;format=pjpg&amp;auto=webp&amp;s=6e4e8c8bad4bc7aba944d4a2b1e54c6923d2410b\n\nI'm fixated on programming and I can't consider other areas of activity because of this. It seems to me that I can realize myself only in the field of IT, but in my subconscious I understand that I will not be able to do this, although I have a great interest. Because of this, apathy and meaninglessness of life become more and more acute for me every time. I can't figure out what to do.\n\nEarlier, when I was just starting to study programming at university, I had some goals, there was a misconception that I associated myself with IT for life, but over time I began to understand that I did not want (or do not understand why) to spend my whole life at the computer. Perhaps I would like to erase all knowledge about computer science, but now I have driven myself into a trap where I actually like the field of programming itself, but I don't understand why I should do it, and because of this I can't do something else. It seems to me that other fields of activity are \"bad\", that I will not be able to realize myself in them and there is a slight fear of choosing something wrong again and fixating on it as now with programming.\n\n&amp;#x200B;\n\nI thought I could force myself to do programming just for the money, but I was deeply mistaken. It didn't give me any motivation, although I understand that this job can provide me.\n\nTell me how you can completely rid yourself of thoughts about programming and stop wasting time on it, or how to motivate yourself and make sense to do programming in the long run.\n\nI have been standing in one place for almost 3 years, in apathy and constant depression. Sometimes I tell myself that programming is actually what I would like to do, but I have enough for a maximum of a couple of months and then I quit again and get depressed. I don't understand how I can get rid of this. It is very difficult when something is very interesting in theory, but in practice it turns out that there is no desire to do this for a long time.\n\n&amp;#x200B;\n\nI hope someone will understand me. I'm not really sure that I explained the situation correctly. Perhaps someone has been in the same situation and will be able to give me some ideas.",
+        "created_utc": 1669456855,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Black Friday] Buy Microsoft Windows 11 Pro License Only $31.99 And Get Up to 80% Off Use Promo code: (BLACKFRIDAY)",
+        "author": "timtroyrrtyl",
+        "url": "https://microprokey.site/6uJlkkA9",
+        "text": "",
+        "created_utc": 1669450409,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why do most forecasters expect moore’s law to end around 2025?",
+        "author": "MarshyBarsh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4xs9a/why_do_most_forecasters_expect_moores_law_to_end/",
+        "text": "",
+        "created_utc": 1669436323,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why do most forecasters predict moore’s law will end in 2025?",
+        "author": "MarshyBarsh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4xnw8/why_do_most_forecasters_predict_moores_law_will/",
+        "text": "",
+        "created_utc": 1669435954,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for literature about pipelined processor design",
+        "author": "heiligersebastian",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4u398/looking_for_literature_about_pipelined_processor/",
+        "text": "I am currently re-implementing my own RISC-V processor following [this book](https://www.elsevier.com/books/digital-design-and-computer-architecture-risc-v-edition/harris/978-0-12-820064-3) and the [official](https://riscv.org/technical/specifications/) RISC-V spec.\n\nIn the book I am reading the chapter for the pipelined processor. However in the design of the Hazard unit I find that the explanations of the book are lacking. Firstly because I do not understand them fully - to be clear I understand the problems but not all the solutions - and secondly, after simulating it myself I do get wrong results. Therefore I am on the lookout for preferably a book that goes into more detail. Ideally with some examples concerning stalls and flushes.\n\nI should mention I have next to no background on this, I am coming from a math background. I am mostly self taught using that book as well as the [nand2tetris](https://www.nand2tetris.org/) resources.\n\nThanks in advance for any pointers or hints!",
+        "created_utc": 1669425473,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need help choosing what setting i should use in 7Zip to compress really old files",
+        "author": "Voglz",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4ldwo/need_help_choosing_what_setting_i_should_use_in/",
+        "text": "Recently I found a bunch of old pendrives full of rather important data, after some time i finally manage to get them all downloaded in my hdd and now i have around 25Gb of data that i wont use (but won't delete), and wanted to compress them into a 7z file. What are the best settings to use in my case? \n\nCurrently i have it set like this (it's in Portuguese but I imagine that the options order should be the same as in English) \n\nOnce again: won't have to use those files any time soon, wish to reduce total file size while not having to wait hours for it to decompress in case i ever need it. \n\n&amp;#x200B;\n\nhttps://preview.redd.it/cpisgj0ha52a1.png?width=626&amp;format=png&amp;auto=webp&amp;s=7f922a57d1cecd4bd29596526fa145185f58ad15",
+        "created_utc": 1669403276,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What exactly are software development skills?",
+        "author": "bluenaturestoner",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4kkii/what_exactly_are_software_development_skills/",
+        "text": "For context, I’m barely going to finish my first year as a CS major. I’ve only taken 2 programming classes. I’ve been looking at internships cuz the earlier the better. However, most require knowledge in software development? I’m not quite sure what that means as I’m a newbie but really enjoy coding. Do they mean data structures, algorithms? I’m at a Community College and besides programming classes, they offer: Digital Logic, Data structures with C or Java, Assembly language, cloud computing, but nothing specifically with software development. Will I take a software development class once I transfer to a Uni? Any advice is much appreciated.",
+        "created_utc": 1669401274,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Learning about concurrency",
+        "author": "newbee0010",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4cwc3/learning_about_concurrency/",
+        "text": "What would you recommend if you were to learn everything about concurrency from scratch all the way to advanced topics?\nMay be some good resources that you know, or some classic academic or practical exercises.\nI'm looking for something to learn about concurrency in depth supplemented by good exercises that are not very trivial.",
+        "created_utc": 1669381416,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I declare variables in Bison?",
+        "author": "NextGEN_24",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4c0pc/how_do_i_declare_variables_in_bison/",
+        "text": "I'm currently making a simple calculator that involves variable assignment that can be used later on when using the calculator. I can't seem to grasp how variables are stored in the parser. I'm currently reading this [guide](https://www.gnu.org/software/bison/manual/bison.html#Mfcalc-Declarations) but I don't understand where to put things properly. Can someone help me how to implement variable declaration in Bison?",
+        "created_utc": 1669378667,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Compare two texts to highlight similarities and differences",
+        "author": "Effective-Divide-828",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z4ab4y/compare_two_texts_to_highlight_similarities_and/",
+        "text": "Hello everyone,\n\nI'm working on a project where we aggregate different AI APIs, some of which return text (speech recognition, machine translation, document parsing, etc.).\n\nWe want to give the possibility to make calls on different APIs at the same time to \"reinforce\" the processing that is done. So I'm looking for a Python library that would return similarities and differences from two texts.\n\nThe thing that can be complicated is that it has to take into account the shift that there can be in the order of the characters. Example: \"\\[You are\\](1) (so) \\[beautiful\\](2)\" and \"\\[You are\\](1) (very) \\[beautiful\\](2)\".\n\nDo you see something that would work?\n\nThanks in advance,",
+        "created_utc": 1669372801,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What are some good tools/libraries for building a web crawler/spider?",
+        "author": "StorageSpecial6215",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z46zhf/what_are_some_good_toolslibraries_for_building_a/",
+        "text": "I have a usecase to build a search engine for a few thousand sites. I was researching few libraries for it, but am confused between them...  \nThere is Pupeteer for NodeJS and Scrapy (with Splash) and Selenium for Python. There are also tools like the Elastic App Search which use the Elastic Web Crawler. There is not much comparison available between them...\n\n  \nCan you guide me? \n\nAny reviews about the Elastic Web Crawler? Should that be used or a custom crawler using some  library like scrapy or puppeteer should be preferred?  \n\n\nI was thinking of collecting data by scrapping and then storing it in elastic Search for search purposes. (Or use app search directly).",
+        "created_utc": 1669360682,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AZ 104 RENEWAL ASSESMENT FOR MICROSOFT CERTIFIED AZURE SOLUTIONS",
+        "author": "studymerit",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z3hbp9/az_104_renewal_assesment_for_microsoft_certified/",
+        "text": "[removed]",
+        "created_utc": 1669288440,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Resolution",
+        "author": "rahli-dati",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z3fss1/resolution/",
+        "text": "Can I use the resolution to prove an argument is sound and complete in FOL ? I have noticed that they talked about refutation in resolution. I wonder what is the basic difference between them.",
+        "created_utc": 1669282990,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "M2 Macbook Air vs Dell XPS 15",
+        "author": "tharya5637",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z3bsi8/m2_macbook_air_vs_dell_xps_15/",
+        "text": "I'm in my first year of computer science and am torn between the two. I would be getting the baseline 13-inch M2 and the RTX 3050 XPS\n\nI like the MBA's visuals (I find it easier to work on macOS) but was hoping to use emulation software for fun if I got a PC.\n\nAre the quality of life/optimization benefits of the M2 worth sacrificing for the RTX 3050? What laptop do you personally think is better?",
+        "created_utc": 1669269130,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Black Friday Sales!] Buy Microsoft Windows 11 Pro License With 80% Discount Only $31.99 (Promo code: BLACKFRIDAY)",
+        "author": "Tall-Author-97",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z2sxgz/black_friday_sales_buy_microsoft_windows_11_pro/",
+        "text": "[removed]",
+        "created_utc": 1669219490,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "P2PK vs P2PKH, is this right? I thought it would be alternative B that would have the transaction size saving property, since the pubkey is larger than the hash of the pubkey.",
+        "author": "avleblostrup",
+        "url": "https://i.redd.it/fyfthehqjp1a1.png",
+        "text": "",
+        "created_utc": 1669212344,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Prepositional logic (convert Normal form to CNF)",
+        "author": "rahli-dati",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z2kvkp/prepositional_logic_convert_normal_form_to_cnf/",
+        "text": "I am trying to convert a normal form to CNF. But as the result, I got something like that \n\n`(~p v ~q  v ~r v ~q v r)` when I tried to convert that   `(p ∧q) →(¬r ∨(q →r))` normal form. \n\nI did something like that, \n\n `(p ∧q) →(¬r ∨(q →r))` \n\n1. `~(p ^ q) v (~r v (~q v r))` \n2. `(~p v ~q v ~r v ~q v r)`\n\nIs that the correct way to do this?",
+        "created_utc": 1669196543,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does GPA matter?",
+        "author": "derkadur0",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z2kv65/does_gpa_matter/",
+        "text": "I go to a pretty average-meh of a school (software engineering) and I'm wondering if getting a good GPA would help me get differentiated from most of the average students in these kinds of schools.\n\nCurrently it's around 3.6 and I'm hoping to keep it around 3.5 until I graduate.\n\n**Would a GPA of around 3.5 be helpful? How much do employers care?**\n\nThanks.",
+        "created_utc": 1669196498,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I absolutely love optimization. What fields could I tiptoe into to learn?",
+        "author": "AsperTheDog",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z2d8ej/i_absolutely_love_optimization_what_fields_could/",
+        "text": "Hi! First of all thanks for hopping by. My situation is simple:   \nI absolutely adore optimizing the hell of a program. I program mainly in C++ and I'm currently specializing in Game Engine Development and Computer Graphics. This is mainly because it's one of the fields that force you to squeeze every single microsecond of performance from your code. I thrive trying to create a data structure that will save me 1Byte per element, making a custom memory allocator to increase locality, or parallelizing in weird ways to make use of every little performance my CPU can give me. I have basic experience with CUDA too (which is fascinating in my opinion), but I have a hard time finding interesting projects to use it with.  \n\n\nSo basically, I want to explore new things to program that aren't related to game engines (Don't get me wrong, I love it) but can give me these things. Any ideas? I'm mainly looking for very logical projects (with this I mean things that don't require me to spend 90% of the time learning APIs, specific platforms or frameworks, but rather something that is more purely just coding interesting logic).   \nI don't mind things bei8ng math heavy, I like it.",
+        "created_utc": 1669171731,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Learn intermediate topics for non CS background person",
+        "author": "BoiElroy",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z2bgbz/learn_intermediate_topics_for_non_cs_background/",
+        "text": "I'm a data scientist, now working in a data engineering role. Largely self taught. I was wondering how I can go about learning more intermediate to advanced topics. I'm decent at math, it's more understanding the hardware side as it relates to computations I'm struggling to find resources for. I'd like to understand for example topics like\n\n- Memory\n    - RAM, Cache, Out-of-core, memory mapping, shared process\n- Serialization/Deserialization \n- Buffers\n- Processes/Threads\n\nPrimarily I'm trying to learn the Ray and Arrow frameworks using Python. But I feel like I can't properly appreciate them without learning a bit more about the above topics.",
+        "created_utc": 1669166778,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what MB is this?? can i use it for parts?, im actually trying to build my 1st pc. my only guess would be aServer computer..., i removed 3 huge fans to get to the cpu,rams etc THANKS ALOT also hp hstns-7105",
+        "author": "agentSlam007",
+        "url": "https://www.reddit.com/gallery/z29wox",
+        "text": "",
+        "created_utc": 1669163231,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What exactly is the difficulty with increasing computer performance?",
+        "author": "serpentally",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z29nz9/what_exactly_is_the_difficulty_with_increasing/",
+        "text": "Not sure how much this question is CS vs CE/EE but since there is a lot of overlap and I couldn't find a sub like this for CE this seemed like the only choice.\n\nThere's 2 things I've been considering when it comes to us being able to improve performance less and less as time goes on:\n\n1 – It's the hardware. We don't currently have the means to reduce heat enough to make hardware get better and better, and we can only remedy this if we find an adiabatic solution to designing computer hardware.\n\n2 – Hardware limitations aren't the main problem, software is. We're getting to a point where designing software that's optimized/well-designed enough to take advantage of modern hardware is taking an imptactically high amount of man-hours, skill, and coordination. The supply of extremely talented/skilled software engineers is far too low, and it's likely to only get worse as time goes on, plus the logistics/coordination required to improve accuracy/performance only gets more and more unrealistic.\n\nThese both make sense to me but I also have no idea if either of those are the case. I'm not an electrical/computer engineer so I'm not very well-versed on the subject, I'm just starting CS in college and since I like both games &amp; physics/chemistry related sciences a lot this came up in my mind.\n\nIf the future had it in store, I would definitely want to be someone who makes realistic simulations of evolution, chemistry/biochemistry, or classical physics &amp; astrophysics, or even combine them. But I don't think that's actually something I'll live to see the day of being reality for lmao, unless we actually invent/innovate something like organic transistors, or quantum computers, and have super-intelligent AI able to do a lot of the programming for us.\n\nthe rest of this became a big elaboration instead of a question so you can safely ignore it\n\nI want to work in ML/AI or Big Data, whether I do Science or Engineering is a matter of what the job market holds for me, so maybe I'll be the one that makes the tools people use in 100-200 years to make this lmao. Assuming the consequences of greedy politics don't kill us, that is...\n\nI would totally work in quantum computing but that takes an incredibly high amount of talent and skill that I simply don't think I'd be enough for, my ADHD+Dyspraxia+Anxiety would kill me. I also have aphantasia, which normally could even be a benefit in mathematics (including CS) but only because it generally strengthens your descriptive/working memory and perception – having ADHD kind of counteracts that haha! I'm suuuper interested in... microsciences? And stuff that has to do with evolution/change over long periods of time. Plus stuff to do with living being research. Like particle/quantum physics, biochemistry, evolutionary biology, astrophysics, psychology (mainly in relation to genetics/chemistry/evolution), geography/geology over the span of billions of years. Also thermodynamics &amp; fluid dynamics just because of how important yet underdeveloped the fields are (presumably because they're very difficult). All of these would be extremely cool to work in, specifically making simulations them &amp; making predictive models.\n\nMy dream job would be making interractive simulations of concepts in complex fields for people in the general public to use and either learn off of, or make practical inventions/products with. Simulations of chemistry, of evolution of life, of genetics, of electricity &amp; thermodynamics, of classical mechanics (especially in the context of engineering buildings &amp; roads, like simulating stress and forces acting upon them), and of how fluids interract with everything around them (e.g. how they can be used to make electricity), all of those especially pique my interest.\n\nIdk why I mentioned all that stuff but the point is I don't even know if computers will be powerful enough to do all of that accurately within the next 50 years. I've read up on a lot of similations of the universe, plate tectonics, etc. from the start to future end of history that apparently have pretty good accuracy.",
+        "created_utc": 1669161976,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "EMU8086: Am I doing this right ? NOOB Q (Apologies )",
+        "author": "jafffers",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z28sz9/emu8086_am_i_doing_this_right_noob_q_apologies/",
+        "text": " THE QUESTION IS : Write an 8086 assembler program (using procedures) that will perform the following calculations without using stack. (2)\n\n((6 \\* 5) / 10) + (10 - 4)\n\n    ORG 100h\n    \n    MOV AX,6\n    MOV BX, 5\n    MUL BX\n    MOV AX, BX\n    MOV BX, 10\n    DIV BX\n    MOV AX, BX\n    MOV CX,10\n    MOV DX,4\n    SUB CX,DX\n    ADD AX, CX\n    \n    HLT\n    \n    \n\nhttps://preview.redd.it/tjfhcn4l7l1a1.png?width=908&amp;format=png&amp;auto=webp&amp;s=6cd688a0cea7f3b61368aa75c87db7bfc558ea01",
+        "created_utc": 1669159820,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a podcast that talks about the history of computers/computer science?",
+        "author": "_Desdenova_",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z26c00/is_there_a_podcast_that_talks_about_the_history/",
+        "text": "I love listening to podcasts and was wondering. It doesn't have to be a podcast, it could also be a YouTube channel or some history website",
+        "created_utc": 1669154122,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "which security certificate is best for employment in UK?",
+        "author": "ayyylmaaoo96",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z23tt1/which_security_certificate_is_best_for_employment/",
+        "text": "Hello, I'm graduating at 27 years old, I'm from Egypt and Egyptian education in general isn't globally recognized so I'm thinking of pursuing an international certificate in hopes of migrating to UK, i know that there's 2 paths in security career, Red team , and Blue team, i prefer red (e. g Pentester) so which cert is better? CompTIA security+ or CISP etc. I want something that costs 500-800$ maximum so OSCP is excluded as it costs 1500$",
+        "created_utc": 1669148406,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Do any of the cellular automata Turing machine implementations start with a finite number of nonquiescent cells?",
+        "author": "zeroone",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z1wz44/do_any_of_the_cellular_automata_turing_machine/",
+        "text": "",
+        "created_utc": 1669132212,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When finding the shortest path using Dijkstra's algorithm, what happens if a vertex has the smallest weight (and therefore should be travelled down), but has no other edges?",
+        "author": "joedev2",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z1s2dn/when_finding_the_shortest_path_using_dijkstras/",
+        "text": "I was wondering what would happen if there were a cyclic graph such as this undirected weighted one :\n\nhttps://preview.redd.it/bhgvncfwuh1a1.png?width=608&amp;format=png&amp;auto=webp&amp;s=907137c1d2a61a02a17a8bf56b1f848d96c952ef\n\nSo as far as I am aware if 1 were the starting node, it would go to vertex 4 and then vertex 6 (with the cost of 4), since it is the shortest path. But how would it get back?\n\nThanks",
+        "created_utc": 1669119287,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why knowledge of Linux OS is so important?",
+        "author": "CrazyProgramm",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z1qnlh/why_knowledge_of_linux_os_is_so_important/",
+        "text": "I am not major in CS but I am interested in CS. I saw many top tech companies ask  knowledge about Linux. Why it is so important? This is my personal experience one of senior student in university got scholarship to Australia to do her Master's degree in bioinformatics and bio-statistics. She was major in Statistics even she needed knowledge of Linux to work with computers for her thesis. What is the problem with Windows and MacOS? and I would like to any free resource to learn Linux?",
+        "created_utc": 1669114591,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is your opinion on \"Compiler Design\" becoming popular again in 2020-2022?",
+        "author": "entreluvkash",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z1os6g/what_is_your_opinion_on_compiler_design_becoming/",
+        "text": " [https://imgur.com/a/MULEN0s](https://imgur.com/a/MULEN0s)\n\nThe graph shows the U-shaped curve for \"Compiler Design\" as a topic. What do you think might be the reason?",
+        "created_utc": 1669107326,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The advantage of a Digital Management System",
+        "author": "ARFASOFTECH",
+        "url": "https://www.arfasoftech.com/blog/The-advantage-of-a-Digital-Management-System",
+        "text": "",
+        "created_utc": 1669102293,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Advance Black Friday Sales !] Buy Microsoft Windows 11 Pro License for Only $31.99 lifetime With 80% Discount (Promo code: BLACKFRIDAY)",
+        "author": "Character_Nail78",
+        "url": "https://mskeydeals.site/ZNHtBZxh",
+        "text": "",
+        "created_utc": 1669100291,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I stay in computer science or switch to comp chem or cheminfomatics? Based on the pay and open jobs. My dream job is professor.",
+        "author": "Striking-Warning9533",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z1ix1m/should_i_stay_in_computer_science_or_switch_to/",
+        "text": "",
+        "created_utc": 1669087100,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which book to learn C fundamentals and pointers",
+        "author": "Powerful-Asian13",
+        "url": "/r/csMajors/comments/z1ipc0/which_book_to_learn_c_fundamentals_and_pointers/",
+        "text": "",
+        "created_utc": 1669086851,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Was computer science still called computer science before computers?",
+        "author": "Newme001",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z1dqin/was_computer_science_still_called_computer/",
+        "text": "What did computer mean before we had computers? I read somewhere else online that a computer was someone who “computed” things, but wouldn’t that just make every mathematician a computer?",
+        "created_utc": 1669072902,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What defines software version numbers?",
+        "author": "sits_on_couch",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z1cr2n/what_defines_software_version_numbers/",
+        "text": "Hi all,\n\nThis is my first post on this subreddit. So, if a particular software at launch is version 1.0, what's the difference between version 1.1 and version 2? Why do some version numbers go even more in-depth and advertise themselves as version 1.2.3.4?\n\nTIA",
+        "created_utc": 1669070522,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Universal AI: The narrative driven path",
+        "author": "Otarih",
+        "url": "https://absolutenegation.wordpress.com/2022/11/21/universal-ai-the-narrative-driven-path/",
+        "text": "",
+        "created_utc": 1669058991,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Am a 2nd year undergrad. In some class about getting jobs, teach is saying we need to pick from Microsoft certifications. What should I pick?",
+        "author": "forgot_username321",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z15q8f/am_a_2nd_year_undergrad_in_some_class_about/",
+        "text": "What route should I take?\n\ncybersecurity, AI, fintech, data science\n\nam only taking cs as a major. Don't know if I need to know finance well for fintech and applied math well for AI. \n\nDon't know if I need to take masters for one of these routes and whether the rank of the uni matters\n\nMy dad is on the business side for data science and my mom does ai financial assistants\n\nmy brother is in crypto\n\nidk much computer science or anything. idk what I should do. I feel they might be biased on what I should go to based on what they're in. I just wanna tbh make sure I'm in smth with a lot of jobs to choose from",
+        "created_utc": 1669054285,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just would like some answers",
+        "author": "KimestuKun",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z0naxt/just_would_like_some_answers/",
+        "text": "I'm a current student in college trying to major in computer science and I wanted to see if I was the only one having these feelings. I have been a imposter like syndromes where if i can't figure out my code or if I decide to use the internet or YouTube to help me get to where I need, I feel even worse that I wont make it as a cs major. Just wanted to not be alone so this is a rant like post but just wanted maybe how you guys kept pushing or what made you keep going. I personally love computers and am very interested! It's just these moments or my advisor saying I need straight A's adding on to the feelings I get. Thank you for reading this.",
+        "created_utc": 1668998884,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What really happens when you set a game or program to be \"fullscreen\"? Why is there a noticeable performance difference, and why does this difference vary across systems and programs?",
+        "author": "drsonic1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/z0le7o/what_really_happens_when_you_set_a_game_or/",
+        "text": "",
+        "created_utc": 1668993565,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "3-Player-Hex: Strategies to create a winning algorithm?",
+        "author": "ass-thetics",
+        "url": "/r/algorithms/comments/z0g8lz/3playerhex_strategies_to_create_a_winning/",
+        "text": "",
+        "created_utc": 1668980758,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How is it possible to input the key length for 256 bit encryption?",
+        "author": "MarshyBarsh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/yzwzi2/how_is_it_possible_to_input_the_key_length_for/",
+        "text": "",
+        "created_utc": 1668925235,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it possible to parameterise boolean expressions to make them simpler?",
+        "author": "plitox",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/yzvyvf/is_it_possible_to_parameterise_boolean/",
+        "text": "For example, for this expression:\n\n&gt;if ( x == y || x == z ) \n\nIs it possible to make the following syntax do the same operation?\n\n&gt;if ( x == ( y || z ) ) \n\nAre there any languages that do this already?",
+        "created_utc": 1668921589,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "help with understanding amortized analysis",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/yzo302/help_with_understanding_amortized_analysis/",
+        "text": " hi,\n\nso we just started learning about amortized analysis (the accounting method and the potenial method) and Im having hard time with this.\n\n1. in effort to try and see more exampples (right now in class we saw only 2 examples for amortized analysis) I found this lect notes:  \n[lect0922.pdf (cmu.edu)](https://www.cs.cmu.edu/~avrim/451f11/lectures/lect0922.pdf)  \nIm having a bit of problem with 7.6 (example 3-page 4) \" . Now, in a sequence of n increments, a single increment could cost as much as n (actually 2n − 1) \"  \nwhy its actually 2n-1 ? I feel like Im missing \"basic\" stuff here  \nif we look at 000  \nto flip A\\[2\\] (the leftmost digit)  \n001  \n010  \n011  \n100  \nand it took us 4 times  \nis it because in the accounting method we consider each inceremnt as cost of 2?\n2. in general the potenial method is a bit \"heavy\" for my understanding, Im having trouble understanding how to know what potenial function to give, I find it a bit hard to find examples online (mostly find the same 3/4 examples in every place)  \nif someone has reccomendation where to read/see examples would love to hear(trying to read through clrs, but I feel like I need to see more examples of how to come up with potenial function, especially with O(log n) and O(n\\^2)\n\nsorry for any mistakes / misspelling or using the wrong terms",
+        "created_utc": 1668897307,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Twitter's HLD - Can someone please ELI-UnderGrad all the services in this board?",
+        "author": "toarin",
+        "url": "https://i.redd.it/oxn1q6iayv0a1.jpg",
+        "text": "",
+        "created_utc": 1668881940,
+        "upvote_ratio": 1.0
+    }
+]

@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Oracle Cloud Applications in USA",
+        "author": "Sierra-Cedar",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10cjzqx/oracle_cloud_applications_in_usa/",
+        "text": "Sierra Cedar Is An Oracle Partner And AWS Advanced Consulting Partner With More Than 25 Years Of Client Success. Best In Providing [Oracle Cloud Application](https://www.sierra-cedar.com/oracle), Oracle Student Cloud, PeopleSoft Services In US And India.",
+        "created_utc": 1673789579,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to implement recurring events?",
+        "author": "bzq84",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10cjfu6/how_to_implement_recurring_events/",
+        "text": "As a learning exercise, I want to implement simple calendar with *recurring events*.\n\nI'm struggling to find some papers, articles or examples what is best way to do it. So far I identified following approaches:\n\n1. Create `abstractRecurringEvent` that is not shown on calendar. Some background job reads all `abstractRecurringEvents` and creates `normalEvents` based on `abstractRecurringEvent` for next X years.\n\nPros:\nRelatively easy to implement.\n\nCons:\nBackground job being error prone (must keep everything perfectly in sync).\nWhen `abstractRecurruingEvent` is deleted or modified, it has to update or modify all `normalEvents` that originated from the `abstractRecurringEvent` (this might update or delete hundreds of records).\n\n2. Each \"day\" when renders itself checks all \"abstractRecurringEvents\" if the \"day\" matches `abstractRecurringEvents` recurrence rule. If yes, then adds an event.\n\nPros:\nDoesn't require background process that creates events for next X years \n\nCons:\nIn case of many `abstractRecurringEvents`, each new day might be tested against dozens of it, thus potentially slow.\n\n*Questions:*\nI don't want to do huge architecture mistake. What is best approach to solve this programming problem?\n\nThanks in advance.",
+        "created_utc": 1673788014,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How would you recommend documenting development guides?",
+        "author": "echadisraeli",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10chwn6/how_would_you_recommend_documenting_development/",
+        "text": "I write documentation to minimize mentoring and have been using word document to define build, debug and other processes. Is there a better way?",
+        "created_utc": 1673783235,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MuleSoft Training in Hyderabad",
+        "author": "swetharani123",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10ccfv2/mulesoft_training_in_hyderabad/",
+        "text": "[removed]",
+        "created_utc": 1673763178,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tips for programming on MBP",
+        "author": "Annual_Leadership_52",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10cb4v4/tips_for_programming_on_mbp/",
+        "text": "",
+        "created_utc": 1673758944,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How are Tattoos viewed in IT? I love software development and I’m searching for a career, but I’m covered in tattoos( besides neck and face). Have you heard of any problems getting a job in the field with tattoos. I’d assume not but just asking.",
+        "author": "Independent_Abies_73",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10c0wbx/how_are_tattoos_viewed_in_it_i_love_software/",
+        "text": "",
+        "created_utc": 1673732784,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "It's hard for me to read the book Introduction to Algorithms. Has anyone made a series of videos about it?",
+        "author": "tivel8571",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10bteuv/its_hard_for_me_to_read_the_book_introduction_to/",
+        "text": "",
+        "created_utc": 1673715808,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is it ever too late to swap careers?",
+        "author": "Linkyland",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10blg5w/is_it_ever_too_late_to_swap_careers/",
+        "text": "As professionals who are part of the industry, in your opinion, is it ever too late for someone to swap into a career of software engineering?\n\nI'm thinking of changing from front end web work but will be around 40 if i enrol now by the time I get my masters. \n\nRealistically, and before I go to the effort of finding and applying for courses, would you hire someone new to the industry at that age? Or would you likely bypass for someone else?",
+        "created_utc": 1673692405,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is Software Engineering a dead end job after the age off 35 or 40 ?",
+        "author": "Born_Ad2072",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10bldrc/is_software_engineering_a_dead_end_job_after_the/",
+        "text": "",
+        "created_utc": 1673692171,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I used a serious tone with one of my team programers and I feel bad.",
+        "author": "manlycpu",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10bi9vo/i_used_a_serious_tone_with_one_of_my_team/",
+        "text": "I am a team leader at my job working as a software engineer. \n\nI am the youngest out of my team and I always try to befriend them (even if we are only friends at the workstation).\n\nWe had a very good start of two projects, everyone is doing their tasks and work flow was awesome.\n\nI always try to not put pressure on my team even when I get pressured from my boss.\n\nHowever the last project was a nightmare, countless \"mistakes\" from one of the guys, he pushed changes without trying them, braking things and making what was the simplest project out of all the hardest.\n\nUsually when one makes some mistakes I jokingly talk to them about it and ask them if anything is wrong is going on in their lives and that I am here for them as a team lead and a friend.\n\nWe had a guy take a three days break and we helped newbies.\n\nBut this guy got on my nerves, all I ask is to try the damn code before pushing it.\n\nHow do even one program without testing?!\n\nI called him and for once used a very serious and formal tone with him, he apologized and fixed his mistakes.\n\nHe messaged me this morning apologizing and I felt so bad that he was still thinking about it a day after. \n\nI told him that it's okay and I am always here for him but just follow the team rules so work is easy for everyone.\n\nWe joked about the weather being so damn cold and I could tell he felt better knowing I am not angry at him.\n\nThis may be silly but it mean so much to me, thanks for reading.",
+        "created_utc": 1673680276,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How many days a week are you working from the office?",
+        "author": "the_ballmer_peak",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10bbsyv/how_many_days_a_week_are_you_working_from_the/",
+        "text": "\n\n[View Poll](https://www.reddit.com/poll/10bbsyv)",
+        "created_utc": 1673659940,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Cinvoc Solutions",
+        "author": "Meharrrrrrr",
+        "url": "https://i.redd.it/sp061hynkwba1.png",
+        "text": "",
+        "created_utc": 1673655916,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Switching to software engineering with debilitating back pain",
+        "author": "specularmind",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10b9ov0/switching_to_software_engineering_with/",
+        "text": "I am currently a mechanical engineer in an R&amp;D Prototyping role. Over the last few years I have developed increasingly bad back pain to the point where I am now considering permanent disability. I am not able to sit at a desk, stand, or work over a table for more than an hour without taking long rest breaks laying on my back, but when I am laying down I can work on a laptop with my head propped up. I am also a veteran and have access to the VA vocational rehabilitation program and I am considering making a proposal to retrain in cs. If I can do 100% remote work I think I would be able to be productive in a programming role.\n\nDoes this sound like an achievable goal? Are there opportunities out there that would be accommodating in this way, especially in a junior role?\n\nOther pertinent information:\n\nMy back pain is not acute, but it builds up slowly over time. I can force myself to sit, stand or do other work for much longer periods but I will pay for it in pain as it builds up. This is unsustainable for my family as I come home in a lot of pain and a very bad mood after working a full day, and of course my ability to concentrate on my task diminishes as the pain increases. This means I could still occasionally grit and bear it for in person meetings or interviewing, but is not something I can do on a daily basis.\n\nI don't have a ton of software experience so far but I did take a lower division course in C++ (that I did so well in the professor asked if I would tutor/ta for the next semester), and I had an upper level engineering dynamics course that was extremely heavy in Matlab programming for the lab portion. I also have math courses through to differential equations and linear algebra (but no discrete math).\n\nI have a good enough GPA to apply to grad school and may be able to get a masters degree paid for by vocational rehabilitation, or alternatively I could also do a boot camp. I don't know enough about cs career fields yet to know what I would really enjoy working on but the type of problem solving and programming I have done would probably be more aligned with back end work. I think the career path might more be driven by what types of jobs would accommodate me, how saturated and needed those jobs are, and if there is a considerable difference in pay in some paths. \n\nI did go through the faq and wiki and found some great information in there on switching careers, but I figure the disability part of my situation makes this unique enough to write a new post. \n\nWhat would you do in my situation? \n\nThanks for any insights and suggestions you may have!",
+        "created_utc": 1673654257,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "if work in FAANG, are there big financial difference between sydney and Seattle? basically income substract living cost etc",
+        "author": "xtttrun",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10b8bj5/if_work_in_faang_are_there_big_financial/",
+        "text": "",
+        "created_utc": 1673650760,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "X2 EMV SOFTWARE PLUS TUTORIALS DUMPS W PINS AVAILABLE RN. TAP IN. TELEGRAM BELOW",
+        "author": "Jonnsnoww001",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10b7h6o/x2_emv_software_plus_tutorials_dumps_w_pins/",
+        "text": "[removed]",
+        "created_utc": 1673648656,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My drag and drop website creation project",
+        "author": "tokmako",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10b59e5/my_drag_and_drop_website_creation_project/",
+        "text": "&amp;#x200B;\n\n*Processing video u620j6q2jvba1...*",
+        "created_utc": 1673643300,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Whats the best laptop for software enginnering you've used?",
+        "author": "Straight-Progress-90",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10b2pif/whats_the_best_laptop_for_software_enginnering/",
+        "text": "",
+        "created_utc": 1673637052,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Dropped out of premed to pursue coding, do employers frown upon this",
+        "author": "webDevInterested",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10aywse/dropped_out_of_premed_to_pursue_coding_do/",
+        "text": "Hi guys! After 3.5 years of college with the intent of going to med school to become a doctor, I had a crisis and realized that it wasn't for me and simultaneously found an inclination towards the web development career. \n\nSo basically, to the world, I am now a college dropout.\n\nSince technically I have no degree, would by 3.5 years college \"experience\" be worth anything to employers, or would I be treated the same as someone who hasn't gone to college at all? \n\n&amp;#x200B;\n\nWhat should I put in my resume regarding my situation? Thank you guys!",
+        "created_utc": 1673627795,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Events/Trainings",
+        "author": "snacker0",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10avmw8/eventstrainings/",
+        "text": "[removed]",
+        "created_utc": 1673619491,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Your Valuable Feedback!",
+        "author": "Kinsleynkt",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10arv65/your_valuable_feedback/",
+        "text": "[removed]",
+        "created_utc": 1673607964,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Are chrome extensions allowed at tech firms?",
+        "author": "Think-Bug-8647",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10aotka/are_chrome_extensions_allowed_at_tech_firms/",
+        "text": "Hi everyone, are chrome extensions able to be used by SWEs at large tech firms? If so, are there certain conditions? Thank you!",
+        "created_utc": 1673596439,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What reason should I tell HR for a career gap of 9 months?",
+        "author": "Odd-Bus3002",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10aff51/what_reason_should_i_tell_hr_for_a_career_gap_of/",
+        "text": "[removed]",
+        "created_utc": 1673568668,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Remote Hiring",
+        "author": "Gekido27",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10ae246/remote_hiring/",
+        "text": " \n\nHey people, I have a series of quick questions:\n\n1. What are the chances of a Brazilian being hired for a remote apprenticeship?\n2. How good in english you must be?\n3. How far in the studies you must be in college for being worth the remote hiring?\n4. How much does it pay for an apprentice?\n5. Do you know somebody who got hired remotly from any part of the world?\n\nThanks in advance, just asking these for my girlfriend cause Software Engineering pays really bad in our region and being paid in any other Top 3 currencies might lift up the spirits around here.",
+        "created_utc": 1673565344,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Conversion from Software consulting firm to client (full time full time)",
+        "author": "Cosmosof",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10ae16p/conversion_from_software_consulting_firm_to/",
+        "text": "I am an employee for tech consulting company (on W2, full time), work for another client company, overall since may 22. Client ending business with consulting company and wants me to be full time employee for them.  Client also agreed to have me till summer as consultant. \nI like this client better and want conversion; here is the issue. Most likely consultant company won’t like the idea of me conversing and staying. If that’s the case, I will be upset. What’s your recommendation for someone like this position ? State is MA",
+        "created_utc": 1673565285,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What do you think I should Put on my resume if I am the founder of a website but not registered anywhere?",
+        "author": "MeditatingonMountain",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10a9yxk/what_do_you_think_i_should_put_on_my_resume_if_i/",
+        "text": "I am the founder of some websites where I did most of the server administration along with my partner who handled the front end.\n\n&amp;#x200B;\n\nI am currently in the USA pursuing a master's in CS but the biggest question for me is what put in the experience and role.\n\nI own the website and I am trying to get into **Software engineering roles** after my master's. \n\nI can put founder/ director but I don't have any registered proof or anything to prove that I own it on paper also when they will do background verification how am I supposed to prove it?\n\nPlease help me on figuring out what should I put there on the resume.",
+        "created_utc": 1673555825,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do i get into advanced software development like building web frameworks and CMS like wagtail",
+        "author": "4the4ryushin",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10a7azw/how_do_i_get_into_advanced_software_development/",
+        "text": "I have been with softwares for about 3 years so normal projects like some web apps, backend , APIs these are pretty much every beginner starts with \nBut as I got into open source and tried contributing to big projects I could clearly see there shit is beyond mine I was barely making any software Using  web framework and CMS at its peak is still and easy task compared to making them \n\nFor example : I have been pretty good or if not good so atleast intermediate user of Django and wagtail Ik the thing \nThe general development standards worked on few projects delivered some but when I go into Django’s and wagtails code it was complex and I have been contributing but the complexity of there backend is something which to me seems like I can’t achieve how do these people design work through these backends or for instance even I would like to understand it what are the essentials that I should be aware of like there oop is beyond capability",
+        "created_utc": 1673549459,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Advice to an absolute beginner",
+        "author": "Constant_Turnover_50",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10a729t/advice_to_an_absolute_beginner/",
+        "text": "I have just finished learning the basics of progamming in C. I am now looking to suggestions on what I should learn next, if my goal is to get a summer SWE internship in my freshmen year. \nA basic roadmap would be really appreciated, thanks,",
+        "created_utc": 1673548867,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is this actually a software engineering subreddit?",
+        "author": "Eve_warlock",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10a6vit/is_this_actually_a_software_engineering_subreddit/",
+        "text": "Honestly, what is going on here?\n\nYou upvote a joke:\n\nhttps://www.reddit.com/r/SoftwareEngineering/comments/109ahdl/anybody_remember_the_website_that_had_humorous/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf\n\nAnd downvote someone that actually asked about journals for software engineering??? Btw: IEEE and ACM are excellent for anyone that is actually interested in software engineering!",
+        "created_utc": 1673548407,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Bootcamp grad seeking job opportunities in Software development",
+        "author": "Intelligent-Art-2337",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10a6lzm/bootcamp_grad_seeking_job_opportunities_in/",
+        "text": "I recently graduated from a  bootcamp program where I gained hands-on experience in Web-development. I am now eager to apply my skills and knowledge in a professional setting and am actively searching for job opportunities.\n\nI have been utilizing job search websites, networking, and reaching out to recruiters and hiring managers, but I am open to any suggestions or leads that you may have. If you know of any job openings that would be a good fit for my skill set, please let me know.\n\nI am a quick learner, and I am excited to continue growing my skills and experience in a professional setting. I would be happy to share my resume and portfolio with anyone who is interested in learning more about my qualifications.\n\nThank you for taking the time to read my post, and I look forward to hearing from you.",
+        "created_utc": 1673547764,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is being a software engineer synonym for a web developer?",
+        "author": "hisdudeness_ishere",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10a64i5/is_being_a_software_engineer_synonym_for_a_web/",
+        "text": "Nowadays with every application running on the web and I want to know if most software engineering  is a larger term for web engineering, be it front end or back end.\n\nOf course I know there are other applications to software engineering such as robotics and industrial use and in manufacturing but barring these applications, everything else is on the web, is that the case?\n\nThanks.",
+        "created_utc": 1673546597,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "From Navy AO to Software Engineer",
+        "author": "DaBigggHomie",
+        "url": "/r/ITCareerQuestions/comments/109y9nu/from_navy_ao_to_software_engineer/",
+        "text": "",
+        "created_utc": 1673526103,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any magazine/news subscriptions that focus on software engineering community or related topics?",
+        "author": "WWJayZDo",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109ybk1/any_magazinenews_subscriptions_that_focus_on/",
+        "text": "I am looking for some kind of weekly or monthly news/magazine subscription that has software engineering and related topics as its main focus (preferably print, but ok with completely digital as well). I am currently subscribed to MIT Technology Review, but this is geared more towards general tech news and doesn't necessarily require any dev/engineering background to consume. I was wondering if there was anything that is aimed more at developers/engineers (deep dives into certain aspects of a language, software development processes, new/underrated frameworks, etc.) rather than general tech news? \n\n&amp;#x200B;\n\n(not sure if this post belongs somewhere else - if so just let me know)",
+        "created_utc": 1673525985,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Question for more senior developers: how do you handle skills you haven't used in years on the Linkedin skills section, or on your resume?",
+        "author": "Place-Wide",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109xpe2/question_for_more_senior_developers_how_do_you/",
+        "text": "I've been doing this for over ten years, and I have switched platforms a number of times.  Early in my career I spent a lot of time in Perl and Python, mid career I was doing almost exclusively JS and web front end with a variety of frameworks, recently I have been doing almost exclusively Android in Kotlin.\n\nMy question is:  It's tempting to list everything on Linkedin's skills section or on a resume.  However if I had to really do a coding exercise where the code had to compile, I'd definitely feel 100% more comfortable in Kotlin right now.  I could probably get through in JS or Python, but I'd be screwed if I had to write real Perl code.",
+        "created_utc": 1673523902,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help please",
+        "author": "Alone-Turnover7583",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109xmft/help_please/",
+        "text": "Hi guy's, I'm hoping this is the place in the know,  and your skillset is what I am looking for some advice please.\n\nI want to work abroad, but my work laptop has very high security on it and will not let me work in a foreign country.\n\nI tried last year by using a paid for VPN service on my personal laptop and then my phone and using them as a hot-spot to my work laptop and it did not work. It knew I was abroad still somehow even though I was using a VPN to my home country.\n\nDoes anyone have any idea on how to get round this and have a full fixed UK router abroad so it is the same as logging in from home?\n\nI know this must exist but I don't know how to find or solve this. I imagine there is a way to use my home Internet provider somehow abroad but have no idea on how to get it so it appears I am still at home when I sign in to work.\n\nAny help would be massively appreciated.\n\nThanks in advance",
+        "created_utc": 1673523595,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I work outside US for a couple of weeks without telling my employer? I am currently working remotely, my company is in another state and I’m using a VPN",
+        "author": "Capital_Method4976",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109rbzx/can_i_work_outside_us_for_a_couple_of_weeks/",
+        "text": "",
+        "created_utc": 1673501096,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Question for Devs... In Your Opinion, Is Becoming a Developer or Project Manager a Better Career Path?",
+        "author": "LifeOfSpirit17",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109ljfz/question_for_devs_in_your_opinion_is_becoming_a/",
+        "text": "[removed]",
+        "created_utc": 1673484805,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is high anxiety normal for a Software Engineer?",
+        "author": "jdmaxwell97",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109ha3f/is_high_anxiety_normal_for_a_software_engineer/",
+        "text": "Hello, I am a Software Engineer and have been working in the field as a consultant for about 1.5 years now. Recently I have been moved to a project where I am the sole Java Engineer and my first task has been to take an application that a whole other team of engineers built that only runs in the cloud run locally. It has taken some time but I got everything except one part working, but we had a meeting today and it seems that there is more missing that I was unaware of and that large amounts of the application need large changes. Throughout this entire ticket I have been extremely anxious not knowing if what I am doing is correct, and being afraid that at some point the client will see that I am not super knowledgeable about all of the technologies being used. I don't want to let my team down, but I am a bit discouraged. Does anyone relate to these feelings of discouragement and high anxiety in the Software Engineering community?",
+        "created_utc": 1673474286,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I learned our Poland Devs own the IP behind every commit they make to our Repos. If they sign this over to the company they get a small bonus. What is something else they may be unique to your country?",
+        "author": "Redtitwhore",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109dbrl/i_learned_our_poland_devs_own_the_ip_behind_every/",
+        "text": "Correct me if I got the details wrong.",
+        "created_utc": 1673464935,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just got a box of Flipper Zeros from an Amazon return pallet. Selling them cheap as used here lmao if anyone is interested",
+        "author": "Cfhotwing",
+        "url": "https://logzrus.myshopify.com",
+        "text": "",
+        "created_utc": 1673463603,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "#shorts 5 ways to Define a Component in Vue",
+        "author": "creasta29",
+        "url": "https://youtube.com/shorts/bOGNmtvqkzg?feature=share",
+        "text": "",
+        "created_utc": 1673463387,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Anybody remember the website that had humorous stories of a wise and a student programmer written in ancient parable style?",
+        "author": "nonamesleft009",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/109ahdl/anybody_remember_the_website_that_had_humorous/",
+        "text": "I just cant remember the name of this online 'book' I read 15 years ago.\n\nIt was written as story between a wise programmer and student programmer... I remember a couple of the stories:\n\n1. About business changes: a big seagull flew over and created a mess, the wise developer kept looking at his laptop screen. After all the commotion stopped, the wise developer looked at the state and went back to his screen.\n2. two students were playing with a video game console that was loud and annoying. THe wise developer came and asked them about the states of the toy - they said \"on\" and  \"off\". The wise developer put the toy on the ground and stomped on it to break it, and left the place, and the students wiser and quieter.\n3. ...\n\nAny idea where I can find it again?",
+        "created_utc": 1673458354,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When you develop a new web application what part of the design do you start on first?",
+        "author": "AnalystOfData",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1097t4r/when_you_develop_a_new_web_application_what_part/",
+        "text": "\n\n[View Poll](https://www.reddit.com/poll/1097t4r)",
+        "created_utc": 1673451894,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "are my laptop specs good for software engineering classes or do I need a better laptop?",
+        "author": "firewell_313",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1096uxl/are_my_laptop_specs_good_for_software_engineering/",
+        "text": "specs : Gtx 1050 ti, 16gb ram, i7 7700hq",
+        "created_utc": 1673449476,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Second Job Help!",
+        "author": "Low_Channel3895",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1096ixe/second_job_help/",
+        "text": "After a year as a junior dev my team was dissolved and laid off. Now wondering how to get second position as a full stack developer. \n\nDo I still need a portfolio? Should I spend time adding new stronger projects? \n\nOr, should I rely on my resume and hide my old portfolio with my jr. Dev projects? \n\nWhat matters more at this stage? \n\nThank you for all thoughts, recommendations and support :)",
+        "created_utc": 1673448613,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which tech sector struggles the most with its bugs?",
+        "author": "izaacjb",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108zqvi/which_tech_sector_struggles_the_most_with_its_bugs/",
+        "text": "Bit of an odd question, but I'd really love to hear from people that have worked in multiple sectors and have some insights on which companies struggled the most with their bug problems.   \n\n\nI suspect things like FinTech/Finance/Healthcare, where the quality of data is paramount to the point that'; if numbers or records are incorrect, can cause their users to lose a lot of money.   \n\n\nBut I've also personally worked in e-commerce and know if there is a UX blocking bug on the checkout, you're constantly losing money and customers until it's resolved. \n\n&amp;#x200B;\n\nCurious for some open insights and dialogue on which sectors seem to be the most encumbered.",
+        "created_utc": 1673425809,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "A Question About the Iron Ring",
+        "author": "MikeyThePotato",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108valz/a_question_about_the_iron_ring/",
+        "text": "[removed]",
+        "created_utc": 1673410861,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Apps hidden in spreadsheets",
+        "author": "NoGoose9901",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108unwz/apps_hidden_in_spreadsheets/",
+        "text": "[removed]",
+        "created_utc": 1673409055,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what to study",
+        "author": "sticazzifra",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108uhfd/what_to_study/",
+        "text": "just got into my software engineering program and have to take the basic classes (SFE, CSE, etc). any books/links that will help me? i want to study ahead!",
+        "created_utc": 1673408515,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Learning Linux necessary?",
+        "author": "Icy-End-1453",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108ue05/learning_linux_necessary/",
+        "text": "Good afternoon all, I am currently in college as a computer science major with a focus in software engineering. I've heard from some that learning linux is important but it's not a focus in my college curriculum...\n\nCurious if any software engineers could provide some insight to the topic? I currently use windows 10 as my daily driver for college course work and to enjoy gaming in down time but considering switching to linux as my new daily driver especially if it would benefit my future career as a software engineer. \n\nThanks in advance!",
+        "created_utc": 1673408231,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How much does a junior software engineer at Bmw make?",
+        "author": "Time-Arm5035",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108ua8k/how_much_does_a_junior_software_engineer_at_bmw/",
+        "text": "Hello, I am just wondering how much does a junior software engineer working at BMW make?",
+        "created_utc": 1673407932,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Who is a more valuable engineer, an early employee of a startup that is acquired or somone who's been working in FAANG for 2-4 years?",
+        "author": "lospepes0",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108m6ej/who_is_a_more_valuable_engineer_an_early_employee/",
+        "text": "",
+        "created_utc": 1673387542,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "From Old to New — Case Study",
+        "author": "sefininio",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108ezxy/from_old_to_new_case_study/",
+        "text": "Come read about the story of migrating an obsolete web application to a modern stack, progressively.\n\n*We had a monolith obsolete web application, with an ancient and unmaintained stack, very bad code design and bug fixes that produce either new bugs or regressions. In this series of posts, I’ll describe the migration steps.*\n\nPart 1 - [https://medium.com/everything-full-stack/from-old-to-new-case-study-part-1-the-effort-b6a47f1286bc](https://medium.com/everything-full-stack/from-old-to-new-case-study-part-1-the-effort-b6a47f1286bc)  \nPart 2 - [https://medium.com/everything-full-stack/from-old-to-new-case-study-part-2-the-process-53084a5138c](https://medium.com/everything-full-stack/from-old-to-new-case-study-part-2-the-process-53084a5138c)",
+        "created_utc": 1673370562,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Advice needed to ESCAPE from Tutorial-Hell-Loop!",
+        "author": "Lopsided-Fuel7727",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108ee79/advice_needed_to_escape_from_tutorialhellloop/",
+        "text": "As a junior engineer I find myself making the same mistake...repeating the same cycle over and over again...\n\nStory: a task appears that requires an unpossessed knowledge, so the first thing for me is go and search for any useful material or resource that seems to do the job for me. Despite being able to find related ideas, discussions or articles ... there's always a certain thing missing a piece of information that my use case handle differently.  As a result I end up searching for another resource, hoping that will be more relevant to my needs. \n\nJumping to second resource finds me jumping to a third one...and the circle goes on. Somehow I end up creating what is needed but I feel frustrated and like not learning much. Also I have ended up wasting half a day or more to what seems like an \"easy task\".\n\nDid you ever had this problem ? How do you deal with it ?\n\nAny advice or information will be highly appreciated.\n\nPS: To be more specific, I had to deal with Observability and OpenTelemtry and make a simple program based on that in order to get started and understand the technologies.",
+        "created_utc": 1673369115,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How would I go about making a program that generates 3D models of human heads based on 1-3 photos?",
+        "author": "unusual_username14",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108dl7d/how_would_i_go_about_making_a_program_that/",
+        "text": "It would be different than photogrammetry since only 1-3 photos are available\n\nThe closes I found is this NVIDIA AI that generates 3D models of objects based on a picture: [https://mixed-news.com/en/nvidias-latest-open-source-ai-generates-3d-models-from-a-single-2d-image/](https://mixed-news.com/en/nvidias-latest-open-source-ai-generates-3d-models-from-a-single-2d-image/)\n\nP.S.: I only know basic level Python, but open to learning other programs/languages",
+        "created_utc": 1673367120,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for help with my side project",
+        "author": "antonscap",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108d167/looking_for_help_with_my_side_project/",
+        "text": "Hello everyone,\n\nI'm a 23yr old full time developer, but my passion is working on my own things... unfortunately you DON'T have so much time left during your week.\n\nI'm looking for someone who can team up with me on building something together. (preferably US or Europe Based)\n\nGeneral Tech Stack:  \n\\- NextJS + TailwindCSS  \n\\- React Native",
+        "created_utc": 1673365761,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What Certifications/Training/Bootcamps (Outside of College Courses) are best for someone wanting to learn Software Engineering and change career paths?",
+        "author": "ncrooks11",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108cmve/what_certificationstrainingbootcamps_outside_of/",
+        "text": "I've been considering making a career shift in the near future and am interested in learning more about software engineering. \n\nFor someone that has zero knowledge of the industry or zero background in code, what's the best way to get started? \n\nThank you :)",
+        "created_utc": 1673364739,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "how does the zoom android app recording feature work?",
+        "author": "sake679",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108bfbw/how_does_the_zoom_android_app_recording_feature/",
+        "text": "I want to learn about how it's implemented. is it a client side thing? Is it a server side thing?\n\nJust how it works. Even the low level stuff.\nAnything you know, will be really helpful.",
+        "created_utc": 1673361643,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what is the meaning of reconciliation in software engineering",
+        "author": "Ok-Slice2945",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/108b2ye/what_is_the_meaning_of_reconciliation_in_software/",
+        "text": "I have posted this before but still haven't received a clear answer.\n\nSomebody please help on this question.",
+        "created_utc": 1673360720,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi, question on test automation interview: how do I propose test strategy and providing automation solution for a given situation. Where can I find use cases like this?",
+        "author": "Reasonable-Sugar1975",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/10879en/hi_question_on_test_automation_interview_how_do_i/",
+        "text": "",
+        "created_utc": 1673349026,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Alert For Indian Software Engineers: Think Twice Before Quitting Your Job In 2023",
+        "author": "vadhavaniyafaijan",
+        "url": "https://www.theinsaneapp.com/2023/01/software-engineers-think-twice-before-quitting-your-job-in-2023.html",
+        "text": "",
+        "created_utc": 1673336587,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Add a minor in CS or get an Associates Degree?",
+        "author": "Square_Following_150",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1083sh7/add_a_minor_in_cs_or_get_an_associates_degree/",
+        "text": "Hello everyone I am a university student and have an interest in CS. Long story short it's kinda too late to change majors without really pushing out my graduation timeline since I'm a Junior however I do have the opportunity to add a CS minor to my finance degree with only adding an extra semester or two max.\n\nI took a few CS courses as electives for my Associate degree in Business and have always had an interest in coding and software but ended up just transferring to my 4-year uni as a business major.\n\nThe reason I mention that is I could essentially take classes at my community college online while doing my bachelor's and earn an associate degree in computer science without having to add the extra semester to my bachelor's program since I have already taken a few CS courses at community college.\n\nMy question is would it be better to have an Associate degree in cs or just get the minor? The minor is only recognized on the bachelor's transcript and I will not receive any certificate or diploma if I chose to go the minor route. Would an entire degree in cs (associates) be more marketable to employers than just having the minor or does the minor look better since its earned at a 4 year institution?\n\nAny advice is appreciated, thank you in advance!",
+        "created_utc": 1673335894,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Code Testing Notes (Good Read for Newbies to Software Engineering)",
+        "author": "tehtea",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1081g1d/code_testing_notes_good_read_for_newbies_to/",
+        "text": "I was first exposed to enterprise-level software development last year and had to learn how to use production-level Java (and Spring) from scratch. It was the first time I was mandated to write automated regression tests too, so there was a lot of learning to do.\n\nTesting was a big blind spot in my college's curriculum, so I had to find resources for finding out how to write good unit tests from books manually. These notes were written with the goal of summarizing the content shared in the books and served as a good quick recap for myself as well when giving code reviews.\n\nSharing this here so that others can benefit from it, especially if you are first entering the production-level Java world too: [https://github.com/tehtea/code-testability-notes](https://github.com/tehtea/code-testability-notes). Please share any constructive criticism if you have any too to make this content as succinct and clear to everyone as possible.",
+        "created_utc": 1673327910,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Software engineers that write the code for software of lab instruments?",
+        "author": "Desperate_Working734",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1080xk9/software_engineers_that_write_the_code_for/",
+        "text": "Is this a realistic profession for someone that's a med technician? \n\nIf there are any software engineers for lab instrumentation in here, do you like what you do?  What qualifications do I need? What is the pay like?",
+        "created_utc": 1673326326,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Currently working on an Internal Tools team in an engineering firm. Looking to move to a product based tech company. Looking for a resume critique.",
+        "author": "EE_RR_96",
+        "url": "https://i.redd.it/dbq6ke7a74ba1.png",
+        "text": "",
+        "created_utc": 1673312381,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Vector databases like Pinecone or Weaviate are all the rage now. Does it make sense to use a vector database as a replacement for a more traditional database like Postgres or Mongo? Why or why not?",
+        "author": "andric",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/107vhoq/vector_databases_like_pinecone_or_weaviate_are/",
+        "text": "",
+        "created_utc": 1673311145,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Leveraging AI To Build Apps",
+        "author": "emanresu_2017",
+        "url": "https://cfdevelop.medium.com/leveraging-ai-to-build-apps-b1cde3b2bbed",
+        "text": "",
+        "created_utc": 1673309225,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Static Analysis",
+        "author": "darfidyl",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/107r3pt/static_analysis/",
+        "text": "Can anyone help me with how to implement static analysis or point to a very good resource that will help me understand how to implement \nKinda urgent \n\nThankssss",
+        "created_utc": 1673300786,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can \"Original Install Date\" of Windows OS be used as a pseudo Unique ID?",
+        "author": "focusgone",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/107qvxf/can_original_install_date_of_windows_os_be_used/",
+        "text": "This is for desktop application development and it needs to be detected within runtime. `systeminfo`  \n contains this info and doesn't require Administrative privilege.   \n For example: It shows as, \"09-01-2019, 07:18:52 AM\".\n\nThis ID will be used as a passphrase to protect the locally generated RSA private key and then the key will be saved onto the disk.\n\nIs this good practice? The main requirement here is detection of unique windows installation bounded within \"Local Area Network\" only each time the application is launched. Likelyhood of two systems having the same string; especially the number-of-seconds value should be pretty low, right?). I will fork it with other attributes like local host name etc (those attributes that don't require admin permissions) to minimize the risk of brute-force cracking.",
+        "created_utc": 1673300305,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Software Delivery OR Problems",
+        "author": "JackCactusLaFlame",
+        "url": "/r/OperationsResearch/comments/107qos0/software_delivery_or_problems/",
+        "text": "",
+        "created_utc": 1673300049,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Struggling with a new legacy codebase",
+        "author": "Window-Inevitable",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/107ma7a/struggling_with_a_new_legacy_codebase/",
+        "text": "Hello,\n\nI joined a new company 1.5 months ago and I'm finding it challenging to navigate the codebase which doesn't seem to have standards. \n\nThere are no unit tests (there's no testing culture because \"there's not enough time to write tests\"), almost no documentation, and no senior engineers in my team I could pair-up with. \n\nI only have one other kind colleague I ask for help, but he's also struggling with his own set of things. Plus, he's not really a senior. \n\nI got hired as a mid-level engineer, even though I have less than 2 years of experience, and I feel I'm going to fail at this role because I'm expected to \"Hit the ground running\", grind multiple tickets at a time and fix bugs which I didn't create. \n\nIt's making me feel anxious and wanting to quit.\n\nAny suggestions?",
+        "created_utc": 1673289948,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Mid/Senior Devs - I have a team of 5 engineers to build you a free solution",
+        "author": "wolf-slut",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/107k0yz/midsenior_devs_i_have_a_team_of_5_engineers_to/",
+        "text": "I have 5 engineers with 2 weeks of dedicated time to build open source software. We can do anything, but we'd rathe makes something actually useful in the field. We're looking for difficult problems. Are there any repetitive tasks or frictions you face we can help you eliminate? Framework/tech agnostic but we're most familiar in React / JS.\n\nI would love to hear any thoughts.",
+        "created_utc": 1673284812,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "UX/Product Designer here. To what degree do engineers care about user-research?",
+        "author": "productheadxyz",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/107jqtl/uxproduct_designer_here_to_what_degree_do/",
+        "text": "Going directly to the source because I've thought about this many times during my career, but have always been *semi*\\-too afraid to ask in person.\n\nIf you care about research, how can I (the designer/researcher) best deliver the research I've made to you (the engineer)? How much do you want to be involved?\n\nI've also posted this on r/SoftwareEngineering, r/softwaredevelopment &amp; r/frontenddevelopment to get more widespread feedback.",
+        "created_utc": 1673284183,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "An Approach to QuickBooks Payroll Software - DiggiWeb",
+        "author": "diggiweb",
+        "url": "https://diggiweb.com/an-approach-to-quickbooks-payroll-software/",
+        "text": "",
+        "created_utc": 1673255310,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Require Feedback: Multi-Tenant SaaS HLD.",
+        "author": "Unique-Jaguar-4321",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/107952o/require_feedback_multitenant_saas_hld/",
+        "text": "Hey Folks,\n\nI have been given a task to design a system for my organization. Our product is an AI-based Multi-Tenant SaaS in B2B space. \n\nSo currently we are required to create a platform where we can quickly onboard Clients and their respective users. Till now we were using FastAPI for authentication and authorization but then the user onboarding requires the developer to do a bit of coding. I am thinking of using Django mainly because it gives us an interactive admin panel for these purposes. For individual client apps, we will be using FastAPI.\n\nI am attaching HLD I have created so far.\n\nExpecting feedback from the community.\n\nThanks.",
+        "created_utc": 1673253058,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hybrid to Remote Work",
+        "author": "Spirited_Gift5873",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1075xi7/hybrid_to_remote_work/",
+        "text": "[removed]",
+        "created_utc": 1673242480,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Pros and Cons:",
+        "author": "BabyDaddyDeshawn",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106zmbr/pros_and_cons/",
+        "text": "Trying to help my brother make a decision on career paths.\nI’ve only heard good things about Software Engineering, and from what we’ve read online this seems right up his alley.\n\nWhat would you guys say are the pros and cons (on a personal level) ?\n\nHow long he should realistically expect to go from education then into a job?\n\nHow’s the family dynamic fit into this profession?\n\nAny blind spots he might not expect going into this that he should be mindful of?",
+        "created_utc": 1673224834,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is becoming a Shopify Developer a good career choice?",
+        "author": "DullAd6899",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106tyi8/is_becoming_a_shopify_developer_a_good_career/",
+        "text": "I am a full stack developer with around 2 years of experience. I have experience in Django, React, Node, blah blah. I am making a job switch to another company where I will be developing frontends for their Shopify website.\n\nI was wondering if I should dip all of my toes into Shopify Development and work as a freelancer in this domain or maybe a full time remote job? Is it going to be worth it in the future? Or should I stay as a full stack dev?\n\nI want good pay. Work life balance doesn't matter right now as I am quite young.",
+        "created_utc": 1673211210,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to find team for developing skills",
+        "author": "abytr",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106rx8t/how_to_find_team_for_developing_skills/",
+        "text": " Hello  guys. I want to build apps together with some people because i want to  earn experience, but i don't have much people around me. How can i find  people like me or someone experienced to show me a path or team? I  believe it is crucial to develop projects for career path.\n\nI'm  eager to learn and share my experience. I know a bit C++ , Java. I love  to understand how things works, so i don't afraid reinvent to wheel. My  goals here.\n\n* Learning creating projects, managing, maintaining with team.\n* Learning creating robust software, preparing documents.\n* Learning git usage in team.\n\nMaybe  we can try to create mathematical library (OpenCL and multi-threading  supported), mathematical expression parser, 2D/3D Geometry program, like  GeoGebra with Multivariable calculus. Image, speech processing  libraries (i don't know much about that but you know, i love to learn).  Creating Database from scratch. GUI library. TO-DO/Taking Notes/Project  Management app . I know they are big projects we can also start with  easier projects.\n\n*I wanted to open this thread to cscareerpath but i don't have enough karma.*",
+        "created_utc": 1673206331,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to create an initial Kanban board for beginning of implementation stage?",
+        "author": "web_deb",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106qjmj/how_to_create_an_initial_kanban_board_for/",
+        "text": "My dev team has all our requirements, data modeling and architecture defined and we want to start the implementation stage. Since it's only me and another developer with no true project manager I'm leaning towards using a simple Kanban methodology without Scrum. \n\nI know this obviously depends on the project, but how does the typical Kanban board backlog look at its earliest stage?\n\nI'm mainly trying to understand how to layout all my assignments, how small do I break up these  assignments to and what do I start with first. For example for the front end would I break up each component into its own backlog item? Is it common to include unit tests for each of these components or is it already 'part of' the original backlog item? I've been trying to search for examples online but have been struggling.",
+        "created_utc": 1673203055,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do software Engineers contribute to the world as a whole in today's age ?",
+        "author": "abhi207-",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106pdml/how_do_software_engineers_contribute_to_the_world/",
+        "text": "Just want to find meaning in the career I chose",
+        "created_utc": 1673200284,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the best architecture for sport betting sites?",
+        "author": "Rough_Dragonfruit465",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106mva6/what_is_the_best_architecture_for_sport_betting/",
+        "text": "This is requiring best architecture.\n\nHelp me?",
+        "created_utc": 1673194219,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "ISO All encompassing Resort software recommendations",
+        "author": "michigantennispro",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106ldjf/iso_all_encompassing_resort_software/",
+        "text": "Software must book for tennis, Pickleball, spa, hotel, food and Bev, retail, point of sale, club membership.\n\nMust have user friendly app\n\nMust be compatible with “Shift 4” gift cards. \n\nAny recommendations???",
+        "created_utc": 1673190401,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do you squash an expert beginner.",
+        "author": "BongoCatBangsYaMom",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106k4nw/how_do_you_squash_an_expert_beginner/",
+        "text": "TLDR; we have an [expert beginner](https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/) making life hell, what do we do about it? Should we do something about it.\n\n## Quick Backstory\n\nI went to a really cool, project-driven, eye-on-industry standards type of school. I did really well and I am comfortable with the knowledge and lack thereof.\n\nI am in my first job at a small company as a junior software engineer.  We're an OEM so we're quite heavily software based.\n\n## The problem\n\nAnother junior and I started working there at the same time as junior software developers. We were met with our manager: the right-hand person of the CEO/almost graduating electronic engineer/embedded programmer, self-taught 'software engineer'. This person has been working at the company for 5 years already.\n\nMy fellow junior and I started noticing some really rotten things about the code base and management. It's been months of after-work deliberating on why the company is so awful to work at, and we've even been making some progress in how we think we can help the company and fix its blatant problems.\n\n## Holy Vindication\n\nLast night I read this: [How Developers Stop Learning: Rise of the Expert Beginner](https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/). It is as if the heavens aligned just to bestow this golden article on me. Every word of this describes our team's predicament and the cause of our anguish.\n\n## The point\n\nMy fellow junior and I are leaving the company soon (textbook [dead sea effect](https://medium.com/geekculture/the-dead-sea-effect-d71df13724f8)). But armed with the knowledge of why the company is doing so perpetually mediocre, I have a couple of options:\n\n- Wait until I have my next job confirmed, ready to put in my leave, then casually just drop the article in their inbox, and wait for all hell to break loose, sticking it to the man.\n- Casually just drop the article in their inbox, and wait for all hell to break loose, sticking it to the man.\n- With this knowledge and a bit of advice from you guys, see if I can't help them a bit with this problem that is just going unnoticed.\n- Maby pass the article on to the CEO in the hopes that they see that we have a problem, and that we are suffering under our management.\n\n## Unnecessary Final Note\n\nIt's been a rough year in this company, and this article has just been such a perfectly sobering description of why. It would just be nice for once to say: \"See, I do know what I'm talking about. We should have unit tests. You're just an expert beginner that is absolutely suffocating this company with your ego, therefore you can't even have a rational conversation about how our code is actually bad.\" (We have this one file with just 23,000 lines in it)\n\nIt's unprofessional, and I won't do it. But it is just nice to think about for a while.",
+        "created_utc": 1673187009,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the difference between architecture design and system design in the V-model?",
+        "author": "mhdiXarif",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106jk5k/what_is_the_difference_between_architecture/",
+        "text": "&amp;#x200B;\n\nhttps://preview.redd.it/gjtx4izzotaa1.png?width=587&amp;format=png&amp;auto=webp&amp;s=bea1210dae12aa1a0ff6089d3fd0421fff312ed3\n\nI tried asking this question in softwareengineering.stackexchange but it was closed for being \"opinion-based\". I hope I can find an answer here, or at least an explanation for why my question is opinionated or doesn't make sense. \n\nMany representations of the V-model, such as the one above, show three  steps of design: system design, architecture design, and module design.  The distinction between module and architecture design seems to be  pretty straightforward: Module design is concerned with individual  components whilst architecture design is concerned with how these  compontents fit together. However, the difference between system and  architecture design is one that I failed to grasp. When I tried  searching about the distinction on the web, most of the sources I found  were trying to explain the difference between design and architecture,  or software design and software architecture, but not system design and  system architecture. The wikipedia article about the V-model says that [Systems design](https://en.m.wikipedia.org/wiki/Systems_design) is the phase where system engineers analyze and understand the business of the proposed system, but I don't see  how can understanding or analyzing be considered \"design\".",
+        "created_utc": 1673185368,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Requirements engineering",
+        "author": "sci_and_eng",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106j8or/requirements_engineering/",
+        "text": "In the requirements analysis stage of requirements engineering, you produce requirements models. Let them be for example domain models (UML class diagrams), use case models (UML use case diagrams) and business process models (BPMNs).\n\nLater, in the detailed design stage, you transform requirements models into design models. For example, you transform domain models into component and interface models (UML component diagrams).\n\nHow do you satisfy the need for requirements traceability? Do you insert elements from requirements models into design models and add arrows, or do you create separate traceability diagrams?\n\nHow do you later maintain the diagrams?\n\nFor completeness, I'm using SparxSystems Enterprise Architect for the requirements and design modeling, if that changes something.",
+        "created_utc": 1673184423,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "HOW CAN YOU HELP ?PLEASE YOU CAN HELP BY DONATING AS LITTLE AS $1 TO GIVE HER A BITFITTING BURIAL",
+        "author": "King_charlotte001",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106hfyi/how_can_you_help_please_you_can_help_by_donating/",
+        "text": "[removed]",
+        "created_utc": 1673178744,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I’m having an interview rounds ahead for a software engineering position! Although I have experience I haven’t really coded for 1.5 y. What do you recommend for practicing data structures and algorithms: algoexpert, leetcode, cracking coding interview?",
+        "author": "kiitsos",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/106c8br/im_having_an_interview_rounds_ahead_for_a/",
+        "text": "",
+        "created_utc": 1673160036,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MBA M2 vs MBP 14",
+        "author": "avian7",
+        "url": "/r/macbookpro/comments/105qrb0/mba_m2_vs_mbp_14/",
+        "text": "",
+        "created_utc": 1673142363,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need some advice regarding salary negotiations",
+        "author": "riseandshine900",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1065moe/need_some_advice_regarding_salary_negotiations/",
+        "text": "[removed]",
+        "created_utc": 1673140595,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Third-Party Component for User Registration, Login etc.",
+        "author": "Jay_Karacho",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/1062glw/thirdparty_component_for_user_registration_login/",
+        "text": "Hello all,\nI am looking for a third party component that handles user registration, login, deletion and all that basic stuff. It doesn’t need to be open source, it needs to be secure and high quality. I want to use it to safe time by integrating it into an app instead of building it myself.\nUnfortunately I can’t seem to find anything that looks legit and/or has the features I want. All I seem to find is identity management systems for organizations. I am starting to believe that I might search for the wrong terminology.\nAny advice on what to search for or a list of well known and proven, integratable components would be much appreciated!\n\nThank you,\nJay",
+        "created_utc": 1673132502,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need a QR Authentication Service or Library",
+        "author": "mrvdot",
+        "url": "/r/Indiewebdev/comments/1060qmm/need_a_qr_authentication_service_or_library/",
+        "text": "",
+        "created_utc": 1673128282,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Building WebApps (websites) Geared toward Mobile?",
+        "author": "Harry2PointOh",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105xat3/building_webapps_websites_geared_toward_mobile/",
+        "text": "Hi all, I'm primarily an Angular developer at the moment and I've gotten pretty good at building desktop applications, but I've been struggling to build my skills in developing WebApps that would work well in a mobile environment. Does anyone have any good resources or tutorials for building Angular (or any other framework better suited to this) applications that are geared toward a mobile audience? One thing specifically I've been struggling is with the notches on modern displays as well, so any information on those would certainly be helpful as well! Thanks in advance!",
+        "created_utc": 1673119611,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Anyone interested in collaborating on a series of AI-enabled software prototypes?",
+        "author": "madmax_br5",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105wr40/anyone_interested_in_collaborating_on_a_series_of/",
+        "text": "I'm a technical product manager in my day job, and I've spent the past few months educating myself on recent advances in AI implementation in the pre-trained transformer and diffusion areas. I have some basic coding experience and have worked on several complex software projects in my role as a product manager, but my true expertise is in building high-level architectures based on user story frameworks (i.e. - define the key features of the product based on insights/research and build an HLA and technical/business dependency maps that serve as the foundation of a development backlog). I tend to sit right in the middle of the engineering, research, and UX design teams and help keep everyone focused on the things that matter.\n\nSo in my personal time, I've now developed a considerable backlog of product Proof-of-concept ideas which make use of this new class of AI tools in various ways in a wide range of sectors. I even built a simple one myself and deployed it on bubble here: [https://foodwizard.app/](https://foodwizard.app/). I want to build more of these functional protos with the hope that one of them sticks and could turn into a viable startup, or at the very least, that the sub-services of several POCs could sum into infrastructure for future concepts that can make complex, powerful AI-enabled applications easier and faster to build. At the very least, I want to become an expert at practical AI product implementation and optimization, and am looking for a few people who have similar goals to start a small community with.\n\nI'm looking for a like minded software developer or two (or three) who is interested in hacking around with rapid prototyping of AI software in their spare time, ideally with a knack for full-stack web-app + mobile development and is looking to grow their skillset to include complex AI pipelines and agents. Front-end UX designers/developers would be welcome too! We would work mostly asynchronously via discord or similar, with no strict time commitments (definitely a nights &amp; weekends thing). This is not a job offer -- just looking for a few partners to collaborate learn things with, do some fun experiments, and build some cool shit. If this sounds like you, let me know!",
+        "created_utc": 1673118237,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Windows95 running a Windows10 executable :)",
+        "author": "greenbyteguy",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105u1ze/windows95_running_a_windows10_executable/",
+        "text": "Yesterday I installed  Windows95 on a virtual machine. Having IE3.0 not much works on the web  except google and my website :D, so communication in general seemed  problematic. So I gave Nightfox a chance, it's a peer to peer cli  program for text comm and file transfer inside a LAN or direct IP which  works on linux and windows. I wrote it in C  one or two years ago. The  windows version was compiled on a Windows 10, as a 32bit executable so i  figured I could try and run it on windows 95 :D.    \nGuess what?! It worked!  \nAn  almost 30 year old OS ran communication software written for Windows  10. I'm not a windows fan, I actually hate everything windows spit out  from Windows 10 onwards, but I have to admit compiling a program on a  todays OS and have it run without any change or any major issues on Windows95 is quite impressive. Well.. I'm actually impressed by Windows 95, not the  modern OS anyway :)))\n\n[https://www.green-byte.net/nightfox/](https://www.green-byte.net/nightfox/)\n\n&amp;#x200B;\n\n&amp;#x200B;\n\n*Processing video rghe4pyxlnaa1...*",
+        "created_utc": 1673111516,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Source for \"$1 trillion of technical debt\"?",
+        "author": "5awaja",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105t36r/source_for_1_trillion_of_technical_debt/",
+        "text": "I started reading *Managing Technical Debt: Reducing Friction in Software Development* by Krutchten, Nord, and Ozkaya. In the first chapter, I read the following sentence:\n\n&gt;Data analysis organizations estimate that the global maintenance backlogs for information technology software amount to $1 trillion of technical debt.\n\nDoes anyone know how they came up with that $1 trillion number? Is there a public study where I can read how these \"data analysis organizations\" quantified and measured technical debt? It's not that I'm dubious (I am a little though) but I would like to see how researchers are quantifying tech debt in organizations.\n\nThanks!",
+        "created_utc": 1673109056,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "It is just me or does all the retards who don't know anything about programming because \"experts\" within the field of testing and CI?",
+        "author": "omeoooooo",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105qtes/it_is_just_me_or_does_all_the_retards_who_dont/",
+        "text": "",
+        "created_utc": 1673103162,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Need help for the future",
+        "author": "bleachdrinker4",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105pux1/need_help_for_the_future/",
+        "text": "Hello I have recently been enrolled in the 9th grade because of my low GPA I was forced by the school to pick comerse as the group subject. But I want to pick a job in software engineering. So I need to confirm that I can get enrolled in a universities software engineering course as a comerse student",
+        "created_utc": 1673100529,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Companies made up more of more than 20% women are over hiring",
+        "author": "Extreme_Extension856",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105kcvo/companies_made_up_more_of_more_than_20_women_are/",
+        "text": "[removed]",
+        "created_utc": 1673081347,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Machine Learning with Unix Pipe",
+        "author": "fagnerbrack",
+        "url": "https://jott.live/markdown/ml_pipes",
+        "text": "",
+        "created_utc": 1673074854,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Import method from package or duplicate its code (in a not so obvious situation)?",
+        "author": "beeblebroh",
+        "url": "https://www.reddit.com/r/SoftwareEngineering/comments/105i154/import_method_from_package_or_duplicate_its_code/",
+        "text": "Hi there! Consider the following problem: there is a team A that needs to implement a method. This method is already implemented by a team B in another package X. Maybe you think that the most obvious solution is to import X into the project, so they reduce duplicated code in the projects codebase (don't repeat yourself!). But Team A is skeptical to do this because there is a trust problem in Team B: if the package X brakes in the future and the projects gets down because of it, it is possible that Team A gets penalized. In summary, Team A doesn't want to depend on the Team B's ability of avoiding future problems or solve a incoming one. The more time Team A gets blocked, more money is lost by the company and, since it's a Team A's project, they will be responsibilized. So, Team A is considering to just copy the method from X package and paste it into where it is needed.   \n\n\nWhat would you do in this situation?",
+        "created_utc": 1673073009,
+        "upvote_ratio": 1.0
+    }
+]

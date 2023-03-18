@@ -1,0 +1,794 @@
+[
+    {
+        "title": "Indian Railways Captcha",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1u2qek/indian_railways_captcha/",
+        "text": "Enjoy ... \n\nhttps://pay.reddit.com/r/india/comments/1u0xvn/indian_railway_has_implemented_the_most_difficult/\n\nTry selecting the captcha.",
+        "created_utc": 1388470473,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Check for a variable, if its not there lets start using it either way.",
+        "author": "Sitethief",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1tbdx8/check_for_a_variable_if_its_not_there_lets_start/",
+        "text": "Yeah, that if statement is just decoration it seems.The weird thing is that despite this it still works, changeGroups_ is a valid ID in the resulting HTML, and PHP just ignores that $get['parentID'] does not exist. \n($get is a cleaned up version of $_GET).\n\n    $parentID = $get['parentID'];\n    if(!$parentID &amp;&amp; $dropdownAction !== 'back'){\n        $tplObject-&gt;setTplVar('formOpen', 'id', 'changeGroups_'.$parentID);\n        $tplObject-&gt;setTplVar('formOpen', 'jsFunction', 'MUI.saveGroups');\n    }\n\nThe only problem that this created was a weird IE syntax error because of this:\n\n    $dropInfo['ExtraAttribute'] = 'onchange=\"MUI.showChildrenGroup(this, \\''.$company.'\\','.$pid.',\\''.$get[\"parentID\"].'\\','.$get['docleftid'].');\"';\n\nWhere FF and Chrome ignore the missing value (which is weird in itsself), IE8 will throw a *helpfull* ‘SCRIPT1002: Syntax error’ on line 1 of the page.",
+        "created_utc": 1387532754,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Language features that make you go WAT",
+        "author": "Nephyst",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1t212y/language_features_that_make_you_go_wat/",
+        "text": "https://www.destroyallsoftware.com/talks/wat",
+        "created_utc": 1387246067,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Commit messages are code, right?",
+        "author": "adhochawk",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1t1y5v/commit_messages_are_code_right/",
+        "text": "There's a new sub to be advertised - /r/talesfromvc - dedicated to capturing beautiful messages from version control.\n\nWe all have those people who just write commit messages that make us cringe of laugh. Things that should never see the light of day. Let's see yours!\n\n    Building number base. Has probabalistic segfault feature",
+        "created_utc": 1387244086,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is how you disable your student information system for nightly backups.",
+        "author": "scottywz",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1suh6i/this_is_how_you_disable_your_student_information/",
+        "text": "So the clock battery in my friend's computer died, and when she tried to check her grades she got a message saying that \"{{SHITTY_SIS}} has been removed from service for nightly system backup\" that normally only happens between 1 and 4 AM.  So she tells me to change my system time to 1 AM and go to SHITTY_SIS, and I do so in a VM and sure enough I get the \"down for nightly backups\" message.  So, I decided to look around in the main page's source code and found this lovely piece of ~~shit~~fine art included right after the navigation bar:\n\n&gt; **{{SHITTY_SIS}}.\\*\\*\\*\\*\\*.edu/javascript/system_down.js**\n&gt;     \n&gt;     \t\n&gt;     \t//Created by ********* 9/20/00\n&gt;     \t//U pdated by ********* 12/3/03 to use client time\n&gt;     \t//Updated backup times by ************* 12/30/12\n&gt;     \t// Edit these dates and message\n&gt;     \n&gt;     \n&gt;     \n&gt;     \n&gt;     /*create a date objcet based on the server time*/\n&gt;     now = new Date();\n&gt;     \n&gt;     \t\n&gt;     \n&gt;     if (navigator.userAgent.indexOf(\"Opera\") == -1){\n&gt;     \t//Does not work in Opera\n&gt;     \t\n&gt;     \n&gt;     \tif ((now.getHours() &gt;=1)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;=6)) /*after 1am Sun-Sat &gt;=1 */\n&gt;     \t&amp;&amp;((now.getHours() &lt;=3)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;=6)))) /*before 4am Sun-Sat &lt;=3*/\n&gt;     \t\n&gt;     \t//if ((now.getHours() &gt;=23)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;=6)) /*after 11pm Sun-Sat &gt;=23 */\n&gt;     \t//||((now.getHours() &lt;=2)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;=6)))) /*before 3am Sun-Sat &lt;=2*/\n&gt;     \t{\n&gt;     \t\t/* service down send them elsewhere */\n&gt;     \t\tdocument.location = \"http://{{SHITTY_SIS}}.*****.edu/{{SHITTY_SIS}}_backups.htm\";\n&gt;     \t}\n&gt;     \n&gt;     \t\n&gt;     \t\n&gt;     \t// Coments OK here only\n&gt;     \t\n&gt;     \n&gt;     \t\n&gt;     \t\n&gt;     \t\n&gt;     \t\n&gt;     \tnoteDownDate = \tnew Date(\"June 04, 2013 1:00:01 PM\"); //start showing message\n&gt;     \tnoteUpDate = \tnew Date(\"December 12, 2013 10:00:01 AM\");\t//stop showing message\n&gt;     \tdownDate = \t\tnew Date(\"November 17, 2013 1:00:01 AM\");\t//Start redirect\n&gt;     \tupDate = \t\tnew Date(\"November 17, 2013 8:00:01 AM\");\t//Stop redirect\n&gt;     \tmessage \t= \t'&lt;p&gt;&lt;b&gt;&lt;font color=\"#ff0033\"&gt;The Make a Payment system is currently unavailable. We apologize for any inconvenience this may cause.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;&lt;br&gt;'\n&gt;                                             &lt;!--'&lt;p&gt;&lt;b&gt;&lt;font color=\"#ff0033\"&gt;Due to software upgrades, the ********* and {{SHITTY_SIS}} Systems will be unavailable this Sunday, September 2nd from 1:00 am until approximately 12:00 pm. We apologize for any inconvenience this may cause.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;&lt;br&gt;'--&gt;\n&gt;     \t\t\t\t\t&lt;!--'&lt;p&gt;&lt;b&gt;&lt;font color=\"#46BAD7\"&gt;{{SHITTY_SIS}} will be unavailable from 1:00am on Friday, 10/12/2007, through 4:00am on Tuesday, 10/16/2007, due to system maintenance.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;';--&gt;\n&gt;     \t\t\t\t\t&lt;!--'&lt;p&gt;&lt;b&gt;&lt;font color=\"#127F9A\"&gt;{{SHITTY_SIS}} will be unavailable from 1:00am on Friday, 10/12/2007, through 4:00am on Tuesday, 10/16/2007, due to system maintenance.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;';\t--&gt;\n&gt;     \t\t\t\t\t&lt;!--'&lt;p&gt;&lt;b&gt;&lt;font color=\"#3868C0\"&gt;{{SHITTY_SIS}} will be unavailable from 1:00am on Friday, 10/12/2007, through 4:00am on Tuesday, 10/16/2007, due to system maintenance.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;';--&gt;\n&gt;     &lt;!--'&lt;p&gt;&lt;b&gt;&lt;font color=\"#ff0033\"&gt;{{SHITTY_SIS}} will be unavailable Sunday, 01/13/2008, from 4:00am to 9:00am, due to system maintenance.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;';--&gt;\n&gt;     \t\n&gt;     \t\n&gt;     \t\t\n&gt;     \t\n&gt;     \t//level below this line alone -------------------------\n&gt;     \ttoday = now;\n&gt;     \t\n&gt;     \t\n&gt;     \tif ((now.getHours() &gt;=0)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;=6)) /*after 12am Sun-Sat &gt;=0 */\n&gt;     \t&amp;&amp;((now.getHours() &lt;=3)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;6)))) /*before 4am Sun-Fri &lt;=3*/\n&gt;     \t\n&gt;     \t//if ((now.getHours() &gt;=22)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;=6)) /*after 10pm Sun-Sat &gt;=23 */\n&gt;     \t//||((now.getHours() &lt;=2)&amp;&amp;((now.getDay() &gt;=0) &amp;&amp; (now.getDay() &lt;6)))) /*before 3am Sun-Fri &lt;=2*/\n&gt;     \t{\n&gt;     \t\t/* service will go down in less than 1 hour, tell them */\n&gt;     \t\tdocument.write('&lt;p&gt;&lt;b&gt;&lt;font color=\"#ff0033\"&gt;{{SHITTY_SIS}} will be removed from service for nightly system backup from 1 a.m. to 4 a.m. Central Time.&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;');\n&gt;     \t}else if (today &lt; noteUpDate &amp;&amp; today &gt; noteDownDate){\n&gt;     \t\t// tell them when it will be down\n&gt;     \t\tdocument.write( message);\n&gt;     \t\t\n&gt;     \t}\n&gt;     \tif (today &lt; upDate &amp;&amp; today &gt; downDate){\n&gt;     \t\t// service down send them elsewhere\n&gt;     \t\tdocument.location = \"https://{{SHITTY_SIS}}.*****.edu/{{SHITTY_SIS}}_extmain.jsp\";\n&gt;     \t\t\n&gt;     \t}\n&gt;     \t\n&gt;     }\t\n\nNo joke.  I swear, it should be in an art gallery.  Yes, SHITTY_SIS is written in-house.",
+        "created_utc": 1386993939,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Motivation and legacy projects",
+        "author": "codhell",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ssidr/motivation_and_legacy_projects/",
+        "text": "How do you keep a high motivation when you are working in a legacy project with a really ugly codebase? Is this the type of work that you normally reject? One of my bigest concerns is that the skills acquired are almost useless for any future project / employer. Another problem is the time it takes to do any modification and the possible bugs in unrelated parts",
+        "created_utc": 1386937329,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I like loops",
+        "author": "maurihb",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1sshyk/i_like_loops/",
+        "text": "No comment...\n\n    @Override\n    public void run() {\n        while (true) {\n            try {\n                while (true) {\n                    Map map = getMessages();\n                    int numberOfRowsWithError = 0;\n                    if (map != null) {\n                        Iterator iter = map.keySet().iterator();\n                        while (true) {\n                            if (!iter.hasNext()) {\n                                break;\n                            }\n",
+        "created_utc": 1386936740,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TIL linux is closed source by the gubment",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1sq2ji/til_linux_is_closed_source_by_the_gubment/",
+        "text": "http://www.reddit.com/r/programming/comments/1s663u/microsoft_condemns_us_government_as_an_advanced/cduj3tp\n\nwhoops:\nint main(){}",
+        "created_utc": 1386864755,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The following code for generating a report somehow got to UAT",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1snazd/the_following_code_for_generating_a_report/",
+        "text": "The URL: http://uat-website/Report/downloadFile?filelocation=D%3A%5CCOMPANY%5CWWW%5CUAT-NEXT%5CReport%5CCacheOrderReports%5CDailyBuild%5CUK%5CUK_Afternoon_08_11_2013.xls&amp;filename=UK_Afternoon_08_11_2013.xls \n\nThe code\n\n        public ActionResult downloadFile(string filelocation, string filename)\n        {\n            return File(filelocation, ApplicationType.applicationType.Excel.ToString(), filename);\n        }        \n",
+        "created_utc": 1386783602,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A guy I know on IRC sent me this",
+        "author": "benzrf",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1sjyqf/a_guy_i_know_on_irc_sent_me_this/",
+        "text": "http://puu.sh/27Iy0.png\n\nI'm fairly sure it's on purpose...\n\nEDIT: It's from a Minecraft mod, and not one that he wrote (I think). So it's probably real.",
+        "created_utc": 1386691644,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Group projects sure are fun.",
+        "author": "michaeljb",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1sfywf/group_projects_sure_are_fun/",
+        "text": "For completion of a BS in computer science, my university requires students to complete either a senior thesis or a group project where the group basically provides free labor for some outside company. In all my wisdom I went with the project route...\n\nIt's a little saddening to see that one of my peers who will be graduating with a computer science degree in five months produced this... (Foo is a static class, each bar is a property of type Bar; names changed to protect myself in case our project sponsor ever actually has us sign the NDA he's brought up in 2 or 3 different meetings)\n\n\t\tswitch (id) {\n\t\t\tcase 0:\n\t\t\t\tFoo.bar0 = this;\t\n\t\t\t\tbreak;\n\t\t\tcase 1:\n\t\t\t\tFoo.bar1 = this;\n\t\t\t\tbreak;\n\t\t\tcase 2:\n\t\t\t\tFoo.bar2 = this;\n\t\t\t\tbreak;\n\t\t\tcase 3:\n\t\t\t\tFoo.bar3 = this;\n\t\t\t\tbreak;\n\t\t}",
+        "created_utc": 1386566950,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "We need some images in our website",
+        "author": "imbetter911",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1s30xp/we_need_some_images_in_our_website/",
+        "text": "HTML from a university website.\n\nThey decided on using names like \"aa-ff\" appended with either n or f to set image sources for images instead of simply using an &lt;img&gt; tag w/ the \"src\" attribute. Also, I chuckle at the \"center\" function.\n\n        aan = new Image(39, 26);\n        aan.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/email_roll.gif\";\n        bbn = new Image(39, 26);\n        bbn.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/calendar_roll.gif\";\n        ccn = new Image(39, 26);\n        ccn.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/groups_roll.gif\";\n        ddn = new Image(39, 26);\n        ddn.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/admin_roll.gif\";\n        een = new Image(39, 26);\n        een.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/logout_roll.gif\";\n        ffn = new Image(39, 26);\n        ffn.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/help_roll.gif\";\n        aaf = new Image(39, 26);\n        aaf.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/email_dft.gif\";\n        bbf = new Image(39, 26);\n        bbf.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/calendar_dft.gif\";\n        ccf = new Image(39, 26);\n        ccf.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/groups_dft.gif\";\n        ddf = new Image(39, 26);\n        ddf.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/admin_dft.gif\";\n        eef = new Image(39, 26);\n        eef.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/logout_dft.gif\";\n        fff = new Image(39, 26);\n        fff.src = \"/media/org/jasig/portal/layout/dlm/skins/skin_v2/controls/help_dft.gif\";\n        function img_act(imgName)\n        {\n            document[imgName].src = eval(imgName + \"n.src\");\n        }\n        function img_inact(imgName)\n        {\n            document[imgName].src = eval(imgName + \"f.src\");\n        }\n        function center(width, height)\n        {\n            width = Math.min(screen.availWidth, width);\n            height = Math.min(screen.availHeight, height);\n            topMargin = parseInt((screen.availHeight - height)/2);\n            leftMargin = parseInt((screen.availWidth - width)/2);\n            return 'width='+width+',height='+height+',top='+topMargin+',left='+leftMargin;\n        }",
+        "created_utc": 1386172120,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Let's write this code that will be run on Linux in Windows, and then commit it\"",
+        "author": "nbsdx",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1s0gi9/lets_write_this_code_that_will_be_run_on_linux_in/",
+        "text": "So, I'm working with a group of particularly gifted students to make the backend for a website for a class project. We were given the following constraints:\n\n* Deploy to a CentOS server (ohgodwhy)\n* Must use MySQL\n\nOther than the CentOS part, it doesn't seem to bad. And then we decided to use Python (specifically CherryPy after mod_python failed to work for us). Still not overly bad, just kinda annoying to work with. \n\nNow, I'm one of 2 people in the backend group that knows how to do anything in Linux other than \"ls\" and \"cd\", so I'm stuck with managing it all (pls send help, Redhat is awful). But wait, if no one else knows how to use Linux, how is the project getting done? If that's the question you're asking yourself, I'm asking myself that as well. Everyone had code in the repo, and it was running without catching on fire. I was honestly shocked.\n\nUntil today. I was informed that some unit tests weren't passing on the server. I take a look, and sure enough ~10 of the 20 tests are failing for our RESTful API calls with things from HTTP 500 to \"Connection Refused\". I spent a few minutes looking over the test cases and error logs. As it turns out, everyone had decided to use MySQLWorkbench and Notepad++ on Windows to write and test their SQL and Python, so everything was working locally when they committed. \n\nSo why was it broken? Fucking MySQL inherits the case sensitivity of the OS it's being ran on. There were ~800 lines of SQL code that didn't work because people used names like \"table_name\", \"Table_Name\", \"TABLE_NAME\" instead of \"Table_Name\". This was happening in the Unit Tests, and in the actual product. They just assumed that since MySQL is MySQL and Python is Python, it would work. It didn't, and then they asked me to fix it because \"you know what's wrong\". Fantastic.\n\nJust because something is cross platform doesn't mean you can just assume it's going to work. Test it. For the love of God test it.",
+        "created_utc": 1386097312,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A girl solves for x.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1s020p/a_girl_solves_for_x/",
+        "text": "To clarify: I'm not including the part about her being female to degrade women in the CS field. She just happened to be a woman.\n\nEnglish isn't my first language \nso I do apologize for any errors both in grammar and spelling.\n    \n1st semester computer science, about third of the way through.\nWe were given a simple assignment. Calculate 1+2+3+...+20 and 20! (we didn't know recursive by then). This assignment had a skeleton file that we could download from the class resources. The skeleton file contained examples of loops and functions that we were free to incorporate into our own solutions. She copied the while skeleton which looked something like this:\n    \n    //SKELETON BEGINS\n    \n    public class Assignment {\n    \tpublic static void main(String args[]) {\n    \n    \t\tint x = 0;\n    \n    \t\twhile(x &lt; 20) {\n    \t\t\tSystem.out.println(\"value of x : \" + x );\n    \t\t\tx = x + 1;\n    \t\t}\n    \t}\n    }\n    \n    //SKELETON ENDS\n    \nNot the most exciting code, but it was aimed at beginners (which we were).\n    \nSo. There was this girl who always hung out at the CS study rooms, trying\nto involve people in her work and get help.\nAt the time of this assignment, above, she asked me if we could compare\nsolutions. She said: 'It just keeps running without stopping'.\n    \n'All right', I said. 'Let me take a look'.\n    \nThis is what her skeleton part looked like and I will never forget it:\n(Inside this skeleton are the comments she made).\n    \n    //HER SKELETON BEGINS\n    \n    public class Assignment {\n    \tpublic static void main(String args[]) {\n    \n    \t\tdouble x = 19.0;  //I changed it for better optimization\n    \n    \t\twhile (x &lt; 20) {\n    \t\t\tSystem.out.println(\"value of x : \" + x );\n    \t\t\tx = 0.5\t\t//Solved for x (NOTE 1)\n    \t\t}\n    \t}\n    }\n    \n    //HER SKELETON ENDS\n    \nNOTE 1: I think she was trying to solve x = x + 1, but solved it as\n\t\t  x = -x + 1. \n\t\t  But still... quite silly :/\n    ",
+        "created_utc": 1386088371,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Booleans",
+        "author": "redxine",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1rwqo1/booleans/",
+        "text": "```if ($FORM-&gt;{'login_prompt'} ne \"\") {\n  $enforce = \"yes\";\n} else {\n  $enforce = \"no\";\n}\n```\n\nFound this gem in some rather old production code.  Are booleans *really* that difficult to grasp?\n",
+        "created_utc": 1385990691,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A coworker found this in our boss' code...",
+        "author": "VeryFamousDroid",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1r8clx/a_coworker_found_this_in_our_boss_code/",
+        "text": "This is part of a section of classic ASP code which takes fields from a database recordset and outputs them to a webpage:\n\n    zOrigWho = Replace(rs(\"First_Name\") &amp; \" . \" &amp; rs(\"Last_Name\"), \" . \", \" \")\n",
+        "created_utc": 1385143749,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I wonder why we're running out of database connections.",
+        "author": "Benanov",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1r8arc/i_wonder_why_were_running_out_of_database/",
+        "text": "Webpage shows data for things and expectations of their performance. It has 3 grids on it - a table for those things that exceeded expectations, those that met expectations, and those that failed to meet expectations. So far so good, right? Can't merge grids, slightly different data presentation / customer requirements. Not the WTF.\n\nEDIT: formatting. As usual\n\nHere's the code I had to clean up. Note that this is pseudocode.\n\n    binddatasource(grid, datasource) { /* self explanatory, not the WTF */ };\n\n    pageload() {\n      binddatasource(exceededgrid, loaddata(\"exceeded\"));\n      binddatasource(metgrid, loaddata(\"met\"));\n      binddatasource(failedgrid, loaddata(\"failed\"));\n    }\n\n    datatable loaddata(string filter)\n    {\n        datatable datatablea = new datatable();\n        datarow[] rows = run_expensive_database_query_that_does_not_take_filter_as_a_parameter();\n        foreach datarow row in rows:\n        {\n            if (expression &gt; 0 and filter = \"exceeded\")\n                datatablea.addrow(row);\n            if (expression = 0 and filter = \"met\")\n                datatablea.addrow(row);\n            if (expression &lt; 0 and filter = \"failed\")\n                datatablea.addrow(row);\n        }\n        return datatablea;\n    }\n\nReally? REALLY? 3 separate database connections. 3 full data loads, and we're running the filter three times? There's no cache in front of this at all; slight WTF, but I don't know how often the data updates.\n\nWonder why we're running out of connections in the pool...",
+        "created_utc": 1385142475,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'll just leave this here ...",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qyp70/ill_just_leave_this_here/",
+        "text": "This was discovered accidentally in the middle of running 6502 assembly code:\n\n    adc #4\n    sta SpriteX,x\n    \n    .db 0x00, 0xea, 0x56    ; sprite line 5\n    .db 0x00, 0x23, 0x11    ; sprite line 6\n    .db 0x00                    ; end of sprite\n    \n    adc #4\n    sta SpriteY,x\n\n\n... see if you can guess why it was working ...",
+        "created_utc": 1384846947,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "http://joe-riggs.com/healthcare-gov.html",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qwk1w/httpjoeriggscomhealthcaregovhtml/",
+        "text": "",
+        "created_utc": 1384792657,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Woes of inheriting an old project that has been outsourced",
+        "author": "Crypton",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qq3cd/woes_of_inheriting_an_old_project_that_has_been/",
+        "text": "Inherited an internal application recently that is dated about 2010 and has been outsourced for enhancements since then.\n\nIn here you will find your usual things like button127_Click event handlers, many things like \"var myCategory\" and so on, but this, by far, is the best of them all in my opinion.\n\n[Dear Kavita and Sairaj, please do not put your code where it says \"Changes to this file may cause incorrect behavior and will be lost if the code is regenerated\".](http://i.imgur.com/NNdL2Ew.png)",
+        "created_utc": 1384556436,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is how my boss, who is basically a DBA, designs a table.",
+        "author": "BostonGraver",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qpkjz/this_is_how_my_boss_who_is_basically_a_dba/",
+        "text": "Not really programming, but it does make my programmatic interactions with the database that much more difficult.\n\n[Oh god why.](http://i.imgur.com/U0nfCwx.png)",
+        "created_utc": 1384543127,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I don't think they really knew how to use Javascript when they wrote this.",
+        "author": "Nalin8",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qnevl/i_dont_think_they_really_knew_how_to_use/",
+        "text": "I've been working on modernizing a complicated web application that was built to work using Internet Explorer's HTML components (.htc files) and the XMLDocument object.  This thing has been worked on by many people over the years, and as such, I get to find and fix tons and tons of gems like this:\n\n    wkStr = 'rslt = window.document.all.' + myfield\n    eval(wkStr);\n    myvalue = rslt.value\n",
+        "created_utc": 1384470185,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "if(true.ToString()==\"True\"||true.ToString==\"true\") val=true;else val=false",
+        "author": "110011001100",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qmuxl/iftruetostringtruetruetostringtrue_valtrueelse/",
+        "text": "edit, missed a pair of () in the title. You know where to put them :)\n\n----------------\nOk, so I put the punchline in the title.\n\nAnyways, this might seem out of context, but I found this code snippet in the code today\n  \nIn one function:\n\n    SettingsPersister.writeValue(ApplicationName,\"isActive\",true)\n\nIn another function:\n\n    String res = SettingsPersister.readValue(ApplicationName,\"isActive\")\n    bool boolval;\n    if(res.toString()==\"False\"||res.toString()==\"false\")\n        boolval=false\n    else\n        boolval=true\n    control.checked=boolval\n\n\n\n-----------------\n\nWhy we have a thread unsafe, self written class for doing this stuff is a different matter. I cant say much without running into legal issues, but let me just say calling writevalue with any of the parameters containing a \",\",\";\" or \"-\" will irrecoverably corrupt the settings file. Should give an idea of whats going on in there \n    ",
+        "created_utc": 1384457348,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Really starting to hate how forgiving Actionscript is",
+        "author": "perfunction",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qjfo0/really_starting_to_hate_how_forgiving/",
+        "text": "Troubleshooting a defect in one of our applications at work and came across this lovely line. There are no compiler warnings or errors. No run-time errors. \n\n&gt; var thisService:Number = billAmount - Number(rowAcc.discountamount) + Number(rowAcc.federaltaxamount); + Number(rowAcc.statetaxamount) + Number(rowAcc.localtaxamount);\n\nAnd while I'm complaining:\n\n&gt; \"this is also a valid line of AS3 code\";",
+        "created_utc": 1384356250,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Random Bytes",
+        "author": "mrwik",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qionr/random_bytes/",
+        "text": "When trying to understand some not very random behavior, I found this piece of code in a third party library we use at work:\n\n    protected byte[] RandomBytes\n    {\n        get\n        {\n            if(m_randomBytes == null)\n            {\n                m_randomBytes = new byte[i_randomBytesAmount];\n                for(byte i = 0; i &lt; i_randomBytesAmount; i++)\n                {\n                    m_randomBytes[i] = i;\n                }\n            }\n            return m_randomBytes;\n        }\n     }\n",
+        "created_utc": 1384322354,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Resolving a function with dlsym",
+        "author": "mmtrebuchet",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1qbjc0/resolving_a_function_with_dlsym/",
+        "text": "This isn't an example of bad code (but it is), rather this is a complaint from Kerrisk's excellent tome [The Linux Programming Interface](http://www.amazon.com/The-Linux-Programming-Interface-Handbook/dp/1593272200)\n\n    void * dlsym(int* handle, char* symbol) \nresolves symbol in the dynamic library pointed to by handle. So, if there's a global variable, you can access it; if there's a global function, you can use it. Except the C99 standard doesn't let you assign a void* to a function pointer. \nSo the following (obvious) code doesn't work:\n    \n    int (*fp)(int);\n    fp = dlsym(handle, \"foo\");\n\nbecause you're assigning a void* to an int (*)(). The solution is one of the ugliest casts I've ever come across in serious code:\n\n    *(void **) (&amp;fp) = dlsym(handle, \"foo\");\n\n*WHY* did the C99 committee think it would be a good idea to prevent casting from void* to a function pointer? I get that it's unnecessary in modern languages, but casting to and from void* is the bread and butter of C's memory system. It should be understood that if you're writing casts in C, you know what you're doing! ",
+        "created_utc": 1384109487,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Handling Date with javascript is hard.",
+        "author": "Alfred456654",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1q3hhd/handling_date_with_javascript_is_hard/",
+        "text": "Just stumbled on [this web page](http://clicnet.swarthmore.edu/rire/textes/date.html), that displays the date in french in JavaScript.\n\n    date=new Date();\n    document.write( [...] + \" 19\" +date.getYear());\n\nApparently appending strings is better than adding integers, for year 2013 it reads \"19113\".\n\nDamn.",
+        "created_utc": 1383826816,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Because there's nothing wrong at all with calling PHP from Python.",
+        "author": "worst_programmer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1pwe6i/because_theres_nothing_wrong_at_all_with_calling/",
+        "text": "[Original comment](http://www.reddit.com/r/Python/comments/1pvbtf/because_from_flask_import_flask_is_just_way_too/cd6lhtg) by /u/bluehat2k9:\n\n&gt; Pssh, this level of hackery is nothing compared to [django-htmlpurifier](https://github.com/kz26/django-htmlpurifier). Because there's nothing wrong at all with calling PHP from Python. Did I tell you that I am using this in production?\n\nI feel dirty just reading that; I moved to Django to *run*, **kicking and screaming** from PHP.\n\nJust felt this belonged here, not tucked away in an /r/Python thread :)",
+        "created_utc": 1383598441,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[x-post from r/ProgrammerHumor] Java Enterprise Naming",
+        "author": "DominikMostek",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1pm58r/xpost_from_rprogrammerhumor_java_enterprise_naming/",
+        "text": "http://www.reddit.com/r/ProgrammerHumor/comments/1plsox/read_this_in_one_breath/\nor shortcut to image \nhttp://i.imgur.com/S1S8nGf.png",
+        "created_utc": 1383228737,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Type checking is there for a reason",
+        "author": "simpsonboy77",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1pkawm/type_checking_is_there_for_a_reason/",
+        "text": "I was assigned to work on a piece of code that no one touched for a few years. Its written in VB.net, and the person who wrote it only knew of one type of variable: object.\n\n        Try\n            obj2 = DirectCast(obj, Integer)\n        Catch ee As Exception\n            Try\n                obj2 = DirectCast(obj, Boolean)\n            Catch eee As Exception\n                Try\n                    obj2 = DirectCast(obj, String)\n                Catch eeee As Exception\n                End Try\n            End Try\n        Finally\n            Me.Label1.Text = obj2\n        End Try\n\nSo many good points in this code, the variable names are amazing. I'm not sure which I like more, the fact that type checking is done at runtime, or the names of the exceptions.\n\n*EDIT* Formatting",
+        "created_utc": 1383164697,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I think I did this ...",
+        "author": "spejsr",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ph4v2/i_think_i_did_this/",
+        "text": "http://imgur.com/ZKGfKSc",
+        "created_utc": 1383066965,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The worst Java test I've ever seen.",
+        "author": "Sophira",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ozxe5/the_worst_java_test_ive_ever_seen/",
+        "text": "So I was going through some files I had on my computer at one point and came across a Java test paper, complete with answers. I'm not entirely sure how I came in possession of this; I've never taken a Java test. However, I took a look through the PDF.\n\n(Of note: The PDF mentions at the beginning that \"Each pdf file contains a unique serial number associated with your particular name and contact information for\nsecurity purposes.\" That is to say, this is *distributed* as a PDF. Some of these may look like OCR errors, but I can assure you, this is distributed as-is. Also of note: I'm not the person who this PDF was for.)\n\nThe actual questions are horrible, and some of the answers are just *wrong*. Here's a representative example, copied verbatim:\n\n&gt; **Question No: 6**  \n&gt; **Exhibit:**\n&gt; \n&gt;     1. Public class test (\n&gt;     2. Public static void stringReplace (String text)  (\n&gt;     3.      Text = text.replace (‘j’ , ‘i’);\n&gt;     4. )\n&gt;     5.\n&gt;     6. public static void bufferReplace (StringBuffer text)  (\n&gt;     7.     text = text.append (“C”)\n&gt;     8. )\n&gt;     9.\n&gt;     10.  public static void main (String args[]} (\n&gt;     11.     String textString = new String (“java”);\n&gt;     12.     StringBuffer text BufferString = new StringBuffer (“java”);\n&gt;     13.\n&gt;     14.      stringReplace (textString);\n&gt;     15.      BufferReplace (textBuffer);\n&gt;     16.\n&gt;     17.      System.out.printIn (textString + textBuffer);\n&gt;     18.      }\n&gt;     19.    )\n&gt; \n&gt; **What is the output?**\n\nAnswer (that is, *their* answer) is in the comments. Personally, I think a better test question would be: How many mistakes can you spot? How many of these would stop javac from even compiling the code, and how many would compile but not work at runtime?",
+        "created_utc": 1382471171,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The joys of legacy PHP code",
+        "author": "NotSantaAtAll",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ow4ws/the_joys_of_legacy_php_code/",
+        "text": "I can't find the appropriate words for that:\n\n    if($tstamp&gt;0) {\n        $time = date(\"H|i|s|m|d|Y\", $tstamp);\n        $stamp = $tstamp;\n    }\n    else {\n        $time = date(\"H|i|s|m|d|Y\", $acdate);\n        $stamp = $acdate;\n    }\n    \n    $time_parts = explode(\"|\",$time);\n    $hour1 = $time_parts[0];\n    $minute1 = $time_parts[1];\n    $second1 = $time_parts[2];\n    $month1 = $time_parts[3];\n    $day1 = $time_parts[4];\n    $year1 = $time_parts[5];\n\n    if(date(\"Y\").date(\"-m-d\", $stamp)&lt;=date(\"Y-m-d\")) {\n        $tstamp = strtotime(addmonths(date(\"Y-m-d H:i:s\", mktime(date($hour1),date($minute1),date($second1),date($month1),date($day1),date($year1))), \"1\"));\n    }\n    else {\n        $tstamp = strtotime((date(\"Y\")).date(\"-m-d\", $acdate));\n    }",
+        "created_utc": 1382348715,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Developer's in paradise with REST Backend services",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1oi0hn/developers_in_paradise_with_rest_backend_services/",
+        "text": "",
+        "created_utc": 1381844555,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Same author.",
+        "author": "worst_programmer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1nxe00/same_author/",
+        "text": "In one file:\n\n    use constant {\n        FALSE =&gt; 0,\n        TRUE =&gt; 1,\n    };\n\nIn another file:\n\n    use boolean;\n\nSo, to import both files (both part of the same common library), you might have to do:\n\n    use boolean;\n    use constant {\n        FALSE =&gt; 0,\n        TRUE =&gt; 1,\n    };\n\nAnd then remember that false doesn't necessarily equal FALSE.  This is as much a Perl issue as it is a code issue: what kind of programming language doesn't support booleans natively?  Oh yeah, Perl!",
+        "created_utc": 1381172372,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this in the production code of my company's site:",
+        "author": "compto35",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1nl15s/found_this_in_the_production_code_of_my_companys/",
+        "text": "    function heyYooGais($trololol) {\n        global $wpdb;\n        $parent = $wpdb-&gt;get_var(\"SELECT post_parent FROM $wpdb-&gt;posts WHERE post_type='page' AND ID = '$trololol'\");\n        if ($parent == 0) return $page_id;\n        else return heyYooGais($parent);\n    }\n\nIt's a Wordpress build (so why the fuck are you writing your own goddamn query…or calling global $wpdb in the first place), and $trololol comes from a select box on a client-facing page with no validation or sanitation before it gets here. \n\nI found it at the end of the day yesterday, so [this was me leaving work](http://i.imgur.com/RzZgMf6.gif)",
+        "created_utc": 1380724336,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So my CS professor wants us to design an e-business application...",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ngsf8/so_my_cs_professor_wants_us_to_design_an/",
+        "text": "Where to begin?\n\nWell, to start, it's all in Java, with the exception of the database. Including the client-side code (no HTML for us!). This isn't too too much of a WTF in and of itself, although it's getting close. However, the following is:\n\nHe wants us to do a \"fat client model\". This means the client is connecting, over *plaintext*, directly with the database. For an assignment that's supposed to be something that would be used by clients of a company. \n\nAnd his response to me asking \"what about if someone just grabs the database credentials from the client and directly connects to the server\" was \"but it's Java - you're distributing the compiled files, not the source\". And then when I asked about wireshark / other network analyzers / jd-gui / other java decompilers, his response was \"but most users don't have the expertise to do that!\".\n\n*sigh*\n\n(Oh, and these are University students, who mostly have either already done co-op terms, or are going to be shortly. Now I see why there are so many security breaches at major companies...)",
+        "created_utc": 1380576305,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Commant.",
+        "author": "worst_programmer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1n89ci/commant/",
+        "text": "Most of our makefiles are uncommented.  When you do have a comment, they're *helpful*:\n\n    # Nothing :)\n    NOTHING:=\n\nThanks.  Oh wait, how about an actual comment?\n\n    # For some reason space in makefiles should point to two spaces\n    SPACE:=$(NOTHING) $(NOTHING)\n\n...\n\n...\n\nGUISE\n\nGUISE\n\n...\n\nwat\n\nThis shit.  Seriously.  Why couldn't this developer have written out what kind of strange behavior they see?  For instance: \"For some reason space in makefile should be two spaces, otherwise you start seeing a 'warning: a jibbajab wobbled a wibbly' midway through a unit test, which then fails without a proper exit code.\"\n\nInstead, I'm wondering how many drinks this developer had.  Damn it all, I hate debugging makefiles.\n\n&lt;/rant&gt;\n\n\n**EDIT:** Figured it out, I think.  \"For some reason space in makefiles should point to two spaces\" means \"to define a space in a Makefile, you need to enclose it in something non-whitespace; even an empty variable will work\" on some other planet.  Encountered this same pattern in a makefile on the internet, which had much better comments about this dubious pattern.\n\n**EDIT 2:** The passwords to the user account with permissions to read your private key for packaging?  Yeah, go ahead and file those under *\"do not put in the Makefile, especially in plaintext form\"*.  I thought the comments were bad...",
+        "created_utc": 1380257719,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Searching for synonymously dictionary for programmers",
+        "author": "layneobserdia",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1n77ct/searching_for_synonymously_dictionary_for/",
+        "text": "Hey,\n\ncolleagues and myself have often problems to find a good name for a class, method, function, variable, ...\n\nIs there already something like a dictionary where you can search e.g. for something like \"method export xml\" and get a list of method names with this words?\nPerhaps with a filter like \"PEP8\" or other style guides.\n\nAs it's horror for us to use bad names or search 15 minutes for a good name I posted it here. Perhaps you can suggest other subreddits to me?",
+        "created_utc": 1380226653,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Return code checks done RIHGT.",
+        "author": "worst_programmer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1mribn/return_code_checks_done_rihgt/",
+        "text": "In DB::Table::FunnyThings:\n\n    @ISA= qw(DB::Table);\n    ...\n    sub add_thing {\n        my $result = $self-&gt;insert_one(\\%data_to_insert);\n\n        if (not defined($result)) {\n            $self-&gt;rollback_and_log(\"Unable to insert rows for the table defined by \".$self-&gt;{thing});\n            return undef;\n        }\n    }\n\nIn DB::Table:\n\n    sub insert_one {\n        ...\n        my $affected_rows = $self-&gt;{db}-&gt;query_count_affected($sql)\n        return 0 unless defined($affected_rows); # error\n        ...\n        return 1; # success!\n    }\n\nProbably pretty mild compared to the usual horrors, but still...  I'm growing a special fondness for loosely typed scripting languages.\n\n\n*EDIT to add a real explanation:*\n\n$result is never undefined, so we never actually capture the error when one does occur.  In Perl, any attempt at boolean logic is guaranteed to cause you pain, because there's no such thing as a 'real' boolean.  The booleans they provide you with are either true, false, or undef.  In this case, the original programmer used 0 and 1 to approximate true or false, but the client winds up checking for undef / not undef.  Not undef (0 or 1) is considered success--though the process returns 1 for failure.\n\nThis results in the process failing, and then also failing to report failure.  As a result, the job is marked as a success... and we're left scratching our heads when a future dependent job fails miserably.",
+        "created_utc": 1379659014,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Somewhere in a 13.000 lines Python web project",
+        "author": "msiemens",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1mpgrn/somewhere_in_a_13000_lines_python_web_project/",
+        "text": "This file I found somewhere deeply nested in a 13 000 lines Python web project:\n\n    Include(\"../header.pih\")\n    \n    print \"Internet Statistics&lt;p&gt;\"\n\n    import os\n    import commands\n    \n    #for line in commands.getoutput(\"/usr/sbin/ipacsum\"):\n    for line in os.popen2(\"/usr/sbin/ipacsum\"):\n        print line, \"\\n\"\n    \n    Include(\"../footer.pih\")\n\nHelpful comments, eh? And from another file:\n\n    def calc_exitstatus(exitcode):\n        \"\"\" ??? \"\"\"\n        if type(exitcode) is int:\n            return exitcode &gt;&gt; 8\n        else:\n            return str(exitcode)\n    \n    calc_exitcode = calc_exitstatus # calc_exitcode deprecated\n\nNo wonder that the project is rewritten form scratch, the rest of the code is no better...",
+        "created_utc": 1379594774,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I wish I could see the code, but I can't get the contractor to cough it up.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1modu5/i_wish_i_could_see_the_code_but_i_cant_get_the/",
+        "text": "We've been trying to extract something usable from this contractor for several weeks now. I'll call him Winged Monkey (WM). I've started logging my attempts to get the software from him. Unfortunately, my manager thinks that it's way too hard to find devs in our programming language (which I'll call Snackon), so we won't cut him loose.\n\n\n    Tues. morning\t\n    Me: Can you please open a pull request w/ your db management code.\n    WM: It's already in the master branch; it's ready to use.\n\n    Tues. afternoon\n    Me: [I investigate] I searched, but can't find it.\n    WM: I was wrong; I haven't shared it yet; I'll do that after dinner.\n\n    Wed. morning\n    WM: I'll only be able to share it combined with the new HTML code I'm also working on.\n    Me: Ok, but please separate your work in the future.\n\n    Wed. late morning\t\n    WM: I've created the pull request with all the combined code.\n    Me: [I investigate] Github won't merge the pull request automatically due to conflicts. Can you please fix it.\n\n    Wed. noon\t\t\n    WM: Done, but I get an error testing it.\n    Me: [I investigate] You're not using the correct Snackon version.\n\n    Wed. afternoon\t\n    Me: Do all the tests pass?\n    WM: Yes.\n\n    Wed. late afternoon\t\n    Me: [I investigate] The tests do _not_ pass; it's because did not correctly merge master into your work.\n    WM: ugh, you're right.",
+        "created_utc": 1379547766,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Friend of mine paid outsourcing for this",
+        "author": "NotiLoch",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1moayo/friend_of_mine_paid_outsourcing_for_this/",
+        "text": "This is what you get for outsourcing, folks!\n\n    if(isset($_POST['LoginForm']))\n    {\n    \t$model-&gt;attributes=$_POST['LoginForm'];\n    \tif($_POST['LoginForm']['rememberMe']=='1')\n    \t{\n    \tYii::app()-&gt;request-&gt;cookies['username'] = new CHttpCookie('username', $_POST['LoginForm']['username']);\n    \tYii::app()-&gt;request-&gt;cookies['password'] = new CHttpCookie('password', $_POST['LoginForm']['password']);\n\n    \t}\n\n    \tif($_POST['LoginForm']['rememberMe']=='0' &amp;&amp; $_COOKIE['username'] !='')\n    \t{\n    \t\tunset(Yii::app()-&gt;request-&gt;cookies['username']);\n    \t\tunset(Yii::app()-&gt;request-&gt;cookies['password']);\n    \t}\n\n    \t// validate user input and redirect to the previous page if valid\n    \tif($model-&gt;validate() &amp;&amp; $model-&gt;login())\n    \t\t$this-&gt;redirect(Yii::app()-&gt;user-&gt;returnUrl);\n    }",
+        "created_utc": 1379545397,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[xpost /r/bitcoinmining] I'd like to assemble a Miner in VB",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1mnrpq/xpost_rbitcoinmining_id_like_to_assemble_a_miner/",
+        "text": "http://www.reddit.com/r/BitcoinMining/comments/1mls7f/request_a_tutor_or_a_guide_id_like_to_assemble_a/",
+        "created_utc": 1379530646,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "HALP I LOST MY INTERNET",
+        "author": "worst_programmer",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1m1vb1/halp_i_lost_my_internet/",
+        "text": "Not quite programming horror, but I did a big dumb today...\n\nhttp://imgur.com/RDns6ie\n\nGiven where I was when I did this, I considered flagging the post NSFW... but it wasn't a production box.",
+        "created_utc": 1378754103,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I just found out that our ORM is xslt based!",
+        "author": "codersthrowaway",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1lud05/i_just_found_out_that_our_orm_is_xslt_based/",
+        "text": "So, I'm working on a big webshop. Our models get defined in an xml, which looks kinda like this:\n\n    &lt;models&gt;\n    &lt;model name=\"example\"&gt;\n    \t&lt;attributes&gt;\n         &lt;attribute name=\"exampleattribute\" type=\"string\"&gt;\n         &lt;/attributes&gt;\n    &lt;model&gt;\n    &lt;/models&gt;\n\nwhich then gets transformed by an xlst (which is 1kloc) to our actual models, which we can import. I almost threw up when I saw that .xsl. My god, whyy?\n\nOh, and we pay for the framework which includes the ORM. Its not cheap...\n\n",
+        "created_utc": 1378456914,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "a.fakelastname@mail.mcgill.ca|****|another.fakelastname@mail.mcgill.ca",
+        "author": "gianhut",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1lq2ae/afakelastnamemailmcgillcaanotherfakelastnamemailmc/",
+        "text": "Saw this on HN this morning: How not to check the validity of an email address -- http://www.dellsystem.me/posts/dont-do-drugs-kids/",
+        "created_utc": 1378312901,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Was doing a lil maintenance when I discovered this in production",
+        "author": "Intrexa",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1lneza/was_doing_a_lil_maintenance_when_i_discovered/",
+        "text": "This is part of a stored proc that accepts what are essentially orders. This wasn't actively being used anymore, and all credit cards are no longer in this system, and are instead stored elsewhere, encrypted properly, but the webpage that calls this sproc is just passing in nulls for credit card info now.\n\n    \t-- encrypt the credit card number by re-arranging the numbers \n    \tselect @vchCCEncrypt = rtrim(substring(@vchCCNbr,13,1) + substring(@vchCCNbr,2,1) + substring(@vchCCNbr,8,1) +\n    \t\t\t\tsubstring(@vchCCNbr,4,2) + substring(@vchCCNbr,3,1) + substring(@vchCCNbr,7,1) +\n    \t\t\t\tsubstring(@vchCCNbr,1,1) + substring(@vchCCNbr,9,4) + substring(@vchCCNbr,16,1) +\n    \t\t\t\tsubstring(@vchCCNbr,14,2) + substring(@vchCCNbr,6,1) + substring(@vchCCNbr,17,99))",
+        "created_utc": 1378224554,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Redditor in r/C_Programming attempts to allocate 8GB of heap space for one process",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ln7qu/redditor_in_rc_programming_attempts_to_allocate/",
+        "text": "http://www.reddit.com/r/C_Programming/comments/1ln3g7/need_help_to_alloacte_a_big_array/",
+        "created_utc": 1378218554,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The whole time I tried to explain why it was wrong he kept saying \"but it works\"",
+        "author": "Conorrr",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1lmwta/the_whole_time_i_tried_to_explain_why_it_was/",
+        "text": "I was asked by a colleague at my previous job to help him with some javascript because it wasn't working. The code was generally a mess but we had just started using AngularJS(The company has decided to try and clean up our messy JavaScript) and he was still learning. Whilst going through his code I found that he was regularly calling 2 methods \"storeValue()\" and \"getValue()\". This is where I started to get concerned because AngularJS is an MVC framework with well structured way to share data between controllers. What I found these methods doing with forever haunt me. The storeValue methods were getting the root and appending to innerHTML \"&lt;input type='hidden' id='\"+valName+\"' value='\"+val+\"'/&gt;\". \n\nThe worst part was he refused to accept that it was the wrong way of doing it because... \"it works\".\n\ntl:dr I found a developer creating hidden fields in the DOM to store variables in.\n\nMonths later he has become the lead javascript developer for a multi-million pound project.",
+        "created_utc": 1378205204,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "There was a guy modding The Powder Toy...",
+        "author": "boxmein",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ld7dv/there_was_a_guy_modding_the_powder_toy/",
+        "text": "    #include \"simulation/Elements.h\"\n    #ifdef WIN\n    #include \"windows.h\"\n    bool win = true;\n    #else\n    bool win = false;\n    sudo apt-get install beep\n    #endif\n    //#TPT-Directive ElementClass Element_BEEP PT_BEEP 179\n    Element_BEEP::Element_BEEP()\n    {\n    /* ... */\n    }\n     \n    //#TPT-Directive ElementHeader Element_BEEP static int update(UPDATE_FUNC_ARGS)\n    int Element_BEEP::update(UPDATE_FUNC_ARGS)\n    {\n            int r, rx, ry, rt;\n                    for (rx=-1; rx&lt;2; rx++)\n                            for (ry=-1; ry&lt;2; ry++)\n                                    if (BOUNDS_CHECK)\n                                    {\n                                            r = sim-&gt;photons[y+ry][x+rx];\n                                            if (!r)\n                                                    r = pmap[y+ry][x+rx];\n                                            if (!r)\n                                                    continue;\n                                            if((r&amp;0xFF)==PT_SPRK &amp;&amp; parts[r&gt;&gt;8].ctype==PT_PSCN &amp;&amp; parts[r&gt;&gt;8].life==3)\n                                            {\n                                                    if(win == true)\n                                                    {\n                                                    Beep(parts[i].tmp, parts[i].tmp2);\n                                                    break;\n                                                    }\n                                                    else\n                                                    {\n                                                    #ifdef WIN\n                                                            win = true;\n                                                            return 0;\n                                                    #else\n                                                    try:\n                                                            import winsound\n                                                            except ImportError:\n                                                            import os\n                                                             def playsound(frequency,duration):\n                                                                     #apt-get install beep\n                                                                    os.system('beep -f %s -l %s' % (frequency,duration))\n                                                                    else:\n                                                                     def playsound(frequency,duration):\n                                                                      winsound.Beep(parts[i].tmp,parts[i].tmp2)\n                                                    #endif\n                                                    }\n                                            }\n                                    }\n                                            return 0;\n    }\n     \n     \n    Element_BEEP::~Element_BEEP() {}",
+        "created_utc": 1377820356,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "User creation by the most dangerous code I've ever seen. [from /r/PHP]",
+        "author": "mmtrebuchet",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1l95pm/user_creation_by_the_most_dangerous_code_ive_ever/",
+        "text": "[source](http://www.reddit.com/r/PHP/comments/1l7baq/creating_a_user_from_the_web_problem/) code developed by ionlysayha.\n\n\n&gt; \n&gt; I have a form that creates a user by entering the username and their password.  The code I'm using in php is: \n&gt; \n&gt;     shell_exec(\"sudo useradd -p $encpass -g groupname -s /bin/bash $username\");\n&gt; \n&gt; I have used a whoami and have confirmed that it runs as http.  In /etc/sudoers I have\n&gt; \n&gt;     http ALL=(ALL) NOPASSWD: ALL\n&gt;     root ALL=(ALL) ALL\n&gt;     %wheel ALL=(ALL) NOPASSWD: ALL\n&gt;     %sudo ALL=(ALL) ALL\n&gt; \n&gt; I also added http to group wheel.  The problem I am having is it's not setting the password correctly.  The user is created, just the password isn't set.  I know that $encpass has a value because I can display it.  I also know the command works because it runs fine in command line.  This was working before, but I had to reinstall Arch Linux, so does anyone have an idea for why this doesn't work?",
+        "created_utc": 1377692027,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "OBFUSCATE!",
+        "author": "smarwell",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1l3iwp/obfuscate/",
+        "text": "",
+        "created_utc": 1377490238,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Horrid abuse of #ifdef",
+        "author": "SnowdensOfYesteryear",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1kc578/horrid_abuse_of_ifdef/",
+        "text": "Below is a snippet of code from a code base I'm working on.  The code base is  about a decade old, and completely...derelict.  It's been maintained by a 2nd or 3rd generation of maintainers at this point, all of whom have completely given up the quality of the code base. \n\nI've scrubbed out most of the code for readibility and because this shit is open source, I can probably be doxxed.\n\nBut imagine this in full glory with the most inconsistent indentation imaginable.\n\n    #ifdef ANDROID\n      if(mode_enable)\n      {\n        bool error = false;\n        if(buffer)\n        {\n          if (type != ... &amp;&amp;\n              type != ...)\n              error = true;\n          else {\n            if(...)\n            {\n              if(...)\n                error = true;\n              else if((type != 1 &amp;&amp;\n                       type != 2))\n                error = true;\n            }\n          }\n        } else\n          error = true;\n        if(error)\n        {\n          return ErrorBadParameter;\n        }\n        if(type == ..)\n        {\n          ...\n    #ifdef CONFIG\n          ...\n    #endif\n          ...\n        } else {\n          ...\n    #ifdef CONFIG\n          ...\n    #endif\n          ...\n        }\n        ...\n      }\n      else if(same_condition)\n    #else  /********* my favorite part, above and below this line */\n      if(same_condition)\n    #endif\n      {\n        //more shit\n      }\n    #ifdef CONFIG\n      if(func(buffer, buf, 0,fd) != true)\n    #else\n      if(func(buffer, data_buf,0,0) != true)\n    #endif\n      {\n    #ifdef ANDROID\n        release_buffer(buffer);\n    #endif\n        return ErrorBadParameter;\n      }\n    \n \n\nJust imagine a 50K LOC code base full of this.  The only good part of about is that it's relatively bugfree and we usually don't have to touch this code.",
+        "created_utc": 1376468039,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Shepherd Windows",
+        "author": "Semonet",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1k55jb/shepherd_windows/",
+        "text": "",
+        "created_utc": 1376228194,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "String Scrambler!",
+        "author": "Jenwrr",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1jyzr0/string_scrambler/",
+        "text": "    void StringCrypt(char * strng)\n    {\n      char *p;\n      while(*strng) *p++ = *strng++;\n      *p = 0;\n      printf(\"%s\\n\", p);\n    }\n\nSomeone came forward with this code asking why \"it didn't work\". The code here is entirely unchanged (other than changing a platform-specific output function to printf).\n\nThat includes the lack of comments to explain such joys as a dangling pointer.\n\nWe also weren't allowed to know the underlying goal, as this is clearly super-top-secret encryption code.",
+        "created_utc": 1375986523,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Well... I guess that's TECHNICALLY a valid use of recursion...",
+        "author": "curtmack",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1jwecw/well_i_guess_thats_technically_a_valid_use_of/",
+        "text": "Found this one in an in-house JavaScript UI object we use. (Substantially anonymized, of course.)\n\n    SearchList.prototype.removeAllSearches = function () {  \n        var remove = null;  \n        for (var i = 0; i &lt; this.search.length; i++) {  \n            remove = i;  \n            break;  \n        }  \n        if (remove != null) {  \n            this.search.splice(remove, 1);  \n            this.removeAllSearches();  \n        }  \n    }",
+        "created_utc": 1375900063,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Favorite sql case statement",
+        "author": "Tdawgy69",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1jvzcd/favorite_sql_case_statement/",
+        "text": "",
+        "created_utc": 1375889324,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Type in the secret code to unlock product descriptions",
+        "author": "nandryshak",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1jtukr/type_in_the_secret_code_to_unlock_product/",
+        "text": "The website I work on is a mess. It's run by an e-commerce platform on top of ASP.NET/C#. The old developer wasn't good. The whole thing is nested tables in nested tables, spaghetti everywhere, inline styles, just horrid work. \n\nAnyway, I'm editing some products today. [This is what](http://i.imgur.com/MtuPKwy.jpg) our product editor page looks like. As you can see, there's some standard fields like product name, weight, dimensions, description, etc. These all get compiled together by ASP.NET when the browser requests a page. In the final page, the product image goes on the left, price underneath, and the description on the right.\n\nCertain products have HTML in the \"More Details\" field. This displays below the product image but above the price. Today I was trying to add code to this field on some products that originally had nothing there, but it wouldn't show up. So I compare these products to pages that having known working \"More Details\" fields. Nothing. No differences. I don't understand. They're both generating the page the exact same way.\n\nSo I have to dig into this ugly source code to find out what's happening. Eventually, I stumble upon this:\n\n    #if($Product.Length.ToString() == \"2.2200\")\n        $Product.ExtendedDescription\n    #else\n        [[ConLib:ProductImage ShowImage=\"Image\"]]&lt;br /&gt;\n    #end\n\nNow, it took me a minute or two to figure out what exactly is going on here. \"More Details\" should be showing up in `$Product.ExtendedDescription`. But what is `$Product.Length`? The length of the product name? The length of the description? Nope. It's the *actual physical dimension* length. That's right. Products have to have a physical length of 2.22 inches for the extended description to show up. This is actual production code, people. This is on a website that pulls in hundreds of thousands of dollars a year. Tens of thousands of hits per month. \n\nUnbelievable. \n\nedit: oh, and by the way, this code was in a `&lt;td&gt;` in a `&lt;tr&gt;` in a `&lt;table&gt;`, which itself was in a `&lt;td&gt;` in a `&lt;tr&gt;` in a `&lt;table&gt;`, which was in a `&lt;div&gt;` in a `&lt;div&gt;`, which was all in a **&lt;center&gt;** in a `&lt;div&gt;` in the main Ajax `&lt;form&gt;` of the `&lt;body&gt;` of the `&lt;html&gt;`.\n\nVisualization: \n\n    &lt;html&gt;\n        &lt;body&gt;\n            &lt;form&gt;\n                &lt;div&gt;\n                    &lt;center&gt;\n                        &lt;div&gt;\n                            &lt;div&gt;\n                                &lt;table&gt;\n                                    &lt;tr&gt;\n                                        &lt;td&gt;\n                                            &lt;table&gt;\n                                                &lt;tr&gt;\n                                                    &lt;td&gt;\n                                                        #if($Product.Length.ToString() == \"2.2200\")\n                                                            $Product.ExtendedDescription\n                                                        #else\n                                                            [[ConLib:ProductImage ShowImage=\"Image\"]]&lt;br /&gt;\n                                                        #end\n                                                    &lt;/td&gt;\n                                                &lt;/tr&gt;\n                                            &lt;/table&gt;\n                                        &lt;/td&gt;\n                                    &lt;/tr&gt;\n                                &lt;/table&gt;\n                            &lt;/div&gt;\n                        &lt;/div&gt;\n                    &lt;/center&gt;\n                &lt;/div&gt;\n            &lt;/form&gt;\n        &lt;/body&gt;\n    &lt;/html&gt;\n",
+        "created_utc": 1375815112,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Lotus Notes Traveler adds invisible passengers to its emails",
+        "author": "lyricalpanda",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1jl8kl/lotus_notes_traveler_adds_invisible_passengers_to/",
+        "text": "",
+        "created_utc": 1375478271,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Was browsing the source for this Node.js math library in NPM, then saw this.",
+        "author": "Jester_Don",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1j5wpf/was_browsing_the_source_for_this_nodejs_math/",
+        "text": "    //==Bound Functions==\n\n    //This will get the upper bound of the input numbers. It currently only supports whole numbers.\n    //numbers = ['1', '4', '5']\n    var upperbound = function(numbers){\n        var f = '';\n    \tfor (var i = 0; i &lt;= numbers.length; i++){\n    \t        numbers[i] = numbers[i] + 0.5;\n    \t\tif(i == numbers.length){\n    \t\t\tf += numbers[i];\n    \t\t}else{\n    \t\t\tf += numbers[i]+' *';\n    \t\t}\n    \t}\n    \treturn eval(f);\n    }\n\n    //This will get the lower bound of the input numbers. It currently  only supports whole numbers.\n    //numbers = ['1', '4', '5']\n    var lowerbound = function(numbers){\n\t    var f = '';\n\t    for (var i = 0; i &lt;= numbers.length; i++){\n\t\t    numbers[i] = numbers[i] - 0.5;\n\t\t    if(i == numbers.length){\n\t\t\t    f += numbers[i];\n\t\t    }else{\n\t\t\t    f += numbers[i]+' +';\n\t\t    }\n\t    }\n\t    return eval(f);\n    }",
+        "created_utc": 1374939615,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am ashamed that this code exists. The whole site is of the same quality.",
+        "author": "stackTrase",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1j1yo0/i_am_ashamed_that_this_code_exists_the_whole_site/",
+        "text": "    &lt;?php\n    if(isset($_GET['offset'])){\n    \tfor($i=0;$i&lt;=$_GET['offset'];$i++){\n    \t\techo \"&lt;span style='line-height:5px;'&gt;&lt;br /&gt;&lt;/span&gt;\";\n    \t}\n    }\n\nThe sick part is I wrote it. This was when I was beginning PHP and wrote sloppy lazy code.",
+        "created_utc": 1374786979,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Loops\"? Nope, never heard of 'em.",
+        "author": "nandryshak",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1iu61c/loops_nope_never_heard_of_em/",
+        "text": "I work as the only web developer and designer doing front end, back end, and graphic design for a company that sells cables online. We use an e-commerce shopping cart framework that runs on ASP.NET/C#. There's a company that specializes in this software, and they offer many customizations and plugins for it. We often contract them for custom stuff since I'm usually busy with other things and I haven't worked with this framework or ASP.NET before, so I don't really have the time to go try to make sense of the framework's terrible doc. This company overcharges and usually has terrible to mediocre products. I'm sure you know the type. A little piece of their About Us page:\n\n&gt;[Company] has the largest, most experienced team of [Framework] developers and hosting experts anywhere in the world!\n\nOne of their plugins (a sidebar that dynamically displays a category tree based on what page you're on) was adding 30+ seconds to our page load time! I haven't looked at the code for this but I assume it's bad.\n\nAnyway, my company sells cables. So we wanted a utility that would take price per foot and weight per foot as inputs and generate a dropdown list of options for some of the products. My boss wanted it to generate from 10 to 100 meters by 5m increments, 100 to 500 by 10m, and from 500 to 5000 by 25m.\n\nYou can probably see where this is going. Here's a snippet of the code that this company sent us:\n\n    //==============10 Ft\n    OptionChoice opt = new OptionChoice();\n    opt.OptionId = option.OptionId;\n    opt.Name = \"10 Foot (3.04 Meters) + $\" + (AlwaysConvert.ToDecimal(AddOptionBasePrice.Text) * 10).ToString(\"n2\");\n    opt.ThumbnailUrl = string.Empty;\n    opt.ImageUrl = string.Empty;\n    opt.PriceModifier = (AlwaysConvert.ToDecimal(AddOptionBasePrice.Text) * 10);\n    opt.WeightModifier = (AlwaysConvert.ToDecimal(AddOptionWeight.Text) * 10);\n    opt.SkuModifier = \"10Ft\";\n    opt.OrderBy = -1;\n    opt.Save();\n\nThere's 300+ of these snippets. One for each individual length option. These snippets alone take up more than **3000 lines**. \n\nI quickly replaced it with this dirty 25 line loop:\n\n    double metersPerFoot = 0.3048;\n    int tick = 5;\n    OptionChoice opt = new OptionChoice();\n\n    for (int currentLength = 10; currentLength &lt;= 5000; currentLength += tick) {\n        opt = new OptionChoice();\n        opt.OptionId = option.OptionId;\n        opt.Name = string.Format(\"{0} Foot ({1} Meters) + ${2}\", currentLength, (currentLength * metersPerFoot).ToString(\"f2\"), ((currentLength - 10) * AlwaysConvert.ToDecimal(AddOptionBasePrice.Text)).ToString(\"n2\"));\n        opt.ThumbnailUrl = string.Empty;\n        opt.ImageUrl = string.Empty;\n        opt.PriceModifier = (currentLength - 10) * AlwaysConvert.ToDecimal(AddOptionBasePrice.Text);\n        opt.WeightModifier = (currentLength - 10) * AlwaysConvert.ToDecimal(AddOptionWeight.Text);\n        opt.SkuModifier = string.Format(\"-{0}\", currentLength);\n        opt.OrderBy = -1;\n        opt.Save();\n\n        if (currentLength &gt;= 100) {\n            tick = 10;\n        }\n        if (currentLength &gt;= 500) {\n            tick = 25;\n        }\n    }\n\n\nThankfully, after these couple debacles and getting fed up with their prices, my boss has been coming to me directly for these custom projects. It'll probably take me longer, but the code will be at least passable and maintainable. \n\nThanks for reading. Now, please take the next 5 minutes to critique my shoddy C# or contemplate how people like this have paying programming jobs while so many talented developers are just scraping by. ",
+        "created_utc": 1374526193,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The kind of comment that deserves two exclamation points (and other discoveries)",
+        "author": "TrilliumsWilting",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1inqdr/the_kind_of_comment_that_deserves_two_exclamation/",
+        "text": "Some things I have discovered in the C# codebase at my new job:\n\n**How to securely store user's email passwords**\n\nHmm, I wonder what is in this XML file?\n\n    &lt;Account&gt;\n    &lt;Name&gt;My Account&lt;/Name&gt;\n    &lt;SMTPserver&gt;smtp.gmail.com&lt;/SMTPserver&gt;\n    &lt;Username&gt;mythrowawayaccount@gmail.com&lt;/Username&gt;\n    &lt;Password&gt;mythrowawaypassword&lt;/Password&gt;\n    &lt;POPserver&gt;pop.gmail.com&lt;/POPserver&gt;\n    &lt;Description /&gt;\n\nû_û\n\n**How to filter spam**\n\n    #region junkstrings\n\n    private string[] junkstrings = {\n                                     \"xx\", \"asd\", \"aaa\", \"bbb\", \"ccc\", \"shit\", \n                                     \"fuck\", \"blow\", \"zzz\", \"jgf\", \"gfj\", \"fgj\"\n                                     , \"ghj\", \"sdf\", \"cvb\", \"dfg\", \"dfh\", \"kjk\",\n                                        \"jkj\", \"jkl\", \"lkj\", \"ertert\", \"dvf\",\n                                     \"gfd\", \"fhg\", \"ghg\", \"hgf\", \"dfg\", \"dsd\", \n                                      \"sds\", \"hjh\", \"sex \", \"lesbian\", \"pussy\",\n                                     \"naked\", \"breasts\", \"girls\", \"horny\", \n                                     \"hardcore\", \"facial\", \"hentai\", \"amateur\",\n                                     \"xxx\", \"nude\", \"teens\"\n                                   };\n\n    #endregion\n\n            switch (type)\n            {\n              case CMFieldType.Email:\n                {\n                  string regEmail = @\"^([0-9a-zA-Z]+[-._+&amp;])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$\";\n                  Regex regex = new Regex(regEmail);\n                  bool isEmail = regex.IsMatch(sValue);\n                  bool isJunk = IsJunk(sValue);\n                  if (sValue.Length == 0) points = 0;\n                  if (!isEmail || isJunk) points = -points;\n                  break;\n                }\n            [ ... code here ... ]\n\n        private bool IsJunk(string test)\n        {\n           if (test.Length == 0) return false;\n           foreach (string junk in junkstrings)\n           {\n             if (test.IndexOf(junk) &gt; -1) return true;\n           }\n           return false;\n        }\n\nYes, those braces in the case are about as necessary as you'd think. Maybe an attempt to improve readability?\n\n**Urgent comments**\n\n        //regex validity colorization\n        try\n        {\n          Regex r = new Regex(uxIdentifierBox.Text);\n          uxIdentifierBox.BackColor = Color.LightGreen;\n        }\n        catch (ArgumentException)\n        {\n          //there's no LightRed!!\n          uxIdentifierBox.BackColor = ControlPaint.LightLight(Color.Red);\n        }\n        catch\n        {\n        }\n\nApparently he had never heard of \"Salmon\" or \"Pink\".  Also, catch {} is standard practice everywhere in the project. That being said, the code is fairly readable, and it could be a lot worse.",
+        "created_utc": 1374270038,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What works for 10 doesn't work for 10,000...",
+        "author": "IrritableGourmet",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1id185/what_works_for_10_doesnt_work_for_10000/",
+        "text": "Like the majority of work I do, this was a site written by a predecessor. Very good clients, but the code left a lot to be desired. They launched a new product a few months back that took their membership from 100 users to 100 new users *per day*. That's all well and good, but the code was falling apart along with their server. I managed to get them put onto a cloud hosting platform that can scale the resources with their load, but we still were experiencing odd network errors, timeouts, and error-messages-that-plain-should-not-be.\n\nI finally discovered the root cause of this when a user sent in an error message that basically meant \"The system automatically throttled your database connection because you exceeded the system limits\". Now, they're not on the top tier architecture but their current load shouldn't hit anywhere near that level. Shouldn't being the operative word.\n\nSo I start poking through the relevant code to find all the database calls and discover my predecessor's method of generating a unique user ID when a user registers: Generate a random number. Open a database connection and pass the number to a stored procedure that checks if it's unique. If the number isn't unique, GOTO 10 until it is.\n\nWhen the site only had ~100 users, this found a solution within a few dozen tries so no one noticed. Now that the user count is almost two orders of magnitude greater this loop is running longer, opening connections every time and not properly closing them. How much longer? A rough count from the debugging code I put in was 3000 times...\n\nper second...\n\nper user.\n\nAnd now that he decided to use this method instead of an autoincremented ID, I can't switch it back without a major rewrite and the client needed a solution ASAP. So I did the next best hack: move it all to the database. One call to a stored procedure that loops until it finds a unique number. Registration submissions went from 180+ seconds to &lt;1 second, and everyone is happy. For now...\n\nAnd that's one of the reasons I put in my two weeks today.\n\nEDIT: Apparently I need code, so here:\n\n    bool check = false;\n\n    while(check == false)\n    {\n        time.ToString(format);\n        username = time.ToString(format)+\"\"+RandomDigits(5);\n        check = Member.IsUniqueUsername(username);\n    }\n\n    ...\n\n    protected long RandomDigits(int number)\n    {\n        long randNum = 0;\n        Random random = new Random();\n        for (int i = 1; i &lt;= number; i++)\n        {\n            long t = 0;\n            if (i == 1)\n                t = random.Next(1, number);\n            else\n                t = random.Next(0,number);\n            randNum = randNum * 10 + t;\n        }   \n        return randNum; \n    }\n\n    ....\n\n    public static bool IsUniqueUsername(string email)\n    {\n        Database db = DatabaseFactory.CreateDatabase();\n        DbCommand dbCommand = db.GetStoredProcCommand(\"CRM_Members_IsUniqueUsername\", email);\n        return bool.Parse(db.ExecuteScalar(dbCommand).ToString());\n    }",
+        "created_utc": 1373918566,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Handle your errors",
+        "author": "scragar",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1i7qrb/handle_your_errors/",
+        "text": "Someone at works thinks raising exceptions is bad, it's better to handle your errors, so we have this:\n\n    class External1\n    {\n       Internal1 pointer;\n       protected Results _result;\n       public Results result\n       {\n          get\n          {\n             return _result;\n          }\n      }\n\n      class Internal1\n      {\n           protected Results _result;\n           public Results result\n           {\n               get\n               {\n                  return _result;\n               }\n           }\n\n           public internal1 (int objectId)\n           {\n              try\n              {\n                 // stuff\n              }\n              catch(Exception ex)\n              {\n                 _result = Results.Failure;\n              }\n            }\n\n         }\n\n      public External1 ()\n      {\n         Internal1 test = new Internal1(5);\n\n         if(test.Result == Results.Fail)\n         {\n            this._result = Results.Fail;\n            return;\n         }\n     }",
+        "created_utc": 1373718561,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is just nasty.",
+        "author": "falconfetus8",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ht1ln/this_is_just_nasty/",
+        "text": "This snippet of code is from Unity3D's official CharacterMotor class.  The whole CharacterMotor.js file is pretty ugly, but this snippet I just found is probably the worst I've seen so far.\n\n    function FixedUpdate () {\n    \tif (movingPlatform.enabled) {\n    \t\tif (movingPlatform.activePlatform != null) {\n    \t\t\tif (!movingPlatform.newPlatform) {\n    \t\t\t\tvar lastVelocity : Vector3 = movingPlatform.platformVelocity;\n    \t\t\t\t\n    \t\t\t\tmovingPlatform.platformVelocity = (\n    \t\t\t\t\tmovingPlatform.activePlatform.localToWorldMatrix.MultiplyPoint3x4(movingPlatform.activeLocalPoint)\n    \t\t\t\t\t- movingPlatform.lastMatrix.MultiplyPoint3x4(movingPlatform.activeLocalPoint)\n    \t\t\t\t) / Time.deltaTime;\n    \t\t\t}\n    \t\t\tmovingPlatform.lastMatrix = movingPlatform.activePlatform.localToWorldMatrix;\n    \t\t\tmovingPlatform.newPlatform = false;\n    \t\t}\n    \t\telse {\n    \t\t\tmovingPlatform.platformVelocity = Vector3.zero;\t\n    \t\t}\n    \t}\n    \t\n    \tif (useFixedUpdate)\n    \t\tUpdateFunction();\n    }    \n\n\nLook at it.  It's all crammed together.  There are only two lines with any whitespace in it DX",
+        "created_utc": 1373213263,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Working on a quote to make some changes to a VB 4.0 site. Noticed the database table 'numbers' and took a peek.",
+        "author": "IrritableGourmet",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1hfqvj/working_on_a_quote_to_make_some_changes_to_a_vb/",
+        "text": "    SELECT TOP 1000 * FROM [numbers]\n    1\n    2\n    3\n    &lt;snip&gt;\n    998\n    999\n    1000\n\n    SELECT COUNT(*) FROM [numbers]\n    100000\n\nAlso, can you guess what was in the [letters] and [weekdays] tables?",
+        "created_utc": 1372699361,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "we're working in groups in class, a classmate just gave me this codesnippet, saying it might be useful.",
+        "author": "iDONTbot",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1g1b62/were_working_in_groups_in_class_a_classmate_just/",
+        "text": "/* makeing menues form database */\n\nfunction make_menu($menulocation, $usergroup = 0, $parent = 0, $reset = false, $limit = 1) {\n\n    global $conn;\n    if($usergroup) {\n        $where = \" AND menu_usergroup = $usergroup\";\n    }\n    if($menulocation == 'cat') {\n        $page = 'listauktioner&amp;id=';\n    }\n    $query = \"SELECT menu_id, menu_name, menu_link, menu_parent, menu_sort, menu_cat, menu_usergroup FROM mo_menu WHERE menu_parent = '$parent' AND menu_cat = '$menulocation'\".$where;\n    $result = $conn-&gt;query($query) or die($conn-&gt;error());\n    if($result-&gt;num_rows == 0) {\n        return NULL;\n    }\n    static $menu;\n    if($reset) $menu = '';\n    static $i;\n    $i++;\n    $menu .= '&lt;ul&gt;';\n    while ($row = $result-&gt;fetch_assoc()) {\n        $menu .= '&lt;li&gt;&lt;a href=\"?page='.$page.$row['menu_link'].'\"&gt;'.$row['menu_name'].'&lt;/a&gt;&lt;/li&gt;';\n        $parent = $row['menu_id'];\n        if($i &lt;= $limit) {\n            make_menu($menulocation, $parent, $limit);\n        }\n    }\n    $menu .= '&lt;/ul&gt;';\n    return $menu;\n}\n\ni'm speechless",
+        "created_utc": 1370856394,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP uploader help",
+        "author": "webfreak7",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1fwth0/php_uploader_help/",
+        "text": "",
+        "created_utc": 1370666963,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wifi randomly loses connection. Solution found in 7 lines of Perl.",
+        "author": "beebop1",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1fthsu/wifi_randomly_loses_connection_solution_found_in/",
+        "text": "    while(1)\n    {\n        `ifdown wlan0`;\n        `iwconfig wlan0 essid [REDACTED]`;\n        `ifup wlan0`\n        sleep(10);\n    }\n\nNetwork SSID removed for obvious reasons.",
+        "created_utc": 1370554057,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MongoDB driver logic gone WTF",
+        "author": "NotiLoch",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ferr5/mongodb_driver_logic_gone_wtf/",
+        "text": "This bit of magic was discovered in a MongoDB driver (x-post r/programming)\r\r    \rif (!((_ok) ? true : (Math.random() &amp;gt; 0.1)))\r \rThat's Monday code if I've ever seen it.\r\rThe false condition theoretically logs 10% of all errors, true condition returns.",
+        "created_utc": 1370015982,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Don't delete me because my programmer said so in a comment",
+        "author": "Rockman507",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1fb6kd/dont_delete_me_because_my_programmer_said_so_in_a/",
+        "text": "So new job, had boss point me at a pretty block box with a laser in and it and told 'make it work, btw there have been 4 people over 3 years attempt the same thing but due to a computer crash and no physical logs we lost all their data'. So fml to behind with...\n\nLooking through the monstrosity of code, I notice one line for a if...then... statement \n\n    ;don't delete me, it works somehow\n\nAfter a week of going through this library, I decide to see what this line really did. It ended up inverting the data but applies the same conditional statement to it, effectively masking out any data from the data analysis, leading to 4 years of failed attempts at making that part of the analysis to work.\n\nMoral of story, comments lie. Line now reads\n\n    ;don't delete me, it works somehow &lt;- VICIOUS LIES!",
+        "created_utc": 1369879544,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do I query a MySQL database from jQuery?",
+        "author": "thestamp",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ex0xh/how_do_i_query_a_mysql_database_from_jquery/",
+        "text": "http://stackoverflow.com/questions/16719771/how-do-i-query-a-mysql-database-from-jquery\n\n&gt;I'm building a website for a friend and am trying to get some data from a database into the site.\n&gt;\n&gt;I've made an index.html file and installed jQuery to do the query. Now I want to be able to query the MySQL database on my server. I've even tried passing in root username and password, like this:\n&gt;\n&gt;$.query(\"localhost:3306\", \"root\", \"d1cky123\", \"SELECT * FROM Blog_Posts\")\n&gt;\n&gt;but it doesn't work. I've read that you need a MySQL driver installed in order to write the query - maybe this is the problem?\n&gt;\n&gt;I'm running Windows XP with WAMP.\n&gt;\n&gt;Please help!\n\n[Why can't I hold all these wrongs?](http://t.qkme.me/3ujelh.jpg)\n\n**Edit:** Looks like the question got removed. Oh well, I got the question before it disappeared!",
+        "created_utc": 1369332432,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Going over some inherited code. I think I'm going to hate the rest of my week.",
+        "author": "Cheffheid",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1egxce/going_over_some_inherited_code_i_think_im_going/",
+        "text": "    h1, h2, h3, h4, h5, h6 {\n    \t\n    \tfont-family: \"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif;\n    \tfont-size: 14px;\n    \tcolor: #dc8b87;\n    \tfont-weight: normal;\n    \tpadding: 12px 25px 6px 25px;\n    }\n    \n    h1 {\tfont-size: 29px; line-height: 31px; padding: 18px 25px 10px 25px;\n    text-indent:-9999px;\n     }\n    h1 {\tfont-size: 18px; line-height: 31px; padding: 18px 25px 10px 25px; }\n    h2 {\tfont-size: 18px; line-height: 28px; padding: 16px 25px 10px 25px; }\n    h3 {\tfont-size: 18px; line-height: 25px; padding: 14px 25px 10px 25px; }\n    h4 {\tfont-size: 18px; line-height: 22px; padding: 12px 25px 10px 25px; }\n    h5 {\tfont-size: 18px; line-height: 19px; padding: 10px 25px 10px 25px; }\n    h6 {\tfont-size: 18px; line-height: 16px; padding: 8px 25px 10px 25px; }",
+        "created_utc": 1368733194,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Has anyone really been far even as decided to use even go want to do look more like?",
+        "author": "Shurikane",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1e08wr/has_anyone_really_been_far_even_as_decided_to_use/",
+        "text": "Some years ago, the company had just begun embarking on unit testing.  Automated tests, ho!  We were happy.  Intimidated, but happy.  The code hadn't been thought out around unit-testing and it showed.\n\nSo it was inevitable that a combination of price calculation algorithms, an early morning and a lack of coffee caused one of your programmers to write a unit test with this title:\n\n    testRelocateStockPassingRelocationDetailWithAStockWithMethodValidateQuantityToRelocateWhichReturnsAnEmptyValidationResultAndAnAvailableQuantityOfStockOf2RelocationDetailQuantityOf1AndOneRelocationDetailToAndDoRelocateNotThrowingIllegalArgumentException\n\nThat's 252 characters.\n\nAmazingly, it wasn't noticed until several weeks later, at which point the entire office burst into laughter and this went down and the longest unit test title in history.",
+        "created_utc": 1368114372,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Java Program help...",
+        "author": "louis9820",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1dyfj5/java_program_help/",
+        "text": "",
+        "created_utc": 1368046685,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Story of HOMPS: Sequential Ordering for Dummies",
+        "author": "sircrowbar",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1djxui/the_story_of_homps_sequential_ordering_for_dummies/",
+        "text": "A little backstory: At my previous job, I had the role of Software Analyst, which the company translated freely as \"Doing both Programming and IT Support\". It was at a manufacturing plant for a Large Healthcare Company and my charge was to program and maintain systems for their special, proprietary system that I'm going to call **HOMPS** (Which, in this case, would stand for Healthcare Outcome-Management Process System.) HOMPS is a unique \"cookbook\" program that sent instructions down the line for medical goods to make sure the FDA can properly track what we're doing on each product. It was developed by a conglomeration of several major corporations and then quickly abandoned by all but one when they realized how terrible of a solution it was. The program left a lot to be desired. It relied on the Windows system time to be in a certain date format, the DB2 database was atrocious (On a good day, it was about 12-16 GBs, with 90% of it being unused data), and there was lots of legacy spaghetti code that would make a programmer's mother cry, then make the programmer cry and for some reason the programmer's mother would cry again without being called.\n\nIt didn't help it used its own proprietary language within it (\"HOMPS Action Script\"), which is basically VB6's brain-deficient cousin. There's no supports for arrays in it. Let that sink in.\n\nI have lots of stories from this place, but I'm going to start with a this one. Apologies for the lack of code in this one, but it'll give you a good idea for the mindset of this product:\n\nEvery product batch has a unique name associated with it, taken from various sources. It's usually the plant location (Two Letters) + Millennial Digit of the Year (2) + Last Two Digits of the Year + Number of Days Since the First of the Year + 2 numbers for the batches. So, something like KX21312201. Kind of weird, but its works. Okay, fine. Whatever. The problem occurs when you go beyond 100 batches in a single area. Since this string was hardcoded to my knowledge, the inclusion of a third digit caused major errors to happen in the HOMPS batch. The other areas of the plant never approached that number of batches in a day, but the new one I was in charge of setting up with HOMPS would. Fortunately, we had one of the original programmers of HOMPS on staff in our plant. I figured I would ask him to see if we had this situation in other plants. No prob! I had figured we would be able to either extend the string for our purposes or be able to use a hexadecimal or something on batch creation and have the issue solved quickly.\n\nWell, he had a solution, but it was not at *all* what I expected. Unbeknownst to me in the table-laden system, there was a special table called HOMPS_PROD_SEQ. There was zero official documentation that I could find on it, but it was well known among the HOMPS Inner Group. Inside this table was two columns that look a little something like this:\n\n    SEQ_CURR   SEQ_NEXT\n    0           1   \n    1           2   \n    2           3   \n    3           4   \n    4           5   \n    5           6   \n    6           7   \n    7           8   \n    8           9   \n    9           0   \n\n\nYou may have already figured it out, but this table is used to check the last two numbers of the Product Batch String and determine what number to go to next. None of that incremental programmatic crap, suckas! Let's just do a lot of database calls instead! The original programmer looked *so* pleased as he showed me this code, as well as the text file that I should refer to when updating this table:\n    \n    \"0\",\"1\",\n    \"1\",\"2\",\n    \"2\",\"3\",\n    \"3\",\"4\",\n    \"4\",\"5\",\n    \"5\",\"6\",\n    \"6\",\"7\",\n    \"7\",\"8\",\n    \"8\",\"9\",\n    \"9\",\"A\",\n    \"A\",\"B\",\n    \"B\",\"C\",\n    \"C\",\"D\",\n    \"D\",\"E\",\n    \"E\",\"F\",\n    \"F\",\"G\",\n    \"G\",\"H\",\n    \"H\",\"I\",\n    \"I\",\"J\",\n    \"J\",\"K\",\n    \"K\",\"L\",\n    \"L\",\"M\",\n    \"M\",\"N\",\n    \"N\",\"O\",\n    \"O\",\"P\",\n    \"P\",\"Q\",\n    \"Q\",\"R\",\n    \"R\",\"S\",\n    \"S\",\"T\",\n    \"T\",\"U\",\n    \"U\",\"V\",\n    \"V\",\"W\",\n    \"W\",\"X\",\n    \"X\",\"Y\",\n    \"Y\",\"Z\",\n    \"Z\",\"0\"\n\nBonus Note: If I recall correctly,this checks *both* numbers at the end of the product batch string one at a time, so it has to make at least two database calls to get the next sequential batch number. \n    \nBy this point, I had already learned my lesson for trying to reinvent the corporate wheel (That's another story), so I just implemented this solution. It *did* work, though the urge to make the batches increment by order of \"F U C K H O M P S\" was incredible.\n\nThis one is relatively tame for the system. I have a lot more where that came from.",
+        "created_utc": 1367506659,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Worse statements than goto",
+        "author": "Arandur",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1diznc/worse_statements_than_goto/",
+        "text": "When I was speaking with my Programming Languages professor a few days ago, he mentioned that there was an analogue to the goto statement, called \"comefrom\". What it does, if you're not familiar, is it rips program flow *from* the indicated line and brings it to the position of the comefrom statement. Thus:\n\n    1 x = 5\n    2 \n    3 x = 7\n    4 \n    5 comefrom 2\n    6 \n    7 //END; x now is equal to five\n\nObviously this is terrible, terrible practice, and few languages implement it. It gets even worse when you can have *dynamic* comefroms -- comefrom statements where the line number (or label, I guess) may be expressed as a variable or variable expression.\n\nI thought that was the worst control-breaking statement possible. Until today, when someone in my study group posited a \"gofrom\" statement, that takes two operands: one source, and one destination:\n\n    1 x = 5\n    2 \n    3 x = 7\n    4 \n    5 gofrom 2 6\n    6\n    7 //END; x is now equal to five\n\nIt is now my life's goal to create a language where this is the only program flow control statement.",
+        "created_utc": 1367462909,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This wordpress theme isn't very DRY....",
+        "author": "macNchz",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1cvaai/this_wordpress_theme_isnt_very_dry/",
+        "text": "    function col_one_third($atts, $content = null)\n    {\n        return '&lt;div class=\"one_third\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_third', 'col_one_third');\n    \n    function col_one_third_last($atts, $content = null)\n    {\n        return '&lt;div class=\"one_third column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_third_last', 'col_one_third_last');\n    \n    function col_two_third($atts, $content = null)\n    {\n        return '&lt;div class=\"two_third\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('two_third', 'col_two_third');\n    \n    function col_two_third_last($atts, $content = null)\n    {\n        return '&lt;div class=\"two_third column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('two_third_last', 'col_two_third_last');\n    \n    function col_one_half($atts, $content = null)\n    {\n        return '&lt;div class=\"one_half\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_half', 'col_one_half');\n    \n    function col_one_half_last($atts, $content = null)\n    {\n        return '&lt;div class=\"one_half column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_half_last', 'col_one_half_last');\n    \n    function col_one_fourth($atts, $content = null)\n    {\n        return '&lt;div class=\"one_fourth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_fourth', 'col_one_fourth');\n    \n    function col_one_fourth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"one_fourth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_fourth_last', 'col_one_fourth_last');\n    \n    function col_three_fourth($atts, $content = null)\n    {\n        return '&lt;div class=\"three_fourth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('three_fourth', 'col_three_fourth');\n    \n    function col_three_fourth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"three_fourth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('three_fourth_last', 'col_three_fourth_last');\n    \n    function col_one_fifth($atts, $content = null)\n    {\n        return '&lt;div class=\"one_fifth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_fifth', 'col_one_fifth');\n    \n    function col_one_fifth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"one_fifth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_fifth_last', 'col_one_fifth_last');\n    \n    function col_two_fifth($atts, $content = null)\n    {\n        return '&lt;div class=\"two_fifth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('two_fifth', 'col_two_fifth');\n    \n    function col_two_fifth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"two_fifth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('two_fifth_last', 'col_two_fifth_last');\n    \n    function col_three_fifth($atts, $content = null)\n    {\n        return '&lt;div class=\"three_fifth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('three_fifth', 'col_three_fifth');\n    \n    function col_three_fifth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"three_fifth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('three_fifth_last', 'col_three_fifth_last');\n    \n    function col_four_fifth($atts, $content = null)\n    {\n        return '&lt;div class=\"four_fifth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('four_fifth', 'col_four_fifth');\n    \n    function col_four_fifth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"four_fifth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('four_fifth_last', 'col_four_fifth_last');\n    \n    function col_one_sixth($atts, $content = null)\n    {\n        return '&lt;div class=\"one_sixth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_sixth', 'col_one_sixth');\n    \n    function col_one_sixth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"one_sixth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('one_sixth_last', 'col_one_sixth_last');\n    \n    function col_five_sixth($atts, $content = null)\n    {\n        return '&lt;div class=\"five_sixth\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }\n    \n    add_shortcode('five_sixth', 'col_five_sixth');\n    \n    function col_five_sixth_last($atts, $content = null)\n    {\n        return '&lt;div class=\"five_sixth column-last\"&gt;' . do_shortcode($content) . '&lt;/div&gt;&lt;div class=\"clear\"&gt;&lt;/div&gt;';\n    }\n    \n    add_shortcode('five_sixth_last', 'col_five_sixth_last');\n    \n    function col_divider($atts, $content = null)\n    {\n        return '&lt;div class=\"divider\"&gt;' . do_shortcode($content) . '&lt;/div&gt;';\n    }",
+        "created_utc": 1366645757,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The long day... (PHP)",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ci7e9/the_long_day_php/",
+        "text": "I've been coding for almost 12 hours straight today without leaving my desk... I had a complex set of binary compares I was running, then the requirements changed and I simplified my compares. I was rubber ducking my code to find a bug, then hit this gem:\n\n    if(!($x xor $y)){\n        ...\n    }\n\nYa know, because == is WAY to mainstream. Ugh. I'm going home.   ",
+        "created_utc": 1366164390,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who needs readability? Invariably name the variables a variation of various awful names.",
+        "author": "B_Stiles",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1b7110/who_needs_readability_invariably_name_the/",
+        "text": "Recently, something new came to my attention that sounded interesting to me, and that was the existence of chess engines, and programming different variations on the well-known original game of chess.  It sounded possibly fun, so I checked it out and came across the chess engine called [Fairy-Max](http://home.hccnet.nl/h.g.muller/CVfairy.html).\n\nI should've known I was in trouble when I saw the page layout, but I was undeterred.  I wanted to continue digging and find out what language is it in? What kind of development environment does it use?  Where on earth is actual code?!?\n\nIn my attempt to make heads or tails of this, I found the [source code](http://home.hccnet.nl/h.g.muller/fmax4_8w.c).\n\nOk, it's written in C, I can certainly wrap my head around this....oh....oh god.....who names variables like that?!?\n\nFor those who don't feel like scrolling through the link, let's look at a sample of it, shall we?\n\n    D(k,q,l,e,E,z,n)        /* recursive minimax search, k=moving side, n=depth*/\n    int k,q,l,e,E,z,n;      /* (q,l)=window, e=current eval. score, E=e.p. sqr.*/\n    {                       /* e=score, z=prev.dest; J,Z=hashkeys; return score*/\n    int j,r,m,v,d,h,i,F,G,P,V,f=J,g=Z,C,s,flag,FF;\n    char t,p,u,x,y,X,Y,H,B;\n    struct _*a=A+(J+(k+S)*E&amp;U-1);                 /* lookup pos. in hash table*/\n    q-=q&lt;e;l-=l&lt;=e;                               /* adj. window: delay bonus */\n    d=a-&gt;D;m=a-&gt;V;X=a-&gt;F;Y=a-&gt;Y;                  /* resume at stored depth   */\n    if(a-&gt;K-Z|z&amp;S  |                              /* miss: other pos. or empty*/\n    !(m&lt;=q|X&amp;8&amp;&amp;m&gt;=l|X&amp;S))                       /*   or window incompatible */\n    d=Y=0;                                       /* start iter. from scratch */\n    X=a-&gt;X;                                       /* start at best-move hint  */\n    W(d++&lt;n||d&lt;3||              /*** min depth = 2   iterative deepening loop */\n    z&amp;S&amp;&amp;K==I&amp;&amp;(GetTickCount()-Ticks&lt;tlim&amp;d&lt;=MaxDepth|| /* root: deepen upto time   */\n    (K=X,L=Y&amp;~S,Score=m,d=3)))                  /* time's up: go do best    */\n    {x=B=X;                                       /* start scan at prev. best */\n    h=Y&amp;S;                                       /* request try noncastl. 1st*/\n    P=d&gt;2&amp;&amp;l+I?D(16-k,-l,1-l,-e,2*S,2*S,d-3):I;  /* search null move         */\n    m=-P&lt;l|R&lt;5?d-2?-I:e:-P;   /*** prune if &gt; beta  unconsidered:static eval */\n    SHAMAX( if(pl[k]&lt;=1&amp;pl[16-k]&gt;1)m=I-1; )      /* bare king loses          */\n    N++;      \n\nAnd it just. Keeps. Going.\n\nThank god he at least commented it.  Not that it helps much.",
+        "created_utc": 1364499146,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "bad code, bad code everywhere",
+        "author": "Silver0ne",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1b64eh/bad_code_bad_code_everywhere/",
+        "text": "Thats how i feel while reading the sourcecode of my current customer (big insurance company)\nhttp://www.quickmeme.com/meme/3tk91t/\n\nSeriously, their code has neither performance nor maintainability.\n\nFor example: They do a DB Query, loop over the results and then, within that loop, they call a method which does the same Query again, instead of reusing the result of the previous one.\nNot even the SQL String is reused, its a copy &amp; paste job! So if you change a query at one place you might forget to change it in other places too :P\n\nYes, thats NO joke, its really that bad, and they blame Java for it being so slow.\n\"Optimizing\" this piece of shit to get 40+ times the performance is a piece of cake here... no special skills needed, just common sense! \n\nEdit:\n\nHere another Example of the bad code quality:\nhttp://i.imgur.com/3sUldaK.png\nThe above part is something i would call a toString method. The output, a comma separated String, is used to fill a textbox in a form.\n\n\nThe String looks like this (numbers are zeroed and address/name are faked by me for anonymizing)\nBLZ: 0000000, KtoNr: 0000000, BIC: 0000000, IBAN: 0000000, Land: XX, The bank name, XX-0000 MyCity, Somestreet 8\n\n\nThen at some other place of the application, the value of the textbox is used as input. However they only wanted to have the bank name and city. So they split up the string by ',' and guess the position of the wanted value. Notice that not all of the values are always there and so the positions my change. \nSo they cut out all values having a title i.e. 'IBAN:', so this remains:\n\nThe bank name, XX-0000 MyCity, Somestreet 8\n\nNow the name always had the first index in the split and the City the second.\n\n\nHowever some one added the persons name owning the bank account to the string:\n\nBLZ: 0000000, KtoNr: 0000000, BIC: 0000000, IBAN: 0000000, John,Doe, Land: XX, The bank name, XX-0000 MyCity, Somestreet 8\n\n\nResulting in:\n\nJohn,Doe, The bank name, XX-0000 MyCity, Somestreet 8\n\nThus the first index now holds the Firstname, not the bank name.\nAs said its however not guaranteed that all values are always there, thus now the bankname could be the first or the second index.\n\n\nIn other words they are fucked now and suffer from the epic miss decision using this Display string for further processing instead of working with the Bank class holding each value in a separate variable.\n\n\n\n\n\n",
+        "created_utc": 1364465441,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Next if from roguelike (NetHack)",
+        "author": "Bulwersator",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1b3z01/next_if_from_roguelike_nethack/",
+        "text": "\t\t\tif ((ttmp-&gt;ttyp != RUST_TRAP\n\t\t\t\t\t|| mdat == &amp;mons[PM_IRON_GOLEM])\n\t\t\t\t&amp;&amp; ttmp-&gt;ttyp != STATUE_TRAP\n\t\t\t\t&amp;&amp; ((ttmp-&gt;ttyp != PIT\n\t\t\t\t    &amp;&amp; ttmp-&gt;ttyp != SPIKED_PIT\n\t\t\t\t    &amp;&amp; ttmp-&gt;ttyp != TRAPDOOR\n\t\t\t\t    &amp;&amp; ttmp-&gt;ttyp != HOLE)\n\t\t\t\t      || (!is_flyer(mdat)\n\t\t\t\t    &amp;&amp; !is_floater(mdat)\n\t\t\t\t    &amp;&amp; !is_clinger(mdat))\n\t\t\t\t      || In_sokoban(&amp;u.uz))\n\t\t\t\t&amp;&amp; (ttmp-&gt;ttyp != SLP_GAS_TRAP ||\n\t\t\t\t    !resists_sleep(mon))\n\t\t\t\t&amp;&amp; (ttmp-&gt;ttyp != BEAR_TRAP ||\n\t\t\t\t    (mdat-&gt;msize &gt; MZ_SMALL &amp;&amp;\n\t\t\t\t     !amorphous(mdat) &amp;&amp; !is_flyer(mdat)))\n\t\t\t\t&amp;&amp; (ttmp-&gt;ttyp != FIRE_TRAP ||\n\t\t\t\t    !resists_fire(mon))\n\t\t\t\t&amp;&amp; (ttmp-&gt;ttyp != SQKY_BOARD || !is_flyer(mdat))\n\t\t\t\t&amp;&amp; (ttmp-&gt;ttyp != WEB || (!amorphous(mdat) &amp;&amp;\n\t\t\t\t    !webmaker(mdat)))\n\t\t\t) {\n\nhttp://nethackwiki.com/wiki/Mon.c#line1165",
+        "created_utc": 1364393337,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wrote this one in freshman year of high school, thought I was so clever.",
+        "author": "Cyphus",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ambeg/wrote_this_one_in_freshman_year_of_high_school/",
+        "text": "    void MoveSel(char dir){\n    char x1,y1,x2,y2,round;\n    //loops through erasing and drawing rectangles and changing size and location as needed, pausing after each loop to keep things from being too fast.\n        switch (focus){\n            case 0:\n                x1=59;y1=49;x2=100;y2=60;\n                for (loop=0;loop&lt;240;loop++){\n                    if (!(loop%20)||!(loop%30)){\n                        GrayRect_XOR(x1,y1,x2,y2);\n                        if (!(loop%20)){\n                            if (dir){\n                                y1++;y2++;\n                            }else{\n                                y1+=2;y2+=2;\n                            }\n                        }\n                        if (!(loop%30)){\n                            if (dir){\n                                x1--;x2++;\n                            }else if (!(loop%60)){\n                                x1++;x2--;\n                            }\n                        }\n                        GrayRect_XOR(x1,y1,x2,y2);\n                    }\n                    for (round=0;round&lt;paws;round++){\n                        rand();\n                    }\n                }\n                if (dir){\n                    focus++;\n                }else{\n                    focus=2;\n                }\n                break;\n            case 1:\n                x1=51;y1=61;x2=108;y2=72;\n                for (loop=0;loop&lt;240;loop++){\n                    if (!(loop%20)||((!(loop%30))&amp;&amp;!dir)){\n                        GrayRect_XOR(x1,y1,x2,y2);\n                        if (!(loop%20)){\n                            if (dir){\n                                y1++;y2++;x1++;x2--;\n                            }else{\n                                y1--;y2--;\n                            }\n                        }\n                        if ((!(loop%30))&amp;&amp;!dir){\n                            x1++;x2--;\n                        }\n                        GrayRect_XOR(x1,y1,x2,y2);\n                    }\n                    for (round=0;round&lt;paws;round++){\n                        rand();\n                    }\n                }\n                if (dir){\n                    focus++;\n                }else{\n                    focus--;\n                }\n                break;\n            case 2:\n                x1=63;y1=73;x2=96;y2=84;\n                for (loop=0;loop&lt;240;loop++){\n                    GrayRect_XOR(x1,y1,x2,y2);\n                    if (!(loop%10)){\n                        if (dir){\n                            y1--;y2--;\n                            if (!(loop%60)){\n                                x1--;x2++;\n                            }\n                        }else if (!(loop%20)){\n                            y1--;y2--;x1--;x2++;\n                        }\n                    }\n                    GrayRect_XOR(x1,y1,x2,y2);\n                    for (round=0;round&lt;paws;round++){\n                        rand();\n                    }\n                }\n                if (dir){\n                    focus=0;\n                }else{\n                    focus--;\n                }\n                break;\n        }\n\n    }\n\nI guess I had a hatred for readability and spaces. The whole thing was also a mixture of tabs and spaces.\n\nEdit: I ran the old binary and made an animated gif of what it actually does: http://i.imgur.com/nVRvTQM.gif",
+        "created_utc": 1363728734,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Punny code",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1ajihr/punny_code/",
+        "text": "I love punny code, sometimes going to elaborate lengths to construct scenarios for it, though not everyone shares my enthusiasm. Got some examples of punny code, yours or otherwise?\n\nJava survival game:\n\n    public abstract class Humanoid\n    {\n        protected Set&lt;Food&gt; edibleFoods;\n        protected boolean justAte;\n        protected int hunger;\n        protected int health;\n        protected Thrownup up;\n\n        public Humanoid()\n        {\n            //an abstract humanoid can eat anything\n            edibleFoods = EnumSet.allOf(Food.class);\n            hunger = 0;\n            health = 100;\n            justAte = false;\n            up = new Thrownup();\n        }\n\n        public Food eat(Food food)\n        {\n            try\n            {\n                //eater must be hungry and food must be palatable to eater\n                if ( hunger &gt; 0 &amp;&amp; edibleFoods.contains(food) )\n                {\n                    --hunger;\n                    justAte = true;\n                }\n                else\n                {\n                    throw up;\n                }\n            }\n            catch (Thrownup e)\n            {\n                //stomach acid burns\n                this.modifyHealth(-10);\n            }\n            return Food.Generic_Crumbs;\n        }\n    }\n\nC++:\n\n    class What : public std::exception\n    {\n    public:\n        virtual const char *what() const throw() override { return desc.c_str(); }\n    };\n\n    ...\n\n    try\n    {\n        What up;\n        throw up;\n    }\n    catch (What &amp;what)\n    {\n        std::cerr &lt;&lt; what.what() &lt;&lt; std::endl;\n    }",
+        "created_utc": 1363634841,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Oh, My.",
+        "author": "RoadieRich",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1aan2w/oh_my/",
+        "text": "From [this question](http://stackoverflow.com/questions/15415825/c-sharp-is-there-a-way-of-shortening-my-code) on stack overflow, thought it was worthy of a post: http://pastebin.com/C9vr0PTG\n\nHighlights:\n\n    if ((xCoordinate == 0) &amp;&amp; (yCoordinate == 0))\n    {\n        Console.Write(\"[ ][ ][ ][ ][ ][ ][ ][T][ ][ ][ ][ ][ ] 5\\n\");\n        Console.Write(\"[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ] 4\\n\");\n        Console.Write(\"[ ][ ][ ][ ][T][ ][ ][ ][ ][T][ ][ ][ ] 3\\n\");\n        Console.Write(\"[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ] 2\\n\");\n        Console.Write(\"[ ][ ][T][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ] 1\\n\");\n        Console.Write(\"[T][ ][ ][ ][ ][ ][ ][X][ ][ ][ ][T][ ] 0\\n\");\n        Console.Write(\"[ ][ ][ ][ ][T][ ][ ][ ][ ][ ][ ][ ][ ]-1\\n\");\n        Console.Write(\"[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]-2\\n\");\n        Console.Write(\"[ ][ ][T][ ][ ][ ][T][ ][ ][ ][T][ ][ ]-3\\n\");\n        Console.Write(\"[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]-4\\n\");\n        Console.Write(\"-7 -6 -5 -4 -3 -2 -1  0  1  2  3  4  5\\n\\n\");\n    }\n\nrepeated 130 times, with different x and y coordinates...\n\n\twhile ((xCoordinate == 0) &amp;&amp; (yCoordinate == 5))\n\t{\n\t\tcommand = Console.ReadLine();\n\t\tswitch (command.ToLower())\n\t\t{\n\t\t\tcase (\"visit inn\"):\n\t\t\t\tInn3();\n\t\t\t\tbreak;\n\n\t\t\tcase (\"visit shop\"):\n\t\t\t\tshop3();\n\t\t\t\tbreak;\n\n\t\t\tdefault:\n\t\t\t\tGoDirectionUpper();\n\t\t\t\tbreak;\n\t\t}\n\t}\nAlso repeated 130 times.\n\nSomeone was *extremely* patient.",
+        "created_utc": 1363282267,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I just want the pretty colours...",
+        "author": "outofbandii",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1a9fhu/i_just_want_the_pretty_colours/",
+        "text": "This sets a user's default video display size.\n\n    &lt;form method=\"post\" action=\"&lt;?php the_permalink(); ?&gt;\"&gt;\n        &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;\n            &lt;?php\n                $current_user = wp_get_current_user();\n                $user_video_pref = get_user_meta($current_user-&gt;ID, 'namespace_video_size_pref', true);\n                $arr = array(\"960x540\",\"720x406\",\"320x180\", \"Auto\");\n                echo \"\\n\";\n                foreach ($arr as $value) {\n                    echo \"\\n&lt;td id='td-\".$value;\n                    echo \"' onMouseOver=\\\"this.style.backgroundColor='#f9f9f9'\\\"; \";\n                    echo \"  onMouseOut=\\\"this.style.backgroundColor='#DCDCDC'; if (document.getElementById('namespace_video_size_pref\".$value.\"').checked) {document.getElementById('td-960x540').style.backgroundColor='#DCDCDC';document.getElementById('td-720x406').style.backgroundColor='#DCDCDC';document.getElementById('td-320x180').style.backgroundColor='#DCDCDC';document.getElementById('td-Auto').style.backgroundColor='#DCDCDC';this.style.backgroundColor='#f9f9f9'; }\\\" \";\n                    echo \"  onClick=\\\"this.style.backgroundColor='#DCDCDC'; if (document.getElementById('namespace_video_size_pref\".$value.\"').checked) {document.getElementById('td-960x540').style.backgroundColor='#DCDCDC';document.getElementById('td-720x406').style.backgroundColor='#DCDCDC';document.getElementById('td-320x180').style.backgroundColor='#DCDCDC';document.getElementById('td-Auto').style.backgroundColor='#DCDCDC';this.style.backgroundColor='#f9f9f9'; }\\\" \";\n                    echo \" style='padding:0; border:0;\";\n                    if ($value==$user_video_pref) echo \" background-color:#f9f9f9; border: 2px solid #444' class='namespace-selected-video-option\";\n                    echo \"'&gt;\\n&lt;label for='namespace_video_size_pref\".$value.\"'&gt;\";\n\n                    if ($value==\"960x540\") \techo \"&lt;h3 style='margin:0 0 0 45px;'&gt;Large&lt;/h3&gt;\";\n                    if ($value==\"720x406\") \techo \"&lt;h3 style='margin:0 0 0 45px;'&gt;Medium&lt;/h3&gt;\";\n                    if ($value==\"320x180\") \techo \"&lt;h3 style='margin:0 0 0 45px;'&gt;Small&lt;/h3&gt;\";\n                    if ($value==\"Auto\") \techo \"&lt;h3 style='margin:0 0 0 45px;'&gt;Auto&lt;/h3&gt;\";\n\n                    echo '&lt;img src=\"http://images.namespace.com/';\n                    echo $value.'.gif\" alt=\"Choose image size\" style=\"border:1px solid #585F6B;\" /&gt; &lt;br/&gt;';\n                    echo '&lt;input type=\"radio\" style=\"padding:10px; margin: 5px 0 0 70px \" name=\"namespace_video_size_pref\" id=\"namespace_video_size_pref'.$value.'\" value=\"'.$value.'\"';\n                    if ($value==$user_video_pref) echo \" checked \";\n                    echo \"&gt;&lt;br /&gt;&amp;nbsp; &lt;br /&gt;&lt;/label&gt;\";\n                    echo \"\\n&lt;/td&gt;\\n\";\n                }\n            ?&gt;\n        &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;\n        &lt;input name=\"updateuser\" type=\"submit\" id=\"updateuser\" class=\"submit button\" value=\"Update\" /&gt;\n        &lt;input name=\"action\" type=\"hidden\" id=\"action\" value=\"update-user\" /&gt;\n    &lt;/form&gt;",
+        "created_utc": 1363230069,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm an administrator of a small image host and I randomly stumbled across this in a public gallery...",
+        "author": "le1ca",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1a45he/im_an_administrator_of_a_small_image_host_and_i/",
+        "text": "I decided to check out some of the recent public posts and found this image, containing some code which caught me off guard:\n\nhttp://static.inky.ws/image/3776/image.jpg\n\nA copy of the code, for the lazy:\n\n    while(1){\n        while(2){\n            while(3){\n                while(4){\n                    print \"A really really really really really really really really really long string!\\n\";\n                }\n            }\n        }\n    }",
+        "created_utc": 1363046643,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If from roguelike (UnNetHack)",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19z4jc/if_from_roguelike_unnethack/",
+        "text": "    \t                    if ((int)mtmp2-&gt;m_lev &gt;= (int)mtmp-&gt;m_lev+2 ||\n    \t                        (mtmp2-&gt;data == &amp;mons[PM_FLOATING_EYE] &amp;&amp; rn2(10) &amp;&amp;\n    \t                         mtmp-&gt;mcansee &amp;&amp; haseyes(mtmp-&gt;data) &amp;&amp; mtmp2-&gt;mcansee\n    \t                         &amp;&amp; (perceives(mtmp-&gt;data) || !mtmp2-&gt;minvis)) ||\n    \t                        (mtmp2-&gt;data==&amp;mons[PM_GELATINOUS_CUBE] &amp;&amp; rn2(10)) ||\n    \t                        (max_passive_dmg(mtmp2, mtmp) &gt;= mtmp-&gt;mhp) ||\n    \t                        ((mtmp-&gt;mhp*4 &lt; mtmp-&gt;mhpmax\n    \t                          || mtmp2-&gt;data-&gt;msound == MS_GUARDIAN\n    \t                          || mtmp2-&gt;data-&gt;msound == MS_LEADER) &amp;&amp;\n    \t                         mtmp2-&gt;mpeaceful &amp;&amp; !Conflict) ||\n    \t#ifdef WEBB_DISINT\n    \t                        (touch_disintegrates(mtmp2-&gt;data) &amp;&amp;\n    \t                         !resists_disint(mtmp)) ||\n    \t#endif\n    \t                           (touch_petrifies(mtmp2-&gt;data) &amp;&amp;\n    \t                                !resists_ston(mtmp)))\n\nsource: http://sourceforge.net/apps/trac/unnethack/browser/trunk/src/dogmove.c\n\nBTW, game is absolutely great, tinkering with code is fun. But sometimes I want to bite keyboard.",
+        "created_utc": 1362846804,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to handle touch events in android... o_O",
+        "author": "rainman002",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19w13s/how_to_handle_touch_events_in_android_o_o/",
+        "text": "Free upvote for whoever can correctly guess what it does.\n\nhttp://pastebin.com/e3CFXFYJ\n\nIt's from an android app I published a few years ago.",
+        "created_utc": 1362712316,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "bitmap-&gt;writeablebitmap-&gt;bytearray-&gt;base64String",
+        "author": "110011001100",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19v590/bitmapwriteablebitmapbytearraybase64string/",
+        "text": "    async void uploadToAzure(BitmapImage bmp, String a, String b,String c)\n            {\n                System.Windows.Media.Imaging.WriteableBitmap wbmp = new System.Windows.Media.Imaging.WriteableBitmap(bmp);\n                wbmp = wbmp.Resize(200, 200, WriteableBitmapExtensions.Interpolation.Bilinear);\n                byte[ _imageBytes = wbmp.ToByteArray();\n                String s = Convert.ToBase64String(_imageBytes, 0, _imageBytes.Length);\n                ittab item = new ittab {Image=s,A=a,B=b,C=c,f=1};\n                await App.MobileService.GetTable&lt;ittab&gt;().InsertAsync(item);\n            }\n\nAny more context needed?",
+        "created_utc": 1362687258,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The code..  it says it all",
+        "author": "azpad1990",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19v4bh/the_code_it_says_it_all/",
+        "text": "Dictionary&lt;int,String&gt; d = new Dictionary&lt;int,String&gt;\n\n.\n\n.\n\n.\n\ntry\n\n{\n\nd.Add(x,\"Abc\");\n\n}\n\ncatch (exception e)\n\n{\n\nd[x]=\"Abc\";\n\n}\n\n------------------\n\nI know thats the wrong way to do it, I still did it since I didnt have time to lookup the correct way to do it, but what is the correct way to do this operation?\n\nIf the key exists in the dictionary, update the value. Else add it\n\n(the equivalent of an UPSERT  operation in a database)",
+        "created_utc": 1362686552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kenya election: Computer bug blamed for vote error",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19v2hs/kenya_election_computer_bug_blamed_for_vote_error/",
+        "text": "&gt; \"There was an error in the way the program was written,\" said Mr Hassan.\n\n&gt; \"For any rejected vote for any candidate, they were being multiplied by eight,\"\n\nlink: http://www.bbc.co.uk/news/world-africa-21707152\n\n    puts \"wtf\"",
+        "created_utc": 1362685195,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Implementing an authentication scheme",
+        "author": "charliehorse55",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19nbz2/implementing_an_authentication_scheme/",
+        "text": "A course I'm taking as an ECE student requires you to write a database server from the ground up. Part of the challenge is creating an authentication scheme. While some people actually managed to implement proper RSA security, one team had this in their _client side_ code:\n\n    char password[100];\n    scanf(\"%s\", password);\n    char line[400];\n    recvline(socket, line);\n    if(!strcmp(password, line)) {\n    sendline(socket, \"SUCCESS\");\n    } else {\n    sendline(socket, \"FAILURE\");\n    }\n\nThey were sending the password in plaintext from the server to the client, and relying on the client to compare it to the entered password. ",
+        "created_utc": 1362418377,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Q_rand() from Openarena game code",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19keot/q_rand_from_openarena_game_code/",
+        "text": "Source: [openarena.ws/svn/source/code/game/q_math.c](http://openarena.ws/svn/source/code/game/q_math.c)\n\n    int Q_rand(int *seed) {\n        *seed = (69069 * *seed + 1);\n        return *seed;\n    }\n\n",
+        "created_utc": 1362293547,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "SLOWDOWN.EXE",
+        "author": "ekolis",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19g4g2/slowdownexe/",
+        "text": "",
+        "created_utc": 1362116032,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The offline storage system",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19ed1h/the_offline_storage_system/",
+        "text": "",
+        "created_utc": 1362064824,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Soft deleting data in SQL -- Unique implementation",
+        "author": "110011001100",
+        "url": "http://www.reddit.com/r/programminghorror/comments/19ac1l/soft_deleting_data_in_sql_unique_implementation/",
+        "text": "Very simple SQL Pseudo code, the actual SQL was made by a colleague a few months ago (we were all a few months out of college)\n\nI had asked him to soft delete records, not hard delete them from the database. \n\nHow I had hoped he would implement it:\n\n    select * from tab where isDeleted=0\n\nHow he implemented it initially\n\n    select * from tab T LEFT OUTER JOIN soft_del SD on T.ID=SD.ID where SD.ID is NULL\n\nSomeone told him this is not the way to do it, and he hadnt shown me this code initially. The version he had shown me was:\n\n    select * from tab T where T.id not in (select id from soft_del)\n",
+        "created_utc": 1361917731,
+        "upvote_ratio": ""
+    }
+]

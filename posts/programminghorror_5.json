@@ -1,0 +1,786 @@
+[
+    {
+        "title": "Hero defence survival game with a story",
+        "author": "Hiross_xD",
+        "url": "/r/pygame/comments/zslii7/hero_defence_survival_game_with_a_story/",
+        "text": "",
+        "created_utc": 1672062486,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "C-style macros in Python!",
+        "author": "dzsh",
+        "url": "https://i.redd.it/c8rdewmls58a1.png",
+        "text": "",
+        "created_utc": 1672024192,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Freight Forwarder from China to USA | Sea - Air - Ground Shipping",
+        "author": "reneeddweinstei",
+        "url": "https://aeblogistics.com/china-to-usa/",
+        "text": "",
+        "created_utc": 1672017585,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "if a programmer didnt know &lt; and &gt; existed (yes, the code goes on)",
+        "author": "FutureOk8277",
+        "url": "https://i.redd.it/xu6br8nwt38a1.png",
+        "text": "",
+        "created_utc": 1672000337,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "programming",
+        "author": "lol_life01",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zv4nfq/programming/",
+        "text": "[removed]\n\n[View Poll](https://www.reddit.com/poll/zv4nfq)",
+        "created_utc": 1671996190,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "how much did you pay for the shipping address",
+        "author": "ejidesike",
+        "url": "https://www.grocafrica.com/download?link=An3kJCLwRMBDs7z",
+        "text": "",
+        "created_utc": 1671984134,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Relavent tonight. Santa tracker",
+        "author": "vbisbest",
+        "url": "https://i.redd.it/u6azjsnsrz7a1.jpg",
+        "text": "",
+        "created_utc": 1671933198,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Found this Beauty in my first python project. It was a console textbased adventure game, the game was all in 1 script. The script was 1100 lines long, of which 100 lines were variables / imports.",
+        "author": "PiovosoOrg",
+        "url": "https://www.reddit.com/gallery/zuk4v5",
+        "text": "",
+        "created_utc": 1671920053,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "IT security be like",
+        "author": "WcaleNieWolny",
+        "url": "https://i.redd.it/99ghfmabau7a1.png",
+        "text": "",
+        "created_utc": 1671909664,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "specifically for them slackers 🤣",
+        "author": "VISUALBEAUTYPLZ",
+        "url": "https://i.redd.it/fz61heu2dv7a1.jpg",
+        "text": "",
+        "created_utc": 1671897837,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Who needs descriptive variable/method names?",
+        "author": "TNT10128",
+        "url": "https://www.reddit.com/gallery/zu9zbb",
+        "text": "",
+        "created_utc": 1671889000,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Developers laughing at Elon's clueless suggestion to rewrite the Twitter stack. An angry Elon demands to know, \"Who are you?!\"",
+        "author": "kaiju505",
+        "url": "https://v.redd.it/uf12i1d6uc7a1",
+        "text": "",
+        "created_utc": 1671863921,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When Worst Practices Collide...",
+        "author": "Pool-LAN",
+        "url": "https://i.redd.it/wvalxa4juq7a1.png",
+        "text": "",
+        "created_utc": 1671843799,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I make an app run in the background?",
+        "author": "ReadFew5423",
+        "url": "https://www.reddit.com/r/programminghorror/comments/ztqmvw/how_do_i_make_an_app_run_in_the_background/",
+        "text": "",
+        "created_utc": 1671824235,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Was told to post this here, so:",
+        "author": "alexhmc",
+        "url": "https://www.reddit.com/r/programminghorror/comments/ztp1kf/was_told_to_post_this_here_so/",
+        "text": "(Preface: This code was minified by hand, by me. It is not generated, and doesn't violate Rule 5. This also isn't asking for help.)\n\nSo I was code golfing (solving it in as few characters of code as possible) an Advent of Code problem, and had this before minifying it:\n\n    let file = require('fs').readFileSync(\"input.txt\").toString().trim()\n    \n    let NOTHING=8\n    let NO_END_RESULT_YET=0\n    let LESS=-1\n    let MORE=1\n    \n    \n    let compare = (a,b,x=0) =&gt; {\n      // console.log(\" \".repeat(x), {a,b})\n      if (a+b==+a+ +b) {\n        return a-b\n      }\n      a=[a].flat();b=[b].flat()\n      for(let i=0;i&lt;1e3;i++){\n        r=NOTHING;\n        a[i]||(r=LESS);\n        b[i]||(r=MORE);\n        a[i]||b[i]||(r=NO_END_RESULT_YET);\n        if(r!=NOTHING||(r=compare(a[i],b[i],x+1))!=NO_END_RESULT_YET)return r\n      }\n    }\n    let sum = 0\n    \n    file.split`\\n\\n`.map((group,i) =&gt; {\n      let [a,b] = group.split`\\n`.map(eval)\n      // console.log({i,a,b})\n      let res = compare(a,b)\n      // console.log({res})\n      if (res&lt;0) sum+=i+1;\n    })\n    let orig = ['[[2]]','[[6]]',...file.split`\\n`.filter(e=&gt;e)]\n    let arr = orig.sort((a,b)=&gt;compare(eval(a),eval(b)))\n    getI=n=&gt;arr.findIndex(e=&gt;e==`[[${n}]]`)+1\n    console.log(getI(2)*getI(6))\n\nThat code worked, so I minified it (by hand, without any tools) to this:\n\n    console.log((G=n=&gt;[(B=n=&gt;`[[${n}]]`)(2),B(6),...([]+require('fs').readFileSync(\"input.txt\")).trim().split`\\n`.filter(e=&gt;e)].sort((a,b)=&gt;(C=(a,b)=&gt;{if(a+b==+a+ +b)return a-b;a=[a].flat();b=[b].flat();for(i=0;i&lt;99;i++){r=8;a[i]||(r=-1);b[i]||(r=1);a[i]||b[i]||(r=0);if(r!=8||(r=C(a[i],b[i]))!=0)return r}})(eval(a),eval(b))).findIndex(e=&gt;e==B(n))+1)(2)*G(6))\n\nAnd I tried running it, and got a completely different result. Spent \\~20min debugging it, and found out that it was this for loop:\n\n    for(i=0;i&lt;99;i++)\n\nThe problem is, that loop gets executed inside a recursive function, and because I optimized the `let` out, it got declared as a global variable, which messes up the iteration when it gets called recursively. A simple `let` fixed it, and cost me 20 minutes debugging. Jesus Christ, I should not be allowed to write JS.",
+        "created_utc": 1671820053,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I paid good money for that CPU so I WILL make it chop",
+        "author": "ElijahHoward54",
+        "url": "https://i.redd.it/4mbyh4r4sn7a1.jpg",
+        "text": "",
+        "created_utc": 1671806031,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "From chooseyourstory.com",
+        "author": "Alice-Api",
+        "url": "https://i.redd.it/akcccnsgwm7a1.png",
+        "text": "",
+        "created_utc": 1671795416,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which one of you did this",
+        "author": "BarcaStranger",
+        "url": "https://v.redd.it/rkh1hpn1w97a1",
+        "text": "",
+        "created_utc": 1671684395,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Added friend to repo, this was his first commit",
+        "author": "Maplesyrupenjoyer",
+        "url": "https://i.redd.it/3jjhb8g8ic7a1.png",
+        "text": "",
+        "created_utc": 1671669545,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I Combined Discord and ChatGPT….",
+        "author": "DontDieTonight",
+        "url": "https://www.reddit.com/gallery/zs1jjt",
+        "text": "PansexualCoffee#6290",
+        "created_utc": 1671658247,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I connected Discord and ChatGPT",
+        "author": "DontDieTonight",
+        "url": "https://www.reddit.com/gallery/zs18sv",
+        "text": "I made bot and made it really mean and the result was….\n\nPansexualCoffee#6290",
+        "created_utc": 1671657581,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Emails in Python are hard... so I made them easier",
+        "author": "kg583",
+        "url": "https://www.reddit.com/gallery/zs0r0o",
+        "text": "",
+        "created_utc": 1671656477,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Homepage of the Aussie government, &gt;1MB of code, JS blocking interaction until completely loaded, super slow loading for anyone outside of 'straya because, well, 'straya 🙄",
+        "author": "deceze",
+        "url": "https://i.redd.it/xlld4l22ua7a1.png",
+        "text": "",
+        "created_utc": 1671649527,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "TomTom devs at Monday morning.",
+        "author": "KiKiHUN1",
+        "url": "https://i.redd.it/pgo92k6q9a7a1.png",
+        "text": "",
+        "created_utc": 1671642515,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "US Bank homepage currently shows \"Byte Size of the object is zero\" only currently",
+        "author": "momofuku18",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zrqhnw/us_bank_homepage_currently_shows_byte_size_of_the/",
+        "text": "Some folks at US Bank would be quite busy today.",
+        "created_utc": 1671636316,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "oh no",
+        "author": "H-s-O",
+        "url": "https://i.redd.it/1tovkifg677a1.jpg",
+        "text": "",
+        "created_utc": 1671627836,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Swiggy fail",
+        "author": "SingleSimha",
+        "url": "https://i.redd.it/a41seuly5a7a1.jpg",
+        "text": "",
+        "created_utc": 1671623182,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Take-home assignment from an A.I. professor",
+        "author": "saccharineboi",
+        "url": "https://i.redd.it/oopfk0ubf97a1.png",
+        "text": "",
+        "created_utc": 1671614226,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "SUBJECT LINE GOES HERE...",
+        "author": "Oirnoir",
+        "url": "https://i.imgur.com/6nODj1r.jpg",
+        "text": "",
+        "created_utc": 1671602582,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Imagine a 5-years-old code like this on production",
+        "author": "azaryahu",
+        "url": "https://i.redd.it/8accfdywf67a1.png",
+        "text": "",
+        "created_utc": 1671596150,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Always pay attention to your codereviews or else bugs will slip in",
+        "author": "Cammeritz",
+        "url": "https://v.redd.it/jyifja71b67a1",
+        "text": "",
+        "created_utc": 1671576459,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Legacy code I inherited - Lambda function with 3,6k lines, including 300 lines of just making variables global",
+        "author": "Altrooke",
+        "url": "https://i.redd.it/i1a5hf2jf47a1.png",
+        "text": "",
+        "created_utc": 1671571911,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Thought of this today while fighting a null exception",
+        "author": "rushery",
+        "url": "https://i.redd.it/8sxic8xew37a1.png",
+        "text": "",
+        "created_utc": 1671565385,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Microsoft Outlook Sign In Broken - No Way To Report Issue",
+        "author": "petertellerweyand",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zqwvl7/microsoft_outlook_sign_in_broken_no_way_to_report/",
+        "text": "[removed]",
+        "created_utc": 1671563637,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I guess I broke V8; Does anybody have a hint at fixing this issue?",
+        "author": "Plus-Weakness-2624",
+        "url": "https://i.redd.it/i7pk7et6f17a1.jpg",
+        "text": "",
+        "created_utc": 1671535326,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The entire website of http://www.muskfoundation.org/ - A $10,000,000,000 company.",
+        "author": "Reelix",
+        "url": "https://i.imgur.com/yHysGb9.png",
+        "text": "",
+        "created_utc": 1671508913,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Beginner question on windows form c#, arrays and inputs",
+        "author": "kengador",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zpvuel/beginner_question_on_windows_form_c_arrays_and/",
+        "text": "I just started learning c# and im already stuck. I have an array of size 7.  I need to fill the array with user input using numbers in 7 different textboxes.  The textboxes are named txOne, txTwo etc.  \nThen with a button press it should add up a difference of 5 and output the result in 7 other textboxes which i named txResOne etc.  \nThe way i tried is like: this:  \ndouble\\[\\] nDiff = new double \\[7\\];\n\n\\\\\\\\  \nand then under a button i used to following code  \n\\\\\\\\\n\nnDiff\\[0\\] = double.Parse(txOne.Text);  \nnDiff\\[1\\] = double.Parse(txTwo.Text);\n\netc. I don't know if this is a efficient way to fill the array and no clue how to output it to other textboxes. What do i do?",
+        "created_utc": 1671466629,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "best programming quizes to become a great programmer",
+        "author": "uzairbhatti",
+        "url": "https://learnprogrammingindetail.blogspot.com/2022/12/program-in-c-to-check-if-it-is-possible.html",
+        "text": "",
+        "created_utc": 1671454265,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My Google Sheets code to convert hex 2 string. I could not find a better way to do this.",
+        "author": "RandyHubbard45",
+        "url": "https://i.redd.it/qcvq1h2znu6a1.jpg",
+        "text": "",
+        "created_utc": 1671453533,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I thought it only existed in stories... but it has happend to me 😢😲😱",
+        "author": "kraneq",
+        "url": "https://i.redd.it/pd266dwgeu6a1.png",
+        "text": "",
+        "created_utc": 1671450376,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "perfection",
+        "author": "therealpussyslayer",
+        "url": "https://i.redd.it/i56s38vois6a1.jpg",
+        "text": "",
+        "created_utc": 1671409539,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hackathon code",
+        "author": "breadsvessels",
+        "url": "https://www.reddit.com/gallery/zp0d9b",
+        "text": "",
+        "created_utc": 1671375252,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My cab driver tonight was so excited to share with me that he’d made the cover of the calendar. I told him I’d help let the world see",
+        "author": "Independfbgd",
+        "url": "https://i.redd.it/z7cb03eq3n6a1.jpg",
+        "text": "",
+        "created_utc": 1671362024,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I was just looking at the documentation for scipy.integrate. WHO PICKED THESE METHOD NAMES?",
+        "author": "EarthHogerrr",
+        "url": "https://i.redd.it/14ej0ccmni6a1.png",
+        "text": "",
+        "created_utc": 1671308156,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Now THAT'S what I call a firewall",
+        "author": "Pool-LAN",
+        "url": "https://i.redd.it/a5qsd03j2i6a1.png",
+        "text": "",
+        "created_utc": 1671301045,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can you help me solve this java FX programming exercise?",
+        "author": "luiggi025",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zoc1po/can_you_help_me_solve_this_java_fx_programming/",
+        "text": "I'm going to leave a link for you to download the javaFX code because I'm working with several classes.\n\n&amp;#x200B;\n\nLink: [https://drive.google.com/drive/folders/1U-In6\\_qKnQGz-cPBjGdbf8J0525ibe37?usp=sharing](https://drive.google.com/drive/folders/1U-In6_qKnQGz-cPBjGdbf8J0525ibe37?usp=sharing)\n\n&amp;#x200B;\n\nThe only thing I want is that the last screen shows the contest and the categories that it has, once that is chosen, it proceeds to save, I'll take care of showing it.\n\nhttps://preview.redd.it/3w4dfrbmzh6a1.jpg?width=982&amp;format=pjpg&amp;auto=webp&amp;s=98c66ab1bf9d088b40d2eeb6cb9cb55d950248c8",
+        "created_utc": 1671300136,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Try and figure out what it does!",
+        "author": "dnte03ap8",
+        "url": "https://i.redd.it/fexjnt16fh6a1.png",
+        "text": "",
+        "created_utc": 1671293410,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Java Multithreading using Runnable Interface",
+        "author": "codeonedigest",
+        "url": "https://at.tumblr.com/codeonedigest/java-multithreading-with-code-example-using/5lpmh66307cn",
+        "text": "",
+        "created_utc": 1671290726,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I want someone to get me sms through his phone number",
+        "author": "SohaibTheHuman",
+        "url": "https://www.reddit.com/r/programminghorror/comments/znp22j/i_want_someone_to_get_me_sms_through_his_phone/",
+        "text": "[removed]",
+        "created_utc": 1671224626,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Numlib, a powerful math library that nobody understands because it was written in Algol 50 years ago when descriptive variable names weren't a thing, and most of the sparse documentation is in Dutch.",
+        "author": "peacedetski",
+        "url": "https://i.redd.it/yhfx7v8kea6a1.png",
+        "text": "",
+        "created_utc": 1671208426,
+        "upvote_ratio": 0.8
+    },
+    {
+        "title": "New VS update. Intellisense is suddenly being invasive",
+        "author": "Shinela",
+        "url": "https://i.redd.it/3dy10gyqq96a1.png",
+        "text": "",
+        "created_utc": 1671200262,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Are common converters a thing?",
+        "author": "mishraprafful",
+        "url": "https://i.redd.it/71owhl6h696a1.jpg",
+        "text": "",
+        "created_utc": 1671194446,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Python Lambda Function Anonymous Function | Python Functional Programming",
+        "author": "codeonedigest",
+        "url": "https://at.tumblr.com/codeonedigest/what-is-python-lambda-function-learn-python/hcat0pb95vl8",
+        "text": "",
+        "created_utc": 1671165301,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Oh sure just drive down at 2634km/h",
+        "author": "EverythingPSP",
+        "url": "https://i.redd.it/owmecoauc66a1.jpg",
+        "text": "",
+        "created_utc": 1671141222,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "personal grudge",
+        "author": "siddhi_reddit9",
+        "url": "https://i.redd.it/yhwkg52jt56a1.png",
+        "text": "",
+        "created_utc": 1671134728,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "newbie here.... is it funny? should i post it on office meme channel on slack?",
+        "author": "Significant-Wolf476",
+        "url": "https://v.redd.it/o69i5f2rg46a1",
+        "text": "",
+        "created_utc": 1671118354,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I asked AI how to make HTTP request in Brainfuck.",
+        "author": "trulyspinach",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zmkm1e/i_asked_ai_how_to_make_http_request_in_brainfuck/",
+        "text": "It trolled me by implementing it in 4 different languages..\n\nhttps://preview.redd.it/5qg45o1r826a1.png?width=1386&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=07537a23bc14a06e547e0ca7d3125e11804d06c4",
+        "created_utc": 1671109510,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Java Multithreading with Code Example in HINDI | Java Multithreading Tutorial in Hindi for Students",
+        "author": "codeonedigest",
+        "url": "https://codeonedigest.wordpress.com/2022/12/15/java-multithreading-with-code-example-in-hindi-java-multithreading-tutorial-in-hindi-for-students/",
+        "text": "",
+        "created_utc": 1671108571,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "screw variable naming conventions",
+        "author": "Peyton773",
+        "url": "https://i.redd.it/b8qrhkekey5a1.jpg",
+        "text": "",
+        "created_utc": 1671044945,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My teacher's code formatting",
+        "author": "FreddieReese54",
+        "url": "https://i.redd.it/bii3uwwp4w5a1.jpg",
+        "text": "",
+        "created_utc": 1671035428,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "sleep could definitely help",
+        "author": "TheLogBeast",
+        "url": "https://i.redd.it/idfa95yl9v5a1.png",
+        "text": "",
+        "created_utc": 1671025064,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "This one explains the daily life of a programmer",
+        "author": "Leadingos",
+        "url": "https://i.redd.it/scp6v4bdju5a1.jpg",
+        "text": "",
+        "created_utc": 1671016171,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Title",
+        "author": "Elden_John_2718",
+        "url": "https://i.redd.it/qs2hf9fq4t5a1.png",
+        "text": "",
+        "created_utc": 1670999107,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Guess copy pasting was easier than making a single function that takes an argument",
+        "author": "BEisamotherhecker",
+        "url": "https://i.redd.it/50sneiz0mq5a1.png",
+        "text": "",
+        "created_utc": 1670968667,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When do you find it better to use non-ASCII identifiers?",
+        "author": "NotSomeone324y9524",
+        "url": "/r/rust/comments/zkzsyo/when_do_you_find_it_better_to_use_nonascii/",
+        "text": "",
+        "created_utc": 1670968058,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why does editing text in my notes or social media send my cursor to the end of the text or bottom of the window? Am I being cyber bullied?",
+        "author": "Lemonade_3000",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zky3d1/why_does_editing_text_in_my_notes_or_social_media/",
+        "text": "Why does editing text in my notes or social media send my cursor to the end of the text or bottom of the window?  Am I being cyber bullied?  \nThat essentially forces me to find whatever sentence I’m editing twice.  That doubles the amount of energy I have to spend making sure that my grammar and punctuation does not make me look inadequate to readers.  It is the kind of thing that would likely be designed to slowly but surely discourage self development, improvement, and/or confidence in oneself.  The original developer of social media or apple could not possibly have any reason to move your cursor away from whatever text you’re editing, literally every time you revise what you type.",
+        "created_utc": 1670944384,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "found this from my first week of coding",
+        "author": "elanieca",
+        "url": "https://i.redd.it/f83u4sc0jp5a1.jpg",
+        "text": "",
+        "created_utc": 1670937478,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I wanna find who did this...",
+        "author": "MaiaGostaSomersby",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zku3nx/i_wanna_find_who_did_this/",
+        "text": "[removed]",
+        "created_utc": 1670933101,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Learn Java Multithreading in HINDI | Java Multithreading Tutorial in Hindi for Beginners",
+        "author": "codeonedigest",
+        "url": "https://codeonedigest.wordpress.com/2022/12/13/learn-java-multithreading-in-hindi-java-multithreading-tutorial-in-hindi-for-beginners/",
+        "text": "",
+        "created_utc": 1670919113,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Challenged myself to make the worst code i could",
+        "author": "NoobAznBoi",
+        "url": "https://i.redd.it/j2rthj7e2l5a1.png",
+        "text": "",
+        "created_utc": 1670901481,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Good tutorial book for beginners",
+        "author": "SnooMemesjellies7345",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zkhnnd/good_tutorial_book_for_beginners/",
+        "text": "[removed]",
+        "created_utc": 1670893275,
+        "upvote_ratio": 0.99
+    },
+    {
+        "title": "Reddit recap horror (I've scrolled at least like ... two bananas this year)",
+        "author": "smeenz",
+        "url": "https://i.imgur.com/qiU1vUS.png",
+        "text": "",
+        "created_utc": 1670889665,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "decisions, decisions, decisions.....",
+        "author": "kallebo1337",
+        "url": "https://i.redd.it/jf2tthat4i5a1.jpg",
+        "text": "",
+        "created_utc": 1670865967,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I'll hereby move to Nepal and live my life as a goat.",
+        "author": "LanceCaldwell3",
+        "url": "https://i.redd.it/86fvz3aqzh5a1.jpg",
+        "text": "",
+        "created_utc": 1670864249,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Introducing... React without JSX!",
+        "author": "Both-Expression4402",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zk226r/introducing_react_without_jsx/",
+        "text": "[removed]",
+        "created_utc": 1670858771,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "YouTube Short - Quick Cheat Sheet to Python Data types for Beginners | Learn Python Datatypes in 1 minute",
+        "author": "codeonedigest",
+        "url": "https://codeonedigest.wordpress.com/2022/12/12/youtube-short-quick-cheat-sheet-to-python-data-types-for-beginners-learn-python-datatypes-in-1-minute/",
+        "text": "",
+        "created_utc": 1670847896,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Software Technology tips to organize online events?",
+        "author": "ARFASOFTECH",
+        "url": "https://www.arfasoftech.com/blog/Software-Technology-tips-to-organize-online-events?",
+        "text": "",
+        "created_utc": 1670845086,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What's your favourite programming language?",
+        "author": "LonenlyShadow",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zjrh5i/whats_your_favourite_programming_language/",
+        "text": "\n\n[View Poll](https://www.reddit.com/poll/zjrh5i)",
+        "created_utc": 1670830673,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I’ve been renamed by a food delivery service",
+        "author": "ohblahdiblahda",
+        "url": "https://i.imgur.com/AJ6W38w.jpg",
+        "text": "",
+        "created_utc": 1670804522,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Programming homework assignment",
+        "author": "Either_Vehicle_7464",
+        "url": "https://www.reddit.com/gallery/zix18v",
+        "text": "",
+        "created_utc": 1670773614,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Programming homework assignment",
+        "author": "Either_Vehicle_7464",
+        "url": "https://www.reddit.com/gallery/ziwh2r",
+        "text": "",
+        "created_utc": 1670772647,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Programming homework assignment",
+        "author": "Either_Vehicle_7464",
+        "url": "https://www.reddit.com/gallery/zivxbb",
+        "text": "",
+        "created_utc": 1670771710,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I heard of it somewhere 🤔",
+        "author": "misteick",
+        "url": "https://i.redd.it/yh8mzw4ara5a1.jpg",
+        "text": "",
+        "created_utc": 1670758656,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "can't trust",
+        "author": "samchem486",
+        "url": "https://youtu.be/pks9AY5mvXM",
+        "text": "",
+        "created_utc": 1670757412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "my pocket pussy 😉",
+        "author": "Sea_Tonight6039",
+        "url": "https://v.redd.it/iaat2j4zz85a1",
+        "text": "",
+        "created_utc": 1670755368,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://i.redd.it/aqopc4xis85a1.png",
+        "text": "",
+        "created_utc": 1670753011,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimszf",
+        "text": "",
+        "created_utc": 1670753005,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimsvu",
+        "text": "",
+        "created_utc": 1670752996,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimspd",
+        "text": "",
+        "created_utc": 1670752982,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimq1q",
+        "text": "",
+        "created_utc": 1670752798,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimptx",
+        "text": "",
+        "created_utc": 1670752779,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimps4",
+        "text": "",
+        "created_utc": 1670752773,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimp20",
+        "text": "",
+        "created_utc": 1670752714,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimow3",
+        "text": "",
+        "created_utc": 1670752700,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimoka",
+        "text": "",
+        "created_utc": 1670752676,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimo69",
+        "text": "",
+        "created_utc": 1670752645,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Lispy Python? sure",
+        "author": "dzsh",
+        "url": "https://www.reddit.com/gallery/zimo2r",
+        "text": "",
+        "created_utc": 1670752638,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "This is really an improvement!",
+        "author": "TjomasDe",
+        "url": "https://www.reddit.com/r/programminghorror/comments/zi4bj2/this_is_really_an_improvement/",
+        "text": "&amp;#x200B;\n\n[Uhhh yeahh](https://preview.redd.it/ifraj94d355a1.png?width=990&amp;format=png&amp;auto=webp&amp;s=4a628dd805fae8493add175db5f3191732e9bffe)",
+        "created_utc": 1670708150,
+        "upvote_ratio": 1.0
+    }
+]

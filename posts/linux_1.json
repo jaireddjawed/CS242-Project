@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Can't Download Buildx with WGET Command",
+        "author": "Jericho905",
+        "url": "https://www.reddit.com/r/linux/comments/11rj5qs/cant_download_buildx_with_wget_command/",
+        "text": "[removed]",
+        "created_utc": 1678846741,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "QGIS 3.30 ‘s-Hertogenbosch is released!",
+        "author": "indigoexpanse",
+        "url": "https://blog.qgis.org/2023/03/07/qgis-3-30-s-hertogenbosch-is-released/",
+        "text": "",
+        "created_utc": 1678846301,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Since i broke my \"sudo\" (by doing what ChatGPT told me), i'm also going to show you the fix ChatGPT told me. This might be helpful for others.",
+        "author": "Malokeradio",
+        "url": "https://www.reddit.com/r/linux/comments/11rik57/since_i_broke_my_sudo_by_doing_what_chatgpt_told/",
+        "text": "Yes, this happened... Wtf?! Here is a warning, don't trust everything ChatGPT says to you...\n\nAlso, i looked on the search and i have not found an alike topic in this sub. So i though i should share for other people that ran into the same problem. Not sure if this is the right sub for it, but i think so, because this is not a question.\n\n&amp;#x200B;\n\nSo, what happened is that i was messing up with my system while being guided by ChatGPT and i think one of the packages i installed messed up with \"sudoers\". I lost my access to \"sudo\". So asked ChatGPT how to fix it and it is now fixed, here is the ChatGPT answer:\n\n&amp;#x200B;\n\n&gt;I apologize for the confusion. If you are unable to use sudo and your user is not in the sudoers file, you will need to boot your Arch Linux system into single-user mode and then modify the `/etc/sudoers` file to add your user to the sudoers list.  \n&gt;  \n&gt;Here are the steps to follow:  \n&gt;  \n&gt;Boot your system into single-user mode by rebooting the system and pressing the e key when you see the GRUB bootloader menu.  \n&gt;  \n&gt;Find the line that starts with `linux`, and add `init=/bin/bash` to the end of the line.  \n&gt;  \n&gt;Press `Ctrl+X` or `F10` to boot into single-user mode.  \n&gt;  \n&gt;Once you are in single-user mode, remount the root filesystem with read-write permissions by running the following command:  \n&gt;  \n&gt;`mount -o remount,rw /`  \n&gt;  \n&gt;Now you can modify the `/etc/sudoers` file using your preferred text editor. For example:  \n&gt;  \n&gt;`nano /etc/sudoers`  \n&gt;  \n&gt;Find the line that says `%wheel ALL=(ALL) ALL`, and uncomment it by removing the `#` character at the beginning of the line.  \n&gt;  \n&gt;Save and exit the file.  \n&gt;  \n&gt;Exit the single-user mode by running the following command:  \n&gt;  \n&gt;`exec /sbin/init`  \n&gt;  \n&gt;Once your system has booted normally, add your user to the `wheel` group by running the following command:  \n&gt;  \n&gt;`sudo usermod -aG wheel yourusername`  \n&gt;  \n&gt;Log out and log back in for the changes to take effect.  \n&gt;  \n&gt;After completing these steps, your user should be able to use `sudo` again.",
+        "created_utc": 1678845370,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tenable Nessus",
+        "author": "Altruistic_Humor_399",
+        "url": "https://www.etsy.com/listing/1424747210/tenable-nessus?ref=listings_manager_grid",
+        "text": "",
+        "created_utc": 1678845099,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Honest question: Is \"sudo\" pronounced \"pseudo\"? \"Sue do\"? Something else?",
+        "author": "would-of",
+        "url": "https://www.reddit.com/r/linux/comments/11re380/honest_question_is_sudo_pronounced_pseudo_sue_do/",
+        "text": "",
+        "created_utc": 1678818316,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "hi guys i have no idea i want to install excel after restarting i got this help please",
+        "author": "Past-Ad-5376",
+        "url": "https://i.redd.it/s64e6zy7fsna1.jpg",
+        "text": "",
+        "created_utc": 1678817790,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How we are migrating (many of) our servers from Linux to FreeBSD - Part 3 - Proxmox to FreeBSD",
+        "author": "dragasit",
+        "url": "https://it-notes.dragas.net/2023/03/14/how-we-are-migrating-many-of-our-servers-from-linux-to-freebsd-part-3/",
+        "text": "",
+        "created_utc": 1678817055,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help me identify this Distro?",
+        "author": "SQUID_Ben",
+        "url": "https://i.redd.it/3b384uhiqqna1.png",
+        "text": "",
+        "created_utc": 1678815389,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Albert launcher - Requires libmuparser2v5 &gt;= 2.3.3 - I can't find a way to install that ver on Mint",
+        "author": "DocCaliban",
+        "url": "https://www.reddit.com/r/linux/comments/11rcif7/albert_launcher_requires_libmuparser2v5_233_i/",
+        "text": "Hello.\n\nThe web page for libmuparser2v5 says the latest version is 2.3.3 but most of the distro specific builds sill install 2.2.6.\n\nDoes anyone know of a way to get the latest version installed?\n\nThank you.",
+        "created_utc": 1678814913,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Fedora Linux 38 Beta Released",
+        "author": "giannidunk",
+        "url": "https://fedoramagazine.org/announcing-fedora-38-beta/",
+        "text": "",
+        "created_utc": 1678814864,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "QGIS 3.30 ‘s-Hertogenbosch is released!",
+        "author": "[deleted]",
+        "url": "",
+        "text": "[removed]",
+        "created_utc": 1678814731,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The plausible etymology of tune2fs",
+        "author": "robert-foster",
+        "url": "https://www.reddit.com/r/linux/comments/11rbz5y/the_plausible_etymology_of_tune2fs/",
+        "text": "[removed]",
+        "created_utc": 1678813737,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AMDGPU integrated graphics crashing under kernel 6.2",
+        "author": "deshdrohi20",
+        "url": "https://www.reddit.com/r/linux/comments/11rbu4h/amdgpu_integrated_graphics_crashing_under_kernel/",
+        "text": "[removed]",
+        "created_utc": 1678813440,
+        "upvote_ratio": 0.99
+    },
+    {
+        "title": "Trying to get vst to work",
+        "author": "Living-Performer-414",
+        "url": "https://www.reddit.com/r/linux/comments/11rbgqj/trying_to_get_vst_to_work/",
+        "text": "I am trying to get reveal sound spire to work through yabridge. I have wine staging installed. After syncing in yabridge and trying to scan in reaper, i just get an error.\n\"Failed to start the Wine plugin host\nCheck yabridge's output for more information on what went wrong.. etc\"\n\nI dont know what it means \"to check yabridge output\" as github mentions no such thing and im lost on what to do :D",
+        "created_utc": 1678812640,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Vulkan Video VP9 Decode – AMD Radeon RADV Driver Update",
+        "author": "JRepin",
+        "url": "https://airlied.blogspot.com/2023/03/vulkan-video-vp9-decode-radv-update.html",
+        "text": "",
+        "created_utc": 1678811884,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GRUB loopback booting",
+        "author": "Significant-Wonder19",
+        "url": "https://www.reddit.com/r/linux/comments/11r6z0c/grub_loopback_booting/",
+        "text": "[removed]",
+        "created_utc": 1678802634,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Kali Linux 2023.1 introduces 'Purple' distro for defensive security",
+        "author": "Realistic-Plant3957",
+        "url": "https://www.bleepingcomputer.com/news/security/kali-linux-20231-introduces-purple-distro-for-defensive-security/",
+        "text": "",
+        "created_utc": 1678802152,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "2023.1 installation. gonna try asking this here again, disclaimer mods, im new to linux so give me a break. why is it giving me this error?",
+        "author": "InstanceResponsible6",
+        "url": "https://i.redd.it/agry2imp1rna1.jpg",
+        "text": "",
+        "created_utc": 1678801140,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Just a thought...but what if Microsoft and Steam/Value made a deal?",
+        "author": "ImbambiBitch",
+        "url": "https://www.reddit.com/r/linux/comments/11r6by4/just_a_thoughtbut_what_if_microsoft_and/",
+        "text": "So...say what you will about the open source office software such as Google Docs, Libre, OpenOffice. Well they can cover a vast majority of the bases...Microsoft Office is a superior product. This is coming from someone that daily uses Libre + Thunderbird. However Microsoft Office is a better product, it just is. And to be honest the other office software competitors simply don't have the capital to compete at the level Microsoft does. Microsoft MAKES HUGE SUMS OF money off businesses who employ Microsoft Office and as a result they invest A LOT OF MONEY into the product, and well it shows.\n\nNext lets face the reality, Linux maintains a 2.94% market share of the Desktop Operating system marketshare...its tiny (although it used to be smaller)\n\nSo here's my idea\n\nSteam/Value have DONE AN AMAZING job with Proton. I can play games like GTAV, RDR2, War Thunder, MTW2, Etc, etc, etc. What if Microsoft went to them and said \"Hey, if you want to try and natively support Microsoft Office on Linux we will sign a licensing deal with you\"\n\nMicrosoft gives Steam/Value what they need to attempt the project. Obviously NDAs are going be involved cause I'm confident Microsoft does not want its source code in the open. If Steam/Value can come up with an acceptable solution they can retail it and Microsft gets a % of the sales.\n\nWhy do I target Value/Steam? Because they have already implemented a lot of software that used to be only able to \"natively\" run on Linux in a very seamless manner.\n\nBy natively I mean as close as possible, where all (or at least 99.9%) of them work flawlessly. \n\nAm I crazy?",
+        "created_utc": 1678801057,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help me with lubuntu",
+        "author": "Cinpanza",
+        "url": "https://i.redd.it/7ddpcq621rna1.jpg",
+        "text": "",
+        "created_utc": 1678800922,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "QGIS 3.30 ‘s-Hertogenbosch is released!",
+        "author": "indigoexpanse",
+        "url": "https://blog.qgis.org/2023/03/07/qgis-3-30-s-hertogenbosch-is-released/",
+        "text": "",
+        "created_utc": 1678798701,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best linux distro for gaming?",
+        "author": "Competitive_Sea_565",
+        "url": "https://www.reddit.com/r/linux/comments/11r399j/best_linux_distro_for_gaming/",
+        "text": "[removed]",
+        "created_utc": 1678792125,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to insert a missing key's character from a German or Russian layout and using a US ANSI keyboard?",
+        "author": "RIMdude",
+        "url": "https://www.reddit.com/r/linux/comments/11r336n/how_to_insert_a_missing_keys_character_from_a/",
+        "text": "I have a physical US ANSI keyboard(with the enter key in the form of a long square), but I switch to the German and the Russian layouts on that keyboard in some cases.\n\nI could not find a way to insert \"|\", the vertical bar, in the German or Russian layouts. To my understanding, in the US ANSI keyboard (as opposed to the US ISO, or US International formats), there is a missing key at the right of the leftmost Shift key. That is *there is no key between the left Shift key and the letter \"Z\" in a US ANSI with a US layout printed on it*.\n\nSo in the German layout there is no key between the left shift and the \"Y\" keys, and in the Russian layout there is no key between the left shift and \"Я\" keys.\n\nThe missing key is usually used to insert the \"|\" I am looking for. In the case of the US layout (on the US ANSI keyboard), \"|\" can be inserted using shift + rightmost key at the top of the Enter's key.\n\nThe solutions I found  so far for the German layout is to insert the Unicode's code for the character \"|\", which is \"7C\", using Control + \"U\" + 7C. But I dont know how to do that in the Russian layout.\n\nSo how to insert a Unicode character in a Russian layout, and do you know of any other tips to insert the \"|\" character using a German or Russian layouts on my US ANSI keyboard?",
+        "created_utc": 1678791573,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Archboot 2023.03 - Arch Linux images released",
+        "author": "tobiaspowalowski",
+        "url": "/r/archboot/comments/11r23qi/archboot_202303_arch_linux_images_released/",
+        "text": "",
+        "created_utc": 1678788897,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Bottles &amp; DaVinci Resolve",
+        "author": "OriginalBlu3ye",
+        "url": "https://www.reddit.com/r/linux/comments/11r1zzb/bottles_davinci_resolve/",
+        "text": "Hi folks!\n\nAs the native Linux version of DaVinci Resolve has some limitations that I can not live with I thought let's give it a try and see if the Windows version will work with Bottles.\n\nThough I could install the application and starting it works, too I ran into an issue I can not resolve myself. See screenshot.\n\n&amp;#x200B;\n\nhttps://preview.redd.it/a5itnyi4fona1.png?width=674&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=d6c27054b56be7804d5e2e6202664a2b3cee00dd\n\nI tried several different runners but either Resolve crashes right at start up or it says the GPU configuration is not ok.\n\nIt feels that I'm \"almost there\" and only need to \"configure some GPU options\" the right way so Resolve can use it but I don't know how and if that's even possible. *Dedicated graphics card* does not change that.\n\nWhat do you say?",
+        "created_utc": 1678787607,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Delta's in flight entertainment - powered by Linux",
+        "author": "coffeecokecan",
+        "url": "https://i.redd.it/ju8sd5r2tona1.jpg",
+        "text": "crazy that it only runs on a single core",
+        "created_utc": 1678774024,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "GPU-Viewer v2.26 Released - with new look",
+        "author": "neothenoone",
+        "url": "https://i.redd.it/c9q5g63j7nna1.png",
+        "text": "",
+        "created_utc": 1678772687,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Navigating with a keyboard Ubuntu.",
+        "author": "dalekirkwood1",
+        "url": "https://www.reddit.com/r/linux/comments/11qxxv4/navigating_with_a_keyboard_ubuntu/",
+        "text": "[removed]",
+        "created_utc": 1678772684,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Cant compile a C language code in Linux",
+        "author": "mckimmz8789",
+        "url": "https://i.redd.it/tdbkf34mpnna1.jpg",
+        "text": "",
+        "created_utc": 1678760750,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to earn more with JustLend's TRX staking program",
+        "author": "Sardinners",
+        "url": "https://www.reddit.com/r/linux/comments/11qtp6m/how_to_earn_more_with_justlends_trx_staking/",
+        "text": "[removed]",
+        "created_utc": 1678760017,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Mint to Parrot",
+        "author": "PUDDIN-PAWP",
+        "url": "https://www.reddit.com/r/linux/comments/11qthnb/mint_to_parrot/",
+        "text": "Hello! I currently have a Lenovo Laptop loaded with Linux Mint and have begun taking some pen testing courses and fooling around on hack the box and on their academy. I would like to change my distro to Parrot OS, I'm fairly comfortable with Linux and the terminal but not a pro by any means, is this an easy task to do? And would you guys mind walking me through how to go about changing my distro?",
+        "created_utc": 1678759475,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "test test",
+        "author": "[deleted]",
+        "url": "",
+        "text": "[removed]",
+        "created_utc": 1678756951,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why is linux so hard to install",
+        "author": "astddf",
+        "url": "https://www.reddit.com/r/linux/comments/11qrodw/why_is_linux_so_hard_to_install/",
+        "text": "I’m trying to download linux mint(supposed to be easiest) on a vm. I keep running into endless issues. When I reboot on the vm it says os is not found, so I used etcher to make my drive bootable, but it didn’t work and corrupted my usb drive. I just wanted to learn it a bit, but I can’t even download it to use it.",
+        "created_utc": 1678754944,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux as a media server",
+        "author": "Vannie666",
+        "url": "https://www.reddit.com/r/linux/comments/11qpldn/linux_as_a_media_server/",
+        "text": "I'm still running my old HP Proliant Microserver (N40 I think), a great little machine with a low powered PSU and 16gb ram. Pretty much runs as a torrent box/plex/file server.\n\nLately it's started to lag under Windows 10 - Could anyone recommend a distro that would improve the performance of this old computer and serve the same purpose as above.\n\nI'm a noob when it comes to Linux so I was leaving towards Mint as it seems similar to Windows and more use friendly... I'm all ears if anybody has a better suggestion.\n\nThanks",
+        "created_utc": 1678749946,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Connect to SonicWall Global VPN from a Linux desktop",
+        "author": "rdscorreia",
+        "url": "https://www.reddit.com/r/linux/comments/11qpcfo/connect_to_sonicwall_global_vpn_from_a_linux/",
+        "text": "In the past I opened a question down at r/sonicwall about this exact same problem but didn't get any answer. Nobody seems to be able to connect to a SonicWall Global VPN from Linux. Or at least no one was kind enough to give me (us) a hint on how to do so.\n\nI am running Manjaro Linux on my laptop PC. Tried with strongswan, libreswan but it didn't work.\n\nAny idea on how to get this to work? Or on how to debug/understand the issue?\n\nThanks in advance.  \nCheers",
+        "created_utc": 1678749380,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Search for a voice typing like application on Linux",
+        "author": "Siri-killer",
+        "url": "https://www.reddit.com/r/linux/comments/11qoka3/search_for_a_voice_typing_like_application_on/",
+        "text": "[removed]",
+        "created_utc": 1678747621,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "New Linux distro",
+        "author": "justanother_otaku",
+        "url": "https://www.reddit.com/r/linux/comments/11qo7ej/new_linux_distro/",
+        "text": "[removed]",
+        "created_utc": 1678746823,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which linux distro are likely to be still developed in the future?",
+        "author": "IsakOldton",
+        "url": "https://www.reddit.com/r/linux/comments/11qnzm6/which_linux_distro_are_likely_to_be_still/",
+        "text": "Hello, I used Linux Mint for more than 10 years, before to come back to Window to run some pro softwares. But now I will have 2 spare PCs, and I want to come back to Linux for these two. I feel I am a noob again since many things happened.\n\nLike by the past, I see a lot of super cool distros, but I always hate when I find a distro which is discontinued a few months or years later. So I would like to know with version is likely to stay in time. Of course I guess the main ones, but I am sure I miss a lot of infos.\n\nLately, I have been testing these distros and I enjoyed them: Zorin OS, Chalet OS, Puppy, Lubuntu.\n\nMy needs: can run on low-end, average PC. As out of the box as possible. People not used to IT/Linux will use these computers. Thank you :D",
+        "created_utc": 1678746358,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "It's crazy how Linux and ChromeOS is starting to gain market share",
+        "author": "jazilzaim",
+        "url": "https://www.reddit.com/r/linux/comments/11qnzcl/its_crazy_how_linux_and_chromeos_is_starting_to/",
+        "text": "[https://www.gizmochina.com/2023/03/07/windows-losing-market-share-us-historic-low-57/](https://www.gizmochina.com/2023/03/07/windows-losing-market-share-us-historic-low-57/)\n\nChromeOS may not be a Linux distro but it is based on the Linux kernel. However it's crazy how Linux-based OSes are growing and gaining market share against Windows. Windows is in a continual decline. Keep it up!",
+        "created_utc": 1678746342,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "(Important bug)I've set 144 hertz on my new GPU, plugged in much older GPU now I got no screen because it won't support 60+ hertz",
+        "author": "teskilatimahsusa87",
+        "url": "https://www.reddit.com/r/linux/comments/11qn1db/important_bugive_set_144_hertz_on_my_new_gpu/",
+        "text": "It  says out of signal error right before the lightdm login screen. This is  a huge issue. Where to report this? I am using debian xfce btw. I  assume this as a rare problem, but possibly very annoying, as there is  no way to set hertz on TTY screens, xrandr will complain there is no screen. Totally frustrating. \n\nI  think there should be a simple mechanism that, if there is no screen  with that hertz, revert back to 60. Which almost always will work  anyway. Could someone please add such a mechanism in the future?",
+        "created_utc": 1678744317,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Getting really old gtk2 Adwaita theme on MATE",
+        "author": "testaccountbruhh",
+        "url": "https://www.reddit.com/r/linux/comments/11qlspv/getting_really_old_gtk2_adwaita_theme_on_mate/",
+        "text": "[removed]",
+        "created_utc": 1678741672,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Small 32 bit debian based distribution?",
+        "author": "Expensive-Vanilla-16",
+        "url": "https://www.reddit.com/r/linux/comments/11ql5io/small_32_bit_debian_based_distribution/",
+        "text": "Raspberry Pi's are stupid expensive with all the pi scalping So I was thinking, I have a few old hp thin clients that are 1.66 ghz atom cpu,, 2gb ram and 2gb flash storage that I can experiment with. It also has 6 usb ports and an onboard sata that I could probably mod a cable to fit with a adapter. \n\nI want to see if I can run adguard home on one.  Possibly experiment with apache web server too, for fun.  Anyway I've been using Mint for quite a few years and though I'm no expert, I am more comfortable with its package manager so a debian based might be best.  Seems like debian dog linux isn't being supported anymore so I am not sure what is stable/ available?  Something with a minimal gui as I'm not 100% comfortable with terminal  for everything yet.",
+        "created_utc": 1678740293,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "CodeGPT : Tool built on top of ChatGPT that generates code that runs",
+        "author": "aminostfx",
+        "url": "https://www.reddit.com/r/linux/comments/11qj1nw/codegpt_tool_built_on_top_of_chatgpt_that/",
+        "text": "[removed]",
+        "created_utc": 1678735784,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Today I released Xenia Linux 0.1, the first release of my immutable gentoo distribution",
+        "author": "Luna_moonlit",
+        "url": "https://www.reddit.com/r/linux/comments/11qi04s/today_i_released_xenia_linux_01_the_first_release/",
+        "text": "I alongside one of my friends have been working on a linux distribution for the last couple of months, which makes gentoo linux into a full immutable distribution.\n\nAs for the technical details, Xenia essentially works the same as a LiveCD. The root image is a squashFS which dracut boots. (This is why the root may appear to be writable, as dracut is booting this the same way it would boot a LiveCD)\n\nWe use LVM for the disk layout, and then we use overlayfs to make persistent filesystems on /var. There is also a seperate LV for /home.\n\nCurrently it is in very early stages, but it is installable on UEFI systems with my very scuffed install script (I am genuinely sorry if you open that file and read the code). I would encourage you to try it out in a VM if you are interested.\n\nYou can install applications through Flatpak which will persist on boot. Please let me know how you find it, any critique is very much welcomed and appreciated!\n\nCurrently I'm working on writing an actual installer that isn't horrific and a way to use emerge (looking into systemd sysext for this, to layer packages).\n\nYou can find the website [here](https://xenia-group.gitlab.io/xeniaweb)!",
+        "created_utc": 1678733494,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "\"Terms and conditions\" error when trying to register a RHEL subscription",
+        "author": "placeholder-123",
+        "url": "https://www.reddit.com/r/linux/comments/11qfiyy/terms_and_conditions_error_when_trying_to/",
+        "text": "[removed]",
+        "created_utc": 1678727846,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to create a LiveCD out of a VM?",
+        "author": "pinecone316",
+        "url": "https://www.reddit.com/r/linux/comments/11qfgzl/how_to_create_a_livecd_out_of_a_vm/",
+        "text": "[removed]",
+        "created_utc": 1678727715,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "My passport wireless pro",
+        "author": "Otherwise-Twist-6781",
+        "url": "https://i.redd.it/fitua0egukna1.jpg",
+        "text": "",
+        "created_utc": 1678726058,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Last week in open source - GNOME 44rc, Ubuntu on RISC-V, Raspberry Pi's new Camera, Flatpak in 2023 and more",
+        "author": "antsaregay",
+        "url": "https://fossweekly.beehiiv.com/p/foss-weekly-37-gnome-44rc-ubuntu-on-risc-v-raspberry-pi-s-new-camera-and-more",
+        "text": "",
+        "created_utc": 1678724496,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "made a forums for us Geeks",
+        "author": "lucifer9121221",
+        "url": "https://www.reddit.com/r/linux/comments/11qduh3/made_a_forums_for_us_geeks/",
+        "text": "[removed]",
+        "created_utc": 1678723858,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "made a forums for us Geeks",
+        "author": "lucifer9121221",
+        "url": "https://www.reddit.com/r/linux/comments/11qdqiq/made_a_forums_for_us_geeks/",
+        "text": "[removed]",
+        "created_utc": 1678723609,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How about a Linux laptop with Max customisation be like in India.",
+        "author": "Same_Department7017",
+        "url": "https://www.reddit.com/r/linux/comments/11qdiuy/how_about_a_linux_laptop_with_max_customisation/",
+        "text": "[removed]",
+        "created_utc": 1678723140,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu I’m stuck in CLi how do i access my “normal” ubuntu",
+        "author": "Salty_Ad5328",
+        "url": "https://i.redd.it/g510y9ejkkna1.jpg",
+        "text": "",
+        "created_utc": 1678722728,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "YAD: Is it possible to make clickable images?",
+        "author": "slug45",
+        "url": "https://www.reddit.com/r/linux/comments/11qcflz/yad_is_it_possible_to_make_clickable_images/",
+        "text": "[removed]",
+        "created_utc": 1678720569,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MacOS like linux distros?",
+        "author": "BeKiuby",
+        "url": "https://www.reddit.com/r/linux/comments/11qbbms/macos_like_linux_distros/",
+        "text": "[removed]",
+        "created_utc": 1678717915,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hey – ChatGPT for the command line",
+        "author": "alvrbuddy",
+        "url": "https://www.reddit.com/r/linux/comments/11qb8sw/hey_chatgpt_for_the_command_line/",
+        "text": "Hey everyone, I have created a CLI utility over the past few days that allows easy access to ChatGPT from the command line. This tool can assist with creating and running commands, answering programming questions, and more. I have also created a demo on the GitHub page. If you find it useful, please give it a star and let me know your thoughts in the comments.\n\n[https://github.com/lennardv2/hey-chatgpt-cli](https://github.com/lennardv2/hey-chatgpt-cli)\n\n*Processing video hjirmuy3oina1...*",
+        "created_utc": 1678717740,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "i was wondering how can i create a secure virtual linux distro environment on virtualbox?",
+        "author": "Original-Detail2257",
+        "url": "https://www.reddit.com/r/linux/comments/11q9c3m/i_was_wondering_how_can_i_create_a_secure_virtual/",
+        "text": "[removed]",
+        "created_utc": 1678713126,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "CS 6120: The Self-Guided Course",
+        "author": "unixbhaskar",
+        "url": "https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/",
+        "text": "",
+        "created_utc": 1678712114,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Tiny-C Language Compiler",
+        "author": "unixbhaskar",
+        "url": "http://www.iro.umontreal.ca/~felipe/IFT2030-Automne2002/Complements/tinyc.c",
+        "text": "",
+        "created_utc": 1678710678,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ubuntu 18 holdout looking for alternatives before EoL",
+        "author": "metxenn",
+        "url": "https://www.reddit.com/r/linux/comments/11q4auh/ubuntu_18_holdout_looking_for_alternatives_before/",
+        "text": "[removed]",
+        "created_utc": 1678697007,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "please help tried to find solution coudnt find any how to find parent pid",
+        "author": "your3_mom",
+        "url": "https://www.reddit.com/r/linux/comments/11q381x/please_help_tried_to_find_solution_coudnt_find/",
+        "text": "[removed]",
+        "created_utc": 1678692924,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "please help",
+        "author": "your3_mom",
+        "url": "https://www.reddit.com/r/linux/comments/11q362u/please_help/",
+        "text": "[removed]",
+        "created_utc": 1678692716,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I need some help ngl",
+        "author": "ImDeadInsidePLus",
+        "url": "https://www.reddit.com/r/linux/comments/11q0bfu/i_need_some_help_ngl/",
+        "text": "[removed]",
+        "created_utc": 1678682614,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "what are the best options for remote desktop?",
+        "author": "glop4short",
+        "url": "https://www.reddit.com/r/linux/comments/11q04xi/what_are_the_best_options_for_remote_desktop/",
+        "text": "[removed]",
+        "created_utc": 1678682037,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux CTF Ideas",
+        "author": "chief_rocka69",
+        "url": "https://www.reddit.com/r/linux/comments/11pyzky/linux_ctf_ideas/",
+        "text": "[removed]",
+        "created_utc": 1678678536,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Sushiswap adds USDT to its stablecoin exchange with a 0.997 ratio for USDC/DAI holders.",
+        "author": "Suspicious-Coast-677",
+        "url": "https://www.reddit.com/r/linux/comments/11pyeak/sushiswap_adds_usdt_to_its_stablecoin_exchange/",
+        "text": "[removed]",
+        "created_utc": 1678676865,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 5.15.101 LTS Released To Fix Broken Intel Graphics At Boot",
+        "author": "Realistic-Plant3957",
+        "url": "https://www.phoronix.com/news/Linux-5.15.101-Hot-Fix",
+        "text": "",
+        "created_utc": 1678672871,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "terminal not sourcing .profile",
+        "author": "According_Depth_2617",
+        "url": "https://www.reddit.com/r/linux/comments/11pvepu/terminal_not_sourcing_profile/",
+        "text": "[removed]",
+        "created_utc": 1678668787,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "terminal not sourcing .profile or any of the alias in the .profile file",
+        "author": "According_Depth_2617",
+        "url": "https://www.reddit.com/r/linux/comments/11pvbrt/terminal_not_sourcing_profile_or_any_of_the_alias/",
+        "text": "",
+        "created_utc": 1678668570,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Blending together packages from multiple distros with blendOS",
+        "author": "daemonpenguin",
+        "url": "https://distrowatch.com/weekly.php?issue=20230313#blendos",
+        "text": "",
+        "created_utc": 1678666604,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "MAC address",
+        "author": "lozalas",
+        "url": "https://www.reddit.com/r/linux/comments/11pu8ol/mac_address/",
+        "text": "[removed]",
+        "created_utc": 1678665693,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "store.kde.org and patreon",
+        "author": "mustelideous",
+        "url": "https://www.reddit.com/r/linux/comments/11pt71d/storekdeorg_and_patreon/",
+        "text": "[removed]",
+        "created_utc": 1678663056,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How much packages do you have?",
+        "author": "subeeen",
+        "url": "https://www.reddit.com/r/linux/comments/11pt431/how_much_packages_do_you_have/",
+        "text": "[removed]",
+        "created_utc": 1678662856,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How much packages do you have?",
+        "author": "subeeen",
+        "url": "https://www.reddit.com/r/linux/comments/11pt1dz/how_much_packages_do_you_have/",
+        "text": "[removed]",
+        "created_utc": 1678662673,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Emulation of ARM64 Android with QEMU/some emulator",
+        "author": "Clear-Introduction53",
+        "url": "https://www.reddit.com/r/linux/comments/11pshy4/emulation_of_arm64_android_with_qemusome_emulator/",
+        "text": "[removed]",
+        "created_utc": 1678661389,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Learn how to avoid repeating multiple sudo commands in long one liners!",
+        "author": "TermEnvironmental904",
+        "url": "https://www.reddit.com/r/linux/comments/11prm7g/learn_how_to_avoid_repeating_multiple_sudo/",
+        "text": "[removed]",
+        "created_utc": 1678659290,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does Desktop Enviorment kernal matter",
+        "author": "TVBot_PC",
+        "url": "https://www.reddit.com/r/linux/comments/11prlgj/does_desktop_enviorment_kernal_matter/",
+        "text": "[removed]",
+        "created_utc": 1678659241,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Enterprise Linux with optional pre-configured/managed software.",
+        "author": "TopherinoKayak",
+        "url": "https://www.reddit.com/r/linux/comments/11pr4nr/enterprise_linux_with_optional/",
+        "text": "[removed]",
+        "created_utc": 1678658179,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Kubuntu is a great operating system.",
+        "author": "taylofox",
+        "url": "https://www.reddit.com/r/linux/comments/11pqe7j/kubuntu_is_a_great_operating_system/",
+        "text": "First I want to clarify, that I am aware of the hatred of canonical and the forcing of snaps in many cases. I have been a linux user for more than 4 years on my main laptop, working with fedora until today in plasma with wayland, it is perfect and never gives me problems, I have also learned a lot.  \n\n&amp;#x200B;\n\nHowever, recently it occurred to me to dust off an almost obsolete computer that I had stored with windows 8.1. The support had ended but I was lazy to go deeper, however I changed your rtl8187b card for an intel 5100 agn, the laptop is a toshiba l515 (t4400-8 gb ddr3-ssd 240-intel gm45 graphics), when I made the change, windows it refused to recognize the card with driver error 10 refusing to launch it. I tried a lot of auto-detection tools and there was no case, moreover the toshiba page now dynabook, does not provide support, most of the drivers are down. \n\n&amp;#x200B;\n\nWindows 10 the same, there was no other case it felt laggy for obvious reasons from my old hardware. I decided to install my beloved fedora, but it refused to start the live usb, it indicated various errors, but nevertheless xfce spin did work. I installed it and it was as laggy as win10, very clumsy for everything, I didn't understand what was happening... I installed plasma by terminal and removed xfce in groupinstall, plasma also felt clumsy and often grayed out loading. Finally I decided to delete everything and gave the opportunity to the prejudiced, criticized and hated unpopular ubuntu in its kubuntu plasma version. Everything works great, it's bullet fast and snappy, even faster than fedora xfce. \n\n&amp;#x200B;\n\nI guess it's all about proprietary drivers, but never mind. Wayland version of kubuntu 22.04 hasn't crashed once so far, the hardware was detected wonderfully and it's too easy to use in general, however I had some difficulties to install ksysguard for its backend for some widgets, but I managed it doing research. I guess if I ever need to switch other machines to linux, which I will do in the future, it will be kubuntu. On my main machine I will continue with fedora because I like it and I'm used to it, plus I need some rhel tools. Still, I have no doubt that kubuntu would work great here.",
+        "created_utc": 1678656455,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Sushiswap introduces USDT exchange feature for USDC/DAI holders at a reduced ratio of 0.997.",
+        "author": "SignificantConstant4",
+        "url": "https://www.reddit.com/r/linux/comments/11ppt8u/sushiswap_introduces_usdt_exchange_feature_for/",
+        "text": "[removed]",
+        "created_utc": 1678655064,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Scheduler linux",
+        "author": "CyberAi0",
+        "url": "https://www.reddit.com/r/linux/comments/11poubn/scheduler_linux/",
+        "text": "[removed]",
+        "created_utc": 1678652765,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "asus rog ryujin ii",
+        "author": "gauss08",
+        "url": "https://www.reddit.com/r/linux/comments/11pn4on/asus_rog_ryujin_ii/",
+        "text": "[removed]",
+        "created_utc": 1678648762,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "asus rog ryujin ii",
+        "author": "gauss08",
+        "url": "https://www.reddit.com/r/linux/comments/11pn3nh/asus_rog_ryujin_ii/",
+        "text": "[removed]",
+        "created_utc": 1678648694,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "asus rog ryujin ii",
+        "author": "gauss08",
+        "url": "https://www.reddit.com/r/linux/comments/11pn25s/asus_rog_ryujin_ii/",
+        "text": "[removed]",
+        "created_utc": 1678648599,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "asus rog ryujin ii",
+        "author": "gauss08",
+        "url": "https://www.reddit.com/r/linux/comments/11pn0j8/asus_rog_ryujin_ii/",
+        "text": "[removed]",
+        "created_utc": 1678648496,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Asus rog ryujin ii",
+        "author": "gauss08",
+        "url": "https://www.reddit.com/r/linux/comments/11pmz8b/asus_rog_ryujin_ii/",
+        "text": "[removed]",
+        "created_utc": 1678648407,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[OC] I made a CLI to convert natural language to terminal commands.",
+        "author": "Professional-Use6370",
+        "url": "https://i.redd.it/diurojel7ena1.png",
+        "text": "",
+        "created_utc": 1678645743,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to use ext4 filesystems in Windows?",
+        "author": "akik",
+        "url": "https://atkdinosaurus.wordpress.com/2023/03/11/how-to-use-ext4-filesystems-in-windows/",
+        "text": "",
+        "created_utc": 1678642582,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "History of Linux- Shreya",
+        "author": "Dependent_Ad1880",
+        "url": "https://youtube.com/watch?v=rDtrYaNHgjM&amp;feature=share",
+        "text": "",
+        "created_utc": 1678638282,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Distro hopping, grub and flashing cursor",
+        "author": "Dusk-CS",
+        "url": "https://www.reddit.com/r/linux/comments/11phsl4/distro_hopping_grub_and_flashing_cursor/",
+        "text": "[removed]",
+        "created_utc": 1678636330,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux installation",
+        "author": "sbm_srw",
+        "url": "https://www.reddit.com/r/linux/comments/11phn7w/linux_installation/",
+        "text": "[removed]",
+        "created_utc": 1678635959,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "SQLite Database Release 3.41.1 On 2023-03-10",
+        "author": "FryBoyter",
+        "url": "https://www.sqlite.org/releaselog/3_41_1.html",
+        "text": "",
+        "created_utc": 1678633330,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "operating system",
+        "author": "lnxxsjsjsua1",
+        "url": "https://www.reddit.com/r/linux/comments/11pg1dx/operating_system/",
+        "text": "[removed]",
+        "created_utc": 1678631925,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Anybody has any way to get rid of all of the tomtom stuff off the linux installation that a tomtom via navigation device comes with.",
+        "author": "Healthy_Foundation90",
+        "url": "https://www.reddit.com/r/linux/comments/11pftxe/anybody_has_any_way_to_get_rid_of_all_of_the/",
+        "text": "[removed]",
+        "created_utc": 1678631361,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can Bottles be used in Linux Mint XFCE to run the Redragon M908 Gaming Mouse software of Windows and configure it?",
+        "author": "ScarletMcLearn",
+        "url": "https://www.reddit.com/r/linux/comments/11pfhkc/can_bottles_be_used_in_linux_mint_xfce_to_run_the/",
+        "text": "[removed]",
+        "created_utc": 1678630412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "switching between graphics mode on window manager like bspwm",
+        "author": "anotakuidk",
+        "url": "https://www.reddit.com/r/linux/comments/11pfh5x/switching_between_graphics_mode_on_window_manager/",
+        "text": "[removed]",
+        "created_utc": 1678630382,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "grphics card",
+        "author": "anotakuidk",
+        "url": "https://www.reddit.com/r/linux/comments/11pfcyh/grphics_card/",
+        "text": "[removed]",
+        "created_utc": 1678630051,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I study Gimp's engine - GEGL and its potential in creative workflows and graphical text styling. A month ago I showed off my generic layer effects plugin but now I would like to show one of my more fanciful text morphing plugins. https://github.com/LinuxBeaver/GEGL-STONE-TEXT-2/releases/",
+        "author": "CinnamonCajaCrunch",
+        "url": "https://v.redd.it/xr582f1d5bna1",
+        "text": "",
+        "created_utc": 1678627230,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "i have accidently resized linux partition where my ubuntu was installed how can i recover &gt;",
+        "author": "kush_kc12",
+        "url": "https://www.reddit.com/r/linux/comments/11pe1tb/i_have_accidently_resized_linux_partition_where/",
+        "text": "[removed]",
+        "created_utc": 1678626160,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Mean behavior is terminal",
+        "author": "Ok_Lengthiness_6591",
+        "url": "https://www.reddit.com/r/linux/comments/11pdxwp/mean_behavior_is_terminal/",
+        "text": "[removed]",
+        "created_utc": 1678625853,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Linux 6.4 To Remove Old Workaround For Running On Very Outdated Distributions",
+        "author": "unixbhaskar",
+        "url": "https://www.phoronix.com/news/Linux-6.4-Drop-Old-Sysfs-Layout",
+        "text": "",
+        "created_utc": 1678623343,
+        "upvote_ratio": 1.0
+    }
+]

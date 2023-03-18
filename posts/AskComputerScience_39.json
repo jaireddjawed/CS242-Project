@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Theoretical limits on garbage collection cost?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zdyxc/theoretical_limits_on_garbage_collection_cost/",
+        "text": "[removed]",
+        "created_utc": 1489516547,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Beginner question: Complexity Classes / Big O Notation",
+        "author": "RetroX94",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zdsjg/beginner_question_complexity_classes_big_o/",
+        "text": "Hey , I have the following task to define the complexity classes for the following functions.\n\n1. 12.5 ∗n^5 − 2.5 ∗ n^3 − n\n\n2. 2. −2 ∗ n^3 + 0.001 ∗ n^4 + 100 − 10^512 ∗ n + n^4 ∗ log 2n\n\n3. (5∗n^2 ∗ log n+4∗n) / n2\n\nIs this the correct solution ? \n\n1. O(N) = n^5\n2. O(n * log n) = n^4 * log n\n3. O(log n) =  5 * log n + 4/n",
+        "created_utc": 1489514892,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What type of data structure would you use to model the internet? Whats the scale of costs-both $ and computational?",
+        "author": "ebolanurse",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zdgry/what_type_of_data_structure_would_you_use_to/",
+        "text": "Suppose I wanted to model ~60% of the websites on the internet and all of the back links for each page? \n\nWhat data structure would I use? A giant  nBillion X nBillion matrix? Addressed as a hash table?\n\nWhat's the scale of cost's for such a project? Obviously High, but how high? What methods could be implemented to make storing and searching the data structure more efficient?\n\nWould you go for something like a distributed hash table among s3 buckets?",
+        "created_utc": 1489511938,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When I double-click or long-press the last word of a sentence in any program on any operating system, I instinctively know that the period will not be selected. Who made this decision for me?",
+        "author": "Philosocybin",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zanry/when_i_doubleclick_or_longpress_the_last_word_of/",
+        "text": "^",
+        "created_utc": 1489474272,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Train Record Linkage and generate predictions on test set?",
+        "author": "74throwaway",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zah8x/train_record_linkage_and_generate_predictions_on/",
+        "text": "[removed]",
+        "created_utc": 1489471181,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How did I fail this homework assignment for a data science interview?",
+        "author": "unconditionallove13",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5zabwi/how_did_i_fail_this_homework_assignment_for_a/",
+        "text": "For the interview process for a data science role at a startup I applied to, I was required to complete an analysis on a data set as a homework assignment. I was told afterwards that I would not be invited to the next step. So I would like to know what I did wrong. Here is the dataset:\n\n        numYO job          marriage  education         defaultedLoan  home   loan  howToContact   month  day   numTimes numDays numBefore  result        eRate CPI        CCI   TRM    NE   numMonths numMessages answered\n    1      55 admin.         single university.degree   unknown        no     no      cellular     nov   mon        1   999        0      nonexistent   -0.1  93.200    -42.0  4.191  5195.8     999         0        no\n    2      NA blue-collar  married    NA                  no           no      no    cellular       jul  mon        1   999        0      nonexistent    1.4  93.918    -42.7  4.960  5228.1     999         0        no\n    ...\n\nMy code is available at: http://pastebin.com/XqHvy8VB\n\nI was also required to answer the following questions:\n\n1. How did you handle NA values, categorical variables, and unbalanced data?\n2. Why did you choose this model or ML algorithm over other possibilities?\t\n3. What other algorithms did you try and why is your chosen one better than the others?\n4. How did you test your algorithm?\n\nCan anyone offer any feedback on my code? Thanks\n\nEDIT:\nMy answers to the questions were:\n\n1. I handled missing data by replacing NA values in numYO with median value of numYO. I noticed that “education” had “” instead of NA as its missing values. I deleted all the rows from the training set that contained “” for “education”.\nI used model.matrix to convert the categorical variables to dummy variables.\nFor the unbalanced data, because there were 4221 “no” values compared to just 526 “yes” values for the “answered” variable, I used oversampling to modify the training set so there were 4000 rows with “yes” and 4000 rows with “no” for the “answered” variable. \n\n2. The outcome variable is “answered”, which can only take on two values of “yes” and “no”. So this is a binary classification problem. Logistic regression, random forest, and gradient boosting can be used for binary classification problems. I could not use linear discriminant analysis because there is a mix of numerical and categorical variables\n\n3. I tried logistic regression, random forest, and gradient boosting. Logistic regression got a better log-loss score for cross-validation than the other models. \n\n4. By leaving out 1/3 of the training set and using that as the validation set, and the remaining 2/3 of the training set for cross-validation.",
+        "created_utc": 1489468829,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Linear Algebra] Ax=B Using computers. Is Direct Solving quicker than Iteration?",
+        "author": "Hockeygoalie35",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5za9w7/linear_algebra_axb_using_computers_is_direct/",
+        "text": "[removed]",
+        "created_utc": 1489468000,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Mathematics-Computer Science vs Computer Science Engineering",
+        "author": "ranchgod",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z9zjl/mathematicscomputer_science_vs_computer_science/",
+        "text": "Dear Computer Science majors of reddit!\n\nI have recently been admitted to UC San Diego! However, one thing that is concerning me is my admitted major. My primary major was Computer Science engineering, and I put down my secondary as \"Mathematics-Computer Science\" seeing as it was a BS and there were no other options. My admission turns out to be for \"Mathematics-Computer Science\", and all the sudden im all stressed. Dont get me wrong I am not shy to math, it is currently one of my favorite subjects. On the other hand though, I want Computer Science to be my main focus in college, and I want to spend as much academic time as I can programming.\n\nNow here is my question. Are any of you in a \"Mathematics-Computer\" science major, or even at UCSD yourself? How do the two majors compare? Should I be worried that mine is not \"engineering\"?\n\nI have researched both majors and they honestly seem pretty similar, however I'm just looking for personal anecdotes or opinions so I know to either go full steam ahead with the course or try to switch my major to \"Computer science engineering\"\n\nTl;dr\nAdmitted for \"mathematics-computer science\" wanted \"computer science engineering\" are the two really that different? Will my focus be steered away from raw computer science? ",
+        "created_utc": 1489463941,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Learning Theory of Computation and Algorithm Analysis, how important are proofs?",
+        "author": "puketronic",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z8wgv/learning_theory_of_computation_and_algorithm/",
+        "text": "I'm learning computer science on my own and want to begin learning theory of computation and algorithm analysis at an undergrad level. I come from a different engineering background (structural engineering) but I've already been exposed to some discrete mathematics from various mechanics and numerical analysis courses. I'm no pro in this subject so I definitely have to review and relearn things. My concern is that suck at proofs. \n\nProofs weren't emphasized in my mechanics courses but they were important in my numerical analysis courses. I understood the algorithm concepts and implementations but I didn't *really* understand how to do the proofs.  I can do proofs, sometimes, if I really really try I guess.\n\nAre proofs an important skill for a programmer? if so, then i'll put the effort into learning it.",
+        "created_utc": 1489450944,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What academic or detailed practical text(s) should I use for low level CS self-study?",
+        "author": "KleverHans",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z8nyo/what_academic_or_detailed_practical_texts_should/",
+        "text": "Forgive me if i'm not using the correct vernacular here.\n\nEssentially i'm interested in taking up extensive self study in CS.  Not for career development or anything, more like a hobby, i.e, programming a breadboard computer for various tasks, and working my way up into something more complicated eventually.\n\nSince I want to start from the ground up, like, right now i've been learning about logic gates and extremely simple uses of them such as a full adder, etc, I used the phrase \"low level\", though i'm not sure if that's correct.  I want to continue to learn the hardware level stuff.\n\nI realize i'm pretty much still on chapter 1 here, but even still i'm having trouble figuring out where to go next.  I think, more specifically, i'm looking for an introductory text on Computer Architecture?  Instruction Set Architecture?  \n\nAgain, this is from the perspective of a complete layman.  I haven't even learned what a register does or is used for at this point.  I definitely want to familiarize myself with machine and assembly language to understand what happens after higher level languages are compiled.\n\nI know it will take a long, long time to do right, but that's okay.  If it matters I majored in mathematics so I already have a background in discrete math, linear algebra, etc.  \n\nNon textbook resources are okay too if you think they are extensive enough, or hardware to play with in conjunction with the book(s).\n\nThanks!",
+        "created_utc": 1489448410,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Confused on uninitialized and initialized variables",
+        "author": "jabberwocky16",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z8fcf/confused_on_uninitialized_and_initialized/",
+        "text": "Ok so my friend gave me a worksheet to see if i can understand it, but i don't. Using google but still don't understand, i need like simple examples for a complete beginner. \n\nDeclare a variable that will hold a whole number.  Do not initialize the variable. So would this be something like, int x = 8? and adding ; initializes it?\n\n\nDeclare a string variable and initialize it with your first name. So this would be, name = \"Bob\"? Do i have to add anything infront ot it?\n\nI'm trying to learn but it's confusing the hell out of me, i've never written code or looked at anything like it before so outside of accidentally clicking view page source once a long time ago lol i have the worksheet saved on pc but it gets even more complicated, so if you need to see it, i can upload it.",
+        "created_utc": 1489445912,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should I do for my AP Computer Science Principles Final Project?",
+        "author": "iiSulli",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z6ro0/what_should_i_do_for_my_ap_computer_science/",
+        "text": "General Requirements\nThis performance task requires you to develop a program on a topic that interests you or one that solves a problem. It is strongly recommended that a portion of the program involve some form of collaboration with another student in your class. Your program development process must involve a significant portion of work completed independently that requires a significant level of planning, designing, and program development.\n\nYou are required to:\nIteratively design, implement, and test your program.\nIndependently create at least one significant part of your program.\nCreate a video that displays the running of your program and demonstrates its functionality.\nWrite responses to questions about your program.\nInclude your entire program code.\n\nProgram Requirements\nYour program must demonstrate a variety of capabilities and implement several different language features that, when combined, produce a result that cannot easily be accomplished without computing tools and techniques. Your program should draw upon a combination of mathematical and logical concepts, such as use of numbers, variables, mathematical expressions with arithmetic operators, logical and Boolean operators and expressions, decision statements, iteration, and collections.\n\nYour program must demonstrate:\nUse of several effectively integrated mathematical and logical concepts, from the language you are using\nImplementation of an algorithm that integrates other algorithms and integrates mathematical and/or logical concepts\nDevelopment and use of abstractions to manage the complexity of your program (e.g., procedures; abstractions provided by the programming language; APIs)\n\n\nSubmission\n\n1. Video\nSubmit one video in .mp4, .wmv, .avi, or .mov format that demonstrates the running of at least one significant feature of your program. Your video must not exceed 1 minute in length and must not exceed 30MB in size.\n\n2. Written Responses\nSubmit one PDF document in which you respond directly to each prompt. Clearly label your responses 2a – 2e in order. Your response to all prompts combined must not exceed 750 words, exclusive of the Program Code.\n\n",
+        "created_utc": 1489430175,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "2 years into my CS bachelor's, and I've come to a conclusion: I hate programming.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z6a3e/2_years_into_my_cs_bachelors_and_ive_come_to_a/",
+        "text": "[removed]",
+        "created_utc": 1489425514,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I've asked a question seeking guidance for the path I've chosen for my CS career. Please answer",
+        "author": "redditian_1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z0exi/advice_for_a_cs_career/",
+        "text": "",
+        "created_utc": 1489395406,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CS31 @ UCLA",
+        "author": "stoptrippin81",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z3o7g/cs31_ucla/",
+        "text": "Yo my final exam for CS31 is next Saturday (March 18)...any of y'all have a study guide or any resources that could help? Specific stuff would be nice rather than a 50 page textbook or somethin haha.",
+        "created_utc": 1489388620,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Programmers: what are the most important skills a newbie to CS should develop early on? Also, what mindset do you adopt when faced with a seemingly insurmountable problem?",
+        "author": "nz_21",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z3hha/programmers_what_are_the_most_important_skills_a/",
+        "text": "",
+        "created_utc": 1489385157,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone here ever file for bankruptcy or know how it effects job prospects?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z2ak3/anyone_here_ever_file_for_bankruptcy_or_know_how/",
+        "text": "[deleted]",
+        "created_utc": 1489368276,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Tools and languages for side projects",
+        "author": "xMcNerdx",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z0u4g/tools_and_languages_for_side_projects/",
+        "text": "I hope this is an appropriate question for this sub, but anyways:\n\nI could use some advice on what tools/languages to use for some projects I want to do. Right now all I've used is Python, Java, and the Intellij IDE. Those aren't the optimal things to use to make everything (an app, website, etc). I could do some of my ideas using java and a command line but that isn't presentable at all. \n\nFor example, if I wanted to make a flashcard app/game, what would be a decent tool or language to use? \n\nI've heard Python is a good scripting language and can be used to make a Reddit bot or scanner. If I wanted to create a bot that would scan r/wallpapers for pics, resize them, and add them to a folder, is there a particular tool I would use other than just coding in Python?\n\nI've heard creating your own personal website is a good place for a beginner to get some experience. Is there any particular place that allows you to do this for free? Or are people registering their own domains and paying the fees?\n\nThanks for any advice",
+        "created_utc": 1489351396,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Advice for a CS career",
+        "author": "redditian_1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z0exi/advice_for_a_cs_career/",
+        "text": "I am a CSE undergraduate in the 3rd semester of total 7 semesters and I want some career advice.\n Right from my childhood Computers and Electronics have always fascinated me. So I took CSE after my high school.\n\n\n I like programming, solving programming problems, learning new technologies, building my own things after learning those technologies etc\nThe thing I like doing the most is learning more and more technologies of CS and applying these technologies. But CS is such a vast field that it is impossible to master everything so I want to learn and apply as much as I can.\n\nSo what I have decided is that I will earn money either by freelancing or by ads(by ads I mean by making websites/blogs or mobile apps or starting an educational Youtube Channel and showing ads on them) or by making softwares or games and selling them. I have decided to earn this way and not work under any company(freelancing is an exception because I will have a bit freedom of chosing my working hours) because by doing this I will spend time learning more and more new technologies and applying those technologies which is what I love doing.\n\n \nThis is the path I have chosen for myself. I request experienced people in the domain of CS to guide me to achieve my aim of learning and applying as many CS technologies as possible and also tell me how good this idea of mine is, and what are the drawbacks of following this path.\n\nEdit: As someone has mentioned that the goals which I've mentioned in my post are very generic I am adding a few things.\n\n\nTechnologies I am interested in: making Android, iOS apps, making simple 3D games using Unity 3D for Windows, Android and iOS platforms, Full Stack Web Development and Internet of Things.\n\nAs for now I am interested in learning these technologies and in the future I want to discover more technologies and learn them based on my interest.\n\n\nAbout my passion: I am passionate about learning more and more CS technologies. And yes I know this is very generic and I can't help it.\n\n\n",
+        "created_utc": 1489346712,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Around the planet who are the greatest programmers?",
+        "author": "theszak",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5z09vj/around_the_planet_who_are_the_greatest_programmers/",
+        "text": "[removed]",
+        "created_utc": 1489345220,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How expensive, storage wise, is it to store massive amounts of rows in a database?",
+        "author": "scaryred2",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yzdla/how_expensive_storage_wise_is_it_to_store_massive/",
+        "text": "I was just thinking of if a system like the Steam Store kept track of every item you ever looked at. (even previews that don't include viewing the actual store page) That would mean having a join table that kept track of the relationship between evey item and every user. Would this actually equate to a lot of storage? It would just be 2 foreign ids and maybe a boolean such as \"viewed\" or even an int such as \"seconds spent on page \".",
+        "created_utc": 1489335156,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'd like to create a search engine, but am completely new to computer science",
+        "author": "jellybellynails",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yx2ge/id_like_to_create_a_search_engine_but_am/",
+        "text": "I'd like to create a search engine for a database I create. What should I use? ",
+        "created_utc": 1489293931,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What are some things every newbie to CS *must* know?",
+        "author": "nz_21",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ywydf/what_are_some_things_every_newbie_to_cs_must_know/",
+        "text": "EDIT: Wow, there's a stash of great advice in here, thanks so much, everyone!\n\n",
+        "created_utc": 1489292214,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "NP completeness reduction, any ideas?",
+        "author": "asdfqwertylol",
+        "url": "https://i.redd.it/wl9rik1qntky.png",
+        "text": "",
+        "created_utc": 1489256859,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help with Big-Oh Proofs",
+        "author": "DistressedRomeo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ytjgc/help_with_bigoh_proofs/",
+        "text": "Question: Show that (x^3 + 2x)/(2x+1) is O(x2).\n\nCan someone please lead me through the steps in completing this big-oh proof? I don't understand its structure, especially when dealing with fractions. I want to be able to solve it purely by definition and also solve for its witnesses, C and k.",
+        "created_utc": 1489250943,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Who was your worst professor and why?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yq2ql/who_was_your_worst_professor_and_why/",
+        "text": "[deleted]",
+        "created_utc": 1489194817,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone please help me with my Automata assignment? I think my answers are wrong.",
+        "author": "usntaken",
+        "url": "https://i.redd.it/is5037a1emky.jpg",
+        "text": "",
+        "created_utc": 1489168898,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone please help me with these questions? I think my answers are wrong.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/vy5stbv1cmky.jpg",
+        "text": "[deleted]",
+        "created_utc": 1489168274,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone please help me with these Automata questions?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/8tna0wu7skky.jpg",
+        "text": "[deleted]",
+        "created_utc": 1489149475,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Any experts in SIM card applications?",
+        "author": "mr_anto",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ylnqn/any_experts_in_sim_card_applications/",
+        "text": "Here is an example\nhttps://en.m.wikipedia.org/wiki/M-Pesa",
+        "created_utc": 1489146860,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does the memory layout segments depend on the architecture? (e.g. bss, text, etc.)",
+        "author": "freezingbum",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yjm2m/does_the_memory_layout_segments_depend_on_the/",
+        "text": "As per Computer Organization and Design by P&amp;H, systems based on MIPS processors typically divide memory into three parts: text segment, data segment (static and dynamic), and stack segment.\n\nI noticed that some websites/resources divide the memory a little differently. For example, this [website](http://www.geeksforgeeks.org/memory-layout-of-c-program/) shows a *bss* segment for uninitialized data.  I have also seen a rodata segment mentioned elsewhere. I'm a little confused because I haven't seen these segments mentioned within the context of MIPS processors. I'm not sure if my text is keeping the segments general, or if the segments are processor dependent.\n\n1. Do MIPS processors use these segments?\n2. More generally, do different processors have different segments? ",
+        "created_utc": 1489113869,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question about relational algebra and relational calculus being equivalent",
+        "author": "freezingbum",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yj80s/question_about_relational_algebra_and_relational/",
+        "text": "I'm currently learning about relational algebra and relational calculus and I'm blown away by the two being logically equivalent. I'm wondering, are \"algebra\" and \"calculus\" equivalent? Or just \"relational algebra\" and \"relational calculus\"? ",
+        "created_utc": 1489109258,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I am having trouble deciding between computer science and computer engineering.",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yi5k1/i_am_having_trouble_deciding_between_computer/",
+        "text": "[removed]",
+        "created_utc": 1489097359,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CompSci Student having trouble setting up PyCharm on Windows",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yhnbu/compsci_student_having_trouble_setting_up_pycharm/",
+        "text": "[deleted]",
+        "created_utc": 1489092314,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How hard is it for someone who has no knowledge of any programming language to build a website? Also, what are some basics to create a website from scratch?",
+        "author": "cpaman123",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yfnhv/how_hard_is_it_for_someone_who_has_no_knowledge/",
+        "text": "Thanks in advance!",
+        "created_utc": 1489073158,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should I, a Compsci freshman, learn/read outside of class?",
+        "author": "axtheandalite",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5yeunl/what_should_i_a_compsci_freshman_learnread/",
+        "text": "Hi everyone, I'm so sorry if this has been asked too many times before but searching through the subreddit is just overwhelming and I'm not sure if those advice are applicable for me.\n\nSo I've just started my degree in computer science in Australia (in my 2nd week now) with no prior programming experience except some beginning-level Pascal I learned in HS. Math and particularly algebra was my strong suit back in HS. Currently my subjects are about Java, data management (mySQL) and problem solving and I feel like I should read more but really I don't know where to start. Should I learn another language along with Java or should I leave it until I'm more familiar with it? Which topics are suitable for me right now? Also, any book recommendations?",
+        "created_utc": 1489063680,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Need Some Clutch Help Be the Real MVP",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ydq6k/need_some_clutch_help_be_the_real_mvp/",
+        "text": "[deleted]",
+        "created_utc": 1489043973,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm having trouble writing this algorithm. Can anyone give me some pointers?",
+        "author": "master-of-some",
+        "url": "https://i.redd.it/0oyl0mncw8ky.png",
+        "text": "",
+        "created_utc": 1489005626,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A bit of guidance on the Greedy Method?",
+        "author": "groggyjava",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5y8fjn/a_bit_of_guidance_on_the_greedy_method/",
+        "text": "looking for some literature on the greedy method (been a long time since university and don't remember the particulars)\n\nnot looking for an answer, just a pointer (pun intended) in the right direction \n\n\nwhat i have is this: \n\n* a list of user-requested hotel rooms, with a number of rooms per room type (query)\n* an unsorted set of available hotel rooms (all from same hotel) of those types (query result)\n\ni need to find the set of subsets such that each subset: \n\n* has the correct number of available rooms to satisfy the request\n* no duplicate rooms\n\nand then order that set of subsets by a value function (price, commission, cancellation policies)\n\nwhat i have done is this:\n\n* put available rooms into hash of hashes by room type\n* brute force iteration to generate all possible subsets\n* order by value function\n\ni am thinking the Greedy Method might be a thing to do to improve on this.\n\navailable room count is generally &lt; 100, requested rooms per type can be fairly large (~30) for a destination wedding, hotels generally have &lt; 10 room types\n\n\n\n",
+        "created_utc": 1488986056,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the meaning of \"0x0p+0\"",
+        "author": "Biermoese",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5y7uzv/what_is_the_meaning_of_0x0p0/",
+        "text": "Usually, 0x as a prefix marks a hexadecimal number, but I have never seen any number of that kind (p+0 ???). So, can anyone please tell me what kind of number this is?",
+        "created_utc": 1488979369,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is more important in computer science; pure mathematics or statistics?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5y5bzi/what_is_more_important_in_computer_science_pure/",
+        "text": "[removed]",
+        "created_utc": 1488940775,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Assembly Language Course in College",
+        "author": "abdolfhitcoln420",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5y3ret/assembly_language_course_in_college/",
+        "text": "[removed]",
+        "created_utc": 1488923848,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question about the programming language 'R' (Running R without Rstudio)",
+        "author": "Bombuhclaat",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5y35as/question_about_the_programming_language_r_running/",
+        "text": "[removed]",
+        "created_utc": 1488917965,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Explanation of Modsort + Is it efficient?",
+        "author": "thomasfarid",
+        "url": "https://theopinionsihave.wordpress.com/2017/03/07/mod-sort-elaboration/",
+        "text": "",
+        "created_utc": 1488910198,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this a linear time sorting algorithm?",
+        "author": "thomasfarid",
+        "url": "https://theopinionsihave.wordpress.com/2017/03/07/modsort-a-linear-time-algorithm-on/",
+        "text": "",
+        "created_utc": 1488861226,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Questions for software engineers",
+        "author": "xNotAChance",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xvu0e/questions_for_software_engineers/",
+        "text": "I am currently taking a course in CIS (Computer Information Systems) and need to interview three professionals in the software development industry. If you can, please respond and answer the following questions:\n\n1. What is the title of your job?\n\n2. What are your job responsibilities?\n\n3. What industry do you work in (e.g. sales, marketing, web services, medical, etc.)?\n\n4. Do you write software requirements, use cases, or misuse cases? If so, how?\n\n5. How did you learn to understand software requirements, use cases, or misuse cases?\n\n6. Did your college education adequately prepare you for your job?\n\nThanks for your help!\n",
+        "created_utc": 1488833616,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Software Engineers: I need highly specific topics for my Advanced Software Engineering course",
+        "author": "mproj",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xu6nf/software_engineers_i_need_highly_specific_topics/",
+        "text": "My professor wants us to write an essay on software development principles. Essentially, what are important topics that are specific to the software you develop?\n\nExample:\n\nIf you work in game design, how do you manage predicting due dates?\n\nIf you work for a major corporation, how is the workload distributed?\n\nIf you work at a startup, what does the process of planning out your software look like?\n\nIf you work freelance, how do you determine your personal software process?\n\nI will be sending a compiled list of replies to my colleagues as well, so numerous replies are welcomed. ",
+        "created_utc": 1488818038,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can someone help me understand the Entscheidungsproblem?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xrzlb/can_someone_help_me_understand_the/",
+        "text": "[removed]",
+        "created_utc": 1488785174,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Questions on Formal Semantics and Exam Taking",
+        "author": "PostNuclearTaco",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xqj59/questions_on_formal_semantics_and_exam_taking/",
+        "text": "[removed]",
+        "created_utc": 1488764734,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Google SummerOfCode - advice needed",
+        "author": "the__stoke",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xqbw1/google_summerofcode_advice_needed/",
+        "text": "Hi. I am a freshman at UCSD studying CS. I am interested in applying for the GSOC, but I am overwhelmed by the number of organisations and the scope of the tasks. I have completed 2 CS courses as of now, and will have completed 2 more by the time summer rolls in. 2 courses - intro to oop using java. Another course in java - basic data structures and oop. I have a fairly good grasp of python, having completed 600x on Edx and worked through the Guttag textbook - introduction to Python. My question is to anyone who has experience with GSOC, or a good feel around college education. Is this something out of my depth, or would it be worth researching the over 200+ companies to find something that falls within my small area of abilities. I am also willing to put in a lot of effort between now and the various deadlines. ie, if I felt I had a shot, I would take one less general ed class next semester and use that time to acquire any skills I'd need for the Summer. Any advice is appreciated",
+        "created_utc": 1488762224,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "HELP - IT or CS? FRESH student",
+        "author": "Tom94hagen",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xpzpv/help_it_or_cs_fresh_student/",
+        "text": "Im 23 now going to start college,  been working full time ever since.  Working with computers and on computers is more stimulating for me so it would be obvious for me to work with them, as I can sit down and be stimulated while working on them.  Been using them since I was very young and into video games,  movie editing etc.  It's easy for me to learn things faster than regular people on the computer.  Anyhow,  Im considering Computer Science as it has more doors open for many jobs like developers, designers, video game designers coders and etc.  However I do not enjoy math a whole lot,  but I am decent at it.  Looking at the program,  it looks like its heavily math based?  Considering whether that will be a problem for me as I progress through it.  On the other hand looking at IT,  seems like it has no math relevant courses in the curricular.  I am good with algebra,  solving for x and things like that I feel is my strenght,  graphs not so much.  I do enjoy algebra more than graphing by alot.  But I am able to handle the math as its the same as anything need to put some time in but the curricular looks freighting.  Im not a A plus student in calculus.  Im more of a c+ c- type.  Anyways the math looks quite scary and just wondering if anyone who has similar math skills to me did CS and how did it play out for them? \nThe math courses requires me to take ritalin and stuff like that cause its so brutal for me.  Where as basic computer programming courses are do able with no meds.  Im thinking IT would be better for me, but feel capable of over acheiving by going with CS.  \n\nQuestions:\n-Anyone take CS who is not too math friendly?  how did it play out for you?\n-IT and CS courses are similar would I be able to switch to IT half way thru?\n-Bottom line im not a math genius more of a c,c+ calculus student, with alebgra as my strengths not so much graphs,  angles are good too.  would this be a problem in the future?\n\nPS:  The cs program I will be in summer is a total of 2 years,  then im planning to transfer to a university.  \n\nLet me know.  Thanks and greatly appreciated \n ",
+        "created_utc": 1488758195,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "HELP! My partition method for my quicksort Algorithm works fine. But it messes up, if I use duplicate values in an array. This HW is due in 2 hours, HELP!",
+        "author": "StrugglingNYUStudent",
+        "url": "https://i.redd.it/xrlfc9yosnjy.png",
+        "text": "",
+        "created_utc": 1488750104,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone know of a good video for understanding databases",
+        "author": "Nimitz14",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xop4p/anyone_know_of_a_good_video_for_understanding/",
+        "text": "[removed]",
+        "created_utc": 1488743784,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Udacity Question - Front-end, Back-end, Mobile, or Data Analyst?",
+        "author": "MikeH01",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xom0d/udacity_question_frontend_backend_mobile_or_data/",
+        "text": "So after completing marketing in university I thought I'd build up some hard skills and figured a shorter-term, programming education might be a smart way to go. I build websites on the side (build is a strong word, more like put together, write copy for, and slightly edit with limited knowledge of HTML and CSS), and I've taken some compsci in the past and enjoyed it so I have no problem dealing with learning and relearning.\n\nI'm going to take Udacity's intro to programming course, but after there is a number of choices. I was wondering, based on your opinions, what would you pick if you were on my shoes, or would you do this at all: Front-end, back-end, mobile, or data analysis?\n\nThanks so much for your feedback :)",
+        "created_utc": 1488742837,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is the big O for this piece of Code? Is it O(n)??",
+        "author": "StrugglingNYUStudent",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xm14h/what_is_the_big_o_for_this_piece_of_code_is_it_on/",
+        "text": "https://ibb.co/dfU5WF",
+        "created_utc": 1488704837,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Block websites/key-word searches on local network",
+        "author": "Thiago_Rangel7",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xl5zw/block_websiteskeyword_searches_on_local_network/",
+        "text": "Hi\nI would like to block certain google searches and specific websites over my local network connection, so no device can connect to it. These sites are not adult content, just general matter websites I would like to not be accessible.\n\nHow do I do it? I've tried to block domains on router config, but it doesn't allow me to block searches.\n\nThanks in advance",
+        "created_utc": 1488688474,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Question about graphs",
+        "author": "whism",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xjy8g/question_about_graphs/",
+        "text": "Hello,\n\nX-post from r/compsci\n\nIf I have a graph where every node is reachable (not directly connected, but reachable) from any other node, and am allowed to swap between any two connected nodes, is it safe to assume that I can re-order the contents of the nodes arbitrarily?\nIs this a well-known property of graphs? Where can I read more about this?\n\nFor clarification on the problem: Imagine a graph of cities, each city has an envelope containing a random unique integer. Is it then possible to arbitrarily order the integers by only swapping envelopes between cities? By 'order' the integers, say take the contents of the envelopes of the cities in alphabetical order.\n\nThanks!",
+        "created_utc": 1488671452,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What else can I do with a CS degree that isn't CS related?",
+        "author": "NotttheNSA",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xj9fa/what_else_can_i_do_with_a_cs_degree_that_isnt_cs/",
+        "text": "I'm not sure if these type of posts are allowed here, so sorry if they aren't.\n\nBasically I'm coming towards the end of my second year of a CS degree, and so far, I've hated every module I've had with the exception of the few maths modules my course has, which I've loved. \n\nI know that CS isn't for me, and I would rather spend my life doing pretty much anything than working with computer architecture or programming or anything like that. \n\nUnfortunately, in Ireland changing courses is pretty  much impossible, so I guess what I'm wondering is, what can I do with a CS degree that isn't CS related. I'd love to work with maths and economics, and if I can get good enough results I would probably try and do a post grad in one of those areas, I'm just not sure if I can get the results I need from a course I hate and have no interest in.",
+        "created_utc": 1488662920,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Decision tree help",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xfpx1/decision_tree_help/",
+        "text": "[deleted]",
+        "created_utc": 1488610277,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "New Career, entry-level positions?",
+        "author": "Cerkoryn",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xe3ay/new_career_entrylevel_positions/",
+        "text": "Hi everybody, I just made the big decision to switch careers from Psychology to Computer Science. I already have a bachelor's in Psychology, but I am starting school soon to get a second bachelor's in computer science.  \n\nI am wondering what kind's of entry level jobs would be available to me that offer me enough exposure to different computer science niches and fields. Experience that will help me in the future once I graduate will also be a huge plus. Right now, I feel like my main interests are software/app development, software engineering, or cyber security, although I haven't really spent any time actually doing any of those things or working with people who do, so that may be subject to change. Any idea what entry-level positions I can get that may provide me with some of this exposure/experience?  \n\nAlso, where should I start studying on my own? I've dabbled into a few programming languages such as Javascript and messed around with databases and SQL, but I am not sure where I should focus my efforts. I've also seen that there are a lot of certifications such as CompTIA and Microsoft certifications, but I'm not sure if they are the right thing for me right now? They seem to be more IT oriented, but I think I might be leaning a bit more towards CompSci than IT. Any other cool stuff I should be reading about or working towards while I wait for school to start?\nI appreciate whatever advice you have to offer, thank you.",
+        "created_utc": 1488586799,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does the time complexity function measure the amount of operations an algorithm requires, given input size?",
+        "author": "Okmanl",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5xdtmk/does_the_time_complexity_function_measure_the/",
+        "text": "[removed]",
+        "created_utc": 1488583574,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Trouble with java and inheritence?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x9kmz/trouble_with_java_and_inheritence/",
+        "text": "[removed]",
+        "created_utc": 1488535541,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Apology",
+        "author": "thomasfarid",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x8ndu/apology/",
+        "text": "[removed]",
+        "created_utc": 1488519415,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is Buffalo NY getting targeted on this DDoS map?",
+        "author": "[deleted]",
+        "url": "http://map.norsecorp.com/#/",
+        "text": "[deleted]",
+        "created_utc": 1488506905,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "improve this algorithm for finding the missing number 1..n",
+        "author": "throwawayfunguy1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x66k9/improve_this_algorithm_for_finding_the_missing/",
+        "text": "So there's a clever algorithm that is constant in space and linear in time for finding the missing integer N if a single integer is missing 1..n (for example 6 is missing in 1,2,3,4,5,6).\n\nYou can try to find it, then I'll divulge below.\n\n.\n\n.\n\n.\n\nSo the thing is to keep an accumulator XOR'ing all the values, meanwhile you XOR in 1..n as well.  No matter what order your values, you'll end up with the single missing number.  (Since there is nothing on the other side to xor it out with.)\n\nOkay, so far, so good. As an exercise you can PROVE that this is optimal in space and time.  (It's easy: in space, your accumulator is a single number.  In time: you've gotta read them all at least once so it's still easy.)\n\nOkay, now I was wondering: how can you \"improve\" this to find TWO missing integers.  On the above algorithm, you will end up with their XOR, so you cannot know what they are.\n\nBut if you know for sure there will be 2 missing integers, how can you do it?  I was thinking, xor is a kind of checksum, maybe apply a second different type of checksum.  But I got stuck, I don't now what that might be.\n\nCan anyone come up with it and (optionally) prove it's optimal under the same constraints?  Thank you!",
+        "created_utc": 1488490859,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why is Least Fixed Point Semantics for recursion important?",
+        "author": "umib0zu",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x5mkb/why_is_least_fixed_point_semantics_for_recursion/",
+        "text": "I am reading through [Schmidt's denotational semantics](http://people.cs.ksu.edu/~schmidt/text/DenSem-full-book.pdf) and while I'm beginning to understand that LFP Semantics for recursion gives you existence and uniqueness for recursive programs, I fail to see how the least fixed point of the induced functional *is* the desired program. For example at 6.6.1, the factorial function is shown in LFP semantics, but previously in 6.1, the graph of subfunctions of factorials is built up using the explicit recursive factorial function. I suppose I'm asking how can we show the LFP of the induced functional is the factorial function? It seems as if the text merely asserted the induced functional is the factorial, without really proving it.\n\nIn a glossy question, how is this actually important if there's no way to really specify that the graph of the LFP of induced Functionals *is* the graph of a desired function?",
+        "created_utc": 1488485567,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why did AWS go down 2 days ago?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x4txy/why_did_aws_go_down_2_days_ago/",
+        "text": "[deleted]",
+        "created_utc": 1488478188,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does anyone have suggestions for a style guide for C?",
+        "author": "nanogoat",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x4c9z/does_anyone_have_suggestions_for_a_style_guide/",
+        "text": "I have seen some good resources out there for how C programs could/should be laid out, but is there a de facto style guide for writing C code? What do you all use as style standards for writing in C?",
+        "created_utc": 1488473581,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If net neutrality does disappear, can we as a community of pro net neutrality people, create an alternative to getting our fast internet, and if we can, what is the likelihood if that alternative fix coming to past?",
+        "author": "Tortured-_-soul",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x1kbl/if_net_neutrality_does_disappear_can_we_as_a/",
+        "text": "[removed]",
+        "created_utc": 1488434180,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Help Understanding Latches and Flip-Flops",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x142z/help_understanding_latches_and_flipflops/",
+        "text": "[removed]",
+        "created_utc": 1488428095,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How would I simply this regular expression?",
+        "author": "iRageQuitIfYouLag",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5x0yt9/how_would_i_simply_this_regular_expression/",
+        "text": "how would I simplify (ε + a + b + aa + ab + ba + bb) and get (a + b + ε ) . (a + b + ε)?",
+        "created_utc": 1488426319,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is what I was talking about",
+        "author": "thomasfarid",
+        "url": "https://theopinionsihave.wordpress.com/",
+        "text": "",
+        "created_utc": 1488425773,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "need help simplifying a boolean expression",
+        "author": "ahmadany",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wzdqi/need_help_simplifying_a_boolean_expression/",
+        "text": "bc'd'+abc'+ac'd+ab'd+a'bd'\ni tried using K-map and the answer i got is bd'+ac'd+ab'c",
+        "created_utc": 1488408690,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this a good algorithm?",
+        "author": "thomasfarid",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wzc1y/is_this_a_good_algorithm/",
+        "text": "ModSort: Sorting Algorithm Thomas Farid\n\nInput: Positively valued integer array of n-elements Output: sorted permutation of input array\n\nNote: this description will use 1 as the starting index of any array, we can change it to zero by rounding down instead of up :\n____\n____\nStep 1: With two O(n) passes through the array, find the MIN and the MAX \n____\n____\nStep 2: Create a new array of size n with 1st index = MIN and last index = MAX \n____\n____\nStep 3: Fill in the remaining elements of the array\n____\n____ \n• Part 1: Finding index in full array\n i. newElement = next element to be sorted from unsorted array\n ii. Find corresponding index of newElement a. intervals = (MAX-MIN)/(n-2) b. index = newElement / intervals\n____\n____\n• Part 2: Handling the different cases i. Case 1: Location in 0-level array is empty a. Place newElement in this index\n____\n____\n ii. Case 2: Location in 0-level array has elem &gt; newElement &amp; there is no space to the left (occupied by leftElem) a. Create new array which is a property of elem b. Its size corresponds to the number of elements that we are missing from original array c. intervals = (elem – leftElem) / (remaining) d. index = newElement/intervals\n____\n____\niii. Case 3: Location in 0-level array has elem &lt; newElement a. intervals = (MAX – elem) / (remaining) b. index = newElement/intervals \n____\n____\niiii. Case 4: Location in 0-level array has elem &gt; newElement &amp; there is space to the left a. intervals = (elem – MIN) / (remaining) b. index = newElement/intervals Step 4: Pass through the relevant indexes of the array starting at MIN and ending at MAX\n\nVisual Guides 1.\n\n2.\ni am a lazy coder, that is why i am on here asking for a coder. contracting.\n\nWE CAN DO A GROUP THING WITH A FUCKLOAD OF PARTICIPANTS. REMEMBER THE INTERNET IS REALLY COOL GAISE!\n\nDIAGRAMS: https://theopinionsihave.wordpress.com/2017/03/02/new-sorting-algo-for-unknown-reddit-programmer/\n\n\n\nEDIT: I wrote the code, but it is still buggy, hopefully it will be done by the end of today. lmk if yall wanna see the code.",
+        "created_utc": 1488408268,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How do you improve the performance of DHT in P2P if it takes a long time to find the file owner?",
+        "author": "HarbaughHeros",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wyy5i/how_do_you_improve_the_performance_of_dht_in_p2p/",
+        "text": "[removed]",
+        "created_utc": 1488404442,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Binary string 2-coloring problem that's been bugging me for a couple years",
+        "author": "harlows_monkeys",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wy5o8/binary_string_2coloring_problem_thats_been/",
+        "text": "[removed]",
+        "created_utc": 1488396870,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sexy Girl",
+        "author": "queducbena",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wwo4q/sexy_girl/",
+        "text": "[removed]",
+        "created_utc": 1488383108,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Was this an example of a Wireless Key Entry Attack on 2016 Ford Focus ST(x-post /r/cars)",
+        "author": "[deleted]",
+        "url": "https://www.youtube.com/watch?v=herkhCTagMM&amp;feature=youtu.be",
+        "text": "[deleted]",
+        "created_utc": 1488379803,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is everyone's opinion on a b.s. computer science degree vs a b.s. applied computer science degree?",
+        "author": "watermanrising",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wto8p/what_is_everyones_opinion_on_a_bs_computer/",
+        "text": "",
+        "created_utc": 1488348694,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What is this unit (CPU usage samples % per second)? I don't understand it at all.",
+        "author": "Jaxkr",
+        "url": "https://i.redd.it/kj7yugkk8qiy.png",
+        "text": "",
+        "created_utc": 1488343760,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Nice Ass",
+        "author": "critfinnomo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5ws4z8/nice_ass/",
+        "text": "[removed]",
+        "created_utc": 1488331897,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What do I need to do to learn deep learning?",
+        "author": "Ahmedabdulqader",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wrs4w/what_do_i_need_to_do_to_learn_deep_learning/",
+        "text": "What is the prerequisites should I know?\n\nIm web developer and I know the basics of programming.\n\nI didnt go college, is it require so much math, and if its,  is it possbile to learn it by myself on the internet ?",
+        "created_utc": 1488328250,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If SSH passwords are turned off for a server (i.e. ssh keys only) does FTP from a computer without keys become impossible?",
+        "author": "Thats_a_funny_joke",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wq73g/if_ssh_passwords_are_turned_off_for_a_server_ie/",
+        "text": "I'm thinking yes, but want to make sure. Does FTP connect through ssh, thus making it impossible to set up a user/password on the server that a third party could FTP into?",
+        "created_utc": 1488313552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "could anyone solve this milestone cos i should submit it after 4 days and i know nothing about the subject",
+        "author": "ahmedwael88888",
+        "url": "http://met.guc.edu.eg/Download.ashx?id=23212&amp;file=CSEN401_S17_Project_M1_23212.pdf",
+        "text": "",
+        "created_utc": 1488302209,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "As a beginning/mid Level programmer - what ways can I practice my knowlege with real results?",
+        "author": "nsburroughs",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wm5ab/as_a_beginningmid_level_programmer_what_ways_can/",
+        "text": "Here is my basic question: As a beginning/mid Level programmer - what ways can I practice my knowledge with real results?\n\nI have completed my freshman year as a computer science major, and I am looking for something a little bit more fulfilling I can do on my own time.\n\nFor example, one way that I am aware of, is to modify games with code-friendly environments. However, I am not as interested in that area - my interest lies more in computer security, and designing helpful programs that have a practical use. My first language is Python, so Python related would be preferred.\n\nIn summary, what can I do to demonstrate my knowledge of Python to myself as well as produce products that demonstrate that knowledge, and preferably new knowledge learned along the way?\n",
+        "created_utc": 1488259125,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do some apps pause music from other apps? I.e. When I have music playing in Spotify and then open the app BB-tan, the music stops.",
+        "author": "wet_giraffe",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wlayk/why_do_some_apps_pause_music_from_other_apps_ie/",
+        "text": "[removed]",
+        "created_utc": 1488248917,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "State Space size of a Maze?",
+        "author": "Eilai",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wkk0r/state_space_size_of_a_maze/",
+        "text": "[removed]",
+        "created_utc": 1488240803,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why isn't windows 100% perfect and bug-free after all this time and money? Why is my mac seemingly so much more stable and easy to use?",
+        "author": "Scientist_1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wj99t/why_isnt_windows_100_perfect_and_bugfree_after/",
+        "text": "Why isn't Microsoft Windows absolutely perfect yet? They have had enough time to probably rewrite the entire OS a couple of times. How could something like Vista even happen? Why is my Mac so ridiculously easy to use and stable? Is there something fundamentally different about the system architectures (DOS vs UNIX), that makes Windows irredeemably more buggy? Does Microsoft actually delete and rewrite code or do they just keep piling on new code? Why does Mac take up so much fewer hardware resources?",
+        "created_utc": 1488228145,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Myonix keyboard function button (Help)",
+        "author": "Hadiikan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wiwbk/myonix_keyboard_function_button_help/",
+        "text": "[removed]",
+        "created_utc": 1488224749,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do employers actually follow up with your past jobs to see how you did there?",
+        "author": "finessseee",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5whjgd/do_employers_actually_follow_up_with_your_past/",
+        "text": "[removed]",
+        "created_utc": 1488211645,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I have an sqlite file which contains member check in data for a dance club and I'm trying to gather data about some situations. Is rapid miner a good choice to try graph information on member growth, busy hours and number of returning numbers per night ?",
+        "author": "Fen-Jai",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5whi8r/i_have_an_sqlite_file_which_contains_member_check/",
+        "text": "I have set up rapid miner but not used it for a project like this. Is there something simpler to use or is it a case that rapid miner is what I need and I just need to read up on it more ?",
+        "created_utc": 1488211312,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Favorite/Best IDE for each language you regularly code in?",
+        "author": "DaWylecat",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wgp3m/favoritebest_ide_for_each_language_you_regularly/",
+        "text": "Can be Windows or macOS",
+        "created_utc": 1488201902,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Homework help] Javascript loops help? Questions in image, probably not too complicated",
+        "author": "[deleted]",
+        "url": "https://i.reddituploads.com/a230ec5dba0640abb041fc4e4a8a316a?fit=max&amp;h=1536&amp;w=1536&amp;s=c0a985f161adc7e7c5f754c899348655",
+        "text": "[deleted]",
+        "created_utc": 1488160928,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Someone is blackmailing me. How do I track him?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5wd1gn/someone_is_blackmailing_me_how_do_i_track_him/",
+        "text": "[deleted]",
+        "created_utc": 1488149783,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is there a formal grammar for HTML5? I found one for HTML 2.0 but that's it.",
+        "author": "thirdegree",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5w8m4o/is_there_a_formal_grammar_for_html5_i_found_one/",
+        "text": "[removed]",
+        "created_utc": 1488085864,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why would anyone pursue computer science when Mark Cuban said the low end coding jobs will be gone after I graduate in 4/5 years?",
+        "author": "_nur",
+        "url": "https://youtu.be/CxD4F3MQRDI?t=10m40s",
+        "text": "",
+        "created_utc": 1488080959,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What abstraction results from the static nesting of scopes, and does dynamic scoping support or ruin this layer of abstraction?",
+        "author": "Night_Thastus",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5w866b/what_abstraction_results_from_the_static_nesting/",
+        "text": "[removed]",
+        "created_utc": 1488079294,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Information Retrieval] What term is a better search term (and should get a higher idf weight)?",
+        "author": "cinnybuncate",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5w7ss4/information_retrieval_what_term_is_a_better/",
+        "text": "Does anyone know which word would be a better search term?\nidf = log(N/dft)  where N is number of documents and dft is document frequency count\n\n    Word           Collection Frequency    Document Frequency\n    insurance                10440                       3997\n    try                        10422                       8760",
+        "created_utc": 1488074231,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Are there theoretical limits of real-time physical simulations?",
+        "author": "warsopomop",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5w7i4v/are_there_theoretical_limits_of_realtime_physical/",
+        "text": "EM waves do not travel at the full speed of light inside a CPU (more like ~1/3?). What limits does this fact impose on the real-time simulation of physical events (e.g. particle interactions that happen close to the speed of light)?",
+        "created_utc": 1488070443,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What’s new?",
+        "author": "milsonehan",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/5w44ab/whats_new/",
+        "text": "[removed]",
+        "created_utc": 1488030303,
+        "upvote_ratio": ""
+    }
+]

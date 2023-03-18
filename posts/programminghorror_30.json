@@ -1,0 +1,794 @@
+[
+    {
+        "title": "I made this game of life simulator with nCurses when I was 14...",
+        "author": "OmniThrowaway",
+        "url": "http://www.reddit.com/r/programminghorror/comments/191uxm/i_made_this_game_of_life_simulator_with_ncurses/",
+        "text": "Please don't affiliate this with me :(\n\nhttp://codepad.org/RKVmF3KZ",
+        "created_utc": 1361576419,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A classmate thought changing a file extension in Haskell would parse the file (in an upper level CS course)",
+        "author": "youcancallmedragon",
+        "url": "http://www.reddit.com/r/programminghorror/comments/18tp5h/a_classmate_thought_changing_a_file_extension_in/",
+        "text": "Our assignment, using Haskell, was to take a script file was made up of @sectiontype(content) commands that we were to parse and generate an HTML document. He posted this in our class discussion forum the night before the assignment was due, 6 days after it was assigned:\n\n\"So with this it reads from my script file, then writes what's on the script to the html file, but it reads everything from the script, how to you get around it reading all the @title() and @subsections() parts?\"\n\n    transform :: String -&gt; String-&gt; IO ()\n    transform input output = do\n        script &lt;- readFile \"script.sf\"\n        writeFile \"script.html\" script\n\n\n",
+        "created_utc": 1361291832,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Reusable functions? Why would you do that. (jQuery)",
+        "author": "conditional_comment",
+        "url": "http://www.reddit.com/r/programminghorror/comments/18tk7h/reusable_functions_why_would_you_do_that_jquery/",
+        "text": "We have a system to manage sets of profiles for medical providers. The people who previously wrote it are no longer here, and it's now my job to add front end support for multiple locations. However, I went into the JS and found this gem:\n\n    function findPrimaryBuildingCallback(event, data, formatted) {\n\t\tif (formatted == \"No results\") { \n\t\t} else if (formatted ==\"Add new building\") {\n\t\t\t$(\"#primary_new_building\").show();\n\t\t\t$(\"#primary_building_units\").hide();\n\t\t\t$(\"#primary_new_unit\").hide();\n\t\t\t$(\"#primary_phones_boxes\").hide();\n\t\t} else {\t\n\t\t\t// in case the user goes back to the suggest\n\t\t\t$(\"#primary_new_building\").hide();\n\t\t\t$(\"#primary_building_units\").show();\n\t\t\t$(\"#primary_new_unit\").hide();\n\t\t\t$(\"#primary_phones_boxes\").show();\n\t\t\t\n\t\t\t\t\t\n\t\t\t// get the building units\n\t\t\tvar addressToParse = data[0];\n\t\t\tvar idx = addressToParse.lastIndexOf(\",\");\n\t\t\tif (idx &gt; 0) {\n\t\t\t\t// idx has the last comma after city and before state abbrev\n\t\t\t\t\t\n\t\t\t\tvar streetWithCity = addressToParse.substring(0, idx);\n\t\t\t\tidx = streetWithCity.lastIndexOf(\",\");\n\t\t\t\tvar street = streetWithCity.substring(0, idx);\n\t\t\t\tvar street2 = addressToParse.substring(idx+1);\n\t\t\t\tvar name = \"\"; // setting to nothing since this isnt used yet\n\t\t\t\t\n\t\t\t\t//alert(\"name --&gt; \" + name);\n\t\t\t\t$(\"#primary_practice_edited_name\").setValue(name);\n\t\t\t\t$(\"#primary_practice_edited_street\").setValue(street);\n\t\t\t\t$(\"#primary_practice_edited_street2\").setValue(street2);\n\t\t\t\t\n\t\t\t} else {\n\t\t\t   // alert(\"why no comma? \" + addressToParse);\n\t\t\t}\n\n\t\t\t$(\"#primary_practice_edited_building\").setValue(data[2]);\n\t\t\tvar aYesNo = data[3];\n\t\t\tif (aYesNo != null &amp;&amp; aYesNo == \"Yes\") {\n\t\t\t\t$(\"#primaryHandi\").setValue(aYesNo);\n\t\t\t} else {\n\t\t\t\t$(\"#primaryHandi\").setValue(\"\");\n\t\t\t}\n\t\t\taYesNo = data[4];\n\t\t\tif (aYesNo != null &amp;&amp; aYesNo == \"Yes\") {\n\t\t\t\t$(\"#primaryPubTrans\").setValue(aYesNo);\n\t\t\t} else {\n\t\t\t\t$(\"#primaryPubTrans\").setValue(\"\");\n\t\t\t}\n\t\t\t\n\t\t\t$(\"#primary_phones_boxes\").show();\n\t\t\tgetBuildings('primary_building_units', data[1] );\n\t\t}\n\t}\n\t\n    function findSecondaryBuildingCallback(event, data, formatted) {\n\t\tif (formatted == \"No results\") { \n\t\t} else if (formatted ==\"Add new building\") {\n\t\t\t$(\"#secondary_new_building\").show();\n\t\t\t$(\"#secondary_building_units\").hide();\n\t\t\t$(\"#secondary_new_unit\").hide();\n\t\t\t$(\"#secondary_phones_boxes\").hide();\n\t\t} else {\t\t\t\n\t\t\n\t\t\t// in case the user goes back to the suggest\n\t\t\t$(\"#secondary_new_building\").hide();\n\t\t\t$(\"#secondary_building_units\").show();\n\t\t\t$(\"#secondary_new_unit\").hide();\n\t\t\t$(\"#secondary_phones_boxes\").show();\n\t\t\n\t\t\t// get the building units\n\t\t\tvar addressToParse = data[0];\n\t\t\tvar idx = addressToParse.lastIndexOf(\",\");\n\t\t\tif (idx &gt; 0) {\n\t\t\t\t// idx has the last comma after city and before state abbrev\n\t\n\t\t\t\tvar streetWithCity = addressToParse.substring(0, idx);\n\t\t\t\tidx = streetWithCity.lastIndexOf(\",\");\n\t\t\t\tvar street = streetWithCity.substring(0, idx);\n\t\t\t\tvar street2 = addressToParse.substring(idx+1);\n\t\t\t\tvar name = \"\"; // setting to nothing since this isnt used yet\n\t\t\t\t\n\t\t\t\t$(\"#secondary_practice_edited_name\").setValue(name);\n\t\t\t\t$(\"#secondary_practice_edited_street\").setValue(street);\n\t\t\t\t$(\"#secondary_practice_edited_street2\").setValue(street2);\n\t\t\t\t\n\t\t\t} else {\n\t\t\t   // alert(\"why no comma? \" + addressToParse);\n\t\t\t}\n\n\t\t\t$(\"#secondary_practice_edited_building\").setValue(data[2]);\n\t\t\tvar aYesNo = data[3];\n\t\t\tif (aYesNo != null &amp;&amp; aYesNo == \"Yes\") {\n\t\t\t\t$(\"#secondaryHandi\").setValue(aYesNo);\n\t\t\t} else {\n\t\t\t\t$(\"#secondaryHandi\").setValue(\"\");\n\t\t\t}\n\t\t\taYesNo = data[4];\n\t\t\tif (aYesNo != null &amp;&amp; aYesNo == \"Yes\") {\n\t\t\t\t$(\"#secondaryPubTrans\").setValue(aYesNo);\n\t\t\t} else {\n\t\t\t\t$(\"#secondaryPubTrans\").setValue(\"\");\n\t\t\t}\n\t\t\t\n\t\t\t$(\"#secondary_phones_boxes\").show();\n\t\t\tgetBuildings('secondary_building_units', data[1] );\n\t\t}\n\t}\n\nAnd this is just the tip of the iceberg. The whole file is full of spectacular examples like this.\n\nAnother small favorite:\n\n\t$(\"#edit_board\").hide();\n\t$(\"#edit_specs\").hide();\n\t$(\"#edit_aoe\").hide();\n\t$(\"#edit_open\").hide();\n\t$(\"#edit_closed\").hide();\n\t$(\"#add_new_ins\").hide();",
+        "created_utc": 1361287325,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Coworker coming from perl, now writing C#, holy shit.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/18b399/coworker_coming_from_perl_now_writing_c_holy_shit/",
+        "text": "    _cleanHelper = new Dictionary&lt;Direction, Dictionary&lt;CleanTypes, List&lt;List&lt;int&gt;&gt;&gt;&gt;()\n                {\n                    {\n                        Direction.North, new Dictionary&lt;CleanTypes, List&lt;List&lt;int&gt;&gt;&gt;()\n                        {\n                            {\n                                CleanTypes.Walled, new List&lt;List&lt;int&gt;&gt;()\n                                { \n                                    new List&lt;int&gt;()\n                                    {\n                                        0, -1\n                                    },\n                                    new List&lt;int&gt;()\n                                    {\n                                        1, -1\n                                    },\n                                    new List&lt;int&gt;()\n                                    {\n                                        1, 0\n                                    },\n                                    new List&lt;int&gt;()\n                                    {\n                                        1, 1\n                                    }, \n                                    new List&lt;int&gt;()\n                                    {\n                                        0, 1\n                                    }\n                                }\n                            },\n                            {\n                                CleanTypes.Close, new List&lt;List&lt;int&gt;&gt;()\n                                { \n                                    new List&lt;int&gt;()\n                                    {\n                                        0, 0\n                                    }\n                                }\n                            },\n                            {\n                                CleanTypes.Recurse, new List&lt;List&lt;int&gt;&gt;()\n                                { \n                                    new List&lt;int&gt;()\n                                    {\n                                        -1, 0\n                                    }\n                                }\n                            }\n                        }\n                    },\n                {\n                    Direction.South, new Dictionary&lt;CleanTypes, List&lt;List&lt;int&gt;&gt;&gt;()\n                    {\n                        {\n                            CleanTypes.Walled, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    0, -1\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    -1, -1\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    -1, 0\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    -1, 1\n                                }, \n                                new List&lt;int&gt;()\n                                {\n                                    0, 1\n                                }\n                            }\n                        },\n                        {\n                            CleanTypes.Close, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    0, 0\n                                }\n                            }\n                        },\n                        {\n                            CleanTypes.Recurse, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    1, 0\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    Direction.West, new Dictionary&lt;CleanTypes, List&lt;List&lt;int&gt;&gt;&gt;()\n                    {\n                        {\n                            CleanTypes.Walled, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    -1, 0\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    -1, 1\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    0, 1\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    1, 1\n                                }, \n                                new List&lt;int&gt;()\n                                {\n                                    1, 0\n                                }\n                            }\n                        },\n                        {\n                            CleanTypes.Close, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    0, 0\n                                }\n                            }\n                        },\n                        {\n                            CleanTypes.Recurse, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    0, -1\n                                }\n                            }\n                        }\n                    }\n                },\n                {\n                    Direction.East, new Dictionary&lt;CleanTypes, List&lt;List&lt;int&gt;&gt;&gt;()\n                    {\n                        {\n                            CleanTypes.Walled, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    -1, 0\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    -1, -1\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    0, -1\n                                },\n                                new List&lt;int&gt;()\n                                {\n                                    1, -1\n                                }, \n                                new List&lt;int&gt;()\n                                {\n                                    1, 0\n                                }\n                            }\n                        },\n                        {\n                            CleanTypes.Close, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    0, 0\n                                }\n                            }\n                        },\n                        {\n                            CleanTypes.Recurse, new List&lt;List&lt;int&gt;&gt;()\n                            { \n                                new List&lt;int&gt;()\n                                {\n                                    0, 1\n                                }\n                            }\n                        }\n                    }\n                }\n            };",
+        "created_utc": 1360590577,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "AppleScript hacks to resize all windows",
+        "author": "inspectorG4dget",
+        "url": "http://www.reddit.com/r/programminghorror/comments/17ntrz/applescript_hacks_to_resize_all_windows/",
+        "text": "From [this post on stackoverflow](http://stackoverflow.com/questions/14595066/resizing-all-windows-of-all-running-applications/14613392#14613392)\n\n    property blacklist : {\"Finder\", \"Preview\", \"Console\", \"AppleScript Editor\", \"Spotify\", \"TaskCoach\"}\n    property buttonApps : {\"LyX\", \"Eclipse\"}\n    property buttonMaps : {{name:\"LyX\", Button:1, pname:\"lyx\"}, {name:\"Eclipse\", Button:2, pname:\"eclipse\"}}\n    \n    tell application \"Finder\" to set theBounds to bounds of window of desktop\n    \n    tell application \"System Events\"\n        set bids to bundle identifier of processes where background only is false\n    end tell\n    \n    repeat with bid in bids\n        tell application id bid\n            if name is not in blacklist then\n                set appName to name as string\n                if name is \"Terminal\" then\n                    set newBounds to {0, 0, (item 3 of theBounds) - 10, item 4 of theBounds}\n                    repeat with theWindow in windows\n                        if visible of theWindow is true then\n                            say appName\n                            set bounds of theWindow to newBounds\n                        end if\n                    end repeat\n                else if name is not in buttonApps then\n                    repeat with theWindow in windows\n                        if visible of theWindow is true then\n                            set bounds of theWindow to theBounds\n                        end if\n                    end repeat\n                else if name is in buttonApps then\n                    -- get the buttonNumber\n                    repeat with buttonApp in buttonMaps\n                        if (name of buttonApp as string) is appName then\n                            set theButton to Button of buttonApp\n                        end if\n                    end repeat\n                    tell application \"System Events\"\n                        repeat with theProcess in (processes where bundle identifier is bid)\n                            try\n                                tell theProcess to tell window 1 to click button theButton\n                            end try\n                        end repeat\n                    end tell\n                end if\n            end if\n        end tell\n    end repeat\n\nMade me want to take a shower. Sadly, I don't know applescripting well enough to improve this. Does anyone have any thoughts on how to improve it?",
+        "created_utc": 1359676255,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Worst DB ever &gt;_&lt;",
+        "author": "protomor",
+        "url": "http://www.reddit.com/r/programminghorror/comments/17naun/worst_db_ever/",
+        "text": "",
+        "created_utc": 1359661901,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Regular expressions solve everything, right?",
+        "author": "Lugards",
+        "url": "http://www.reddit.com/r/programminghorror/comments/17if3n/regular_expressions_solve_everything_right/",
+        "text": "This is a bit of code redone from memory, as I don't have the exact code anymore.  I did it in c#, but the code was about the same in the language that it was originally in.  From one of my previous positions(This is a long stored procedure, just believe that X is a required int paramater).\n\nif(Regex.IsMatch(X.ToString().Substring(X.ToString().Length)),\"[02468]\")\n\nvariable=\"var1\";\n\nelse if(Regex.IsMatch(X.ToString().Substring(X.ToString().Length)),\"[13579]\")\n\nvariable=\"var2\";\n\nI could not for the life of me figure out why they did not use a Mod 2, division, or anything in the world other than the monstrosity I saw.  Also... if it did not match the first... why do another regular expression check for the second?",
+        "created_utc": 1359487211,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Logging: What could possibly go wrong? [PHP]",
+        "author": "Throwaway343443",
+        "url": "http://www.reddit.com/r/programminghorror/comments/17bs5r/logging_what_could_possibly_go_wrong_php/",
+        "text": "    function write_log($text) {\n    \t$text = date(\"D M j G:i:s\").\": $text\";\n    \tshell_exec(\"echo \\\"$text\\\" &gt;&gt; /var/log/whoisd.log\");\t\n    }\n\nThis piece of code was part of a WHOIS daemon and in production for about 5 years.\n\nAlso stderr was written to the TCP stream. So if you queried the domain foo\"bar.com you would get this response:\n\n    sh: 1: Syntax error: Unterminated quoted string\n\nThank God nobody noticed…",
+        "created_utc": 1359227309,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[x-post from /r/talesfromtechsupport] How the corporate homepage brought our network to its knees.",
+        "author": "Craptain",
+        "url": "http://www.reddit.com/r/programminghorror/comments/17961y/xpost_from_rtalesfromtechsupport_how_the/",
+        "text": "Some people in /r/talesfromtechsupport said I should post this story here, so here goes.\n\nWhenever I needed our office address, I would pull up the corporate homepage to find the address and zipcode of our office. I make heavy use of tabs in my browser, and since I use a vertical tab plugin, I rarely close any.\n\nI had noticed that my browser would sometimes slow down to a crawl, and I knew it was probably some shitty plugin in one of my many open tabs, it was usually less work to just close the browser and re-open it, discarding all open tabs and starting anew.\n\nOne day, I had pulled up the homepage again to copy the address, and after that went to lunch. An hour later, I was doing some work that didn't involve my browser. The door to our room opened.\n\n\"That's him, over there,\" a coworker told some guy I hadn't seen before, giving me somewhat of a stink eye.\n\nIt turns out that the corporate homepage was experiencing a DOS attack that originated from within the company, more specifically my laptop. Meanwhile, some bottlenecks in our corporate network also got swamped with my laptop's calls, setting off all kinds of alarms and crashing stuff. This is not a small company by the way, it employs 1000s of people.\n\nI pulled up my browser and it was slower and less responsive than I'd ever seen it. So, putting the puzzle pieces together, I said: \"ah, so that's what's been slowing my browser down.\" Guy said: \"yeah that's really interesting, would you mind closing it like right now??\" \"sure.\" So I closed the browser, instantly alleviating a corporate-wide IT crisis.\n\nI wanted to know what exactly had happened though, so a couple of days later I had some free time and pulled up the corporate homepage again, and used the firebug net monitor. It seemed fine at first, but I started noticing a pattern pretty quickly.\n\nOne minute after I opened it, it made an ajax call to the server. I looked into it, and it was to update the stock price in real-time that was displayed in a tiny area on the homepage.\n\nOne minute later, it made two calls to the same service. Another minute later, it made four calls, next, eight calls, sixteen calls, and so forth. e: after writing this, I've calculated that after an hour, it would attempt to send 1,152,921,504,606,846,976 simultaneous calls. I believe that's called a Quintillion.\n\nIn Javascript, a common way to repeatedly trigger a delayed execution is to use setTimeout at the end of the function you want to repeatedly trigger. Example (that I added to comply with the rules of this subreddit):\n\n    function doStockQuote() {\n        var json = doAjaxCall();\n        updateStockQuote(json);\n\n        setTimeout(\"doStockQuote\", 60000);\n    }\n\nThe problem was, for some reason, there were two setTimeouts at the end of the function, like this: \n\n    function doStockQuote() {\n        var json = doAjaxCall();\n        updateStockQuote(json);\n\n        setTimeout(\"doStockQuote\", 60000);\n        setTimeout(\"doStockQuote\", 60000);\n    }\n\n\nSo, after a minute delay, it would execute the function twice, and both executions would hit two setTimeouts, resulting in four executions a minute later.\n\nWhat makes this interesting to me is that anyone on the internet could pull up the homepage, and cause huge problems by just doing nothing. I wrote an e-mail to the people responsible. Didn't get an answer, but it did get fixed.",
+        "created_utc": 1359121898,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "You don't even have to know programming to understand why this is bad.",
+        "author": "smallbearcat",
+        "url": "http://www.reddit.com/r/programminghorror/comments/172fpm/you_dont_even_have_to_know_programming_to/",
+        "text": "I used to work in a combo wet/computational biology lab. Basically we did all our own experiments and then analyzed our own data. I was the tech and worked with new grad students, etc. One of the new guys had never programmed before so I went over the basics with him, made him a cheat sheet/tutorial on R, and away he went. He rarely asked coding-related questions of us despite there being 3 much more experienced programmers in the room, so I thought he was doing fine. (As a disclaimer, I had only had introductory C++ background and taught myself R as part of this job. Also, this guy was/is a Harvard grad student so I assumed he could handle himself.)\n\nA few months later I was working on his project with him and started to realize he'd developed ridiculously bad coding habits. They were so bad I could not have anticipated them (I tried to give him a good basic understanding, I really did). So I started fixing his code/sending him my own code for him to use. Here is an example.\n\nMy code (all it does is change colors on a graph based on a couple criteria, and was fully commented but I took out the comments here for readability):\n\n    showMICs &lt;- function(plate) {\n    \tcnv &lt;- plate[97:192,17]\n    \tcolors &lt;- plate[97:192,30]\n    \tmax &lt;- plate[97:192,20]\n    \tmin &lt;- plate[97:192,21]\n    \ttop &lt;- (max - cnv)*1.5\n    \tbot &lt;- (cnv - min)*1.5\n    \tcolors[(top + bot) &gt; 1] &lt;- \"grey90\"\n    \ttop &lt;- (top/1.5)*2\n    \tbot &lt;- (bot/1.5)*2\n    \tupper &lt;- cnv + top\n    \tlower &lt;- cnv - bot\n    \tcolors[floor(upper)==floor(lower)] &lt;- \"lightsteelblue\"\n    \tdec &lt;- cnv %% 1\n    \tcolors[ (dec &gt;= 0.3) &amp; (dec &lt;= 0.7) ] &lt;- \"lightpink\"\n    \tplate[97:192,30] &lt;- colors\n    \tplate\n    }\n\nHis code to do the same thing (keep scrolling):\n\n    c4l.ci.test1 &lt;- matrix(ncol=51, nrow=96)\n    for (i in 1:51) {\n    \tfor (j in 1:96) {\n    \t\tif((is.na((((c4l.csv[[i]][(j+96),22]-(1.5*(c4l.csv[[i]][(j+96),22]-c4l.csv[[i]][(j+96),26])))-(c4l.csv[[i]][(j+96),22]-(1.5*(c4l.csv[[i]][(j+96),22]-c4l.csv[[i]][(j+96),26])))%%1)==((c4l.csv[[i]][(j+96),22]+(1.5*(c4l.csv[[i]][(j+96),25]-c4l.csv[[i]][(j+96),22])))-(c4l.csv[[i]][(j+96),22]+(1.5*(c4l.csv[[i]][(j+96),25]-c4l.csv[[i]][(j+96),22])))%%1)))==TRUE)==TRUE) {c4l.ci.test1[j,i] &lt;- NA}\n    \t\telse\n    \t\tif((((c4l.csv[[i]][(j+96),22]-(1.5*(c4l.csv[[i]][(j+96),22]-c4l.csv[[i]][(j+96),26])))-(c4l.csv[[i]][(j+96),22]-(1.5*(c4l.csv[[i]][(j+96),22]-c4l.csv[[i]][(j+96),26])))%%1)==((c4l.csv[[i]][(j+96),22]+(1.5*(c4l.csv[[i]][(j+96),25]-c4l.csv[[i]][(j+96),22])))-(c4l.csv[[i]][(j+96),22]+(1.5*(c4l.csv[[i]][(j+96),25]-c4l.csv[[i]][(j+96),22])))%%1))==TRUE) {c4l.ci.test1[j,i] &lt;- j}\n    }\n    }\n\nI can't even figure out where that's trying to go, but he said it does the same thing.\n\nHe was also one of those \"cut-and-paste code to run as many times as you need it to with different arguments\" types. And he also wrote some of his code using Excel. Like, the code itself. I don't even know.",
+        "created_utc": 1358878826,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The for-switch pattern",
+        "author": "AgentME",
+        "url": "http://www.reddit.com/r/programminghorror/comments/16x892/the_forswitch_pattern/",
+        "text": "A few years ago I was asked to help out with the code for a fairly ambitious game mod / level pack. The game supported a scripting language that resembled C, but without many complicated things like pointers. Each level could have a source file associated with it, and there was also support for shared libraries.\n\nOf course, this project was not using any shared libraries. Each level had several thousand lines of code. Most of the levels shared most of their code via copy+paste, but with lots of little modifications. Source control? Revision history? Not used of course.\n\nBesides having functions, the language had \"scripts\" which could be thought of as running in their own threads concurrently. If you attempt to start a script that was already started, the call would silently fail, so naturally the original programmer didn't worry too much about the control flow. *The HUD control scripts need to start up sometime after the enemy init scripts? Call it after that. But just in case the enemy init scripts don't work or don't get called, also try to start the HUD scripts over here too. And hell, since it doesn't hurt let's start it over here too.* I was very confused when I disabled the HUD script call (so I could focus on fixing other parts of the code for the moment) and found it still running. Multi-threaded cyclic spaghetti code, yay. I haven't even mentioned how many of the scripts were inter-dependent on the same global variables. And don't forget that there were 30 subtly different versions of this code.\n\nAt first I decided to try to go through all of the code and fix it up as I went. A week later I gave up and decided to delete all of the code and re-write it from scratch (finishing 90% of the functionality in 24 hours), but before that, there was a certain often-recurring pattern in that code that burned itself into my mind.\n\n    for (int i=0; i&lt;4; i++) {\n      switch(i) {\n        case 0:\n          ...\n          break;\n        case 1:\n          ...\n          break;\n        case 2:\n          ...\n          break;\n        default:\n          ...\n      }\n    }\n\nI spent a while trying to figure out if there was some secret to the above code I was missing. The i variable was only used in that switch statement! The for and switch statements added nothing to the code.\n\nEventually I found a similar less-recurring pattern that did something with the i value. I could see that the code worked and did something specific that the control structures aided, but I can't imagine the mind that would decide that this was the optimal way to do it. I guess when all you have is ~~a hammer~~ the for-switch pattern, everything looks like a nail.\n\n    while (true) {\n      for (int i=0; i&lt;2; i++) {\n        switch(i) {\n          case 0:\n            ...\n            break;\n          case 1:\n            ...\n            if (some condition) {\n              break;\n            } else {\n              i = 2;\n            }\n          case 2:\n            ...\n        }\n      }\n      delay(1);\n    }\n\nDo note that the programmer made the for-loop never run the loop with i=2, but managed to discover fall-through to the next case. Not that the case was ever directly called or necessary...",
+        "created_utc": 1358671668,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What code has made you go makeitstopmakeitstopmakeitstopmakeitstopmakeitstop?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/16q4m4/what_code_has_made_you_go/",
+        "text": "",
+        "created_utc": 1358388976,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Normalization is for chumps",
+        "author": "Raticide",
+        "url": "http://www.reddit.com/r/programminghorror/comments/16pwmz/normalization_is_for_chumps/",
+        "text": "I worked for a running event website. This was some very old code (long been replaced) for an entry system that allowed teams of runners to enter.\n\nhttps://gist.github.com/f945b46ccab8c654c798",
+        "created_utc": 1358382787,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My friend's hacking tutorial list, written in Python.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/16indo/my_friends_hacking_tutorial_list_written_in_python/",
+        "text": "    import time\n    import os\n    import webbrowser\n     \n    os.system(\"color a\")\n     \n    def s():\n            print\"\\n\\r\"\n            print\"\\n\\r\"\n     \n    def ss():\n            print\"\\n\\r\"\n     \n    s()\n    s()\n    s()\n    s()\n     \n     \n    s()\n     \n     \n    print\"____ _  _ ____ ____ ____ ___  ____ \"\n    print\"|___ |\\ | | __ |__/ |__|   /  |___ \"\n    print\"|___ | \\| |__] |  \\ |  |  /__ |___ \"\n     \n    ss()\n     \n    print (\"\"\"Welcome to Engraze's list of HF website hacking tutorials.\n    Please choose a method:\\n\"\"\")\n     \n    print (\"\"\"1) SQLi\n    2) LFI\n    3) RFI\\n\"\"\")\n     \n    cm = raw_input(\"&gt; \")\n    if cm == \"1\":\n            s()\n            print \"Choose a submethod: \\n\\r\"\n            print (\"\"\"1) Union Based\n    2) Error Based\n    3) Blind\"\"\")\n            csm = raw_input(\"&gt; \")\n            if csm == \"1\":\n                    s()\n                    print \"Loading tutorial...\"\n                    time.sleep(4)\n                    print \"Good luck!\"\n                    time.sleep(0.3)\n                    webbrowser.open(\"http://www.hackforums.net/showthread.php?tid=1923250\")\n            elif csm == \"2\":\n                    s()\n                    print \"Loading tutorial...\"\n                    time.sleep(4)\n                    print \"Good luck!\"\n                    time.sleep(0.3)\n                    webbrowser.open(\"http://www.hackforums.net/showthread.php?tid=2048087\")\n            elif csm == \"3\":\n                    s()\n                    print \"Loading tutorial...\"\n                    time.sleep(4)\n                    print \"Good luck!\"\n                    time.sleep(0.3)\n                    webbrowser.open(\"http://www.hackforums.net/showthread.php?tid=2011554\")\n    if cm == \"2\":\n            print \"Choose a submethod: \\n\\r\"\n            print (\"\"\"1) /proc/self/environ/ shell upload\n    2) php://input\n    3) php://filter\"\"\")\n            csmlfi = raw_input(\"&gt; \")\n            if csmlfi == \"1\":\n                    s()\n                    print \"Loading tutorial...\"\n                    time.sleep(4)\n                    print \"Good luck!\"\n                    time.sleep(0.3)\n                    webbrowser.open(\"http://www.hackforums.net/showthread.php?tid=1736613\")\n            elif csmlfi == \"2\":\n                    s()\n                    print \"Loading tutorial...\"\n                    time.sleep(4)\n                    print \"Good luck!\"\n                    time.sleep(0.3)\n                    webbrowser.open(\"http://www.hackforums.net/showthread.php?tid=2384584\")\n            elif csmlfi == \"3\":\n                    s()\n                    print \"Loading tutorial...\"\n                    time.sleep(4)\n                    print \"Good luck!\"\n                    time.sleep(0.3)\n                    webbrowser.open(\"http://www.hackforums.net/showthread.php?tid=2388869\")\n    if cm == \"3\":\n            s()\n            print \"Loading tutorial...\"\n            time.sleep(4)\n            print \"Good luck!\"\n            time.sleep(0.3)\n            webbrowser.open(\"http://www.hackforums.net/showthread.php?tid=1213488\")    \n\n\nI just had to share this huge monstrosity.",
+        "created_utc": 1358120557,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fixing C with macros - switch/case with strings",
+        "author": "SantaCruzDad",
+        "url": "http://www.reddit.com/r/programminghorror/comments/166u6j/fixing_c_with_macros_switchcase_with_strings/",
+        "text": "From [this question on StackOverflow](http://stackoverflow.com/q/14219156/253056):\n\n    #define SWITCH(S) char *_S = S; if (0)\n    #define CASE(S) } else if (strcmp(_S, S) == 0) {switch(1) { case 1\n    #define BREAK }\n    #define DEFAULT } else {switch(1) { case 1\n\n    int main()\n    {\n        char buf[256];\n\n        printf(\"\\nString - Enter your string: \");\n        scanf (\"%s\", buf);\n\n        SWITCH (buf) {\n            CASE (\"abcdef\"):\n                printf (\"B1!\\n\");\n                BREAK;\n            CASE (\"ghijkl\"):\n                printf (\"C1!\\n\");\n                BREAK;\n            DEFAULT:\n                printf (\"D1!\\n\");\n                BREAK;\n        }\n    }\n",
+        "created_utc": 1357662662,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I feel dirty after writing this function. (C# generics)",
+        "author": "kylargrey",
+        "url": "http://www.reddit.com/r/programminghorror/comments/156kqx/i_feel_dirty_after_writing_this_function_c/",
+        "text": "I'm designing a genetics system for a game as part of one of my uni course's modules. Since each type of gene would act similarly, but hold a different data type, I decided that a generic base class set to a concrete type by each derived class would be appropriate. **However**, all the genes are to be held in a single List, but since List is also generic it requires a type parameter (which is the base gene class, but then **that** also requires a type parameter) which limits the list to one type of gene only.\n\nMy solution, was to have the generic base class implement an interface (which would be the type parameter of the List), which has a generic function to get the gene's dominant value. Which, because the type parameter in the interface and the one in the base class are technically separate, leads to this monstrosity of a function:\n\n    public GeneTyp GetDominantValue&lt;GeneTyp&gt;()\n    {\n        if (typeof(Typ) != typeof(GeneTyp)) return default(GeneTyp);\n\n        if(GetDominance(value1) &gt;= GetDominance(value2))\n            return (GeneTyp) (object) value1;\n        else\n            return (GeneTyp) (object) value2;\n    }\n\nThis works, but it just feels *wrong*. Any help with sorting this out would be appreciated.",
+        "created_utc": 1356032062,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Quality control in effect",
+        "author": "rscarson",
+        "url": "http://www.reddit.com/r/programminghorror/comments/156jrs/quality_control_in_effect/",
+        "text": "It has come to my attention that the quality of this sub has gone downhill. I have taken steps to correct this. Please note the rules, now displayed in the sidebar. Any post with no code WILL be removed. Please report codeless posts to help with this effort.\n\nThanks all :)\n\nAs always, feedback is appreciated.\n\nEdit: Stop reporting this, for fuck's sake.\n\nEdit 2: The next asshole to report this gets a week's ban. There's been like 20 reports now.\n\n    void HERE_ITS_CODE_OK()\n    {\n        end:\n        goto middle;\n        middle:\n        goto start;\n\n        start:\n        goto end;\n    }",
+        "created_utc": 1356031205,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Not sure if programming horror, but it still hurts me",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/15549e/not_sure_if_programming_horror_but_it_still_hurts/",
+        "text": "",
+        "created_utc": 1355966728,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When I got to this point I started worrying if it was safe for me to be a Rubyist.",
+        "author": "MithrilTuxedo",
+        "url": "http://www.reddit.com/r/programminghorror/comments/152r1f/when_i_got_to_this_point_i_started_worrying_if_it/",
+        "text": "I'm learning Ruby as a Python/Java guy and this happened...\n\n    1.9.3p194 :038 &gt; false.to_s\n     =&gt; \"true\" \n    1.9.3p194 :039 &gt; false.&amp;(true)\n     =&gt; true \n    1.9.3p194 :040 &gt; false.&amp;(false)\n     =&gt; true \n    1.9.3p194 :041 &gt; false &amp; true\n     =&gt; true \n    1.9.3p194 :042 &gt; false &amp; false\n     =&gt; true \n    1.9.3p194 :043 &gt; !false \n     =&gt; true \n    1.9.3p194 :044 &gt; false \n     =&gt; true\n\nSo I showed off my obvious cleverness to my coworkers, killed IRB, and set fire to the laptop.",
+        "created_utc": 1355871542,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Web design pet peeves",
+        "author": "pbfy0",
+        "url": "http://www.reddit.com/r/programminghorror/comments/14qj2q/web_design_pet_peeves/",
+        "text": "",
+        "created_utc": 1355336662,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Changelog : Handles certificate error for all CURL operations that causes sending to fail on some servers",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/14o4ki/changelog_handles_certificate_error_for_all_curl/",
+        "text": "And here is the diff:\n\n    +       curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);\n    +       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);\n\nBe careful when purchasing cheap software.",
+        "created_utc": 1355242483,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Dealing with Exceptions",
+        "author": "Yaraia",
+        "url": "http://www.reddit.com/r/programminghorror/comments/14b2p9/dealing_with_exceptions/",
+        "text": "    catch(java.io.IOException e) {\n      // fail silently\n    }",
+        "created_utc": 1354684199,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Dammit C# compiler, you shouldn't LET me initialize a variable with itself!",
+        "author": "ekolis",
+        "url": "http://www.reddit.com/r/programminghorror/comments/148l1s/dammit_c_compiler_you_shouldnt_let_me_initialize/",
+        "text": "    private static readonly double HexagonInnerRadius = 0.5;\n    private static readonly double HexagonOuterRadius = HexagonOuterRadius / Cos30;\n    private static readonly double HexagonHalfSide = HexagonOuterRadius * Sin30;\n\nMeant to put HexagonOuterRadius = HexagonInnerRadius / Cos30, but somehow the compiler just treated the assignment as setting HexagonOuterRadius to zero...",
+        "created_utc": 1354587779,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I had some fun today.",
+        "author": "smarwell",
+        "url": "http://www.reddit.com/r/programminghorror/comments/14313n/i_had_some_fun_today/",
+        "text": "    def a():\n        b()\n    def b():\n        a()\n    a()\n\n\nI've always wondered what would happen when...",
+        "created_utc": 1354327286,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why are goto statements considered bad? (C++)",
+        "author": "fallingpizza11",
+        "url": "http://www.reddit.com/r/programminghorror/comments/13y2ip/why_are_goto_statements_considered_bad_c/",
+        "text": "",
+        "created_utc": 1354128219,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Some code I wrote a while back...",
+        "author": "beebop1",
+        "url": "http://www.reddit.com/r/programminghorror/comments/13tzsh/some_code_i_wrote_a_while_back/",
+        "text": "So I was going through some old code and (trying) to fix it when suddenly this appears: \n\n    int fc = 0, i, j, gen, w = 80;  \n    unsigned char rule = 22, c;  \n    char configs[8] = {  \n        0, 1, 2, 3, 4, 5, 6, 7};  \n    #define gbit(b, n) ((b &amp; (1 &lt;&lt; n)) &gt;&gt; n)  \n    #define sbit(v, b, n) b |= (v % 2) &lt;&lt; n  \n\n\n\n    int evolve(void)  \n    {  \n        for(i = 0; i &lt; w;i++)  \n            f[!fc][i] = 0;  \n        fc = !fc;  \n        for(i = 0; i &lt; w;i++)  \n        {  \n            c = 0;  \n            if(i)                                     //This code                                                                                                                                                                                                                   \n                sbit(gbit(f[fc][i-1], 0), c, 2);      //packs                                                                                                                                                                                                                       \n            else                                      //the cell configuration                                                                                                                                                                                                      \n                sbit(gbit(f[fc][w - 1], 0), c, 2);    //into the                                                                                                                                                                                                                    \n            sbit(gbit(f[fc][i], 0), c, 1);            //first 3                                                                                                                                                                                                                     \n            if(i != w - 1)                            //bits of a                                                                                                                                                                                                                   \n               sbit(gbit(f[fc][i+1], 0), c, 0);       //byte.                                                                                                                                                                                                                       \n            else                                      //00000123                                                                                                                                                                                                                    \n                sbit(gbit(f[fc][0], 0), c, 0);  \n            for(j = 0; j &lt; 8;j++)  \n            {  \n                if(c == configs[j])  \n                {  \n                    sbit(gbit(rule, j), f[!fc][i], 0);  \n                    break; //out of for(j = 0;j &lt; 8;j++)                                                                                                                                                                                                                            \n                }  \n            }  \n            printf(f[!fc][i]?\"^[[37;47m#^[[0m\":\"^[[30;40m#^[[0m\");  \n        }  \n        printf(\"%d\", gen + 1);  \n        putchar('\\n');  \n    }  \n    \n\nBonus points for guessing what sbit() and gbit() do, and why the packing was necessary.\n\nHINT: It was part of a 1-dimensional 2-state cellular automaton simulator. ",
+        "created_utc": 1353964879,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The For-While loop.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/13ozoq/the_forwhile_loop/",
+        "text": "I was helping one of the lower-classmen with one of their projects. (I'm in 12, he's in 10. Yes, this is high school) It was a basic encryption program. The for-while went something like:\n\n       for(i=0; 1&lt;101; i++)\n              {\n                 encrypt[i];\n              }while(i != '\\0');\n\nI fell off my chair laughing. How he came up with this is beyond me, however, I have now made it my sworn duty to one code a successful for-while, just cause I have nothing better to do.",
+        "created_utc": 1353720632,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hm, your flash app doesn't support my application sending you 64-bit integers?",
+        "author": "mailto_devnull",
+        "url": "http://www.reddit.com/r/programminghorror/comments/13l1ge/hm_your_flash_app_doesnt_support_my_application/",
+        "text": "No problem... I'll just stick this into the code right before the return is sent back...\n\n    foreach ($return as $name =&gt; $val){\n        if ($val&gt;9007199254740992) $val = (string)$val;\n    }",
+        "created_utc": 1353530095,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I love working on this code (PHP). ",
+        "author": "sydoka",
+        "url": "http://www.reddit.com/r/programminghorror/comments/138gqo/i_love_working_on_this_code_php/",
+        "text": "I can't really find the words. Check this out:\nhttp://pastebin.com/hF6zidwg\n\nIt handles a form submission. Checks for POST keys, and updates the table keys if necessary, by adding a new **TEXT** column to the table. ",
+        "created_utc": 1352977518,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Very simple zombie AI gone wrong",
+        "author": "Zanzlanz",
+        "url": "http://www.reddit.com/r/programminghorror/comments/12tudm/very_simple_zombie_ai_gone_wrong/",
+        "text": "Surely this is coding horror!\n\n    if(mobs[mob][1]-mobs[mobs[mob][10]][1]&lt;-BS) {\n        mobs[mob][9][0] = false;\n        mobs[mob][9][1] = !mobs[mob][9][0];\n    } if(mobs[mob][1]-mobs[mobs[mob][10]][1]&gt;BS) {\n        mobs[mob][9][0] = true;\n        mobs[mob][9][1] = !mobs[mob][9][0];\n    } else if(tick%10 == 0) {\n        mobs[mobs[mob][10]][5][0] -= 10;\n    }\n\nDoes anyone have a good guess as to what this (terribly written) code does?",
+        "created_utc": 1352334003,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Because copying text would be just too easy",
+        "author": "vytah",
+        "url": "http://www.reddit.com/r/programminghorror/comments/12toqy/because_copying_text_would_be_just_too_easy/",
+        "text": "",
+        "created_utc": 1352329171,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's a subreddit where I can post code, and have it critiqued?",
+        "author": "Havidad",
+        "url": "http://www.reddit.com/r/programminghorror/comments/12jfn8/whats_a_subreddit_where_i_can_post_code_and_have/",
+        "text": "",
+        "created_utc": 1351898109,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The URL you've given us doesn't work",
+        "author": "vytah",
+        "url": "http://www.reddit.com/r/programminghorror/comments/12hjl7/the_url_youve_given_us_doesnt_work/",
+        "text": "Our company develops mainly Java- and .NET-based web software. This Wednesday, our project manager received an e-mail from our intermediary, who were conducting tests of our application, that it doesn't work. More precisely, registering new users doesn't work.\n\nShe was confused, as the application worked at our servers ~~perfectly~~ slightly better. She had already posted on the [Mantis](http://www.mantisbt.org/) how they should have configured the application, so she believed it has to be some mysterious bug in the application. She spent several hours trying to reproduce the error, with no results.\n\nShe finally logged into intermediary's test server, to see what's wrong. The logs indicated that the application failed while trying to connect to intermediary's security provider server. She quickly glances into the configuration and found this gem (here paraphrased):\n\n    security.provider= http://security.intermediary.com/something [^]\n\nYes, Mantis adds `[^]` after every URL and they just simply copied and pasted it into the config, thinking it's the part of URL. FYI, this line was posted on Mantis alone, not as a part of a large configuration file.",
+        "created_utc": 1351814594,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Back in my day we didn't have :nth-child pseudoselectors.",
+        "author": "flussence",
+        "url": "http://www.reddit.com/r/programminghorror/comments/12b3cl/back_in_my_day_we_didnt_have_nthchild/",
+        "text": "And so this happened.\n\n    &lt;tr class=&lt;?php shader() ?&gt;&gt;...&lt;/tr&gt;\n    &lt;tr class=&lt;?php shader() ?&gt;&gt;...&lt;/tr&gt;\n    &lt;?php\n    // original version\n    function shader() {\n        static $c = 0;\n        return '\"c'.(1+(++$c&amp;1)).'\"';\n    }\n    // newer super-optimised version\n    function shader() {\n        static $c = 1;\n        return '\"c'.($c^=3).'\"';\n    }\n    ?&gt;\n\nI tried to delete all traces of the codebase this came from in 2006 but people kept sending me saved copies of it thinking I'd \"lost\" it. I hate those people.",
+        "created_utc": 1351555068,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Rewriting an old game I wrote, found this.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/129dmf/rewriting_an_old_game_i_wrote_found_this/",
+        "text": "`def gennum(nin):`\n\n    def firstnum(num):\n\n        return int(num/10.0)\n\n    if firstnum(nin+firstnum(nin))==firstnum(nin):\n\n        return firstnum(nin+firstnum(nin))+nin\n\n    else:\n\n        return nin+firstnum(nin)+1`\n\nI'm lucky I remembered what it does.",
+        "created_utc": 1351486302,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I was once proud of this.",
+        "author": "ProjectGoldfish",
+        "url": "http://www.reddit.com/r/programminghorror/comments/1290kw/i_was_once_proud_of_this/",
+        "text": "    Actions = [\n    \t{trigger1,[{value1,[handler1,handler2]},{value2,[handler3,handler4]}]},\n    \t{trigger2,[{value3,[handler5]},{value4,[handler6]}]}\n    ].\n    \n    %Input: 2tuple trigger|atom(), value|atom()\n    fun({A,B}, C) -&gt; \n    \t[\n    \t\tD() ||\n    \t\t{E,F} &lt;- Actions,\n    \t\t{G, H} &lt;- F,\n    \t\tD &lt;- H,\n    \t\tE == A,\n    \t\tG == B\n    \t].\n\nBonus points if you can figure out what it was supposed to do.",
+        "created_utc": 1351474052,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "We've just hired a new programmer and she asked me this gob-smacker today...",
+        "author": "myniceaccount",
+        "url": "http://www.reddit.com/r/programminghorror/comments/11wi0g/weve_just_hired_a_new_programmer_and_she_asked_me/",
+        "text": "",
+        "created_utc": 1350924283,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Innovative Music Store",
+        "author": "kitsovereign",
+        "url": "http://www.reddit.com/r/programminghorror/comments/11rg2g/innovative_music_store/",
+        "text": "",
+        "created_utc": 1350673884,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How does one write good code in a place where bad practices are accepted?",
+        "author": "wmccullough",
+        "url": "http://www.reddit.com/r/programminghorror/comments/11mk1l/how_does_one_write_good_code_in_a_place_where_bad/",
+        "text": "",
+        "created_utc": 1350476354,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "There's a limit to future-proofing...",
+        "author": "mailto_devnull",
+        "url": "http://www.reddit.com/r/programminghorror/comments/11l13q/theres_a_limit_to_futureproofing/",
+        "text": "    &lt;option value=\"\"&gt;Select Sex&lt;/option&gt;\n        &lt;?php\n                    $count = 0;\n                    $arrayList = array(\"M\" =&gt; \"Male\",\n                      \"F\" =&gt; \"Female\");\n                    foreach ($arrayList as $key =&gt; $value) {\n                       echo '&lt;option value=\"'.$key.'\"';\n                      \n                       if ($sex == $key){\n                           echo ' selected=\"selected\" ';\n                       }\n                       echo '&gt;'.$value.'&lt;/option&gt;';\n                    }\n      ?&gt;\n      &lt;/select&gt;\n    &lt;/div&gt;\n    &lt;!-- END SEX --&gt;",
+        "created_utc": 1350413837,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "most retarded thing I did just now.",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/11jnme/most_retarded_thing_i_did_just_now/",
+        "text": "creating a load balancing feature for my mmo server, wanted to test a piece of code. \n\nadded this, first thing in my main thread. \n\n\n&gt;ProcessStartInfo PSI = new ProcessStartInfo(Assembly.GetExecutingAssembly().Location);\n\n&gt;Process.Start(PSI);\n\nneedless to say, it bogged down my i7 32gb workstation in about 60 secs. Had to force restart to clear that one out.",
+        "created_utc": 1350351198,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The most loveliest of boollean fuckup codes",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/113n3j/the_most_loveliest_of_boollean_fuckup_codes/",
+        "text": "We were doing an upgrade of a system, One that was written pretty recently by a small team of competent and semi competent programmers.\n\n\nWhile trying to figure out what code I can get rid of, I stumbled upon the following wonder:\n\n    if (someDictionary.Contains(someKey))\n    {\n        boolleanValue=true;\n        return boolleanValue;\n    }\n    boolleanValue=false;\n    return boolleanValue;",
+        "created_utc": 1349640065,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'm just getting started with Windows 8 Metro app making",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/11160u/im_just_getting_started_with_windows_8_metro_app/",
+        "text": "And I'm wondering if anyone has any good sources of information on how to make an app. Because honestly I've been going fucking crazy trying to understand it the way that Microsoft has it on their development site.\n\nI'd like to note that while I'm not new to programming, I have only a little C++ experiene (though I was very good at that) and I have quite a bit in C. Just none of it was in a gui setup. All text input or input from an external devices.\n\nMy idea is to make an app for Tumblr. I'm assuming I need to find the Tumblr APIs and figure out how they work. But any tips on anything else would be great. I'd also just love it if I didn't have to crawl through that confusing labyrinth that Microsoft has made of their \"basic\" RSS feed reader. &gt;_&gt;",
+        "created_utc": 1349502621,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Because, fuck you that's why!",
+        "author": "gianhut",
+        "url": "http://www.reddit.com/r/programminghorror/comments/10tk57/because_fuck_you_thats_why/",
+        "text": "Found this in the pile of crap I'm fixing:\n\n    for (int i = 0; i &lt; 5; i++) {\n        switch (i) {\n        case 0: doThingZero();\n        case 1: doThingOne();\n        case 2: doThingThree();\n        case 3: doThingFour();\n        case 4: doThingFive();\n        case 5: writeSomeError();\n        }\n    }",
+        "created_utc": 1349192758,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "From a web app I am working with...",
+        "author": "rscarson",
+        "url": "http://www.reddit.com/r/programminghorror/comments/10gi5r/from_a_web_app_i_am_working_with/",
+        "text": "    if(version_compare(phpversion(), '5.0') &lt; 0) {\n            insert_charset_header();\n            require_once('phpversionfail.php');\n            die();\n    }\n\nAnd then just below it:\n\n    if (version_compare(phpversion(), '5.0') &lt; 0) {\n        eval('\n        function clone($object) {\n          return $object;\n        }\n        ');\n      }",
+        "created_utc": 1348592583,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "From my first programming project",
+        "author": "stillwaters",
+        "url": "http://www.reddit.com/r/programminghorror/comments/106lxm/from_my_first_programming_project/",
+        "text": "Years ago, I took my first computer science class. The class used Javascript and had a final group project that involved building a website with significant scripted components. This was a summer course, so the timeframe from start to finish was about three weeks.\n\nI was feeling artistic, so I decided to do something graphical and musical. I was enthusiastic enough about the project that I convinced the other group members to go with my idea and did all the work. It was an interactive keyboard piano, with an animated animal mascot. I'd decided from the start that I wouldn't use any images, so I did everything in CSS and Javascript.\n\nBefore that class, my only programming knowledge was limited to a rather superficial understanding of C, from dabbling in MUDs. I knew about values and pointers, and had vague notions that arrays and pointers were related. I didn't know much about arrays. What little I knew about C led to a lot of conceptual misunderstandings.\n\nSince Javascript apparently lacked pointers, I figured everything was a value type. This led to a lot of paranoia and confused sidestepping in code. The idea of reference types was unknown to me, so I was always nervous about object assignment, since everything clearly had to be copied. Even worse, I had no way of cleaning up all that wasted memory! That stressed me out.\n\nAt some point, I lost that inhibition and was happily wasting memory everywhere. It was clear Javascript had some black magic voodoo going, so I might as well make good use of it.\n\nI decided I wanted random music to go with the project, since the class was looking at algorithms and generative art then. I stumbled across [Musikalisches Würfelspiel](http://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel), and managed to brute-force a working implementation within the final week.\n\nWork on the project was done iteratively. Things were written in Notepad, and the webpage was then refreshed to see if they worked. Debugging was mostly a spray'n'pray affair.\n\nAt one point, there were some very persistent error messages that bugged me to no end. I then discovered the wonders of exception mishandling... I included exception swallowing in the final report as one of the valuable things I got out of the project.\n\n**TL;DR**: War. War never changes.\n\nLink: https://gist.github.com/3747539",
+        "created_utc": 1348128196,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This will thwart anyone trying to guess passwords!",
+        "author": "slugonamission",
+        "url": "http://www.reddit.com/r/programminghorror/comments/102j5g/this_will_thwart_anyone_trying_to_guess_passwords/",
+        "text": "    if(!$user-&gt;login($_POST['password']))\n        sleep($_SESSION['failed_attempts']++);\n\nYou know, while also opening up a giant DoS vector at the same time...",
+        "created_utc": 1347954428,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Early morning bug-fix-fest had us developing on production *facepalm*",
+        "author": "mailto_devnull",
+        "url": "http://www.reddit.com/r/programminghorror/comments/zvok9/early_morning_bugfixfest_had_us_developing_on/",
+        "text": "[The end result](http://imgur.com/YEHWY)\n\nThat's right, we pushed to the repository from our production build... not my proudest moment...\n\n*Note*: Yes, we were working around facebook... *eccentricities*.",
+        "created_utc": 1347635895,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Personal Shame: Rounding",
+        "author": "bekeleven",
+        "url": "http://www.reddit.com/r/programminghorror/comments/zm69h/personal_shame_rounding/",
+        "text": "What do you do when you're coding in a language that doesn't have floor and ceil? Or, more accurately, when you're writing code at 3 AM and FORGET that your language has floor and ceil?\n\n&gt; rounding = ((rounding==\"Up\") ? .49 : -.49);//Accurate except in extremely large values of 2\n&gt; returnArray.push([finalData[i][0], Math.round(parse(roll) / parse(divisor) + rounding)]);\n\nI'm still wondering if I should go in and fix it, or just throw a few more 9s onto the end and reduce the error rate by 99%...",
+        "created_utc": 1347220753,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why divide the minute by five? Just because. It's more secure.",
+        "author": "phorrorthrowaway1",
+        "url": "http://www.reddit.com/r/programminghorror/comments/z39lg/why_divide_the_minute_by_five_just_because_its/",
+        "text": "    function buildDateString(){\n        var theString;\n        var curdate = new Date();\n        var minute = Math.floor(curdate.getMinutes()/5);\n        theString = apiKey+curdate.getYear().toString()+curdate.getMonth().toString()+curdate.getDate().toString()+curdate.getHours().toString()+minute.toString();\t\n        return theString;\n    }\n\nWhy exactly is the minute divided by five, and the date string elements shuffled around?\n\nThis function is used to generate a \"unique\" (note the quotes) timestamp for hash checking purposes. I wager the minute manipulation was supposed to be some useless form of security through obscurity (as no hacker would think to divide the minute by five, amirite?)\n\nToo bad this was in a publically accessible js file...",
+        "created_utc": 1346351894,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Flash developers have depressing traces",
+        "author": "flamingspew",
+        "url": "http://www.reddit.com/r/programminghorror/comments/ylkn3/flash_developers_have_depressing_traces/",
+        "text": "So I just re-installed the flash debug player to work on an old app. One of my open tabs generated this and I happened to look at the flashlog. Found a bunch of these: \n\nBanner Ani Time: 14.462\nsale price $679.99\nregular price $779.99\nI see a dollar sign\nregular price string is now 779.99\nsale price string is now 679.99\nregular price number is now 779.99\nsale price number is now 679.99\n\nTHEN\n\nI've done my 3 loops so I'm going to stop now. bit tired. Spend all day just looping and looping over and over. I wanted to be Flash Gordon\n",
+        "created_utc": 1345581265,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Anyone Else Ever Develop for... AOL? Breaking Mark Seriff's trade \"SECRET\"",
+        "author": "flamingspew",
+        "url": "http://www.reddit.com/r/programminghorror/comments/y1pxa/anyone_else_ever_develop_for_aol_breaking_mark/",
+        "text": "The year was 1996. I was 14 years old. I had to take a RAINMAN seminar before I could intern at the \"Digital City\" division of media curating for \"Digital City Denver: Arts Soup\" sub-category. Want proof? I was on the cover of Denver Jobs, a printed monthly. OMG an Asian kid with blonde highlights knows how to use a computer! The photographer stood on top of my rickety wooden desk. Fun ensued. \n\nThey will probably sue me now on the basis of some fucked up NDA I signed as a naive minor. Let me remind you lawyers, innocent, manipulable virgin minor with headgear and braces. \n\nRAINMAN stood for \"Remote Access Information Manager\" but what it really meant was that there was a slow-ass server somewhere that took actual pseudo SMTP messages from a bizarre coding/gui interface (closest thing I can think of is if Dreamweaver were made by the 1992 MS Word team) that \"submitted\" your \"code\" VIA FUCKING EMAIL to be compiled on said shitty-slow pentium i486 in Texas or some shit. \n\nTen minutes later you'd get a list of compile errors in your AOL Account Inbox because your \"screen name\" was passed through the shitty in-AOL IDE to the server VIA FUCKING EMAIL! No, really, the only way to code for AOL was to login, click on the \"page\" you wanted to edit, have some manager add you to an access list and fuck up like 5 times because THEY'RE EMAILING A SERVER TO GRANT PRIVILEGES.\n\nHow many times do I have to say you compiled your code by EMAILING A FUCKING SERVER! It's a trade secret because patenting that shit would just make you go to prison.\n\nThis is what wikipedia says about AOL Rainman: \n\nRainman code is kept strictly confidential by AOL; access is granted at their discretion.\n\nBECAUSE IT IS EMBARRASSING, NOT BECAUSE THE TRADE SECRET WILL GET YOU LAID. EMAIL. EMAIL. It's not even code, it's like a parser without a greencard in constant fear of being deported to Borgia.\n",
+        "created_utc": 1344693185,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "typeof this bitch",
+        "author": "flamingspew",
+        "url": "http://www.reddit.com/r/programminghorror/comments/y1oe3/typeof_this_bitch/",
+        "text": "so, maintaining some code from a fucking hippy developer that showed up  the second day of work with sacred geometry shaved into his head. FINE, have weird hair as an expression of your passion/style/inferiority complex. I have wacky hair. But put that shit on the table so the right client finds you. Don't say, naw, I can handle this huge corporate js frontend and then do shit like this INSIDE A 400-Line switch statement inside a jGayie foreach loop:\n\nif( typeof( zone.count !== 'undefined'))\n{ \n\n     // do a bunch of important shit\n\n\n} else {\n\n    // do a bunch of slightly different important shit\n\n}\n\nNotice that the typeOf operator is on the whole expression, which is of the type boolean, so therefore IS technically defined in JS-- so it always executed.",
+        "created_utc": 1344690182,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Coworker brags about writing nearly 9,000 lines of code in Python",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/xyfc7/coworker_brags_about_writing_nearly_9000_lines_of/",
+        "text": "The names provided in the story obviously have been changed.\n\nA coworker (Mike) and I are writing a web application that users can upload videos to and then trim them into smaller clips online. Well, Mike does not have a degree in CS or any related field (though he did one semester of CS courses). He was hired for a six month project to work on the database for out application (not sure why we need a person in charge of the database for six months as I know MySQL enough to get by).\n\nI am in charge of writing the entire web site. My boss realized that he didn't need someone working on the database for six months so he asked this guy to take some responsibilities from me. He doesn't know PHP (the language in which I chose to write the website) but he knows a little bit of Python (given his beginning CS course a few semesters ago). My boss decides he should write the video trimmer. PHP and Python aren't exactly the best languages to do video editing with so he chose to use subprocesses in Python to run ffmpeg. He told me it could only make forty-five clips. This baffled me but I shrugged my shoulders and moved on.\n\nSince he chose to do this, I told him I would port it to PHP. It'd make much more sense to do that. He warned me about it being nearly 9,000 lines of code. Python? Seriously? Why would this take 9,000 lines in Python? I bet a b****fuck implementation would be shorter than this. So I open up the file to begin the porting process and soon realize why it can only do forty-five clips.\n\nhttps://gist.github.com/3307369",
+        "created_utc": 1344541796,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "From the daily WTF, String Processing in SQL",
+        "author": "shadowh511",
+        "url": "http://www.reddit.com/r/programminghorror/comments/xv5q9/from_the_daily_wtf_string_processing_in_sql/",
+        "text": "[link here because I don't want to reformat the 2000+lines](http://thedailywtf.com/Articles/SQL-Splits.aspx)",
+        "created_utc": 1344400832,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My ex colleague didn't really get jQuery and efficient DOM traversal.",
+        "author": "Flater420",
+        "url": "http://www.reddit.com/r/programminghorror/comments/xr8wg/my_ex_colleague_didnt_really_get_jquery_and/",
+        "text": "It's been a year since I took over from the previous guy working here, and I still regularly find facepalm-worthy snippets of code.\nIt's usually the same kind of dumbassery, but one of the snippets that I will never forget was the following Javascript function:\n\n//I remember a comment here that said the function must be used 'at all costs'.\n\nfunction setElementID() {\n    $(\"#\"+$(\"#contractid\").attr(\"id)).attr(\"id\", $(\"#contractid\").attr(\"id));\n}\n\nWhich basically translates to 'get the ID of the element that has the ID 'contractid', then set the ID of the element with ID 'contractid' to that value. (Yo dawg...)\n\nWhen I started here I was given a few months to self-teach myself how to code, and coming across this kind of coding really has you questioning your own sanity at times.\n\nAlso, he was dyslexic. I can't blame him for that, but do you have any idea how hard it is to read some of the code?\nEspecially when I need to work in a legacy project of ours, where refactoring would take at least several hours, because the same mistake would be spread over SQL table names, stored procedures, and code-behind variables, comments and documentation.\n\nAlthough it is funny sometimes and it always keeps me on the lookout for more funny stuff :-)",
+        "created_utc": 1344239699,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"I just discovered doc strings!\" [Python]",
+        "author": "smarwell",
+        "url": "http://www.reddit.com/r/programminghorror/comments/xqe4h/i_just_discovered_doc_strings_python/",
+        "text": "[I just love this kid.](http://i.imgur.com/r186zl)",
+        "created_utc": 1344204891,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[Java] How to parse XML...",
+        "author": "johnl1479",
+        "url": "http://www.reddit.com/r/programminghorror/comments/xmvht/java_how_to_parse_xml/",
+        "text": "Found this is some production code today... *facepalm*\n\n    String responseString = serviceClient.getResponsePayload().toString();\n    String orderNumber= responseString.substring(\n\t\t\t\t\t\tresponseString.indexOf(\"&lt;orderNumber&gt;\") + 13,\n\t\t\t\t\t\tresponseString.indexOf(\"&lt;/orderNumber&gt;\"));\t",
+        "created_utc": 1344022316,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The thin green line of doom!",
+        "author": "FloatableCat",
+        "url": "http://www.reddit.com/r/programminghorror/comments/xgy2y/the_thin_green_line_of_doom/",
+        "text": "I recently worked as a VB.net / ASP.Net developer and took over a project for a small internal web application. \n\nNow I was given a spec with the requirements for the next version and 8 weeks to make the required changes, didn't seem too bad as the changes weren't too huge, just some basic extra functionality.\n\nI sit down to look at this project and start looking through the code, first thing I notice is it is full of inline SQL, no stored procs and some places where there were vulnerabilities to injection attacks. Next up the 4 main ASP.Net pages each take 6 seconds to load. \n\nSo warning bells are ringing here, the application is a pain in the ass for its users in its current state. I refuse to do any of the changes without taking 2 weeks first to fix these performance issues, and only then would I start making the required changes.\n\nSo I go through and rewrite all the SQL into stored procedures, removing the injection attack vulnerabilities as I go.   But doing this I find that the database queries are built on views,  views querying views joined to views etc, Im pretty picky about the execution time of my SQL so I decide to rewrite more of the queries and rip out the views, Whilst I'm working on all these procedures I decided to implement a little logging code, so i write up a basic template for all my stored procs that inserts the start / end time of each proc execution into a table for later review.\n\nI get the project running a bit faster, nowhere near good but I assume the 3rd party control we are using is just memory hungry and leave it at that, I start making the changes and have the application running on my testing server for about a week with only myself using it. One day I think to check out my logging table to see what has gone in there.  What I find shocked me, two procs had been called 8000 times each in the space of a week, the 3rd proc on the list was only at 150 calls!!  \n\nSo I dig into this and find where the procedure is being called, its a piece of code triggered by an event from the custom control we are using, its not commented, I kinda skipped over it cause it didn't seem to be doing anything major. I decide to see what this thing actually does and comment it out, then I try running the code and find our 6 second page load time has now gone to less than a second!\n\nSo what did the code do that had caused 6 users to work full time for over a year with an application that took 6 seconds to load pages?  It drew a green vertical line on a calendar control....... One green line had accounted for 90% of the poor performance issues of this entire piece of software.\n\n",
+        "created_utc": 1343769438,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"Just try and throw an exception now! I dare you.\"[Python]",
+        "author": "smarwell",
+        "url": "http://www.reddit.com/r/programminghorror/comments/x5exp/just_try_and_throw_an_exception_now_i_dare/",
+        "text": "He was new at programming, but that just doesn't excuse this.\n\n\n    try:\n        try:\n            try:\n                try:\n                    try:\n                        ArrayColNum*=83\n                    except: pass\n                except: pass\n            except: pass\n        except: pass\n    except: pass\n    return ArrayColNu \n\nApparently he hadn't figured out what tracebacks were for yet.",
+        "created_utc": 1343248133,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Cut my life into pieces, you are my...",
+        "author": "verifex",
+        "url": "http://www.reddit.com/r/programminghorror/comments/x58yw/cut_my_life_into_pieces_you_are_my/",
+        "text": "[Email](http://i.imgur.com/WohSL.jpg) I recently received from a fairly well known resort that doesn't have a very good QA team.\n\n",
+        "created_utc": 1343242970,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Javascript engineering - Just something I came across today while fixing some stuff",
+        "author": "andreime",
+        "url": "http://www.reddit.com/r/programminghorror/comments/x4h6s/javascript_engineering_just_something_i_came/",
+        "text": "Self-explanatory I think :D\nGit blame -&gt; 26th june =&gt; facepalm\n\n     /**\n     * Formats the rate string to matchpoint format\n     * @method formatRateValue\n     * @return {String}\n     */\n\n    formatRateValue: function(rate) {\n    \t'use strict';\n    \tif (typeof rate === \"undefined\" || rate === null) {\n    \t\tvar rate = '';\n    \t}\n    \tvar rate = rate + '';\n\n    \treturn rate.toMatchPointPrice('rates');\n    }",
+        "created_utc": 1343208402,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Working with 4x4 matrices...",
+        "author": "Sebbert",
+        "url": "http://www.reddit.com/r/programminghorror/comments/wxzj1/working_with_4x4_matrices/",
+        "text": "        m11 = (a.m22*a.m33*a.m44 + a.m23*a.m34*a.m42 + a.m24*a.m32*a.m43\n\t\t\t\t- a.m22*a.m34*a.m43 - a.m23*a.m32*a.m44 - a.m24*a.m33*a.m42) * det;\n\t\tm12 = (a.m12*a.m34*a.m43 + a.m13*a.m32*a.m44 + a.m14*a.m33*a.m42\n\t\t\t\t- a.m12*a.m33*a.m44 - a.m13*a.m34*a.m42 - a.m14*a.m32*a.m43) * det;\n\t\tm13 = (a.m12*a.m23*a.m44 + a.m13*a.m24*a.m42 + a.m14*a.m22*a.m43\n\t\t\t\t- a.m12*a.m24*a.m43 - a.m13*a.m22*a.m44 - a.m14*a.m23*a.m42) * det;\n\t\tm14 = (a.m12*a.m24*a.m33 + a.m13*a.m22*a.m34 + a.m14*a.m23*a.m32\n\t\t\t\t- a.m12*a.m23*a.m34 - a.m13*a.m24*a.m32 - a.m14*a.m22*a.m33) * det;\n\n\t\tm21 = (a.m21*a.m34*a.m43 + a.m23*a.m31*a.m44 + a.m24*a.m33*a.m41\n\t\t\t\t- a.m21*a.m33*a.m44 - a.m23*a.m34*a.m41 - a.m24*a.m31*a.m43) * det;\n\t\tm22 = (a.m11*a.m33*a.m44 + a.m13*a.m34*a.m41 + a.m14*a.m31*a.m43 \n                - a.m11*a.m34*a.m43 - a.m13*a.m31*a.m44 - a.m14*a.m33*a.m41) * det;\n\t\tm23 = (a.m11*a.m24*a.m43 + a.m13*a.m21*a.m44 + a.m14*a.m23*a.m41 \n                - a.m11*a.m23*a.m44 - a.m13*a.m24*a.m41 - a.m14*a.m21*a.m43) * det;\n        m24 = (a.m11*a.m23*a.m34 + a.m13*a.m24*a.m31 + a.m14*a.m21*a.m33 \n                - a.m11*a.m24*a.m33 - a.m13*a.m21*a.m34 - a.m14*a.m23*a.m31) * det;\n\n        m31 = (a.m21*a.m32*a.m44 + a.m22*a.m34*a.m41 + a.m24*a.m31*a.m42\n                - a.m21*a.m34*a.m42 - a.m22*a.m31*a.m44 - a.m24*a.m32*a.m41) * det;\n        m32 = (a.m11*a.m32*a.m42 + a.m12*a.m31*a.m44 + a.m14*a.m32*a.m41\n                - a.m11*a.m32*a.m44 - a.m12*a.m34*a.m41 - a.m14*a.m31*a.m42) * det;\n        m33 = (a.m11*a.m22*a.m44 + a.m12*a.m24*a.m41 + a.m14*a.m21*a.m42\n                - a.m11*a.m24*a.m42 - a.m12*a.m21*a.m44 - a.m14*a.m22*a.m41) * det;\n        m34 = (a.m11*a.m24*a.m32 + a.m12*a.m21*a.m34 - a.m14*a.m22*a.m31\n                - a.m11*a.m22*a.m34 - a.m12*a.m24*a.m31 - a.m14*a.m21*a.m32) * det;\n\n        m41 = (a.m21*a.m33*a.m42 + a.m22*a.m31*a.m43 + a.m23*a.m32*a.m41\n                - a.m21*a.m32*a.m43 - a.m22*a.m33*a.m41 - a.m23*a.m31*a.m42) * det;\n        m42 = (a.m11*a.m32*a.m43 + a.m12*a.m33*a.m41 + a.m13*a.m31*a.m42\n                - a.m11*a.m33*a.m42 - a.m12*a.m31*a.m43 - a.m13*a.m32*a.m41) * det;\n        m43 = (a.m11*a.m23*a.m42 + a.m13*a.m33*a.m41 + a.m13*a.m31*a.m42\n                - a.m11*a.m22*a.m43 - a.m12*a.m23*a.m41 - a.m13*a.m21*a.m42) * det;\n        m44 = (a.m11*a.m22*a.m33 + a.m12*a.m23*a.m31 + a.m13*a.m21*a.m32\n                - a.m11*a.m23*a.m32 - a.m12*a.m21*a.m33 - a.m13*a.m22*a.m31) * det; ",
+        "created_utc": 1342913397,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I see a comment war brewing...",
+        "author": "Isvara",
+        "url": "http://www.reddit.com/r/programminghorror/comments/wu74d/i_see_a_comment_war_brewing/",
+        "text": "    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/\n    /*** SCREW YOU, KEN, I'LL ALTER WHAT I WANT ***/\n",
+        "created_utc": 1342732952,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Let's use password html tag to turn the password into stars to hide everyones passwords from the end users",
+        "author": "Intrexa",
+        "url": "http://www.reddit.com/r/programminghorror/comments/wd19a/lets_use_password_html_tag_to_turn_the_password/",
+        "text": "I recently inherited a classic asp intranet website that manages quite a few facilities for the different departments that was originally built back in 2001. Access to the different sections of the site is granted by the IT department, as well as managing users and their passwords. To change a password, you pull up the user on a form, which has their name + password field to input a new password.\n\nUpon further inspection, it is filling that field with the users password, which is obviously stored in plaintext. Viewing the source of the page tells you what is in the field, the users live password. My favorite part of the source is at the top is a changelog with something to the effect of \"Hid users passwords\" which obviously must meant adding the type=password tag to the form.\n\nWell, it seems the guy who originally built it went out of his way to make this terrible decision a cornerstone of the websites design. Whenever you update anything about the user, you need to use this form, and the form always resubmits the password back to the system (basically it's changing itself to itself anytime you change any of the users details.) Even further, it seems all access is basically built around echoeing back that password over and over everywhere in the site.",
+        "created_utc": 1341971439,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "do nothing!",
+        "author": "ezekelol",
+        "url": "http://www.reddit.com/r/programminghorror/comments/w2pju/do_nothing/",
+        "text": "    for($x = 0; $x &lt; count($rundschreiben); $x++) {\n    //$content .= $rundschreiben[$x][\"crstart_date\"].\"&lt;br /&gt;\".htmlspecialchars(stripslashes($rundschreiben[$x]['titel'])).\"&lt;br&gt;&lt;br&gt;\";\n    }",
+        "created_utc": 1341493552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Small mistake, but still facepalm worthy",
+        "author": "Girdot",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vznz8/small_mistake_but_still_facepalm_worthy/",
+        "text": "Saw this during a code review today:\n\n    if( boolVar == false )\n        return boolVar;\n\n    return true;\n\nCode reviews are so exhilarating!",
+        "created_utc": 1341339974,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Give a customer a tool to write reports...",
+        "author": "benji",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vpoh2/give_a_customer_a_tool_to_write_reports/",
+        "text": "And they use it to generate SQL queries like this:\n\nSELECT Table0.* , Table1.*, Table2.*, Table3.*, Table4.*, Table5.*, Table6.*, Table7.*, Table8.* FROM Table0 LEFT JOIN Table1 ON Table0.id = Table1.idTable0 AND Table1.type&lt;&gt;'Type1' AND ( Table1.status='State1' OR Table1.status='State2' ) AND Table1.dategrace&gt;=NOW() LEFT JOIN Table2 ON Table1.idTable2 = Table2.id LEFT JOIN Table3 ON Table0.id = Table3.idTable0 AND Table3.status='State3' LEFT JOIN Table4 ON Table3.idTable4 = Table4.id AND Table4.archived='false' LEFT JOIN Table1 Table5 ON Table4.id = Table5.idTable4 AND Table5.type='type2' AND ( Table5.status='Status5' OR Table5.status='Status6' ) AND Table5.dategrace&gt;=NOW() LEFT JOIN Table1Option Table6 ON Table5.idTable1option = Table6.id LEFT JOIN Table7 ON Table0.idTable7 = Table7.id LEFT JOIN Table2 Table8 ON Table5.idTable2 = Table8.id WHERE ( Table0.archived='false' ) AND ( Table4.archived='false' OR Table4.id IS NULL ) AND ( Table4.archived='false' OR Table4.id IS NULL ) AND ( Table0.archived='false' ) AND ( Table4.field='2859' OR Table4.field=';7861' OR Table4.field='A0111' OR Table4.field='A0112' OR Table4.field='A0113' OR Table4.field='A0114' OR Table4.field='A0152' OR Table4.field='A0153' OR Table4.field='A0159' OR Table4.field='A0219' OR Table4.field='A0301' OR Table4.field='A0302' OR Table4.field='A0303' OR Table4.field='AO219' OR Table4.field='B1101' OR Table4.field='B1419' OR Table4.field='C2111' OR Table4.field='C2112' OR Table4.field='C2113' OR Table4.field='C2121' OR Table4.field='C2122' OR Table4.field='C2129' OR Table4.field='C2130' OR Table4.field='C2151' OR Table4.field='C2152' OR Table4.field='C2161' OR Table4.field='C2162' OR Table4.field='C2163' OR Table4.field='C2171' OR Table4.field='C2172' OR Table4.field='C2179' OR Table4.field='C2181' OR Table4.field='C2182' OR Table4.field='C2183' OR Table4.field='C2184' OR Table4.field='C2190' OR Table4.field='C2213' OR Table4.field='C2221' OR Table4.field='C2222' OR Table4.field='C2229' OR Table4.field='C2239' OR Table4.field='C2241' OR Table4.field='C2242' OR Table4.field='C2243' OR Table4.field='C2249' OR Table4.field='C2250' OR Table4.field='C2261' OR Table4.field='C2322' OR Table4.field='C2323' OR Table4.field='C2329' OR Table4.field='C2331' OR Table4.field='C2333' OR Table4.field='C2334' OR Table4.field='C2339' OR Table4.field='C2411' OR Table4.field='C2412' OR Table4.field='C2413' OR Table4.field='C2421' OR Table4.field='C2422' OR Table4.field='C2423' OR Table4.field='C2430' OR Table4.field='C2531' OR Table4.field='C2532' OR Table4.field='C2533' OR Table4.field='C2542' OR Table4.field='C2543' OR Table4.field='C2545' OR Table4.field='C2546' OR Table4.field='C2547' OR Table4.field='C2549' OR Table4.field='C2551' OR Table4.field='C2559' OR Table4.field='C2561' OR Table4.field='C2562' OR Table4.field='C2563' OR Table4.field='C2566' OR Table4.field='C2610' OR Table4.field='C2623' OR Table4.field='C2629' OR Table4.field='C2631' OR Table4.field='C2633' OR Table4.field='C2635' OR Table4.field='C2711' OR Table4.field='C2713' OR Table4.field='C2731' OR Table4.field='C2741' OR Table4.field='C2742' OR Table4.field='C2759' OR Table4.field='C2761' OR Table4.field='C2762' OR Table4.field='C2765' OR Table4.field='C2769' OR Table4.field='C2811' OR Table4.field='C2813' OR Table4.field='C2822' OR Table4.field='C2829' OR Table4.field='C2831' OR Table4.field='C2832' OR Table4.field='C2839' OR Table4.field='C2841' OR Table4.field='C2842' OR Table4.field='C2849' OR Table4.field='C2851' OR Table4.field='C2852' OR Table4.field='C2853' OR Table4.field='C2854' OR Table4.field='C2859' OR Table4.field='C2861' OR Table4.field='C2862' OR Table4.field='C2863' OR Table4.field='C2864' OR Table4.field='C2865' OR Table4.field='C2867' OR Table4.field='C2869' OR Table4.field='C2919' OR Table4.field='C2921' OR Table4.field='C2923' OR Table4.field='C2929' OR Table4.field='C293' OR Table4.field='C2941' OR Table4.field='C2942' OR Table4.field='C2949' OR Table4.field='C8259' OR Table4.field='C9242' OR Table4.field='D3610' OR Table4.field='D3620' OR Table4.field='D3701' OR Table4.field='E4111' OR Table4.field='E4112' OR Table4.field='E4113' OR Table4.field='E4121' OR Table4.field='E4122' OR Table4.field='E4210' OR Table4.field='E4223' OR Table4.field='E4232' OR Table4.field='E4233' OR Table4.field='E4242' OR Table4.field='E4243' OR Table4.field='E4244' OR Table4.field='E4251' OR Table4.field='E4259' OR Table4.field='F4511' OR Table4.field='F4512' OR Table4.field='F4519' OR Table4.field='F4521' OR Table4.field='F4522' OR Table4.field='F4523' OR Table4.field='F4531' OR Table4.field='F4539' OR Table4.field='F4611' OR Table4.field='F4612' OR Table4.field='F4613' OR Table4.field='F4614' OR Table4.field='F4615' OR Table4.field='F4619' OR Table4.field='F4621' OR Table4.field='F4622' OR Table4.field='F4623' OR Table4.field='F4711' OR Table4.field='F4712' OR Table4.field='F4714' OR Table4.field='F4715' OR Table4.field='F4716' OR Table4.field='F4717' OR Table4.field='F4718' OR Table4.field='F4719' OR Table4.field='F4721' OR Table4.field='F4722' OR Table4.field='F4731' OR Table4.field='F4732' OR Table4.field='F4739' OR Table4.field='F4759' OR Table4.field='F4791' OR Table4.field='F4793' OR Table4.field='F4794' OR Table4.field='F4795' OR Table4.field='F4796' OR Table4.field='F4799' OR Table4.field='G5110' OR Table4.field='G5121' OR Table4.field='G5122' OR Table4.field='G5123' OR Table4.field='G5124' OR Table4.field='G5125' OR Table4.field='G5129' OR Table4.field='G5210' OR Table4.field='G5221' OR Table4.field='G5222' OR Table4.field='G5223' OR Table4.field='G5231' OR Table4.field='G5232' OR Table4.field='G5233' OR Table4.field='G5234' OR Table4.field='G5235' OR Table4.field='G5241' OR Table4.field='G5242' OR Table4.field='G5243' OR Table4.field='G5245' OR Table4.field='G5251' OR Table4.field='G5252' OR Table4.field='G5253' OR Table4.field='G5254' OR Table4.field='G5255' OR Table4.field='G5259' OR Table4.field='G5261' OR Table4.field='G5269' OR Table4.field='G5311' OR Table4.field='G5313' OR Table4.field='G5322' OR Table4.field='G5323' OR Table4.field='G5324' OR Table4.field='G5329' OR Table4.field='H5710' OR Table4.field='H5720' OR Table4.field='H5730' OR Table4.field='H5740' OR Table4.field='HV710' OR Table4.field='I16641' OR Table4.field='I6110' OR Table4.field='I6121' OR Table4.field='I6122' OR Table4.field='I6123' OR Table4.field='I6200' OR Table4.field='I6301' OR Table4.field='I6302' OR Table4.field='I6303' OR Table4.field='I6401' OR Table4.field='I6402' OR Table4.field='I6509' OR Table4.field='I6611' OR Table4.field='I6619' OR Table4.field='I6623' OR Table4.field='I6629' OR Table4.field='I6630' OR Table4.field='I6641' OR Table4.field='I6642' OR Table4.field='I6643' OR Table4.field='I6649' OR Table4.field='I6709' OR Table4.field='J7111' OR Table4.field='J7112' OR Table4.field='J7120' OR Table4.field='K7310' OR Table4.field='K7321' OR Table4.field='K7322' OR Table4.field='K7323' OR Table4.field='K7324' OR Table4.field='K7329' OR Table4.field='K7330' OR Table4.field='K7340' OR Table4.field='K7411' OR Table4.field='K7412' OR Table4.field='K7421' OR Table4.field='K7422' OR Table4.field='K7511' OR Table4.field='K7519' OR Table4.field='K7520' OR Table4.field='L7220' OR Table4.field='L7321' OR Table4.field='L7711' OR Table4.field='L7712' OR Table4.field='L7720' OR Table4.field='L7741' OR Table4.field='L7743' OR Table4.field='L7810' OR Table4.field='L7821' OR Table4.field='L7823' OR Table4.field='L7824' OR Table4.field='L7829' OR Table4.field='L7831' OR Table4.field='L7832' OR Table4.field='L7833' OR Table4.field='L7834' OR Table4.field='L7841' OR Table4.field='L7842' OR Table4.field='L7851' OR Table4.field='L7852' OR Table4.field='L7853' OR Table4.field='L7854' OR Table4.field='L7855' OR Table4.field='L7861' OR Table4.field='L7862' OR Table4.field='L7863' OR Table4.field='L7864' OR Table4.field='L7865' OR Table4.field='L7866' OR Table4.field='L7869' OR Table4.field='M694000' OR Table4.field='M8111' OR Table4.field='M8112' OR Table4.field='M8113' OR Table4.field='M8130' OR Table4.field='M8133' OR Table4.field='M8200' OR Table4.field='N8410' OR Table4.field='N8422' OR Table4.field='N8423' OR Table4.field='N8424' OR Table4.field='N8431' OR Table4.field='N8432' OR Table4.field='N8440' OR Table4.field='O8611' OR Table4.field='O8613' OR Table4.field='O8621' OR Table4.field='O8622' OR Table4.field='O8623' OR Table4.field='O8631' OR Table4.field='O8632' OR Table4.field='O8633' OR Table4.field='O8634' OR Table4.field='O8636' OR Table4.field='O8639' OR Table4.field='O8640' OR Table4.field='O8710' OR Table4.field='O8721' OR Table4.field='O8722' OR Table4.field='O8729' OR Table4.field='P4796' OR Table4.field='P9111' OR Table4.field='P9112' OR Table4.field='P9121' OR Table4.field='P9122' OR Table4.field='P9132' OR Table4.field='P9210' OR Table4.field='P9219' OR Table4.field='P9220' OR Table4.field='P9231' OR Table4.field='P9241' OR Table4.field='P9242' OR Table4.field='P9251' OR Table4.field='P9252' OR Table4.field='P9259' OR Table4.field='P9311' OR Table4.field='P9312' OR Table4.field='P9319' OR Table4.field='P9321' OR Table4.field='P9322' OR Table4.field='P9329' OR Table4.field='P9330' OR Table4.field='Q9269' OR Table4.field='Q9519' OR Table4.field='Q9521' OR Table4.field='Q9522' OR Table4.field='Q9523' OR Table4.field='Q9525' OR Table4.field='Q9526' OR Table4.field='Q9529' OR Table4.field='Q9610' OR Table4.field='Q9621' OR Table4.field='Q9629' OR Table4.field='Q9631' OR Table4.field='Q9632' OR Table4.field='Q9633' OR Table4.field='Q9634' ) AND ( Table4.archived='false' OR Table4.id IS NULL ) AND ( Table0.id IS NOT NULL ) ORDER BY Table0.field1 ASC, Table0.field2 ASC\n",
+        "created_utc": 1340841515,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Two negatives are the only way to test for a positive!",
+        "author": "johnl1479",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vlgqo/two_negatives_are_the_only_way_to_test_for_a/",
+        "text": "    If Not (Not CheckAppId(AppID)) Then\n        If Not (Not RequestIDNumber(AppID, UserID, CustomerNumber, OrderNumber, ErrorFlag, ErrorInfo)) Then",
+        "created_utc": 1340662795,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Lets split a string and concat it in a loop! Built in functions are for suckers.",
+        "author": "virexmachina",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vkpkr/lets_split_a_string_and_concat_it_in_a_loop_built/",
+        "text": "Found this gem in some code today:\n\n    &lt;?php\n    $responce = explode(\"_\", $doc['file_name']);\n    $pdf_file_name = \"\";\n    for ($i = 1; $i &lt; sizeof($responce); $i++) {\n        $pdf_file_name .= $responce[$i] . \" \";\n    }\n\nSo, the file names are something like \"316872279_wireflow_v1.0.pdf,\" they split the string by \"___\" and then loop over that array, adding the string back together with spaces.\n\nYou know, instead of str\\_replace(\"_\", \" \", $doc['file_name']);\n\nThis code is brought to you by the same geniuses that thought that looping over a query result object and looping through it, manually adding each column to an array and rebuilding the result as an array was easier than returning the result_array function thats built in.\n\nWhat a mess.",
+        "created_utc": 1340637876,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "There is only one \"c\" in Javascript",
+        "author": "ekolis",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vj58p/there_is_only_one_c_in_javascript/",
+        "text": "Several years ago I was working on an ASP.NET project, and some of my coworkers were having trouble with some Javascript code:\n\nCW1: \"Hey, CW2, can you come over here and look at my Javascript code? It's not running!\"\n\nCW2: \"Hmm, event handler mumble mumble... everything looks good... no idea why it's not running...\"\n\nCW1: \"Oh, hey, what's this, the script tag is messed up!\"\n\nTurns out CW1 had written this script tag:\n\n&lt;script type=\"text/javcascript\"&gt;\n// some code here\n&lt;/script&gt;\n\nYes, that's right, he stuck an extra \"c\" into \"Javascript\", so the browser didn't recognize it!",
+        "created_utc": 1340560421,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Git: Whoops...",
+        "author": "brownhead",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vhpw6/git_whoops/",
+        "text": "I've been working nearly day and night on a [project of mine](https://github.com/brownhead/galah) that I'm hosting on github. I try to  keep everything updated on git.\n\nA little bit ago I went to rebase and *git rebase* told me I was already in the middle of a rebase. Thinking I had accidently run the command twice or something I just ran *git rebase --abort*. Well.. [here](http://pastebin.com/iszphTqw) is the next command I ran...",
+        "created_utc": 1340477166,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When Problems Are Tough, Use Regular Expressions",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vfwju/when_problems_are_tough_use_regular_expressions/",
+        "text": "I was given the task of parsing **several** VBA scripts and make a note of all the information about every sub-procedure and function. I didn't want to do it all by hand so I wrote this monstrosity. Note that this is actually one of the most readable regex implementations.\n\n\n    def vba_module_functions_to_csv(vba):\n            from re import findall\n            regex = r'''\n        ^\\s*\n        (?:\n            (Public|Friend|Private)\n            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*            (?# Matches at lease one whitespace including _\\n sequences)\n        )?\n        (Function|Sub)\n        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n        (\\w[\\w\\d_]*|_[\\w\\d_]+)              (?# Function name)\n        \\(\n        (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?           (?# Matches any whitespace including _\\n sequences)\n        (?:\n            (?:\n                (Optional)\n                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n            )?\n            (?:\n                (?:ByVal|ByRef)\n                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n            )?\n            (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 1 name)\n            (?:\n                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                As\n                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 1 type)\n            )?\n            (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n            (?:\n                ,\n                (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                (?:\n                    (Optional)\n                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                )?\n                (?:\n                    (?:ByVal|ByRef)\n                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                )?\n                (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 2 name)\n                (?:\n                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                    As\n                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                    (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 2 type)\n                )?\n                (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                (?:\n                    ,\n                    (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                    (?:\n                        (Optional)\n                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                    )?\n                    (?:\n                        (?:ByVal|ByRef)\n                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                    )?\n                    (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 3 name)\n                    (?:\n                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                        As\n                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                        (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 3 type)\n                    )?\n                    (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                    (?:\n                        ,\n                        (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                        (?:\n                            (Optional)\n                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                        )?\n                        (?:\n                            (?:ByVal|ByRef)\n                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                        )?\n                        (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 4 name)\n                        (?:\n                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                            As\n                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                            (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 4 type)\n                        )?\n                        (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                        (?:\n                            ,\n                            (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                            (?:\n                                (Optional)\n                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                            )?\n                            (?:\n                                (?:ByVal|ByRef)\n                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                            )?\n                            (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 5 name)\n                            (?:\n                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                As\n                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 5 type)\n                            )?\n                            (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                            (?:\n                                ,\n                                (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                (?:\n                                    (Optional)\n                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                )?\n                                (?:\n                                    (?:ByVal|ByRef)\n                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                )?\n                                (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 6 name)\n                                (?:\n                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                    As\n                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                    (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 6 type)\n                                )?\n                                (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                (?:\n                                    ,\n                                    (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                    (?:\n                                        (Optional)\n                                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                    )?\n                                    (?:\n                                        (?:ByVal|ByRef)\n                                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                    )?\n                                    (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 7 name)\n                                    (?:\n                                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                        As\n                                        [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                        (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 7 type)\n                                    )?\n                                    (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                    (?:\n                                        ,\n                                        (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                        (?:\n                                            (Optional)\n                                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                        )?\n                                        (?:\n                                            (?:ByVal|ByRef)\n                                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                        )?\n                                        (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 8 name)\n                                        (?:\n                                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                            As\n                                            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                            (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 8 type)\n                                        )?\n                                        (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                        (?:\n                                            ,\n                                            (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                            (?:\n                                                (Optional)\n                                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                            )?\n                                            (?:\n                                                (?:ByVal|ByRef)\n                                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                            )?\n                                            (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 9 name)\n                                            (?:\n                                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                                As\n                                                [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                                (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 9 type)\n                                            )?\n                                            (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                            (?:\n                                                ,\n                                                (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                                (?:\n                                                    (Optional)\n                                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                                )?\n                                                (?:\n                                                    (?:ByVal|ByRef)\n                                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                                )?\n                                                (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Argument 10 name)\n                                                (?:\n                                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                                    As\n                                                    [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n                                                    (\\w[\\w\\d_]*|_[\\w\\d_]+)      (?# Argument 10 type)\n                                                )?\n                                                (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n                                            )?\n                                        )?\n                                    )?\n                                )?\n                            )?\n                        )?\n                    )?\n                )?\n            )?\n        )?\n        \\)\n        (?:\n            (?:[ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*)?\n            As\n            [ \\t]+(?:_[ \\t]*(?:'.*?)?\\n[ \\t]+)*\n            (\\w[\\w\\d_]*|_[\\w\\d_]+)          (?# Return type)\n        )?\n        [ \\t]*(?:'.*)?\n        '''\n            matches = findall(regex, vba, re.VERBOSE)\n            print('Function/Sub-procedure Name,Access Level,Return Type,Module,Arguments')\n            for match in matches:\n                print('{0},{1},{2},,{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}'.format(match[2], match[0] or 'Public', \\\n                    match[33] or 'Variant' if match[1] == 'Function' else '', \\\n                    ('[' if match[3] else '') + match[4] + ' &lt;' + (match[5] or 'Variant') + '&gt;' + (']' if match[3] else '') if match[4] else '', \\\n                    ('[' if match[6] else '') + match[7] + ' &lt;' + (match[8] or 'Variant') + '&gt;' + (']' if match[6] else '') if match[7] else '', \\\n                    ('[' if match[9] else '') + match[10] + ' &lt;' + (match[11] or 'Variant') + '&gt;' + (']' if match[9] else '') if match[10] else '', \\\n                    ('[' if match[12] else '') + match[13] + ' &lt;' + (match[14] or 'Variant') + '&gt;' + (']' if match[12] else '') if match[13] else '', \\\n                    ('[' if match[15] else '') + match[16] + ' &lt;' + (match[17] or 'Variant') + '&gt;' + (']' if match[15] else '') if match[16] else '', \\\n                    ('[' if match[18] else '') + match[19] + ' &lt;' + (match[20] or 'Variant') + '&gt;' + (']' if match[18] else '') if match[19] else '', \\\n                    ('[' if match[21] else '') + match[22] + ' &lt;' + (match[23] or 'Variant') + '&gt;' + (']' if match[21] else '') if match[22] else '', \\\n                    ('[' if match[24] else '') + match[25] + ' &lt;' + (match[26] or 'Variant') + '&gt;' + (']' if match[24] else '') if match[25] else '', \\\n                    ('[' if match[27] else '') + match[28] + ' &lt;' + (match[29] or 'Variant') + '&gt;' + (']' if match[27] else '') if match[28] else '', \\\n                    ('[' if match[30] else '') + match[31] + ' &lt;' + (match[32] or 'Variant') + '&gt;' + (']' if match[30] else '') if match[31] else ''))\n\n        if __name__ == '__main__':\n            line = input()\n            vba = ''\n            while line != 'END':\n                vba += line\n                line = input()\n            print(vba_module_functions_to_csv(vba))\n",
+        "created_utc": 1340382732,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Not for production use",
+        "author": "LeFever",
+        "url": "http://www.reddit.com/r/programminghorror/comments/vcf1h/not_for_production_use/",
+        "text": "At my previous job I was tasked with automating many wireless devices, usually without too many problems. That was until I encountered the Linksys e3000. I'm not removing names since this is a consumer model wireless router and I was using one purchased off the shelf. Presumably the following is still true.\n\nUnsurprisingly the consumer model had no API so I was left to automate its use with some other method. Fair enough. When I viewed the page source I found the following header at the top of every page and had my first encounter with what would become a miserable, frustrating, and soul-crushing exercise.\n\n    *********************************************************\n    *   Copyright 2003, CyberTAN  Inc.  All Rights Reserved \n    *********************************************************\n\n    This is UNPUBLISHED PROPRIETARY SOURCE CODE of CyberTAN Inc.\n    the contents of this file may not be disclosed to third parties,\n    copied or duplicated in any form without the prior written\n    permission of CyberTAN Inc.\n\n    This software should be used as a reference only, and it not\n    intended for production use!\n\nApparently Linksys outsourced software dev to [these guys](http://www.cybertan.com.tw/) in 2003 or something and have been shipping \"it not intended for production use\" code ever since. Moving on.\n\nThe forms, their possible values, and their current values were all populated with javascript text replacement. The javascript was spread between functions repeatedly defined in every page as well as a giant monstrosity of a master file. The possible values and value names changed between some but not all pages, even though they were for the same feature. Some of these values were defined twice, but one with a \"_\" prefix. Which one actually specified the correct value was apparently random and required trial and error to figure out.\n\nI remember having other issues with hidden fields that were filled out by javascript triggered when changing other fields. Submitting the new settings required **every** property be specified or the router would crash and require a hard boot of the entire device, so I had to go through every page, submit a bunch of possible combinations of data, and then look at the sent data to get the right values to include.\n\nThere was malformed HTML, huge blocks of commented code, numerous debug comments, and everything was poorly formatted. The best quote I found was something like \"Erin to fix this,\" which given its presence leads me to believe Erin didn't fix it.\n\nIt sucked, killed my spirit, and contributed to my desire to quite a few months later. Never again.\n\nI'm not the first to find this apparently. [This guy](http://cweiske.de/tagebuch/linksys-sucks-at-coding.htm) wrote up a similar report when dealing with the WRT54G3G.",
+        "created_utc": 1340222237,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "PHP: Member object of NULL? No problem!",
+        "author": "Torandi",
+        "url": "http://www.reddit.com/r/programminghorror/comments/v1bah/php_member_object_of_null_no_problem/",
+        "text": "On work I'm fixing bugs and implementing smaller features in a horrible php spaghetti monster. One of the perls I found wen't something like this:\n\n$row = NULL;\n$row-&gt;product = \"foobar\";\n\nGuess what this does? Well it cast $row to a \"stdClass\" and sets $row-&gt;product to \"foobar\". It also casts a notice, but those goes to a log file that is overfilled with warnings and notices (did I mention the quality of the code? :) )",
+        "created_utc": 1339657100,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This quote by me was inspired after having to use Java for work, What programming things make you this angry?",
+        "author": "iambeard",
+        "url": "http://www.reddit.com/r/programminghorror/comments/v0jb9/this_quote_by_me_was_inspired_after_having_to_use/",
+        "text": "\"i'm currently so frustrated with this piece of code that i could eat a dirty sock and enjoy it\" - Me.",
+        "created_utc": 1339623910,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "r/ShittyProgramming welcomes you!",
+        "author": "john2496",
+        "url": "http://www.reddit.com/r/programminghorror/comments/v03uo/rshittyprogramming_welcomes_you/",
+        "text": "Hi guys,\n\nMy name is John and I'm a talent recruiter for r/shittyprogramming. I've never been more impressed by the overall code quality in this subreddit and want to extend a friendly invite to r/shittyprogramming. Although, we don't want to scare younger readers with anything truly horrifying, so please remove any references to ghosts, dead pirates, wizards, chainsaws, assassins, bugs, fog, evil, heights, underwater (for various reasons), demons, rotting bridges, zombies, vampire bats, ninjas (only when they're after you), stephen king's IT, specters, plagues, jinxes, killer instincts (in animals), witchcraft, voodoo dolls, quiet woods, lost/wrong-turns, x-rays of broken bones, clowns, werewolves, footsteps in an empty room, realizing you're being watched, friday (the 13th and rebecca black), swamps, snake monsters, and generally anything that isn't PG.\n\nThanks for your consideration,  \nJohn2496  \nSuper Senior Shitty Programmer  ",
+        "created_utc": 1339608271,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "It was working when we got it",
+        "author": "RyoxSinfar",
+        "url": "http://www.reddit.com/r/programminghorror/comments/ust3z/it_was_working_when_we_got_it/",
+        "text": "I recently got laid off, so some pent up stuff.\n\nAnyway I was working in silverlight. A project that would be a decent sized HTML project. As I just posted elsewhere, first compile of the code the 3rd party delivered (company got code 2 days after I was hired) enlarged the folder to 1.8gbs, was about 900mb before.\n\nThese people were bad bad. They recommended silverlight and convinced our management long before I got there.\n\nSo a few months into things we want to implement a complex new feature to allow account nesting. UI side I said no problem. Was excited to do it. Back end said too much, which was reasonable.\n\nThey go to 3rd party. 3rd party says too much, scope is narrowed down. Our back end guy says \"I can handle that narrowed scope\". They go with the other guys anyway, after I had even said to them \"What you were given was so bad I consider it criminal.\" I meant that. The requirements that pretty much didn't exist only stipulated a architecture really. It wasn't followed at all. No DTOs, calls to server everywhere, bloated giant classes and methods (sometimes I'd find functions containing a inline function, that contained an inline function).\n\nThey really just didn't care.\n\nSo fast forward 2 months and after some issues they are pushing out their final stuff. The \"issues\" is a whole different thing.\n\nbut anyway it all gets resolved. And I am messing around in their new UI which isn't in our \"limited\" release yet. I need to check some data and that requires their newer stuff. I go in. No data. Ask manager who talked to them (sits next to me) and generally does testing to give me go-ahead if it was working fine on their version for us to see. Yep worked fine. Check that data is being received. Yes. Check that data is being put in the variable used for display. Yes. hmmmm. Go to the Xaml. Look for misspelled variable names because it will just fail silently.... ... what?\n\nThere was no variable listed. The grid was not given anything to access data with. A look through the repo shows it never did. I guess my manager just wished really hard then. Add variable. working okay (just displays text but sorting never worked for whatever reason... and they F-ed up my updating improvements. Namely that it would grab new data when navigating. Rather than all data at login and just assume its still good.). ",
+        "created_utc": 1339219393,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "MySQL error handling",
+        "author": "mmtrebuchet",
+        "url": "http://www.reddit.com/r/programminghorror/comments/usq84/mysql_error_handling/",
+        "text": "This is one of mine, from when I took a database course. I didn't see any error throwing mechanism in mysql, so I created a table, \n\n    create table errors(\n    \terrorID bigint primary key not null,\n    \tnoSuchModel bigint unique not null,\n    \tmodelNameInUse bigint unique not null,\n    \tmodelAlreadySpecialized bigint unique not null,\n    \tnoModelOrEffect bigint unique not null\n    )\n\nThen, \n\n    insert into errors values(0,0,0,0,0);\n    insert into errors values(1,1,1,1,1);\n\nOkay, so now the errors table is spring-loaded. \n\nHere's the killer: When you want to throw an error, update the table:\n    \n    if( &lt;model not found&gt; ) then\n\t\tupdate errors set noModelOrEffect = 'could not find that model.';\n\nNow, mysql is perfectly okay with inserting a string into a bigint column (it casts it to 0, FYI), but the trick here is that it will cast the string to 0 and then insert it in both entries in the table, violating the unique constraint. This, finally, causes an error that mySQL doesn't swallow, and it makes it back up to the application. Where the actual error handling exists. ",
+        "created_utc": 1339214992,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "That's not how you pull database data",
+        "author": "PasteyWhiteCoder",
+        "url": "http://www.reddit.com/r/programminghorror/comments/us6d1/thats_not_how_you_pull_database_data/",
+        "text": "Quickie before I get off work. The person who originally coded our system was crap (as usual), but could only copy-paste code samples from the web. This lead to terrible ideas, like using images of checkboxes and JavaScript as opposed to using...I dunno...a normal checkbox? But here's the real killer:\n\n***BTW: This is classic ASP code***\n\n    rsData_Count = rsRecordSet.RecordCount\n    For i = 0 To rsData_Count\n        ' Do stuff from the recordset\n        rsRecordSet.MoveNext\n    Next\n\nThis may be me being picky, but why on God's green Earth would you use a For loop to loop through a recordset? Ugh...",
+        "created_utc": 1339189380,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Hitting the big 999. The future of /r/programminghorror",
+        "author": "nevon",
+        "url": "http://www.reddit.com/r/programminghorror/comments/us53u/hitting_the_big_999_the_future_of/",
+        "text": "So, after 2 months, we are now at 999 subscribers, which is fairly impressive! However, we are suffering from a severe drought when it comes to submissions.\n\nTherefore, I'd like to ask the community what they would like to see from me. Do you want me to spruce the page up? Beg for someone to draw a pretty Snoo? Monitor the spam queue more closely (I do my best, but on a few occasions, a submission has had to sit in there for a few days. My bad!)\n\nIn return, I would ask you to try and spread the word about our subreddit. If you come across a great programming story in some other subreddit, ask them to cross-post it here. If you find a related subreddit, don't be shy about messaging the mods and asking them if they would be willing to put us in their sidebar.\n\nWe've got some _great_ content, and I do think this subreddit has a lot of potential, but if we want more awesome stories, we need to **spread the word** and **contribute with our own material**!\n\nThank you for a great 2 months!",
+        "created_utc": 1339188024,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The best code is no code at all, unless...",
+        "author": "jacmkno",
+        "url": "http://www.reddit.com/r/programminghorror/comments/u6ms3/the_best_code_is_no_code_at_all_unless/",
+        "text": "This [idea from Coding Horror!](http://goo.gl/ywsm5), can easily be understood as \"please try to fix your problems with other procedures or tools\", but the point of programming is in fact to be an alternative  for problem solution. Choosing the best solution to a problem is never easy, so I would suggest people to understand this simply as an expression of the fact that the complexity of software development is commonly underestimated, specially in relation to the maintenance and evolution of the produced software over time.",
+        "created_utc": 1338077370,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The way I tried first looks more equal to me",
+        "author": "scge",
+        "url": "http://www.reddit.com/r/programminghorror/comments/u35m2/the_way_i_tried_first_looks_more_equal_to_me/",
+        "text": "    &gt; [] == []\n    false\n    &gt; [] == [].length\n    true\n\n-.-\n\n/wishing he could use python for web.",
+        "created_utc": 1337885092,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I think I've been writing too much code lately",
+        "author": "jrmcl",
+        "url": "http://www.reddit.com/r/programminghorror/comments/u0wsb/i_think_ive_been_writing_too_much_code_lately/",
+        "text": "I was on the train on my way home from work and simultaneously experienced 2 of the most stupidly geeky moments of recent memory:\n\n1) I was jotting down some notes for a website I'm designing and in doing so wrote, with pen and paper mind you, a winking smiley ;)\n\n2) My immediate thought on doing so was \"I should have closed those brackets before the semicolon\".\n\nThat's when I decided to put the book down and just listen to some music for the rest of the journey.\n",
+        "created_utc": 1337776925,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Escape those freggin speech marks",
+        "author": "CriesWhenPoops",
+        "url": "http://www.reddit.com/r/programminghorror/comments/tyzp6/escape_those_freggin_speech_marks/",
+        "text": "I was just exploring the security of a system I'd been passed for a new job, designed by a student for his Computer Science degree. I thought as a joke, I'd try the old SQL injection \n\n' OR '1' = '1  \n\ntrick in the username and password.\n\nIt worked, and gave me immediate access to home addresses and other contact details for hundreds of children around the area. An entire degree built system, brought to its knees because the developer wasn't escaping speech and quote marks.\n\nI don't want to go to university anymore ;n;",
+        "created_utc": 1337675898,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Clearly labeled variables",
+        "author": "RyoxSinfar",
+        "url": "http://www.reddit.com/r/programminghorror/comments/tgy6m/clearly_labeled_variables/",
+        "text": "I took over a project a year ago in Silverlight (that isn't the horror part). The original programmer(s?) didn't do so hot. We are re-enabling an area that had been closed off due to lack of current functionality (back end didn't fully support it, and the front end was broken to all get out).\n\nWe are re-enabling it and found two values on one screen had reversed values. Easy enough fix. I look in the code and find these two lines. (Some stuff will be starred out for privacy etc. I didn't change the names because it would detract from the issue)\n\n    &lt;TextBlock Style=\"{StaticResource StatsTextStyle}\" Text=\"{Binding Path=Model.****ViewModel.****Overview.Number1, StringFormat=\\{0:n0\\}}\" /&gt;\n\nand then the other one\n\n    &lt;TextBlock Style=\"{StaticResource StatsTextStyle}\" Text=\"{Binding Model.****ViewModel.****Overview.Number2, StringFormat=\\{0:n0\\}}\" /&gt;\n\nHow could these two values that actually are indicating a value of data getting confused? They are *clearly* labeled. The first one goes first, then the second one is second. If only someone had realized that the second one was supposed to go along with the first position! How could they not realize the difference?!\n\nThe sad thing is I'm actually really happy they didn't call it Value. Normally its value, everything is labeled value. So what happens if I want to change the name of a variable named value? Well apparently in my project there are ~6000 matching lines with the whole word value. So I'd have to find the instance of it in code, find everywhere its used in xaml (keeping in mind their binding is inconsistently done, sometimes the containing class is not referenced at all in the xaml) and hand changes those. For those who don't do Silverlight, Visual Studio doesn't have the capacity to recognize a xaml variable is connected to a c# variable. Its DIY. There are only a couple references to Number1 and Number2 so this is something that I can potentially fix!\n\nThis is not uncommon stuff for me. I'll post more.\n\n**Update: They are switching to HTML! Notice I said they, not we! Luckily I had already started job hunting. No hard feelings about it considering I've been pushing for the change myself.**",
+        "created_utc": 1336678566,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[C++] Know thy C, young grasshopper",
+        "author": "knight666",
+        "url": "http://www.reddit.com/r/programminghorror/comments/tgcq5/c_know_thy_c_young_grasshopper/",
+        "text": "Yesterday, a friend messaged me on MSN. He had figured out how to print a timestamp in only 30 lines of code!\n\n\tvoid PrintTimeStamp(time_t a_Time)\n\t{\n\t\tstruct tm timeinfo;\n\t\tlocaltime_s(&amp;timeinfo, &amp;a_Time);\n\t\t\n\t\tchar buffer[0xFFFF] = { 0 };\n\t\t\n\t\tif (timeinfo.tm_min &gt;= 10)\n\t\t{\n\t\t\tif (timeinfo.tm_sec &gt;= 10)\n\t\t\t{\n\t\t\t\tsprintf(buffer, \"%i:%i\", timeinfo.tm_min, timeinfo.tm_sec);\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tsprintf(buffer, \"%i:0%i\", timeinfo.tm_min, timeinfo.tm_sec);\n\t\t\t}\n\t\t}\n\t\telse\n\t\t{\n\t\t\tif (timeinfo.tm_sec &gt;= 10)\n\t\t\t{\n\t\t\t\tsprintf(buffer, \"0%i:%i\", timeinfo.tm_min, timeinfo.tm_sec);\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tsprintf(buffer, \"0%i:0%i\", timeinfo.tm_min, timeinfo.tm_sec);\n\t\t\t}\n\t\t}\n\n\t\tprintf(buffer);\n\t}\n\nIt was with pain in my heart that I told him he could have done it in eight lines:\n\n\tvoid PrintTimeStamp(time_t a_Time)\n\t{\n\t\tstruct tm timeinfo;\n\t\tlocaltime_s(&amp;timeinfo, &amp;a_Time);\n\t\t\n\t\tchar buffer[0xFFFF] = { 0 };\n\t\tprintf(buffer, \"%02i:%02i\", timeinfo.tm_min, timeinfo.tm_sec);\n\t}\n\nNOTE: Code was paraphrased because the pastebin expired. :(",
+        "created_utc": 1336651739,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Check and Check again",
+        "author": "fzr600dave",
+        "url": "http://www.reddit.com/r/programminghorror/comments/tcpvz/check_and_check_again/",
+        "text": "This is my first ever post, but i've taken over a project and this is how somone decided to check some combo box's had values.\n\nIf cboSeason_Concept.Text = \"\" Then\n                MsgBox(\"Please select Season for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cboSeason_Concept.Focus()\n                Exit Sub\n            End If\n\n            If cboGenre_Concept.Text = \"\" Then\n                MsgBox(\"Please select Genre for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cboGenre_Concept.Focus()\n                Exit Sub\n            End If\n\n            'If txtConcept_Reference.Text = \"\" Then\n            '    MsgBox(\"Please enter concept reference for this project\", MsgBoxStyle.Exclamation, \"Error\")\n            '    txtConcept_Reference.Focus()\n            '    Exit Sub\n            'End If\n\n            If cbCategory.Text = \"\" Then\n                MsgBox(\"Please select category for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cbCategory.Focus()\n                Exit Sub\n            End If\n\n            If cboSubCategory.Text = \"\" Then\n                MsgBox(\"Please select sub category for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cboSubCategory.Focus()\n                Exit Sub\n            End If\n\n            If cbProductType.Text = \"\" Then\n                MsgBox(\"Please select product type for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cbProductType.Focus()\n                Exit Sub\n            End If\n\n            If cbMasterCaption.Text = \"\" Then\n                MsgBox(\"Please select for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cbMasterCaption.Focus()\n                Exit Sub\n            End If\n\n            If cbCaption.Text = \"\" Then\n                MsgBox(\"Please select caption for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cbCaption.Focus()\n                Exit Sub\n            End If\n\n            If cbGender.Text = \"\" Then\n                MsgBox(\"Please select  gender  for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cbGender.Focus()\n                Exit Sub\n            End If\n\n            If cbSize.Text = \"\" Then\n                MsgBox(\"Please select size for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cbSize.Focus()\n                Exit Sub\n            End If\n\n            If cboStyle.Text = \"\" Then\n                MsgBox(\"Please select style  for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cboStyle.Focus()\n                Exit Sub\n            End If\n\n            If cboMasterSeason.Text = \"\" Then\n                MsgBox(\"Please select master season for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cboMasterSeason.Focus()\n                Exit Sub\n            End If\n\n            'If cbArtist.Text = \"\" Then\n            '    MsgBox(\"Please select   artist   for this project\", MsgBoxStyle.Exclamation, \"Error\")\n            '    cbArtist.Focus()\n            '    Exit Sub\n            'End If\n\n            If cboSubBrand_Concept.Text = \"\" Then\n                MsgBox(\"Please select    sub brand   for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cboSubBrand_Concept.Focus()\n                Exit Sub\n            End If\n\n            If cboBrand_Concept.Text = \"\" Then\n                MsgBox(\"Please select     brand   for this project\", MsgBoxStyle.Exclamation, \"Error\")\n                cboBrand_Concept.Focus()\n                Exit Sub\n            End If\n\n            If txtDesc.Value.ToString() = \"\" Then\n                MsgBox(\"Please enter the new product description\", MsgBoxStyle.Exclamation, \"No Product Description\")\n                txtDesc.Focus()\n                Exit Sub\n            ElseIf Len(txtDesc.Value.ToString()) &gt; 30 Then\n                MsgBox(\"The product description field can only accept a maximum of 30 characters\", MsgBoxStyle.Exclamation, \"Product Description\")\n                txtDesc.Focus()\n                Exit Sub\n            End If\n\n            If strBriefID = \"\" Then\n                MsgBox(\"This record has no project association, if this persists closed down the application and try again.\", MsgBoxStyle.Exclamation, \"No Brief ID\")\n                Exit Sub\n            End If",
+        "created_utc": 1336470471,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Wonder why the report crashes when the data set gets grows...",
+        "author": "benji",
+        "url": "http://www.reddit.com/r/programminghorror/comments/t2omf/wonder_why_the_report_crashes_when_the_data_set/",
+        "text": "java:\n\nclass DatabaseModelFactory\n{\n\n    public Collection&lt;DatabaseModel&gt; get()\n    {\n        Collection&lt;DatabaseModel&gt; dbmodels = new ArrayList&lt;DatabaseModel&gt;();\n\n        // execute db query constructing Database Models for each row returned\n\n        return dbmodels;\n    }\n}\n\npublic void doReport()\n{\n \n    // snipped\n\n     Collection&lt;SummarizedModel&gt; smodels = new ArrayList&lt;SummarizedModel&gt;();\n     for ( DatabaseModel dbmodel : DatabaseModelFactory.get() )\n     {\n         smodels.add( new SummarizedModel( dbmodel ) );\n     }\n\n     // snipped\n}\n\nBut it's the best way to do this, because they taught him this is how you do it at his university.",
+        "created_utc": 1335928389,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The Magical Comment; or, Why I'm Not a CS Major",
+        "author": "Jhaza",
+        "url": "http://www.reddit.com/r/programminghorror/comments/sz9yd/the_magical_comment_or_why_im_not_a_cs_major/",
+        "text": "As a preface, I should mention that I'm really, really bad at computers in general. I'm one of *those* people - electronics around me have a nasty habit of fizzing and dying at inopportune times. I am also, as I discovered when taking a few computer science at college, incredibly good at producing hilarious errors. \"Incldue\" may have come up a few times.\n\nBy far the strangest (while trying to troubleshoot) error I ever got was on I've always thought of as the Magic Comment. There was one particular function which ran through a data set (a list, I think; this was all in C++) looking for two values, then had two pointers point to them. For some reason, this function wasn't working, and I couldn't figure out why; it kept ending with one of the pointers pointing at gibberish. To troubleshoot, I ran through and added a couple of extra variables and printed them out while the function was running, so I could figure out where exactly it was breaking.\n\nThe problem was, it wasn't. After I added the extra variables, the function was working again. Baffled, I figured I'd retyped something somewhere and it was working, so I deleted all the testing code and ran it again. It stopped working.\n\nI was, understandably, baffled. I started in on my second tier of debugging: commenting out code to see what happened. I wasn't making any progress, until suddenly I found a single line of code that, if removed, made the function run properly. \n\nAs the title implies, this line was a comment. If I deleted the line, the code worked; if I added it back in, the code broke. I was using \"//\" for that line, so I wasn't accidentally adding a \"/*\" or anything like that; it was simply the presence or absence of the comment that determined if the code worked or not. At that point, I basically ragequit and handed my computer to the TA. He stared at it for a while, shrugged, handed it back to me and walked away laughing. I was not amused.\n\nEventually, with help from a friend of mine, I discovered the problem: I'd never set my pointers to null, which I guess was messing everything up. I was quite unhappy that it was such a simple, obvious error, but on the plus side I learned a valuable lesson: I should never ever ever try to write code.",
+        "created_utc": 1335760363,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[PHP] Need to turn a unix timestamp into a date string? No problem.",
+        "author": "moonicipal",
+        "url": "http://www.reddit.com/r/programminghorror/comments/sg7h3/php_need_to_turn_a_unix_timestamp_into_a_date/",
+        "text": "    if ($seconds/60 &gt;=1){\n        $minutes=floor($seconds/60);\n        if ($minutes/60 &gt;= 1){ # Hours\n            $hours=floor($minutes/60);\n            if ($hours/24 &gt;= 1){ #days\n                $days=floor($hours/24);\n                if ($days/7 &gt;=1){ #weeks\n                     $weeks=floor($days/7);\n                     if ($weeks&gt;=2) $return=\"$weeks Weeks\";\n                     else $return=\"$weeks Week\";\n                } #end of weeks\n                $days=$days-(floor($days/7))*7;\n                if ($weeks&gt;=1 &amp;&amp; $days &gt;=1) $return.=\", \";\n                if ($days &gt;=2) $return.=\" $days days\";\n                if ($days ==1) $return.=\" $days day\";\n            } #end of days\n            $hours=$hours-(floor($hours/24))*24;\n            if ($days&gt;=1 &amp;&amp; $hours &gt;=1 &amp;&amp; ($weeks&lt;1)) $return.=\", \";\n            if ($hours &gt;=2 &amp;&amp; ($weeks&lt;1)) $return.=\" $hours hours\";\n            if ($hours ==1 &amp;&amp; ($weeks&lt;1)) $return.=\" $hours hour\";\n        } #end of Hours\n        $minutes=$minutes-(floor($minutes/60))*60;\n        if ($hours&gt;=1 &amp;&amp; $minutes &gt;=1 &amp;&amp; ($days&lt;1&amp;&amp;$weeks&lt;1)) $return.=\", \";\n        if ($minutes &gt;=2 &amp;&amp; ($days&lt;1&amp;&amp;$weeks&lt;1)) $return.=\" $minutes minutes\";\n        if ($minutes ==1 &amp;&amp; ($days&lt;1&amp;&amp;$weeks&lt;1)) $return.=\" $minutes minute\";\n    } #end of minutes\n    $seconds=$integer-(floor($integer/60))*60;\n    if ($minutes&gt;=1 &amp;&amp; $seconds &gt;=1 &amp;&amp; ($hours&lt;1&amp;&amp;$days&lt;1&amp;&amp;$weeks&lt;1)) $return.=\", \";\n    if ($seconds &gt;=2 &amp;&amp; ($hours&lt;1&amp;&amp;$days&lt;1&amp;&amp;$weeks&lt;1)) $return.=\" $seconds seconds\";\n    if ($seconds ==1 &amp;&amp; ($hours&lt;1&amp;&amp;$days&lt;1&amp;&amp;$weeks&lt;1)) $return.=\" $seconds second\";\n\n    return ltrim($return);\n\n\n-----\n*facepalm*\n\n(For non PHP users - the native function `date();` does this for you, only with more options, and probably faster, to boot.)\n\n----\n\nI also just noticed that not only is the function a poor replica of `date();`, it only goes as far as \"weeks\", so inputting today's timestamp would return:\n\n    2206 Weeks, 6 days",
+        "created_utc": 1334766358,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Helping Classmates",
+        "author": "nickthename",
+        "url": "http://www.reddit.com/r/programminghorror/comments/sbtlf/helping_classmates/",
+        "text": "The person next to be in my (basic) python class has this code:\n\n    x=[]\n    y=[] \n    data=open('data.txt','r')\n    data=data.read().split()\n    print x,y\n\n&gt; Derp, why are my lists empty? I read in the data!\n\nAnother gem:\n\n\"Derp, How do I make gravity?\"\n \"You just need to define a variable for the gravity factor you want\"\n\"So, what do I do, import gravity?\"\n\n\nThese weren't on the first day, either.",
+        "created_utc": 1334546679,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The big honking table",
+        "author": "ekolis",
+        "url": "http://www.reddit.com/r/programminghorror/comments/s36lh/the_big_honking_table/",
+        "text": "So once I was working on this web-based employee performance management application, and the previous developers in their infinite wisdom had created The Big Honking Table (tm), aka tbCompetencyGroupModelCompetencyModel.\n\nYes, THAT was the name of the table. It was of course a many-to-many mapping table between two other tables, tbCompetencyGroupModel and tbCompetencyModel. (These guys apparently had a fetish for the word \"Model\" or something; they stuck it at the end of almost all the names of tables that represented something in the business logic.)\n\nNow the guy I was working with on this project liked to prefix all the fields of his tables with the table name - fortunately for this one he went with an abbreviation!\n\nFortunately, we were eventually able to get rid of this table, because it was decided that having a many-to-many mapping between competencies and competency groups was unnecessary...",
+        "created_utc": 1334092416,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Knee-deep in C++ s... code",
+        "author": "Andrey_Karpov_N",
+        "url": "http://www.reddit.com/r/programminghorror/comments/s2a0y/kneedeep_in_c_s_code/",
+        "text": "",
+        "created_utc": 1334045762,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Sometimes, you just have to kludge it",
+        "author": "indrora",
+        "url": "http://www.reddit.com/r/programminghorror/comments/ry2ly/sometimes_you_just_have_to_kludge_it/",
+        "text": "I was looking through some old code of mine (2..3 years old) and found [this gem](https://github.com/indrora/foxGopherClient/blob/master/foxGopherClient/Window1.xaml.cs#L383)\n\nFor the lazy:\n\n    // Sender is  who sent us a clicked event up above us.\n    StackPanel b = VisualTreeHelper.GetParent(sender as DependencyObject) as StackPanel;\n    string q = ((b.Children[0] as TextBox).Text);\n\nFor the uneducated:\n\nThis takes and hunts for the parent of a sending button up an XML tree and then asks for the first child. It then extracts that child's text.\n\nI hated myself back when I wrote this code.",
+        "created_utc": 1333820587,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Spot the error in reddits Heavy Load error page",
+        "author": "jonathons11",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rr02h/spot_the_error_in_reddits_heavy_load_error_page/",
+        "text": "There's a couple in there.\n\n[Link to code on pastebin](http://pastebin.com/HpdMLJwU)\n\nNo offense reddit. Was just bored when this error page came up so I thought I would take a look at the source code.\n\n(Used pastebin as I am not sure how to put HTML code in a reddit post.\nTried it and the Live Preview area just showed blank)",
+        "created_utc": 1333449616,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's a set?",
+        "author": "[deleted]",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rqb94/whats_a_set/",
+        "text": "Cleaning up some code today, former coworker left me a big nasty mess to clean up after he put in his two weeks. It went a little something like this:\n\n    def make_unique(self, seq):\n          seen = set()\n          seen_add = seen.add\n          return [ x for x in seq if x not in seen and not seen_add(x)]\n\nI'm not even really sure where to begin. It's just all kinds of wrong. I get the assignment of the method to a local variable, but the list comprehension is nutso. ",
+        "created_utc": 1333410196,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The day a function played squash",
+        "author": "Shurikane",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rpxfu/the_day_a_function_played_squash/",
+        "text": "I was recently given the mandate to jump into a project and destroy whatever I found wasn't up to snuff.  Well, I ran into this:\n\n    public static Double formatDouble(Double value)\n    {\n        return value;\n    }\n\nAnd to my utter surprize, almost everything in the project calls this method.\n\n**ZAP!**",
+        "created_utc": 1333394587,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Spaghetti and how I learned patience",
+        "author": "Fistandantalus",
+        "url": "http://www.reddit.com/r/programminghorror/comments/rl3h2/spaghetti_and_how_i_learned_patience/",
+        "text": "Ok this is going to be long, so sit back, relax and don't chastise because I might miss a detail or three...\n\nSo over a year ago I got hired by the company I am working at now as the developer for the internal systems.  It is a huge responsibility and I love it.  When I was hired on I was told I would get no help because there are no other developers in the company.  I asked why not and the reply was that the original developers were on loan from a sister company (in the umbrella) but they will no longer work on our stuff.  They had 4 developers that I would be replacing.\n\nI thought that was pretty daunting but as long as things were documented, and logical, I shouldn't have too many problems.\n\nNo documentation on anything, the databases are a total mess, heck they didn't even have source code control.\n\nSo I knew I had a huge job ahead of me.  But that was ok, I needed a job, and to be honest, a year later, I am loving this place, despite the challanges.\n\nFast forward a year.  I am writing a system for a US client to match the system that we use for a Canadian client.   Our internal employees will be using the system, so I had to make it as close to the Canadian system as possible.  No problem I thought.  Some work was done already by the previous developers so I had a good start already.  I decided I would document the previous work as best I could, then put in stuff imported from the Canadian system to create the new US system.\n\nDid that, got a Tshirt and I autographed a piece of stationary and gave it to myself as a surprise.  Woo hoo.  For me???\n\nHow the system works in a nutshell is that the client sends an excel workbook of work they say their technicians are going to do.  I import that.  A few days later, they send another workbook with all of the exact tasks that the tech did on those jobs.  The information is confirmed etc.\n\nNow sometimes because they hire technicians without entering them into the HR system, when importing, no valid tech is found.  In those case we assign them to a generic default user and the people here will work it all out.  \n\nNow when this happens in the background, the workorder (job) is re-opened, a reason is assigned (Reassign To Tech).  The code is a bit more complicated.\n\nThe code looks at the typeid of the workorder (yeah I don't know what that means either).  Based on the typeid a reasonid is assigned.  ok now I have something, but nowhere in the interface is a reason selected.  So I asked one of the phone people how do you set the reason for re-opening a workorder to reassign a tech.\n\nShe said that on another form they can assign that information. I thought wonderful, I can look at the webpage source code and see how that dropdown is populated to get the data I need.\n\nSo the webpage has an include file.  I go to that include file and it refers to another include.  I go to that include in a different project.  It calls a javascript file that I can't find.  After sometime searching I found the javascript file.  I see how the reasons data is retrieved.  YIPPEE.\n\nI look in the table in the one database.  It has two fields that I do not know what they refer to (did i mention the database was not documented either)?  They are TAID and PID.  Hmmmm the numbers don't look obvious to anything so I look table by table for a TAID.  I find a table called ticket action, and the numbers jive.  Ok cool, one field taken care of.  I look for PID....partner id perhaps?  no partner table.  no table starting with P that is logical.\n\nI searcch all of the other databases (oh yeah there are about 20) and come up with nothing.\n\nSo I generate a script for all of the stored procedures in the main database and look for anything that uses the ticketreasons table.  I found a stored procedure that does, and look at the code.  It's main parameter is PID (still no wiser though).\n\nI now do a search in the webpage code looking for that stored procedure.  I FIND IT!!!  In code though the variable used to supply the PID is companyID.\n\nOf course this doesn't make sense....so I look back in the storedprocedure's code to see that company id is from a source table.  I remember that there is a companyID in the source table...that relates to (well doesn't relate, because you see the previous developers didn't believe in database relationships) the sourcecompanies table.  So I lood through the records, and find what I was looking for...the PID...\n\nSo I look back in the ticket reasons table for anything with that company id (sorry the PID) and it returns the record I need...of which I get the reason id, to hardcode (yeesh) into the webpage code.\n\nAll of this so I can reassign a workorder to a proper tech.\n\nAnd this is how most of my days are spent.  Travelling through a maze of spaghetti developing patience not to go postal on the previous developers.\n\nBefore anyone asks...no I have not had time to fully document everything, and no I haven't had time to create relationships in the table of the various databases (and there are lots of reasons why it is almost impossible now).\n\nSigh.\n\nTL;DL  I was given a plate of spaghetti and used it to make a ladder to climb to the sun, but Icarus flew by and knocked me off.",
+        "created_utc": 1333124914,
+        "upvote_ratio": ""
+    }
+]

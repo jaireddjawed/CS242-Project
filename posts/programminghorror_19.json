@@ -1,0 +1,802 @@
+[
+    {
+        "title": "Matrix initialization",
+        "author": "Arandur",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6r3w0g/matrix_initialization/",
+        "text": "I just joined a small team at rather a large and prestigious company. This small team consists mostly of systems engineers, as distinct from software engineers—they stick mostly to MATLAB, eschewing C++ wherever possible. \n\nYesterday, I discovered why. \n\n    Matrix&lt;6, 6, Float64&gt; mat =\n        (6.5, 2.8, 0.0, 0.0, 0.0, 0.0,\n        3.7, 9.4, 10.3, 0.0, 0.0, 0.0,\n        0.0, 0.3, 5.8, 4.2, 0.0, 0.0,\n        0.0, 0.0, 7.6, 8.1, 5.7, 0.0,\n        0.0, 0.0, 0.0, 0.7, 4.2, 8.0, \n        0.0, 0.0, 0.0, 0.0, 9.9, 0.0);\n\nTo someone who programs in MATLAB, I presume, this looks like it initializes the matrix to those values. To someone who programs in C++, it looks initially like a syntax error. \n\nTurns out, due to the way the `Matrix` class was defined, it's neither of those. This is a perfectly legal line of code that silently fills the matrix with zeros. \n\nMore damning than the fact that this line was written and allowed to exist, I suppose, is the fact that no one noticed the discrepancy over the year or so since it was initially written. \n\nAnd as of four months ago, the line is dead code anyway. \n\nIt's going to be a fun project, I think.",
+        "created_utc": 1501677635,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this how I should be doing it to get a Senior Dev title?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6r3lai/is_this_how_i_should_be_doing_it_to_get_a_senior/",
+        "text": "[deleted]",
+        "created_utc": 1501674167,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Is this how I should be doing it to get a Senior Dev title?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6r3kay/is_this_how_i_should_be_doing_it_to_get_a_senior/",
+        "text": "[deleted]",
+        "created_utc": 1501673837,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Kluna eating bricks and cement for breakfast!! Kluna Tik Dinner NVA #1",
+        "author": "bakay123",
+        "url": "https://www.youtube.com/watch?v=Ag4QD8nrNFA",
+        "text": "",
+        "created_utc": 1501655304,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "write a program to determine whether the character entered is a capital letter, a small case letter , etc",
+        "author": "viralprograms",
+        "url": "http://viralprogrames.blogspot.com/2017/07/write-program-to-determine-whether-the-character-entered-is-a-capital-letter-a-small-case-letter-etc.html",
+        "text": "",
+        "created_utc": 1501320975,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Can we start doing games now ? (reloading in VR)",
+        "author": "[deleted]",
+        "url": "https://youtu.be/YlQVjxyzX3k?t=12",
+        "text": "[deleted]",
+        "created_utc": 1501317415,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"30\".toInt()",
+        "author": "Richter_",
+        "url": "https://i.redd.it/ma2pmvg4qccz.jpg",
+        "text": "",
+        "created_utc": 1501255853,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Told him to use getters and setters more",
+        "author": "Athaa",
+        "url": "https://i.redd.it/rmufdoss8ccz.png",
+        "text": "",
+        "created_utc": 1501249780,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Do you want some indentation?",
+        "author": "markand67",
+        "url": "http://markand.fr/indent.png",
+        "text": "",
+        "created_utc": 1501226172,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A coding buddy just blocked me on Discord after I gave him some basic advice!",
+        "author": "grandslammer",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6pzncf/a_coding_buddy_just_blocked_me_on_discord_after_i/",
+        "text": "[removed]",
+        "created_utc": 1501195356,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Take the arrow this code makes and put me out of my misery...",
+        "author": "SpiffyJr",
+        "url": "http://imgur.com/a/4TD4o",
+        "text": "",
+        "created_utc": 1501159990,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "32 bit integer in a 64 bit PHP installation - Best solution I could com up with",
+        "author": "AyrA_ch",
+        "url": "http://i.imgur.com/qGDmiTS.png",
+        "text": "",
+        "created_utc": 1501154744,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A professional festival with a pretty expensive lineup can't figure out how to hide a field.",
+        "author": "improbablywronghere",
+        "url": "https://i.redd.it/0pa8flqct1cz.png",
+        "text": "",
+        "created_utc": 1501123542,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "10 Mistakes Beginner Programmers Make -Bangotree",
+        "author": "bangotree",
+        "url": "http://bangotree.com/mistakes-beginner-programmers-make/",
+        "text": "",
+        "created_utc": 1501119957,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is what happens when your code is pasted into a word processor ;)",
+        "author": "ghillisuit95",
+        "url": "https://i.redd.it/v5kzv41oo0cz.png",
+        "text": "",
+        "created_utc": 1501109839,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Git log",
+        "author": "LuvMySubi",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6pos1y/git_log/",
+        "text": "    commit 1bf215e5a32dad881a5972c4188c7e7c269df2df\n    Author: senior-engineer\n    Date:   Thu Jul 13 14:00:54 2017 -0700\n    \n        The final working Code checked in now. The api is now working......\n    \n    commit e8226e4d6cc4858fff66d80039bb745158fed329\n    Author: senior-engineer\n    Date:   Thu Jul 13 13:18:02 2017 -0700\n    \n        The final working Code checked in now. The api is now working......\n    \n    commit be7ea093db50a409550b555a3e88c275f41aecc9\n    Author: senior-engineer\n    Date:   Wed Jul 12 15:55:39 2017 -0700\n    \n        The final working Code checked in now. The api is now working......\n    \n    commit bf7e9e87bbaf553793d49e1ca0859f31865dfea7\n    Author: senior-engineer\n    Date:   Wed Jul 12 15:08:22 2017 -0700\n    \n        The final working Code checked in now. The api is now working......\n    \n    commit b0da41f62e357f92b26002c973ef056f981878f7\n    Author: senior-engineer\n    Date:   Wed Jul 12 15:05:45 2017 -0700\n    \n        The final working Code checked in now. The api is now working......\n    \n    commit abf85cf1bf2b98f81236e1bc13376640a1931a31\n    Author: senior-engineer\n    Date:   Wed Jul 12 14:57:35 2017 -0700\n    \n        The final working Code checked in now. The api is now working......\n    \n    commit 345baccccad557acfb7030629638d6795150a88e\n    Author: senior-engineer\n    Date:   Mon Jul 10 15:17:59 2017 -0700\n    \n        The final working Code checked in now. The api is now working......\n    \n    commit 494ff3e2766eb1718115af7c165fbf31fab710b2\n    Author: tester-1&gt;\n    Date:   Thu Jun 29 21:21:25 2017 +0530\n    \n        Unit Test updated\n    \n    commit 30c0e46f63d71bf1e3b5dd063be5f79caa3ab72d\n    Author: tester-1&gt;\n    Date:   Thu Jun 29 20:12:24 2017 +0530\n    \n        Unit Test updated\n    \n    commit 8951b79b5a0e81770b453415305c51934ab40eb2\n    Author: tester-1&gt;\n    Date:   Thu Jun 29 17:38:10 2017 +0530\n    \n        Unit Test updated\n",
+        "created_utc": 1501082820,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "To hell with your naming guidelines",
+        "author": "z500",
+        "url": "https://i.imgur.com/BUN3mLA.png",
+        "text": "",
+        "created_utc": 1500992244,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When the client hires a fully staffed testing team for your brand new pre-alpha project",
+        "author": "throwa784838",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6pf4z4/when_the_client_hires_a_fully_staffed_testing/",
+        "text": "[removed]",
+        "created_utc": 1500976421,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "6972 SQL requests on one page",
+        "author": "Moulinette_",
+        "url": "https://i.redd.it/v4riphjedpbz.png",
+        "text": "",
+        "created_utc": 1500972866,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Switched projects for 3 months came back to this",
+        "author": "StiKPrototype",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6pb7l0/switched_projects_for_3_months_came_back_to_this/",
+        "text": "all over the codebase:\n\n    public async void DoWorkflow1()\n    {\n        for (int step = 1; !done; ++step)\n        {\n            switch (step)\n            {\n                case 1:\n                     await DoTask1();\n                     break;\n                case 2:\n                     await DoTask2();\n                     break;\n                case 3:\n                     await DoTask3();\n                     break;\n                default:\n                     done = true;\n                     break;\n            }\n        }   \n    }\n",
+        "created_utc": 1500928706,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Commented out for testing",
+        "author": "Kellamitty",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6p7xla/commented_out_for_testing/",
+        "text": "Getting one of those vague exceptions that basically say, 'Something went wrong'.  You know the ones I mean.\n\n4 hours and 30 breakpoints later (was not something the intellisense could detect), I finally work my way to the root of the issue and I realise there must be a line missing.  I get to the home of said line, and what do you know?  It's actually there!  But commented out.  And next to it?  A comment saying that it's commented out.  Like so:\n\n    //List&lt;object&gt; ImportantThings;    //Commented out for testing\n\nWTF?!?\n\nThe worse part is that it was done 2 months ago and the code has been broken since then (I came on board two weeks ago). Would trout-slap responsible developer in person but (un)fortunately he is no longer with us (I hear he got a better offer at another company, god help us all...)\n\nI guess the theory was, hey if nothing breaks maybe we didn't need it?  By all means run that locally for a while, but...\n\nDO NOT CHECK SHIT LIKE THIS IN!!",
+        "created_utc": 1500897905,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What should every programmer know about security?",
+        "author": "priyanshugamer64",
+        "url": "http://secretsofcomputing.blogspot.com/2017/07/what-should-every-programmer-know-about.html",
+        "text": "",
+        "created_utc": 1500819697,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thanks for the info",
+        "author": "anxire",
+        "url": "https://i.redd.it/rpphs65427bz.jpg",
+        "text": "",
+        "created_utc": 1500751136,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I finally found myself in a situation where I had no choice but to commit one of these fun comments myself :D",
+        "author": "Daggerbot",
+        "url": "https://github.com/Daggerbot/aurum/blob/rewrite-dwindow/dwindow/src/sys/windows/event.rs#L246-L251",
+        "text": "",
+        "created_utc": 1500690068,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Someone posted this code to a github issue, as an example to reproduce a problem he's having.",
+        "author": "Thann",
+        "url": "https://pastebin.com/wDS71bYT",
+        "text": "",
+        "created_utc": 1500671973,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does this count as storing passwords insecurely?",
+        "author": "vapengfx",
+        "url": "https://i.redd.it/u2vkxs1tjuaz.png",
+        "text": "",
+        "created_utc": 1500600297,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Does this count as a website storing websites in plain text?",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/3kp95xmljuaz.png",
+        "text": "[deleted]",
+        "created_utc": 1500599651,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I'll be your server this evening.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/636g9uhyeuaz.jpg",
+        "text": "[deleted]",
+        "created_utc": 1500598061,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ill be your server today.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/l8kcg92y1uaz.jpg",
+        "text": "[deleted]",
+        "created_utc": 1500593685,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A novel method for finding the max value in an array [xpost /r/cscareerquestions/]",
+        "author": "jhoneycutt",
+        "url": "https://github.com/tangxunye/android_vendor_qcom_proprietary/blob/e0666c398903d38e72aeda7042ec2836cd3dba68/mm-camera/mm-camera2/media-controller/modules/isp/hw/modules/rolloff/mlro_to_plro/mlro_utils.c",
+        "text": "",
+        "created_utc": 1500551797,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why do programmers confuse Halloween and Christmas?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6oefy9/why_do_programmers_confuse_halloween_and_christmas/",
+        "text": "[deleted]",
+        "created_utc": 1500531338,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "No value clamping",
+        "author": "gDisasters",
+        "url": "https://i.redd.it/tf71jigp2eaz.jpg",
+        "text": "",
+        "created_utc": 1500492520,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fuck all ye that follow",
+        "author": "Critz",
+        "url": "http://imgur.com/5dQCxFB",
+        "text": "",
+        "created_utc": 1500488162,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Unidays “Unsubscribe”",
+        "author": "bracketslash",
+        "url": "http://i.imgur.com/Muk9Nlp.jpg",
+        "text": "",
+        "created_utc": 1500421157,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When you remove CSS",
+        "author": "[deleted]",
+        "url": "https://media.giphy.com/media/26gR29scSVzyr3O2A/giphy.gif",
+        "text": "[deleted]",
+        "created_utc": 1500393161,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "So I heard you like error messages...",
+        "author": "Kiss_Me_Im_A_Liberal",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6o0hup/so_i_heard_you_like_error_messages/",
+        "text": "[Excerpt from here](https://github.com/SuperV1234/ecst/issues/8#issuecomment-243634539):\n\n\t/home/benjamin/github/BoomHS/external/ecst/include/ecst/context/./data/make.hpp:21:35: note: in instantiation of function template specialization\n\t'ecst::context::make&lt;ecst::settings::impl::data&lt;ecst::mp::option_map::impl::data&lt;boost::hana::map&lt;boost::hana::detail::hash_table&lt;boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 0&gt;, 0&gt;,\n\tboost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 1&gt;, 1&gt;, boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 2&gt;, 2&gt;,\n\tboost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 3&gt;, 3&gt;, boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 4&gt;, 4&gt;,\n\tboost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 5&gt;, 5&gt; &gt;, boost::hana::basic_tuple&lt;boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 0&gt;,\n\tboost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 1&gt;, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 1&gt;,\n\tboost::hana::pair&lt;ecst::settings::impl::fixed_impl&lt;std::__1::integral_constant&lt;unsigned long, 10000&gt; &gt;, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 2&gt;,\n\tboost::hana::pairboost::hana::basic_tuple&lt;boost::hana::type_impl&lt;ecst::signature::component::impl::data&lt;boost::hana::basic_tuple&lt;ecst::tag::component::impl::tag_impl&lt;c::model_m &gt;,\n\tecst::mp::option_map::impl::data&lt;boost::hana::map&lt;boost::hana::detail::hash_table&lt;boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 0&gt;, 0&gt; &gt;,\n\tboost::hana::basic_tuple&lt;boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 0&gt;, boost::hana::pair&lt;ecst::signature::component::impl::contiguous_buffer_maker_t, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;::,\n\tboost::hana::type_implecst::signature::component::impl::data&lt;boost::hana::basic_tuple&lt;ecst::tag::component::impl::tag_impl&lt;engine::gfx::triangle &gt;,\n\tecst::mp::option_map::impl::data&lt;boost::hana::map&lt;boost::hana::detail::hash_table&lt;boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 0&gt;, 0&gt; &gt;,\n\tboost::hana::basic_tuple&lt;boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 0&gt;, boost::hana::pair&lt;ecst::signature::component::impl::contiguous_buffer_maker_t, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;::&gt;,\n\tboost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 3&gt;,\n\tboost::hana::pairboost::hana::basic_tuple&lt;boost::hana::type_impl&lt;ecst::signature::system::impl::data&lt;ecst::tag::system::impl::tag_impl&lt;s::rotator,\n\tecst::mp::option_map::impl::data&lt;boost::hana::map&lt;boost::hana::detail::hash_table&lt;boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 0&gt;, 0&gt;,\n\tboost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 1&gt;, 1&gt;, boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 2&gt;, 2&gt;,\n\tboost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 3&gt;, 3&gt;, boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 4&gt;, 4&gt; &gt;,\n\tboost::hana::basic_tuple&lt;boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 0&gt;,\n\tboost::hana::pairecst::inner_parallelism::strategy::split_evenly_fn::impl::parameters&lt;ecst::inner_parallelism::strategy::split_evenly_fn::impl::v_cores_getter, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;,\n\tboost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 1&gt;, boost::hana::pairboost::hana::basic_tuple&lt;, boost::hana::integral_constant&lt;bool, false&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 2&gt;,\n\tboost::hana::pairboost::hana::basic_tuple&lt;ecst::tag::component::impl::tag_impl&lt;c::model_m &gt;, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 3&gt;,\n\tboost::hana::pairboost::hana::basic_tuple&lt;, boost::hana::integral_constant&lt;bool, false&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 4&gt;,\n\tboost::hana::pairecst::signature::system::impl::output_impl&lt;ecst::signature::system::impl::empty_output_type, boost::hana::integral_constant&lt;bool, false&gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;::,\n\tboost::hana::type_implecst::signature::system::impl::data&lt;ecst::tag::system::impl::tag_impl&lt;s::renderer,\n\tecst::mp::option_map::impl::data&lt;boost::hana::map&lt;boost::hana::detail::hash_table&lt;boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 0&gt;, 0&gt;,\n\tboost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 1&gt;, 1&gt;, boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 2&gt;, 2&gt;,\n\tboost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 3&gt;, 3&gt;, boost::hana::detail::bucket&lt;boost::hana::integral_constant&lt;unsigned long long, 4&gt;, 4&gt; &gt;,\n\tboost::hana::basic_tuple&lt;boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 0&gt;,\n\tboost::hana::pairecst::inner_parallelism::strategy::split_evenly_fn::impl::parameters&lt;ecst::inner_parallelism::strategy::split_evenly_fn::impl::v_cores_getter, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;,\n\tboost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 1&gt;, boost::hana::pairboost::hana::basic_tuple&lt;, boost::hana::integral_constant&lt;bool, false&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 2&gt;,\n\tboost::hana::pairboost::hana::basic_tuple&lt;ecst::tag::component::impl::tag_impl&lt;engine::gfx::triangle &gt;, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 3&gt;,\n\tboost::hana::pairboost::hana::basic_tuple&lt;, boost::hana::integral_constant&lt;bool, false&gt; &gt; &gt;, boost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 4&gt;,\n\tboost::hana::pairecst::signature::system::impl::output_impl&lt;ecst::signature::system::impl::empty_output_type, boost::hana::integral_constant&lt;bool, false&gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;::&gt;, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;,\n\tboost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 4&gt;, boost::hana::pairecst::settings::impl::scheduler_wrapper&lt;scheduler::s_atomic_counter, boost::hana::integral_constant&lt;bool, true&gt; &gt; &gt;,\n\tboost::hana::pair&lt;std::__1::integral_constant&lt;unsigned long, 5&gt;, boost::hana::pair&lt;ecst::settings::impl::refresh_parallelism::enabled, boost::hana::integral_constant&lt;bool, false&gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;' requested here\n",
+        "created_utc": 1500381581,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Volatile performance",
+        "author": "PMOS-FTL",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6nyrj6/volatile_performance/",
+        "text": "Some people really don't process volatile semantics, or maybe just don't care:\n\n    struct someRegisterBitfield {\n        uint32_t flagA : 1;\n        uint32_t flagB : 1;\n        uint32_t flagC : 1;\n        uint32_t flagD : 1;\n        uint32_t unused : 28;\n    };\n    volatile struct someRegisterBitfield_t *someRegister;\n\n    bool getA() {\n        return someRegister-&gt;flagA != 0;\n    }\n    bool getB() {\n        return someRegister-&gt;flagB != 0;\n    }\n    bool getC() {\n        return someRegister-&gt;flagC != 0;\n    }\n    bool getD() {\n        return someRegister-&gt;flagD != 0;\n    }\n    &lt;elsewhere&gt; {\n        if (getA() || getB() || getC || getD()) {\n            &lt;stuff&gt;\n        }\n    }\n\nInstead of doing a load and mask, this ends up doing 4 loads and masks. It has to by volatile semantics... (It's actually worse than that, as it has to conditionally do 1-4 loads depending...) And this happens _everywhere_. SetX followed immediately by GetX, etc, etc.\n\nBonus: I have stripped away the 3-7 layers of indirection here. In actuality e.g. getC is actually a function calling function (casting enum to boolean) calling function (casting boolean to an enum) calling a class method (through a pointer) (even though there is exactly one instance of said class), and the someRegister pointer is an instance variable of that class (even though the address never changes) (but the pointer isn't set in the constructor, it's set in a separate init function instead) (and [NULL is a valid pointer](https://www.reddit.com/r/programminghorror/comments/62ihu4/ignorance_is_bliss_or_null_is_fine_right/), which causes amusements if you inadvertently call things before init...). A sufficiently advanced compiler helps somewhat with this, sometimes. Nonetheless...",
+        "created_utc": 1500355478,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My boot camp that I joined just told me it's going to close after my graduation....",
+        "author": "Metalfearsalad",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6nw95w/my_boot_camp_that_i_joined_just_told_me_its_going/",
+        "text": "[removed]",
+        "created_utc": 1500327420,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I come here to cry...",
+        "author": "asking_science",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6ns2x9/i_come_here_to_cry/",
+        "text": "I shit thee not. This list is copy-pasted from an email I sent to my client this morning - whose code I was tasked to *improve* - where I point out some issues with the main structure, which is all stuffed into a grotesque 1800-line beast. This list is not exhaustive, as there are **many** smaller issues which the client, who does not know much about software development, wouldn't really understand. These are just the basics:\n\n* no comments apart from commented-out test code,\n\n* extensive use of “magic numbers”,\n\n* no use of constants but many hard-coded values,\n\n* no adherence to nor consistency with regards to code formatting practices,\n\n* using names for variables and functions which conflict with their intent or purpose,\n\n* misleading or contradictory error and debug messages,\n\n* renaming global variables in odd places for no reason,\n\n* segments of working code repeatedly copy-pasted in stead of encapsulating it as a function,\n\n* conditional tests where the conditions cannot ever be met,\n\n* the use of [potentially infinite] “while loops” with no time-out or termination escapes built in,\n\n* large sequential “if-then-else” blocks where basic techniques such as “switch” or loops would be more appropriate,\n\n* performing the same tasks repeatedly in loops without any changes between repeats,\n\n* deeply multi-level nested loops and functions nested within conditional trains,\n\n* branching off to dead ends and cliff edges,\n\n* large tracts of unrelated code grouped inside of generic “try-catch” blocks with cryptic error messages,\n\n* abusive use of language features such as functions-inside-functions and object-member/array-element ambiguities,\n\n* unexpected re-declaration or re-instantiation of variables/objects in unusual places,\n\n* ghost variables and functions that are never used or called,\n\n* processes going through great effort to accomplish some thing only to undo or disregard everything at the end,\n\n* variables declared and then implemented across different files,\n\n* production code and test code is finely interleaved with no apparent distinction and\n\n* it is obvious that large swathes of code has been copy-pasted from sources on the internet, as-is, modified in places only to suite the immediate need with little regard for the knock-on effects.\n\n*edit:* Oh, forgot to mention, this is active **production code**...\n\n**Update 17/07/17:** I've just received their response and I have stated my case well. They've agreed to a complete re-write, bottom-up. Noice!",
+        "created_utc": 1500284807,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[UPDATE] Horror at Uber engineer has now been fired. Now working for Google!",
+        "author": "Dom_the_Wop",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6nr2fd/update_horror_at_uber_engineer_has_now_been_fired/",
+        "text": "[removed]",
+        "created_utc": 1500268230,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Don't get infected.",
+        "author": "RegalMachine",
+        "url": "https://i.redd.it/dgph1jqliw9z.jpg",
+        "text": "",
+        "created_utc": 1500187653,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Android Studio: Ctrl + WHY",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6ngogm/android_studio_ctrl_why/",
+        "text": "[deleted]",
+        "created_utc": 1500134607,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Stay positive",
+        "author": "RegalMachine",
+        "url": "https://i.redd.it/wz4u50dwhr9z.jpg",
+        "text": "",
+        "created_utc": 1500126881,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to hide a file into an image. Full episode",
+        "author": "priyanshugamer64",
+        "url": "https://youtu.be/jbu0G-XZuvY",
+        "text": "",
+        "created_utc": 1500111566,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bp cng nghip",
+        "author": "queeneeoliveira",
+        "url": "http://www.bepcongnghiephaiphong.com",
+        "text": "",
+        "created_utc": 1500080871,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When camelCase just ain't enough",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/zp0u01os7n9z.png",
+        "text": "[deleted]",
+        "created_utc": 1500075063,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Yay legacy WinForms code!",
+        "author": "_logix",
+        "url": "https://i.redd.it/pvgsm5qhgf9z.png",
+        "text": "",
+        "created_utc": 1499981145,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Code disgustifier",
+        "author": "Blocks_",
+        "url": "https://i.imgur.com/nWWPKz4.gifv",
+        "text": "",
+        "created_utc": 1499964826,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Please do not \"double-click\" the Submit button.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/00g4eixbx89z.png",
+        "text": "[deleted]",
+        "created_utc": 1499902099,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The amount of blank space after the post after closing and reopening (Reddit on iOS)",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/r5hez6t1c79z.jpg",
+        "text": "[deleted]",
+        "created_utc": 1499882778,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Multiple returns in javascript. I need help",
+        "author": "anhmiuhv",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6mr9d3/multiple_returns_in_javascript_i_need_help/",
+        "text": "My graduate partner (He graduated) left me with this. What is going on?\n\nEdit: this is a part of a code for a machine learning project for some sensor data.\n\n\tfunction classify(data,features,callback){\n\n\t// setTimeout(function () {\n\t\tvar accelMag = data.map(function (v) {\n\t\t\tif (!v) return null;\n\t\t\tvar x = v.a.x;\n\t\t\tvar y = v.a.y;\n\t\t\tvar z = v.a.z;\n\t\t\treturn Math.sqrt(x*x + y*y + z*z);\n\t\t});\n\t\tconsole.log(\"IS STILL\",isStill(accelMag));\n\t    // return combinedClassify(data,callback);\n\n\t    swUpdate({is_still:isStill(accelMag),dev:standardDeviation(accelMag)});\n\t    return callback(isStill(accelMag));\n\n\t    var BACs = [0,0.05,0.12,0.2,0.3];\n\n\t    var gogglesBAC = classifierAiello12s(features)\n\t    gogglesUpdate(gogglesBAC);\n\t    return callback(BACs[gogglesBAC]);\n\n\t    var labeled = {};\n\t    var l = [\"Steps\",\"Cadence\",\"Skew\",\"Kurt\",\"Gait Velocity\",\"Residual Step Length\",\"Ratio\",\"Residual Step Time\",\"Bandpower\",\"SNR\",\"THD\",\"XZ Sway Area\",\"YZ Sway Area\",\"XY Sway Area\",\"Sway Volume\",\"Weight\",\"BAC\"];\n\t    for (var i = 0; (i &lt; features.length &amp;&amp; i &lt; l.length); i++) {\n\t    \tlabeled[l[i]] = features[i];\n\t    };\n\t    labeled[\"Bandpower\"] = 2586.0233;\n\t    labeled[\"Sway Volume\"] = 0;\n\t    var gogglesBAC = classifierAielloSimple(labeled); //classifierAielloOriginalNormalized(labeled);\n\t    gogglesUpdate(gogglesBAC);\n\n\t    var bacValues = [0.05,0.12,0.2,0.3];\n\n\t    return callback(bacValues[gogglesBAC]);\n\n\t    \n\t    viewAllUpdate({'accel_mag_norm':accelMag});\n\n\t    if (isStill(accelMag)) {\n\t    \tviewAllUpdate({result:'Still',confidence:.99})\n\t    \treturn callback({result:0});\n\t    }\n\n\t    console.log(\"Peak deviation\",peakDeviation(accelMag));\n\t    console.log('standardDeviation(accelMag)',standardDeviation(accelMag))\n\n\t    influenceDF(peakDeviation(accelMag) || 0, 0.2);\n\n\n\t    combinedClassify(data,function (result) {});\n\t    return combinedAielloClassify(data,features,callback);\n\n\t    // return svmAielloClassify(data,callback);\n\t    return combinedClassify(data,callback);\n\t    return svmTrialClassify(data,callback);\n\n\n\n\n\t    // return callback(0); // TODO TEMP ONLY FOR DATA GATHERING\n\n\n\t    return callback(classifierAielloOriginalNormalized(labeled));\n\n\t    var soa = dataToNormalizedSOA(data);\n\t    \n\t    return callback(classifierAielloNormalized(features));\n\t    // callback(dataClassifyFreq(features[features.length-1].ax));\n\t    // callback(dataClassifyTime(data));\n\t    // callback(classifyM5Tree(features));\n\t// },100)\n\treturn;\n\n\tsetTimeout(function () {\n\t    // callback(classifier.predict(features));\n\n\t    if (features.length == 0) return callback(null);\n\n\t    console.log(\"Classifying:\",features)\n\t    var result = classifier.predict([features]);\n\t    // callback(result);\n\t    callback(features[features.length-3] * 200);\n\t    console.log(\"Classify result:\",result)\n\t},100);\n\treturn;\n\n\tsetTimeout(function(){callback(features[0]);},100);\n\treturn;\n\n\tsetTimeout(function(){callback(network.activate(features));},100);\n\treturn;\n\n\tvar args = features.join(\" \");\n\texec('./classify '+args,function(error, stdout, stderr) {\n\t\ttry {\n\t\t\tvar result = JSON.parse(stdout);\n\t\t\tcallback(result.result);\n\t\t} catch (e){\n\t\t\tcallback(null);\n\t\t}\n\t});\n\t}\n",
+        "created_utc": 1499828744,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "KFC Germany's website baits users with a fake [X]",
+        "author": "[deleted]",
+        "url": "https://zippy.gfycat.com/WigglySaneBee.webm",
+        "text": "[deleted]",
+        "created_utc": 1499820273,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "It randomly occurred to me to test this behavior; unfortunately, it worked...",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6mkp00/it_randomly_occurred_to_me_to_test_this_behavior/",
+        "text": "[deleted]",
+        "created_utc": 1499757983,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I had to write a doubly asynchronous for loop in Javascript... It took 5 for loops.",
+        "author": "DXPower",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6mhc12/i_had_to_write_a_doubly_asynchronous_for_loop_in/",
+        "text": "This is probably one of the most confusing blocks of code I've ever written. The goal of it all is to load a bunch of images, and once the ones that don't need rotating are done loading draw them onto the canvas one at a time. Then, once the rotated ones are done loading, rotate them all at the same time and then draw them all one at a time.\n\n        // The scoping of the following code gets all sorts of janky\n        var count = letters.length;\n        var toRotate = [];\n\n        $scope.rotatedImages = [];\n\n        for (var i = 0; i &lt; letters.length; i++) {\n            var letter = letters[i];\n\n            if (letter.hasImage) {\n                var image = new Image();\n\n                image.onload = function (event) {\n                    if (--count &lt;= 0) {\n                        // All images have been loaded, now we can loop through all of the letters and draw them in the preview\n                        // Note: This is not a double-nested for loop. Variables are renamed cause weird Javascript scoping issues.\n\n                        for (var j = 0; j &lt; letters.length; j++) {\n                            var letter2 = letters[j];\n\n                            if (letter2.rotation == 0) {\n                                $scope.drawLetterImage(letter2, letter2.image, true);\n                            } else {\n                                toRotate.push(letter2);\n                            }\n                        }\n\n                        // Rotation is very computationally expensive and takes a while, do it after we've done the easy stuff\n                        if (toRotate.length &gt; 0) {\n                            var toRotateCount = toRotate.length;\n\n                            for (var k = 0; k &lt; toRotate.length; k++) {\n                                var letter3 = toRotate[k];\n\n                                setTimeout(function () { // Do the rotations all at once to do it as fast as possible\n                                    $scope.rotateImage(letter3.image, letter3.rotation, letter3, $scope);\n\n                                    if (--toRotateCount &lt;= 0) {\n                                        for (var l = 0; l &lt; toRotate.length; l++) {\n                                            var letter4 = toRotate[l];\n                                            $scope.drawLetterImage(letter4, letter4.image, true);\n                                        }\n                                    }\n                                }, 1);\n                            }\n                        }\n                    }\n                }\n\n                image.src = letter.imageSrc;\n                letter[\"image\"] = image;\n            } else {\n                letter[\"image\"] = null;\n\n                if (--count &lt;= 0) {\n                    for (var j = 0; j &lt; letters.length; j++) {\n                        var letter2 = letters[j];\n                        $scope.drawLetterImage(letter2, letter2.image, true);\n                    }\n                }\n            }\n        }        ",
+        "created_utc": 1499719726,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bootstrap Responsive Login Form",
+        "author": "gauti123456",
+        "url": "https://www.youtube.com/playlist?list=PL3CDD0Jz5nVFsA015OtWYtF8aPkLnA0n1",
+        "text": "",
+        "created_utc": 1499704242,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[CSS] Certain Whitepages site censors phone numbers only with CSS",
+        "author": "dangerousdesi221",
+        "url": "http://i.imgur.com/HlVH2X9.gifv",
+        "text": "",
+        "created_utc": 1499612131,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Why would an api not be served over https?",
+        "author": "programatic93",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6m5mwm/why_would_an_api_not_be_served_over_https/",
+        "text": "I am working on a side project and was planning on using openweathermap.org. \n\nI got my project started, setup ci, and started working locally. When I pushed to master I was greeted with a lovely \n    The page at 'https://&lt;site&gt;.herokuapp.com/' was loaded over HTTPS, but requested an insecure resource\n\nI did some investigating on an https endpoint and found [this article saying https apis are for paid users]( https://openweathermap.desk.com/customer/portal/questions/16647237-api-on-https)\n\nSo basically, the only way to use this free api is for local development. \n\n/rant\n",
+        "created_utc": 1499575016,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CSS: Absolute positioned element within a relatively positioned element.",
+        "author": "FormerlySoullessDev",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6lymcd/css_absolute_positioned_element_within_a/",
+        "text": "If you absolutely position an element within a relatively positioned element, the absolutely positioned element is positioned relative to the nearest relatively positioned parent element.\n\n\nAbsolute positioning is not absolute.  It is relative to the nearest relatively positioned parent div.\n\n\nAbsolute positioning only absolutely positions if there are no relatively positioned parents.\n\n\nWhat the fuck. What the fuck.  What the fuck?  What the fuck!? What the fuck...\n\nEdit:  I was a bit drunk when I posted this originally.  The horror here is in CSS's naming conventions.  Absolute and Relative positioning don't describe it accurately.  They are both actually relative positioning - the difference is that absolute is relative to its parent, whereas relative is relative to the element's position if it wasn't positioned.  \n\nThat is, absolute is relative to the nearest positioned parents - relative is relative to its flow position.",
+        "created_utc": 1499482837,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ಠ_ಠ",
+        "author": "polish_niceguy",
+        "url": "https://i.redd.it/cozohvgr2h7z.png",
+        "text": "",
+        "created_utc": 1499461249,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to sabotage production with a simple select query",
+        "author": "Asayhem",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6lporb/how_to_sabotage_production_with_a_simple_select/",
+        "text": "I work as a developer in a tiny team that is supporting, upgrading and gradually rewriting the warehouse management system [wms].\nThere are many things here that can qualify as /r/programminghorror but I want to share the one that caused almost a year of our workers' suffering and for which I feel responsible.\nSo the main setup is this: we use MSSQL as the main component of the wms. The database doesn't just store data but processes the whole lot of it by means of dozens of jobs and hundreds of stored procedures and functions. The interface is served by IIS6 + PHP5 on the very same server and the personal data terminals [pdt] connect to the database and execute series of procedures, each responding with tags that pdt client draws screen from and values+next procedure to pass it to.\n\nThis is how the whole package was bought from the original developer ~10 years ago and we can't change the setup drastically as we aren't viewed as competent enough and \"if it works...\". But we do push constant changes and minor updates as the business needs keep changing during that timespan. As you can imagine - vastly expanded functionality on predefined setup leads to hiccups in performance and overall gradual slowdown. So we improve or ditch the parts of the system that are bottlenecking and rewrite them from scratch focusing on performance - this is a neverending circle, but it keeps business in business, us employed and system ever expanding.\n\nThe icing on the cake is the fact that we aren't provided with any mirroring server or test platform and every update is done on the production database/filesystem while the warehouse (one or all of them) is working with the same system (24/7). At least it provides us with rather instantaneous feedback when we do forget to put a semicolon in place. As a downside - not once the whole tables have been wiped due to someone's temporarily mental incapacity.\n\nSo here comes the horror I am to tell you about - it starts slowly creeping more that a year ago as we start getting calls about pdt freezing or crashing to desktop as any new picking pallet is being scanned. Luckily only the first warehouse is affected but it's the oldest one and actually the one where we test all the good new stuff so it's hardly surprising that this warehouse takes the most hits.\nUnfortunately the issue is not consistent: every time we check - everything works. Maybe slightly slower that usual but nothing that could point to any specific bug.\nTime passes and we get more of the same calls but eventually we just decide to wipe the whole process of setting up new picking tare and write it anew someday later. The way the original code is written is definitely ugly and non optimal so almost always rewriting the whole chunks takes less time and yields more results. As the issue is not critical (warehouse staff claims they still can work yet much inconveniently) and the chunk to rewrite is quite a massive one - we keep prioritizing other things over it again and again.\n\nAlmost a year passes by and the current project I was working on is the new pdt client program. The legacy pdt program is effectively a black box - we can see what sql procedures output to it but we can't see how the client processes the data and how the screen is being drawn. But the legacy client doesn't support new winCE versions and the hardware supplier has stopped manufacturing pdt with old winCE on board so we are tasked to create a compatible client program. With a bit of reverse engineering and even lesser amount of wits - I manage to produce a working prototype using C# and it really does work despite a few empty catch{} blocks that keep it from cdt constantly (I had no idea how to properly access the hardware barcode reader nor how to write programs in C# so you may forgive me this yet another /r/programminghorror bit).\n\nNow you have struggled through my mess of a writing and got to an actual juicy part. I send my client to that very first warehouse to test it in all the operations. Including the problematic one that we've been getting complaints about for a year. Of course it freezes and then crashes and is totally unable to handle that operation. And you bet that the warehouse need new pdt set and ready exactly for that operation. So I visit the warehouse to see the problem personally and devise a solution. The pdt with my program really does freeze for solid 5 minutes and becomes inoperable for that time unless I pull the battery. Old program behaves similarly but it crashes much sooner, after about a minute or two. And the every other time it does complete the requested operation on the server side, I am being told.\n\nSo there I was - trying to find out how does that black box program handle the unknown issue better (or worse?) than my own abomination.\nAs trying to win a stare contest with a C# is always a futile enterprise - I've decided to tackle the other side of the issue and dived down in a sea of shitty sql queries.\nAt first glance everything was in order - as it was at a tenth and hundredth glances throughout the year as well, so as a last resort I started simulating pdt request directly in sql, writing every one of them by hand until I got to that problematic procedure.\n\nIt did work fine. It did work surprisingly fast (which explains why we couldn't find any slowdowns by analyzing all of the queries). It has supplied all of the necessary tags the pdt was expecting. And on top of all that it did supply a few billion records from the log table.\n\nWhat really happened was that someone's must have used the same tab with the procedure listing to view the logs and forgot to edit out that query before altering the changes in code. It's quite easy to do if the procedure spans a great distance vertically so it is best to use other tabs to view any accessory information even if it's just basic [select * from log]. And we do use the other tabs and we do keep an eye for such things. But someone from our tiny team did it nonetheless and year ago it just as well could've been me.\n\nWhy was basic select causing such issues? Well it wasn't causing any trouble for the database, but as the log grew - it did spew out more and more garbage information to the pdt client. And all of that data had to be downloaded via weak WiFi every time and even worse - the pdt program had to parse through billions of rows to actually disregard them as garbage. The pdt hardware is not exactly state of the art despite it's very much rare-art-like cost.\n\nSo the workers at the warehouse have been dealing with hundreds to thousands hangups and cdt's every day for about a year just because someone from our team was too lazy to press alt+n and too careless to leave a garbage query in the production procedure.\n\nSome time has passed since and I still feel quite bad about this whole thing, but I'd like to think that it did teach me something. If not to dig a little deeper when the issue seems complicated then at least to look for some simple stray code instead of analyzing complex queries for poor performance and deadlocks.\n\n/*I apologize in advance for my poor writing as you could've guessed - english isn't my first language.\nAnd this is my first big post on reddit and first in this subreddit, so I hope I didn't break any rules and the topic was at least a wee bit interesting. It's ok if it wasn't though :) */",
+        "created_utc": 1499383304,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "This is why you don't use sequential ids for publicly accessible records",
+        "author": "yads12",
+        "url": "http://imgur.com/a/N8ayA",
+        "text": "",
+        "created_utc": 1499351022,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "ConciseFunctionNamesAreOverrated()",
+        "author": "segfraud",
+        "url": "https://i.redd.it/u4m1ho80lu7z.png",
+        "text": "",
+        "created_utc": 1499292594,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "What's your most horror memory with a WYSIWYG html editor?",
+        "author": "st3dy",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6le8h6/whats_your_most_horror_memory_with_a_wysiwyg_html/",
+        "text": "Almost every programmer ha at least on horror encounter with a WYSIWYG html editor. Would really love to find the most hideous one, so let's share them all.",
+        "created_utc": 1499263697,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "API Documentation is dangerous.",
+        "author": "throwawaysomth",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6ld7ap/api_documentation_is_dangerous/",
+        "text": "This post does not contain much code, for some obvious reasons to which we'll get later, but I believe it does follow the ProgrammingHorror guidelines.\n\nI was starting a project with a customer. \n\nA simple integration project. Hooking up two different softwares so they could communicate.\n\nWe'd been waiting for some documentation to a public(but licensed) API, so work could start. The API was a bit like an add-on that could be purchased separately.\n\nAfter a while, we got a response. But it wasn't what we were expecting.\n\n&gt; A document outlining what can be done using our API will not be available. It would be too dangerous as someone could write software to replace --productname-- if they had the documentation.\n\nIf it was up to me, I would have stopped using --productname--, but sadly, it wasn't, so we were integrating with an API almost blindly. \n\nNot knowing what requests are possible and just trying to guess/hack the original software to see what's really going on. is it a POST or a PUT to 127.0.0.1/object ? What does the property \"I\" mean in the GET response to /objects ? Ah, it's the limit that has a default value of 20 and is used for pagination, so you can make a GET request to /objects?l=40. But if there's a limit, there should be an offset as well? yep, /objects?l=40&amp;off=15 seems to do something, might be it.\n\nOk, So objects have pagination, but otherObjects?\n\n    GET /other-objects?l=40&amp;off=15\n\nNope, OtherObjects don't have pagination. Pure trial and error for ~40 API endpoints.\n\nOf-course, in the end we had a document that outlined what can be done and what can't be done. Also the client ended up paying around 4x more for our work.\n\ntl;dr: Companies publishing API docs are making a Serious mistake and jeopardising their business model.",
+        "created_utc": 1499250498,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "God class is an understatement",
+        "author": "tonnynerd",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6l8zwv/god_class_is_an_understatement/",
+        "text": "Quick one: just found a class with 38, yes, THIRTY MOTHERFUCKING EIGHT parameters in it's constructor. How come no one ever look at this shit, at any moment, and said \"You know, maybe this is getting a little out of control\". ",
+        "created_utc": 1499194830,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Fully Functional and Secure Login System in PHP and MySQL",
+        "author": "gauti123456",
+        "url": "https://www.youtube.com/playlist?list=PL3CDD0Jz5nVG4qenoa8ziOnNVUxhHAnhb",
+        "text": "",
+        "created_utc": 1499188552,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Found this in our code base. Don’t know what to say.",
+        "author": "endless90",
+        "url": "https://i.redd.it/8bvx7cw2vi7z.jpg",
+        "text": "",
+        "created_utc": 1499150659,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Create a Simple Game in Phaser From Scratch",
+        "author": "gauti123456",
+        "url": "https://www.youtube.com/playlist?list=PL3CDD0Jz5nVGqZHxQnOHuNDDQz8KfwEhA",
+        "text": "",
+        "created_utc": 1499103921,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A handy trick is to comment out unit tests when they fail. It's wayyyy faster than trying to understand why the tests are failing.",
+        "author": "raaneholmg",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6kyspr/if_your_code_is_generating_too_many_warnings_just/djptf6b/",
+        "text": "",
+        "created_utc": 1499079864,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If your code is generating too many warnings, just disable them...",
+        "author": "jdh28",
+        "url": "https://i.redd.it/zu9aef30ec7z.png",
+        "text": "",
+        "created_utc": 1499072307,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Real Time Chat App Using NodeJS + ExpressJS + Socket.IO",
+        "author": "gauti123456",
+        "url": "https://www.youtube.com/playlist?list=PL3CDD0Jz5nVH2RS2rdtHJ5-c5lgUvPPy2",
+        "text": "",
+        "created_utc": 1499019909,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "[RANT] Git Sucks!",
+        "author": "SeeStolenVideos",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6ktyvw/rant_git_sucks/",
+        "text": "There, I said it.\n\nNow that I succeeded in irritating most people, let me explain:\nGit is an error prone overkill for most small and medium sized projects.\n\nRemember, Git was created to handle Linux development; most projects have a single relationship with the remote server.\nSo, first, it’s an overkill to use, like shooting pigeons with a Cruise missile.\n\nSecond, because of its power, it’s extremely complex and makes it really easy to shoot yourself in the foot.\n\nMost version control systems need a page or two to explain the basic commands. The Pro Git book is 550+ pages long.\n\nSo why, you, as a developer would use Git? What happen to \"the best tool for the job\"? What happened to KISS (not the rock band)?\n\nIs it because you want to look cool? Or you think your project is going to be as large one day as the Linux kernel? Or your company is forcing you to?\n\nI apologize for my first post being a rant, but recently I was forced to use Git in a new repository and it has been nothing but pain, for almost every simple step my old trusty GitHub GUI started throwing errors.\n\nLooking online, it’s like a rash – it’s not only me getting into issues. So the problem is deeper, I believe with the model itself.\nWe need a simpler CVS; any suggestions?\n",
+        "created_utc": 1499011333,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Thanks for the heads up?",
+        "author": "carlqt",
+        "url": "https://i.redd.it/sd0p0lvpd47z.jpg",
+        "text": "",
+        "created_utc": 1498975323,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Bulma: A modern CSS framework",
+        "author": "_101010",
+        "url": "http://i.imgur.com/XXmhtHx.png?1",
+        "text": "",
+        "created_utc": 1498916099,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When I try to reorganize my life with OCD.",
+        "author": "BleuGamer",
+        "url": "https://i.redd.it/zilr9ls6cz6z.png",
+        "text": "",
+        "created_utc": 1498914313,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Ran into this today",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/290foe9kzx6z.jpg",
+        "text": "[deleted]",
+        "created_utc": 1498897919,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Dept. of Labor does not CSS well.",
+        "author": "BrianBoyko",
+        "url": "https://www.jobcorps.gov/",
+        "text": "",
+        "created_utc": 1498867988,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Security questions: because the person who hacked your email definitely won't know your mother's maiden name",
+        "author": "TetrinityEC",
+        "url": "https://i.redd.it/7j86rruqdr6z.jpg",
+        "text": "",
+        "created_utc": 1498817945,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "That is one delicious if statement",
+        "author": "RoastBerryPi",
+        "url": "https://pastebin.com/M8E3ufVs",
+        "text": "",
+        "created_utc": 1498691779,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "When your bank has the worst security you've ever seen. Shame on BMO.",
+        "author": "youflow",
+        "url": "https://i.redd.it/5jttp5hrz96z.png",
+        "text": "",
+        "created_utc": 1498607429,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Oh come on! $mode is never once used after that!",
+        "author": "Gogolian",
+        "url": "https://i.redd.it/it6b9jcy866z.png",
+        "text": "",
+        "created_utc": 1498562314,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "A simpler way to keep track of all your numbers.",
+        "author": "[deleted]",
+        "url": "http://i.imgur.com/G3N3ad9.png",
+        "text": "[deleted]",
+        "created_utc": 1498527083,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Live Editing Production CMS Code",
+        "author": "Apotherisk",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6jn9iz/live_editing_production_cms_code/",
+        "text": "I think you guys might enjoy this:  \nEarlier today, I was talking with my boss about one of the CMS systems that we run for our users (students). For a little background, my boss used to be a .NET developer like 10 years ago, but has little to no experience in modern stuff, he's mainly an IT director for myself and some infrastructure/IT staff. In the process of discussing the need for a new plugin for the CMS, he off-handedly mentions the fact that he tried to _edit the CMS_ before to cover the problem that we were trying to figure out how to solve. That terrified me a bit, so I asked for a bit of clarification, hoping that he just meant editing a template file somewhere or something. No. _He live edited a plugin built in with the CMS that he knew nothing about the side effects of, in a language that he had never touched before, on a live production server that hosted what is pretty handily the most important service that we have._ And he told no one about it until just now, months after the fact. This is the story of the death of my afternoon.",
+        "created_utc": 1498504500,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "If all the programming languages went to high school together, what would be their respective personalities?",
+        "author": "[deleted]",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6jhw9x/if_all_the_programming_languages_went_to_high/",
+        "text": "[removed]",
+        "created_utc": 1498437885,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "\"No Escape\" - Shoe and hat sizes have a period in them. JQuery interprets .anything as a class. Solution? Alter the SKUs for these products, then hopefully change them back again before you submit the order.",
+        "author": "thinkaboutitthough",
+        "url": "http://i.imgur.com/HZESOya.png",
+        "text": "",
+        "created_utc": 1498258989,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "How to shuffle a deck of cards",
+        "author": "pizzarollgoo",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6j4in3/how_to_shuffle_a_deck_of_cards/",
+        "text": "Embarrassing code from a college lab... :(\n\n            /**************************************************************\n            *\t  Purpose:  Fill the m_deck array of Cards with randomized \n            *\t\t card values of the appropriate quantity.\n            *     Entry:  None\n            *     Exit:  m_deck[] will containa randomized array of Cards\n            *\t\twith unique values.\n            ***************************************************************/\n            void Deck::Shuffle(void)\n            {\n            \t\n            \t// Holds random number\n            \tint rand_num;\n            \t// array of books to see if card already create.\n            \tbool count[DECK_SIZE];\n            \t// Zero out array\n            \tfor(int i = 0; i &lt; DECK_SIZE; ++i)\n            \t\tcount[i] = false;\n            \n            \tint loop_count = 0;\n            \twhile ( loop_count &lt; DECK_SIZE )\n            \t{\n            \t\t// get random number\n            \t\trand_num = GetRandNum();\n            \t\t// If we haven't filled this card spot yet\n            \t\tif( count[rand_num] == false )\n            \t\t{\n            \t\t\tif(rand_num &lt; 13 )\t\t\t// if part of spades\n            \t\t\t{\t\t\t\t\t\t\t// set spades and rank.\n            \t\t\t\tm_deck[loop_count].SetRank( static_cast&lt;Card::RANK&gt;(rand_num + 1) );\n            \t\t\t\tm_deck[loop_count].SetSuit( Card::SPADES );\n            \t\t\t\tcount[rand_num] = true;\t// Ignore this array entry next time\n            \n            \t\t\t}\n            \t\t\telse if( rand_num &lt; 26 )\t// Second set of 13 are hearts\n            \t\t\t{\n            \t\t\t\tm_deck[loop_count].SetRank( static_cast&lt;Card::RANK&gt;(rand_num - 13 + 1) );\n            \t\t\t\tm_deck[loop_count].SetSuit( Card::HEARTS );\n            \t\t\t\tcount[rand_num] = true;\t// Ignore this array entry next time\n            \t\t\t\t\n            \n            \t\t\t}\n            \t\t\telse if( rand_num &lt; 39 )\t// Third set of 13 are clubs\n            \t\t\t{\n            \t\t\t\tm_deck[loop_count].SetRank( static_cast&lt;Card::RANK&gt;(rand_num - 26 + 1) );\n            \t\t\t\tm_deck[loop_count].SetSuit( Card::CLUBS );\n            \t\t\t\tcount[rand_num] = true;\t\t// Ignore this array entry next time\n            \t\t\t}\n            \t\t\telse\t\t\t\t\t\t// Last set of 13 are hearts\n            \t\t\t{\n            \t\t\t\tm_deck[loop_count].SetRank( static_cast&lt;Card::RANK&gt;(rand_num - 39 + 1) );\n            \t\t\t\tm_deck[loop_count].SetSuit( Card::DIAMONDS);\n            \t\t\t\tcount[rand_num] = true;\t\t// Ignore this array entry next time\n            \t\t\t}\n            \t\t\tloop_count++;\n            \t\t}\n            \n            \t}\n            \t\t\t\n            \t// start deck at the beginning.\n            \tm_current_card = 0;\n            }",
+        "created_utc": 1498256642,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "40 hours of coding now irrelevant. Thanks HuffPost.",
+        "author": "natelazee",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6j0vui/40_hours_of_coding_now_irrelevant_thanks_huffpost/",
+        "text": "[removed]",
+        "created_utc": 1498220991,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "The crown jewel of my \"shitty programming\" screenshots, taken out of production code where I work (xpost /r/programmerhumor)",
+        "author": "speedofdark8",
+        "url": "https://i.redd.it/4zduxp6lb85z.jpg",
+        "text": "",
+        "created_utc": 1498177813,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "God help me, third party code is calling a nullptr function pointer in C++.",
+        "author": "mort96",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6ilob6/god_help_me_third_party_code_is_calling_a_nullptr/",
+        "text": "I'm using Google's webrtc C++ library. Behold, a stack trace, containing only library code, which ends in a jump to memory address 0x0. Time to start debugging. Thank god the code is open source.\n\n    ==16134== Process terminating with default action of signal 11 (SIGSEGV): dumping core\n    ==16134==  Bad permissions for mapped region at address 0x0\n    ==16134==    at 0x0: ???\n    ==16134==    by 0x498D29: bool rtc::MethodFunctor&lt;cricket::VideoCapturer, bool (cricket::VideoCapturer::*)(cricket::VideoFormat const&amp;), bool, cricket::VideoFormat const&amp;&gt;::CallMethod&lt;0&gt;(rtc::sequence&lt;0&gt;) const (bind.h:164)\n    ==16134==    by 0x4983A4: rtc::MethodFunctor&lt;cricket::VideoCapturer, bool (cricket::VideoCapturer::*)(cricket::VideoFormat const&amp;), bool, cricket::VideoFormat const&amp;&gt;::operator()() const (bind.h:155)\n    ==16134==    by 0x497F31: rtc::FunctorMessageHandler&lt;bool, rtc::MethodFunctor&lt;cricket::VideoCapturer, bool (cricket::VideoCapturer::*)(cricket::VideoFormat const&amp;), bool, cricket::VideoFormat const&amp;&gt; &gt;::OnMessage(rtc::Message*) (messagehandler.h:44)\n    ==16134==    by 0x5D32B5: rtc::Thread::Send(rtc::Location const&amp;, rtc::MessageHandler*, unsigned int, rtc::MessageData*) (thread.cc:344)\n    ==16134==    by 0x5D38E4: rtc::Thread::InvokeInternal(rtc::Location const&amp;, rtc::MessageHandler*) (thread.cc:438)\n    ==16134==    by 0x48E548: bool rtc::Thread::Invoke&lt;bool, rtc::MethodFunctor&lt;cricket::VideoCapturer, bool (cricket::VideoCapturer::*)(cricket::VideoFormat const&amp;), bool, cricket::VideoFormat const&amp;&gt; &gt;(rtc::Location const&amp;, rtc::MethodFunctor&lt;cricket::VideoCapturer, bool (cricket::VideoCapturer::*)(cricket::VideoFormat const&amp;), bool, cricket::VideoFormat const&amp;&gt; const&amp;) (thread.h:175)\n    ==16134==    by 0x489686: webrtc::VideoCapturerTrackSource::Initialize(webrtc::MediaConstraintsInterface const*) (videocapturertracksource.cc:355)\n    ==16134==    by 0x488B47: webrtc::VideoCapturerTrackSource::Create(rtc::Thread*, std::unique_ptr&lt;cricket::VideoCapturer, std::default_delete&lt;cricket::VideoCapturer&gt; &gt;, webrtc::MediaConstraintsInterface const*, bool) (videocapturertracksource.cc:269)\n    ==16134==    by 0x460DFA: webrtc::PeerConnectionFactory::CreateVideoSource(std::unique_ptr&lt;cricket::VideoCapturer, std::default_delete&lt;cricket::VideoCapturer&gt; &gt;, webrtc::MediaConstraintsInterface const*) (peerconnectionfactory.cc:257)\n    ==16134==    by 0x4837E9: void webrtc::ReturnType&lt;rtc::scoped_refptr&lt;webrtc::VideoTrackSourceInterface&gt; &gt;::Invoke&lt;webrtc::PeerConnectionFactoryInterface, rtc::scoped_refptr&lt;webrtc::VideoTrackSourceInterface&gt; (webrtc::PeerConnectionFactoryInterface::*)(std::unique_ptr&lt;cricket::VideoCapturer, std::default_delete&lt;cricket::VideoCapturer&gt; &gt;, webrtc::MediaConstraintsInterface const*), std::unique_ptr&lt;cricket::VideoCapturer, std::default_delete&lt;cricket::VideoCapturer&gt; &gt;, webrtc::MediaConstraintsInterface const*&gt;(webrtc::PeerConnectionFactoryInterface*, rtc::scoped_refptr&lt;webrtc::VideoTrackSourceInterface&gt; (webrtc::PeerConnectionFactoryInterface::*)(std::unique_ptr&lt;cricket::VideoCapturer, std::default_delete&lt;cricket::VideoCapturer&gt; &gt;, webrtc::MediaConstraintsInterface const*), std::unique_ptr&lt;cricket::VideoCapturer, std::default_delete&lt;cricket::VideoCapturer&gt; &gt;, webrtc::MediaConstraintsInterface const*) (proxy.h:74)\n    ==16134==    by 0x480C98: webrtc::MethodCall2&lt;webrtc::PeerConnectionFactoryInterface, rtc::scoped_refptr&lt;webrtc::VideoTrackSourceInterface&gt;, std::unique_ptr&lt;cricket::VideoCapturer, std::default_delete&lt;cricket::VideoCapturer&gt; &gt;, webrtc::MediaConstraintsInterface const*&gt;::OnMessage(rtc::Message*) (proxy.h:247)",
+        "created_utc": 1498050192,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "My friend is working on collision detection.",
+        "author": "[deleted]",
+        "url": "https://i.redd.it/prwvqgkbru4z.png",
+        "text": "[deleted]",
+        "created_utc": 1497987179,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "CRAZY!!!! Eating Lego Peppa Pig &amp; Super Heros",
+        "author": "deyuhakepu1",
+        "url": "https://www.youtube.com/watch?v=bSzxuLLRm6U&amp;list=PLGnADz5psEhdU72ioVFV3eExV_A3wGU_8&amp;index=2",
+        "text": "",
+        "created_utc": 1497971540,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Clearly, the problem compiling has to do with the sixth commit",
+        "author": "rawh",
+        "url": "http://i.imgur.com/z9dNyID.png",
+        "text": "",
+        "created_utc": 1497901189,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "continue... continue... continue... return",
+        "author": "Beelel",
+        "url": "https://www.reddit.com/r/programminghorror/comments/6i5ciq/continue_continue_continue_return/",
+        "text": "[removed]",
+        "created_utc": 1497864655,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "WTF - Dinner Eating Goldfish with my GRANDMA",
+        "author": "deyuhakepu1",
+        "url": "https://www.youtube.com/watch?v=9FHfRpCV7XE",
+        "text": "",
+        "created_utc": 1497792009,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "WTF - Dinner Eating Goldfish with my GRANDMA",
+        "author": "deyuhakepu",
+        "url": "https://www.youtube.com/watch?v=9FHfRpCV7XE",
+        "text": "",
+        "created_utc": 1497788777,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Virgin Media everyone",
+        "author": "zuudo",
+        "url": "http://i.imgur.com/fE7z17B.png",
+        "text": "",
+        "created_utc": 1497783422,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "I don't think I've ever seen someone use this syntax in Java...",
+        "author": "[deleted]",
+        "url": "https://i.imgur.com/joh1rFa.png",
+        "text": "[deleted]",
+        "created_utc": 1497739835,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "this is what happens when I want to quickly test a few things...",
+        "author": "irth____",
+        "url": "https://i.redd.it/4myhvn1cx74z.png",
+        "text": "",
+        "created_utc": 1497710760,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "TEA with my GRANDMA!!! Kluna Tik Dinner #70",
+        "author": "[deleted]",
+        "url": "https://www.youtube.com/watch?v=zuKagrto7yk&amp;feature=youtu.be",
+        "text": "[deleted]",
+        "created_utc": 1497705841,
+        "upvote_ratio": ""
+    },
+    {
+        "title": "Never a Good Sign",
+        "author": "RainOnYourTirade",
+        "url": "http://i.imgur.com/Yx1n7LC.jpg",
+        "text": "",
+        "created_utc": 1497643642,
+        "upvote_ratio": ""
+    }
+]

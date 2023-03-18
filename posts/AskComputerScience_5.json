@@ -1,0 +1,802 @@
+[
+    {
+        "title": "What is Lightning Memory Mapped Database (LMDB)?",
+        "author": "emosk8rboi4206969",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zq27cf/what_is_lightning_memory_mapped_database_lmdb/",
+        "text": " I am trying to figure it out, but am feeling a little lost. Is there any good documentation or videos where I can learn about it?\n\n\"LMDB is written in C with API Bindings for several programming languages.\"\n\nWhere can I get a list of these languages? Is it available for Go or JavaScript? Or is it a library for languages like SQL?\n\nI am working on a personal project that is scraping large amounts of data using a JavaScript. A friend recommended LMDB. Where do I start?",
+        "created_utc": 1671480802,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Netcat shell connection works, but commands do not get executed. Why is that?",
+        "author": "mangyCarl3",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zplepc/netcat_shell_connection_works_but_commands_do_not/",
+        "text": " I tried to connect to my terminal from inside a docker container:\n\n    nc -nlvp 8000 \n\nWhen I now type in the  following command inside the container, the connection gets established  but when I type something afterwards ( on the \"outside\" terminal ) nothing happens:\n\n    nc 172.27.22.30 8000 -e /bin/bash \n\nThe \"outside\" terminal then prints:\n\n    Listening on 0.0.0.0 8000 \n    Connection received on 172.27.16.1 51801 \n\nWhen I issure command  like whoami or pwd they appear on the \"inside\" and \"outside\" terminal but thats it...  nothing happens. What is the issue here?\n\nThanks in advance!\n\nUsing Alpine 3.12 inside the container and running:\n\n    RUN apk add --update bash netcat-openbsd",
+        "created_utc": 1671435889,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Searching multiple search instances at once",
+        "author": "Kooresh",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zpjeg8/searching_multiple_search_instances_at_once/",
+        "text": "I'm wondering if people have experience searching multiple search instances with the same query when using bing custom search api. I am wanting to search more than the batch limit of urls in the same search and need help figuring out how to do that. Is there a way to call multiple apis but display the results as one? Also can I still use bings hosted UI or will I need to write my own? Any thoughts would be great!",
+        "created_utc": 1671428952,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Examples of problems that can not be solved algorithmically?",
+        "author": "tekktokk",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zpee0d/examples_of_problems_that_can_not_be_solved/",
+        "text": "I was listening to [this podcast](https://www.youtube.com/watch?v=N9SFZNzF2Lo) with Sam Harris and Dr. Cal Newport, who referred to a paper by Alan Turing called \"[On Computable Numbers, with an Application to the Entscheidungsproblem](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)\" in which, Newport explains, Turing proves that *most problems\\* can* ***not*** *be solved algorithmically.*\n\nWhat would be some concrete examples of these problems? Does that mean even the most sophisticated AI would not be able to solve these problems? Is there a name for this class of problems? Is it a certain computational complexity class like expspace or is it something else?",
+        "created_utc": 1671413903,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does my program know where to read a file from when the full file path isn't specified?",
+        "author": "zrice03",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zp8ypk/how_does_my_program_know_where_to_read_a_file/",
+        "text": "Some background to help understand:\n\nI was playing around with LaTeX, specifically Texmaker, and noticed there's a field in the Quick Build option where you can edit the command that the program uses to call the compiler. I decided to write a small program (in C#, but this isn't a language-specific question), that would do a sort of quick find-and-replace so I could replace some commonly used formatting text with shortcuts, before passing it off to the main compiler. I don't care if there's a better/easier way to do this, it's already done and it's works perfectly. Plus, it gave me a chance to play around with the command line, something I rarely have a need to use.\n\nAnyway, in the arguments it can pass in the file name, but it *doesn't* include the whole file path (\"C:\\\\users\\\\zrice03\\\\blah...\"). Just something like \"filename.tex\". So in my program, all I'm calling is literally 'File.ReadAllLines(\"filename.tex\")'. Yet despite not knowing where the file is in the system (and I know it doesn't know, because nowhere did tell it what folder it's in), it still manages to find and read it. My program's executable is not in the same folder that \"filename.tex\" is, it's in a completely different part of the folder hierarchy. So how does it know to look in *that* specific folder. Or is it just looking for all files everywhere called \"filename.tex\" and I just got lucky that there's only one?\n\nI remember something like this happening when I took a intro to C++ class too. We were learning to read from files, but we were just giving it the file name and extension, not the whole path. I was confused by that at the time, but never followed up.",
+        "created_utc": 1671399013,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "crazy keyboard issue. need help",
+        "author": "Boring_Oil_3506",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zp7l31/crazy_keyboard_issue_need_help/",
+        "text": "Let me preface this by saying I am a highly experienced user for both Windows and Linux and have been since Windows 95. Please feel free to go as in depth or advanced as you would like.\n\nI have a gaming keyboard, this is a double usb keyboard (it takes up 2 usb slots). this keyboard used to work on my desktop but will only work now in bios. It works fine on my laptop, on Linux bootable drive, and on other desktops. \n\nThe most odd thing about this, is that if I mash a whole bunch of keys at once it will output  some of the keys to a notepad. If it were not for that specific detail I would immediately assume it was a corrupted driver issue.  \n\nI have tried a lot of stuff, but in the interest of getting to the bottom of this, I would like you all to suggest any and all troubleshooting angles, and I will try everything. \n\nHonestly I'm highly confused about how this is happening. \nOne additional detail that steered me away from a corrupted keyboard driver is that other keyboards even from the same manufacturer work fine. \n\nPlease help me, this is an expensive keyboard that I used for like 3 months before the issue and I really really love it.",
+        "created_utc": 1671395421,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Amateur coders, what do you think can help you learn faster?",
+        "author": "david_bragg",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zp04i8/amateur_coders_what_do_you_think_can_help_you/",
+        "text": "",
+        "created_utc": 1671374539,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What book should every computer scientist read?",
+        "author": "Zane2156",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zoyc7p/what_book_should_every_computer_scientist_read/",
+        "text": "Are there any books that is like a classic for computer science?",
+        "created_utc": 1671369172,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Having Trouble with understanding time complexity of these problems",
+        "author": "Golden_wind12",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zor9ua/having_trouble_with_understanding_time_complexity/",
+        "text": "Hello,\n\nI understand for these questions how the for loops executes:\n\nn\\^3 for first for loop\n\nn times times for the second loop\n\n&amp;#x200B;\n\nthen how is that the complexity is O(n\\^6)  instead of  0(n\\^4) where does the extra 2 come from",
+        "created_utc": 1671342300,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Make a graph with json data",
+        "author": "DRAKE_IS_A_NONCE",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zoqxd1/make_a_graph_with_json_data/",
+        "text": " \n\nI have a dump of json files which contains bounding box data, i need to make a graph connecting the boxes based on the data inside it. What is the best way to go about doing this in Python?",
+        "created_utc": 1671341080,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is Fourier analysis or the FFT useful to a computer scientist?",
+        "author": "swerve-swerve",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zoq2sj/is_fourier_analysis_or_the_fft_useful_to_a/",
+        "text": "I’m an undergrad math major/ cs minor taking my math capstone next semester and I have the option of a course on Fourier analysis or machine learning. I know the FFT is pretty important in engineering esp electrical but how useful is it for the average person in the cs field.",
+        "created_utc": 1671338274,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is business information technology?",
+        "author": "Ethnicallybisexual1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zom30t/what_is_business_information_technology/",
+        "text": "And how does it compare to other areas of IT?",
+        "created_utc": 1671325929,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why do Pendrive or SD Cards have the same size but different capacities?",
+        "author": "HourIntroduction6153",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zo6gxn/why_do_pendrive_or_sd_cards_have_the_same_size/",
+        "text": "",
+        "created_utc": 1671284284,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I Study Computer Science?",
+        "author": "30_09chris",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/znujp6/should_i_study_computer_science/",
+        "text": "Hey y’all, so Im new to coding i find I have an interest in it that may develop into a passion. Don’t know yet, here’s the thing I never went to college before Im 26 years old and after looking at my old high school transcripts I feel very discouraged in studying CS since there involves a lot of math, and the fact that I was a D average student doesn’t help. Should I give it a shot??? I was looking into my local Community Colleges to start I know I will probably have to take remedial courses to bump up my grades in order to study. But I guess my main goal is to learn this hard skill so that I may be able to do things that require some sort of creativity or uniqueness. What do y’all think? Also I would like to mention I am currently working full time and am considering studying full time as well. But is it possible for someone to trun their grades around? Hence why I never truly gave College a shot until now that I have finally found interest in something and it’s computers.",
+        "created_utc": 1671239780,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Ratio of sharp sat values under subsumption",
+        "author": "comptheoryTA",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zni0p1/ratio_of_sharp_sat_values_under_subsumption/",
+        "text": "I have two formulas e0, e1 s.t. both are in CNF and e1 = e0 /\\ C for some CNF formula C. If p = #SAT(e1) and q = #SAT(e0), what is the best way to compute p/q using existing SAT solver technology?\n\nSome thoughts:\n\nCertainly we *could* compute p and q then take the quotient, but this just isn't feasible due in part to the runtime complexity, but due mostly to the large nature of p and q. Notably, p/q is in the interval [0,1] since e1 subsumes e0. If p = 1 or some other very low number our solution can't be much better than a solution for #SAT. \n\nIf C has enough clauses we might be able to pick e1' s.t. e1 =&gt; e1' =&gt; e0 s.t. #SAT(e1') is about halfway between p and q. I think a small C would need to have some rather unfortunate and probably unlikely properties for it to also be the case that q is much bigger than p.\n\nContext:\n\nSatisfying assignments for an expression e0 encode objects, the class of which I'm searching over. So the expression e1 = e0 /\\ C can be thought of as a pruned version of the search space, where C is the exclusion criteria. I want to compute p/q at various points during the search to get a sense of how much progress has been made. So if this problem is amenable to an approximation that is acceptable, as long as it's tight enough to still give some sense of how much progress has been made. Ideally, the approximations would still be ordered by subsumption, i.e. if e2 =&gt; e1 =&gt; e0 then the approximation for #SAT(e2)/#SAT(e0) ought to be less than or equal to the approximation for #SAT(e1)/#SAT(e0). The 'progress bar' shouldn't move backwards.\n\nIf the current state of the pruned search space is small enough I'd be happy to just display the #SAT value.\n\nSince this is an incremental search, I don't need to compute #SAT(e2)/#SAT(e0) from scratch if it makes more sense to compute #SAT(e2)/#SAT(e1) and then multiply it by the cached computation of #SAT(e1)/#SAT(e0) instead. I think it's fair to assume that #SAT(e_ {i}) and #SAT(e_ {i+1}) will not be *too* far apart. If they are #SAT(e_{i+1}) is probably small enough to print.",
+        "created_utc": 1671206412,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Taking Operating Systems next semester, any useful resources to get a head start?",
+        "author": "retsamdaerb",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zn9qgb/taking_operating_systems_next_semester_any_useful/",
+        "text": "Pretty much the title. My friends have warned me about how hard this class is and I'd like to get a head start on this class. Is there any useful resources that I can look over during this winter break?",
+        "created_utc": 1671178806,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I structure a markov model for the following problem? I understand how to form the transition matrix, but I don't quite understand how to form the emission matrix?",
+        "author": "avgsuperhero",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zmz4e6/how_do_i_structure_a_markov_model_for_the/",
+        "text": "&amp;#x200B;\n\n|Start States|1|2|3|\n|:-|:-|:-|:-|\n|Path|a|b|c|\n||d|e|f|\n|End States|1'|2'|3'|\n\nI'm looking to determine the probability of the path given any sequence. For example, if the path was 1-&gt;a-&gt;d-&gt;1' the probability of that path is 0.23.",
+        "created_utc": 1671145218,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "are degrees just about internships?",
+        "author": "Alwaysaloneforever97",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zms1mu/are_degrees_just_about_internships/",
+        "text": "I always get tons of conflicting advice. \n\nI want to learn about computers, but CIT is a business degree so it doesn't count. \n\nI have to do online classes, want to do CS but \"what? Online degrees are useless! College is all about networking and internships!\" \n\nI already have a degree in a non computer field, but who pays for a degree just to be an intern and network with people who see themselves as God's among men? \n\nI want to learn, couldn't I just build projects and do bug bounties etc and use those to cover for a lack of internships? I'm interested in creating software and cybersecurity mostly. \n\nGot told I need to quit my \"unrelated\" job and go look for internships. \n\nI'm a felon as well and it's not so simple for me. So idk. I'm thinking of just giving up on my dreams. It's just impossible to do anything in this world with all these restrictions and obsession with looks, money,  etc.",
+        "created_utc": 1671128387,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "atmega328p",
+        "author": "Temporary-Link5394",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zmpoxz/atmega328p/",
+        "text": "anyone know at mega 328p need some help asap",
+        "created_utc": 1671122643,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "*PLEASE HELP* AP Computer Science A student in DESPERATE need of a hand (java)",
+        "author": "Crystalized873",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zmknac/please_help_ap_computer_science_a_student_in/",
+        "text": "Hi, I'm a Computer Science A AP student and the thing is I feel like I suck at Computer science as the class progresses. Honestly, I feel very lost now and think I moved past some concepts without grasping them. I'm planning to study more over Winter Break but need to get some assignments done before then ASAP. Could someone help me out? \n\nThe assignment has two parts (and each need to be submitted separately) \n\nThe first one involves the Static method and the requirements are this:   \n\n* Use the IDE of your choice\n* Call this program WaterConStaMed\n* Create a Static Method to return, at each Check Point, to Fred the following information:  \n  \n   * Tell him if he is: (Print to screen).  \n      * on pace\n      * behind pace and by how many ounces\n      * ahead of pace and by how many ounces\n   * Fred's inputs are:  \n      * 9:00 a.m. - 23 total oz. of water drank\n      * noon - 50 total oz. of water drank\n      * 3:00 p.m. - 72 total oz. of water drank\n      * 6:00 p.m. - 100 total oz. of water drank\n* Here again are the original specifications:  \n   * Know the total ounces in a gallon (128oz).\n   * Average consumption rate per hour for a 16 hour day.\n   * Fred wakes at 6:00 a.m.\n   * Create check points at 9:00 a.m., noon, 3:00 p.m., and 6:00 p.m.\n   * At these check points, tell Fred how many ounces he should have consumed and how many more ounces he has to go.\n* Display, on the screen, the answer Fred is looking for. \n\nThis is my code so far: \n\npublic class DrinkBottle {\n\n  static int frkDrank = 0; \n\n  static int chkPtNum = 1; \n\n  static int toz = 128;\n\n  static int ozh = toz / 16; \n\n  static int fstCp = 3; \n\n  static int sndCp = 6;\n\n  static int trdCp = 9;\n\n  static int fothCp = 12;\n\n  static int ozWatNed;\n\n&amp;#x200B;\n\npublic static int ozWat(int ozWatNed) {\n\n&amp;#x200B;\n\nif (chkPtNum == 1) {\n\nozWatNed = fstCp \\* ozh;\n\n} else if (chkPtNum == 2) {\n\nozWatNed = sndCp \\* ozh;\n\n} else if (chkPtNum == 3) {\n\nozWatNed = trdCp \\* ozh;\n\n} else if (chkPtNum == 4) {\n\nozWatNed = fothCp \\* ozh;\n\n}\n\nreturn ozWatNed;\n\n  }\n\n  public static void main(String args\\[\\]) {\n\nSystem.out.println(DrinkBottle.ozWat(ozWatNed)); \n\nint z = DrinkBottle.ozWat(ozWatNed);\n\nSystem.out.println(z);\n\n  }\n\n}. \n\nAfter this is done, I need to then create a Scanner method to ask him  which Check Point he is at and how many ounces he drank. (Print to screen) rather than me just entering it. So static int frkDrank = 0; \n\n  static int chkPtNum = 1;  would be both values that he would enter in. Thank you for reading through this and if you do help, thank you so much. Also side note if it helps, the IDE I use is Replit and the language is Java. \n\nI hope you all have a wonderful winter.",
+        "created_utc": 1671109613,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Best Cyber Monday Sales] Buy Office 2021 Professional Plus 28% discount $21.59 [[Use coupon: Cyber28]]",
+        "author": "LanitaKeane",
+        "url": "https://microprokey.site/JoFWTVXi",
+        "text": "",
+        "created_utc": 1671101004,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do forecasting tools help businesses?",
+        "author": "JamesJacob18",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zmfszf/how_do_forecasting_tools_help_businesses/",
+        "text": "[removed]",
+        "created_utc": 1671091659,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Which of these minors/certificates are more valuable/useful?",
+        "author": "No_Shock6085",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zm8yat/which_of_these_minorscertificates_are_more/",
+        "text": "I’m getting a bachelors degree in Informatics. I know this isn’t a comp sci degree, but I just wanted this subreddit’s input. I have a few core classes left, and I want to add a minor/certificate. \n\n• Software Bots for Cognitive Automation: https://soic.iupui.edu/degrees/minors-certificates/software-bots/\n\n• Artificial Intelligence: https://soic.iupui.edu/degrees/minors-certificates/ai/\n\n• Human-Computer Interaction (HCI): https://soic.iupui.edu/degrees/minors-certificates/hci-certificate/\n\n• Digital Humanities: https://soic.iupui.edu/degrees/minors-certificates/digital-humanities-minor/\n\n• Multi-Device Development: https://soic.iupui.edu/degrees/undergraduate/informatics/web-development/\n\nThank you.",
+        "created_utc": 1671069252,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Suggestions for Research Project Topic",
+        "author": "Blazekiller8",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zm8c1b/suggestions_for_research_project_topic/",
+        "text": "\nI'm currently pursuing my Bachelor of Engineering degree in Computer Science Engineering and they are asking for the abstract for final year project and I'm having hard time deciding what to do\n\nI love working with new innovative technologies and would love to hear which of these topics to choose, that will be helpful to build my career profile and get a good placement\n\nNote: We are allowed to refer to IEEE journal papers release from 2020\n\n- AI applications in Cloud Computing\n- AI applications in Database\n- AI applications in Testing\n- AIOPS / MLops\n- Quantum Computing\n- Pervasive Computing\n- Grid Computing\n- Soft Computing\n- Parallel Computing\n- Mobile Computing\n- Software Engineering\n- Metaverse\n- AR/VR/XR\n- Hyperledger/Blockchain\n- Web3/ Dapps",
+        "created_utc": 1671067512,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is CIT mostly about \"customer support\" and \"service\" while CS is more about actual technology?",
+        "author": "Alwaysaloneforever97",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zm87lz/is_cit_mostly_about_customer_support_and_service/",
+        "text": "I want to avoid human contact as much as possible. \n\nI love computers, but I heard most computer and tech jobs are just \"customer service\" jobs. \n\nI think humans are the worst. I whole heartedly believe humans are only selfish, and evil. I do not care about humans at all. \n\nI was told \"all jobs in tech are about customer support\" and that actual tech skills don't matter. \n\nI'm not the most experienced programmer, I have a degree in industrial maintenance technology and have taken some programming courses in robotics and PLCs, these were my favorite classes. The logic of code makes me feel relaxed and safe. \n\nI wouldn't mind a job creating software, or designing computer systems, I like computers in general, but all of this \"customer support\" stuff sounds awful. \n\nI even like electronics, one of my favorite books is \"code the hidden language of computer hardware and software\". \n\nI keep being told CIT is just a glorified business degree. Which to me, sounds like it's a waste of time. \n\nI don't think business degrees are even relevant in tech. I don't think business degrees are relevant at all. \n\nI want to get a degree that's technlogy focused and challenging. Which seems to me to be CS but I have a hard time finding a online program for CS in my state, but there's plenty of \"CIT\" programs which I am starting to think I don't want any part of. \n\nThe whole management and business part of it turns me off hard. I want to learn a hard-core science. Is CIT even comparable to CS in this regard?",
+        "created_utc": 1671067186,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I put game-breaking programs &amp; bots on my resume?",
+        "author": "murkkey",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zm7nug/should_i_put_gamebreaking_programs_bots_on_my/",
+        "text": "&amp;#x200B;\n\nWhen I was younger I needed money very badly and decided to sell gold to players. I made bots to farm gold and proceed to sell the gold they made. I also dabbled in cheats and making scripts for games to make money. Would I be allowed to put this on my resume? Ik it's scummy to make cheats, but I needed a lot of money back then. I had to bypass anti-cheats and worked very hard on some of the cheats I've made. Would companies like to see these projects on my resume, or should I just not put them at all?\n\n&amp;#x200B;\n\nThank you so much, any advice would be helpful!",
+        "created_utc": 1671065692,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How would you compare path-planning algorithms (D* Lite vs A*)?",
+        "author": "OverDemon",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zm6ubb/how_would_you_compare_pathplanning_algorithms_d/",
+        "text": "I have made D\\* Lite path planning program in C++ for a project, but am sort of uncertain how I should compare it to an A\\* planner?\n\nI have considered ideas like:\n\n* Execution time\n* Nodes on the queue (in total or per replanning)\n* Number of updateVertex called in D\\* Lite (not sure what the equivalent is in A\\*?)\n* See how often the algorithm's while-loops are run for each new planning.\n\nBut I'm not certain. Time can be very fluid and depends a lot on the program, and my program is not 100% streamlined and clean yet. I believe I'm currently looking to compare the two algorithms/programs in a way that shows that the D\\* Lite algorithm/program is logically \"better\" than A\\* (if that makes sense), and if it's not then it hints at a problem I need to solve since D\\* Lite should be better than A\\* for replanning a path.\n\nRight now both programs can find the same paths, so I need some other way to compare them to see if I've hit the mark with my D\\* Lite or if I need to solve some issues that are not so clear.\n\nThanks",
+        "created_utc": 1671063472,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What does HPQ stand for in the HPQFlash bios updater?",
+        "author": "RedHairThunderWonder",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zm2oh6/what_does_hpq_stand_for_in_the_hpqflash_bios/",
+        "text": "Is it High Priority Queue?",
+        "created_utc": 1671053113,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Commonly used for shock images on image boards, the same image file can take on two different appearances depending on display size. How do they do it? Example within",
+        "author": "Far-Contest-4936",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zm0ej8/commonly_used_for_shock_images_on_image_boards/",
+        "text": "Hi, I'm building a geeky holiday scavenger hunt for a community I am in, and I wanted to use this technique on its forum.\n\nOn image boards you can usually find images displayed with a thumbnail, and click on them to expand them to full size. In the case of shock content, it'll usually turn out to be a screamer gif with an innocent first frame, so the site only displays the first frame as the thumbnail. But I have noticed another technique used for still images.\n\nThe following image is not shock content, but it is part of a forced meme (Log). I'm not part of promoting this meme, it was simply the most socially appropriate example of this technique I could find:\n\n[https://i.imgur.com/WvccH7n.png](https://i.imgur.com/WvccH7n.png)\n\nWhen you open the image above, you see a SFW close up of a man's face with some text at the bottom. Its dimensions are 600x646px.\n\nDisplayed at the image board's thumbnail size of `width=\"116\" height=\"125\"` it appears like this:\n\nhttps://preview.redd.it/tsux5kz81x5a1.png?width=344&amp;format=png&amp;auto=webp&amp;v=enabled&amp;s=6d41a24ba160743975de21760940146678ddceb8\n\nHere's what I've determined:\n\n\\- At least one of the images are dithered or interlaced in some way\n\n\\- Because of this, a moire pattern emerges if you scale the image in an image viewer\n\n\\- As you scale the image in an image viewer, it snaps suddenly to reveal only one or the other image at specific dimensions\n\n\\- Both images contain visible compression artifacts\n\n\\- You can break the effect if you resize the image by 1px without respect for the aspect ratio\n\n&amp;#x200B;\n\nI have determined all of this but I haven't been able to recreate it with other images. What am I missing? There's probably a lazy simple generator for this effect somewhere and I just haven't used the right keywords.\n\nIf you know anything else about this, or other interesting tricks in the same vein, please feel free to share. Thanks!",
+        "created_utc": 1671047466,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "JOIN SOUVENIR'S WAITLIST (NEW SOCIAL MEDIA STARTUP)",
+        "author": "KingJosh1234",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zli0zd/join_souvenirs_waitlist_new_social_media_startup/",
+        "text": "[removed]",
+        "created_utc": 1670994005,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Contemplating over PhD direction",
+        "author": "Sea_Ad_9984",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zlbe98/contemplating_over_phd_direction/",
+        "text": "Hi, everyone! Quick question, I am considering doing a PhD but I am contemplating over whether to do it in MLOps, Trustworthy AI or NLP in terms of long-term value? Any tips appreciated!",
+        "created_utc": 1670975980,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Natural Deduction",
+        "author": "rahli-dati",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zl7isr/natural_deduction/",
+        "text": " I am trying to solve that problem with the help of natural deduction. But it seems like it didn't work. \n\n    p ∨ ¬q, p →(s →r), ¬r, q ∨ ¬s ⊢ ¬s\n\nI tried to prove that proof by contradiction. \n\n    1. p ∨ ~q.  \n    2. p -&gt; ( s -&gt; r).\n    3. ~r.\n    4. q v ~s.  \n    5.         assumption s.  \n    6.                assumption p.  \n    7.                (s -&gt; r) MP 6, 2. \n    8.                 r MP 7,5 \n    9.                 ⊥ 8, 3  \n    10.                assumption ~q. \n    11.                // idk how can I procced further.",
+        "created_utc": 1670966905,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Would radical life extension be possible with a VR brain chip, that alters our perception of time so that every second felt like a year in VR?",
+        "author": "RattyRusty1",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zl5iep/would_radical_life_extension_be_possible_with_a/",
+        "text": "So instead of extending life by increasing the amount of years we live, we reduce the rate at which we perceive time (whilst in a virtually simulated reality from a sensory chip within our brain)... Is this at all possible?",
+        "created_utc": 1670962188,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What bytes means?",
+        "author": "DroiiidUser1882",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zl5c6r/what_bytes_means/",
+        "text": "",
+        "created_utc": 1670961786,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I have an important question but ....",
+        "author": "Titan67689",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zl3wdt/i_have_an_important_question_but/",
+        "text": "I would like to know if we could geolocate someone with his IP address?\nOr geolocate someone with the cmd provided by Microsoft windows.\nOr a quelquonce program inserted with any programming language.\nIn the future if I find a way to do this I would like to create a functional bot and would a bot work with a geolocation program?\nI plan to use this script to impress my friends/family.\n( I have been looking for a way to do this for hours, I have been programming for six months but now I am turning to you so please help me )",
+        "created_utc": 1670958330,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "optimization of haarcascade training",
+        "author": "abdosalm",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zl28ai/optimization_of_haarcascade_training/",
+        "text": "Hi everyone\n\n&amp;#x200B;\n\nI have a problem implementing haarcascade algorithm, which is the huge number of possible features. For example, for a mere 50×50 window the possible features exceed 3 million easily (the 5 known rectangle features, with all possible variations on width/height and position within the window).\n\n&amp;#x200B;\n\nIs there any recommended way to prune/optimize this, say based on size? Is this how it's meant to be, or am I missing something?",
+        "created_utc": 1670954452,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Any detailed documentation on git log --format=%cr?",
+        "author": "Realistic_Swing_5674",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zkxzl1/any_detailed_documentation_on_git_log_formatcr/",
+        "text": "I called this command on one of my repos and it seems to return relative dates in the following format:\n\n\\- 3 weeks ago, 4 days ago, 3 months ago, etc...\n\nbut it seems to skip certain relative dates such as 11 weeks ago, 1 month ago.\n\nIs there a full documentation for what %cr returns on the web? I can't seem to find full documentation for this %cr command.",
+        "created_utc": 1670944091,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Hi! I want to talk to somebody that has studied computer science in college and ask questions about their experience for a character that I'm writing",
+        "author": "Unusual_Sentence_505",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zkw5fw/hi_i_want_to_talk_to_somebody_that_has_studied/",
+        "text": "Hello there!\n\nMy name is Kit and I am currently in the process of writing a concept for a game I am developing. The main character I have for this game is planned to be someone that has studied computer science in college. However, I myself have no experience in this field as I go to a college that does not offer that as a major and the information available on internet can go so far without providing personal anecdotes about how this career path goes.\n\nSo, I would like to be able to talk to somebody that has studied computer science as their college major and ask them questions relating to college life and their experiences in their career. If you have the time to be asked questions about this and would like to help a little creator in making their concept become a reality, please let me know and I would love to talk to you :)",
+        "created_utc": 1670939236,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do sites like Google Colab give access to GPUs over Wifi?",
+        "author": "BadMeditator",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zkeygq/how_do_sites_like_google_colab_give_access_to/",
+        "text": "",
+        "created_utc": 1670886663,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How do I evaluate my simple function call in my interpreter?",
+        "author": "SpecialistNose9396",
+        "url": "/r/learnprogramming/comments/zk36pt/how_do_i_evaluate_my_simple_function_call_in_my/",
+        "text": "",
+        "created_utc": 1670861498,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "For indexOf(list, item) methods, is it appropriate to return Integer.MIN_VALUE if the item is not in the list?",
+        "author": "InspiratorAG112",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zk17t4/for_indexoflist_item_methods_is_it_appropriate_to/",
+        "text": "I am asking this because the disadvantage I see with returning -1 is if the programmer decides to do arithmetic with indices, then adding values to -1 can make it within range. Integer.MIN_VALUE has the advantage of pretty much always being out of range.",
+        "created_utc": 1670856838,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Python Hackerrank Solution",
+        "author": "professorusama",
+        "url": "https://youtu.be/dBfOSxzfrr0",
+        "text": "",
+        "created_utc": 1670832542,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is random access and direct access the same thing?",
+        "author": "deathknight3145",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zjp1z7/is_random_access_and_direct_access_the_same_thing/",
+        "text": "I did a little research and most people said these are synonym. But I really can’t understand why. Aren’t random and direct are two opposite idea?",
+        "created_utc": 1670824330,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Best 12.12 Offer] [Up To 80% OFF] Buy Windows 11 pro Only Price: $28.79. Coupon Code: CYBER28",
+        "author": "Hot-Abbreviations658",
+        "url": "https://affordablekey.site/FdM2Cvra",
+        "text": "",
+        "created_utc": 1670821206,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "finding block number in different RAID system.",
+        "author": "ridahjames",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zjnbej/finding_block_number_in_different_raid_system/",
+        "text": "I need help with an assignment, not looking for an answer, just how to set thing up.\n\nConsider a RAID system with 6 total disks, block size = 1KB, chunk size = 4 blocks\n\nthe numbering of blocks in a particular disk will start at 0. we'll call blocks on a particular disk \"disk blocks\"\n\nthe numbering of blocks in entire system also starts at 0, and counts up to total number of blocks in system. we'll call blocks within RAID system \"data blocks\"\n\nProblem: If the system is using RAID 0, where will a write to data block number 57 change bits on disk? (on which disk(s) and in which disk block(s) internal to the disk?\n\nI got Disk 2, and disk block 9 but not completely confident with my answer.",
+        "created_utc": 1670820097,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "if someone finds my IP address can they find out where i live?",
+        "author": "PurpleandbIue",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zjd11x/if_someone_finds_my_ip_address_can_they_find_out/",
+        "text": "im really worried because just earlier someone posted my IP address in a game i was beating them in and when i checked my IP it matched so could that person find out where i live?",
+        "created_utc": 1670798731,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "creating INF normal with help of Shannon expansion",
+        "author": "rahli-dati",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zjczup/creating_inf_normal_with_help_of_shannon_expansion/",
+        "text": "I am trying to create If then else normal for the following  `(p -&gt; ~r) ∧(q ∨r)`  by using the Shannon expansion. But I am not sure if I have done right or wrong. It feels like I did wrong because, in the end, the formula looks like this. \n\n `A = p -&gt; (q -&gt;(r -&gt; F; F); (r -&gt; F; F)) ; q -&gt; r ; r.` \n\nFrom that INF formula, I can't create a binary decision diagram. From the p it goes to q whether p is false or true. But when p is true then it goes to q and afterwards, it goes to r. from r it will always lead to false results. however, when p is false it goes to q, then if r is true then we can get the true result and when r is false we will get the false result. I wonder if that is an erroneous result that I got in the end. \n\n&amp;#x200B;\n\n    let's assume A = (p -&gt; ~r) ∧(q ∨r). \n      \n    order = p &gt; q &gt; r.  \n    A = {p/T} = (T -&gt; ~r) ∧ ( q v r).\n    A = {p/F} = ( F -&gt; ~r) ∧ ( q v r) = T ∧ ( q v r) = ( q v r).  \n    \n    let's assume A1 = (T -&gt; ~r) ∧ (q v r),  A2 = ( q v r). \n    A = p -&gt; ((T -&gt; ~r) ∧ ( q v r));  (q v r).   \n    A1 = (T -&gt; ~r) ∧ (q v r) A1 = {q/T} = (T -&gt; ~r) ∧ ( T v r) = (T -&gt; ~r) ∧ (r).  \n    A1 = {q/F} =  ( T -&gt; ~r) ∧ ( F v r) = ( T -&gt; ~r) ∧ (r).  \n    A = p -&gt; (q -&gt;((T -&gt; ~r) ∧ (r); ( T -&gt; ~r) ∧ (r)); (q v r).   \n    \n    \n    A2 = (q  v r).  A2 = {q/T} = (T v r) = r. \n    A2 = { q / F} = ( F v r ) = r.  \n    A = p -&gt; (q -&gt;((T -&gt; ~r) ∧ (r); ( T -&gt; ~r) ∧ (r)); q -&gt; r ; r. \n    \n    \n    let's assume A3 = ( T -&gt; ~r) ∧ r. \n    A3 = { r / T} = ( T -&gt; F) ∧ r = F.  \n    A3 = { r / F} = ( T -&gt; T ) ∧ r = T ∧ F = F.  \n    \n     A = p -&gt; (q -&gt;(r -&gt; F; F); (r -&gt; F; F)) ; q -&gt; r ; r.",
+        "created_utc": 1670798682,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "The idea for the Final Year Project of the CS Degree",
+        "author": "foolish-intellect",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zj7ajw/the_idea_for_the_final_year_project_of_the_cs/",
+        "text": "[removed]",
+        "created_utc": 1670790502,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to improve problem solving abilities (long post and questions)?",
+        "author": "Tender_Figs",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zj6q1n/how_to_improve_problem_solving_abilities_long/",
+        "text": "\n**Background**: \n\nAlready have a bachelors degree in accounting, been working as a BI/analytics engineer, but not really utilizing much programming beyond simple scripting in python (the SQL I use is different, but obviously declarative is not like traditional programming).\n\nDecided that I want to pursue furthering my CS education formally, originally starting at a larger university, and now at a community college due to costs. I am also one of those people that learn by seeing examples, practicing examples of like kind, etc.\n\n**Situation:** \n\nIn my second introductory CS course (first was a 10 week python course that I ended up not liking, second is a 16 week C++ class and I like it much more), but I am still unsure how to problem solve like a programmer. I have read several posts here that suggest to code frequently and often, to continue doing problems, and to read suggested books like \"Think like a programmer\".\n\nI find that I grasp the functionality of the topics (control structures, input/output streams, types) as these are all similar to SQL. It's the types of problems encountered where I fail to problem solve. \n\n**Example:** \n\nFor example, summing two large integers in C++, with limitations to int and long long int types. I know I have a type limitation here and that I likely will have to loop through an array to calculate it, but the math of it seems super foreign...\n\nI started by reading the required textbook as well as a supplemental C++ book I purchased, and none of the chapters contained anything about solving for integer overflow, besides \"this is your limitation of the types\". So then, I started googling integer overflow and reading about it on StackOverflow. Much of the examples are beyond me as they're dealing with data structures and that's the next class I am taking.\n\nI then gave it the old college try by trying to develop a program that would sum the two numbers. My problem set has 3 tests to pass, and I got 2/3, but this solution is garbage IMHO. This is where I got stuck. I got it to sum numbers up to the limit, but not beyond... \n\nI finally found an article on GeeksForGeeks about summing two integers, and I can honestly say I would have never solved this on my own because:\n\n1.) I haven't seen a problem like this before (so doing more problems would be beneficial..but not from my textbook)\n\n2.) It's not like any of the math upbringing that I've been exposed to since much of that math provided an example and was classified into groups of problems of like kind... is this what an algorithms class handles is grouping these problems together?\n\n3.) No texts or homework problems that have been provided have discussed integer overflow to this degree, so I had to go googling.\n\n4.) The professor only has office hours once a week, and because of work/family/etc, I can never attend them. There's no recordings of said office hours either.\n\n&amp;#x200B;\n\n&amp;#x200B;\n\n**Concerns:** \n\nMy concern is that I ***DEEPLY*** ***WANT*** to develop this problem solving ability so I don't have to google so much or at all, and can think through the problem. I also want to be so comfortable with the language that I can recognize what to use and not (given my crappy code solution above). I just don't know where to go to gain and/or develop the acumen.\n\nWhat I am asking for is detailed clarity (something I need in order to understand it best, hence why I went from the python to C++ class as I couldn't understand the concepts until I dug deeper). I really enjoy C++.\n\n**Questions:**\n\n1.) is it as simple as doing more problems, every day, and eventually I won't have to google as much? Or is there something I'm not grasping in how the problems and solutions are organized (like in accounting, I know X problem was grouped in Y set, so I knew what mental path to go down). Will reading books help close this knowledge gap?\n\n2.) is it normal in the beginning phases to google everything? I'm not copying code without trying to really grasp what the code is doing because if I just copied the code I would be short changing myself. That being said, I don't think I would have passed this class without coming across similar solutions and then implementing them. It makes me feel like an imposter most of the time.\n\n3.) will I eventually see how these problems are organized? I feel like I'm learning the technical functions/operations/syntax of languages but not really understanding the formation of the problems. They seem rather random right now?\n\n4.) should I be supplementing by reading more solutions on StackOverflow and GeeksforGeeks?\n\n5.) is any of this considered number theory or discrete math? It seems that some of the problems would be best understood from those points of view?",
+        "created_utc": 1670789680,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What would you do with 100 computers just sitting around?",
+        "author": "Peaceful-mammoth",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zixuxp/what_would_you_do_with_100_computers_just_sitting/",
+        "text": "The CTO of a my company has ~100 computers that are running nothing for 16 hours a day. Is there any best use for that available compute?",
+        "created_utc": 1670775022,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What would you with 100 computers just sitting around?",
+        "author": "named_mark",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zixlgi/what_would_you_with_100_computers_just_sitting/",
+        "text": "I'm the CTO of a startup and I have ~100 computers in my office that are running nothing for 16 hours a day. Is there any best use for that available compute?",
+        "created_utc": 1670774572,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Egrep: Finding duplicate words",
+        "author": "NextGEN_24",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zirmzw/egrep_finding_duplicate_words/",
+        "text": "I have this regex:  \n\n    \\b(\\w+)\\s+\\1\\b\n\nThis regex pattern is for finding duplicate words in the same string.\n\n    Paris in the the spring.\n    \n    Not that that is related.\n\nUsing the pattern, it would capture \"the the\" and \"that that \".\n\nI want to use this pattern using egrep, but it doesn't really work in the terminal. Is there another way to do this in egrep?",
+        "created_utc": 1670764741,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "is this a good ELI5 for Curry-Howard isomorphism? idk anything about it",
+        "author": "jenkosh",
+        "url": "https://i.redd.it/wnm8ioc6f75a1.png",
+        "text": "",
+        "created_utc": 1670736407,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "got an assignment due tomorrow",
+        "author": "Seif90",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zibikj/got_an_assignment_due_tomorrow/",
+        "text": "What is the difference between sequence, string and graph in processing and difficulty?",
+        "created_utc": 1670725638,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "struggling to understand mathematical notation for this signal averaging formula (Topic is Intelligent Signal Processing)",
+        "author": "Bright_Bee_529",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zi8sqm/struggling_to_understand_mathematical_notation/",
+        "text": "This is the context given by the course I'm doing:\n\nAveraging often takes the form of summing a series of signal samples and then dividing that sum by the number of individual samples.\n\nThe following equation represents a N-point moving average filter, with input the array `x`  \n and outputs the averaged array `y`\n\n&amp;#x200B;\n\nhttps://preview.redd.it/3y95ds0sr55a1.png?width=458&amp;format=png&amp;auto=webp&amp;s=5d5ba064fb6c8c166c8f5c55b52eda2d2078e38e\n\nHowever, I'm struggling to see how their example relates to the formula:\n\nSay the input array is below (length is 20), and N = 3 because we're doing 3-point moving average\n\n`values = [3., 9., 3., 4., 5., 2., 1., 7., 9., 1., 3., 5., 4., 9., 0., 4., 2., 8., 9., 7.]`\n\nIf I break down the formula, 1/N is 1/3, and for the summation notation, beneath the sigma is the index which tells us what value to plug in first, and above the sigma is the upper limit which tells us the upper limit to plug into the rule. Also, I don't know what n means in this since I assume its different from N.\n\nAccording to my understanding, the breakdown of the summation would look like this but it doesn't make sense\n\nvalues(n? - 0) + values(n? - 1) + values(n? - 2) \n\nI put a question mark next to n because I don't know what it stands for. And since x is the array, I put 'values' there(are you expected to multiply the sum of the array against what's in the brackets?). and since the upper limit is N-1, and N = 3, that means the series would continue until k = 2. I would appreciate if someone could help me with my understanding. Here is a screenshot of their brief:\n\n&amp;#x200B;\n\nhttps://preview.redd.it/f9kjw9ra065a1.png?width=1224&amp;format=png&amp;auto=webp&amp;s=ef6bab26ab9fd85c05300267f42cc103f38c0503",
+        "created_utc": 1670719272,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help decide",
+        "author": "NotVeryReddittors785",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zhx5k7/help_decide/",
+        "text": "",
+        "created_utc": 1670690891,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Renovate Customer Experiences With AI Chatbots",
+        "author": "ARFASOFTECH",
+        "url": "https://www.arfasoftech.com/blog/Renovate-Customer-Experiences-With-AI-Chatbots",
+        "text": "",
+        "created_utc": 1670673986,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Has anyone here used Structy? Looking for a crash course on DSA that really goes through the process for breaking down and solving a problem. If you have any other recommendations drop them below.",
+        "author": "gtboy1994",
+        "url": "/r/learnprogramming/comments/zhezxm/has_anyone_here_used_structy_looking_for_a_crash/",
+        "text": "",
+        "created_utc": 1670635504,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I'm trying to host a Java program which uses Swing on a website, how would I go about doing that?",
+        "author": "xFearful425",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zhajq0/im_trying_to_host_a_java_program_which_uses_swing/",
+        "text": "",
+        "created_utc": 1670624383,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Generally, how many logic transistors does a CPU core have?",
+        "author": "12gaugelobotomizer",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zgl0b6/generally_how_many_logic_transistors_does_a_cpu/",
+        "text": "I know most transistors in a modern CPU are for the caches' SRAM but doing napkin calculations about the \"logic\" transistor count from the transistor count wiki page often gives me wildly mismatched results from model to model. There also seems to be very little in the way of information on the subject floating around with the most recent actual non-napkin info I've found so far being for a Itanium series from 2010-11.  \nAs a subquestion, I'm also wondering how modern CISC and RISC implementations differ in logic transistor count from each other.",
+        "created_utc": 1670555018,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "When Steve Jobs talked about “objects” as the next big thing in 1992, did he really mean “libraries?”",
+        "author": "cerka",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zgcmwi/when_steve_jobs_talked_about_objects_as_the_next/",
+        "text": "[Steve Jobs gave a talk at MIT in 1992](https://youtu.be/Gk-9Fd2mEnI) in which he made many mentions of “objects” and OOP. He said that in the future, software companies were going to be writing “objects” that other people can then take and use to write “apps,” and he equated this model with OOP. He said that OOP was the next big thing since GUI.\n\nFor all practical purposes, it seems to me that his goal is met by good libraries without a need for OOP. Why was OOP critical to what he wanted to achieve? Is there something that I am missing?",
+        "created_utc": 1670535673,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "I am working on an 8-bit computer using logic gates. This is the Instruction ASet Architecture I'm developing for it. 32 instructions, with a 5-bit opcode for each. I'm having trouble coming up with ideas for the extra one [01110]. Might I get some help in this sub?",
+        "author": "AnimusFoxx",
+        "url": "https://i.imgur.com/TyHGmyE.jpg",
+        "text": "",
+        "created_utc": 1670534832,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there an algorithm to find a minimum/maximum element in an array that is faster than O(n)?",
+        "author": "InspiratorAG112",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zgah9l/is_there_an_algorithm_to_find_a_minimummaximum/",
+        "text": "I am thinking that something 3Blue1Brown-esque must exist.",
+        "created_utc": 1670531191,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to handle first experience of working on a live customer machine.",
+        "author": "Ok-perspective-2336",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zg9o0l/how_to_handle_first_experience_of_working_on_a/",
+        "text": "We have a very well known customer for our VM operating system. Today I was tasked with publishing the repair for their system! \n\nHow do you take the pressure of these things? When the email came in I was excited but a bit daunted.\n\nFirst real pressure I have faced since advancing from my apprentice position.",
+        "created_utc": 1670529538,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Junior Dev. First live customer repair. How do you cope with such pressure?",
+        "author": "Ok-perspective-2336",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zg9kvd/junior_dev_first_live_customer_repair_how_do_you/",
+        "text": "Hi, I'm employed as Software Developer Assistant. (The assistant means junior I don't just do spreadsheets). \n\nWe have a very well known customer for our VM operating system. Today I was tasked with publishing the repair for their system! \n\nHow do you take the pressure of these things? When the email came in I was excited but a bit daunted.\n\nExp: 2 year dev apprentice + 1 year into full contract.\n\nAlso posted on r/softwaredevelopment but think my post was auto removed so sorry if you see duplicate.",
+        "created_utc": 1670529356,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Cache Storage Overhead",
+        "author": "benzizzy",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zg0vxa/cache_storage_overhead/",
+        "text": "Does anyone have an input on how I would go about calculating the total bit of 36-bit address space and a direct-mapped cache that holds 27bytes of data? Also, the block size cache is 4 words.",
+        "created_utc": 1670510602,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does anyone have experience starting a small business?",
+        "author": "Voicu_Florentin",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zfv5mb/does_anyone_have_experience_starting_a_small/",
+        "text": "I know there is a milion answear to this question, but first i want to say i have some experience in creating a web page, did some experimentation with bootstrap studio and Reflow, and also with wordpress and other plugins( i didn't check out yet woocommerce).Mainly if you know a great database that is easy to create, or a free one. Because i m scared of them since collage, i also have some experience with javascrip, and some friend of mine adviced me to try in google sheet, with appscrip and creating a data base. I want to have a data base where i can have the entry of the products or material of the products and then build a product using the materials like a bracelate that use 10 red beds,10 white, etc and after we sell it  would delete them or substract them from the inventory. Thank you for hearing me",
+        "created_utc": 1670494950,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How are we sure that Meta doesn't actually have a copy of our private keys?",
+        "author": "Ok_Perspective599",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zfs9mf/how_are_we_sure_that_meta_doesnt_actually_have_a/",
+        "text": "Not just Meta, but any other company that provides closed source product and claims to have end to end encryption.\n\nWhatsapp has always been said to have an End to End Encryption where even Facebook (Meta) can't read out messages. From the limited understanding of E2E Encryption that I have, anyone with the private key can decrypt the messages. \n\nSo when Whatsapp creates these keys for us, how are so sure that they aren't actually keeping a copy of their keys? If it was open source like signal it could be checked by the public to find any sneaky code like this but not with the once like Whatsapp.",
+        "created_utc": 1670484401,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "P2P Systems",
+        "author": "itzdannny",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zfc2yk/p2p_systems/",
+        "text": "If p2p is clearly better for security and mostly decentralized is there a reason why people aren't creating p2p applications these days? Is it greed? And why aren't applications transitioning over. Curious thought (I'm not a computer science expert, I just have a great interest in technology)",
+        "created_utc": 1670443580,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can I turn on my computer",
+        "author": "OtherwiseAd8773",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zfapjv/can_i_turn_on_my_computer/",
+        "text": "I bought a power supply (agi-ps600)  but it only has one p4 cable, and my motherboard (sunflower hp) has 2, does it still work?",
+        "created_utc": 1670440756,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "AVL Tree - how to know how much rotations needed",
+        "author": "ilsapo",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zf5vjx/avl_tree_how_to_know_how_much_rotations_needed/",
+        "text": "hi\n\nso I know that after insertion, we need one rotation at most, and after deletion we need one rotation at most at every level of the tree.\n\nand we can know check the balance factor when we go up from the node we inserted/deleted and then know if need to do rotation.\n\nI got the following question:\n\nconsider we represent the nodes of the AVL using list:\n\n\\[a,b,c,d...z\\]\n\nso that a represent the smallet node in the tree, z the biggest.\n\nhow can you know how many rotations needed for new insertion/deletions into the array?",
+        "created_utc": 1670431023,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Questions about API usages",
+        "author": "DavidzzHD",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zeu3ej/questions_about_api_usages/",
+        "text": "There's this company that manages mobile builds and allows users to view logs, rerun and cancel builds. This functions are only available from their UI and it's only accessible through an account that is license-based, meaning that if we want to have all developers view and mange their builds, we would have to buy each one of them a license. \n\nI noticed that all of these functionalities are available from their API, so I created a web app where users can view their build status, cancel and rerun their builds. Doing this only requires one licensed account (to retrieve the access token), saving a lot of money.\n\nIs this okay? Or is the usage of API's only supposed to be for licensed accounts, legally and morally speaking?",
+        "created_utc": 1670394490,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How did people connect to other computers without the internet in the very late 80s/very early 90s?",
+        "author": "SleepySleeperCell",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zenq4q/how_did_people_connect_to_other_computers_without/",
+        "text": "Note from OP:  I am new to computer science, and I know very little about networking\n\n\\-------------------------------\n\nI was reading Linus Torvalds' Just for Fun, and in Chapter IV he talks about the creation of the terminal emulator that would later become Linux.  He describes how he used it to log into his University's computer to work and read news, and also that he used it to log into Usenet groups to participate in debates and announce Linux.  This development took place from \\~1989-1991.  There's just one issue:\n\n*He didn't use TCP/IP.*\n\nI know that he didn't because he talks about the trouble he had implementing it much later  (this \"magical\" terminal emulator predates Linux version 0.01, while Linux + networking is version 0.95, I think).  Moreover, this was a bare metal terminal emulator:  no OS to provide support for connections, so something complicated like TCP/IP might have been difficult.\n\nMy question is:  *How was he able to connect to Usenet and other computers without TCP/IP?*\n\nFrom what I've read, TCP/IP is necessary to access the internet at all, and I always thought that you needed the internet to remotely access a computer.  *What sort of technology did he use?  What sort of protocols?  Can this be done today, or has this mode of inter-computer communication been discarded?*\n\nI would take it for granted that you could do this if you directly wired one computer to another, but we're talking about connecting to servers and computers possibly thousands of miles away.  This is a very old technology, so sources have been difficult to find, launching into somewhat abstruse discussions on BBS systems, modems, and serial lines (don't know how any of that works/worked), but from what I read, it's sort of like making a phone call, only to a computer.  \n\nIf someone could describe in greater detail (or point me to more readable sources that do) how this \"connecting without internet\" worked, I would greatly appreciate it.\n\nAlso, if I posted this in the wrong forum, where should I post it?  (Apologies if that's what I did).",
+        "created_utc": 1670374659,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why use jump boxes to protect critical system?",
+        "author": "Beneficial_Use3429",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zejnzk/why_use_jump_boxes_to_protect_critical_system/",
+        "text": "I’m in a legit healthcare company and we have many good practices to protect client data. One of them is using jump boxes + VPN for production environment testing. For dev environment we only use VPN to shut unauthenticated users out.\n\nSo I thought the whole point of jump boxes is adding another layer of authentication to your system. But later someone told me it’s about monitor and record traffic using VM. \n\nI did some research online and feel Postman itself comes with a traffic capture proxy (I’m not so sure) already. Is using this built in tool to capture network traffic logs a good practice? If not, why?",
+        "created_utc": 1670364498,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Why has nobody tried to create a program language that natively supports JSON but isn't JavaScript?",
+        "author": "boring_pencil",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zecu25/why_has_nobody_tried_to_create_a_program_language/",
+        "text": "I've found that when writing backend code it can be difficult to convert JSON data from the frontend into a format that can be used by the language the backend is written in. Generally frameworks have built in tools that aim to make this easier, but there are often still issues. \n\nI often hear people complaining about JavaScript so I'm curious as to why modern languages don't strive to directly interact with JSON. Is it just not a big enough deal to be worth it or are the major technical issues with trying to do this?",
+        "created_utc": 1670348362,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Does anyone know where I can find a visual and simple explanation (video) of the Rotation Forest algorithm?",
+        "author": "Prudent_Youth6434",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zeanoh/does_anyone_know_where_i_can_find_a_visual_and/",
+        "text": "I found some papers describing the functioning of Rotation Forest algorithm but they seem to have the same repeated explanation. I'm more of a visual learner and i would rather find a visual explanation of the algorithm, a video more specifically. Unfortunately, i can't find any on YouTube or on the Internet. Can anyone please help me. Thank you in advance.",
+        "created_utc": 1670343196,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Only $350 to spend",
+        "author": "ScreenageAngst",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ze8ra8/only_350_to_spend/",
+        "text": "If you only had $350 to spend and were starting a coding boot camp, what laptop would you purchase?",
+        "created_utc": 1670338416,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "developing a platform like poshmark with out the social sense of it for not so techy country. Need help",
+        "author": "Big-Initiative-2030",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ze5dvl/developing_a_platform_like_poshmark_with_out_the/",
+        "text": "I am currently developing a platform like poshmark where ppl can sell there clothing and retail stores(boutiques) can do the same with out the social sense of it , and in my country digital payment isn’t common and people prefer to pay by cash and shipping labels and stuff isnt even herd of , so my question is if the sellers can list there item on my platform and talk with the sellers how can i monetize the platform , and doing the shipping by our self would make the products much expensive cause 10 birr matters when purchasing clothing and shipping wont make sense cause most purchases happen locally and buying through another side of the country for cloth is just stupid and expensive , also people like to go to boutiques and check the product and buy the stuff check sizing and purchase, our ambition is to digitize that let sellers increase there exposure and reach more customers , our main goal is for the boutiques and thrift stores , how it used to be was boutiques  list there product on telgram people check it out txt through telegram ask the directions to there store  go to there store check and buy , no refund or anything even no receipt , and you must be in there telegram channel to see what they have,  they dont update there stock so when you go to there store the item might be sold out  , so my plan is to digitize all of it  whilst monetizing. Thanks in advance",
+        "created_utc": 1670329564,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Has anyone else spent a long time implementing a solution to a problem only to discover there's a language feature that does exactly what you need?",
+        "author": "Minteandome",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ze4034/has_anyone_else_spent_a_long_time_implementing_a/",
+        "text": "I feel really dumb, I just spent almost 5 hours implementing a solution that is easily solved by a native feature of the language that I didn't know about.",
+        "created_utc": 1670325863,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Can i get into a masters program in computer science with a bachelor’s degree in MIS (management information systems)",
+        "author": "Parking-Age-6974",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/ze1nd7/can_i_get_into_a_masters_program_in_computer/",
+        "text": "",
+        "created_utc": 1670318858,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How does the halting problem / undecidable problem generalize?",
+        "author": "thehomelessman0",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zdv89i/how_does_the_halting_problem_undecidable_problem/",
+        "text": "So I understand that the halting problem proves that TMs can't solve every problem, and so they can't prove something is true or false 100% of the time. But how does this issue generalize to other problems in computer science? I imagine if computers were decidable in every case except the halting problem, this wouldn't be as big of an issue.",
+        "created_utc": 1670300806,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "[Hurry Up Your Deals!] Buy Microsoft Windows 11 Pro License for Only $28.79 And Get Up to 80% Off (Use Promo code: CYBER28)",
+        "author": "Hot-Abbreviations658",
+        "url": "https://affordablekey.site/e0LsfjOR",
+        "text": "",
+        "created_utc": 1670299507,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What Career within Computer Science would be best for me to fully optimise my skills",
+        "author": "mikemuz123",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zdrcoc/what_career_within_computer_science_would_be_best/",
+        "text": "Bit of background information, I'm a 23 yr old dude who has the British equivalent of a CPA (the ACA). To be completely honest, even though I found it fairly straight forward to complete, accounting is so fkin boring mainly because I have to \"stay inside the box\" and there is absolutely no room for creativity. At best, there's stuff to do with projections and potential business decisions but again the big calls are made by people right at the top so zero impact. \n\nI've been learning python as a bit of a hobby on the side and have very good maths skills. I have been thinking about going into computing for a bit now as just based on what I read online seems fun with the scope to really apply myself, have a decent work life balance and earn as much if not more than what I currently make. \n\nI feel I am in a bit of a niche position as I doubt there are many people who get into CS that are qualified accountants so I really want to make the most of my skills.\n\nI guess my question then is what kind of CS should I get into where I can use my qualified accountancy expertise mixed with CS. I imagine it'll most likely be related with the finance sector (and despite the cash don't think quant is for me). \n\nAppreciate the help.",
+        "created_utc": 1670291172,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Never Coded- Want to understand everything (if possible) about Generative AI and LLMs:)",
+        "author": "Travis_scoth",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zdr2cg/never_coded_want_to_understand_everything_if/",
+        "text": " I  have never coded in my life and never studied CS. I know some very  basic python. Can't yet write a matrix multiplication code. I recently  used ChatGPT and my mind was blown.\n\nI am ready to drop all the things I have worked ( mostly physics) to get into generative AI.\n\nWhere should I start? I have now taken CS50 and eventually want to build something similar to Chat GPT:)\n\nPrescriptions / detailed answers will really help me:)",
+        "created_utc": 1670290402,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Natural Deduction",
+        "author": "rahli-dati",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zdjmxi/natural_deduction/",
+        "text": "I wonder if it would be correct if my derivation looks something like that to prove that following\n\n    (p -&gt; q) |- ~p v q\n\n&amp;#x200B;\n\nMy derivation:\n\n     1. p -&gt; q premise 1. \n     2. p assumption \n     3.      q [1,2 MP]\n     4. ~p v q [iv 3, 2]\n     5. ~p assumption \n     7.  ~p v q [vi 5]\n     8.  ~p v q [vi 2-7]",
+        "created_utc": 1670274267,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Should I buy a brand new Windows Laptop or get Parallels for my M1 Mac?",
+        "author": "ManWhoIsOnlyHuman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zdgyu1/should_i_buy_a_brand_new_windows_laptop_or_get/",
+        "text": "Which one is worth it - Second question, do I even need to get a windows for the field of computer science or is it a great idea?",
+        "created_utc": 1670268848,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Applications of Formal Languages towards the study of Natural Languages",
+        "author": "DeepEchidna3047",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zdgakn/applications_of_formal_languages_towards_the/",
+        "text": " Hi all,\n\nI am writing a paper on \"Applications of Formal Languages towards the study of Natural Languages\" and am not able to find a lot many resources on this. Everything online about this is vague and never actually touches the subject. Whatever I have written until now is mostly about 'formal languages' and 'natural languages' separately. If anyone has ever come across any leads on this topic or has actual knowledge about it, please share them with me. It would be greatly appreciated.\n\nThanks!",
+        "created_utc": 1670267429,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "How to make a searchable lyrics database?",
+        "author": "bukowskiwaswrong",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zdcge3/how_to_make_a_searchable_lyrics_database/",
+        "text": "Hi there! This may well be much simpler than I am envisioning, but me and the other nerds over at r/aesoprock were wondering if there is a way to make a searchable database containing all the lyrics of his songs?  \n\nI.E. we would like to be able to enter a word or phrase and pull all the instances of that and the context (song/album) they occur on.\n\nThanks in advance for the help! We are happy to do the gruntwork of importing lyrics, just curious what tools/sites/methods would be helpful here.",
+        "created_utc": 1670259616,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "What is the scope of Geometry in Computer Science?",
+        "author": "Baruch1994",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zd0tmi/what_is_the_scope_of_geometry_in_computer_science/",
+        "text": "",
+        "created_utc": 1670227308,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Good Resources for Learning Linear Algebra?",
+        "author": "TheAstronomyGame",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zcui5d/good_resources_for_learning_linear_algebra/",
+        "text": "",
+        "created_utc": 1670208206,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Best Way to Learn Discrete Mathematics?",
+        "author": "TheAstronomyGame",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zcmi6r/best_way_to_learn_discrete_mathematics/",
+        "text": "I wanted to take this at my college but schedules conflicted and it’s an optional course so I will unfortunately not get to learn Discrete Math in college.\n\nHowever, I would still like to learn it on my own time. Does anyone have any free or reasonably priced resources I can go to to learn?",
+        "created_utc": 1670189749,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "C++ nodes? I don’t know what they are asking me to do here? Address and Employee are classes with basic data members and constructors. I’m in a intro computer science class",
+        "author": "Ok-Avocado-8095",
+        "url": "https://i.redd.it/y000bsig3z3a1.jpg",
+        "text": "",
+        "created_utc": 1670181620,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with Pseudocode",
+        "author": "Organic-Cheetah975",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zcex3w/help_with_pseudocode/",
+        "text": "Hello, I am currently in an intro to computer science class, and we are going over how to write pseudocode. I have attached an image of my problem, and any help going through the steps to write it would be greatly appreciated.",
+        "created_utc": 1670173168,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help with Pseudocode",
+        "author": "Organic-Cheetah975",
+        "url": "https://i.redd.it/n3bw8ihsrw3a1.jpg",
+        "text": "",
+        "created_utc": 1670171491,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "D* Lite - How to handle obstacles NOT near start position?",
+        "author": "OverDemon",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zcd7qs/d_lite_how_to_handle_obstacles_not_near_start/",
+        "text": "My question/issue might be best explained with the following two situations:\n\nhttps://preview.redd.it/bqxnaaciiw3a1.png?width=1806&amp;format=png&amp;auto=webp&amp;s=47955f8ed042f9916a81d01dc1f618e4b792b250\n\nOn the right we start at cell 6 and want to find a path to cell 24. It's obviously the diagonal path through 12 and 18 to goal cell 24 is the shortest path. However, from the initial situation we move to cell 12 and discover an obstacle at cell 18. The edge costs into and out of cell 18 are now infinite and so we update edge costs and call updateVertex on cells 18, 12, 13, 14, 17, 19, 22, 23, and 24. By doing this the current/startcell 12's rhs value is changed and thus:\n\n    while ( U.TopKey() &lt; CalculateKey(Sstart) OR rhs(Sstart) != g(Sstart) )\n\nThe left statement of the computeShortestPath is false after our initial path finding, but the right is now true due to the changes rhs value of the start cell and so we run computeShortestPath and find a path. \n\nHowever, in the situation on the left we start at 0, want to go to 24 still, but when we move to cell 6 we discover the obstacle at cell 18. But in THIS situation the start cell is NOT a neighbor to the obstacle, and (as I currently understand D\\* Lite) it's thus NOT updated since the edge cost from 6 to 12 haven't changed. \n\nThis means that for the while:\n\nwhile ( U.TopKey() &lt; CalculateKey(Sstart) OR rhs(Sstart) != g(Sstart) )\n\nNeither statement is true, and thus we never get into computeShortestPath, and for my case I'm left in a situation where the only path to go from cell 12 is back to 6, and thus back and forth.\n\n&amp;#x200B;\n\nNow, this seems like an obvious error on my part. However, I can't quite see WHERE things go wrong, other than 'somehow' I imagine that the changes need to be carried back to the current position and it's rhs updated.",
+        "created_utc": 1670169289,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Is there a structure of computation?",
+        "author": "Stack3",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zc1v1e/is_there_a_structure_of_computation/",
+        "text": "I was leaning about lambda calculus. I learned that some functions that can be written... reduce? Or simplify down to other methods.\n\nThen I realized this was also true of... I don't know what to call it but the language of logic gates too. And that both of these systems are different in expression, but functionally equivalent, as they are both turning compete languages, an I right about all that?\n\nOk anyway, that's where I'm coming from, here's my question: if you graphed functions out on a grid or as a tree graph or something, what would it look like?\n\nTDLR: *What would be the rules governing what functions are reducible, and to what other functions?*\n\nI would assume the rules for logic gates and lambda calculus would be the same? So that their simplified graphs would be equivalent? Maybe?\n\nIf not are there provably infinite function graphs trees given that there are infinite languages in which to define a Turing complete state machine? Is that even true? I thought I heard that somewhere.\n\nAnyway I guess that's it. What is this kind of computer science subdomain is this?",
+        "created_utc": 1670132844,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Are single core processors still available?",
+        "author": "OpenAerie",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zbirbm/are_single_core_processors_still_available/",
+        "text": "I have an old data analysis program that I use. Several years ago I upgraded my laptop and the processor was supposed to be twice as fast as my old one. When I ran my program it didn’t speed up at all. I contracted the programmer about it and was told that the software was written for a single core processor and the newer multi-core processors wouldn’t speed this program, as all calculations would run through one core. Now my data sets are getting bigger and I sometimes have to wait for 10 minutes for a simulation to run. What’s the best processor option in a situation like this?",
+        "created_utc": 1670081151,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Help for a parallelism problem",
+        "author": "Rangerborn14",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zbfrbh/help_for_a_parallelism_problem/",
+        "text": "Suppose you have access to a cluster of high-performing computers (HPC) that has 26 computing nodes. Your job is to build and render many CG images that would be released soon for a movie. How would you design a solution using parallelism?",
+        "created_utc": 1670072490,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Looking for an in depth text book on designing FPGAs",
+        "author": "quuxman",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zb4skz/looking_for_an_in_depth_text_book_on_designing/",
+        "text": "Naturally all my searches are swamped by books on designing \\*with\\*  FPGAs. If anybody has some recommendations it'd be much appreciated.",
+        "created_utc": 1670033094,
+        "upvote_ratio": 1.0
+    },
+    {
+        "title": "Undergraduate looking to attend University of Boulder Colorado for a post baccalaureate computer science program",
+        "author": "Imaginary_pencil",
+        "url": "https://www.reddit.com/r/AskComputerScience/comments/zaxrvd/undergraduate_looking_to_attend_university_of/",
+        "text": "Hi everyone, I hope this is the right sub Reddit to ask this question because YouTube and the Internet seem to not be able to give me accurate answers.\n\nI am an undergraduate student at Arizona State University study in Philosophy with a focus in politics law and analytical logic. Plans have changed since my start and now I am looking to move in a different direction than my previous ventures which involved law school. \n\nOne of my symbolic logic professors this last semester told me about the University of Boulder Colorado‘s post baccalaureate computer science programs. I am scheduling a meeting with them which should take place in the next two weeks but there are two different paths you can take, one is a bachelors of arts and one is a bachelors of science.\n\nAs a reference to my end goal, I have a very good friend of mine who works for a private data engineering and analytics company. He has done all sorts of interesting Work regarding espionage, fraud, cyber security systems, and child trafficking. I am very much would like to move into this line of work. \n\nHe himself has a bachelors of science in computer science but I am not quite sure if I need to have the same field of study to do what he is doing. Can someone please give me a little information on why they would offer a bachelors of arts versus a bachelors of science in the main differences post graduation when it comes to career options? Also please ignore talk to text I’m currently heading to class so I am walking down a busy street thank you",
+        "created_utc": 1670015462,
+        "upvote_ratio": 1.0
+    }
+]
